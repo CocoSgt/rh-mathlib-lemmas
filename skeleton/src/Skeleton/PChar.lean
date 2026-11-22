@@ -4,8 +4,15 @@ The source release carries no license file; redistribution terms are to be
 confirmed with the author (see REPORT.md §5.6).  Skeleton files extracted by
 GLM 5.4 via DeepSeek Harness.
 
-Lower mainline skeleton, Window layer (1/4): primitive Dirichlet characters, the
-"zero-free" propositions and `EveryCharacter`.
+Shared bottom of the main-line skeleton (main-line layers 3 and 4 and the link between them):
+primitive Dirichlet characters, the "zero-free" propositions, `EveryCharacter`, and the proved
+link `imprimitive : ZeroFreeAll → EveryCharacter`.
+
+This is the *single* copy of these declarations.  The step-6 sessions had first extracted them
+twice (`Skeleton/Top/{ZeroFreeAll,EveryCharacter,Imprimitive}.lean` in the namespace `Skeleton`,
+and `Skeleton/Window/PChar.lean` in the original namespaces); the merge kept the **original
+namespaces** (`Formalism.HC`, `UpperTheory`), so every name below is the one used in `source/`,
+and every other module of `skeleton/` imports this file.
 
 Source: Alpöge's Lean formalisation of the Riemann hypothesis (2026-11-20),
 https://github.com/CocoSgt/riemann-hypothesis-lean  (`source/` mirror in this repo).
@@ -13,23 +20,25 @@ https://github.com/CocoSgt/riemann-hypothesis-lean  (`source/` mirror in this re
   * `Formalism.HC.PChar`, `KSet`, `Level` and the zero-free propositions:
       source/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/PrimePairSizeCondition.lean:7-45
       source/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/ExplicitFormulaErrorOfHostConditions.lean:11-43
-  * `UpperTheory.EveryCharacter`, `UpperTheory.Top.plugWin`, `plugAll`:
-      source/src/Development/AutomorphicArithmetic/CharacterBoxes/EveryCharacter.lean:8-18
-  * `UpperTheory.Top.imprimitive`:
-      source/src/Development/AutomorphicArithmetic/CharacterBoxes/Imprimitive.lean:5-35
   * glue lemmas `PChar.of_self`, `of_one`, `of_inv`, `zeroFreeOn_of_levels`,
     `Level.ofSub`, `mem_ofSub`, `cyc`, `mem_cyc`, `zeroFreeOn_of_cyc`:
       ExplicitFormulaErrorOfHostConditions.lean:45-127
+  * `UpperTheory.EveryCharacter`:  source/src/Development/AutomorphicArithmetic/CharacterBoxes/EveryCharacter.lean:13
+  * `UpperTheory.Top.imprimitive`:
+      source/src/Development/AutomorphicArithmetic/CharacterBoxes/Imprimitive.lean:5-35
+  * `Formalism.HC.zeroFreeAll_iff` is new (a restatement of `ZeroFreeAll` without `PChar`;
+    not in the original development).
 
-Everything in this file only uses Mathlib (statement *and* proofs).
+Everything in this file only uses Mathlib (statements *and* proofs).
 The pieces of `Level` that are not on the mainline (`Gm`, `ChebyshevGrowthImpliesZeroFree`,
 which need `Formalism.Gz` and `An.gChi`) are not ported.
 -/
-import Mathlib
+import Mathlib.Algebra.Group.Subgroup.ZPowers.Basic
+import Mathlib.NumberTheory.DirichletCharacter.Orthogonality
+import Mathlib.NumberTheory.LSeries.DirichletContinuation
+import Mathlib.RingTheory.Conductor
 
 noncomputable section
-
-open NumberField
 
 namespace Formalism.HC
 
@@ -92,9 +101,20 @@ def ZeroFreeOn (Q : PChar → Prop) : Prop := ∀ ψ : PChar, Q ψ → ψ.ZeroFr
 /-- The even characters are zero-free right of 1/2. -/
 def ZeroFreeEven : Prop := ZeroFreeOn fun ψ => ψ.χ.Even
 
-/-- **Mainline layer-3 output (analytic half):** every primitive Dirichlet character has
-no zero right of the critical line. This is what `Green + VWin + Hyps` produce (`plugWin`). -/
+/-- **Main-line layer-3 output (analytic half):** every primitive Dirichlet character has
+no zero right of the critical line.  On the route that `Main.lean` actually takes this is
+produced by `UpperTheory.Top.zero_free_all_of_green_v_win` (`ThetaPairLifts/ThirdPlaceSeries/TopPlug.lean:12`)
+from `Green`, `VWin` and a non-emptiness hypothesis; the parallel version
+`UpperTheory.Top.plugWin` (`CharacterBoxes/EveryCharacter.lean:8`) has the same shape. -/
 def ZeroFreeAll : Prop := ZeroFreeOn fun _ => True
+
+/-- `ZeroFreeAll` without the packaging `PChar`: every *primitive* Dirichlet `L`-function is
+nonvanishing on `re s > 1/2` (new; not in the original development). -/
+theorem zeroFreeAll_iff :
+    ZeroFreeAll ↔ ∀ (N : ℕ) [NeZero N] (χ : DirichletCharacter ℂ N) (s : ℂ), χ.IsPrimitive →
+      1 / 2 < s.re → DirichletCharacter.LFunction χ s ≠ 0 :=
+  ⟨fun h N _ χ s hχ hs => h (@PChar.mk N inferInstance χ hχ) trivial s hs,
+    fun h ψ _ s hs => h ψ.N ψ.χ s ψ.prim hs⟩
 
 /-- A level: a `KSet` with an order `o`. -/
 structure Level extends KSet where
@@ -211,16 +231,17 @@ namespace UpperTheory
 
 open Formalism.HC
 
-/-- **Mainline layer-3 output:** every Dirichlet character `χ` (not nec. primitive) has
+/-- **Main-line layer 4:** every Dirichlet character `χ` (not nec. primitive) has
 `L(s, χ) ≠ 0` for `Re s > 1/2`, except for the trivial character at `s = 1`.
-This is the hypothesis consumed by `UpperTheory.riemannHypothesis_of_everyCharacter`
-(upper skeleton, `Skeleton/Top/`). -/
+This is the hypothesis consumed by `Formalism.VW.rh_of_every` and
+`UpperTheory.riemannHypothesis_of_everyCharacter` (upper skeleton, `Skeleton/Top/`).
+Original: `CharacterBoxes/EveryCharacter.lean:13`. -/
 def EveryCharacter : Prop :=
   ∀ (N : ℕ) [NeZero N] (χ : DirichletCharacter ℂ N) (s : ℂ), 1 / 2 < s.re → (χ ≠ 1 ∨ s ≠ 1) → DirichletCharacter.LFunction χ s ≠ 0
 
 namespace Top
 
-/-- **Provable glue (Window layer, bottom):** zero-freeness for all primitive characters
+/-- **Proved link `Layer3 → Layer4`:** zero-freeness for all primitive characters
 implies it for all Dirichlet characters, via `LFunction_changeLevel`.
 Source: CharacterBoxes/Imprimitive.lean:5. -/
 theorem imprimitive :

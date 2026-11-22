@@ -164,6 +164,8 @@ EveryCharacter ⟸ imprimitive (plugWin hG hV h)
   ⟹ EveryCharacter（imprimitive：由本原特征 + LFunction_changeLevel 推到所有特征）
 ```
 
+> **修正（第 6 步，详见 §1.3.1 与 `SKELETON.md` §1.1）**：`Main.lean` 实际走的不是上面的 `plugWin`/`plugAll`（假设 `Hyps … DRS`），而是 `ThetaPairLifts/ThirdPlaceSeries/TopPlug.lean:12` 的 `zero_free_all_of_green_v_win`（假设 `Nonempty (HypsAlt (fun 𝒞 => Closed 𝒞 fun Fm _ => LinkN Fm) DefiniteSideCondition)`），它只在 `every_character_of_literature_of_vWin` 的证明内部被用到；两条路线的最后一步都是 `zeroFreeAll_of_topG`。下面的五层结构不变，只是第 2 层的解析假设应读作 `HypsAlt … DefiniteSideCondition` 非空。
+
 所以从命题依赖看，库分为五层：
 
 1. **顶层 glue（Mathlib-only 命题）**：`EveryCharacter → RiemannHypothesis`（`Formalism.VW.rh_of_every`、`UpperTheory.riemannHypothesis_of_everyCharacter`、`Claim.strip/zeta`、`Formalism.VW.critLine`）。这几条定理陈述里只有 Mathlib 的 `riemannZeta`、`DirichletCharacter.LFunction`、`gammaFactor`、`completedRiemannZeta`，证明也只用 Mathlib 引理，**本身就是 Mathlib 候选**（"所有 Dirichlet L 函数在 Re s > 1/2 非零 ⇒ RH"）。

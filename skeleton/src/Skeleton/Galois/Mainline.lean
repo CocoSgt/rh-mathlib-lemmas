@@ -39,7 +39,7 @@ structures with `RowT`/`Row`/`RecTExists` as parameters (they are definitionally
 proposition once `Row := Row0b fun h rc => IsRecT h rc`).
 -/
 import Mathlib
-import Skeleton.Window.PChar
+import Skeleton.PChar
 import Skeleton.Window.VWin
 import Skeleton.Window.Green
 import Skeleton.Window.PlugAll
@@ -88,9 +88,13 @@ theorem everyCharacter_of_row_of {Row RecTExists : Prop}
 /-- **The whole lower mainline, modulo the deep theorems.**  If
 `Row` (i.e. `Row0b fun h rc => IsRecT h rc`) holds, the automorphic window theorem
 `automorphic_window_of_inputs` and base change hold, `Green` and the analytic hypothesis
-`HypsSat` hold, and `plugWin` holds — then `EveryCharacter`.  This is the mainline route
-`everyCharacter_of_row` → `every_character_of_literature_of_vWin` → … → `plugAll` with every
-deep input isolated as a named hypothesis.  Combined with the upper skeleton
+`HypsSat` hold, and the link `Green + VWin + HypsSat → ZeroFreeAll` holds — then `EveryCharacter`.
+On the route of `Main.lean` this is `everyCharacter_of_row` → `every_character_of_literature_of_vWin`
+→ `every_character_of_theta_integrals_local_matching` → `every_character_of_green_v_win`
+(= `imprimitive ∘ zero_free_all_of_green_v_win`, `TopPlug.lean:12-18`), with the analytic core that
+discharges `HypsAlt … DefiniteSideCondition` and the deep inputs isolated as named hypotheses
+(`everyCharacter_of_row_of` keeps the literature-package route; this theorem uses the `plugWin`-shaped
+route, on which `Main.lean` is via `zero_free_all_of_green_v_win`).  Combined with the upper skeleton
 (`EveryCharacter → RiemannHypothesis`, `Skeleton/Top/`) this gives RH modulo these hypotheses. -/
 theorem everyCharacter_of_row_and_inputs {Row BaseChangeIsobaricN HypsSat : Prop}
     (hmk : Row → UpperTheory.LiteratureTheorems.OpenImageCondition Row)

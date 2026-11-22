@@ -5,7 +5,7 @@ confirmed with the author (see REPORT.md §5.6).  Skeleton files extracted by
 GLM 5.4 via DeepSeek Harness.
 
 Lower mainline skeleton: `#print axioms` for every definition and theorem of
-`skeleton/src/Skeleton/{Galois,Window}/*.lean` (except this file).  The table produced on
+`skeleton/src/Skeleton/{PChar.lean,Galois/*,Window/*}` (except this file).  The table produced on
 2026-11-23 00:49 CST is in SKELETON-lower.md §6: 42 declarations, all with at most
 `propext, Classical.choice, Quot.sound`, no `sorryAx`.
 -/
@@ -14,7 +14,7 @@ import Skeleton.Galois.GaloisCohomology
 import Skeleton.Galois.Row0b
 import Skeleton.Galois.IsRecT
 import Skeleton.Galois.Mainline
-import Skeleton.Window.PChar
+import Skeleton.PChar
 import Skeleton.Window.VWin
 import Skeleton.Window.Green
 import Skeleton.Window.PlugAll
@@ -31,7 +31,7 @@ import Skeleton.Window.PlugAll
 #print axioms UpperTheory.LiteratureTheorems.OpenImageCondition
 #print axioms UpperTheory.LiteratureTheorems.OpenLiteratureStatements
 
--- theorems: Window/PChar.lean
+-- theorems: Skeleton/PChar.lean (shared bottom; formerly Window/PChar.lean + Top/ZeroFreeAll.lean)
 #print axioms Formalism.HC.PChar.inv_inv
 #print axioms Formalism.HC.PChar.of_self
 #print axioms Formalism.HC.PChar.of_one

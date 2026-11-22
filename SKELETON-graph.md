@@ -1,5 +1,7 @@
 # SKELETON-graph — 主线骨架的静态依赖图（TASK.md 第 6 步 · "静态依赖图"部分）
 
+> **汇总会话注（2026-11-23 02:30）**：本文件作为附录 C 原样保留，它的"陈述锥 / 证明锥"是 `SKELETON.md` 各表采用的口径，但有两处结论要按 `SKELETON.md` §3.3 修正后阅读：(1) **"公共核 = 32,207 条 = `green_of_regular` 的锥"是误配的产物**——`Formalism.BasicNotions.D7` 的定义体里的字段名（`Om`、`K`、`q`、`loc` …）被当成对别处同名声明的引用，给 `Green`、`HostExW`、`TopG`、`FamP` 等挂上了一棵约 3.2 万条的假子树；编译器实测 `Green` 的陈述锥是 16 条（本文给 3,127），去掉 `D7` 的出边后 `green_of_regular` 的锥是 64 条。受影响的还有 §3 的 `Green`/`VWin`/`ZeroFreeAll` 陈述锥和 §7 的"约 3,120 条基本词汇"。(2) 整条主线的证明锥 662,997 条是**上界**：另一种解析（汇总会话旧稿 `analysis/mainline_cone.py`，strict）给 223,420 条，是系统性漏算的**下界**；两版差在哪见 `SKELETON.md` §3.3 与 `analysis/conecheck.txt`。两法一致的结论（glue ≈ 0、最大瓶颈是 `nonempty_hyps_definite_side_of_closed_bound`、其次 Galois 表示/窗口/文献包）不受影响。正文与生成表（`analysis/mainline_graph.txt`/`.md`）差 1–2 条的地方（32,207 ↔ 32,205、118,718 ↔ 118,717）`SKELETON.md` 取生成表。
+
 > 本文件只做 TASK.md 第 6 步里的**静态依赖图**：不编译，从源码文本解析主线定理的证明引用了哪些声明，算出每一层结论的近似依赖锥。命题文件（`def LayerN : Prop`）和衔接定理由另外两个会话在 `skeleton/` 里做，这里不涉及。
 >
 > 功劳与署名：证明的全部数学与 Lean 代码属于 **Levent Alpöge（与 Claude 合作）**；本文件只是对 `source/` 的文本做统计，没有新的数学。脚本与原始结果：`analysis/mainline_graph.py`、`analysis/mainline_graph.txt`（全表）、`analysis/mainline_graph.md`（表）、`analysis/mainline_graph.json`、`analysis/mainline_graph.files.txt`（各层锥内的文件清单，只列 ≤ 12,500 个文件的锥；`analysis/mainline_graph.json` 被 .gitignore 的 `analysis/*.json` 规则排除，可用脚本重新生成）。

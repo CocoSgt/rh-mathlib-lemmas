@@ -1,0 +1,49 @@
+mainline proof cone of Main.riemannHypothesis -- two static methods compared  (generated 2026-11-23 02:36)
+A (analysis/mainline_graph.py): 662,997 declarations (unique names 660,179).
+B (analysis/mainline_cone.py, strict): 223,221 declarations (unique names 223,221).
+intersection 181,469; A only 478,710; B only 41,752  (81.3% of B lies inside A, 27.5% of A lies inside B).
+
+1. B's structural blind spots (declarations that B cannot reach by construction):
+   decls.jsonl records 48,230 declarations ONLY under a name starting with `_root_.`;
+   depindex looks a plain reference `X.Y.z` up by that plain name, so every reference to such a declaration is dropped
+   (example: `theorem _root_.GlobalTheory.T.normPrimesImagQuad_short_interval_lower_bound` …/NormPrimesImagQuadShortIntervalLowerBound.lean:8,
+    used as `GlobalTheory.T.normPrimesImagQuad_short_interval_lower_bound` in ShortNorms/Primes.lean:5 -- on the main line via supplyChi).
+   A-cone declarations of this kind: 36,523; none of them is in B (0).
+   Part of A reachable from them: 580,225 (87.5% of A).
+   A-cone declarations with a non-ASCII character in the name (B tokenises ASCII only): 25,753; reachable from them: 178,506.
+   B also drops every ambiguous short name (strict mode).
+
+2. A's structural over-count (edges guessed from short names / field names inside definition bodies):
+   `Formalism.BasicNotions.D7` (a 262-line structure) has 68 outgoing statement edges in A, e.g. to
+   `Ad3.R.Om`, `UpperTheory.V.HV.Host.q`, `ChowFormHeightComparison₂.CF.C.loc`, `UpperTheory.V.Af.Fin.emb`, `Formalism.SA.A.LL` -- these are its
+   *field names* (Om, K, q, loc, emb, LL …), not references.  Green/HostExW/TopG/FamP … all mention D7, so a ~32,000-declaration
+   false subtree hangs under every non-glue layer.
+   Compiler ground truth for statement cones (these files compile in skeleton/ with Mathlib only): Green = 16 declarations,
+   VWin = 32 (+ Galois files), ZeroFreeAll = 4.
+
+   cone                          A        A minus D7-out-edges   A minus targets with <=3-char names      B
+   whole main line                662,997                  662,997                                594,213   223,221
+   => Row0b (Galois reps)         161,315                  161,297                                103,321     (n/a)
+   recTExists (local Langlands)    40,507                   40,432                                  8,784     8,099
+   vwin_of_row (=> VWin)          155,440                  155,423                                121,362    55,279
+   green_of_regular (Green)        32,254                       64                                     50     (n/a)
+   HypsAlt nonempty (analytic core)   444,958                  444,957                                391,529   114,310
+   zero_free_all_of_green_v_win    85,734                   85,720                                 52,190    36,760
+   every_char_lit_vWin (literature pkg)   598,129                  598,129                                539,536   188,543
+   supplyChi                       32,295                   32,219                                    202       166
+   zeroFreeAll_of_topG             33,159                   33,084                                  1,998       773
+   imprimitive                         12                       12                                      9         6
+   statement cones:
+   Green                            3,127                       17                                      9
+   VWin                               134                      134                                      5
+   ZeroFreeAll                         10                       10                                      8
+   TopG                             3,412                    1,380                                    497
+   HypsAlt                          7,034                    7,014                                  2,853
+   RecTExists                       3,285                      259                                    112
+   Row0b                              730                      730                                    347
+   (the "<=3-char names" column also removes genuine short names such as `Sp`, `ev`, `KK`, so it under-counts; it is a sensitivity bound, not an estimate.)
+
+3. Manual samples (scripts not kept; seeds noted): 70 random declarations of A-only, seed 7 and 11 -- all 70 had an incoming edge whose
+   referenced name really occurs in the referencing declaration (e.g. `have h := genHasVal_powGen …`, `rw [hcol, comb_mul]`).
+   45 random edges of A (seed 3): about 39-42 clearly genuine, 3 references through section variables, 2-4 doubtful (`ea.symm` -> `…Pull.Tri.symm`).
+done in 21s

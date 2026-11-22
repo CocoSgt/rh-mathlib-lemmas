@@ -1,5 +1,7 @@
 # SKELETON-lower — 主线下层骨架：Galois 层与 Window 层
 
+> **汇总会话注（2026-11-23 02:30，合并后）**：本文件作为附录 B 原样保留。合并时 `Window/PChar.lean` 移到 **`skeleton/src/Skeleton/PChar.lean`**（内容不变，另并入 `zeroFreeAll_iff`，`import Mathlib` 收窄为 4 个子模块），`Top/` 里重复的 `Skeleton.PChar`/`ZeroFreeAll`/`EveryCharacter`/`imprimitive` 已删除，所以本目录的定义现在是整个 `skeleton/` 唯一的一份；本文 §2.1、§5、§7、§8.6 里提到的 `Window/PChar.lean` 和"与 `Skeleton/Top/` 二选一"均按此理解（对照见 `SKELETON.md` 附录 D）。§1 的"陈述级闭包 / 含函数体"数字是本文的口径（偏小），与其它口径的差异见 `SKELETON.md` §3.1、§3.5。另：`Main.lean` 实际走 `TopPlug.lean` 的 `zero_free_all_of_green_v_win`（`HypsAlt … DefiniteSideCondition`），`plugWin`/`plugAll` 是平行版本，见 `SKELETON.md` §1.1；`Window/PlugAll.lean` 里的 `plugWinStatement` 两条路通用。
+
 三个并行会话中的「下层骨架」这一份。目录：`skeleton/src/Skeleton/Galois/`、`skeleton/src/Skeleton/Window/`。
 上层（EveryCharacter → RiemannHypothesis）和静态依赖图在另外两份（`Skeleton/Top/`、`SKELETON.md`）。
 

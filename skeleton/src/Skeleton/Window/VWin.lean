@@ -22,7 +22,7 @@ Mathlib; 32 definitions, 2 Mathlib-only lemmas, longest chain 12.
 -/
 import Mathlib
 import Skeleton.Galois.GaloisCohomology
-import Skeleton.Window.PChar
+import Skeleton.PChar
 
 noncomputable section
 

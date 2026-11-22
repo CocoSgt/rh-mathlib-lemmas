@@ -6,13 +6,15 @@ belongs to Levent Alpöge and Claude.
 
 # The three "claims": half-plane nonvanishing, strip statement, and the zeta statement
 
-`Claim.HalfPlane` is definitionally `Skeleton.EveryCharacter`; `Claim.Strip` is
-definitionally `Skeleton.DirichletLZerosOnLine`; `Claim.Zeta` is definitionally
+`Claim.HalfPlane` is definitionally `UpperTheory.EveryCharacter` (`Skeleton/PChar.lean`);
+`Claim.Strip` is definitionally `Skeleton.DirichletLZerosOnLine`; `Claim.Zeta` is definitionally
 `RiemannHypothesis` and `Skeleton.RiemannZetaZerosOnLine`. The implications
 `HalfPlane → Strip` and `HalfPlane → Zeta` are proved in `Skeleton/Top/ClaimStrip.lean`.
 
 Only Mathlib concepts occur; the `*_iff` bookkeeping lemmas additionally import
-`Skeleton/Top/Statements.lean` and `Skeleton/Top/EveryCharacter.lean`.
+`Skeleton/Top/Statements.lean`.  `Skeleton.everyCharacter_iff` (formerly in
+`Skeleton/Top/EveryCharacter.lean`) records that the statement
+`DirichletLNonvanishingRightOfHalf` of `source/src/Statements.lean:6` *is* `UpperTheory.EveryCharacter`.
 
 Original location (file:line, in `source/src`):
 `Development/AutomorphicArithmetic/CharacterBoxes/HalfPlane.lean`
@@ -20,7 +22,8 @@ Original location (file:line, in `source/src`):
 -/
 import Mathlib.NumberTheory.LSeries.DirichletContinuation
 import Mathlib.NumberTheory.LSeries.RiemannZeta
-import Skeleton.Top.EveryCharacter
+import Skeleton.PChar
+import Skeleton.Top.Statements
 
 namespace Skeleton.Claim
 
@@ -41,8 +44,13 @@ Original: `Claim.Zeta`, `CharacterBoxes/HalfPlane.lean:9`. -/
 def Zeta : Prop :=
   ∀ s : ℂ, riemannZeta s = 0 → (¬ ∃ n : ℕ, s = -2 * (n + 1)) → s ≠ 1 → s.re = 1 / 2
 
-/-- `Claim.HalfPlane` is literally `Skeleton.EveryCharacter`. -/
-theorem halfPlane_iff : HalfPlane ↔ Skeleton.EveryCharacter := Iff.rfl
+/-- `Claim.HalfPlane` is literally `UpperTheory.EveryCharacter`
+(original `CharacterBoxes/EveryCharacter.lean:13`, in `Skeleton/PChar.lean`). -/
+theorem halfPlane_iff : HalfPlane ↔ UpperTheory.EveryCharacter := Iff.rfl
+
+/-- `Skeleton.DirichletLNonvanishingRightOfHalf` (`Statements.lean:6`) is literally
+`UpperTheory.EveryCharacter`. -/
+theorem everyCharacter_iff : Skeleton.DirichletLNonvanishingRightOfHalf ↔ UpperTheory.EveryCharacter := Iff.rfl
 
 /-- `Claim.Strip` is literally `Skeleton.DirichletLZerosOnLine` (`Statements.lean:10`). -/
 theorem strip_iff : Strip ↔ Skeleton.DirichletLZerosOnLine := Iff.rfl

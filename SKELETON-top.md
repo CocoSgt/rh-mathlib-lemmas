@@ -1,5 +1,7 @@
 # SKELETON-top — 主线骨架 · 上层（`skeleton/src/Skeleton/Top/`）
 
+> **汇总会话注（2026-11-23 02:30，合并后）**：本文件作为附录 A 原样保留，但 `skeleton/` 已经合并：`Top/ZeroFreeAll.lean`、`Top/EveryCharacter.lean`、`Top/Imprimitive.lean` 里与 `Window/PChar.lean` 重复的 `PChar`、`ZeroFreeAll`、`EveryCharacter`、`imprimitive` 只保留一份，在 **`skeleton/src/Skeleton/PChar.lean`**（源命名空间 `Formalism.HC` / `UpperTheory`）；本文 §1 表里的 `Skeleton.PChar`、`Skeleton.ZeroFreeAll`、`Skeleton.EveryCharacter`、`Skeleton.imprimitive`、`Skeleton.everyCharacter_iff` 等名字已不存在，对照见 `SKELETON.md` 附录 D。§3 的"陈述依赖锥"数字（`Green` 118、`VWin` 1,292、`Hyps` 3,844 …）是本文的口径，与其它口径的差异见 `SKELETON.md` §3.1、§3.5。另：`Main.lean` 实际走的是 `TopPlug.lean` 的 `zero_free_all_of_green_v_win`（`HypsAlt … DefiniteSideCondition`），不是本文 §3 写的 `plugWin`（`Hyps … DRS`），两者形状相同、在 `zeroFreeAll_of_topG` 汇合，见 `SKELETON.md` §1.1。
+
 > 功劳与署名：所有数学与 Lean 证明属于 **Levent Alpöge（与 Claude）**（2026-11-20 发布，https://alpo.ge/ ，镜像 https://github.com/CocoSgt/riemann-hypothesis-lean ）。本目录只是把主线顶层的命题与衔接定理原样搬到只依赖 Mathlib 的文件里、补 docstring、编译验证；抽取、整理、编译由 GLM 5.4 通过 DeepSeek Harness 完成。原发布没有 license 文件（见 REPORT.md §5.6）。
 >
 > 环境：Lean `v4.33.1`，Mathlib `0df444a360eaa60ab8c11dca51a86af692955474`（与 `source/` 相同），`skeleton/` 独立 Lake 项目，`.lake/packages` 指向 `extracted/.lake/packages`（缓存已就绪）。

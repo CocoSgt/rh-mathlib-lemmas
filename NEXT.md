@@ -93,7 +93,7 @@ AlpoClaude.Top          ← Development.AutomorphicArithmetic.{Foundations, Thet
 
 ### 5.0 主线骨架已经落地（第 6 步，2026-11-23）
 
-`skeleton/`（见 `SKELETON.md`）已经把主线的第 3–5 层及全部 glue 做成只依赖 Mathlib 的库（`Skeleton.Layer3 → Layer4 → Layer5`，`lake build` 通过、公理干净），第 2 层的 `VWin`、`Green` 陈述完整，第 1 层与 Hyps 非空只能抽象。往下走的顺序按依赖锥来：先 Weil–Deligne + `IrrGL` 地基（Row0b/IsRecT 共享，~3,000 行），再 `CuspSub`/`Pst`/`Loc*`（Row0b 的陈述），`Hyps` 不搬定义而当作解析核心层的输出命题；最大的一块是把 `HypsAlt … DefiniteSideCondition` 证出来的 `nonempty_hyps_definite_side_of_closed_bound`（≈12,600 个文件），其次是 `vwin_of_row`/`galoisRepresentations_of_thetaLift`（≈6,000–8,000 个文件）。`analysis/extract_cone.py` 能把几十条规模的陈述锥自动抄成 Mathlib-only 文件（ZeroFreeAll、Green 一次成功），几百条以上需要先做阶段 0 的 import 收敛工具。
+`skeleton/`（见 `SKELETON.md`）已经把主线的第 3–5 层及全部 glue 做成只依赖 Mathlib 的库（`Skeleton.Layer3 → Layer4 → Layer5`，`lake build` 通过、公理干净），第 2 层的 `VWin`、`Green` 陈述完整，第 1 层与 Hyps 非空只能抽象。往下走的顺序按依赖锥来：先 Weil–Deligne + `IrrGL` 地基（Row0b/IsRecT 共享，~3,000 行），再 `CuspSub`/`Pst`/`Loc*`（Row0b 的陈述），`Hyps` 不搬定义而当作解析核心层的输出命题；最大的一块是把 `HypsAlt … DefiniteSideCondition` 证出来的 `nonempty_hyps_definite_side_of_closed_bound`（mainline_graph 口径 79,760 个文件 / 914 万行，占主线 51–67%；另一种更严的解析给 12,606 个文件作下界，见 `SKELETON.md` §3.3），其次是 `vwin_of_row`/`galoisRepresentations_of_thetaLift`（29,675 / 32,390 个文件；下界 7,903 / 6,039）。`zeroFreeAll_of_topG`、`supplyChi`、`green_of_regular` 去掉静态图的误配后都很小（≈ 773–1,998 / 166–202 / 50–64 条声明），可以先抽。`analysis/extract_cone.py` 能把几十条规模的陈述锥自动抄成 Mathlib-only 文件（ZeroFreeAll、Green 一次成功），几百条以上需要先做阶段 0 的 import 收敛工具。
 
 ### 5.1 最顶层 glue：4 条"条件定理"可以现在就并入 Mathlib
 

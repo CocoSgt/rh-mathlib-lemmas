@@ -10,8 +10,7 @@ Using Mathlib's functional equation `completedRiemannZeta_one_sub` directly (ins
 unfolded form `riemannZeta_one_sub` used in `Skeleton.rh_of_right`).
 
 In the original file this proof sits under 209 internal imports that it does not use; the
-only dependencies are Mathlib and `UpperTheory.EveryCharacter`
-(= `Skeleton.EveryCharacter`).
+only dependencies are Mathlib and `UpperTheory.EveryCharacter` (`Skeleton/PChar.lean`).
 
 Original location (file:line, in `source/src`):
 `Development/AutomorphicArithmetic/CharacterBoxes/RiemannHypothesisOfEveryCharacter.lean`
@@ -19,14 +18,14 @@ Original location (file:line, in `source/src`):
 -/
 import Mathlib.NumberTheory.LSeries.RiemannZeta
 import Mathlib.NumberTheory.LSeries.Nonvanishing
-import Skeleton.Top.EveryCharacter
+import Skeleton.PChar
 
 open Complex
 
 namespace Skeleton
 
 /-- Original: `UpperTheory.zeta_ne_zero_of_everyCharacter`, `RiemannHypothesisOfEveryCharacter.lean:211`. -/
-theorem zeta_ne_zero_of_everyCharacter (h : EveryCharacter) :
+theorem zeta_ne_zero_of_everyCharacter (h : UpperTheory.EveryCharacter) :
     ∀ s : ℂ, 1 / 2 < s.re → s ≠ 1 → riemannZeta s ≠ 0 := fun s hs h1 => by
   have := h 1 1 s hs (Or.inr h1)
   rwa [DirichletCharacter.LFunction_modOne_eq] at this
@@ -34,7 +33,7 @@ theorem zeta_ne_zero_of_everyCharacter (h : EveryCharacter) :
 /-- `EveryCharacter` implies the Riemann Hypothesis (second proof).
 Original: `UpperTheory.riemannHypothesis_of_everyCharacter`,
 `RiemannHypothesisOfEveryCharacter.lean:215`. -/
-theorem riemannHypothesis_of_everyCharacter (h : EveryCharacter) : RiemannHypothesis := by
+theorem riemannHypothesis_of_everyCharacter (h : UpperTheory.EveryCharacter) : RiemannHypothesis := by
   intro s hs hn h1
   by_contra hne
   rcases lt_or_gt_of_ne hne with hlt | hgt

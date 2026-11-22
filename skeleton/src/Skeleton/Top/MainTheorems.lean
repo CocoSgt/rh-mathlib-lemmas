@@ -8,14 +8,16 @@ all mathematical credit belongs to Levent Alpöge and Claude.
 
 In the original, `Supplements/Kernels/MainTheorems.lean` plugs the proved
 `allChi : UpperTheory.EveryCharacter` into the glue lemmas and `Main.lean` states the five
-final theorems.  Here `EveryCharacter` is an (unproved) proposition, so the same five
-theorems are proved *from* a hypothesis `allChi : EveryCharacter`; together with
+final theorems.  Here `UpperTheory.EveryCharacter` is an (unproved) proposition, so the same five
+theorems are proved *from* a hypothesis `allChi : UpperTheory.EveryCharacter`; together with
 `Skeleton/Top/PlugWin.lean` this shows that the chain
 
-  `Green + VWin + Hyps  ⟹[plugWin, NOT reproduced]  ZeroFreeAll  ⟹[imprimitive]  EveryCharacter
+  `Green + VWin + Hyps  ⟹[zero_free_all_of_green_v_win / plugWin, NOT reproduced]  ZeroFreeAll
+   ⟹[imprimitive]  EveryCharacter
    ⟹[rh_of_every / critLine / Claim.strip / Claim.zeta]  RH, GRH(primitive), Strip, Zeta`
 
-is Mathlib-only below the `plugWin` link.
+is Mathlib-only below that link (the link itself is `UpperTheory.Top.zero_free_all_of_green_v_win`,
+`TopPlug.lean:12`, on the route `Main.lean` takes).
 
 Original location (file:line, in `source/src`):
 `Supplements/Kernels/MainTheorems.lean` :7 `allChi`, :9 `rhOfAll`, :11 `critAll`, :15 `claimAll`;
@@ -33,40 +35,40 @@ open Complex DirichletCharacter
 namespace Skeleton
 
 /-- Original: `rhOfAll`, `Supplements/Kernels/MainTheorems.lean:9`. -/
-theorem rhOfAll (allChi : EveryCharacter) : RiemannHypothesis := rh_of_every allChi
+theorem rhOfAll (allChi : UpperTheory.EveryCharacter) : RiemannHypothesis := rh_of_every allChi
 
 /-- Original: `critAll`, `Supplements/Kernels/MainTheorems.lean:11`. -/
-theorem critAll (allChi : EveryCharacter) (N : ℕ) [NeZero N] (χ : DirichletCharacter ℂ N)
+theorem critAll (allChi : UpperTheory.EveryCharacter) (N : ℕ) [NeZero N] (χ : DirichletCharacter ℂ N)
     (hχ : χ.IsPrimitive) (s : ℂ) (h0 : 0 < s.re) (h1 : s.re < 1)
     (hz : LFunction χ s = 0) : s.re = 1 / 2 :=
   critLine allChi N χ hχ s h0 h1 hz
 
 /-- Original: `claimAll`, `Supplements/Kernels/MainTheorems.lean:15`. -/
-theorem claimAll (allChi : EveryCharacter) : Claim.HalfPlane ∧ Claim.Strip ∧ Claim.Zeta :=
+theorem claimAll (allChi : UpperTheory.EveryCharacter) : Claim.HalfPlane ∧ Claim.Strip ∧ Claim.Zeta :=
   ⟨allChi, Claim.strip allChi, Claim.zeta allChi⟩
 
 /-- Original: `Main.lean:4`. -/
-theorem riemannHypothesis (allChi : EveryCharacter) : RiemannHypothesis := rhOfAll allChi
+theorem riemannHypothesis (allChi : UpperTheory.EveryCharacter) : RiemannHypothesis := rhOfAll allChi
 
 /-- Original: `Main.lean:6`. -/
-theorem riemannZeta_eq_zero_re (allChi : EveryCharacter) : RiemannZetaZerosOnLine := rhOfAll allChi
+theorem riemannZeta_eq_zero_re (allChi : UpperTheory.EveryCharacter) : RiemannZetaZerosOnLine := rhOfAll allChi
 
 /-- Original: `Main.lean:8`. -/
-theorem LFunction_ne_zero_of_half_lt_re (allChi : EveryCharacter) :
+theorem LFunction_ne_zero_of_half_lt_re (allChi : UpperTheory.EveryCharacter) :
     DirichletLNonvanishingRightOfHalf := allChi
 
 /-- Original: `Main.lean:10`. -/
-theorem LFunction_eq_zero_re (allChi : EveryCharacter) : DirichletLZerosOnLine :=
+theorem LFunction_eq_zero_re (allChi : UpperTheory.EveryCharacter) : DirichletLZerosOnLine :=
   (claimAll allChi).2.1
 
 /-- Original: `Main.lean:12`. -/
-theorem LFunction_eq_zero_re_of_isPrimitive (allChi : EveryCharacter) :
+theorem LFunction_eq_zero_re_of_isPrimitive (allChi : UpperTheory.EveryCharacter) :
     PrimitiveDirichletLZerosOnLine := critAll allChi
 
-/-- The whole main line below the `plugWin` link: `Green + VWin + Hyps` imply the Riemann
-Hypothesis, once `PlugWin Green VWin Hyps` is available (in the original development this is
-`Main.lean:4` applied to `UpperTheory.FinalTheorems.everyCharacter`, whose proof is
-`plugAll hG hV h` for the proved `Green`, `VWin`, `Hyps`). -/
+/-- The whole main line below the `Green + VWin + Hyps → ZeroFreeAll` link: `Green + VWin + Hyps`
+imply the Riemann Hypothesis once `PlugWin Green VWin Hyps` is available (in the original development
+this is `Main.lean:4` applied to `UpperTheory.FinalTheorems.everyCharacter`, whose proof runs through
+`every_character_of_green_v_win` for the proved `Green`, `VWin`, `Nonempty (HypsAlt … DefiniteSideCondition)`). -/
 theorem riemannHypothesis_of_plugWin {Green VWin Hyps : Prop} (hW : PlugWin Green VWin Hyps)
     (hG : Green) (hV : VWin) (h : Hyps) : RiemannHypothesis :=
   rhOfAll (everyCharacter_of_plugWin hW hG hV h)

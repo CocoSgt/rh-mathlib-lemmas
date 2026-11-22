@@ -10,18 +10,20 @@ by GLM 5.4 via DeepSeek Harness. The source release carries no license file (REP
 Every module of this library depends on Mathlib only (pinned at the same commit as `source/`).
 See `SKELETON.md` at the repository root.
 
+* `Skeleton.PChar` — the shared bottom (original namespaces): `PChar`, `ZeroFreeAll`,
+  `EveryCharacter`, and the proved link `imprimitive : ZeroFreeAll → EveryCharacter`.
 * `Skeleton.Layers` — the five layers as one entry point (`Layer1` … `Layer5`) and the links
   between them that are proved here.
-* `Skeleton.Top.*` — `EveryCharacter`, `ZeroFreeAll`, the four statements of `Statements.lean`,
-  and the proved links `ZeroFreeAll → EveryCharacter → RiemannHypothesis` (+ GRH corollaries),
+* `Skeleton.Top.*` — the four statements of `Statements.lean`, `Claim.*`, and the proved links
+  `EveryCharacter → RiemannHypothesis` (twice) and `EveryCharacter → GRH` (`critLine`),
+  `HalfPlane → Strip/Zeta`; `PlugWin` (the one link that is not reproduced, with opaque inputs);
   `Main.lean` conditional on `EveryCharacter` (namespace `Skeleton`).
-* `Skeleton.Window.*`, `Skeleton.Galois.*` — `PChar`/`ZeroFreeAll`/`EveryCharacter`/`imprimitive`
-  in the original namespaces, the *full* statements of `UpperTheory.Top.VWin` and
-  `GlobalTheory.GLq.Green` with their definition cones, and the assemblies `plugAll`,
-  `vwin_of_row`, `everyCharacter_of_row` with the deep theorems as hypotheses.
+* `Skeleton.Window.*`, `Skeleton.Galois.*` — the *full* statements of `UpperTheory.Top.VWin` and
+  `GlobalTheory.GLq.Green` with their definition cones, and the assemblies of the lower links
+  (`plugWinStatement`, `vwin_of_row`, `everyCharacter_of_row`) with the deep theorems as hypotheses.
 -/
+import Skeleton.PChar
 import Skeleton.Top
-import Skeleton.Window.PChar
 import Skeleton.Window.VWin
 import Skeleton.Window.Green
 import Skeleton.Window.PlugAll

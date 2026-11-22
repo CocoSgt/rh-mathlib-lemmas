@@ -13,14 +13,15 @@ belongs to Levent Alpöge and Claude.
 * `rh_of_every`: `EveryCharacter → RiemannHypothesis` (take the level-`1` character, for which
   `LFunction = riemannZeta`, and apply `Skeleton.rh_of_right`).
 
-Dependencies: Mathlib only, plus `Skeleton.rh_of_right` (`Skeleton/Top/RhOfRight.lean`).
+Dependencies: Mathlib only, plus `UpperTheory.EveryCharacter` (`Skeleton/PChar.lean`) and
+`Skeleton.rh_of_right` (`Skeleton/Top/RhOfRight.lean`).
 
 Original location (file:line, in `source/src`):
 `Formalism/GammaFactorNonvanishing/CritLine.lean`
   :6 `Formalism.VW.gammaFactor_ne_zero`, :11 `Formalism.VW.critLine`, :29 `Formalism.VW.rh_of_every`.
 -/
 import Mathlib.NumberTheory.LSeries.DirichletContinuation
-import Skeleton.Top.EveryCharacter
+import Skeleton.PChar
 import Skeleton.Top.RhOfRight
 
 open Complex DirichletCharacter
@@ -38,7 +39,7 @@ theorem gammaFactor_ne_zero {N : ℕ} (χ : DirichletCharacter ℂ N) {s : ℂ} 
 primitive `L`-function in the open critical strip lies on the critical line (GRH for
 Dirichlet `L`-functions, zeros version).
 Original: `Formalism.VW.critLine`, `CritLine.lean:11`. -/
-theorem critLine (h : EveryCharacter) (N : ℕ) [NeZero N] (χ : DirichletCharacter ℂ N)
+theorem critLine (h : UpperTheory.EveryCharacter) (N : ℕ) [NeZero N] (χ : DirichletCharacter ℂ N)
     (hχ : χ.IsPrimitive) (s : ℂ) (h0 : 0 < s.re) (h1 : s.re < 1) (hz : LFunction χ s = 0) :
     s.re = 1 / 2 := by
   have hs0 : s ≠ 0 := fun e => by simp [e] at h0
@@ -59,7 +60,7 @@ theorem critLine (h : EveryCharacter) (N : ℕ) [NeZero N] (χ : DirichletCharac
 
 /-- Every Dirichlet `L`-function nonvanishing on `re s > 1/2` implies the Riemann
 Hypothesis. Original: `Formalism.VW.rh_of_every`, `CritLine.lean:29`. -/
-theorem rh_of_every (h : EveryCharacter) : RiemannHypothesis :=
+theorem rh_of_every (h : UpperTheory.EveryCharacter) : RiemannHypothesis :=
   rh_of_right fun s hs hs1 => by
     have := h 1 (1 : DirichletCharacter ℂ 1) s hs (Or.inr hs1)
     rwa [LFunction_modOne_eq] at this

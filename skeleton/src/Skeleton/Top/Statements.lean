@@ -32,7 +32,7 @@ def RiemannZetaZerosOnLine : Prop :=
 /-- No Dirichlet `L`-function (any level, any character) vanishes in the open right
 half plane `re s > 1/2`, except at the pole `s = 1` of the principal character.
 Original: `DirichletLNonvanishingRightOfHalf`, `Statements.lean:6` (this is literally
-`Skeleton.EveryCharacter`, see `Skeleton.everyCharacter_iff`). -/
+`UpperTheory.EveryCharacter`, see `Skeleton.Claim.everyCharacter_iff`). -/
 def DirichletLNonvanishingRightOfHalf : Prop :=
   ∀ (N : ℕ) [NeZero N] (χ : DirichletCharacter ℂ N) (s : ℂ),
     1 / 2 < s.re → (χ ≠ 1 ∨ s ≠ 1) → DirichletCharacter.LFunction χ s ≠ 0
