@@ -172,6 +172,13 @@ EveryCharacter ⟸ imprimitive (plugWin hG hV h)
 4. **解析核心层**（Formalism.LocalToGlobal / SharpRestriction / HermitianCurvature / PeriodIntegrals、ReciprocityTheory、CompanionTheory、PositivityTheory）：证明 `Green`、`Hyps` 非空、`Closed/LinkN` 等解析输入——库的主体。
 5. **基础层**（GroundTheory、Development.AbelianVarietyTheory/Definitions、EtaleCohomology、ResolutionOfSingularities、Lemmata）：高度/θ 函数、上同调、p-adic Hodge、局部域、类域论、交换代数、通用引理。
 
+#### 1.3.1 第 6 步（主线骨架）对上面的两点修正
+
+做第 6 步时逐行读了 `every_character_of_literature_of_vWin` 的证明（`EveryCharacterOfLiteratureOfVWin.lean:810`），发现：
+
+1. **`Main.lean` 实际走的路径仍是"五层"**：`Row0b + recTExists → vwin_of_row → VWin`，然后在 `every_character_of_literature_of_vWin` 内部走 `UpperTheory.Lit.every_character_of_theta_integrals_local_matching`（`SiegelEisensteinSecondTermHypotheses.lean:69`）→ `UpperTheory.Top.every_character_of_green_v_win`（`TopPlug.lean:16`）= `imprimitive (zero_free_all_of_green_v_win …)`（`TopPlug.lean:12`）= `zeroFreeAll_of_topG (shape_closed_link_n_of_green hG) (supplyChi ψ (hV ψ))`。也就是说 **Green + VWin + Hyps 非空 ⇒ ZeroFreeAll ⇒ EveryCharacter** 这一环是主线必经的，只是用的假设是 `Nonempty (HypsAlt (fun 𝒞 => Closed 𝒞 fun Fm _ => LinkN Fm) DefiniteSideCondition)`（`ThirdPlaceSeries/Hyps.lean:22`、`DefiniteSideCondition.lean:25`），而不是上面写的 `plugWin`/`plugAll` 的 `Hyps … DRS`；这个非空性在证明内部由 `nonempty_hyps_definite_side_of_closed_bound`（`:44`）从其它文献输入推出。`EveryCharacter.lean:8/:16` 的 `plugWin`/`plugAll` 是平行的另一个版本，`Main.lean` 不经过它。
+2. 因此第 6 步把第 2 层写成 `VWin ∧ Green ∧ HypsSat`，`HypsSat` 取 `HypsAlt … DefiniteSideCondition` 非空；两份骨架文档（`SKELETON.md`、`SKELETON-lower.md`）里 `plugWin` 的说法按此理解。
+
 ### 1.4 对后续拆分有直接影响的观察
 
 1. **import 图 ≠ 依赖锥**。几乎所有文件都 `import Mathlib`（整库），再 import 一长串"上游聚合文件"。一个 30 行的证明常常 import 100+ 个内部模块（例如 `Lemmata/GeneralBFactLeftAltForm/MQ.lean` 236 行、import 60 个模块）。真实依赖锥只有把证明单独放到只 import Mathlib 的环境里编译才能量出来。本次对 16 个候选文件做了这件事（§3.1），全部内部依赖为 0。

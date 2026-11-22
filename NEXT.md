@@ -91,6 +91,10 @@ AlpoClaude.Top          ← Development.AutomorphicArithmetic.{Foundations, Thet
 
 分层的目的是把"只有最顶层需要的"和"所有人都需要的"分开；每层内部保持原文件不动（避免 17M 行的重排风险），只在顶层加 `import` 聚合文件。这个重组本身不改数学，只是 `lakefile` + 聚合文件，但它需要**整库编译一次**来验证分层无环——这需要 ~100 GB 内存的机器，不在本机做。可行的替代：用 `analysis/closure.py` 精确计算每层的 import 闭包，只在文本层面证明无环，再在 CI 机器上编译。
 
+### 5.0 主线骨架已经落地（第 6 步，2026-11-23）
+
+`skeleton/`（见 `SKELETON.md`）已经把主线的第 3–5 层及全部 glue 做成只依赖 Mathlib 的库（`Skeleton.Layer3 → Layer4 → Layer5`，`lake build` 通过、公理干净），第 2 层的 `VWin`、`Green` 陈述完整，第 1 层与 Hyps 非空只能抽象。往下走的顺序按依赖锥来：先 Weil–Deligne + `IrrGL` 地基（Row0b/IsRecT 共享，~3,000 行），再 `CuspSub`/`Pst`/`Loc*`（Row0b 的陈述），`Hyps` 不搬定义而当作解析核心层的输出命题；最大的一块是把 `HypsAlt … DefiniteSideCondition` 证出来的 `nonempty_hyps_definite_side_of_closed_bound`（≈12,600 个文件），其次是 `vwin_of_row`/`galoisRepresentations_of_thetaLift`（≈6,000–8,000 个文件）。`analysis/extract_cone.py` 能把几十条规模的陈述锥自动抄成 Mathlib-only 文件（ZeroFreeAll、Green 一次成功），几百条以上需要先做阶段 0 的 import 收敛工具。
+
 ### 5.1 最顶层 glue：4 条"条件定理"可以现在就并入 Mathlib
 
 下面这些定理的**陈述和证明只用 Mathlib**（已读证明，并在只 import Mathlib 的环境里实测编译，见 REPORT §3.1），只是因为文件 import 了上游聚合文件才"看起来"依赖全库：

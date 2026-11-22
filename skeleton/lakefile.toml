@@ -1,0 +1,22 @@
+name = "rhskeleton"
+srcDir = "src"
+defaultTargets = ["Skeleton"]
+moreLeanArgs = ["--tstack=400000"]
+
+# Same Mathlib pin as the source repository (source/lakefile.toml) and as ../extracted.
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "0df444a360eaa60ab8c11dca51a86af692955474"
+
+[[lean_lib]]
+name = "Skeleton"
+globs = ["Skeleton", "Skeleton.+"]
+
+# Same options as source/lakefile.toml (the extracted declarations were elaborated under them).
+[leanOptions]
+autoImplicit = false
+relaxedAutoImplicit = false
+maxSynthPendingDepth = 3
+pp.unicode.fun = true
+maxHeartbeats = 4000000

@@ -24,3 +24,6 @@ analysis/*.jsonl
 .elan/
 .cache/
 STORY.md
+
+# 8 MB raw per-file list of the static graph; the .gz is committed instead
+analysis/mainline_graph.files.txt

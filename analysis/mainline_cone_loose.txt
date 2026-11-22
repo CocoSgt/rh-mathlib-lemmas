@@ -1,0 +1,114 @@
+mainline static dependency graph  (mode=loose; generated 2026-11-22 22:35)
+cone sizes are approximations: identifier resolution is textual (namespace + open aware),
+Mathlib names are not resolved (absent from decls.jsonl), ambiguous names are followed (loose), tokens of length < 3 are never followed.
+"state" = what is needed to STATE the declaration (theorems: statement only);
+"prove" = what is needed to PROVE it (full text, transitive).
+
+tag         root                                                state: decls/files/filelines(decllines)   prove: decls/files/filelines(decllines)
+L5           riemannHypothesis                                         1      1        13 (     1)            66899  10255   1688478 (704394)
+L5           RiemannZetaZerosOnLine                                    1      1        17 (     2)                1      1        17 (     2)
+L4           DirichletLNonvanishingRightOfHalf                         1      1        17 (     3)                1      1        17 (     3)
+L5           DirichletLZerosOnLine                                     1      1        17 (     3)                1      1        17 (     3)
+L5           PrimitiveDirichletLZerosOnLine                            1      1        17 (     3)                1      1        17 (     3)
+L4           Claim.HalfPlane                                           1      1        11 (     2)                1      1        11 (     2)
+L5           Claim.Strip                                               1      1        11 (     2)                1      1        11 (     2)
+L5           Claim.Zeta                                                1      1        11 (     2)                1      1        11 (     2)
+L4           UpperTheory.EveryCharacter                                1      1        19 (     2)                1      1        19 (     2)
+L3           Formalism.HC.ZeroFreeAll                                  3      2       302 (     7)                3      2       302 (     7)
+L2           UpperTheory.Top.VWin                                   3793   1131    268263 ( 26181)            26133   4544    873539 (250918)
+S            UpperTheory.Top.VWinAt                                 3792   1131    268263 ( 26180)            26132   4544    873539 (250917)
+S            UpperTheory.Top.WinPair                                   4      2       284 (    24)            26127   4544    873539 (250897)
+S            UpperTheory.Top.VAt                                    3789   1131    268263 ( 26164)            26129   4544    873539 (250901)
+S            UpperTheory.Top.VVle                                   3787   1131    268263 ( 26155)            26127   4544    873539 (250892)
+S            UpperTheory.Top.IsChiField                                2      2       215 (    12)                2      2       215 (    12)
+S            UpperTheory.Top.PageN                                     4      2       284 (    14)            26127   4544    873539 (250887)
+L2           GlobalTheory.GLq.Green                                 3794   1133    268496 ( 26217)            26131   4543    873457 (250904)
+S            Formalism.MainNotions.LinkN                            4287   1229    285797 ( 31555)            27666   4694    905031 (269910)
+S            Formalism.MainNotions.Closed                           4317   1238    288111 ( 31815)            27790   4716    908358 (271246)
+S            GlobalTheory.Fc.DRS                                    6714   1669    380769 ( 46219)            30123   5036    973083 (291398)
+L1           UpperTheory.GalStar.Row0b                              3797   1136    268822 ( 26207)            26138   4549    874098 (250943)
+L1           UpperTheory.Zero.LLC.IsRecT                            3783   1130    268181 ( 26143)            26126   4543    873457 (250886)
+L1           UpperTheory.Zero.LLC.RecTExists                        3784   1130    268181 ( 26146)            26127   4543    873457 (250889)
+G            rhOfAll                                                   1      1        17 (     1)            66898  10254   1688465 (704393)
+G            allChi                                                    2      2        36 (     3)            66895  10252   1688369 (704330)
+G            critAll                                                   1      1        17 (     3)            66898  10253   1688402 (704354)
+G            claimAll                                                  4      2        28 (     8)            66905  10254   1688485 (704427)
+G:L4>L5      Formalism.VW.rh_of_right                                  1      1        63 (    58)            26127   4544    873520 (250944)
+G:L4>L5      Formalism.VW.rh_of_every                                  2      2        52 (     6)            26129   4546    873572 (250950)
+G:L4>L5      Formalism.VW.critLine                                     2      2        52 (    19)                3      2        52 (    23)
+G:L4>L5      Formalism.VW.gammaFactor_ne_zero                          1      1        33 (     4)                1      1        33 (     4)
+G:L4>L5      UpperTheory.riemannHypothesis_of_everyCharacter           2      2       251 (    19)                3      2       251 (    22)
+G:L4>L5      Claim.strip                                               1      1       105 (    15)            26133   4545    873617 (250959)
+G:L4>L5      Claim.zeta                                                1      1       105 (    26)            26134   4545    873617 (250985)
+G:L4>L5      Claim.zeta_iff                                            1      1       105 (     1)                1      1       105 (     1)
+G:L4>L5      Claim.prim_zero                                           1      1       105 (    11)            26130   4545    873617 (250922)
+G:L4>L5      Claim.prim_reflect                                        1      1       105 (    16)                2      1       105 (    22)
+G:L4>L5      Claim.factor_ne_zero                                      1      1       105 (    15)            26129   4545    873617 (250911)
+G:L4>L5      Claim.gamma_ne_zero                                       1      1       105 (     6)                1      1       105 (     6)
+G:L3>L4      UpperTheory.Top.imprimitive                               4      3       338 (    38)            26130   4545    873662 (250921)
+G:L2>L3      UpperTheory.Top.plugWin                                7141   1752    405385 ( 48128)            61540   8491   1654766 (647690)
+G:L2>L4      UpperTheory.Top.plugAll                                7140   1751    405216 ( 48127)            61543   8492   1654802 (647726)
+G:L2>L3      UpperTheory.Top.zeroFreeAll_of_topG                    4374   1250    288904 ( 31934)            28162   4787    921676 (276114)
+S            UpperTheory.Top.TopG                                   4360   1248    288558 ( 31878)            27738   4712    907664 (270232)
+G:L2>L3      UpperTheory.Top.shapeWin                               7168   1763    406166 ( 48339)            61470   8477   1652803 (647233)
+G:L2>L3      GlobalTheory.Fc.shape_of                               7150   1757    405863 ( 48262)            30647   5134    998523 (294454)
+G:L2>L3      UpperTheory.Top.supplyChi                              3850   1144    270074 ( 26367)            26202   4557    875121 (251265)
+G:L2>L4      UpperTheory.FinalTheorems.everyCharacter                  2      2        34 (     4)            66894  10251   1688352 (704329)
+G:L1>L4      UpperTheory.FinalTheorems.everyCharacter_of_row        3799   1138    268856 ( 26211)            46205   7053   1298514 (505403)
+G:L1>L4      UpperTheory.LiteratureTheorems.every_character_of_literature_of_vWin    3795   1133    269097 ( 26186)            33463   5197   1037518 (361861)
+G:L1>L2      UpperTheory.One.vwin_of_row                            3808   1138    268910 ( 26247)            38301   6288   1123504 (388243)
+G:L1>L2      UpperTheory.One.Join.automorphic_window_of_inputs      3794   1132    268339 ( 26184)            26134   4545    873615 (250921)
+G:L1         UpperTheory.Zero.LLC.recTExists                        3785   1131    268248 ( 26193)            30140   5049    953837 (297196)
+G:L1         galoisLocalGlobalStrong_recParameter: !! 0 candidates in index
+G:L1         UpperTheory.Gal.Int.galoisRepresentations_of_thetaLift    3833   1146    271638 ( 26320)            54708   8830   1425828 (534756)
+G:L1         UpperTheory.TP.K.tLiftK                                3817   1139    270960 ( 26253)            26146   4550    874492 (250954)
+
+layer statement cones (union of the "state" cones of the layer conclusions):
+  L1 Row0b (with IsRecT)     decls   3797 (theorems   883)  files   1136  file lines    268822  decl lines   26207
+      kinds: def:2376, theorem:845, abbrev:264, structure:259, lemma:38, class:8, instance:5, inductive:2
+      libs:  Development.AbelianVarietyTheory:1452, Development.AutomorphicArithmetic:1267, GroundTheory.AutomorphicForms:234, Formalism.SharpRestriction:231, ReciprocityTheory.ReductiveGroups:129, Formalism.LocalToGlobal:107, GroundTheory.GlobalFields:56, Development.WeilBound:45
+  L2 VWin + Green + Hyps     decls   6749 (theorems  1248)  files   1678  file lines    383178  decl lines   46486
+      kinds: def:4367, theorem:1202, structure:650, abbrev:466, lemma:46, class:8, instance:8, inductive:2
+      libs:  Formalism.LocalToGlobal:1861, Development.AutomorphicArithmetic:1539, Development.AbelianVarietyTheory:1488, Formalism.SharpRestriction:568, Formalism.LocalRingCardinality:271, GroundTheory.AutomorphicForms:250, ReciprocityTheory.ReductiveGroups:179, GroundTheory.GlobalFields:83
+  L3 ZeroFreeAll             decls      3 (theorems     0)  files      2  file lines       302  decl lines       7
+      kinds: def:2, structure:1
+      libs:  Formalism.SharpRestriction:3
+  L4 EveryCharacter          decls      1 (theorems     0)  files      1  file lines        19  decl lines       2
+      kinds: def:1
+      libs:  Development.AutomorphicArithmetic:1
+  L5 RiemannHypothesis       decls      0 (theorems     0)  files      0  file lines         0  decl lines       0
+      kinds: 
+      libs:  
+
+declaration `Hyps` referenced by UpperTheory.Top.plugWin (state cone):
+  GlobalTheory.Fc.Hyps  @ Development.AbelianVarietyTheory.Definitions.GlobalTwisting.APerTw.lean:23 (structure)
+
+glue theorems: prove cone (files / file lines / decl lines) and how much of it is already inside the
+statement cone of the layer it concludes (so the rest is the real "glue" that must be extracted):
+  Formalism.VW.rh_of_right                                       4544 files    873520 lines ( 250944 decl lines); inside target layer statement cone: 0 decls
+  Formalism.VW.rh_of_every                                       4546 files    873572 lines ( 250950 decl lines); inside target layer statement cone: 0 decls
+  Formalism.VW.critLine                                             2 files        52 lines (     23 decl lines); inside target layer statement cone: 0 decls
+  Formalism.VW.gammaFactor_ne_zero                                  1 files        33 lines (      4 decl lines); inside target layer statement cone: 0 decls
+  UpperTheory.riemannHypothesis_of_everyCharacter                   2 files       251 lines (     22 decl lines); inside target layer statement cone: 0 decls
+  Claim.strip                                                    4545 files    873617 lines ( 250959 decl lines); inside target layer statement cone: 0 decls
+  Claim.zeta                                                     4545 files    873617 lines ( 250985 decl lines); inside target layer statement cone: 0 decls
+  Claim.zeta_iff                                                    1 files       105 lines (      1 decl lines); inside target layer statement cone: 0 decls
+  Claim.prim_zero                                                4545 files    873617 lines ( 250922 decl lines); inside target layer statement cone: 0 decls
+  Claim.prim_reflect                                                1 files       105 lines (     22 decl lines); inside target layer statement cone: 0 decls
+  Claim.factor_ne_zero                                           4545 files    873617 lines ( 250911 decl lines); inside target layer statement cone: 0 decls
+  Claim.gamma_ne_zero                                               1 files       105 lines (      6 decl lines); inside target layer statement cone: 0 decls
+  UpperTheory.Top.imprimitive                                    4545 files    873662 lines ( 250921 decl lines); inside target layer statement cone: 0 decls
+  UpperTheory.Top.plugWin                                        8491 files   1654766 lines ( 647690 decl lines); inside target layer statement cone: 3 decls
+  UpperTheory.Top.plugAll                                        8492 files   1654802 lines ( 647726 decl lines); inside target layer statement cone: 1 decls
+  UpperTheory.Top.zeroFreeAll_of_topG                            4787 files    921676 lines ( 276114 decl lines); inside target layer statement cone: 3 decls
+  UpperTheory.Top.shapeWin                                       8477 files   1652803 lines ( 647233 decl lines); inside target layer statement cone: 1 decls
+  GlobalTheory.Fc.shape_of                                       5134 files    998523 lines ( 294454 decl lines); inside target layer statement cone: 1 decls
+  UpperTheory.Top.supplyChi                                      4557 files    875121 lines ( 251265 decl lines); inside target layer statement cone: 1 decls
+  UpperTheory.FinalTheorems.everyCharacter                      10251 files   1688352 lines ( 704329 decl lines); inside target layer statement cone: 1 decls
+  UpperTheory.FinalTheorems.everyCharacter_of_row                7053 files   1298514 lines ( 505403 decl lines); inside target layer statement cone: 1 decls
+  UpperTheory.LiteratureTheorems.every_character_of_literature_of_vWin   5197 files   1037518 lines ( 361861 decl lines); inside target layer statement cone: 1 decls
+  UpperTheory.One.vwin_of_row                                    6288 files   1123504 lines ( 388243 decl lines); inside target layer statement cone: 5059 decls
+  UpperTheory.One.Join.automorphic_window_of_inputs              4545 files    873615 lines ( 250921 decl lines); inside target layer statement cone: 4988 decls
+  UpperTheory.Zero.LLC.recTExists                                5049 files    953837 lines ( 297196 decl lines); (input theorem, no target layer)
+  UpperTheory.Gal.Int.galoisRepresentations_of_thetaLift         8830 files   1425828 lines ( 534756 decl lines); (input theorem, no target layer)
+  UpperTheory.TP.K.tLiftK                                        4550 files    874492 lines ( 250954 decl lines); (input theorem, no target layer)
