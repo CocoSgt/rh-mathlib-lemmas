@@ -11,6 +11,7 @@
 - **候选表**：§2 列了 52 条（含主线 glue 4 条），逐条到固定版 Mathlib 源码里搜过同名/同义声明（搜索脚本与结果在 `analysis/mathlib_check.py`、`analysis/mathlib_checks.txt`）；另有 15 条 Mathlib 已有、不必并入的记在 §2.3。52 条里 23 条（标 ★）已做进试点。
 - **试点**：`extracted/` 是一个独立 Lake 项目（pin 同一版 Mathlib），13 个文件、89 条公开定理，全部 `lake build -K jobs=4` 通过，`#print axioms` 只依赖 `propext, Classical.choice, Quot.sound`（§3）。原文件在摘出前都先原样编译过一遍（每条引理的内部依赖锥 = 0，§2 表中"依赖"列）。
 - **最重要的发现**：(1) 几块可以"整体并入"的通用文件：紧自伴算子谱定理（368 行）、正则局部环是整环（388 行）、半正定矩阵行列式不等式（Hadamard/Fischer/Minkowski，153 行）、代数 Farkas 引理 / Weyl–Minkowski（235 行）——这些在 Mathlib 里都缺；(2) 真正阻碍复用的是 import 列表"聚合式"写法：一个文件往往 import 上百个模块但证明只用其中几个，所以**依赖锥必须靠单独编译来量，不能看 import 列表**（§1.4）。
+- **GitHub（步骤 5，§3.5）**：全部交付物在 https://github.com/CocoSgt/rh-mathlib-lemmas ；mathlib4 fork 在 https://github.com/CocoSgt/mathlib4 ；第一批 3 个 PR 已开：[#46339](https://github.com/leanprover-community/mathlib4/pull/46339)（PosDef 行列式不等式）、[#46340](https://github.com/leanprover-community/mathlib4/pull/46340)（Jacobi 公式）、[#46341](https://github.com/leanprover-community/mathlib4/pull/46341)（Cauchy–Binet），CI 状态见 PROGRESS.md。
 
 ---
 
@@ -347,6 +348,24 @@ Lake 项目 `rhlemmas`，lean-toolchain `v4.33.1`，Mathlib pin 与 `source/lake
 - `bounded_of_tendsto_exp` 原来只对区间 `Ioc 1 2` 陈述（`abelian₂`、`L1` 是自动命名）；推广为任意 `Ioc a b`，并把最终结论拆成 `Complex.exists_norm_le_of_tendsto_exp`（有界）和 `Complex.eventually_norm_le_of_tendsto_exp`（最终有界）。
 - `Real.integral_bernstein` 用 Mathlib 已有的 `Polynomial.bernsteinPolynomial` 陈述：`∫ t in (0..1), (bernsteinPolynomial ℝ D i).eval t = 1 / (D + 1)`。
 - `CompactSelfAdjoint.lean` 开头的 `set_option maxSynthPendingDepth 1` 去掉后照常编译。
+
+### 3.5 移植到 Mathlib master 与第一批 PR（步骤 5）
+
+- **fork**：https://github.com/CocoSgt/mathlib4（基线 upstream/master `a495318f`，toolchain `v4.37.0-rc1`，比钉住的 `0df444a3` 新 2696 个提交）。
+- **选了 3 条最干净、最通用的试点**，先在 master 源码里核实不存在（master 只有 `PosDef.det_pos`、`PosSemidef.det_nonneg`、`derivative_det_one_add_X_smul`、`det_mul`），再移植、推广、过 Mathlib 的 linter（`lake build --wfail`、`lake exe lint-style`、`lake exe mk_all --check`）：
+  1. `Analysis/Matrix/PosDef/Det.lean` → `Mathlib/Analysis/Matrix/Order.lean`：Minkowski / Fischer / Hadamard 行列式不等式，6 条定理，从 ℂ 推广到 `RCLike 𝕜`（master 的 PosDef 理论已经是 `RCLike` 的；`CFC.sqrt` 和 Loewner 序都在这个文件里，所以放这里而不是 `PosDef.lean`——后者被 `Order.lean` import，不能反向）。
+  2. `Analysis/Matrix/Deriv.lean` → 新文件 `Mathlib/Analysis/Matrix/Deriv.lean`：Jacobi 公式 `hasDerivAt_det` + `hasDerivAt_log_det_re`，推广到任意有限指标集、任意赋范交换 `𝕜`-代数 / `RCLike`。
+  3. `LinearAlgebra/Matrix/Det.lean` 里的 Cauchy–Binet → `Mathlib/LinearAlgebra/Matrix/Determinant/Basic.lean`：`det_mul_eq_sum_over_functions`，推广到任意指标集。
+- **移植时遇到的变化**（08-21 → 11-21 的 Mathlib）：(a) `ComplexOrder` 的 `≤` 现在要求虚部相等（`z ≤ w ↔ z.re ≤ w.re ∧ z.im = w.im`），所以陈述用 `RCLike.re`；(b) 类型变量 `𝕜` 上不能用 `.re` 这种字段记法（"Field projection operates on types of the form C ..."），要写 `RCLike.re`；(c) `Finset.prod_le_prod` 现在要 `[MulLeftMono]`（ℝ 没有），改用 `Finset.prod_le_prod₀`；(d) 数字投影 `.2` 被 linter 禁止，用 `.property`；(e) `unusedSectionVars` / `unusedDecidableInType` linter 要求 `omit [DecidableEq n] in`；(f) 新文件要 `lake exe mk_all` 更新 `Mathlib.lean`。
+- **PR**（都由 GLM 5.4 通过 DeepSeek Harness 开，说明里写了原文件:行号、镜像链接、出处和 license 提醒；提交信息带 `Co-authored-by: Levent Alpöge <alpoge@fas.harvard.edu>`，文件头 Authors 加 Levent Alpöge）：
+
+| PR | 内容 | CI |
+|---|---|---|
+| [#46339](https://github.com/leanprover-community/mathlib4/pull/46339) | `feat(Analysis/Matrix/Order): add Minkowski, Fischer and Hadamard determinant inequalities` | 见 PROGRESS.md 最后一行 |
+| [#46340](https://github.com/leanprover-community/mathlib4/pull/46340) | `feat(Analysis/Matrix/Deriv): add Jacobi's formula for the derivative of the determinant` | 同上 |
+| [#46341](https://github.com/leanprover-community/mathlib4/pull/46341) | `feat(LinearAlgebra/Matrix/Determinant): add the Cauchy–Binet formula as a sum over functions` | 同上 |
+
+- 没有放进第一批但已经整理好、可以直接移植的：Bernstein 基积分、`det_mulLeft/mulRight`（矩阵空间上左/右乘的行列式）、`Equiv.Perm.eq_one_of_forall_le`、tent 函数单位分解、紧自伴谱定理、正则局部环是整环、Farkas / Weyl–Minkowski（后三个较大，需要拆分并与 master 的新进展比对）。
 
 ---
 

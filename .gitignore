@@ -19,3 +19,8 @@ analysis/*.jsonl
 
 # OS
 .DS_Store
+
+# Sandbox workarounds: workspace-local Lean toolchains and Mathlib download cache
+.elan/
+.cache/
+STORY.md

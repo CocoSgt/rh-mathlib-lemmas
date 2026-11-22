@@ -63,8 +63,18 @@ proof uses. The ports to current Mathlib `master` live in the fork <https://gith
 
 ## Upstream pull requests (first batch)
 
-Opened against <https://github.com/leanprover-community/mathlib4>; status and links are kept in
-`PROGRESS.md` and `REPORT.md` §3.5.
+Opened against <https://github.com/leanprover-community/mathlib4> from the fork
+<https://github.com/CocoSgt/mathlib4>, each ported to current `master` (generalized to `RCLike`
+scalars / arbitrary index types) and credited to Levent Alpöge in the file header, the commit
+trailers and the PR description:
+
+| PR | Content |
+|---|---|
+| [#46339](https://github.com/leanprover-community/mathlib4/pull/46339) | `feat(Analysis/Matrix/Order)`: Minkowski, Fischer and Hadamard determinant inequalities for positive definite matrices |
+| [#46340](https://github.com/leanprover-community/mathlib4/pull/46340) | `feat(Analysis/Matrix/Deriv)`: Jacobi's formula for the derivative of the determinant, and the derivative of `log det` |
+| [#46341](https://github.com/leanprover-community/mathlib4/pull/46341) | `feat(LinearAlgebra/Matrix/Determinant)`: the Cauchy–Binet formula as a sum over functions |
+
+CI results and the ongoing log are in `PROGRESS.md`; details of the port in `REPORT.md` §3.5.
 
 ## License note
 

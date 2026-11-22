@@ -35,6 +35,13 @@
    - 每个 PR 的说明写清：内容来自 Levent Alpöge 2026-11-20 发布的黎曼猜想 Lean 形式化（附原文件:行号和镜像链接），由 GLM 5.4 通过 DeepSeek Harness 抽取、整理、提交；提交信息里加 `Co-authored-by: Levent Alpöge`（拿不到他的邮箱就只在说明里写）
    - 开完 PR 等 CI：失败就修，修到通过或确认是 Mathlib 那边的问题为止。PR 链接和 CI 结果记进 PROGRESS.md 和 REPORT.md
 
+6. **主线骨架**（第一批 PR 开完、CI 跑完之后做）。这才是本项目的主要目标：让后人能单独引用证明主线上的中间结论，不用 import 整份证明。只有 32 GB 内存、硬盘约 60 GB，不整库编译，按下面的办法做：
+   - **每层的命题单独成文件**：主线五层（Row0b Galois 表示 → VWin 自守窗口 + Green + Hyps → ZeroFreeAll → EveryCharacter → RiemannHypothesis），每层的结论写成一个只 import Mathlib 的命题文件（`def LayerN : Prop := …`，用到的本项目定义一并搬过来，搬不动的记下原因）。放在新目录 `skeleton/`，独立 Lake 项目，同一版 Mathlib
+   - **层与层之间的推出关系单独证明**：`LayerN → LayerN+1` 这类衔接定理，凡是能在只 import Mathlib + 命题文件的环境下证出来的（上一轮已实测 `rh_of_right`、`RiemannHypothesisOfEveryCharacter`、`CritLine` 可以），都放进 `skeleton/` 编译通过、`#print axioms` 核对。结果是一条"只要第 1 层成立，就推出黎曼猜想"的链，每一环都能单独引用
+   - **静态依赖图**：不编译，从源码文本解析每条主线定理的证明里引用了哪些声明（上一轮的 `analysis/decls.jsonl` 可复用），算出每层结论的近似依赖锥（文件数、行数），找出依赖锥最小的那几层和最大的瓶颈。输出 `analysis/mainline_graph.*` 和一张主线依赖图（Mermaid 写进 `SKELETON.md`）
+   - **挑一层真抽出来**：选依赖锥最小、最低的一层，把它的证明连同依赖锥抽进 `skeleton/` 编译通过（一次编译一个文件，单进程约 6 GB，最多两个并行）。抽不动就在 SKELETON.md 写清卡在哪、要多少文件
+   - 交付 `SKELETON.md`（主线每层说明、依赖锥大小、哪些已能单独引用、哪些还不能及原因）；`skeleton/` 推到 `CocoSgt/rh-mathlib-lemmas`。这一步不往 Mathlib 开 PR
+
 ## 交付
 
 - `REPORT.md`：结构图、候选表（至少 30 条）、试点结果、遇到的问题
@@ -45,7 +52,9 @@
 
 ## 规矩
 
+- `STORY.md` 不是给你的，不读不改不提交
 - `source/` 只读，任何改动都放在 `extracted/` 或别的新目录里
+- 提交身份统一用 `Beyond the AGI Bar <beyond@agi.bar>`（两个仓库的本地 git config 已设好，别改回去，也别用 --author 覆盖）。rh-mathlib-lemmas 的第一个提交已改写为 e007519，PROGRESS.md 里的 f00ddab 指的就是它
 - GitHub 上的操作只做第 5 步写的这些：自己的仓库、mathlib4 的 fork 和 PR。别人的仓库只读，不 force-push 别人的分支，不在别人的 issue/PR 里评论。审稿人在你的 PR 里提意见，可以回复、照着改
 - `lake build` 加 `-j 4` 左右，别把内存吃满（这台机器上还有别的任务在跑 Lean）
 - 功劳归 Levent Alpöge 和 Claude；抽出来的每个文件开头写明出处
