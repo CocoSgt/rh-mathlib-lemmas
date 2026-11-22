@@ -1,0 +1,33 @@
+scratch/src/Development_CharacterBoxes_ClaimStrip.lean:1:0: error: unknown module prefix 'Development'
+
+No directory 'Development' or file 'Development.olean' in the search path entries:
+/Users/admin/Documents/Codex/projects/rh-mathlib-lemmas/extracted/.lake/packages/Cli/.lake/build/lib/lean
+/Users/admin/Documents/Codex/projects/rh-mathlib-lemmas/extracted/.lake/packages/batteries/.lake/build/lib/lean
+/Users/admin/Documents/Codex/projects/rh-mathlib-lemmas/extracted/.lake/packages/Qq/.lake/build/lib/lean
+/Users/admin/Documents/Codex/projects/rh-mathlib-lemmas/extracted/.lake/packages/aesop/.lake/build/lib/lean
+/Users/admin/Documents/Codex/projects/rh-mathlib-lemmas/extracted/.lake/packages/proofwidgets/.lake/build/lib/lean
+/Users/admin/Documents/Codex/projects/rh-mathlib-lemmas/extracted/.lake/packages/importGraph/.lake/build/lib/lean
+/Users/admin/Documents/Codex/projects/rh-mathlib-lemmas/extracted/.lake/packages/LeanSearchClient/.lake/build/lib/lean
+/Users/admin/Documents/Codex/projects/rh-mathlib-lemmas/extracted/.lake/packages/plausible/.lake/build/lib/lean
+/Users/admin/Documents/Codex/projects/rh-mathlib-lemmas/extracted/.lake/packages/mathlib/.lake/build/lib/lean
+/Users/admin/Documents/Codex/projects/rh-mathlib-lemmas/extracted/.lake/build/lib/lean
+/Users/admin/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean
+/Users/admin/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean
+       12.93 real         0.68 user         2.33 sys
+           660946944  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               48534  page reclaims
+               60935  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                1026  voluntary context switches
+               62625  involuntary context switches
+          6681333776  instructions retired
+          4039884556  cycles elapsed
+           136929072  peak memory footprint

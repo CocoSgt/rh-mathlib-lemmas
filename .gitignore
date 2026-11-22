@@ -1,0 +1,21 @@
+# Alpöge–Claude proof mirror (1.7 GB, kept read-only here):
+# https://github.com/CocoSgt/riemann-hypothesis-lean
+source/
+
+# Harness runtime files
+.run/
+
+# mathlib4 fork clone used for step 5 (porting + PRs); its own git repo
+mathlib4/
+
+# Lake build artifacts / package checkouts
+.lake/
+**/.lake/
+
+# Large analysis data (> 1 MB each, ~550 MB total). Regenerate with the scripts in
+# analysis/ (see analysis/summary.txt); the small *.txt summaries are kept.
+analysis/*.json
+analysis/*.jsonl
+
+# OS
+.DS_Store

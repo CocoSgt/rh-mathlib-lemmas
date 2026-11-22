@@ -1,0 +1,585 @@
+### Lemmata.AddValuationProducts.AddValProd:7  Bl.AddValuationProducts.addVal_prod_alt  [private]
+private lemma addVal_prod_alt {O : Type u_1} [CommRing O] [IsDomain O] [IsDiscreteValuationRing O] {ι : Type} (s : Finset ι) (a : ι → O) : IsDiscreteValuationRing.addVal O (∏ i ∈ s, a i) = ∑ i ∈ s, IsDiscreteValuationRing.addVal O (a i)
+
+### Lemmata.AddValuationProducts.AddValProd:17  Bl.AddValuationProducts.goal1
+theorem goal1 : ∀ {O : Type u_1} [inst : CommRing.{u_1} O] [inst_1 : IsDomain.{u_1} O] [inst_2 : IsDiscreteValuationRing.{u_1} O] {ι : Type} [Fintype.{0} ι] [DecidableEq.{1} ι] (N : Submodule.{u_1, u_1} O (ι → O)) (e : LinearEquiv.{u_1, u_1, u_1, u_1} (RingHom.id.{u_1} O) (ι → O) (Subtype.{u_1 + 1} fun (x : ι → O) ↦ Membership.mem.{u_1, u_1} N x)), Eq.{1} (Module.length.{u_1, u_1} O (HasQuotient.Quotient.{u_1, u_1} (ι → O) N)) (DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (IsDiscreteValuationRing.addVal.{u_1} O) (DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1} LinearMap.det.{u_1, u_1} (LinearMap.comp.{u_1, u_1, u_1, u_1, u_1, u_1} (Submodule.subtype.{u_1, u_1} N) (LinearEquiv.toLinearMap.{u_1, u_1, u_1, u_1} e))))
+
+### Lemmata.B110.ExistsMoved:5  Bl.b110.exists_moved  [private]
+private lemma exists_moved {n : Type} [DecidableEq n] (σ : Equiv.Perm n) (hσ : σ ≠ 1) (i : n) : ∃ j, j ≠ i ∧ σ j ≠ j
+
+### Lemmata.B110.ExistsMoved:18  Bl.b110.goal1
+theorem goal1 : ∀ {n : Type} [inst : Fintype.{0} n] [inst_1 : DecidableEq.{1} n] (A : Real → Matrix.{0, 0, 0} n n Complex) (A' : Matrix.{0, 0, 0} n n Complex), Eq.{1} (A 0) 1 → (∀ (i j : n), HasDerivAt.{0, 0} (fun (t : Real) ↦ A t i j) (A' i j) 0) → HasDerivAt.{0, 0} (fun (t : Real) ↦ Matrix.det.{0, 0} (A t)) (Matrix.trace.{0, 0} A') 0
+
+### Lemmata.B1962s.FreeLat:19  Bl.FreeLattices.tf  [private]
+private theorem tf (p : Nat) [Fact (Nat.Prime p)] (σ : Type) : Module.IsTorsionFree (PadicInt p) (MvPolynomial σ (Padic p))
+
+### Lemmata.B1962s.FreeLat:30  Bl.FreeLattices.goal1
+theorem goal1 : Bl.FreeLattices.FreeLat
+
+### Lemmata.Cancellation.EnnrealVolumeRatioStepCancel:7  Bl.VolumeRatioCancellation.ennreal_volume_ratio_step_cancel  [private]
+private lemma ennreal_volume_ratio_step_cancel {u w z : WithZero (Multiplicative ℤ)} (hz : z ≠ 0) (h : u * z ≤ w * z) : u ≤ w
+
+### Lemmata.Cancellation.EnnrealVolumeRatioStepCancel:12  Bl.VolumeRatioCancellation.goal1
+theorem goal1 : ∀ {R : Type u_1} [inst : CommRing.{u_1} R] [inst_1 : IsDedekindDomain.{u_1} R] {K : Type u_2} [inst_2 : Field.{u_2} K] [inst_3 : Algebra.{u_1, u_2} R K] [inst_4 : IsFractionRing.{u_1, u_2} R K] (T : Finset.{u_1} (IsDedekindDomain.HeightOneSpectrum.{u_1} R)) (a c : IsDedekindDomain.HeightOneSpectrum.{u_1} R → K), (∀ (p : IsDedekindDomain.HeightOneSpectrum.{u_1} R), Membership.mem.{u_1, u_1} T p → Ne.{u_2 + 1} (c p) 0) → Exists.{u_2 + 1} fun (t : K) ↦ And (∀ (p : IsDedekindDomain.HeightOneSpectrum.{u_1} R), Membership.mem.{u_1, u_1} T p → LE.le.{0} (DFunLike.coe.{u_2 + 1, u_2 + 1, 1} (IsDedekindDomain.HeightOneSpectrum.valuation.{u_1, u_2} K p) (HSub.hSub.{u_2, u_2, u_2} t (a p))) (DFunLike.coe.{u_2 + 1, u_2 + 1, 1} (IsDedekindDomain.HeightOneSpectrum.valuation.{u_1, u_2} K p) (c p))) (∀ (p : IsDedekindDomain.HeightOneSpectrum.{u_1} R), Not (Membership.mem.{u_1, u_1} T p) → LE.le.{0} (DFunLike.coe.{u_2 + 1, u_2 + 1, 1} (IsDedekindDomain.HeightOneSpectrum.valuation.{u_1, u_2} K p) t) 1)
+
+### Lemmata.CofiniteContinuousBounds.LeOfCofinite:5  Bl.CofiniteContinuousBounds.le_of_cofinite  [private]
+private lemma le_of_cofinite {f g : ℂ → ℝ} (hf : Continuous f) (hg : Continuous g) {S : Set ℂ} (hS : S.Finite) (h : ∀ s, s ∉ S → f s ≤ g s) (s : ℂ) : f s ≤ g s
+
+### Lemmata.CofiniteContinuousBounds.LeOfCofinite:13  Bl.CofiniteContinuousBounds.cont_bound  [private]
+private lemma cont_bound (K : ℝ) (m : ℕ) (q : ℂ[X]) : Continuous fun s : ℂ => K * (1 + ‖s‖) ^ m * ‖q.eval s‖
+
+### Lemmata.CofiniteContinuousBounds.LeOfCofinite:19  Bl.CofiniteContinuousBounds.key  [private]
+private lemma key (K : ℝ) (m : ℕ) (n : ℕ) : ∀ (p q : ℂ[X]), q.natDegree = n → q ≠ 0 → (∀ s : ℂ, ‖p.eval s‖ ≤ K * (1 + ‖s‖) ^ m * ‖q.eval s‖) → q ∣ p
+
+### Lemmata.CofiniteContinuousBounds.LeOfCofinite:57  Bl.CofiniteContinuousBounds.goal1
+theorem goal1 : ∀ {p q : Polynomial.{0} Complex}, Ne.{1} q 0 → ∀ (K : Real) (m : Nat), (∀ (s : Complex), Ne.{1} (Polynomial.eval.{0} s q) 0 → LE.le.{0} (Norm.norm.{0} (Polynomial.eval.{0} s p)) (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} K (HPow.hPow.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} 1 (Norm.norm.{0} s)) m)) (Norm.norm.{0} (Polynomial.eval.{0} s q)))) → Dvd.dvd.{0} q p
+
+### Lemmata.ComplementLifts.ComplLift:7  Bl.ComplementLifts.compl_lift  [private]
+private lemma compl_lift {R : Type*} {M : Type*} [CommRing R] [AddCommGroup M] [Module R M] (N N' : Submodule R M) (hN : IsCompl N N') (A B : Submodule R N) (hAB : IsCompl A B) : IsCompl (A.map N.subtype) (B.map N.subtype ⊔ N')
+
+### Lemmata.ComplementLifts.ComplLift:29  Bl.ComplementLifts.goal1
+theorem goal1 : ∀ {R : Type u_1} {M : Type u_2} [inst : CommRing.{u_1} R] [IsDomain.{u_1} R] [IsPrincipalIdealRing.{u_1} R] [inst_3 : AddCommGroup.{u_2} M] [inst_4 : Module.{u_1, u_2} R M] (N N' S : Submodule.{u_1, u_2} R M), IsCompl.{u_2} N N' → ∀ [Module.Finite.{u_1, u_2} R (Subtype.{u_2 + 1} fun (x : M) ↦ Membership.mem.{u_2, u_2} N x)], LE.le.{u_2} S N → (∀ (a : R) (x : M), Ne.{u_1 + 1} a 0 → Membership.mem.{u_2, u_2} S (HSMul.hSMul.{u_1, u_2, u_2} a x) → Membership.mem.{u_2, u_2} S x) → Exists.{u_2 + 1} fun (T : Submodule.{u_1, u_2} R M) ↦ IsCompl.{u_2} S T
+
+### Lemmata.CurryModusPonens.CurryMp:8  Bl.CurryModusPonens.curry_mp  [private]
+private lemma curry_mp {ι : Type u_1} {κ : Type u_2} {X : Type} [Fintype ι] [Fintype κ] [MeasurableSpace X] (μ : Measure X) [SigmaFinite μ] : MeasurePreserving (Function.curry : (ι × κ → X) → ι → κ → X) (Measure.pi fun _ : ι × κ => μ) (Measure.pi fun _ : ι => Measure.pi fun _ : κ => μ)
+
+### Lemmata.CurryModusPonens.CurryMp:27  Bl.CurryModusPonens.goal1
+theorem goal1 : ∀ (ι : Type u_1) (κ : Type u_2) [inst : Fintype.{u_1} ι] [inst_1 : Fintype.{u_2} κ], @MeasureTheory.MeasurePreserving.{max u_1 u_2, max u_1 u_2} (Prod.{u_1, u_2} ι κ → Complex) (ι → κ → Complex) (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (Prod.{u_1, u_2} ι κ → Complex) (@MeasureTheory.MeasureSpace.pi.{max u_1 u_2, 0} (Prod.{u_1, u_2} ι κ) (@instFintypeProd.{u_1, u_2} ι κ inst inst_1) (fun (a : Prod.{u_1, u_2} ι κ) ↦ Complex) fun (i : Prod.{u_1, u_2} ι κ) ↦ @measureSpaceOfInnerProductSpace.{0} Complex Complex.instNormedAddCommGroup instInnerProductSpaceRealComplex Complex.instFiniteDimensionalReal Complex.measurableSpace Complex.borelSpace)) (@MeasureTheory.MeasureSpace.toMeasurableSpace.{max u_1 u_2} (ι → κ → Complex) (@MeasureTheory.MeasureSpace.pi.{u_1, u_2} ι inst (fun (a : ι) ↦ κ → Complex) fun (i : ι) ↦ @MeasureTheory.MeasureSpace.pi.{u_2, 0} κ inst_1 (fun (a : κ) ↦ Complex) fun (i : κ) ↦ @measureSpaceOfInnerProductSpace.{0} Complex Complex.instNormedAddCommGroup instInnerProductSpaceRealComplex Complex.instFiniteDimensionalReal Complex.measurableSpace Complex.borelSpace)) (@Function.curry.{u_1, u_2, 1} ι κ Complex) (@MeasureTheory.MeasureSpace.volume.{max u_1 u_2} (Prod.{u_1, u_2} ι κ → Complex) (@MeasureTheory.MeasureSpace.pi.{max u_1 u_2, 0} (Prod.{u_1, u_2} ι κ) (@instFintypeProd.{u_1, u_2} ι κ inst inst_1) (fun (a : Prod.{u_1, u_2} ι κ) ↦ Complex) fun (i : Prod.{u_1, u_2} ι κ) ↦ @measureSpaceOfInnerProductSpace.{0} Complex Complex.i
+
+### Lemmata.Denominators.Denom:10  Bl.DenominatorsAlt.denom  [private]
+private lemma denom (c : E) : ∃ k : ℕ, 0 < k ∧ ∃ w : 𝓞 E, (w : E) = (k : E) * c
+
+### Lemmata.Denominators.Denom:25  Bl.DenominatorsAlt.goal1
+theorem goal1 (M : Submodule (𝓞 E) (Fin n → E)) (hsp : Submodule.span E (M : Set (Fin n → E)) = ⊤) (v : Fin n → E) : ∃ m : ℕ, 0 < m ∧ (m : 𝓞 E) • v ∈ M
+
+### Lemmata.DiscreteValuationQuotients.LenQuotSpan:7  Bl.DiscreteValuationQuotients.lenQuotSpan  [private]
+private lemma lenQuotSpan {O : Type*} [CommRing O] [IsDomain O] [IsDiscreteValuationRing O] {x : O} (hx : x ≠ 0) : Module.length O (O ⧸ Ideal.span ({x} : Set O)) = IsDiscreteValuationRing.addVal O x
+
+### Lemmata.DiscreteValuationQuotients.LenQuotSpan:16  Bl.DiscreteValuationQuotients.addValUnit  [private]
+private lemma addValUnit {O : Type*} [CommRing O] [IsDomain O] [IsDiscreteValuationRing O] (u : Oˣ) : IsDiscreteValuationRing.addVal O (u : O) = 0
+
+### Lemmata.DiscreteValuationQuotients.LenQuotSpan:22  Bl.DiscreteValuationQuotients.addValProd  [private]
+private lemma addValProd {O : Type*} [CommRing O] [IsDomain O] [IsDiscreteValuationRing O] {ι : Type*} (s : Finset ι) (g : ι → O) : IsDiscreteValuationRing.addVal O (∏ i ∈ s, g i) = ∑ i ∈ s, IsDiscreteValuationRing.addVal O (g i)
+
+### Lemmata.DiscreteValuationQuotients.LenQuotSpan:32  Bl.DiscreteValuationQuotients.goal1
+theorem goal1 : ∀ {O : Type u_1} {M : Type u_2} [inst : CommRing.{u_1} O] [inst_1 : IsDomain.{u_1} O] [inst_2 : IsDiscreteValuationRing.{u_1} O] [inst_3 : AddCommGroup.{u_2} M] [inst_4 : Module.{u_1, u_2} O M] [Module.Free.{u_1, u_2} O M] [Module.Finite.{u_1, u_2} O M] (φ : LinearMap.{u_1, u_1, u_2, u_2} (RingHom.id.{u_1} O) M M), Function.Injective.{u_2 + 1, u_2 + 1} (DFunLike.coe.{u_2 + 1, u_2 + 1, u_2 + 1} φ) → Eq.{1} (Module.length.{u_1, u_2} O (HasQuotient.Quotient.{u_2, u_2} M (LinearMap.range.{u_1, u_1, u_2, u_2} φ))) (DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (IsDiscreteValuationRing.addVal.{u_1} O) (DFunLike.coe.{max (u_1 + 1) (u_2 + 1), u_2 + 1, u_1 + 1} LinearMap.det.{u_2, u_1} φ))
+
+### Lemmata.FiberEquations.FiberEq:8  Bl.FiberEquations.fiber_eq  [private]
+private lemma fiber_eq {E : Type} [Field E] (w : InfinitePlace E) [DecidableEq (InfinitePlace E)] [DecidableEq (E →+* ℂ)] [Fintype (E →+* ℂ)] : ({φ | InfinitePlace.mk φ = w} : Finset (E →+* ℂ)) = {w.embedding, ComplexEmbedding.conjugate w.embedding}
+
+### Lemmata.FiberEquations.FiberEq:25  Bl.FiberEquations.goal1
+theorem goal1 (E : Type) [Field E] [NumberField E] [IsTotallyComplex E] (x : E) : ((Algebra.trace ℚ E x : ℚ) : ℝ) = ∑ w : InfinitePlace E, 2 * (w.embedding x).re
+
+### Lemmata.FirstBlockLemmaA.Imports:7  Bl.FirstBlockLemmaA.goal1
+theorem goal1 : ∀ {k : Type u_1} [inst : Field.{u_1} k] {σ : Type u_2} [Fintype.{u_2} σ] (H : MvPolynomial.{u_2, u_1} σ k) (d : Nat), (∀ (m : Finsupp.{u_2, 0} σ Nat), Membership.mem.{u_2, u_2} (MvPolynomial.support.{u_1, u_2} H) m → Eq.{1} (DFunLike.coe.{max 1 (u_2 + 1), max 1 (u_2 + 1), 1} Finsupp.degree.{u_2, 0} m) d) → ∀ (c : k) (v : σ → k), Eq.{u_1 + 1} (DFunLike.coe.{max (u_1 + 1) (u_2 + 1), max (u_1 + 1) (u_2 + 1), u_1 + 1} (MvPolynomial.eval.{u_1, u_2} (HSMul.hSMul.{u_1, max u_1 u_2, max u_1 u_2} c v)) H) (HMul.hMul.{u_1, u_1, u_1} (HPow.hPow.{u_1, 0, u_1} c d) (DFunLike.coe.{max (u_1 + 1) (u_2 + 1), max (u_1 + 1) (u_2 + 1), u_1 + 1} (MvPolynomial.eval.{u_1, u_2} v) H))
+
+### Lemmata.FirstBlockLemmaB.Imports:7  Bl.FirstBlockLemmaB.goal1
+theorem goal1 : ∀ {R : Type u_4} [inst : CommRing.{u_4} R] {P Q : Ideal.{u_4} R} [Ideal.IsPrime.{u_4} P], LE.le.{u_4} P Q → ∀ {x : R}, Membership.mem.{u_4, u_4} Q x → Not (Membership.mem.{u_4, u_4} P x) → LE.le.{0} (HAdd.hAdd.{0, 0, 0} (ringKrullDim.{u_4} (HasQuotient.Quotient.{u_4, u_4} R Q)) 1) (ringKrullDim.{u_4} (HasQuotient.Quotient.{u_4, u_4} R P))
+
+### Lemmata.FirstBlockLemmaC.Imports:5  Bl.FirstBlockLemmaC.goal1
+theorem goal1 : ∀ {p : Nat} [inst : Fact (Nat.Prime p)] {m : Nat}, Ne.{1} m 0 → ∀ {ζ : PadicAlgCl p}, Eq.{1} (HPow.hPow.{0, 0, 0} ζ m) 1 → Eq.{1} (Norm.norm.{0} ζ) 1
+
+### Lemmata.FirstBlockLemmaD.Imports:5  Bl.FirstBlockLemmaD.goal1
+theorem goal1 : ∀ {p : Nat} [inst : Fact (Nat.Prime p)] (x y : PadicAlgCl p), LE.le.{0} (Norm.norm.{0} (HSub.hSub.{0, 0, 0} x y)) (Max.max.{0} (Norm.norm.{0} x) (Norm.norm.{0} y))
+
+### Lemmata.FirstBlockLemmaE.Imports:5  Bl.FirstBlockLemmaE.goal1
+theorem goal1 : ∀ {L : Type} [inst : Field.{0} L] [NumberField.{0} L] (x : L) (c : Int), Eq.{1} (HPow.hPow.{0, 0, 0} x 2) (HAdd.hAdd.{0, 0, 0} x (Int.cast.{0} c)) → Exists.{1} fun (X : NumberField.RingOfIntegers.{0} L) ↦ And (Eq.{1} (NumberField.RingOfIntegers.val.{0} X) x) (Eq.{1} (HPow.hPow.{0, 0, 0} X 2) (HAdd.hAdd.{0, 0, 0} X (Int.cast.{0} c)))
+
+### Lemmata.FirstBlockLemmaF.Imports:5  Bl.FirstBlockLemmaF.goal1
+theorem goal1 : ∀ (p : Nat) [hp : Fact (Nat.Prime p)] {a b : PadicComplex p} {c : Real}, LE.le.{0} (Norm.norm.{0} a) c → LE.le.{0} (Norm.norm.{0} b) c → LE.le.{0} (Norm.norm.{0} (HSub.hSub.{0, 0, 0} a b)) c
+
+### Lemmata.FirstBlockLemmaG.Imports:5  Bl.FirstBlockLemmaG.goal1
+theorem goal1 : ∀ {O : Type} [inst : CommRing.{0} O] [inst_1 : IsLocalRing.{0} O] {a m : O}, IsUnit.{0} a → Membership.mem.{0, 0} (IsLocalRing.maximalIdeal.{0} O) m → IsUnit.{0} (HSub.hSub.{0, 0, 0} a m)
+
+### Lemmata.FirstBlockLemmaH.Imports:5  Bl.FirstBlockLemmaH.goal1
+theorem goal1 : ∀ {E : Type} [inst : Field.{0} E] [NumberField.{0} E] {V : Type} [inst_2 : AddCommGroup.{0} V] [inst_3 : Module.{0, 0} E V] [inst_4 : Module.{0, 0} (NumberField.RingOfIntegers.{0} E) V] [IsScalarTower.{0, 0, 0} (NumberField.RingOfIntegers.{0} E) E V] {ι : Type} [Fintype.{0} ι] [DecidableEq.{1} ι] {b : Module.Basis.{0, 0, 0} ι E V} {M : Submodule.{0, 0} (NumberField.RingOfIntegers.{0} E) V}, Module.Finite.{0, 0} (NumberField.RingOfIntegers.{0} E) (Subtype.{1} fun (x : V) ↦ Membership.mem.{0, 0} M x) → Exists.{1} fun (s : NumberField.RingOfIntegers.{0} E) ↦ And (Membership.mem.{0, 0} (nonZeroDivisors.{0} (NumberField.RingOfIntegers.{0} E)) s) (∀ (v : V), Membership.mem.{0, 0} M v → ∀ (i : ι), Membership.mem.{0, 0} (RingHom.range.{0, 0} (Algebra.algebraMap.{0, 0} (NumberField.RingOfIntegers.{0} E) E)) (HMul.hMul.{0, 0, 0} (DFunLike.coe.{1, 1, 1} (Algebra.algebraMap.{0, 0} (NumberField.RingOfIntegers.{0} E) E) s) (DFunLike.coe.{1, 1, 1} (DFunLike.coe.{1, 1, 1} (Module.Basis.repr.{0, 0, 0} b) v) i)))
+
+### Lemmata.FirstBlockLemmaI.Imports:5  Bl.FirstBlockLemmaI.goal1
+theorem goal1 : ∀ {R : Type} [inst : CommRing.{0} R] {u z : R}, IsUnit.{0} u → Membership.mem.{0, 0} (Ideal.jacobson.{0} Bot.bot.{0}) z → IsUnit.{0} (HAdd.hAdd.{0, 0, 0} u z)
+
+### Lemmata.FirstBlockLemmaJ.Imports:7  Bl.FirstBlockLemmaJ.goal1
+theorem goal1 : ∀ {V : Type u_1} [inst : NormedAddCommGroup.{u_1} V] [inst_1 : NormedSpace.{0, u_1} Complex V] {g : V → Complex} {x : V} {ε : Real}, DifferentiableOn.{0, u_1, 0} Complex g (Metric.ball.{u_1} x ε) → ∀ {z : V}, Membership.mem.{u_1, u_1} (Metric.ball.{u_1} x ε) z → Filter.EventuallyEq.{u_1, 0} (nhds.{u_1} z) g 0 → ∀ (y : V), Membership.mem.{u_1, u_1} (Metric.ball.{u_1} x ε) y → Eq.{1} (g y) 0
+
+### Lemmata.FirstBlockLemmaK.Imports:5  Bl.FirstBlockLemmaK.goal1
+theorem goal1 : ∀ {R : Type} [inst : CommRing.{0} R] {A : Type} [inst_1 : CommRing.{0} A] [inst_2 : Algebra.{0, 0} R A] (aug : AlgHom.{0, 0, 0} R A R), IsNilpotent.{0} (RingHom.ker.{0, 0, 0} aug) → ∀ (a : A), IsUnit.{0} (DFunLike.coe.{1, 1, 1} aug a) → IsUnit.{0} a
+
+### Lemmata.FirstBlockLemmaL.Imports:5  Bl.FirstBlockLemmaL.goal1
+theorem goal1 : ∀ (ℓ : Nat) [Fact (Nat.Prime ℓ)] (s : Multiset.{0} Nat), (∀ (x : Nat), Membership.mem.{0, 0} s x → Ne.{1} x 0) → Eq.{1} (padicValNat ℓ (Multiset.prod.{0} s)) (Multiset.sum.{0} (Multiset.map.{0, 0} (padicValNat ℓ) s))
+
+### Lemmata.FunctionAtZero.FZero:5  Bl.FunctionAtZero.f_zero  [private]
+private lemma f_zero (f : Real → Complex) (hmul : ∀ s t, f (s + t) = f s * f t) (hn : ∀ s, ‖f s‖ = 1) : f 0 = 1
+
+### Lemmata.FunctionAtZero.FZero:16  Bl.FunctionAtZero.goal1
+theorem goal1 : ∀ (f : Real → Complex), Continuous.{0, 0} f → (∀ (s t : Real), Eq.{1} (f (HAdd.hAdd.{0, 0, 0} s t)) (HMul.hMul.{0, 0, 0} (f s) (f t))) → (∀ (s : Real), Eq.{1} (Norm.norm.{0} (f s)) 1) → Exists.{1} fun (b : Real) ↦ ∀ (s : Real), Eq.{1} (f s) (Complex.exp (HMul.hMul.{0, 0, 0} (Complex.ofReal (HMul.hMul.{0, 0, 0} b s)) Complex.I))
+
+### Lemmata.GeneralBFact.Imports:8  Bl.general_b_fact.goal1
+theorem goal1 {R : Type*} [CommRing R] {i N : ℕ} (A : Matrix (Fin i) (Fin N) R) (B : Matrix (Fin N) (Fin i) R) : (A * B).det = ∑ f : Fin i → Fin N, (∏ a, A a (f a)) * (B.submatrix f id).det
+
+### Lemmata.GeneralBFactAltForm.Imports:7  Bl.general_b_fact_alt_form.goal1
+theorem goal1 : ∀ {R : Type u_1} {F : Type u_2} {X : Type u_3} [inst : CommRing.{u_1} R] [IsDomain.{u_1} R] [inst_2 : Field.{u_2} F] [inst_3 : Algebra.{u_1, u_2} R F] [IsFractionRing.{u_1, u_2} R F] [inst_5 : AddCommGroup.{u_3} X] [inst_6 : Module.{u_2, u_3} F X] [inst_7 : Module.{u_1, u_3} R X] [IsScalarTower.{u_1, u_2, u_3} R F X] (S : Submodule.{u_1, u_3} R X) {x : X}, Membership.mem.{u_3, u_3} (Submodule.span.{u_2, u_3} F (SetLike.coe.{u_3, u_3} S)) x → Exists.{u_1 + 1} fun (d : R) ↦ And (Ne.{u_1 + 1} d 0) (Membership.mem.{u_3, u_3} S (HSMul.hSMul.{u_1, u_3, u_3} d x))
+
+### Lemmata.GeneralBFactBis.Imports:5  Bl.general_b_fact_bis.goal1
+theorem goal1 : ∀ {x : WithBot.{0} ENat} {m : Nat}, Eq.{1} (HAdd.hAdd.{0, 0, 0} x 1) (Nat.cast.{0} (HAdd.hAdd.{0, 0, 0} m 1)) → Eq.{1} x (Nat.cast.{0} m)
+
+### Lemmata.GeneralBFactBisAlt.Imports:5  Bl.general_b_fact_bis_other.goal1
+theorem goal1 : ∀ {K : Type} [inst : Field.{0} K] [NumberField.{0} K] {r n : Nat} (v : Fin n → Fin r → K) {x : Fin r → K}, Membership.mem.{0, 0} (Submodule.span.{0, 0} K (Set.range.{0, 1} v)) x → Exists.{1} fun (d : Int) ↦ And (Ne.{1} d 0) (Membership.mem.{0, 0} (Submodule.span.{0, 0} (NumberField.RingOfIntegers.{0} K) (Set.range.{0, 1} v)) (HSMul.hSMul.{0, 0, 0} d x))
+
+### Lemmata.GeneralBFactBisForm.Imports:7  Bl.general_b_fact_bis_form.goal1
+theorem goal1 : ∀ {F : Type u_1} [inst : NormedAddCommGroup.{u_1} F] [inst_1 : NormedSpace.{0, u_1} Complex F] {U : Set.{u_1} F}, IsOpen.{u_1} U → ∀ {G : F → Complex}, DifferentiableOn.{0, u_1, 0} Complex G U → ∀ {y : F} {R C : Real}, LT.lt.{0} 0 R → LE.le.{u_1} (Metric.closedBall.{u_1} y R) U → (∀ (z : F), Membership.mem.{u_1, u_1} (Metric.closedBall.{u_1} y R) z → LE.le.{0} (Norm.norm.{0} (G z)) C) → LE.le.{0} (Norm.norm.{u_1} (fderiv.{0, u_1, 0} Complex G y)) (HDiv.hDiv.{0, 0, 0} C R)
+
+### Lemmata.GeneralBFactExtra.Imports:5  Bl.general_b_fact.goal1
+theorem goal1 : ∀ {K V ι Γ : Type} [inst : Field.{0} K] [inst_1 : AddCommGroup.{0} V] [inst_2 : Module.{0, 0} K V] (T : Γ → LinearMap.{0, 0, 0, 0} (RingHom.id.{0} K) V V) (c : ι → Γ → K) (w : ι → V), (∀ (i : ι), Ne.{1} (w i) 0) → (∀ (i : ι) (γ : Γ), Eq.{1} (DFunLike.coe.{1, 1, 1} (T γ) (w i)) (HSMul.hSMul.{0, 0, 0} (c i γ) (w i))) → (∀ (i j : ι), Ne.{1} i j → Exists.{1} fun (γ : Γ) ↦ Ne.{1} (c i γ) (c j γ)) → LinearIndependent.{0, 0, 0} K w
+
+### Lemmata.GeneralBFactForm.Imports:5  Bl.general_b_fact_form.goal1
+theorem goal1 : ∀ {n : Nat} {N N' U U' : Matrix.{0, 0, 0} (Fin n) (Fin n) Complex}, Matrix.BlockTriangular.{0, 0, 0} N (DFunLike.coe.{1, 1, 1} OrderDual.toDual.{0}) → (∀ (a : Fin n), Eq.{1} (N a a) 1) → Matrix.BlockTriangular.{0, 0, 0} N' (DFunLike.coe.{1, 1, 1} OrderDual.toDual.{0}) → (∀ (a : Fin n), Eq.{1} (N' a a) 1) → Matrix.BlockTriangular.{0, 0, 0} U id.{1} → Matrix.BlockTriangular.{0, 0, 0} U' id.{1} → Ne.{1} (Matrix.det.{0, 0} U') 0 → Eq.{1} (HMul.hMul.{0, 0, 0} N U) (HMul.hMul.{0, 0, 0} N' U') → And (Eq.{1} N N') (Eq.{1} U U')
+
+### Lemmata.GeneralBFactFurther.Imports:5  Bl.general_b_fact_further.goal1
+theorem goal1 : ∀ {V : Type} [inst : CommRing.{0} V] [inst_1 : IsDomain.{0} V] [IsDiscreteValuationRing.{0} V] {ϖ : V}, Irreducible.{0} ϖ → IsLocalization.Away.{0, 0} ϖ (FractionRing.{0} V)
+
+### Lemmata.GeneralBFactLast.Imports:7  Bl.general_b_fact.goal1
+theorem goal1 : ∀ {O : Type u_1} [inst : CommRing.{u_1} O] [inst_1 : IsDomain.{u_1} O] [inst_2 : IsDiscreteValuationRing.{u_1} O] {ι : Type u_2} (s : Finset.{u_2} ι) (a : ι → O), Eq.{1} (DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (IsDiscreteValuationRing.addVal.{u_1} O) (Finset.prod.{u_2, u_1} s fun (i : ι) ↦ a i)) (Finset.sum.{u_2, 0} s fun (i : ι) ↦ DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (IsDiscreteValuationRing.addVal.{u_1} O) (a i))
+
+### Lemmata.GeneralBFactLeft.Imports:5  Bl.general_b_fact_left.goal1
+theorem goal1 : ∀ {k : Type} [inst : Field.{0} k] [Fintype.{0} k] (t m e : k), Ne.{1} (HSub.hSub.{0, 0, 0} (HPow.hPow.{0, 0, 0} t 2) (HMul.hMul.{0, 0, 0} 4 m)) 0 → Exists.{1} fun (x : k) ↦ Exists.{1} fun (y : k) ↦ Eq.{1} (HAdd.hAdd.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} (HPow.hPow.{0, 0, 0} x 2) (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} t x) y)) (HMul.hMul.{0, 0, 0} m (HPow.hPow.{0, 0, 0} y 2))) e
+
+### Lemmata.GeneralBFactLeftBis.Imports:5  Bl.general_b_fact_left_bis.goal1
+theorem goal1 : ∀ {E : Type} [inst : Field.{0} E] [NumberField.{0} E] {N : Nat} (L'' : Submodule.{0, 0} (NumberField.RingOfIntegers.{0} E) (Fin N → E)), Eq.{1} (Submodule.span.{0, 0} E (SetLike.coe.{0, 0} L'')) Top.top.{0} → ∀ (v : Fin N → E), Exists.{1} fun (d : NumberField.RingOfIntegers.{0} E) ↦ And (Ne.{1} d 0) (Membership.mem.{0, 0} L'' (HSMul.hSMul.{0, 0, 0} d v))
+
+### Lemmata.GeneralBFactLeftBisAlt.Imports:5  Bl.general_b_fact_left.goal1
+theorem goal1 : ∀ {K V : Type} [inst : Field.{0} K] [NumberField.{0} K] [inst_2 : AddCommGroup.{0} V] [inst_3 : Module.{0, 0} K V] [inst_4 : Module.{0, 0} (NumberField.RingOfIntegers.{0} K) V] [IsScalarTower.{0, 0, 0} (NumberField.RingOfIntegers.{0} K) K V] (L : Submodule.{0, 0} (NumberField.RingOfIntegers.{0} K) V) (v : V), Membership.mem.{0, 0} (Submodule.span.{0, 0} K (SetLike.coe.{0, 0} L)) v → Exists.{1} fun (d : NumberField.RingOfIntegers.{0} K) ↦ And (Ne.{1} d 0) (Membership.mem.{0, 0} L (HSMul.hSMul.{0, 0, 0} d v))
+
+### Lemmata.GeneralBFactLeftExtra.Imports:9  Bl.general_b_fact_left_extra.goal1
+theorem goal1 {ι : Type*} (w : FinitePlace K) (t : Finset ι) (a : ι → K) {M : ℝ} (hM : 0 ≤ M) (h : ∀ i ∈ t, w (a i) ≤ M) : w (∑ i ∈ t, a i) ≤ M
+
+### Lemmata.GeneralBFactLeftForm.Imports:8  Bl.general_b_fact_left_form.goal1
+theorem goal1 {n : ℕ} (f : Fin n → ℝ) (hf : Antitone f) (θ : ℝ) (j : Fin n) : θ ≤ f j ↔ (j : ℕ) < (Finset.univ.filter (fun i => θ ≤ f i)).card
+
+### Lemmata.GeneralBFactLeftLast.Pz:9  Bl.general_b_fact_left_last.pz  [private]
+private lemma pz {T : End K V} {x : V} {k m : ℕ} (hkm : k ≤ m) (hx : (T ^ k) x = 0) : (T ^ m) x = 0
+
+### Lemmata.GeneralBFactLeftLast.Pz:14  Bl.general_b_fact_left_last.goal1
+theorem goal1 {A B : End K V} (h : Commute A B) {a b : K} {x : V} (hA : x ∈ A.maxGenEigenspace a) (hB : x ∈ B.maxGenEigenspace b) : x ∈ (A * B).maxGenEigenspace (a * b)
+
+### Lemmata.GeneralBFactLeftMore.Imports:9  Bl.general_b_fact_left_more.goal1
+theorem goal1 (p : Fin n → ℂ) (a : MvPolynomial (Fin n) ℂ) : a - C (eval p a) ∈ Ideal.span (Set.range fun i => X i - C (p i))
+
+### Lemmata.GeneralBFactLeftRest.Imports:7  Bl.general_b_fact_left_rest.goal1
+theorem goal1 {G T : Type*} [Group G] (N : Subgroup G) (f : G → T) (hs : Function.Surjective f) (hf : ∀ a b, f a = f b ↔ a⁻¹ * b ∈ N) : N.index = Nat.card T
+
+### Lemmata.GeneralBFactLeftSide.Imports:5  Bl.general_b_fact_left.aux  [private]
+private lemma aux {O A I : Type} [CommRing O] [CommRing A] [Algebra O A] [Fintype I] [DecidableEq I] {B : I → Type} [(i : I) → AddCommGroup (B i)] [(i : I) → Module O (B i)] (ε : (i : I) → B i →ₗ[O] A) (T : (i : I) → Set (B i)) (S : Submodule O A) (hS : ∀ F : (i : I) → B i, (∀ i, F i ∈ T i) → ∏ i, ε i (F i) ∈ S) : ∀ s : Finset I, ∀ F : (i : I) → B i, (∀ i ∈ s, F i ∈ Submodule.span O (T i)) → (∀ i ∉ s, F i ∈ T i) → ∏ i, ε i (F i) ∈ S
+
+### Lemmata.GeneralBFactLeftSide.Imports:50  Bl.general_b_fact_left.goal1
+theorem goal1 : ∀ {O A I : Type} [inst : CommRing.{0} O] [inst_1 : CommRing.{0} A] [inst_2 : Algebra.{0, 0} O A] [inst_3 : Fintype.{0} I] [DecidableEq.{1} I] {B : I → Type} [inst_5 : (i : I) → AddCommGroup.{0} (B i)] [inst_6 : (i : I) → Module.{0, 0} O (B i)] (ε : (i : I) → LinearMap.{0, 0, 0, 0} (RingHom.id.{0} O) (B i) A) (T : (i : I) → Set.{0} (B i)), Eq.{1} (Submodule.span.{0, 0} O (Set.ofPred.{0} fun (X : A) ↦ Exists.{1} fun (F : (i : I) → B i) ↦ And (∀ (i : I), Membership.mem.{0, 0} (Submodule.span.{0, 0} O (T i)) (F i)) (Eq.{1} X (Finset.prod.{0, 0} Finset.univ.{0} fun (i : I) ↦ DFunLike.coe.{1, 1, 1} (ε i) (F i))))) (Submodule.span.{0, 0} O (Set.ofPred.{0} fun (X : A) ↦ Exists.{1} fun (F : (i : I) → B i) ↦ And (∀ (i : I), Membership.mem.{0, 0} (T i) (F i)) (Eq.{1} X (Finset.prod.{0, 0} Finset.univ.{0} fun (i : I) ↦ DFunLike.coe.{1, 1, 1} (ε i) (F i)))))
+
+### Lemmata.GeneralBFactLeftTail.Imports:9  Bl.general_b_fact_left_tail.goal1
+theorem goal1 (g : ℕ) (hg : g.Prime) : ∃ v : HeightOneSpectrum (𝓞 F), (g : 𝓞 F) ∈ v.asIdeal
+
+### Lemmata.GeneralBFactLeftTer.Imports:7  Bl.general_b_fact_left_ter.goal1
+theorem goal1 : ∀ {F : Type u_1} [inst : NormedField.{u_1} F] [IsUltrametricDist.{u_1} F] {y : F} (p : Polynomial.{0} Int), Polynomial.Monic.{0} p → Eq.{u_1 + 1} (Polynomial.eval₂.{0, u_1} (Int.castRingHom.{u_1} F) y p) 0 → LE.le.{0} (Norm.norm.{u_1} y) 1
+
+### Lemmata.GeneralBFactLeftTerForm.Imports:5  Bl.general_b_fact_left_ter_form.goal1
+theorem goal1 : ∀ {R K V : Type} [inst : CommRing.{0} R] [IsDomain.{0} R] [inst_2 : Field.{0} K] [inst_3 : Algebra.{0, 0} R K] [IsFractionRing.{0, 0} R K] [inst_5 : AddCommGroup.{0} V] [inst_6 : Module.{0, 0} R V] [inst_7 : Module.{0, 0} K V] [IsScalarTower.{0, 0, 0} R K V] (M : Submodule.{0, 0} R V) (y : V), Membership.mem.{0, 0} (Submodule.span.{0, 0} K (SetLike.coe.{0, 0} M)) y → Exists.{1} fun (s : R) ↦ And (Ne.{1} s 0) (Membership.mem.{0, 0} M (HSMul.hSMul.{0, 0, 0} s y))
+
+### Lemmata.GeneralBFactLeftVariant.Imports:5  Bl.general_b_fact_left_variant.goal1
+theorem goal1 : ∀ (f : Real → Complex), Continuous.{0, 0} f → (∀ (s t : Real), Eq.{1} (f (HAdd.hAdd.{0, 0, 0} s t)) (HMul.hMul.{0, 0, 0} (f s) (f t))) → Eq.{1} (f 0) 1 → (∀ (t : Real), Eq.{1} (Norm.norm.{0} (f t)) 1) → Exists.{1} fun (m : Real) ↦ ∀ (t : Real), Eq.{1} (f t) (Complex.exp (HMul.hMul.{0, 0, 0} (Complex.ofReal (HMul.hMul.{0, 0, 0} m t)) Complex.I))
+
+### Lemmata.GeneralBFactMore.Imports:7  Bl.general_b_fact_more.aux  [private]
+private lemma aux {R : Type u_2} [CommRing R] (q : Polynomial R) (m : ℕ) (h : q.natDegree ≤ 1) : (q ^ m).natDegree ≤ m ∧ (q ^ m).coeff m = q.coeff 1 ^ m
+
+### Lemmata.GeneralBFactMore.Imports:16  Bl.general_b_fact_more.aux2  [private]
+private lemma aux2 {R : Type u_2} {ι : Type u_3} [CommRing R] (s : Finset ι) (q : ι → Polynomial R) (e : ι → ℕ) (h : ∀ i, (q i).natDegree ≤ e i) : (s.prod q).natDegree ≤ s.sum e ∧ (s.prod q).coeff (s.sum e) = s.prod (fun i => (q i).coeff (e i))
+
+### Lemmata.GeneralBFactMore.Imports:29  Bl.general_b_fact_more.goal1
+theorem goal1 : ∀ {R : Type u_2} {ι : Type u_3} [inst : CommRing.{u_2} R] (s : Finset.{u_3} ι) (p : ι → Polynomial.{u_2} R) (e : ι → Nat), (∀ (i : ι), LE.le.{0} (Polynomial.natDegree.{u_2} (p i)) 1) → And (LE.le.{0} (Polynomial.natDegree.{u_2} (Finset.prod.{u_3, u_2} s fun (i : ι) ↦ HPow.hPow.{u_2, 0, u_2} (p i) (e i))) (Finset.sum.{u_3, 0} s fun (i : ι) ↦ e i)) (Eq.{u_2 + 1} (Polynomial.coeff.{u_2} (Finset.prod.{u_3, u_2} s fun (i : ι) ↦ HPow.hPow.{u_2, 0, u_2} (p i) (e i)) (Finset.sum.{u_3, 0} s fun (i : ι) ↦ e i)) (Finset.prod.{u_3, u_2} s fun (i : ι) ↦ HPow.hPow.{u_2, 0, u_2} (Polynomial.coeff.{u_2} (p i) 1) (e i)))
+
+### Lemmata.GeneralBFactRest.Imports:7  Bl.general_b_fact_rest.goal1
+theorem goal1 : ∀ {R : Type u_1} [inst : CommRing.{u_1} R] [inst_1 : IsLocalRing.{u_1} R] [IsNoetherianRing.{u_1} R] {M : Type u_2} [inst_3 : AddCommGroup.{u_2} M] [inst_4 : Module.{u_1, u_2} R M] [Module.Finite.{u_1, u_2} R M] {p : Ideal.{u_1} R}, Membership.mem.{u_1, u_1} (associatedPrimes.{u_1, u_2} R M) p → ∀ {x : R}, Membership.mem.{u_1, u_1} (IsLocalRing.maximalIdeal.{u_1} R) x → IsSMulRegular.{u_1, u_2} M x → Exists.{u_1 + 1} fun (q : Ideal.{u_1} R) ↦ And (Membership.mem.{u_1, u_1} (associatedPrimes.{u_1, u_2} R (QuotSMulTop.{u_2, u_1} x M)) q) (And (LT.lt.{u_1} p q) (And (Membership.mem.{u_1, u_1} q x) (Not (Membership.mem.{u_1, u_1} p x))))
+
+### Lemmata.GeneralBFactRight.Imports:7  Bl.general_b_fact_right.goal1
+theorem goal1 {V ι : Type*} [AddCommGroup V] [Module ℂ V] (L : List ι) (F : ι → Module.End ℂ V) (c : ι → ℂ) (x : V) (hL : ∀ j ∈ L, F j x = c j • x) : (L.map F).prod x = (L.map c).prod • x
+
+### Lemmata.GeneralBFactRightAlt.Imports:7  Bl.general_b_fact_right_alt.goal1
+theorem goal1 {K S : Type*} [CommRing K] [CommRing S] [Algebra K S] {ι : Type*} [Fintype ι] {G : MvPolynomial ι K} {d : ℕ} (hG : IsHomogeneous G d) (c : S) (f : ι → S) : aeval (fun v => c * f v) G = c ^ d * aeval f G
+
+### Lemmata.GeneralBFactRightAltForm.Imports:5  Bl.general_b_fact_right_alt_form.goal1
+theorem goal1 : ∀ {E : Type} [inst : Field.{0} E] [NumberField.{0} E] {V : Type} [inst_2 : AddCommGroup.{0} V] [inst_3 : Module.{0, 0} E V] [inst_4 : Module.{0, 0} (NumberField.RingOfIntegers.{0} E) V] [IsScalarTower.{0, 0, 0} (NumberField.RingOfIntegers.{0} E) E V] (A : Set.{0} V) (y : V), Membership.mem.{0, 0} (Submodule.span.{0, 0} E A) y → Exists.{1} fun (d : NumberField.RingOfIntegers.{0} E) ↦ And (Ne.{1} d 0) (Membership.mem.{0, 0} (Submodule.span.{0, 0} (NumberField.RingOfIntegers.{0} E) A) (HSMul.hSMul.{0, 0, 0} d y))
+
+### Lemmata.GeneralBFactRightBis.Imports:7  Bl.general_b_fact_right_bis.goal1
+theorem goal1 {k : ℕ} (G : Matrix (Fin k) (Fin k) ℂ) (μ : ℂ) (hμ : G.charpoly.IsRoot μ) : ∃ v : Fin k → ℂ, v ≠ 0 ∧ G *ᵥ v = μ • v
+
+### Lemmata.GeneralBFactRightBisAlt.Imports:7  Bl.general_b_fact_right_bis_other.goal1
+theorem goal1 : ∀ {K : Type u_1} [inst : CommRing.{u_1} K] {n : Nat} {l l' : Matrix.{0, 0, u_1} (Fin n) (Fin n) K}, (∀ (a b : Fin n), LT.lt.{0} a b → Eq.{u_1 + 1} (l a b) 0) → (∀ (a b : Fin n), LT.lt.{0} a b → Eq.{u_1 + 1} (l' a b) 0) → ∀ (a : Fin n), Eq.{u_1 + 1} (HMul.hMul.{u_1, u_1, u_1} l l' a a) (HMul.hMul.{u_1, u_1, u_1} (l a a) (l' a a))
+
+### Lemmata.GeneralBFactRightBisForm.Imports:7  Bl.general_b_fact_right_bis_form.aux  [private]
+private theorem aux {R : Type u_1} [CommRing R] {ι : Type u_2} [Fintype ι] [DecidableEq ι] {M : ι → Type u_3} [(i : ι) → AddCommGroup (M i)] [(i : ι) → Module R (M i)] {A : Type u_4} [CommRing A] [Algebra R A] (φ : (i : ι) → M i →ₗ[R] A) (S : (i : ι) → Set (M i)) (T : Submodule R A) (hS : ∀ s : (i : ι) → M i, (∀ i, s i ∈ S i) → (∏ i, φ i (s i)) ∈ T) (F : Finset ι) : ∀ m : (i : ι) → M i, (∀ i ∈ F, m i ∈ Submodule.span R (S i)) → (∀ i ∉ F, m i ∈ S i) → (∏ i, φ i (m i)) ∈ T
+
+### Lemmata.GeneralBFactRightBisForm.Imports:50  Bl.general_b_fact_right_bis_form.goal1
+theorem goal1 : ∀ {R : Type u_1} [inst : CommRing.{u_1} R] {ι : Type u_2} [inst_1 : Fintype.{u_2} ι] [DecidableEq.{u_2 + 1} ι] {M : ι → Type u_3} [inst_3 : (i : ι) → AddCommGroup.{u_3} (M i)] [inst_4 : (i : ι) → Module.{u_1, u_3} R (M i)] {A : Type u_4} [inst_5 : CommRing.{u_4} A] [inst_6 : Algebra.{u_1, u_4} R A] (φ : (i : ι) → LinearMap.{u_1, u_1, u_3, u_4} (RingHom.id.{u_1} R) (M i) A) (S : (i : ι) → Set.{u_3} (M i)) (T : Submodule.{u_1, u_4} R A), (∀ (s : (i : ι) → M i), (∀ (i : ι), Membership.mem.{u_3, u_3} (S i) (s i)) → Membership.mem.{u_4, u_4} T (Finset.prod.{u_2, u_4} Finset.univ.{u_2} fun (i : ι) ↦ DFunLike.coe.{max (u_3 + 1) (u_4 + 1), u_3 + 1, u_4 + 1} (φ i) (s i))) → ∀ (m : (i : ι) → M i), (∀ (i : ι), Membership.mem.{u_3, u_3} (Submodule.span.{u_1, u_3} R (S i)) (m i)) → Membership.mem.{u_4, u_4} T (Finset.prod.{u_2, u_4} Finset.univ.{u_2} fun (i : ι) ↦ DFunLike.coe.{max (u_3 + 1) (u_4 + 1), u_3 + 1, u_4 + 1} (φ i) (m i))
+
+### Lemmata.GeneralBFactRightExtra.Imports:5  Bl.general_b_fact_right.goal1
+theorem goal1 : ∀ {K : Type} [inst : NormedField.{0} K] [IsUltrametricDist.{0} K] {p : Nat} {a b : K}, LE.le.{0} (Norm.norm.{0} a) 1 → LE.le.{0} (Norm.norm.{0} b) 1 → LE.le.{0} (Norm.norm.{0} (HSub.hSub.{0, 0, 0} a b)) (Inv.inv.{0} (Nat.cast.{0} p)) → ∀ (k : Nat), LE.le.{0} (Norm.norm.{0} (HSub.hSub.{0, 0, 0} (HPow.hPow.{0, 0, 0} a k) (HPow.hPow.{0, 0, 0} b k))) (Inv.inv.{0} (Nat.cast.{0} p))
+
+### Lemmata.GeneralBFactRightForm.Imports:5  Bl.general_b_fact_right_form.goal1
+theorem goal1 : ∀ {R V : Type} [inst : CommRing.{0} R] [IsDomain.{0} R] [inst_2 : AddCommGroup.{0} V] [inst_3 : Module.{0, 0} R V] {r : Nat} (e w : Fin r → V), LinearIndependent.{0, 0, 0} R e → ∀ {α β : R}, Ne.{1} α 0 → Ne.{1} β 0 → (∀ (a : Fin r), Membership.mem.{0, 0} (Submodule.span.{0, 0} R (Set.range.{0, 1} e)) (HSMul.hSMul.{0, 0, 0} β (w a))) → (∀ (l : Fin r), Membership.mem.{0, 0} (Submodule.span.{0, 0} R (Set.range.{0, 1} w)) (HSMul.hSMul.{0, 0, 0} α (e l))) → LinearIndependent.{0, 0, 0} R w
+
+### Lemmata.GeneralBFactRightFurther.Imports:5  Bl.general_b_fact_right_further.goal1
+theorem goal1 : ∀ {n : Nat} (J : Finset.{0} (Fin n)) {k : Nat} (h : Eq.{1} (Finset.card.{0} J) k) (i : Fin k), Eq.{1} (Finset.card.{0} (Finset.filter.{0} (fun (x : Fin n) ↦ LT.lt.{0} x (DFunLike.coe.{1, 1, 1} (Finset.orderEmbOfFin.{0} J h) i)) J)) i.val
+
+### Lemmata.GeneralBFactRightLast.Slot:7  Bl.general_b_fact_right_last.intersection_update_fsHerm_neg_one  [private]
+private lemma intersection_update_fsHerm_neg_one {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E] [NormedAddCommGroup F] [InnerProductSpace ℂ F] (f : E → F) (c : ℂ) (h : ∀ a b, inner ℂ (f a) (f b) = c * inner ℂ a b) (M : Submodule ℂ F) (hM : IsClosed (M : Set F)) (B : Set E) (hB : (Submodule.span ℂ B).topologicalClosure = ⊤) (hBM : ∀ v ∈ B, f v ∈ M) (v : E) : f v ∈ M
+
+### Lemmata.GeneralBFactRightLast.Slot:50  Bl.general_b_fact_right_last.goal1
+theorem goal1 : ∀ {ι : Type u_1} [inst : Fintype.{u_1} ι] [DecidableEq.{u_1 + 1} ι] {H : ι → Type u_2} [inst_2 : (i : ι) → NormedAddCommGroup.{u_2} (H i)] [inst_3 : (i : ι) → InnerProductSpace.{0, u_2} Complex (H i)] {Hs : Type u_3} [inst_4 : NormedAddCommGroup.{u_3} Hs] [inst_5 : InnerProductSpace.{0, u_3} Complex Hs] (tens : ((i : ι) → H i) → Hs), (∀ (x y : (i : ι) → H i), Eq.{1} (Inner.inner.{0, u_3} Complex (tens x) (tens y)) (Finset.prod.{u_1, 0} Finset.univ.{u_1} fun (i : ι) ↦ Inner.inner.{0, u_2} Complex (x i) (y i))) → ∀ (M : Submodule.{0, u_3} Complex Hs), IsClosed.{u_3} (SetLike.coe.{u_3, u_3} M) → ∀ (A : (i : ι) → Set.{u_2} (H i)), (∀ (i : ι), Eq.{u_2 + 1} (Submodule.topologicalClosure.{0, u_2} (Submodule.span.{0, u_2} Complex (A i))) Top.top.{u_2}) → (∀ (x : (i : ι) → H i), (∀ (i : ι), Membership.mem.{u_2, u_2} (A i) (x i)) → Membership.mem.{u_3, u_3} M (tens x)) → ∀ (x : (i : ι) → H i), Membership.mem.{u_3, u_3} M (tens x)
+
+### Lemmata.GeneralBFactRightMore.Imports:5  Bl.general_b_fact_right_more.goal1
+theorem goal1 : ∀ {E : Type} [inst : Field.{0} E] [NumberField.{0} E] [StarRing.{0} E] (P : IsDedekindDomain.HeightOneSpectrum.{0} (NumberField.RingOfIntegers.{0} E)), Exists.{1} fun (a : NumberField.RingOfIntegers.{0} E) ↦ And (Membership.mem.{0, 0} (IsDedekindDomain.HeightOneSpectrum.asIdeal.{0} P) a) (Exists.{1} fun (c : NumberField.RingOfIntegers.{0} E) ↦ And (Not (Membership.mem.{0, 0} (IsDedekindDomain.HeightOneSpectrum.asIdeal.{0} P) c)) (∀ (p : NumberField.RingOfIntegers.{0} E), Membership.mem.{0, 0} (IsDedekindDomain.HeightOneSpectrum.asIdeal.{0} P) p → Exists.{1} fun (t : NumberField.RingOfIntegers.{0} E) ↦ Eq.{1} (HMul.hMul.{0, 0, 0} c p) (HMul.hMul.{0, 0, 0} a t)))
+
+### Lemmata.GeneralBFactRightRest.Imports:7  Bl.general_b_fact_right_rest.aux  [private]
+private theorem aux {α : Type u_1} {β : Type u_2} (f : α → β) (t : Multiset α) : ∀ s : Multiset β, s ≤ t.map f → ∃ u : Multiset α, u ≤ t ∧ u.map f = s
+
+### Lemmata.GeneralBFactRightRest.Imports:25  Bl.general_b_fact_right_rest.goal1
+theorem goal1 : ∀ {α : Type u_1} {β : Type u_2} [DecidableEq.{u_2 + 1} β] (f : α → β) (t : Multiset.{u_1} α) (s : Multiset.{u_2} β), LE.le.{u_2} s (Multiset.map.{u_2, u_1} f t) → Exists.{u_1 + 1} fun (u : Multiset.{u_1} α) ↦ And (LE.le.{u_1} u t) (Eq.{u_2 + 1} (Multiset.map.{u_2, u_1} f u) s)
+
+### Lemmata.GeneralBFactRightSide.Imports:5  Bl.general_b_fact_right_side.goal1
+theorem goal1 : ∀ (x : Real), Iff (Eq.{1} (Complex.exp (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 (Complex.ofReal Real.pi)) Complex.I) (Complex.ofReal x))) 1) (Exists.{1} fun (n : Int) ↦ Eq.{1} x (Int.cast.{0} n))
+
+### Lemmata.GeneralBFactRightTer.Imports:7  Bl.general_b_fact_right_ter.goal1
+theorem goal1 {F : Type} [Field F] [NumberField F] {ι : Type} (s : Finset ι) (Q : ι → 𝓞 F → Prop) (hQ : ∀ i c r, Q i c → Q i (c * r)) (h : ∀ i ∈ s, ∃ c, c ≠ 0 ∧ Q i c) : ∃ c : 𝓞 F, c ≠ 0 ∧ ∀ i ∈ s, Q i c
+
+### Lemmata.GeneralBFactRightTerForm.Imports:5  Bl.general_b_fact_right_ter_form.goal1
+theorem goal1 : ∀ {L : Type} [inst : Field.{0} L] [inst_1 : @NumberField.{0} L inst] (x : L) (c : Int), @Eq.{1} L (@HPow.hPow.{0, 0, 0} L Nat L (@instHPow.{0, 0} L Nat (@NPow.toPow.{0} L (@Monoid.toNPow.{0} L (@Semiring.toMonoid.{0} L (@DivisionSemiring.toSemiring.{0} L (@Semifield.toDivisionSemiring.{0} L (@Field.toSemifield.{0} L inst))))))) x (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) (@Int.cast.{0} L (@AddGroupWithOne.toIntCast.{0} L (@Ring.toAddGroupWithOne.{0} L (@DivisionRing.toRing.{0} L (@Field.toDivisionRing.{0} L inst)))) (@HAdd.hAdd.{0, 0, 0} Int Int Int (@instHAdd.{0} Int Int.instAdd) (@HMul.hMul.{0, 0, 0} Int Int Int (@instHMul.{0} Int Int.instMul) (@OfNat.ofNat.{0} Int (nat_lit 4) (@instOfNat (nat_lit 4))) (@HMul.hMul.{0, 0, 0} Int Int Int (@instHMul.{0} Int Int.instMul) (@OfNat.ofNat.{0} Int (nat_lit 2) (@instOfNat (nat_lit 2))) c)) (@OfNat.ofNat.{0} Int (nat_lit 1) (@instOfNat (nat_lit 1))))) → ∀ (P : @Ideal.{0} (@NumberField.RingOfIntegers.{0} L inst) (@CommSemiring.toSemiring.{0} (@NumberField.RingOfIntegers.{0} L inst) (@CommRing.toCommSemiring.{0} (@NumberField.RingOfIntegers.{0} L inst) (@NumberField.instCommRingRingOfIntegers.{0} L inst)))) [hP : @Ideal.IsPrime.{0} (@NumberField.RingOfIntegers.{0} L inst) (@CommSemiring.toSemiring.{0} (@NumberField.RingOfIntegers.{0} L inst) (@CommRing.toCommSemiring.{0} (@NumberField.RingOfIntegers.{0} L inst) (@NumberField.instCommRingRingOfIntegers.{0} L inst))) P] [@Ideal.LiesOver.{0, 0} Int Int.
+
+### Lemmata.GeneralBFactRightVariant.Imports:7  Bl.general_b_fact_right_variant.goal1
+theorem goal1 : ∀ {R : Type u_1} [inst : CommRing.{u_1} R] (P : Ideal.{u_1} R) [hP : Ideal.IsPrime.{u_1} P] (n : Nat), Ne.{1} n 0 → Membership.mem.{u_1, u_1} P (Nat.cast.{u_1} n) → Exists.{1} fun (p : Nat) ↦ And (Nat.Prime p) (And (Dvd.dvd.{0} p n) (Membership.mem.{u_1, u_1} P (Nat.cast.{u_1} p)))
+
+### Lemmata.GeneralBFactRightVersion.Imports:5  Bl.general_b_fact_right_version.goal1
+theorem goal1 : ∀ {E Ω : Type} [inst : Field.{0} E] [inst_1 : Field.{0} Ω] [inst_2 : Algebra.{0, 0} E Ω] (σ : AlgEquiv.{0, 0, 0} E Ω Ω) (y : Ω), IsIntegral.{0, 0} E y → Exists.{1} fun (n : Nat) ↦ And (Ne.{1} n 0) (Eq.{1} (DFunLike.coe.{1, 1, 1} (HPow.hPow.{0, 0, 0} σ n) y) y)
+
+### Lemmata.GeneralBFactSecond.Imports:5  Bl.general_b_fact_second.goal1
+theorem goal1 : ∀ {K : Type} [inst : Field.{0} K] [NumberField.{0} K] {r : Nat} (L : Submodule.{0, 0} (NumberField.RingOfIntegers.{0} K) (Fin r → K)), Eq.{1} (Submodule.span.{0, 0} K (SetLike.coe.{0, 0} L)) Top.top.{0} → ∀ (x : Fin r → K), Exists.{1} fun (d : NumberField.RingOfIntegers.{0} K) ↦ And (Ne.{1} d 0) (Membership.mem.{0, 0} L (HSMul.hSMul.{0, 0, 0} d x))
+
+### Lemmata.GeneralBFactSecondAlt.Imports:5  Bl.general_b_fact_second_alt.goal1
+theorem goal1 : ∀ {K : Type} [inst : Field.{0} K] [NumberField.{0} K] {r : Nat} (L : Submodule.{0, 0} (NumberField.RingOfIntegers.{0} K) (Fin r → K)) (v : Fin r → K), Membership.mem.{0, 0} (Submodule.span.{0, 0} K (SetLike.coe.{0, 0} L)) v → Exists.{1} fun (a : NumberField.RingOfIntegers.{0} K) ↦ And (Ne.{1} a 0) (Membership.mem.{0, 0} L (HSMul.hSMul.{0, 0, 0} a v))
+
+### Lemmata.GeneralBFactSecondAltForm.Imports:7  Bl.general_b_fact_second_alt_form.goal1
+theorem goal1 : ∀ {Wq : Type u_1} {Wp : Type u_2} [inst : AddCommGroup.{u_1} Wq] [inst_1 : Module.{0, u_1} Complex Wq] [FiniteDimensional.{0, u_1} Complex Wq] [inst_3 : AddCommGroup.{u_2} Wp] [inst_4 : Module.{0, u_2} Complex Wp] [FiniteDimensional.{0, u_2} Complex Wp] (S' : Submodule.{0, u_1} Complex Wq) (S : Submodule.{0, u_2} Complex Wp) (Gq : Set.{u_1} (Module.End.{0, u_1} Complex Wq)) (Gp : Set.{u_2} (Module.End.{0, u_2} Complex Wp)), (∀ (K : Submodule.{0, u_1} Complex Wq), LE.le.{u_1} K S' → (∀ (A : Module.End.{0, u_1} Complex Wq), Membership.mem.{u_1, u_1} Gq A → ∀ (v : Wq), Membership.mem.{u_1, u_1} K v → Membership.mem.{u_1, u_1} K (DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1} A v)) → Or (Eq.{u_1 + 1} K Bot.bot.{u_1}) (Eq.{u_1 + 1} K S')) → (∀ (K : Submodule.{0, u_2} Complex Wp), LE.le.{u_2} K S → (∀ (B : Module.End.{0, u_2} Complex Wp), Membership.mem.{u_2, u_2} Gp B → ∀ (w : Wp), Membership.mem.{u_2, u_2} K w → Membership.mem.{u_2, u_2} K (DFunLike.coe.{u_2 + 1, u_2 + 1, u_2 + 1} B w)) → Or (Eq.{u_2 + 1} K Bot.bot.{u_2}) (Eq.{u_2 + 1} K S)) → (∀ (A : Module.End.{0, u_1} Complex Wq), Membership.mem.{u_1, u_1} Gq A → ∀ (v : Wq), Membership.mem.{u_1, u_1} S' v → Membership.mem.{u_1, u_1} S' (DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1} A v)) → ∀ (E Z : LinearMap.{0, 0, u_1, u_2} (RingHom.id.{0} Complex) Wq Wp), (∀ (v : Wq), Membership.mem.{u_1, u_1} S' v → Membership.mem.{u_2, u_2} S (DFunLike.coe.{max (u_1 + 1) (u_2 + 1), u_1 + 1, u_2 + 1} E v)) → (∀ (v : Wq), Membership.mem
+
+### Lemmata.GeneralBFactSecondBisAlt.Imports:5  Bl.general_b_fact_second.goal1
+theorem goal1 : ∀ {K : Type} [inst : Field.{0} K] [NumberField.{0} K] {V : Type} [inst_2 : AddCommGroup.{0} V] [inst_3 : Module.{0, 0} K V] [inst_4 : Module.{0, 0} (NumberField.RingOfIntegers.{0} K) V] [IsScalarTower.{0, 0, 0} (NumberField.RingOfIntegers.{0} K) K V] (M : Submodule.{0, 0} (NumberField.RingOfIntegers.{0} K) V) {x : V}, Membership.mem.{0, 0} (Submodule.span.{0, 0} K (SetLike.coe.{0, 0} M)) x → Exists.{1} fun (d : NumberField.RingOfIntegers.{0} K) ↦ And (Ne.{1} d 0) (Membership.mem.{0, 0} M (HSMul.hSMul.{0, 0, 0} d x))
+
+### Lemmata.GeneralBFactSecondBisForm.Goal1:7  Bl.general_b_fact_second_bis_form.goal1
+theorem goal1 : ∀ {E : Type u_1} {F : Type u_2} [inst : NormedAddCommGroup.{u_1} E] [inst_1 : NormedSpace.{0, u_1} Complex E] [inst_2 : NormedAddCommGroup.{u_2} F] [inst_3 : NormedSpace.{0, u_2} Complex F] {f : E → F} {y : E} {δ M : Real}, LT.lt.{0} 0 δ → DifferentiableOn.{0, u_1, u_2} Complex f (Metric.ball.{u_1} y δ) → (∀ (z : E), Membership.mem.{u_1, u_1} (Metric.ball.{u_1} y δ) z → LE.le.{0} (Norm.norm.{u_2} (f z)) M) → LE.le.{0} (Norm.norm.{max u_2 u_1} (fderiv.{0, u_1, u_2} Complex f y)) (HDiv.hDiv.{0, 0, 0} M δ)
+
+### Lemmata.GeneralBFactSecondExtra.Key:7  Bl.general_b_fact_second.key  [private]
+private lemma key {O : Type*} {Y : Type*} [CommRing O] [AddCommGroup Y] [Module O Y] (R S D E : Submodule O Y) (hD : ∀ y, y ∈ D ↔ y ∈ R ∧ y ∈ S) (hE : E ≤ D) : Module.length O (R ⧸ E.comap R.subtype) = Module.length O (R ⧸ S.comap R.subtype) + Module.length O (D ⧸ E.comap D.subtype)
+
+### Lemmata.GeneralBFactSecondExtra.Key:41  Bl.general_b_fact_second.goal1
+theorem goal1 : ∀ {O : Type u_1} {Y : Type u_2} [inst : CommRing.{u_1} O] [inst_1 : AddCommGroup.{u_2} Y] [inst_2 : Module.{u_1, u_2} O Y] (R S D E : Submodule.{u_1, u_2} O Y), (∀ (y : Y), Iff (Membership.mem.{u_2, u_2} D y) (And (Membership.mem.{u_2, u_2} R y) (Membership.mem.{u_2, u_2} S y))) → LE.le.{u_2} E D → Eq.{1} (Module.length.{u_1, u_2} O (HasQuotient.Quotient.{u_2, u_2} (Subtype.{u_2 + 1} fun (x : Y) ↦ Membership.mem.{u_2, u_2} R x) (Submodule.comap.{u_1, u_1, u_2, u_2} (Submodule.subtype.{u_1, u_2} R) E))) (HAdd.hAdd.{0, 0, 0} (Module.length.{u_1, u_2} O (HasQuotient.Quotient.{u_2, u_2} (Subtype.{u_2 + 1} fun (x : Y) ↦ Membership.mem.{u_2, u_2} R x) (Submodule.comap.{u_1, u_1, u_2, u_2} (Submodule.subtype.{u_1, u_2} R) S))) (Module.length.{u_1, u_2} O (HasQuotient.Quotient.{u_2, u_2} (Subtype.{u_2 + 1} fun (x : Y) ↦ Membership.mem.{u_2, u_2} D x) (Submodule.comap.{u_1, u_1, u_2, u_2} (Submodule.subtype.{u_1, u_2} D) E))))
+
+### Lemmata.GeneralBFactSecondForm.Imports:5  Bl.general_b_fact_second_form.goal1
+theorem goal1 : ∀ {K V : Type} [inst : Field.{0} K] [NumberField.{0} K] [StarRing.{0} K] [inst_3 : AddCommGroup.{0} V] [inst_4 : Module.{0, 0} K V] [inst_5 : Module.{0, 0} (NumberField.RingOfIntegers.{0} K) V] [inst_6 : IsScalarTower.{0, 0, 0} (NumberField.RingOfIntegers.{0} K) K V] {Λ : Submodule.{0, 0} (NumberField.RingOfIntegers.{0} K) V}, Submodule.IsLattice.{0, 0, 0} K Λ → ∀ (v : V), Exists.{1} fun (r : NumberField.RingOfIntegers.{0} K) ↦ And (Ne.{1} r 0) (Membership.mem.{0, 0} Λ (HSMul.hSMul.{0, 0, 0} r v))
+
+### Lemmata.GeneralBFactSecondFurther.Imports:5  Bl.general_b_fact_second.goal1
+theorem goal1 : ∀ {O K X : Type} [inst : CommRing.{0} O] [IsDomain.{0} O] [inst_2 : Field.{0} K] [inst_3 : Algebra.{0, 0} O K] [IsFractionRing.{0, 0} O K] [inst_5 : AddCommGroup.{0} X] [inst_6 : Module.{0, 0} K X] [inst_7 : Module.{0, 0} O X] [IsScalarTower.{0, 0, 0} O K X] (B : Submodule.{0, 0} O X), Eq.{1} (Submodule.span.{0, 0} K (SetLike.coe.{0, 0} B)) Top.top.{0} → ∀ (x : X), Exists.{1} fun (d : O) ↦ And (Ne.{1} d 0) (Membership.mem.{0, 0} B (HSMul.hSMul.{0, 0, 0} d x))
+
+### Lemmata.GeneralBFactSecondLast.Imports:5  Bl.general_b_fact_second_last.goal1
+theorem goal1 : ∀ (B : Int) {S : Nat} (c : Fin S → Int), (∀ (m : Fin S), LT.lt.{0} (abs.{0} (c m)) B) → Eq.{1} (Finset.sum.{0, 0} Finset.univ.{0} fun (m : Fin S) ↦ HMul.hMul.{0, 0, 0} (c m) (HPow.hPow.{0, 0, 0} B m.val)) 0 → ∀ (m : Fin S), Eq.{1} (c m) 0
+
+### Lemmata.GeneralBFactSecondMore.Imports:5  Bl.general_b_fact_second.goal1
+theorem goal1 : ∀ {E U : Type} [inst : Field.{0} E] [NumberField.{0} E] [inst_2 : AddCommGroup.{0} U] [inst_3 : Module.{0, 0} E U] [inst_4 : Module.{0, 0} (NumberField.RingOfIntegers.{0} E) U] [IsScalarTower.{0, 0, 0} (NumberField.RingOfIntegers.{0} E) E U] (N : Submodule.{0, 0} (NumberField.RingOfIntegers.{0} E) U), Eq.{1} (Submodule.span.{0, 0} E (SetLike.coe.{0, 0} N)) Top.top.{0} → ∀ (x : U), Exists.{1} fun (d : NumberField.RingOfIntegers.{0} E) ↦ And (Ne.{1} d 0) (Membership.mem.{0, 0} N (HSMul.hSMul.{0, 0, 0} d x))
+
+### Lemmata.GeneralBFactSecondRest.Imports:7  Bl.general_b_fact_second_rest.aux  [private]
+private lemma aux {K : Type u_1} [Field K] [NumberField K] (a : K) : ∃ d : ℤ, d ≠ 0 ∧ IsIntegral ℤ ((d : K) * a)
+
+### Lemmata.GeneralBFactSecondRest.Imports:13  Bl.general_b_fact_second_rest.goal1
+theorem goal1 : ∀ {K : Type u_1} {V : Type u_2} [inst : Field.{u_1} K] [NumberField.{u_1} K] [NumberField.IsTotallyComplex.{u_1} K] [StarRing.{u_1} K] [inst_4 : AddCommGroup.{u_2} V] [inst_5 : Module.{u_1, u_2} K V] [inst_6 : Module.{u_1, u_2} (NumberField.RingOfIntegers.{u_1} K) V] [IsScalarTower.{u_1, u_1, u_2} (NumberField.RingOfIntegers.{u_1} K) K V] (L : Submodule.{u_1, u_2} (NumberField.RingOfIntegers.{u_1} K) V), Eq.{u_2 + 1} (Submodule.span.{u_1, u_2} K (SetLike.coe.{u_2, u_2} L)) Top.top.{u_2} → ∀ (y : V), Exists.{1} fun (c : Int) ↦ And (Ne.{1} c 0) (Membership.mem.{u_2, u_2} L (HSMul.hSMul.{0, u_2, u_2} c y))
+
+### Lemmata.GeneralBFactSecondSide.Imports:5  Bl.general_b_fact_second.goal1
+theorem goal1 : ∀ {K V : Type} [inst : Field.{0} K] [NumberField.{0} K] [StarRing.{0} K] [inst_3 : AddCommGroup.{0} V] [inst_4 : Module.{0, 0} K V] [inst_5 : Module.{0, 0} (NumberField.RingOfIntegers.{0} K) V] [inst_6 : IsScalarTower.{0, 0, 0} (NumberField.RingOfIntegers.{0} K) K V] (M : Submodule.{0, 0} (NumberField.RingOfIntegers.{0} K) V), Submodule.IsLattice.{0, 0, 0} K M → ∀ (x : V), Exists.{1} fun (n : Int) ↦ And (Ne.{1} n 0) (Membership.mem.{0, 0} M (HSMul.hSMul.{0, 0, 0} n x))
+
+### Lemmata.GeneralBFactSecondTail.Imports:7  Bl.general_b_fact_second.goal1
+theorem goal1 : ∀ {K : Type u_1} [inst : Field.{u_1} K] [NumberField.{u_1} K] {V : Type u_2} [inst_2 : AddCommGroup.{u_2} V] [inst_3 : Module.{u_1, u_2} K V] [inst_4 : Module.{u_1, u_2} (NumberField.RingOfIntegers.{u_1} K) V] [IsScalarTower.{u_1, u_1, u_2} (NumberField.RingOfIntegers.{u_1} K) K V] (A : Submodule.{u_1, u_2} (NumberField.RingOfIntegers.{u_1} K) V) (x : V), Membership.mem.{u_2, u_2} (Submodule.span.{u_1, u_2} K (SetLike.coe.{u_2, u_2} A)) x → Exists.{u_1 + 1} fun (d : NumberField.RingOfIntegers.{u_1} K) ↦ And (Ne.{u_1 + 1} d 0) (Membership.mem.{u_2, u_2} A (HSMul.hSMul.{u_1, u_2, u_2} d x))
+
+### Lemmata.GeneralBFactSecondTer.Imports:5  Bl.general_b_fact_second_ter.goal1
+theorem goal1 : ∀ {n : Nat} (Q : Fin n → Prop) [inst : DecidablePred.{1} Q], (∀ (q q' : Fin n), LE.le.{0} q' q → Q q → Q q') → ∀ (p : Fin n), Iff (Q p) (LT.lt.{0} p.val (Finset.card.{0} (Finset.filter.{0} Q Finset.univ.{0})))
+
+### Lemmata.GeneralBFactSecondTerForm.Imports:7  Bl.general_b_fact_second_ter_form.aux  [private]
+private lemma aux {V : Type} [AddCommGroup V] [Module ℂ V] {ι : Type u_1} (C : ℂ → Module.End ℂ V) (χ : ι → ℂ → ℂ) (hχ : Function.Injective χ) (p : ι → Submodule ℂ V) (hp : ∀ (i : ι) (v : V), v ∈ p i ↔ ∀ w, C w v = χ i w • v) [DecidableEq ι] (t : Finset ι) : ∀ i, i ∉ t → Disjoint (p i) (t.sup p)
+
+### Lemmata.GeneralBFactSecondTerForm.Imports:45  Bl.general_b_fact_second_ter_form.goal1
+theorem goal1 : ∀ {V : Type} [inst : AddCommGroup.{0} V] [inst_1 : Module.{0, 0} Complex V] {ι : Type u_1} (C : Complex → Module.End.{0, 0} Complex V) (χ : ι → Complex → Complex), Function.Injective.{u_1 + 1, 1} χ → ∀ (p : ι → Submodule.{0, 0} Complex V), (∀ (i : ι) (v : V), Iff (Membership.mem.{0, 0} (p i) v) (∀ (w : Complex), Eq.{1} (DFunLike.coe.{1, 1, 1} (C w) v) (HSMul.hSMul.{0, 0, 0} (χ i w) v))) → iSupIndep.{u_1 + 1, 0} p
+
+### Lemmata.GeneralBFactSecondVariant.Imports:7  Bl.general_b_fact_second_variant.goal1
+theorem goal1 : ∀ {k : Type u_1} [inst : Field.{u_1} k] (τ : RingHom.{u_1, u_1} k k), (∀ (x : k), Eq.{u_1 + 1} (DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1} τ (DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1} τ x)) x) → ∀ (θ : k), Ne.{u_1 + 1} (HSub.hSub.{u_1, u_1, u_1} θ (DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1} τ θ)) 0 → Eq.{1} (Nat.card.{u_1} k) (HPow.hPow.{0, 0, 0} (Nat.card.{u_1} (Subtype.{u_1 + 1} fun (x : k) ↦ Eq.{u_1 + 1} (DFunLike.coe.{u_1 + 1, u_1 + 1, u_1 + 1} τ x) x)) 2)
+
+### Lemmata.GeneralBFactSecondVersion.Imports:5  Bl.general_b_fact_second_version.goal1
+theorem goal1 : ∀ {k A : Type} [inst : Field.{0} k] [inst_1 : Ring.{0} A] [inst_2 : Algebra.{0, 0} k A] {W S : Type} [inst_3 : AddCommGroup.{0} W] [inst_4 : Module.{0, 0} k W] [inst_5 : Module.{0, 0} A W] [IsScalarTower.{0, 0, 0} k A W] [inst_7 : AddCommGroup.{0} S] [inst_8 : Module.{0, 0} A S] [FiniteDimensional.{0, 0} k W] [IsSemisimpleModule.{0, 0} A W] [IsSimpleModule.{0, 0} A S], (∀ (a : A), (∀ (w : W), Eq.{1} (HSMul.hSMul.{0, 0, 0} a w) 0) → ∀ (s : S), Eq.{1} (HSMul.hSMul.{0, 0, 0} a s) 0) → Exists.{1} fun (f : LinearMap.{0, 0, 0, 0} (RingHom.id.{0} A) W S) ↦ Ne.{1} f 0
+
+### Lemmata.GeneralBFactSide.Imports:7  Bl.general_b_fact_side.goal1
+theorem goal1 : ∀ {R : Type u_1} [inst : CommRing.{u_1} R] [inst_1 : IsLocalRing.{u_1} R] [IsNoetherianRing.{u_1} R] {N₁ : Type u_3} {N₂ : Type u_4} [inst_3 : AddCommGroup.{u_3} N₁] [inst_4 : Module.{u_1, u_3} R N₁] [Module.Finite.{u_1, u_3} R N₁] [inst_6 : AddCommGroup.{u_4} N₂] [inst_7 : Module.{u_1, u_4} R N₂] [Module.Finite.{u_1, u_4} R N₂], Not (Membership.mem.{u_1, u_1} (associatedPrimes.{u_1, u_3} R N₁) (IsLocalRing.maximalIdeal.{u_1} R)) → Not (Membership.mem.{u_1, u_1} (associatedPrimes.{u_1, u_4} R N₂) (IsLocalRing.maximalIdeal.{u_1} R)) → Exists.{u_1 + 1} fun (z : R) ↦ And (Membership.mem.{u_1, u_1} (IsLocalRing.maximalIdeal.{u_1} R) z) (And (IsSMulRegular.{u_1, u_3} N₁ z) (IsSMulRegular.{u_1, u_4} N₂ z))
+
+### Lemmata.GeneralBFactTail.Imports:7  Bl.general_b_fact_tail.goal1
+theorem goal1 : ∀ {R : Type u_1} {M : Type u_2} [inst : CommRing.{u_1} R] [inst_1 : IsDomain.{u_1} R] [inst_2 : IsPrincipalIdealRing.{u_1} R] [inst_3 : AddCommGroup.{u_2} M] [inst_4 : Module.{u_1, u_2} R M] {ι : Type u_3} [inst_5 : Fintype.{u_3} ι] [DecidableEq.{u_3 + 1} ι] (b : Module.Basis.{u_3, u_1, u_2} ι R M) (N : Submodule.{u_1, u_2} R M) (h : Eq.{1} (Module.finrank.{u_1, u_2} R (Subtype.{u_2 + 1} fun (x : M) ↦ Membership.mem.{u_2, u_2} N x)) (Module.finrank.{u_1, u_2} R M)) (e : LinearEquiv.{u_1, u_1, u_2, u_2} (RingHom.id.{u_1} R) M (Subtype.{u_2 + 1} fun (x : M) ↦ Membership.mem.{u_2, u_2} N x)), Associated.{u_1} (DFunLike.coe.{max (u_1 + 1) (u_2 + 1), u_2 + 1, u_1 + 1} LinearMap.det.{u_2, u_1} (LinearMap.comp.{u_1, u_1, u_1, u_2, u_2, u_2} (Submodule.subtype.{u_1, u_2} N) (LinearEquiv.toLinearMap.{u_1, u_1, u_2, u_2} e))) (Finset.prod.{u_3, u_1} Finset.univ.{u_3} fun (i : ι) ↦ Submodule.smithNormalFormCoeffs.{u_3, u_1, u_2} b h i)
+
+### Lemmata.GeneralBFactTer.Imports:5  Bl.general_b_fact_ter.goal1
+theorem goal1 : ∀ {r : Nat} {N N' B B' : Matrix.{0, 0, 0} (Fin r) (Fin r) Complex}, (∀ (a c : Fin r), LT.lt.{0} a c → Eq.{1} (N a c) 0) → (∀ (a : Fin r), Eq.{1} (N a a) 1) → (∀ (a c : Fin r), LT.lt.{0} a c → Eq.{1} (N' a c) 0) → (∀ (a : Fin r), Eq.{1} (N' a a) 1) → (∀ (a c : Fin r), LT.lt.{0} c a → Eq.{1} (B a c) 0) → (∀ (a c : Fin r), LT.lt.{0} c a → Eq.{1} (B' a c) 0) → Ne.{1} (Matrix.det.{0, 0} B) 0 → Eq.{1} (HMul.hMul.{0, 0, 0} N B) (HMul.hMul.{0, 0, 0} N' B') → Eq.{1} N N'
+
+### Lemmata.GeneralBFactTerForm.Imports:5  Bl.general_b_fact_ter_form.goal1
+theorem goal1 : ∀ {x : WithBot.{0} ENat} {m : Nat}, Eq.{1} (HAdd.hAdd.{0, 0, 0} x 1) (Nat.cast.{0} (HAdd.hAdd.{0, 0, 0} m 1)) → Eq.{1} x (Nat.cast.{0} m)
+
+### Lemmata.GeneralBFactThird.Imports:7  Bl.general_b_fact_third.goal1
+theorem goal1 : ∀ {K : Type u_1} [inst : NormedField.{u_1} K] [IsUltrametricDist.{u_1} K] (P : Polynomial.{u_1} K), Polynomial.Monic.{u_1} P → (∀ (i : Nat), LE.le.{0} (Norm.norm.{u_1} (Polynomial.coeff.{u_1} P i)) 1) → ∀ (x : K), Eq.{u_1 + 1} (Polynomial.eval.{u_1} x P) 0 → LE.le.{0} (Norm.norm.{u_1} x) 1
+
+### Lemmata.GeneralBFactThirdAlt.Imports:5  Bl.general_b_fact_third_alt.goal1
+theorem goal1 : ∀ {K : Type} [inst : Field.{0} K] [NumberField.{0} K] {n : Nat} (R : Submodule.{0, 0} (NumberField.RingOfIntegers.{0} K) (Fin n → K)) (x : Fin n → K), Membership.mem.{0, 0} (Submodule.span.{0, 0} K (SetLike.coe.{0, 0} R)) x → Exists.{1} fun (d : NumberField.RingOfIntegers.{0} K) ↦ And (Ne.{1} d 0) (Membership.mem.{0, 0} R (HSMul.hSMul.{0, 0, 0} d x))
+
+### Lemmata.GeneralBFactThirdAltForm.Imports:5  Bl.general_b_fact_third_alt_form.goal1
+theorem goal1 : ∀ {E : Type} [inst : CommRing.{0} E] {O : Subring.{0} E} {V : Type} [inst_1 : AddCommGroup.{0} V] [inst_2 : Module.{0, 0} E V] {ι : Type} [inst_3 : Fintype.{0} ι] [inst_4 : DecidableEq.{1} ι] (g b : ι → V), LinearIndependent.{0, 0, 0} (Subtype.{1} fun (x : E) ↦ Membership.mem.{0, 0} O x) g → Eq.{1} (Submodule.span.{0, 0} (Subtype.{1} fun (x : E) ↦ Membership.mem.{0, 0} O x) (Set.range.{0, 1} g)) (Submodule.span.{0, 0} (Subtype.{1} fun (x : E) ↦ Membership.mem.{0, 0} O x) (Set.range.{0, 1} b)) → Exists.{1} fun (Q : Matrix.{0, 0, 0} ι ι (Subtype.{1} fun (x : E) ↦ Membership.mem.{0, 0} O x)) ↦ Exists.{1} fun (P : Matrix.{0, 0, 0} ι ι (Subtype.{1} fun (x : E) ↦ Membership.mem.{0, 0} O x)) ↦ And (∀ (j : ι), Eq.{1} (g j) (Finset.sum.{0, 0} Finset.univ.{0} fun (i : ι) ↦ HSMul.hSMul.{0, 0, 0} (Q i j) (b i))) (Eq.{1} (HMul.hMul.{0, 0, 0} P Q) 1)
+
+### Lemmata.GeneralBFactThirdBis.Imports:7  Bl.general_b_fact_third_bis.goal1
+theorem goal1 : ∀ {E : Type u_1} [inst : Field.{u_1} E] [NumberField.{u_1} E] (φ : RingHom.{u_1, 0} E Complex) {n : Nat} (L : Submodule.{u_1, u_1} (NumberField.RingOfIntegers.{u_1} E) (Fin n → E)), Submodule.FG.{u_1, u_1} L → Eq.{u_1 + 1} (Submodule.span.{u_1, u_1} E (SetLike.coe.{u_1, u_1} L)) Top.top.{u_1} → ∀ (M : Matrix.{0, 0, u_1} (Fin n) (Fin n) E), (∀ (x : Fin n → E), Membership.mem.{u_1, u_1} L x → Membership.mem.{u_1, u_1} L (Matrix.mulVec.{u_1, 0, 0} M x)) → IsIntegral.{0, u_1} Int (Matrix.trace.{0, u_1} M)
+
+### Lemmata.GeneralBFactThirdBisAlt.Imports:5  Bl.general_b_fact_third_bis_other.goal1
+theorem goal1 : ∀ {R K V : Type} [inst : CommRing.{0} R] [IsDomain.{0} R] [inst_2 : Field.{0} K] [inst_3 : Algebra.{0, 0} R K] [IsFractionRing.{0, 0} R K] [inst_5 : AddCommGroup.{0} V] [inst_6 : Module.{0, 0} K V] [inst_7 : Module.{0, 0} R V] [IsScalarTower.{0, 0, 0} R K V] (N : Submodule.{0, 0} R V) {v : V}, Membership.mem.{0, 0} (Submodule.span.{0, 0} K (SetLike.coe.{0, 0} N)) v → Exists.{1} fun (c : R) ↦ And (Ne.{1} c 0) (Membership.mem.{0, 0} N (HSMul.hSMul.{0, 0, 0} c v))
+
+### Lemmata.GeneralBFactThirdBisForm.Imports:5  Bl.general_b_fact_third_bis_form.goal1
+theorem goal1 : ∀ {ι P β : Type} [inst : Fintype.{0} ι] [inst_1 : Fintype.{0} P] [inst_2 : MeasurableSpace.{0} β] (μ0 : MeasureTheory.Measure.{0} β) [MeasureTheory.SigmaFinite.{0} μ0], MeasureTheory.MeasurePreserving.{0, 0} (fun (x : ι → P → β) (p : P) (v : ι) ↦ x v p) (MeasureTheory.Measure.pi.{0, 0} fun (x : ι) ↦ MeasureTheory.Measure.pi.{0, 0} fun (x : P) ↦ μ0) (MeasureTheory.Measure.pi.{0, 0} fun (x : P) ↦ MeasureTheory.Measure.pi.{0, 0} fun (x : ι) ↦ μ0)
+
+### Lemmata.GeneralBFactThirdForm.Imports:5  Bl.general_b_fact_third_form.goal1
+theorem goal1 : ∀ {E V : Type} [inst : Field.{0} E] [NumberField.{0} E] [StarRing.{0} E] [inst_3 : AddCommGroup.{0} V] [inst_4 : Module.{0, 0} E V] [FiniteDimensional.{0, 0} E V] [inst_6 : Module.{0, 0} (NumberField.RingOfIntegers.{0} E) V] [inst_7 : IsScalarTower.{0, 0, 0} (NumberField.RingOfIntegers.{0} E) E V] (Λ : Submodule.{0, 0} (NumberField.RingOfIntegers.{0} E) V) [hΛ : Submodule.IsLattice.{0, 0, 0} E Λ] (v : V), Exists.{1} fun (s : NumberField.RingOfIntegers.{0} E) ↦ And (Ne.{1} s 0) (Membership.mem.{0, 0} Λ (HSMul.hSMul.{0, 0, 0} s v))
+
+### Lemmata.GeneralBFactThirdFurther.Imports:5  Bl.general_b_fact_third_further.aux  [private]
+private lemma aux (f : ℝ → ℂ) (hc : Continuous f) (hm : ∀ s t : ℝ, f (s + t) = f s * f t) (hn : ∀ s, ‖f s‖ = 1) : ∃ a : ℂ, ∀ s : ℝ, f s = Complex.exp (a * s)
+
+### Lemmata.GeneralBFactThirdFurther.Imports:60  Bl.general_b_fact_third_further.goal1
+theorem goal1 : ∀ (f : Real → Complex), Continuous.{0, 0} f → (∀ (s t : Real), Eq.{1} (f (HAdd.hAdd.{0, 0, 0} s t)) (HMul.hMul.{0, 0, 0} (f s) (f t))) → (∀ (s : Real), Eq.{1} (Norm.norm.{0} (f s)) 1) → Exists.{1} fun (b : Real) ↦ ∀ (s : Real), Eq.{1} (f s) (Complex.exp (HMul.hMul.{0, 0, 0} (Complex.ofReal (HMul.hMul.{0, 0, 0} b s)) Complex.I))
+
+### Lemmata.GeneralBFactThirdLast.Imports:5  Bl.general_b_fact_third_last.goal1
+theorem goal1 : ∀ {a : WithBot.{0} ENat} {n : Nat}, Eq.{1} (HAdd.hAdd.{0, 0, 0} a 1) (Nat.cast.{0} (HAdd.hAdd.{0, 0, 0} n 1)) → Eq.{1} a (Nat.cast.{0} n)
+
+### Lemmata.GeneralBFactThirdMore.Key:5  Bl.general_b_fact_third.key  [private]
+private lemma key {E : Type} [Field E] [NumberField E] (c : E) : ∃ d : ℕ, 0 < d ∧ IsIntegral ℤ ((d : E) * c)
+
+### Lemmata.GeneralBFactThirdMore.Key:15  Bl.general_b_fact_third.goal1
+theorem goal1 : ∀ {E : Type} [inst : Field.{0} E] [NumberField.{0} E] {n : Nat} (L : Submodule.{0, 0} (NumberField.RingOfIntegers.{0} E) (Fin n → E)), Eq.{1} (Submodule.span.{0, 0} E (SetLike.coe.{0, 0} L)) Top.top.{0} → ∀ (w : Fin n → E), Exists.{1} fun (m : Nat) ↦ And (LT.lt.{0} 0 m) (Membership.mem.{0, 0} L (HSMul.hSMul.{0, 0, 0} m w))
+
+### Lemmata.GeneralBFactThirdSide.Imports:5  Bl.general_b_fact_third.goal1
+theorem goal1 : ∀ {E : Type} [inst : Field.{0} E] [NumberField.{0} E] {V : Type} [inst_2 : AddCommGroup.{0} V] [inst_3 : Module.{0, 0} E V] [inst_4 : Module.{0, 0} (NumberField.RingOfIntegers.{0} E) V] [IsScalarTower.{0, 0, 0} (NumberField.RingOfIntegers.{0} E) E V] (Λ : Submodule.{0, 0} (NumberField.RingOfIntegers.{0} E) V), Eq.{1} (Submodule.span.{0, 0} E (SetLike.coe.{0, 0} Λ)) Top.top.{0} → ∀ (x : V), Exists.{1} fun (d : NumberField.RingOfIntegers.{0} E) ↦ And (Ne.{1} d 0) (Membership.mem.{0, 0} Λ (HSMul.hSMul.{0, 0, 0} d x))
+
+### Lemmata.GeneralBFactThirdTail.Imports:5  Bl.general_b_fact_third.goal1
+theorem goal1 : ∀ {E : Type} [inst : Field.{0} E] [NumberField.{0} E] {V : Type} [inst_2 : AddCommGroup.{0} V] [inst_3 : Module.{0, 0} E V] [inst_4 : Module.{0, 0} (NumberField.RingOfIntegers.{0} E) V] [IsScalarTower.{0, 0, 0} (NumberField.RingOfIntegers.{0} E) E V] (Λ : Submodule.{0, 0} (NumberField.RingOfIntegers.{0} E) V), Eq.{1} (Submodule.span.{0, 0} E (SetLike.coe.{0, 0} Λ)) Top.top.{0} → ∀ (x : V), Exists.{1} fun (d : NumberField.RingOfIntegers.{0} E) ↦ And (Ne.{1} d 0) (Membership.mem.{0, 0} Λ (HSMul.hSMul.{0, 0, 0} d x))
+
+### Lemmata.GeneralBFactThirdTer.Imports:5  Bl.general_b_fact_third_ter.goal1
+theorem goal1 : ∀ {E : Type} [inst : Field.{0} E] [NumberField.{0} E] [StarRing.{0} E] {W : Type} [inst_3 : AddCommGroup.{0} W] [inst_4 : Module.{0, 0} E W] [inst_5 : Module.{0, 0} (NumberField.RingOfIntegers.{0} E) W] [IsScalarTower.{0, 0, 0} (NumberField.RingOfIntegers.{0} E) E W] (L : Submodule.{0, 0} (NumberField.RingOfIntegers.{0} E) W), Eq.{1} (Submodule.span.{0, 0} E (SetLike.coe.{0, 0} L)) Top.top.{0} → ∀ (y : W), Exists.{1} fun (ν : NumberField.RingOfIntegers.{0} E) ↦ And (Ne.{1} ν 0) (Membership.mem.{0, 0} L (HSMul.hSMul.{0, 0, 0} ν y))
+
+### Lemmata.GeneralBFactThirdTerForm.Imports:5  Bl.general_b_fact_third_ter_form.aux  [private]
+private lemma aux {K W : Type} [Field K] [NumberField K] [AddCommGroup W] [Module K W] [Module (NumberField.RingOfIntegers K) W] [IsScalarTower (NumberField.RingOfIntegers K) K W] (Λ : Submodule (NumberField.RingOfIntegers K) W) (hspan : Submodule.span K (Λ : Set W) = ⊤) (v : W) : ∃ s : NumberField.RingOfIntegers K, s ≠ 0 ∧ s • v ∈ Λ
+
+### Lemmata.GeneralBFactThirdTerForm.Imports:39  Bl.general_b_fact_third_ter_form.goal1
+theorem goal1 : ∀ {K W : Type} [inst : Field.{0} K] [NumberField.{0} K] [inst_2 : AddCommGroup.{0} W] [inst_3 : Module.{0, 0} K W] [inst_4 : Module.{0, 0} (NumberField.RingOfIntegers.{0} K) W] [inst_5 : IsScalarTower.{0, 0, 0} (NumberField.RingOfIntegers.{0} K) K W] (Λ : Submodule.{0, 0} (NumberField.RingOfIntegers.{0} K) W) [hΛ : Submodule.IsLattice.{0, 0, 0} K Λ] (v : W), Exists.{1} fun (s : NumberField.RingOfIntegers.{0} K) ↦ And (Ne.{1} s 0) (Membership.mem.{0, 0} Λ (HSMul.hSMul.{0, 0, 0} s v))
+
+### Lemmata.GeneralBFactThirdVariant.Imports:5  Bl.general_b_fact_third_variant.goal1
+theorem goal1 : ∀ {E : Type} [inst : Field.{0} E] [inst_1 : NumberField.{0} E] {Ψ : Finset.{0} (RingHom.{0, 0} E Complex)}, (∀ (σ : RingHom.{0, 0} E Complex), Iff (Membership.mem.{0, 0} Ψ σ) (Not (Membership.mem.{0, 0} Ψ (NumberField.ComplexEmbedding.conjugate.{0} σ)))) → ∀ (x : Module.Free.ChooseBasisIndex.{0, 0} Int (NumberField.RingOfIntegers.{0} E) → Real), (∀ (τ : RingHom.{0, 0} E Complex), Membership.mem.{0, 0} Ψ τ → Eq.{1} (Finset.sum.{0, 0} Finset.univ.{0} fun (k : Module.Free.ChooseBasisIndex.{0, 0} Int (NumberField.RingOfIntegers.{0} E)) ↦ HMul.hMul.{0, 0, 0} (Complex.ofReal (x k)) (DFunLike.coe.{1, 1, 1} τ (NumberField.RingOfIntegers.val.{0} (DFunLike.coe.{1, 1, 1} (NumberField.RingOfIntegers.basis.{0} E) k)))) 0) → Eq.{1} x 0
+
+### Lemmata.GeneralBFactThirdVersion.Imports:5  Bl.general_b_fact_third_version.goal1
+theorem goal1 : ∀ {E : Type} [inst : Field.{0} E] [@NumberField.{0} E inst] {V : Type} [inst_2 : AddCommGroup.{0} V] [inst_3 : @Module.{0, 0} E V (@DivisionSemiring.toSemiring.{0} E (@Semifield.toDivisionSemiring.{0} E (@Field.toSemifield.{0} E inst))) (@AddCommGroup.toAddCommMonoid.{0} V inst_2)] [inst_4 : @Module.{0, 0} (@NumberField.RingOfIntegers.{0} E inst) V (@CommSemiring.toSemiring.{0} (@NumberField.RingOfIntegers.{0} E inst) (@CommRing.toCommSemiring.{0} (@NumberField.RingOfIntegers.{0} E inst) (@NumberField.instCommRingRingOfIntegers.{0} E inst))) (@AddCommGroup.toAddCommMonoid.{0} V inst_2)] [inst_5 : @IsScalarTower.{0, 0, 0} (@NumberField.RingOfIntegers.{0} E inst) E V (@Algebra.toSMul.{0, 0} (@NumberField.RingOfIntegers.{0} E inst) E (@CommRing.toCommSemiring.{0} (@NumberField.RingOfIntegers.{0} E inst) (@NumberField.instCommRingRingOfIntegers.{0} E inst)) (@DivisionSemiring.toSemiring.{0} E (@Semifield.toDivisionSemiring.{0} E (@Field.toSemifield.{0} E inst))) (@NumberField.RingOfIntegers.instAlgebra_1.{0} E inst)) (@SMulZeroClass.toSMul.{0, 0} E V (@AddZero.toZero.{0} V (@AddZeroClass.toAddZero.{0} V (@AddMonoid.toAddZeroClass.{0} V (@SubNegMonoid.toAddMonoid.{0} V (@AddGroup.toSubNegMonoid.{0} V (@AddCommGroup.toAddGroup.{0} V inst_2)))))) (@DistribSMul.toSMulZeroClass.{0, 0} E V (@AddMonoid.toAddZeroClass.{0} V (@SubNegMonoid.toAddMonoid.{0} V (@AddGroup.toSubNegMonoid.{0} V (@AddCommGroup.toAddGroup.{0} V inst_2)))) (@DistribMulAction.toDistribSMul.{0, 0} E 
+
+### Lemmata.GeneralBFactUpper.Imports:5  Bl.general_b_fact_upper.goal1
+theorem goal1 : ∀ {K : Type} [inst : NormedField.{0} K] [IsUltrametricDist.{0} K] {x y : K}, LE.le.{0} (Norm.norm.{0} x) 1 → LE.le.{0} (Norm.norm.{0} y) 1 → ∀ (n : Nat), LE.le.{0} (Norm.norm.{0} (HSub.hSub.{0, 0, 0} (HPow.hPow.{0, 0, 0} x n) (HPow.hPow.{0, 0, 0} y n))) (Norm.norm.{0} (HSub.hSub.{0, 0, 0} x y))
+
+### Lemmata.GeneralBFactUpperAltForm.Imports:5  Bl.general_b_fact_upper_alt_form.goal1
+theorem goal1 : ∀ {K : Type} [inst : Field.{0} K] {n k : Type} [Fintype.{0} n] [DecidableEq.{1} n] [inst_3 : Fintype.{0} k] [DecidableEq.{1} k] (f : RingHom.{0, 0} K Complex) (A : Matrix.{0, 0, 0} n k K), Function.Injective.{1, 1} (Matrix.mulVec.{0, 0, 0} A) → Function.Injective.{1, 1} (Matrix.mulVec.{0, 0, 0} (Matrix.map.{0, 0, 0, 0} A (DFunLike.coe.{1, 1, 1} f)))
+
+### Lemmata.GeneralBFactUpperBis.Imports:5  Bl.general_b_fact_upper_bis.goal1
+theorem goal1 : ∀ {A K : Type} [inst : CommRing.{0} A] [inst_1 : IsDedekindDomain.{0} A] [inst_2 : Field.{0} K] [inst_3 : Algebra.{0, 0} A K] [inst_4 : IsFractionRing.{0, 0} A K] (w : IsDedekindDomain.HeightOneSpectrum.{0} A) {V : Type} [inst_5 : AddCommGroup.{0} V] [inst_6 : Module.{0, 0} K V] [inst_7 : Module.{0, 0} A V] [IsScalarTower.{0, 0, 0} A K V] {ι : Type} [Fintype.{0} ι] (b : Module.Basis.{0, 0, 0} ι K V) {O Kf Fn : Type} [inst_10 : CommRing.{0} O] [inst_11 : Field.{0} Kf] [inst_12 : Algebra.{0, 0} O Kf] [inst_13 : AddCommGroup.{0} Fn] [inst_14 : Module.{0, 0} Kf Fn] [inst_15 : Module.{0, 0} O Fn] [IsScalarTower.{0, 0, 0} O Kf Fn] (φ : RingHom.{0, 0} K Kf) (cmp : AddMonoidHom.{0, 0} V Fn), (∀ (x : K), Iff (LE.le.{0} (DFunLike.coe.{1, 1, 1} (IsDedekindDomain.HeightOneSpectrum.valuation.{0, 0} K w) x) 1) (Membership.mem.{0, 0} (Set.range.{0, 1} (DFunLike.coe.{1, 1, 1} (Algebra.algebraMap.{0, 0} O Kf))) (DFunLike.coe.{1, 1, 1} φ x))) → (∀ (a : K) (x : V), Eq.{1} (DFunLike.coe.{1, 1, 1} cmp (HSMul.hSMul.{0, 0, 0} a x)) (HSMul.hSMul.{0, 0, 0} (DFunLike.coe.{1, 1, 1} φ a) (DFunLike.coe.{1, 1, 1} cmp x))) → (LinearIndependent.{0, 0, 0} Kf fun (a : ι) ↦ DFunLike.coe.{1, 1, 1} cmp (DFunLike.coe.{1, 1, 1} b a)) → ∀ (Lat : Submodule.{0, 0} A V), Submodule.FG.{0, 0} Lat → ∀ (v : V), Membership.mem.{0, 0} (Submodule.span.{0, 0} O (Set.image.{0, 0} (DFunLike.coe.{1, 1, 1} cmp) (SetLike.coe.{0, 0} Lat))) (DFunLike.coe.{1, 1, 1} cmp v) → Exists.{1} fun (s : A) ↦ And (Not (Membershi
+
+### Lemmata.GeneralBFactUpperForm.Imports:7  Bl.general_b_fact_upper_form.goal1
+theorem goal1 : ∀ {LL : Type u_3} {M : Type u_4} [inst : Field.{u_3} LL] [inst_1 : AddCommGroup.{u_4} M] [inst_2 : Module.{u_3, u_4} LL M] (T : Module.End.{u_3, u_4} LL M) (W : Submodule.{u_3, u_4} LL M), (∀ (x : M), Membership.mem.{u_4, u_4} W x → Membership.mem.{u_4, u_4} W (DFunLike.coe.{u_4 + 1, u_4 + 1, u_4 + 1} T x)) → ∀ (p : Polynomial.{u_3} LL) (x : M), Membership.mem.{u_4, u_4} W x → Membership.mem.{u_4, u_4} W (DFunLike.coe.{u_4 + 1, u_4 + 1, u_4 + 1} (DFunLike.coe.{max (u_4 + 1) (u_3 + 1), u_3 + 1, u_4 + 1} (Polynomial.aeval.{u_3, u_4} T) p) x)
+
+### Lemmata.GeneralBFactUpperTerForm.Imports:5  Bl.general_b_fact_upper_ter_form.aux  [private]
+private lemma aux {p : Nat} [Fact (Nat.Prime p)] {ι : Type} (s : Finset ι) (g : ι → PadicAlgCl p) {C : Real} (hC : 0 ≤ C) (h : ∀ j ∈ s, ‖g j‖ ≤ C) : ‖∑ j ∈ s, g j‖ ≤ C
+
+### Lemmata.GeneralBFactUpperTerForm.Imports:16  Bl.general_b_fact_upper_ter_form.goal1
+theorem goal1 : ∀ {p : Nat} [inst : Fact (Nat.Prime p)] {ι : Type} (s : Finset.{0} ι) (g : ι → PadicAlgCl p) {C : Real}, LE.le.{0} 0 C → (∀ (j : ι), Membership.mem.{0, 0} s j → LE.le.{0} (Norm.norm.{0} (g j)) C) → LE.le.{0} (Norm.norm.{0} (Finset.sum.{0, 0} s fun (j : ι) ↦ g j)) C
+
+### Lemmata.GeneralBFactUpperVariant.Imports:7  Bl.general_b_fact_upper_variant.goal1
+theorem goal1 : ∀ {LL : Type u_3} {M : Type u_4} [inst : Field.{u_3} LL] [inst_1 : AddCommGroup.{u_4} M] [inst_2 : Module.{u_3, u_4} LL M] (T : Module.End.{u_3, u_4} LL M) (a : LL) (y : M), Eq.{u_4 + 1} (DFunLike.coe.{u_4 + 1, u_4 + 1, u_4 + 1} T y) (HSMul.hSMul.{u_3, u_4, u_4} a y) → ∀ (p : Polynomial.{u_3} LL), Eq.{u_4 + 1} (DFunLike.coe.{u_4 + 1, u_4 + 1, u_4 + 1} (DFunLike.coe.{max (u_4 + 1) (u_3 + 1), u_3 + 1, u_4 + 1} (Polynomial.aeval.{u_3, u_4} T) p) y) (HSMul.hSMul.{u_3, u_4, u_4} (Polynomial.eval.{u_3} a p) y)
+
+### Lemmata.GeneralBFactUpperVersion.Imports:5  Bl.general_b_fact_upper_version.goal1
+theorem goal1 : ∀ {R : Type} [inst : CommRing.{0} R] [IsDomain.{0} R] (ζ : R) (M : Nat) (P : Ideal.{0} R), Ne.{1} ζ 1 → Eq.{1} (HPow.hPow.{0, 0, 0} ζ M) 1 → Membership.mem.{0, 0} P (HSub.hSub.{0, 0, 0} ζ 1) → Membership.mem.{0, 0} P (Nat.cast.{0} M)
+
+### Lemmata.GeneralBFactVariant.Imports:5  Bl.general_b_fact_variant.goal1
+theorem goal1 : ∀ {n : Nat} {N N' B B' : Matrix.{0, 0, 0} (Fin n) (Fin n) Complex}, Matrix.BlockTriangular.{0, 0, 0} N (DFunLike.coe.{1, 1, 1} OrderDual.toDual.{0}) → Matrix.BlockTriangular.{0, 0, 0} N' (DFunLike.coe.{1, 1, 1} OrderDual.toDual.{0}) → (∀ (i : Fin n), Eq.{1} (N i i) 1) → (∀ (i : Fin n), Eq.{1} (N' i i) 1) → Matrix.BlockTriangular.{0, 0, 0} B id.{1} → Matrix.BlockTriangular.{0, 0, 0} B' id.{1} → Ne.{1} (Matrix.det.{0, 0} B) 0 → Eq.{1} (HMul.hMul.{0, 0, 0} N B) (HMul.hMul.{0, 0, 0} N' B') → Eq.{1} N N'
+
+### Lemmata.GeneralBFactVersion.Imports:7  Bl.general_b_fact_version.goal1
+theorem goal1 : ∀ {Y : Type u_1} [inst : NormedAddCommGroup.{u_1} Y] [inst_1 : NormedSpace.{0, u_1} Complex Y] {g : Y → Complex} {y : Y} {R M : Real}, LT.lt.{0} 0 R → DifferentiableOn.{0, u_1, 0} Complex g (Metric.ball.{u_1} y (HMul.hMul.{0, 0, 0} 2 R)) → (∀ (v : Y), Membership.mem.{u_1, u_1} (Metric.ball.{u_1} y (HMul.hMul.{0, 0, 0} 2 R)) v → LE.le.{0} (Norm.norm.{0} (g v)) M) → LE.le.{0} (Norm.norm.{u_1} (fderiv.{0, u_1, 0} Complex g y)) (HDiv.hDiv.{0, 0, 0} M R)
+
+### Lemmata.IntegerMulIntegral.IntMulIntegral:5  Bl.IntegerMulIntegral.int_mul_integral  [private]
+private lemma int_mul_integral {E : Type} [Field E] [NumberField E] (a : E) : ∃ d : ℤ, d ≠ 0 ∧ IsIntegral ℤ ((d : E) * a)
+
+### Lemmata.IntegerMulIntegral.IntMulIntegral:11  Bl.IntegerMulIntegral.goal1
+theorem goal1 : ∀ {E : Type} [inst : Field.{0} E] [NumberField.{0} E] {n : Nat} (L : Submodule.{0, 0} (NumberField.RingOfIntegers.{0} E) (Fin n → E)) (v : Fin n → E), Membership.mem.{0, 0} (Submodule.span.{0, 0} E (SetLike.coe.{0, 0} L)) v → Exists.{1} fun (m : Int) ↦ And (Ne.{1} m 0) (Membership.mem.{0, 0} L (HSMul.hSMul.{0, 0, 0} m v))
+
+### Lemmata.IterateZero.IterZero:5  Bl.IterateZero.iter_zero  [private]
+private lemma iter_zero (k : Nat) (g : Complex → Complex) (A : Real) (hg : Differentiable Complex g) (hb : ∀ t : Complex, ‖g t‖ ≤ A * (1 + ‖t‖) ^ k) (n : Nat) (hn : k < n) : iteratedDeriv n g 0 = 0
+
+### Lemmata.IterateZero.IterZero:35  Bl.IterateZero.goal1
+theorem goal1 : ∀ (k : Nat) (g : Complex → Complex) (A : Real), Differentiable.{0, 0, 0} Complex g → (∀ (t : Complex), LE.le.{0} (Norm.norm.{0} (g t)) (HMul.hMul.{0, 0, 0} A (HPow.hPow.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} 1 (Norm.norm.{0} t)) k))) → Exists.{1} fun (P : Polynomial.{0} Complex) ↦ And (LE.le.{0} (Polynomial.natDegree.{0} P) k) (∀ (t : Complex), Eq.{1} (g t) (Polynomial.eval.{0} t P))
+
+### Lemmata.MiscLemmasA.Imports:5  Bl.SecondBlockLemmaB.goal1
+theorem goal1 (O : Type) [CommRing O] [IsLocalRing O] (U L : Ideal O) (hL : L ≤ IsLocalRing.maximalIdeal O) : ∀ (n : ℕ) (g : Matrix (Fin n) (Fin n) O), (∀ i, IsUnit (g i i)) → (∀ i j, i < j → g i j ∈ U) → (∀ i j, j < i → g i j ∈ L) → ∃ (x y : Matrix (Fin n) (Fin n) O) (δ : Fin n → O), (∀ i j, g i j = ∑ k, x i k * δ k * y k j) ∧ (∀ i, x i i = 1) ∧ (∀ i j, j < i → x i j = 0) ∧ (∀ i j, i < j → x i j ∈ U) ∧ (∀ i, IsUnit (δ i)) ∧ (∀ i, δ i - g i i ∈ U * L) ∧ (∀ i, y i i = 1) ∧ (∀ i j, i < j → y i j = 0) ∧ (∀ i j, j < i → y i j ∈ L)
+
+### Lemmata.MiscLemmasB.Imports:7  Bl.SecondBlockLemmaC.goal1
+theorem goal1 {G : Type*} [Group G] [TopologicalSpace G] [IsTopologicalGroup G] [SecondCountableTopology G] [MeasurableSpace G] [OpensMeasurableSpace G] (Γ : Subgroup G) [DiscreteTopology Γ] : ∃ s : Set G, MeasurableSet s ∧ ∀ μ : Measure G, IsFundamentalDomain Γ s μ
+
+### Lemmata.MiscLemmasC.Imports:7  Bl.SecondBlockLemmaD.goal1
+theorem goal1 {A B : Type*} [AddCommGroup A] [AddCommGroup B] [Fintype A] [Fintype B] [DecidableEq B] (π : A →+ B) (hπ : Function.Surjective π) (G : B → ℂ) : (Fintype.card A : ℂ)⁻¹ * ∑ a, G (π a) = (Fintype.card B : ℂ)⁻¹ * ∑ b, G b
+
+### Lemmata.MiscLemmasD.Imports:9  Bl.SecondBlockLemmaE.goal1
+theorem goal1 {Λ : Submodule (𝓞 E) V} {v : V} (hv : v ∈ Submodule.span E (Λ : Set V)) : ∃ d : 𝓞 E, d ≠ 0 ∧ d • v ∈ Λ
+
+### Lemmata.MiscLemmasE.Imports:7  Bl.SecondBlockLemmaF.goal1
+theorem goal1 : ∀ {M : Type u_1} [inst : AddCommMonoid.{u_1} M] (r : Nat) (S : Fin (HAdd.hAdd.{0, 0, 0} r 1) → Finset.{0} Nat) (F : (Fin (HAdd.hAdd.{0, 0, 0} r 1) → Nat) → M), Eq.{u_1 + 1} (Finset.sum.{0, u_1} (Fintype.piFinset.{0, 0} S) fun (μ : Fin (HAdd.hAdd.{0, 0, 0} r 1) → Nat) ↦ F μ) (Finset.sum.{0, u_1} (S 0) fun (a : Nat) ↦ Finset.sum.{0, u_1} (Fintype.piFinset.{0, 0} fun (t : Fin r) ↦ S t.succ) fun (μ' : Fin r → Nat) ↦ F (Fin.cons.{1} a μ'))
+
+### Lemmata.MiscLemmasH.Imports:9  Bl.SecondBlockLemmaI.goal1
+theorem goal1 [IsAdicComplete I A] (ε : A) (h : ε * ε - ε ∈ I) : ∃ e : A, e * e = e ∧ e - ε ∈ I
+
+### Lemmata.MiscLemmasI.Imports:8  Bl.SecondBlockLemmaJ.goal1
+theorem goal1 {K L ι n : Type} [Field K] [Field L] [Fintype ι] [Fintype n] [DecidableEq ι] [DecidableEq n] (τ : K →+* L) (c : ι → n → K) (hc : LinearIndependent K c) : LinearIndependent L (fun a => fun i => τ (c a i))
+
+### Lemmata.MiscLemmasJ.Imports:5  Bl.SecondBlockLemmaK.goal1
+theorem goal1 : ∀ {R F X : Type} [inst : CommRing.{0} R] [IsDomain.{0} R] [inst_2 : Field.{0} F] [inst_3 : Algebra.{0, 0} R F] [IsFractionRing.{0, 0} R F] [inst_5 : AddCommGroup.{0} X] [inst_6 : Module.{0, 0} F X] [inst_7 : Module.{0, 0} R X] [IsScalarTower.{0, 0, 0} R F X] (S : Submodule.{0, 0} R X) {x : X}, Membership.mem.{0, 0} (Submodule.span.{0, 0} F (SetLike.coe.{0, 0} S)) x → Exists.{1} fun (d : R) ↦ And (Ne.{1} d 0) (Membership.mem.{0, 0} S (HSMul.hSMul.{0, 0, 0} d x))
+
+### Lemmata.MiscLemmasK.Imports:5  Bl.SecondBlockLemmaL.goal1
+theorem goal1 : ∀ {E : Type} [inst : Field.{0} E] [inst_1 : NumberField.{0} E] (ℓ : Nat) [hℓ : Fact (Nat.Prime ℓ)] {Q : Ideal.{0} (NumberField.RingOfIntegers.{0} E)}, Ideal.IsPrime.{0} Q → Ne.{1} Q Bot.bot.{0} → Not (Membership.mem.{0, 0} Q (Nat.cast.{0} ℓ)) → Eq.{1} (padicValNat ℓ (DFunLike.coe.{1, 1, 1} Ideal.absNorm.{0} Q)) 0
+
+### Lemmata.MiscLemmasL.Imports:9  Bl.SecondBlockLemmaM.goal1
+theorem goal1 [IsDomain R] [IsFractionRing R C] {V : Type} [AddCommGroup V] [Module C V] [Module R V] [IsScalarTower R C V] (S : Submodule R V) {x : V} (hx : x ∈ Submodule.span C (S : Set V)) : ∃ r : R, r ≠ 0 ∧ r • x ∈ S
+
+### Lemmata.MiscLemmasM.Imports:5  Bl.SecondBlockLemmaN.goal1
+theorem goal1 : ∀ (z : Complex), (∀ (n : Nat), LT.lt.{0} (Norm.norm.{0} (HSub.hSub.{0, 0, 0} (HPow.hPow.{0, 0, 0} z n) 1)) (1 / 2)) → Eq.{1} z 1
+
+### Lemmata.MiscLemmasN.Imports:5  Bl.SecondBlockLemmaO.goal1
+theorem goal1 : ∀ {V : Type} [inst : CommRing.{0} V] [inst_1 : IsDomain.{0} V] [IsDiscreteValuationRing.{0} V] {ϖ : V}, Irreducible.{0} ϖ → IsLocalization.Away.{0, 0} ϖ (FractionRing.{0} V)
+
+### Lemmata.MiscLemmasO.Imports:5  Bl.SecondBlockLemmaP.goal1
+theorem goal1 : ∀ (O K V : Type) [inst : CommRing.{0} O] [IsDomain.{0} O] [inst_2 : Field.{0} K] [inst_3 : Algebra.{0, 0} O K] [IsFractionRing.{0, 0} O K] [inst_5 : AddCommGroup.{0} V] [inst_6 : Module.{0, 0} K V] [inst_7 : Module.{0, 0} O V] [IsScalarTower.{0, 0, 0} O K V] (M : Submodule.{0, 0} O V) (v : V), Membership.mem.{0, 0} (Submodule.span.{0, 0} K (SetLike.coe.{0, 0} M)) v → Exists.{1} fun (c : O) ↦ And (Ne.{1} c 0) (Membership.mem.{0, 0} M (HSMul.hSMul.{0, 0, 0} c v))
+
+### Lemmata.MovedPointExistence.ExistsMoved:10  Bl.MovedPointExistence.exists_moved  [private]
+private lemma exists_moved (σ : Equiv.Perm ι) (hσ : σ ≠ 1) (i : ι) : ∃ j, j ≠ i ∧ σ j ≠ j
+
+### Lemmata.MovedPointExistence.ExistsMoved:24  Bl.MovedPointExistence.goal1
+theorem goal1 (A : ℝ → Matrix ι ι ℂ) (A' : Matrix ι ι ℂ) (h0 : A 0 = 1) (h : ∀ i j, HasDerivAt (fun t => A t i j) (A' i j) 0) : HasDerivAt (fun t => (A t).det) A'.trace 0
+
+### Lemmata.MultivariateIntegrals.IntegralMv:23  Bl.ProductIntegralBounds.mulBd  [private]
+private theorem mulBd {K : Type u} [NormedField K] [IsUltrametricDist K] {τ : Type w} {a b : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b) (F G : MvPowerSeries τ K) (hF : ∀ d, ‖MvPowerSeries.coeff d F‖ ≤ a) (hG : ∀ d, ‖MvPowerSeries.coeff d G‖ ≤ b) : ∀ d, ‖MvPowerSeries.coeff d (F * G)‖ ≤ a * b
+
+### Lemmata.MultivariateIntegrals.IntegralMv:35  Bl.ProductIntegralBounds.prodInt  [private]
+private theorem prodInt {K : Type u} [NormedField K] [IsUltrametricDist K] {τ : Type w} {ι : Type v} (X : ι → MvPowerSeries τ K) (s : Finset ι) (hX : ∀ i ∈ s, ∀ d, ‖MvPowerSeries.coeff d (X i)‖ ≤ 1) : ∀ d, ‖MvPowerSeries.coeff d (∏ i ∈ s, X i)‖ ≤ 1
+
+### Lemmata.MultivariateIntegrals.IntegralMv:56  Bl.ProductIntegralBounds.goal1
+theorem goal1 : ∀ {K : Type u} [inst : NormedField.{u} K] [IsUltrametricDist.{u} K] {τ : Type w} {ι : Type v} {C : Real}, LE.le.{0} 0 C → ∀ (X Y : ι → MvPowerSeries.{w, u} τ K) (s : Finset.{v} ι), (∀ (i : ι), Membership.mem.{v, v} s i → Bl.ProductIntegralBounds.IntegralMv.{u, w} (X i)) → (∀ (i : ι), Membership.mem.{v, v} s i → Bl.ProductIntegralBounds.IntegralMv.{u, w} (Y i)) → (∀ (i : ι), Membership.mem.{v, v} s i → Bl.ProductIntegralBounds.Bd.{u, w} C (HSub.hSub.{max u w, max u w, max u w} (X i) (Y i))) → Bl.ProductIntegralBounds.Bd.{u, w} C (HSub.hSub.{max u w, max u w, max u w} (Finset.prod.{v, max u w} s fun (i : ι) ↦ X i) (Finset.prod.{v, max u w} s fun (i : ι) ↦ Y i))
+
+### Lemmata.NatMulIsIntegral.ExistsNatMulIsIntegral:5  Bl.NatMulIsIntegral.exists_nat_mul_isIntegral  [private]
+private theorem exists_nat_mul_isIntegral {E : Type} [Field E] [NumberField E] (c : E) : ∃ d : ℕ, 0 < d ∧ IsIntegral ℤ ((d : E) * c)
+
+### Lemmata.NatMulIsIntegral.ExistsNatMulIsIntegral:17  Bl.NatMulIsIntegral.goal1
+theorem goal1 : ∀ {E : Type} [inst : Field.{0} E] [NumberField.{0} E] {n : Nat} {L : Submodule.{0, 0} (NumberField.RingOfIntegers.{0} E) (Fin n → E)} {z : Fin n → E}, Membership.mem.{0, 0} (Submodule.span.{0, 0} E (SetLike.coe.{0, 0} L)) z → Exists.{1} fun (N : Nat) ↦ And (LT.lt.{0} 0 N) (Membership.mem.{0, 0} L (HSMul.hSMul.{0, 0, 0} N z))
+
+### Lemmata.NearbyExistence.ExistsNear:5  Bl.NearbyExistence.exists_near  [private]
+private lemma exists_near (F : Type) [Field F] [NumberField F] (v : IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers F)) (x : IsDedekindDomain.HeightOneSpectrum.adicCompletion F v) : ∃ y : F, Valued.v (x - algebraMap F (v.adicCompletion F) y) < 1
+
+### Lemmata.NearbyExistence.ExistsNear:18  Bl.NearbyExistence.goal1
+theorem goal1 : ∀ {F : Type} [inst : Field.{0} F] [inst_1 : NumberField.{0} F] (v : IsDedekindDomain.HeightOneSpectrum.{0} (NumberField.RingOfIntegers.{0} F)) (x : Subtype.{1} fun (x : IsDedekindDomain.HeightOneSpectrum.adicCompletion.{0, 0} F v) ↦ Membership.mem.{0, 0} (IsDedekindDomain.HeightOneSpectrum.adicCompletionIntegers.{0, 0} F v) x), Exists.{1} fun (r : NumberField.RingOfIntegers.{0} F) ↦ LT.lt.{0} (DFunLike.coe.{1, 1, 1} Valued.v.{0, 0} (HSub.hSub.{0, 0, 0} (Subtype.val.{1} x) (DFunLike.coe.{1, 1, 1} (Algebra.algebraMap.{0, 0} (NumberField.RingOfIntegers.{0} F) (IsDedekindDomain.HeightOneSpectrum.adicCompletion.{0, 0} F v)) r))) 1
+
+### Lemmata.PadicNatCastNorm.NormNatCastOfNotDvd:7  Bl.PadicNatCastNorm.norm_natCast_padicAlgCl_of_not_dvd'  [private]
+private lemma norm_natCast_padicAlgCl_of_not_dvd' {m : ℕ} (hm : ¬ p ∣ m) : ‖(m : PadicAlgCl p)‖ = 1
+
+### Lemmata.PadicNatCastNorm.NormNatCastOfNotDvd:12  Bl.PadicNatCastNorm.goal1
+theorem goal1 {m : ℕ} (hm : ¬ p ∣ m) {η : PadicAlgCl p} (hη : η ^ m = 1) (h : η ≠ 1) : ‖η - 1‖ = 1
+
+### Lemmata.PartialDerivativeDegree.PderivTdSuccLe:7  Bl.PartialDerivativeDegree.pderiv_td_succ_le  [private]
+private lemma pderiv_td_succ_le {σ : Type u_1} (i : σ) (q : MvPolynomial σ Complex) (h : MvPolynomial.pderiv i q ≠ 0) : (MvPolynomial.pderiv i q).totalDegree + 1 ≤ q.totalDegree
+
+### Lemmata.PartialDerivativeDegree.PderivTdSuccLe:26  Bl.PartialDerivativeDegree.goal1
+theorem goal1 : ∀ {σ : Type u_1} (i : σ) (q L : MvPolynomial.{u_1, 0} σ Complex), LE.le.{0} (MvPolynomial.totalDegree.{0, u_1} L) 1 → LE.le.{0} (MvPolynomial.totalDegree.{0, u_1} (HMul.hMul.{u_1, u_1, u_1} (DFunLike.coe.{max (u_1 + 1) 1, max (u_1 + 1) 1, max (u_1 + 1) 1} (MvPolynomial.pderiv.{0, u_1} i) q) L)) (MvPolynomial.totalDegree.{0, u_1} q)
+
+### Lemmata.PeriodicFunctions.PeriodicApplyMulAdd:9  Bl.PeriodicFunctions.periodic_apply_mul_add  [private]
+private theorem periodic_apply_mul_add (M : ℕ) (g : ℕ → K) (hg : ∀ i, g (i + M) = g i) (k x : ℕ) : g (M * k + x) = g x
+
+### Lemmata.PeriodicFunctions.PeriodicApplyMulAdd:16  Bl.PeriodicFunctions.goal1
+theorem goal1 (M m : ℕ) (g : ℕ → K) (hg : ∀ i, g (i + M) = g i) : ∑ i ∈ Finset.range (M * m), g i = (m : K) * ∑ i ∈ Finset.range M, g i
+
+### Lemmata.PosDefOfRealQuadratic.QuadFormRealSmul:7  Bl.PosDefOfRealQuadratic.quadForm_real_smul  [private]
+private lemma quadForm_real_smul {m : Nat} (M : Matrix (Fin m) (Fin m) ℂ) (v : Fin m → ℂ) (r : ℝ) : star ((r : ℂ) • v) ⬝ᵥ (Matrix.mulVec (M) ((r : ℂ) • v)) = ((r ^ 2 : ℝ) : ℂ) * (star v ⬝ᵥ (Matrix.mulVec (M) v))
+
+### Lemmata.PosDefOfRealQuadratic.QuadFormRealSmul:15  Bl.PosDefOfRealQuadratic.re_quad_pos  [private]
+private lemma re_quad_pos {m : Nat} {M : Matrix (Fin m) (Fin m) ℂ} (h : M.PosDef) {y : Fin m → ℂ} (hy : y ≠ 0) : 0 < (star y ⬝ᵥ (Matrix.mulVec M y)).re
+
+### Lemmata.PosDefOfRealQuadratic.QuadFormRealSmul:20  Bl.PosDefOfRealQuadratic.posDef_of_re  [private]
+private lemma posDef_of_re {m : Nat} {M : Matrix (Fin m) (Fin m) ℂ} (hH : M.IsHermitian) (h : ∀ v : Fin m → ℂ, v ≠ 0 → 0 < (star v ⬝ᵥ (Matrix.mulVec M v)).re) : M.PosDef
+
+### Lemmata.PosDefOfRealQuadratic.QuadFormRealSmul:25  Bl.PosDefOfRealQuadratic.goal1
+theorem goal1 : ∀ {X : Type u_1} [inst : TopologicalSpace.{u_1} X] {m : Nat} (A : X → Matrix.{0, 0, 0} (Fin m) (Fin m) Complex), (∀ (i j : Fin m), @Continuous.{u_1, 0} X Complex inst (@UniformSpace.toTopologicalSpace.{0} Complex (@PseudoMetricSpace.toUniformSpace.{0} Complex (@SeminormedRing.toPseudoMetricSpace.{0} Complex (@SeminormedCommRing.toSeminormedRing.{0} Complex (@NormedCommRing.toSeminormedCommRing.{0} Complex (@CommCStarAlgebra.toNormedCommRing.{0} Complex instCommCStarAlgebraComplex)))))) fun (x : X) ↦ A x i j) → (∀ (x : X), @Matrix.IsHermitian.{0, 0} Complex (Fin m) (@InvolutiveStar.toStar.{0} Complex (@StarAddMonoid.toInvolutiveStar.{0} Complex (@AddCommMonoid.toAddMonoid.{0} Complex (@NonUnitalNonAssocSemiring.toAddCommMonoid.{0} Complex (@NonUnitalNonAssocRing.toNonUnitalNonAssocSemiring.{0} Complex (@NonUnitalNonAssocCommRing.toNonUnitalNonAssocRing.{0} Complex (@NonUnitalCommRing.toNonUnitalNonAssocCommRing.{0} Complex Complex.instNonUnitalCommRing))))) (@StarRing.toStarAddMonoid.{0} Complex (@NonUnitalNonAssocRing.toNonUnitalNonAssocSemiring.{0} Complex (@NonUnitalNonAssocCommRing.toNonUnitalNonAssocRing.{0} Complex (@NonUnitalCommRing.toNonUnitalNonAssocCommRing.{0} Complex Complex.instNonUnitalCommRing))) Complex.instStarRing))) (A x)) → ∀ (x0 : X), @Matrix.PosDef.{0, 0} (Fin m) Complex Complex.instRing Complex.partialOrder Complex.instStarRing (A x0) → @Filter.Eventually.{u_1} X (fun (x : X) ↦ @Matrix.PosDef.{0, 0} (Fin m) Complex Complex.instRing Compl
+
+### Lemmata.PowMulVecEigen.PowMulVecEig:9  Bl.PowMulVecEigen.pow_mulVec_eig  [private]
+private lemma pow_mulVec_eig {n : ℕ} (A : Matrix (Fin n) (Fin n) C) (w : Fin n → C) (lam : C) (h : Matrix.mulVec A w = lam • w) (k : ℕ) : Matrix.mulVec (A ^ k) w = lam ^ k • w
+
+### Lemmata.PowMulVecEigen.PowMulVecEig:17  Bl.PowMulVecEigen.goal1
+theorem goal1 {n : ℕ} (A : Matrix (Fin n) (Fin n) C) (w : Fin n → C) (lam : C) (h : Matrix.mulVec A w = lam • w) (f : Polynomial C) : Matrix.mulVec (Polynomial.aeval A f) w = f.eval lam • w
+
+### Lemmata.PowMulVecEigenvalue.PowMulVecEig:7  Bl.PowMulVecEigenvalue.pow_mulVec_eig  [private]
+private lemma pow_mulVec_eig {S : Type u_1} [CommRing S] {n : Type u_2} [Fintype n] [DecidableEq n] (Q : Matrix n n S) (μ : S) (v : n → S) (h : Q.mulVec v = μ • v) (k : ℕ) : (Q ^ k).mulVec v = μ ^ k • v
+
+### Lemmata.PowMulVecEigenvalue.PowMulVecEig:15  Bl.PowMulVecEigenvalue.goal1
+theorem goal1 : ∀ {S : Type u_1} [inst : CommRing.{u_1} S] {n : Type u_2} [inst_1 : Fintype.{u_2} n] [inst_2 : DecidableEq.{u_2 + 1} n] (Q : Matrix.{u_2, u_2, u_1} n n S) (μ : S) (v : n → S), Eq.{max (u_1 + 1) (u_2 + 1)} (Matrix.mulVec.{u_1, u_2, u_2} Q v) (HSMul.hSMul.{u_1, max u_1 u_2, max u_1 u_2} μ v) → ∀ (p : Polynomial.{0} Int), Eq.{max (u_1 + 1) (u_2 + 1)} (Matrix.mulVec.{u_1, u_2, u_2} (DFunLike.coe.{max (max (u_1 + 1) (u_2 + 1)) 1, 1, max (u_1 + 1) (u_2 + 1)} (Polynomial.aeval.{0, max u_1 u_2} Q) p) v) (HSMul.hSMul.{u_1, max u_1 u_2, max u_1 u_2} (DFunLike.coe.{max (u_1 + 1) 1, 1, u_1 + 1} (Polynomial.aeval.{0, u_1} μ) p) v)
+
+### Lemmata.PowerApplication.PowApp:9  Bl.PowerApplication.pow_app  [private]
+private theorem pow_app {T : Module.End ℂ Y} {z : ℂ} {f : Y} (hf : T f = z • f) (n : ℕ) : (T ^ n) f = z ^ n • f
+
+### Lemmata.PowerApplication.PowApp:15  Bl.PowerApplication.goal1
+theorem goal1 {T : Module.End ℂ Y} {z : ℂ} {f : Y} (hf : T f = z • f) (p : ℂ[X]) : aeval T p f = p.eval z • f
+
+### Lemmata.PowerMembership.PowMem:7  Bl.PowerMembership.powMem  [private]
+private lemma powMem {R : Type u_1} {M : Type u_2} [CommRing R] [AddCommGroup M] [Module R M] (S : Submodule R M) (f : Module.End R M) (hf : ∀ v : M, v ∈ S → f v ∈ S) (n : ℕ) : ∀ {v : M}, v ∈ S → (f ^ n) v ∈ S
+
+### Lemmata.PowerMembership.PowMem:14  Bl.PowerMembership.goal1
+theorem goal1 : ∀ {R : Type u_1} {M : Type u_2} [inst : CommRing.{u_1} R] [inst_1 : AddCommGroup.{u_2} M] [inst_2 : Module.{u_1, u_2} R M] (S : Submodule.{u_1, u_2} R M) (f : Module.End.{u_1, u_2} R M), (∀ (v : M), Membership.mem.{u_2, u_2} S v → Membership.mem.{u_2, u_2} S (DFunLike.coe.{u_2 + 1, u_2 + 1, u_2 + 1} f v)) → ∀ (P : Polynomial.{u_1} R) {v : M}, Membership.mem.{u_2, u_2} S v → Membership.mem.{u_2, u_2} S (DFunLike.coe.{u_2 + 1, u_2 + 1, u_2 + 1} (DFunLike.coe.{max (u_2 + 1) (u_1 + 1), u_1 + 1, u_2 + 1} (Polynomial.aeval.{u_1, u_2} f) P) v)
+
+### Lemmata.ProductIdentities.ProdInvZpowMulOfProdZpowEqOne:5  Bl.ProductIdentities.prod_erase_one_perm_apply_eq_zero  [private]
+private lemma prod_erase_one_perm_apply_eq_zero {n : Type} [Fintype n] [DecidableEq n] (σ : Equiv.Perm n) (hσ : σ ≠ 1) (k : n) : ∏ j ∈ Finset.univ.erase k, (1 : Matrix n n ℂ) (σ j) j = 0
+
+### Lemmata.ProductIdentities.ProdInvZpowMulOfProdZpowEqOne:22  Bl.ProductIdentities.goal1
+theorem goal1 : ∀ {n : Type} [inst : Fintype.{0} n] [inst_1 : DecidableEq.{1} n] (A : Real → Matrix.{0, 0, 0} n n Complex) (A' : Matrix.{0, 0, 0} n n Complex), Eq.{1} (A 0) 1 → (∀ (i j : n), HasDerivAt.{0, 0} (fun (t : Real) ↦ A t i j) (A' i j) 0) → HasDerivAt.{0, 0} (fun (t : Real) ↦ Matrix.det.{0, 0} (A t)) (Matrix.trace.{0, 0} A') 0
+
+### Lemmata.RankOneOrbitForms.RankOneForm:9  Bl.RankOneOrbitForms.rank_one_form  [private]
+private lemma rank_one_form (f : T →ₗ[K] T) (h1 : finrank K (LinearMap.range f) = 1) : ∃ (φ : T →ₗ[K] K) (v : T), v ≠ 0 ∧ φ ≠ 0 ∧ f = φ.smulRight v
+
+### Lemmata.RankOneOrbitForms.RankOneForm:32  Bl.RankOneOrbitForms.span_orbit  [private]
+private lemma span_orbit (τ : Representation K G T) (hirr : ∀ W : Submodule K T, (∀ g : G, ∀ w ∈ W, τ g w ∈ W) → W = ⊥ ∨ W = ⊤) (v : T) (hv : v ≠ 0) : Submodule.span K (Set.range fun g => τ g v) = ⊤
+
+### Lemmata.RankOneOrbitForms.RankOneForm:53  Bl.RankOneOrbitForms.orbit_ker  [private]
+private lemma orbit_ker (τ : Representation K G T) (hirr : ∀ W : Submodule K T, (∀ g : G, ∀ w ∈ W, τ g w ∈ W) → W = ⊥ ∨ W = ⊤) (φ : T →ₗ[K] K) (hφ : φ ≠ 0) (x : T) (hx : ∀ g, φ (τ g x) = 0) : x = 0
+
+### Lemmata.RankOneOrbitForms.RankOneForm:77  Bl.RankOneOrbitForms.select  [private]
+private lemma select {ι M : Type} [AddCommGroup M] [Module K M] [FiniteDimensional K M] (f : ι → M) (r : ℕ) (hr : finrank K (Submodule.span K (Set.range f)) = r) : ∃ s : Fin r → ι, LinearIndependent K (f ∘ s)
+
+### Lemmata.RankOneOrbitForms.RankOneForm:88  Bl.RankOneOrbitForms.goal1
+theorem goal1 (τ : Representation K G T) (hirr : ∀ W : Submodule K T, (∀ g : G, ∀ w ∈ W, τ g w ∈ W) → W = ⊥ ∨ W = ⊤) (ε₀ ε : T →ₗ[K] T) (h1 : finrank K (LinearMap.range ε₀) = 1) : ∃ (γ δ : Fin (finrank K (LinearMap.range ε)) → G) (c : Matrix (Fin (finrank K (LinearMap.range ε))) (Fin (finrank K (LinearMap.range ε))) K), c.det ≠ 0 ∧ (∀ i j, c i j = LinearMap.trace K T (ε₀ ∘ₗ τ (δ i) ∘ₗ ε ∘ₗ τ (γ j))) ∧ (∀ i j, ε₀ ∘ₗ τ (δ i) ∘ₗ ε ∘ₗ τ (γ j) ∘ₗ ε₀ = c i j • ε₀) ∧ ∑ j, ∑ i, c⁻¹ j i • (ε ∘ₗ τ (γ j) ∘ₗ ε₀ ∘ₗ τ (δ i) ∘ₗ ε) = ε
+
+### Lemmata.ScalarExtension.Scal:7  Bl.ScalarIdentities.scal  [private]
+private lemma scal {K A : Type} [Field K] [IsAlgClosed K] [Ring A] [Algebra K A] (S0 : Type) [AddCommGroup S0] [Module K S0] [Module A S0] [IsScalarTower K A S0] [FiniteDimensional K S0] [IsSimpleModule A S0] (g : S0 →ₗ[A] S0) : ∃ c : K, ∀ v : S0, g v = c • v
+
+### Lemmata.ScalarExtension.Scal:33  Bl.ScalarIdentities.goal1
+theorem goal1 {K A : Type} [Field K] [IsAlgClosed K] [Ring A] [Algebra K A] (S0 : Type) [AddCommGroup S0] [Module K S0] [Module A S0] [IsScalarTower K A S0] [FiniteDimensional K S0] [IsSimpleModule A S0] (φ : S0 →ₗ[K] S0) : ∃ u : A, ∀ v : S0, u • v = φ v
+
+### Lemmata.SecondBlockLemmaA.Imports:7  Bl.SecondBlockLemmaA.goal1
+theorem goal1 : ∀ {O : Type u_1} [inst : CommRing.{u_1} O] [inst_1 : IsDomain.{u_1} O] [inst_2 : IsDiscreteValuationRing.{u_1} O] {ι : Type u_2} (s : Finset.{u_2} ι) (a : ι → O), Eq.{1} (DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (IsDiscreteValuationRing.addVal.{u_1} O) (Finset.prod.{u_2, u_1} s fun (i : ι) ↦ a i)) (Finset.sum.{u_2, 0} s fun (i : ι) ↦ DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (IsDiscreteValuationRing.addVal.{u_1} O) (a i))
+
+### Lemmata.SmulListSum.SmulListSum:7  Bl.SmulListSum.smul_list_sum  [private]
+private theorem smul_list_sum {U : Type u_1} [AddCommGroup U] [Module Complex U] (c : Complex) (l : List U) : c • l.sum = (l.map (fun w => c • w)).sum
+
+### Lemmata.SmulListSum.SmulListSum:13  Bl.SmulListSum.goal1
+theorem goal1 : ∀ {U : Type u_1} [inst : AddCommGroup.{u_1} U] [inst_1 : Module.{0, u_1} Complex U] {G : Set.{u_1} U}, (∀ (w : U), Membership.mem.{u_1, u_1} G w → ∀ (c : Complex), Membership.mem.{u_1, u_1} G (HSMul.hSMul.{0, u_1, u_1} c w)) → ∀ {y : U}, Membership.mem.{u_1, u_1} (Submodule.span.{0, u_1} Complex G) y → Exists.{u_1 + 1} fun (l : List.{u_1} U) ↦ And (∀ (w : U), Membership.mem.{u_1, u_1} l w → Membership.mem.{u_1, u_1} G w) (Eq.{u_1 + 1} y (List.sum.{u_1} l))
+

@@ -1,0 +1,772 @@
+== GroundTheory at depth 3: 8507 files, 1119138 lines
+GroundTheory.HeightsAndTheta.Heights               files=   6348 lines=    626821  -> GroundTheory.ArithmeticGeometry.AbelianVarieties:42, GroundTheory.ArithmeticGeometry.SchemeCohomology:20, GroundTheory.HeightsAndTheta.Theta:15, GroundTheory.GlobalFields.ComplexMultiplication:9, GroundTheory.ArithmeticGeometry.ToricVarieties:6, GroundTheory.PowerSubgroups.CountableNeighbourhoods:6
+GroundTheory.AutomorphicForms.GL2                  files=     84 lines=     28688  -> GroundTheory.GlobalFields.TateThesis:16, GroundTheory.AutomorphicForms.CuspidalDiscreteness:6, GroundTheory.AutomorphicForms.ReductionMeasure:4, GroundTheory.AutomorphicForms.MeasuresGL:3, GroundTheory.AutomorphicForms.LeviStagesProduct:3, GroundTheory.LocalFields.LocalZetaEpsilon:2
+GroundTheory.ArithmeticGeometry.SchemeCohomology   files=    137 lines=     24220  -> GroundTheory.ArithmeticGeometry.EtaleCompletion:5, GroundTheory.FunctionField.PlaceDefs:2, GroundTheory.FunctionField.WeilDifferential:2, GroundTheory.FunctionField.Divisor:1, GroundTheory.FunctionField.PlaceBridge:1, GroundTheory.FunctionField.DivisorDegree:1
+GroundTheory.ProfiniteCohomology.RestrictedRamification files=     92 lines=     20499  -> GroundTheory.ProfiniteCohomology.GlobalClassFormation:23, GroundTheory.ProfiniteCohomology.GaloisCohomology:11, GroundTheory.ProfiniteCohomology.PoincarePairs:11, GroundTheory.ProfiniteCohomology.CohomologicalDimension:10, GroundTheory.ProfiniteCohomology.CupProducts:9, GroundTheory.ProfiniteCohomology.LocalClassFormation:7
+GroundTheory.GlobalFields.ComplexMultiplication    files=     98 lines=     20251  -> GroundTheory.ArithmeticGeometry.AbelianVarieties:30, GroundTheory.GlobalFields.TateThesis:2, GroundTheory.GlobalFields.ClassFieldConsequences:2, GroundTheory.GlobalFields.Artin:2, GroundTheory.GlobalFields.WeilGroups:1, GroundTheory.GlobalFields.Adele:1
+GroundTheory.GlobalFields.TateThesis               files=     77 lines=     16795  -> GroundTheory.GlobalFields.Adele:10, GroundTheory.GlobalFields.IdeleGroups:10, GroundTheory.GlobalFields.KummerTheory:4, GroundTheory.GlobalFields.LocalFieldAtPlace:3, GroundTheory.GlobalFields.GlobalReciprocity:2, GroundTheory.GlobalFields.Artin:1
+GroundTheory.ArithmeticGeometry.AbelianVarieties   files=     57 lines=     16358  -> GroundTheory.LocalFields.FormalGroups:2, GroundTheory.ProfiniteCohomology.GaloisModules:2, GroundTheory.PowerSubgroups.CountableNeighbourhoods:1, GroundTheory.ArithmeticGeometry.ToricVarieties:1, GroundTheory.ArithmeticGeometry.SchemeCohomology:1
+GroundTheory.HeightsAndTheta.Theta                 files=     62 lines=     14501  -> GroundTheory.GlobalFields.TateThesis:7, GroundTheory.AutomorphicForms.HermitianSpaces:5, GroundTheory.AutomorphicForms.AdelicUnitaryGroups:5, GroundTheory.HeightsAndTheta.Heights:2, GroundTheory.AutomorphicForms.HermitianDisc:2, GroundTheory.GlobalFields.IdeleGroups:2
+GroundTheory.ProfiniteCohomology.GlobalClassFormation files=     77 lines=     11142  -> GroundTheory.GlobalFields.IdeleGroups:16, GroundTheory.ProfiniteCohomology.LocalClassFormation:15, GroundTheory.GlobalFields.NormResidueSymbol:7, GroundTheory.GlobalFields.IdeleClassGroup:5, GroundTheory.ProfiniteCohomology.FilteredHomology:5, GroundTheory.ProfiniteCohomology.InflationRestriction:4
+GroundTheory.AutomorphicForms.PartialDifferential  files=     23 lines=      8000  -> GroundTheory.AutomorphicForms.HilbertSchmidtKernel:1, GroundTheory.AutomorphicForms.HilbertSchmidtCompact:1
+GroundTheory.ProfiniteCohomology.RealPlaces        files=     32 lines=      7729  -> GroundTheory.ProfiniteCohomology.RestrictedRamification:8, GroundTheory.ProfiniteCohomology.CompactSupportCohomology:5, GroundTheory.ProfiniteCohomology.GlobalClassFormation:5, GroundTheory.ProfiniteCohomology.LocalClassFormation:3, GroundTheory.ProfiniteCohomology.PoincareDuality:3, GroundTheory.ProfiniteCohomology.MackeyFormula:3
+GroundTheory.AutomorphicForms.GL2Classical         files=     33 lines=      7162  -> GroundTheory.AutomorphicForms.AutomorphicFormSpaces:8, GroundTheory.AutomorphicForms.CuspidalDiscreteness:2, GroundTheory.AutomorphicForms.Reduction:1, GroundTheory.AutomorphicForms.StrongApproximationSLDoubleCoset:1, GroundTheory.GlobalFields.IdeleGroups:1, GroundTheory.GlobalFields.Adele:1
+GroundTheory.AutomorphicForms.CuspidalDiscreteness files=     31 lines=      7018  -> GroundTheory.AutomorphicForms.AutomorphicFormSpaces:7, GroundTheory.AutomorphicForms.GKModules:3, GroundTheory.AutomorphicForms.DiscreteSpectrumAbstract:2, GroundTheory.AutomorphicForms.NormDetDiagUnitsPosRealToUnits:2, GroundTheory.AutomorphicForms.Reduction:2, GroundTheory.GlobalFields.Adele:1
+GroundTheory.ProfiniteCohomology.LocalEulerCharacteristic files=     31 lines=      6597  -> GroundTheory.ProfiniteCohomology.LocalClassFormation:5, GroundTheory.ProfiniteCohomology.LocalClassFormationAlt:3, GroundTheory.ProfiniteCohomology.CupProducts:3, GroundTheory.ProfiniteCohomology.Shapiro:2, GroundTheory.ProfiniteCohomology.PoincareDuality:2, GroundTheory.ProfiniteCohomology.ClassFormations:2
+GroundTheory.AutomorphicForms.TensorProductTheorem files=     28 lines=      6531  -> GroundTheory.AutomorphicForms.SmoothRep:3, GroundTheory.AutomorphicForms.AutomorphicFormSpaces:3, GroundTheory.AutomorphicForms.GKModules:2, GroundTheory.AutomorphicForms.CuspidalDiscreteness:2, GroundTheory.AutomorphicForms.UnitaryAdmissible:2, GroundTheory.AutomorphicForms.AdelicGLn:1
+GroundTheory.GlobalFields.IdeleGroups              files=     31 lines=      5875  -> GroundTheory.GlobalFields.CompletionAtPlace:3, GroundTheory.GlobalFields.SemilocalAlgebras:3, GroundTheory.GlobalFields.Adele:3, GroundTheory.GlobalFields.KummerTheory:2, GroundTheory.LocalFields.UnramifiedNorms:2, GroundTheory.GlobalFields.HerbrandQuotients:2
+GroundTheory.LocalFields.AbstractLocalReciprocity  files=     21 lines=      5472  -> GroundTheory.PowerSubgroups.CountableNeighbourhoods:1
+GroundTheory.ProfiniteCohomology.GlobalEulerCharacteristic files=     32 lines=      4994  -> GroundTheory.ProfiniteCohomology.LocalEulerCharacteristic:15, GroundTheory.ProfiniteCohomology.RestrictedRamification:11, GroundTheory.ProfiniteCohomology.RealPlaces:8, GroundTheory.GlobalFields.HerbrandQuotients:7, GroundTheory.ProfiniteCohomology.PoitouTate:6, GroundTheory.ProfiniteCohomology.EulerChar:2
+GroundTheory.ProfiniteCohomology.PoitouTate        files=     27 lines=      4847  -> GroundTheory.ProfiniteCohomology.RestrictedRamification:16, GroundTheory.ProfiniteCohomology.RealPlaces:12, GroundTheory.ProfiniteCohomology.PoincarePairs:3, GroundTheory.ProfiniteCohomology.InflationRestriction:2, GroundTheory.ProfiniteCohomology.CohomologyFunctoriality:2, GroundTheory.ProfiniteCohomology.LocalClassFormation:2
+GroundTheory.AutomorphicForms.ArchimedeanWhittaker files=     17 lines=      4807  -> GroundTheory.AutomorphicForms.GKModules:3, GroundTheory.AutomorphicForms.HarishChandraRegularity:1, GroundTheory.AutomorphicForms.RealGroupsKAK:1, GroundTheory.AutomorphicForms.RealGroupsIwasawa:1
+GroundTheory.GlobalFields.Artin                    files=     29 lines=      4789  -> GroundTheory.GlobalFields.TateThesis:7, GroundTheory.GlobalFields.SemilocalAlgebras:3, GroundTheory.GlobalFields.CompletionAtPlace:2, GroundTheory.GlobalFields.GlobalReciprocity:2, GroundTheory.GlobalFields.ClassFieldConsequences:2, GroundTheory.LocalFields.BrauerInductionInduced:1
+GroundTheory.ProfiniteCohomology.LocalClassFormation files=     28 lines=      4300  -> GroundTheory.ProfiniteCohomology.GaloisCohomology:5, GroundTheory.ProfiniteCohomology.ClassFormations:5, GroundTheory.ProfiniteCohomology.CohomologicalDimension:5, GroundTheory.ProfiniteCohomology.CupProducts:4, GroundTheory.ProfiniteCohomology.GaloisModules:3, GroundTheory.TateCohomology.Herbrand:2
+GroundTheory.AutomorphicForms.AutomorphicFormSpaces files=     16 lines=      4059  -> GroundTheory.AutomorphicForms.GKModules:7, GroundTheory.AutomorphicForms.Reduction:2, GroundTheory.AutomorphicForms.HarishChandraRegularity:2, GroundTheory.GlobalFields.Adele:1, GroundTheory.GlobalFields.TateThesis:1, GroundTheory.AutomorphicForms.DixmierMalliavinBasic:1
+GroundTheory.AutomorphicForms.HarishChandraCentre  files=     16 lines=      3397  -> 
+GroundTheory.AutomorphicForms.FourierWhittaker     files=     11 lines=      3074  -> GroundTheory.GlobalFields.TateThesis:3, GroundTheory.AutomorphicForms.AutomorphicFormSpaces:1
+GroundTheory.GlobalFields.NormResidueSymbol        files=     20 lines=      2944  -> GroundTheory.GlobalFields.IdeleGroups:12, GroundTheory.GlobalFields.CyclotomicCharacters:2, GroundTheory.GlobalFields.CompletionAtPlace:1, GroundTheory.GlobalFields.SemilocalAlgebras:1, GroundTheory.LocalFields.LocalReciprocityUniversal:1, GroundTheory.GlobalFields.FirstInequality:1
+GroundTheory.LocalFields.FormalGroups              files=      8 lines=      2567  -> 
+GroundTheory.AutomorphicForms.L2LocalComponents    files=     11 lines=      2516  -> GroundTheory.AutomorphicForms.MultiplicityOne:3, GroundTheory.AutomorphicForms.HarishChandraRegularity:2, GroundTheory.AutomorphicForms.TensorProductTheorem:2, GroundTheory.AutomorphicForms.ArchimedeanWhittaker:1, GroundTheory.AutomorphicForms.SupercuspidalCoefficients:1, GroundTheory.AutomorphicForms.GL2:1
+GroundTheory.GlobalFields.AnalyticClassNumber      files=     11 lines=      2487  -> GroundTheory.GlobalFields.Artin:6, GroundTheory.GlobalFields.TateThesis:3, GroundTheory.GlobalFields.NormResidueSymbol:1, GroundTheory.LocalFields.ArtinConductor:1
+GroundTheory.AutomorphicForms.MultiplicityOne      files=     17 lines=      2454  -> GroundTheory.GlobalFields.TateThesis:3, GroundTheory.AutomorphicForms.ArchimedeanWhittaker:3, GroundTheory.AutomorphicForms.CuspidalDiscreteness:2, GroundTheory.AutomorphicForms.UnitaryRepresentations:1, GroundTheory.AutomorphicForms.GL2:1, GroundTheory.AutomorphicForms.WhittakerCriterion:1
+GroundTheory.AutomorphicForms.GKModules            files=     10 lines=      2448  -> GroundTheory.AutomorphicForms.AutomorphicFormSpaces:3, GroundTheory.AutomorphicForms.UnitaryRepresentations:1, GroundTheory.AutomorphicForms.RealGroupsLie:1, GroundTheory.AutomorphicForms.DixmierMalliavinBasic:1
+GroundTheory.AutomorphicForms.DefiniteClassNumber  files=      8 lines=      2404  -> GroundTheory.AutomorphicForms.AdelicUnitaryGroups:2, GroundTheory.AutomorphicForms.StrongApproximationSLDense:1, GroundTheory.GlobalFields.Adele:1
+GroundTheory.ProfiniteCohomology.PoincareDuality   files=      9 lines=      2301  -> GroundTheory.ProfiniteCohomology.CupProducts:6, GroundTheory.ProfiniteCohomology.ClassFormations:2, GroundTheory.ProfiniteCohomology.Characters:2, GroundTheory.ProfiniteCohomology.TorsionDualFinite:1, GroundTheory.ProfiniteCohomology.CohomologicalDimension:1, GroundTheory.ProfiniteCohomology.ShapiroDefs:1
+GroundTheory.GlobalFields.HerbrandQuotients        files=     13 lines=      2200  -> GroundTheory.TateCohomology.HerbrandAbstract:6, GroundTheory.GlobalFields.SUnits:2, GroundTheory.GlobalFields.SemilocalAlgebras:2
+GroundTheory.GlobalFields.KummerTheory             files=     12 lines=      2081  -> GroundTheory.GlobalFields.IdeleGroups:4, GroundTheory.GlobalFields.SemilocalAlgebras:3, GroundTheory.ProfiniteCohomology.KummerBasic:2, GroundTheory.GlobalFields.SplittingFromInequality:2, GroundTheory.GlobalFields.LocalFieldAtPlace:1, GroundTheory.LocalFields.UnitsBasic:1
+GroundTheory.ProfiniteCohomology.CompactSupportCohomology files=     10 lines=      2064  -> GroundTheory.ProfiniteCohomology.CupProducts:2, GroundTheory.ProfiniteCohomology.FilteredHomology:2, GroundTheory.ProfiniteCohomology.ContinuousCochains:1, GroundTheory.ProfiniteCohomology.PoincareDuality:1, GroundTheory.ProfiniteCohomology.CohomologyFunctoriality:1
+GroundTheory.ProfiniteCohomology.PoincarePairs     files=      7 lines=      2012  -> GroundTheory.ProfiniteCohomology.MackeyFormula:3, GroundTheory.ProfiniteCohomology.CompactSupportCohomology:2, GroundTheory.ProfiniteCohomology.PoincareDuality:2, GroundTheory.TateCohomology.CupCochains:1
+GroundTheory.GlobalFields.GlobalReciprocity        files=     12 lines=      1946  -> GroundTheory.GlobalFields.NormResidueSymbol:8, GroundTheory.LocalFields.AbstractLocalReciprocity:2, GroundTheory.GlobalFields.IdeleClassGroup:1, GroundTheory.GlobalFields.CompletionAtPlace:1, GroundTheory.LocalFields.MaximalUnramifiedIntegers:1, GroundTheory.LocalFields.TameExtension:1
+GroundTheory.ArithmeticGeometry.ModularCurves      files=      8 lines=      1945  -> GroundTheory.ArithmeticGeometry.SchemeCohomology:6
+GroundTheory.ProfiniteCohomology.InflationRestriction files=      9 lines=      1857  -> GroundTheory.ProfiniteCohomology.CohomologyFunctoriality:3, GroundTheory.ProfiniteCohomology.CoinducedModules:2, GroundTheory.ProfiniteCohomology.FilteredHomology:1, GroundTheory.TateCohomology.ConjAction:1, GroundTheory.ProfiniteCohomology.Bridge:1, GroundTheory.ProfiniteCohomology.OpenNormal:1
+GroundTheory.AutomorphicForms.ContragredientTranspose files=      4 lines=      1827  -> GroundTheory.AutomorphicForms.WhittakerCriterion:2, GroundTheory.AutomorphicForms.WhittakerLocal:1, GroundTheory.PowerSubgroups.CountableNeighbourhoods:1, GroundTheory.AutomorphicForms.WhittakerOrbit:1, GroundTheory.AutomorphicForms.WhittakerGroups:1, GroundTheory.AutomorphicForms.WhittakerDistribution:1
+GroundTheory.AutomorphicForms.HarishChandraRegularity files=      6 lines=      1780  -> GroundTheory.AutomorphicForms.GKModules:3, GroundTheory.AutomorphicForms.PartialDifferential:3, GroundTheory.AutomorphicForms.RealGroupsLie:1, GroundTheory.AutomorphicForms.DixmierMalliavinHaarDensity:1
+GroundTheory.GlobalFields.CyclotomicCharacters     files=      7 lines=      1740  -> GroundTheory.LocalFields.AbstractLocalReciprocity:1
+GroundTheory.ArithmeticGeometry.ToricVarieties     files=      8 lines=      1693  -> 
+GroundTheory.GlobalFields.ClassFieldConsequences   files=     10 lines=      1592  -> GroundTheory.GlobalFields.TateThesis:3, GroundTheory.GlobalFields.GlobalReciprocity:2, GroundTheory.GlobalFields.ExistenceTheorem:1, GroundTheory.GlobalFields.GlobalArtinMap:1, GroundTheory.GlobalFields.KummerTheory:1, GroundTheory.GlobalFields.Adele:1
+GroundTheory.GlobalFields.SemilocalAlgebras        files=      9 lines=      1504  -> 
+GroundTheory.ProfiniteCohomology.LocalTateDuality  files=      7 lines=      1503  -> GroundTheory.ProfiniteCohomology.PoincareDuality:5, GroundTheory.LocalFields.ExistsUnitFiltrationUnitsLeAndRangePowLe:2, GroundTheory.ProfiniteCohomology.LocalClassFormationAlt:2, GroundTheory.ProfiniteCohomology.GaloisCohomology:2, GroundTheory.LocalFields.NormCorrespondence:1, GroundTheory.LocalFields.Existence:1
+GroundTheory.LocalFields.LubinTateReciprocity      files=      4 lines=      1444  -> GroundTheory.LocalFields.AbstractLocalReciprocity:2, GroundTheory.LocalFields.LocalAxiom:1, GroundTheory.LocalFields.FormalGroups:1, GroundTheory.LocalFields.LubinTateTorsion:1, GroundTheory.LocalFields.CompletedUnramified:1, GroundTheory.LocalFields.LubinTateTower:1
+GroundTheory.GlobalFields.Adele                    files=     13 lines=      1428  -> GroundTheory.GlobalFields.IdeleGroups:4, GroundTheory.GlobalFields.LocalAtPlace:2, GroundTheory.GlobalFields.SemilocalAlgebras:2, GroundTheory.GlobalFields.CompletionAtPlace:1
+GroundTheory.ProfiniteCohomology.ClassFormations   files=      9 lines=      1374  -> GroundTheory.ProfiniteCohomology.ClassFormationDefs:2, GroundTheory.ProfiniteCohomology.LocalClassFormation:2, GroundTheory.ProfiniteCohomology.ContinuousCochains:1, GroundTheory.ProfiniteCohomology.InflationRestriction:1, GroundTheory.ProfiniteCohomology.LocalClassFormationAlt:1, GroundTheory.ProfiniteCohomology.GlobalClassFormation:1
+GroundTheory.ProfiniteCohomology.CohomologicalDimension files=      6 lines=      1373  -> GroundTheory.ProfiniteCohomology.Colimit:2, GroundTheory.ProfiniteCohomology.OfNatRelIndexSupAntitone:2, GroundTheory.ProfiniteCohomology.Shapiro:1, GroundTheory.ProfiniteCohomology.CoinducedModules:1, GroundTheory.ProfiniteCohomology.ColimitUnion:1, GroundTheory.ProfiniteCohomology.ContinuousCochains:1
+GroundTheory.ProfiniteCohomology.CupProducts       files=      9 lines=      1323  -> GroundTheory.ProfiniteCohomology.ContinuousCochains:2, GroundTheory.ProfiniteCohomology.CohomologyFunctoriality:2, GroundTheory.TateCohomology.CupCochains:1, GroundTheory.ProfiniteCohomology.Bridge:1, GroundTheory.ProfiniteCohomology.ColimitDefs:1, GroundTheory.TateCohomology.CupProduct:1
+GroundTheory.PowerSubgroups.CountableNeighbourhoods files=     20 lines=      1277  -> GroundTheory.HeightsAndTheta.Heights:2, GroundTheory.AutomorphicForms.ContragredientTranspose:1, GroundTheory.AutomorphicForms.AdelicGLn:1, GroundTheory.GlobalFields.IdeleGroups:1, GroundTheory.PAdicHodge.PerfectoidField:1
+GroundTheory.GlobalFields.ExistenceTheorem         files=      7 lines=      1242  -> GroundTheory.GlobalFields.IdeleGroups:6, GroundTheory.GlobalFields.KummerTheory:4, GroundTheory.GlobalFields.GlobalReciprocity:2, GroundTheory.GlobalFields.SUnits:1, GroundTheory.GlobalFields.SplittingFromInequality:1, GroundTheory.GlobalFields.ClassFieldConsequences:1
+GroundTheory.ProfiniteCohomology.MackeyFormula     files=      6 lines=      1183  -> GroundTheory.ProfiniteCohomology.CompactSupportCohomology:3, GroundTheory.ProfiniteCohomology.LocalEulerCharacteristic:2, GroundTheory.ProfiniteCohomology.MackeyDefs:1, GroundTheory.ProfiniteCohomology.Shapiro:1, GroundTheory.ProfiniteCohomology.CohomologyFunctoriality:1
+GroundTheory.GlobalFields.IdeleClassGroup          files=      7 lines=      1177  -> GroundTheory.GlobalFields.IdeleGroups:3, GroundTheory.LocalFields.AbstractLocalReciprocity:3, GroundTheory.GlobalFields.SecondInequality:1, GroundTheory.LocalFields.HerbrandCyclic:1, GroundTheory.LocalFields.CompleteTrivial:1, GroundTheory.GlobalFields.CyclotomicCharacters:1
+GroundTheory.AutomorphicForms.UnitaryAdmissible    files=      6 lines=      1160  -> GroundTheory.AutomorphicForms.AutomorphicFormSpaces:5, GroundTheory.AutomorphicForms.ArchimedeanWhittaker:3, GroundTheory.AutomorphicForms.CuspidalDiscreteness:3, GroundTheory.AutomorphicForms.GKModules:2, GroundTheory.AutomorphicForms.TensorProductTheorem:2, GroundTheory.AutomorphicForms.HarishChandraRegularity:1
+GroundTheory.AutomorphicForms.AdelicUnitaryGroups  files=      6 lines=      1128  -> GroundTheory.GlobalFields.Adele:2, GroundTheory.GlobalFields.LocalAtPlace:1, GroundTheory.AutomorphicForms.UnitaryGroupEquations:1
+GroundTheory.PAdicHodge.WAEval                     files=      1 lines=      1053  -> GroundTheory.PAdicHodge.WACommon:1, GroundTheory.PAdicHodge.ExtRobbaPointDiv:1, GroundTheory.PAdicHodge.ExtRobbaRoot:1, GroundTheory.PAdicHodge.BStPeriod:1, GroundTheory.PAdicHodge.ACrisBdR:1, GroundTheory.PAdicHodge.BdRGalois:1
+GroundTheory.ProfiniteCohomology.GaloisCohomology  files=      6 lines=      1027  -> GroundTheory.ProfiniteCohomology.Colimit:3, GroundTheory.ProfiniteCohomology.ContinuousCochains:2, GroundTheory.ProfiniteCohomology.GaloisModules:2, GroundTheory.TateCohomology.InfRes:1, GroundTheory.ProfiniteCohomology.AdditiveHilbert:1, GroundTheory.ProfiniteCohomology.CohomologicalDimension:1
+GroundTheory.GlobalFields.CompletionAtPlace        files=      5 lines=      1007  -> GroundTheory.GlobalFields.LocalFieldAtPlace:1, GroundTheory.LocalFields.Interface:1, GroundTheory.LocalFields.Ramification:1
+GroundTheory.PAdicHodge.ExtRobbaUntilt             files=      1 lines=      1006  -> GroundTheory.PAdicHodge.ExtRobbaFrob:1
+GroundTheory.AutomorphicForms.UnitaryRepresentations files=      5 lines=       989  -> 
+GroundTheory.IdeleRoots.TorusPowers                files=      6 lines=       953  -> GroundTheory.GlobalFields.Adele:2, GroundTheory.GlobalFields.IdeleGroups:1, GroundTheory.GlobalFields.LocalFieldAtPlace:1, GroundTheory.GlobalFields.KummerTheory:1, GroundTheory.AutomorphicForms.MacdonaldHecke:1
+GroundTheory.PAdicHodge.ExtRobbaBounded            files=      1 lines=       930  -> GroundTheory.PAdicHodge.ExtRobbaTeich:1, GroundTheory.PAdicHodge.RobbaSeries:1
+GroundTheory.PAdicHodge.SlopeFrobenius             files=      1 lines=       842  -> GroundTheory.PAdicHodge.RobbaAmice:1
+GroundTheory.AutomorphicForms.GeometricLemmaCellSurjective files=      1 lines=       821  -> GroundTheory.AutomorphicForms.GeometricLemmaJacquetCell:1
+GroundTheory.AutomorphicForms.WhittakerCriterion   files=      1 lines=       807  -> GroundTheory.AutomorphicForms.HeckeAlgebra:1, GroundTheory.AutomorphicForms.SmoothRepContragredient:1, GroundTheory.AutomorphicForms.SmoothRepSchur:1
+GroundTheory.PAdicHodge.ExtRobbaPointEval          files=      1 lines=       788  -> GroundTheory.PAdicHodge.ExtRobbaUntilt:1, GroundTheory.PAdicHodge.ExtRobbaComplete:1
+GroundTheory.AutomorphicForms.CuspidalProjection   files=      4 lines=       767  -> GroundTheory.AutomorphicForms.CuspidalDiscreteness:2, GroundTheory.AutomorphicForms.SupercuspidalCoefficients:1, GroundTheory.AutomorphicForms.RealIwasawaIntegration:1, GroundTheory.GlobalFields.TateThesis:1, GroundTheory.GlobalFields.LocalFieldAtPlace:1, GroundTheory.AutomorphicForms.TraceClass:1
+GroundTheory.AutomorphicForms.WhittakerDistribution files=      1 lines=       754  -> GroundTheory.AutomorphicForms.WhittakerLSpace:1, GroundTheory.AutomorphicForms.WhittakerOrbit:1, GroundTheory.AutomorphicForms.WhittakerGroups:1, GroundTheory.AutomorphicForms.WhittakerCells:1, GroundTheory.AutomorphicForms.WhittakerRelevance:1
+GroundTheory.AutomorphicForms.GeometricLemmaCellChar files=      1 lines=       750  -> GroundTheory.AutomorphicForms.GeometricLemmaJacquetCell:1, GroundTheory.LocalFields.LocalFourierHaar:1, GroundTheory.AutomorphicForms.CuspidalAdmissible:1
+GroundTheory.AutomorphicForms.AffineBruhat         files=      1 lines=       730  -> GroundTheory.AutomorphicForms.GLnLocal:1, GroundTheory.AutomorphicForms.GLnLattice:1, GroundTheory.AutomorphicForms.FiniteBruhat:1
+GroundTheory.PAdicHodge.ExtRobbaTeich              files=      1 lines=       729  -> 
+GroundTheory.PAdicHodge.CyclotomicTower            files=      1 lines=       728  -> GroundTheory.PAdicHodge.NormalizedTrace:1, GroundTheory.PAdicHodge.CyclotomicField:1
+GroundTheory.AutomorphicForms.SchurOrthogonality   files=      1 lines=       722  -> GroundTheory.AutomorphicForms.SmoothRepContragredient:1, GroundTheory.AutomorphicForms.SmoothRepSchur:1, GroundTheory.AutomorphicForms.HeckeAlgebra:1, GroundTheory.AutomorphicForms.LocallyProfinite:1
+GroundTheory.PAdicHodge.DMTeichBasic               files=      1 lines=       691  -> GroundTheory.PAdicHodge.ExtRobbaDMRankOne:1, GroundTheory.PAdicHodge.SemilinearResidue:1
+GroundTheory.PAdicHodge.ExtRobbaRoot               files=      1 lines=       669  -> GroundTheory.PAdicHodge.ExistsIsRootForallNormPowMulLe:1, GroundTheory.PAdicHodge.ExtRobbaPointDiv:1, GroundTheory.PAdicHodge.ExtRobbaUnits:1
+GroundTheory.LocalFields.MaximalUnramified         files=      1 lines=       658  -> GroundTheory.LocalFields.AbstractLocalReciprocity:4, GroundTheory.LocalFields.Interface:1, GroundTheory.LocalFields.FiniteExtension:1, GroundTheory.LocalFields.Uniqueness:1, GroundTheory.LocalFields.Integers:1, GroundTheory.LocalFields.UnitsPowers:1
+GroundTheory.LocalFields.CompletedUnramified       files=      1 lines=       658  -> GroundTheory.LocalFields.MaximalUnramifiedIntegers:1, GroundTheory.PowerSubgroups.CountableNeighbourhoods:1
+GroundTheory.PAdicHodge.ExtRobbaNewton             files=      1 lines=       656  -> GroundTheory.PAdicHodge.ExtRobbaComplete:1
+GroundTheory.PAdicHodge.ExtRobbaGamma              files=      1 lines=       640  -> GroundTheory.PAdicHodge.ExtRobbaCohen:1
+GroundTheory.AutomorphicForms.WhittakerOrbit       files=      1 lines=       634  -> GroundTheory.AutomorphicForms.WhittakerLSpace:1, GroundTheory.AutomorphicForms.SmoothRep:1, GroundTheory.AutomorphicForms.LocallyProfinite:1
+GroundTheory.LocalFields.LubinTatePoints           files=      1 lines=       626  -> GroundTheory.LocalFields.Interface:1, GroundTheory.LocalFields.ExamplesLaurent:1, GroundTheory.LocalFields.SeparableClosure:1, GroundTheory.LocalFields.FormalGroups:1
+GroundTheory.ArithmeticGeometry.EtaleCompletion    files=      6 lines=       626  -> 
+GroundTheory.PAdicHodge.ExtRobbaEigen              files=      1 lines=       620  -> GroundTheory.PAdicHodge.ExtRobbaEigenStep:1
+GroundTheory.AutomorphicForms.WhittakerGroups      files=      1 lines=       615  -> GroundTheory.AutomorphicForms.FiniteBruhat:1, GroundTheory.AutomorphicForms.Iwasawa:1, GroundTheory.AutomorphicForms.GLnLocal:1, GroundTheory.AutomorphicForms.LocallyProfinite:1, GroundTheory.AutomorphicForms.MeasuresModulus:1, GroundTheory.PowerSubgroups.CountableNeighbourhoods:1
+GroundTheory.AutomorphicForms.CompactAbelianCharacters files=      1 lines=       611  -> GroundTheory.AutomorphicForms.CompactSelfAdjoint:1, GroundTheory.AutomorphicForms.HilbertSchmidtCompact:1, GroundTheory.AutomorphicForms.HilbertSchmidtKernel:1
+GroundTheory.PAdicHodge.ConvergesAtOfNormLeSeq     files=      1 lines=       599  -> GroundTheory.PAdicHodge.ExtRobbaRoot:1
+GroundTheory.AutomorphicForms.MeasuresParabolic    files=      1 lines=       598  -> GroundTheory.AutomorphicForms.MeasuresGL:1, GroundTheory.AutomorphicForms.Iwasawa:1
+GroundTheory.PAdicHodge.ExtRobbaCohen              files=      1 lines=       596  -> GroundTheory.PAdicHodge.PerfectoidField:1, GroundTheory.PAdicHodge.WittLift:1
+GroundTheory.PAdicHodge.WAFracOrbit                files=      1 lines=       595  -> GroundTheory.PAdicHodge.WAPeriodT:1, GroundTheory.PAdicHodge.WABridgeGerm:1, GroundTheory.PAdicHodge.CauchySeqOfIncrements:1, GroundTheory.PAdicHodge.ExtRobbaTrivialV:1
+GroundTheory.AutomorphicForms.WhittakerCells       files=      1 lines=       585  -> GroundTheory.AutomorphicForms.FiniteBruhat:1, GroundTheory.AutomorphicForms.Iwasawa:1
+GroundTheory.PAdicHodge.FieldOfNormsTower          files=      1 lines=       583  -> GroundTheory.LocalFields.SeparableClosure:1
+GroundTheory.PAdicHodge.KerTheta                   files=      1 lines=       576  -> GroundTheory.PAdicHodge.PerfectoidField:1
+GroundTheory.PAdicHodge.AxLemma                    files=      1 lines=       573  -> GroundTheory.PAdicHodge.GaloisOnCp:1
+GroundTheory.PAdicHodge.IsUnitAnnResOfMultEqZero   files=      1 lines=       566  -> GroundTheory.PAdicHodge.WAFracAnnCris:1, GroundTheory.PAdicHodge.WAFracAnnPt:1
+GroundTheory.IdeleRoots.ConstantFrames             files=      2 lines=       563  -> 
+GroundTheory.PAdicHodge.ExtRobbaUnits              files=      1 lines=       556  -> GroundTheory.PAdicHodge.ExtRobbaUnion:1
+GroundTheory.AutomorphicForms.GeometricLemmaJacquetCell files=      1 lines=       542  -> GroundTheory.AutomorphicForms.GeometricLemmaCellGroups:1, GroundTheory.AutomorphicForms.GeometricLemmaCount:1
+GroundTheory.PAdicHodge.RobbaDivision              files=      1 lines=       538  -> GroundTheory.PAdicHodge.RobbaSeries:1, GroundTheory.PAdicHodge.HighIndexSingleZeroOne:1, GroundTheory.PAdicHodge.RobbaBounded:1, GroundTheory.PAdicHodge.RobbaNewton:1, GroundTheory.PAdicHodge.RobbaClosed:1
+GroundTheory.AutomorphicForms.IwahoriFactorization files=      1 lines=       537  -> GroundTheory.AutomorphicForms.InductionParabolic:1, GroundTheory.AutomorphicForms.AffineBruhat:1
+GroundTheory.AutomorphicForms.DiscreteSpectrumAbstract files=      1 lines=       527  -> GroundTheory.AutomorphicForms.UnitaryRepresentations:1
+GroundTheory.TateCohomology.HerbrandAbstract       files=      1 lines=       523  -> 
+GroundTheory.AutomorphicForms.RealGroupsLie        files=      1 lines=       523  -> 
+GroundTheory.PAdicHodge.WAFracAnn                  files=      1 lines=       523  -> GroundTheory.PAdicHodge.ExtRobbaEigenGlue:1, GroundTheory.PAdicHodge.ExtRobbaIsoLift:1
+GroundTheory.PAdicHodge.WACommon                   files=      1 lines=       523  -> GroundTheory.PAdicHodge.BCrisNewtonLift:1, GroundTheory.PAdicHodge.PhiGammaBase:1, GroundTheory.PAdicHodge.SlopeDescentFixed:1, GroundTheory.PAdicHodge.ExtRobbaIsoLift:1, GroundTheory.PAdicHodge.ExtRobbaTrivialUnits:1, GroundTheory.PAdicHodge.BCrisEigenWitt:1
+GroundTheory.ProfiniteCohomology.CyclicCup         files=      1 lines=       514  -> GroundTheory.ProfiniteCohomology.CyclicCupDefs:1, GroundTheory.TateCohomology.TateLow:1, GroundTheory.TateCohomology.TateZeroClass:1
+GroundTheory.LocalFields.Eisenstein                files=      1 lines=       514  -> GroundTheory.LocalFields.Interface:1, GroundTheory.LocalFields.Integers:1, GroundTheory.LocalFields.IntermediateField:1
+GroundTheory.LocalFields.LocalZetaEpsilon          files=      1 lines=       513  -> GroundTheory.LocalFields.LocalZetaTate:1, GroundTheory.LocalFields.PadicLogHom:1
+GroundTheory.PAdicHodge.ExistsNormLeOfNormLtOneFinite files=      1 lines=       513  -> GroundTheory.PAdicHodge.WAKummerLog:1, GroundTheory.PAdicHodge.BCrisRegularFinal:1, GroundTheory.PAdicHodge.BdRInvariants:1, GroundTheory.PAdicHodge.AxLemma:1, GroundTheory.PAdicHodge.FundamentalSeqSurj:1
+GroundTheory.PAdicHodge.ThetaPlus                  files=      1 lines=       511  -> GroundTheory.PAdicHodge.KerTheta:1
+GroundTheory.GlobalFields.SecondInequality         files=      5 lines=       511  -> GroundTheory.GlobalFields.IdeleGroups:3, GroundTheory.GlobalFields.KummerTheory:1, GroundTheory.GlobalFields.ExistenceTheorem:1, GroundTheory.GlobalFields.FirstInequality:1
+GroundTheory.LocalFields.LubinTateTorsion          files=      1 lines=       510  -> GroundTheory.LocalFields.LubinTatePoints:1, GroundTheory.LocalFields.Eisenstein:1
+GroundTheory.PAdicHodge.ExtRobbaFrob               files=      1 lines=       510  -> GroundTheory.PAdicHodge.ExtRobbaBounded:1
+GroundTheory.AutomorphicForms.ReductionLocalVolumeGL files=      1 lines=       507  -> GroundTheory.AutomorphicForms.ReductionLocalVolumeTorus:1, GroundTheory.AutomorphicForms.RealIwasawaIntegration:1
+GroundTheory.PAdicHodge.AInfTopology               files=      1 lines=       507  -> GroundTheory.PAdicHodge.KerFontaineThetaCompFrobeniusEquivSymmPow:1
+GroundTheory.PAdicHodge.ExistsWeightLeOfConvergesAt files=      1 lines=       505  -> GroundTheory.PAdicHodge.ExtRobbaDMApprox:1, GroundTheory.PAdicHodge.ExtRobbaUnits:1, GroundTheory.PAdicHodge.ExtRobbaNewton:1
+GroundTheory.LocalFields.BrauerInductionCharacters files=      1 lines=       503  -> 
+GroundTheory.AutomorphicForms.ReductionDirichlet   files=      1 lines=       503  -> GroundTheory.GlobalFields.Adele:3, GroundTheory.AutomorphicForms.ReductionHeight:1, GroundTheory.AutomorphicForms.ReductionIdele:1, GroundTheory.GlobalFields.IdeleGroups:1
+GroundTheory.PAdicHodge.RobbaDivisor               files=      1 lines=       498  -> GroundTheory.PAdicHodge.RobbaSeries:1, GroundTheory.PAdicHodge.HighIndexSingleZeroOne:1, GroundTheory.PAdicHodge.RobbaBounded:1, GroundTheory.PAdicHodge.RobbaNewton:1, GroundTheory.PAdicHodge.RobbaClosed:1, GroundTheory.PAdicHodge.RobbaUnitApprox:1
+GroundTheory.FunctionField.Repartition             files=      1 lines=       496  -> GroundTheory.FunctionField.PlaceDefs:1, GroundTheory.FunctionField.PlaceBasic:1, GroundTheory.FunctionField.Approximation:1, GroundTheory.FunctionField.ValuationAevalSubCoeffZeroLe:1, GroundTheory.FunctionField.Divisor:1, GroundTheory.FunctionField.DivisorDegree:1
+GroundTheory.AutomorphicForms.GLnLattice           files=      1 lines=       495  -> GroundTheory.AutomorphicForms.GLnLocal:1
+GroundTheory.AutomorphicForms.MacdonaldAlternant   files=      1 lines=       494  -> GroundTheory.AutomorphicForms.MacdonaldRecursion:1
+GroundTheory.PAdicHodge.RobbaSeries                files=      1 lines=       492  -> 
+GroundTheory.LocalFields.BrauerInductionPrime      files=      1 lines=       491  -> GroundTheory.LocalFields.BrauerInductionLocal:1
+GroundTheory.GlobalFields.WeilGroups               files=      3 lines=       491  -> GroundTheory.GlobalFields.TateThesis:2, GroundTheory.GlobalFields.IdeleGroups:2, GroundTheory.ProfiniteCohomology.GlobalClassFormation:2, GroundTheory.GlobalFields.GlobalArtinMap:1, GroundTheory.GlobalFields.NormResidueSymbol:1
+GroundTheory.FunctionField.PlaceDefs               files=      1 lines=       490  -> 
+GroundTheory.LocalFields.CompleteTrivialLocal      files=      1 lines=       489  -> GroundTheory.LocalFields.CompleteTrivial:1, GroundTheory.LocalFields.NormalLattice:1
+GroundTheory.AutomorphicForms.RealIwasawaIntegration files=      1 lines=       488  -> GroundTheory.AutomorphicForms.RealIwasawaUnipotentHaar:1
+GroundTheory.AutomorphicForms.CuspidalAdmissible   files=      1 lines=       487  -> GroundTheory.AutomorphicForms.LeviCartan:1, GroundTheory.AutomorphicForms.SmoothRepSchur:1, GroundTheory.AutomorphicForms.MeasuresModulus:1
+GroundTheory.AutomorphicForms.SphericalMinuscule   files=      1 lines=       487  -> GroundTheory.AutomorphicForms.SphericalTriangular:1
+GroundTheory.AutomorphicForms.RealIwasawaSubgroups files=      1 lines=       486  -> GroundTheory.AutomorphicForms.RealGroups:1
+GroundTheory.PAdicHodge.WAPeriodT                  files=      1 lines=       484  -> GroundTheory.PAdicHodge.WAEval:1, GroundTheory.PAdicHodge.WACommonKappa:1, GroundTheory.PAdicHodge.BdRTGalois:1, GroundTheory.PAdicHodge.BCrisPlusInvariants:1
+GroundTheory.AutomorphicForms.Iwasawa              files=      1 lines=       481  -> GroundTheory.AutomorphicForms.GLnLattice:1
+GroundTheory.LocalFields.LocalAxiomDictionary      files=      1 lines=       479  -> GroundTheory.LocalFields.AbstractLocalReciprocity:1, GroundTheory.LocalFields.ExistsUnitFiltrationUnitsLeRangeNormUnits:1, GroundTheory.LocalFields.LocalAxiomTransport:1
+GroundTheory.AutomorphicForms.QuotientMeasure      files=      1 lines=       475  -> 
+GroundTheory.AutomorphicForms.RealGroupsIwasawa    files=      1 lines=       474  -> GroundTheory.AutomorphicForms.RealGroupsPolar:1
+GroundTheory.AutomorphicForms.JacquetAdmissible    files=      1 lines=       473  -> GroundTheory.AutomorphicForms.CuspidalAdmissible:1, GroundTheory.AutomorphicForms.AdmissibleInduction:1
+GroundTheory.ProfiniteCohomology.ContinuousCochains files=      3 lines=       468  -> GroundTheory.ProfiniteCohomology.DiscreteModules:1
+GroundTheory.LocalFields.TameExtension             files=      1 lines=       468  -> GroundTheory.LocalFields.ExtensionsOfDegree:1, GroundTheory.LocalFields.RamificationTameStructure:1, GroundTheory.LocalFields.MaximalUnramified:1, GroundTheory.LocalFields.SeparableClosure:1, GroundTheory.LocalFields.UnramifiedExistence:1, GroundTheory.LocalFields.Unramified:1
+GroundTheory.AutomorphicForms.HeckeIrreducible     files=      1 lines=       468  -> GroundTheory.AutomorphicForms.HeckeAlgebraLevel:1
+GroundTheory.PAdicHodge.FieldOfNormsAPF            files=      1 lines=       467  -> GroundTheory.PAdicHodge.FieldOfNormsRam:1, GroundTheory.PAdicHodge.FieldOfNormsLocal:1, GroundTheory.LocalFields.ExamplesCharZero:1
+GroundTheory.AutomorphicForms.HeckeAlgebra         files=      1 lines=       466  -> GroundTheory.AutomorphicForms.HaarCosets:1, GroundTheory.AutomorphicForms.SmoothRep:1
+GroundTheory.AutomorphicForms.DixmierMalliavinLineKernel files=      1 lines=       463  -> 
+GroundTheory.PAdicHodge.RobbaUnitApprox            files=      1 lines=       463  -> GroundTheory.PAdicHodge.RobbaSeries:1, GroundTheory.PAdicHodge.HighIndexSingleZeroOne:1, GroundTheory.PAdicHodge.RobbaBounded:1, GroundTheory.PAdicHodge.RobbaNewton:1, GroundTheory.PAdicHodge.RobbaClosed:1
+GroundTheory.GlobalFields.InfiniteNormIndex        files=      1 lines=       463  -> GroundTheory.GlobalFields.HerbrandQuotients:1, GroundTheory.ProfiniteCohomology.GaloisModules:1, GroundTheory.GlobalFields.SemilocalAlgebras:1
+GroundTheory.PAdicHodge.RobbaPreparation           files=      1 lines=       457  -> GroundTheory.PAdicHodge.RobbaSeries:1, GroundTheory.PAdicHodge.HighIndexSingleZeroOne:1, GroundTheory.PAdicHodge.RobbaBounded:1, GroundTheory.PAdicHodge.RobbaNewton:1, GroundTheory.PAdicHodge.RobbaClosed:1, GroundTheory.PAdicHodge.RobbaDivision:1
+GroundTheory.TateCohomology.TateShapiro            files=      1 lines=       456  -> GroundTheory.TateCohomology.DiagonalSuccIsoFreeInvSingle:1, GroundTheory.TateCohomology.DimensionShift:1
+GroundTheory.AutomorphicForms.RestrictedHaarProduct files=      1 lines=       455  -> 
+GroundTheory.AutomorphicForms.GeometricLemmaCells  files=      1 lines=       455  -> GroundTheory.AutomorphicForms.FiniteBruhat:1, GroundTheory.AutomorphicForms.InductionParabolicGroups:1
+GroundTheory.PAdicHodge.SlopeRobbaPure             files=      1 lines=       453  -> GroundTheory.PAdicHodge.SlopeRobbaDegree:1
+GroundTheory.PAdicHodge.FieldOfNormsField          files=      1 lines=       451  -> GroundTheory.PAdicHodge.FieldOfNormsRing:1
+GroundTheory.PAdicHodge.HighIndexSingleZeroOne     files=      1 lines=       450  -> GroundTheory.PAdicHodge.RobbaSeries:1
+GroundTheory.AutomorphicForms.TraceClass           files=      1 lines=       449  -> GroundTheory.AutomorphicForms.HilbertSchmidt:1
+GroundTheory.LocalFields.NormalLattice             files=      1 lines=       448  -> GroundTheory.LocalFields.Interface:1, GroundTheory.LocalFields.UnitsBasic:1
+GroundTheory.AutomorphicForms.DixmierMalliavinHaar files=      1 lines=       448  -> GroundTheory.AutomorphicForms.DixmierMalliavinHaarCoord:1
+GroundTheory.ProfiniteCohomology.Procyclic         files=      1 lines=       443  -> GroundTheory.ProfiniteCohomology.ProcyclicDefs:1, GroundTheory.ProfiniteCohomology.ContinuousCochains:1, GroundTheory.ProfiniteCohomology.CoinducedModules:1, GroundTheory.ProfiniteCohomology.CohomologicalDimension:1
+GroundTheory.LocalFields.HerbrandFunction          files=      1 lines=       441  -> GroundTheory.LocalFields.LowerIndex:1
+GroundTheory.PAdicHodge.ExtRobbaEigenStep          files=      1 lines=       441  -> GroundTheory.PAdicHodge.ExtRobbaEigenGlue:1
+GroundTheory.FunctionField.WeilDifferential        files=      1 lines=       440  -> GroundTheory.FunctionField.PlaceDefs:1, GroundTheory.FunctionField.PlaceBasic:1, GroundTheory.FunctionField.Approximation:1, GroundTheory.FunctionField.Divisor:1, GroundTheory.FunctionField.DivisorDegree:1, GroundTheory.FunctionField.Repartition:1
+GroundTheory.LocalFields.LubinTateTower            files=      1 lines=       435  -> GroundTheory.LocalFields.LubinTatePoints:1, GroundTheory.LocalFields.LubinTateTorsion:1, GroundTheory.LocalFields.Eisenstein:1, GroundTheory.LocalFields.UnitsBasic:1
+GroundTheory.AutomorphicForms.FiniteLengthLevi     files=      1 lines=       435  -> GroundTheory.AutomorphicForms.FiniteLengthLeviBlock:1
+GroundTheory.Brauer.AbsoluteGalois                 files=      1 lines=       435  -> GroundTheory.ProfiniteCohomology.GaloisCohomology:2, GroundTheory.Brauer.CrossedProductIso:1, GroundTheory.Brauer.Inflation:1, GroundTheory.Brauer.Splitting:1, GroundTheory.ProfiniteCohomology.Colimit:1
+GroundTheory.AutomorphicForms.CuspidalSplittingIsotypic files=      1 lines=       432  -> GroundTheory.AutomorphicForms.CuspidalSplittingProjective:1
+GroundTheory.ProfiniteCohomology.CohomologyFunctoriality files=      3 lines=       430  -> GroundTheory.ProfiniteCohomology.ContinuousCochains:3
+GroundTheory.LocalFields.ExplicitQp                files=      1 lines=       430  -> GroundTheory.LocalFields.KroneckerWeber:1, GroundTheory.LocalFields.LocalReciprocityUniversal:1
+GroundTheory.PAdicHodge.FontaineLemmaInvariants    files=      1 lines=       430  -> GroundTheory.PAdicHodge.FontaineLemma:1, GroundTheory.PAdicHodge.BCrisRegular:1
+GroundTheory.PAdicHodge.PtEvalPtProdEqZeroOfMem    files=      1 lines=       428  -> GroundTheory.PAdicHodge.IsUnitAnnResOfMultEqZero:1, GroundTheory.PAdicHodge.ExtRobbaBezout:1
+GroundTheory.AutomorphicForms.ReductionCore        files=      1 lines=       426  -> GroundTheory.AutomorphicForms.ReductionFinite:1, GroundTheory.AutomorphicForms.ReductionIwasawa:1, GroundTheory.AutomorphicForms.ReductionBlock:1, GroundTheory.AutomorphicForms.ReductionDirichlet:1
+GroundTheory.PAdicHodge.ExtRobbaEigenGlue          files=      1 lines=       426  -> GroundTheory.PAdicHodge.ExistsWeightLeOfConvergesAt:1, GroundTheory.PAdicHodge.ExtRobbaDMSplit:1
+GroundTheory.AutomorphicForms.SmoothRep            files=      1 lines=       425  -> GroundTheory.AutomorphicForms.LocallyProfinite:1
+GroundTheory.ProfiniteCohomology.CoinducedModules  files=      3 lines=       424  -> GroundTheory.ProfiniteCohomology.ContinuousCochains:2, GroundTheory.ProfiniteCohomology.DiscreteModules:1
+GroundTheory.TateCohomology.CupTateShift           files=      1 lines=       421  -> GroundTheory.TateCohomology.AugmentationSES:1, GroundTheory.TateCohomology.TateConnecting:1, GroundTheory.TateCohomology.TateLow:1
+GroundTheory.PAdicHodge.FactorizationFactorialLe   files=      1 lines=       421  -> GroundTheory.PAdicHodge.AInfXi:1, GroundTheory.PAdicHodge.ThetaPlus:1
+GroundTheory.LocalFields.ArtinConductor            files=      1 lines=       420  -> GroundTheory.LocalFields.DifferentGalois:1
+GroundTheory.LocalFields.BrauerInductionClifford   files=      1 lines=       419  -> GroundTheory.LocalFields.BrauerInductionCharacters:1, GroundTheory.LocalFields.BrauerInductionInduced:1
+GroundTheory.AutomorphicForms.GeometricLemmaAverage files=      1 lines=       417  -> 
+GroundTheory.PAdicHodge.SlopeRobbaDegree           files=      1 lines=       417  -> GroundTheory.PAdicHodge.SlopeFrobenius:1, GroundTheory.PAdicHodge.SlopePhiSub:1, GroundTheory.PAdicHodge.SlopeCauchyBinet:1
+GroundTheory.ProfiniteCohomology.GaloisModules     files=      3 lines=       414  -> GroundTheory.ProfiniteCohomology.DiscreteModules:1
+GroundTheory.LocalFields.UnitsBasic                files=      1 lines=       414  -> 
+GroundTheory.LocalFields.MaximalUnramifiedIntegers files=      1 lines=       414  -> GroundTheory.LocalFields.MaximalUnramified:1, GroundTheory.LocalFields.SeparableClosureValuation:1
+GroundTheory.PAdicHodge.FundamentalSeqFixed        files=      1 lines=       413  -> GroundTheory.PAdicHodge.FundamentalSeqSurj:1
+GroundTheory.PAdicHodge.UntiltGalois               files=      1 lines=       412  -> GroundTheory.PAdicHodge.UntiltPerfectoid:1
+GroundTheory.AutomorphicForms.ReductionFinite      files=      1 lines=       411  -> GroundTheory.GlobalFields.Adele:2, GroundTheory.GlobalFields.IdeleGroups:2, GroundTheory.AutomorphicForms.ReductionHeight:1, GroundTheory.AutomorphicForms.ReductionIdele:1
+GroundTheory.PAdicHodge.ExtRobbaComplete           files=      1 lines=       410  -> GroundTheory.PAdicHodge.ExtRobbaBounded:1, GroundTheory.PAdicHodge.RobbaNewton:1
+GroundTheory.PAdicHodge.ACrisBdR                   files=      1 lines=       410  -> GroundTheory.PAdicHodge.FactorizationFactorialLe:1, GroundTheory.PAdicHodge.BdRLattice:1, GroundTheory.PowerSubgroups.CountableNeighbourhoods:1
+GroundTheory.LocalFields.LocalArtinBaseChange      files=      1 lines=       409  -> GroundTheory.LocalFields.LocalArtinUniqueness:1, GroundTheory.LocalFields.LocalReciprocityLimitAbstract:1
+GroundTheory.AutomorphicForms.AdelicDixmierMalliavinProduct files=      1 lines=       409  -> GroundTheory.AutomorphicForms.DixmierMalliavin:1, GroundTheory.AutomorphicForms.TraceFormulaConvolution:1, GroundTheory.AutomorphicForms.GKModules:1
+GroundTheory.PAdicHodge.IsUnitOfRadOfMultEqZero    files=      1 lines=       409  -> GroundTheory.PAdicHodge.ExistsIsRootForallNormPowMulLe:1, GroundTheory.PAdicHodge.ExtRobbaPointDiv:1, GroundTheory.PAdicHodge.ExtRobbaUnits:1
+GroundTheory.AutomorphicForms.SupercuspidalCoefficients files=      1 lines=       407  -> GroundTheory.AutomorphicForms.JacquetAdmissible:1, GroundTheory.AutomorphicForms.IwahoriFactorization:1, GroundTheory.AutomorphicForms.SmoothRepContragredient:1
+GroundTheory.ProfiniteCohomology.CartierDual       files=      1 lines=       406  -> GroundTheory.ProfiniteCohomology.CartierDualDefs:1
+GroundTheory.LocalFields.LocalArtinTransport       files=      1 lines=       406  -> GroundTheory.LocalFields.LocalArtinUniqueness:1
+GroundTheory.GlobalFields.GlobalArtinMap           files=      2 lines=       403  -> GroundTheory.GlobalFields.NormResidueSymbol:2, GroundTheory.GlobalFields.ExistenceTheorem:1, GroundTheory.LocalFields.MaximalAbelianExtension:1, GroundTheory.GlobalFields.IdeleGroups:1, GroundTheory.GlobalFields.ClassFieldConsequences:1
+GroundTheory.AutomorphicForms.LeviStagesInduction  files=      1 lines=       402  -> GroundTheory.AutomorphicForms.LeviStagesJacquet:1
+GroundTheory.AutomorphicForms.SphericalTriangular  files=      1 lines=       402  -> GroundTheory.AutomorphicForms.SphericalSatake:1
+GroundTheory.ProfiniteCohomology.KummerCorrespondence files=      1 lines=       401  -> GroundTheory.ProfiniteCohomology.KummerBasic:1, GroundTheory.ProfiniteCohomology.KummerFinite:1
+GroundTheory.LocalFields.LocalFourierChar          files=      1 lines=       401  -> GroundTheory.LocalFields.LocalFourierHaar:1, GroundTheory.GlobalFields.TateThesis:1
+GroundTheory.Brauer.Splitting                      files=      1 lines=       401  -> GroundTheory.Brauer.BaseChange:1, GroundTheory.Brauer.DoubleCentralizer:1, GroundTheory.Brauer.Degree:1
+GroundTheory.LocalFields.LocalFourierHaar          files=      1 lines=       400  -> GroundTheory.LocalFields.PadicLogSeries:1, GroundTheory.LocalFields.Uniqueness:1, GroundTheory.LocalFields.SeparableClosureValuation:1
+GroundTheory.LocalFields.SeparableClosureValuation files=      1 lines=       400  -> GroundTheory.LocalFields.Interface:1, GroundTheory.LocalFields.FiniteExtension:1, GroundTheory.LocalFields.Uniqueness:1, GroundTheory.LocalFields.Integers:1, GroundTheory.LocalFields.UnitsBasic:1, GroundTheory.LocalFields.IntermediateField:1
+GroundTheory.AutomorphicForms.MacdonaldNormalization files=      1 lines=       396  -> GroundTheory.AutomorphicForms.MacdonaldAlternant:1
+GroundTheory.AutomorphicForms.DixmierMalliavinLine files=      1 lines=       395  -> GroundTheory.AutomorphicForms.DixmierMalliavinLineBounds:1, GroundTheory.AutomorphicForms.DixmierMalliavinLineLimit:1
+GroundTheory.PAdicHodge.SenTateCharLevels          files=      1 lines=       394  -> GroundTheory.PAdicHodge.SenTateCharTower:1, GroundTheory.PAdicHodge.SenTateCharUnitPow:1
+GroundTheory.AutomorphicForms.ReductionMahler      files=      1 lines=       393  -> GroundTheory.AutomorphicForms.ReductionSiegel:1, GroundTheory.AutomorphicForms.QuotientMeasure:1
+GroundTheory.AutomorphicForms.GeometricLemmaModular files=      1 lines=       391  -> GroundTheory.AutomorphicForms.AdmissibleInduction:1, GroundTheory.AutomorphicForms.CuspidalAdmissible:1
+GroundTheory.PAdicHodge.FieldOfNormsRing           files=      1 lines=       391  -> GroundTheory.PAdicHodge.FieldOfNormsTower:1
+GroundTheory.AutomorphicForms.HaarSK               files=      1 lines=       389  -> 
+GroundTheory.PAdicHodge.ACrisLog                   files=      1 lines=       389  -> GroundTheory.PAdicHodge.FactorizationFactorialLe:1
+GroundTheory.LocalFields.SeparableClosure          files=      1 lines=       388  -> GroundTheory.LocalFields.Interface:1, GroundTheory.LocalFields.FiniteExtension:1, GroundTheory.LocalFields.Uniqueness:1, GroundTheory.LocalFields.IntermediateField:1
+GroundTheory.AutomorphicForms.KernelTrace          files=      1 lines=       386  -> GroundTheory.AutomorphicForms.TraceStrongLimit:1, GroundTheory.AutomorphicForms.FinePartition:1, GroundTheory.AutomorphicForms.HilbertSchmidtKernel:1
+GroundTheory.ProfiniteCohomology.DiscreteModules   files=      2 lines=       383  -> 
+GroundTheory.LocalFields.PadicLogSeries            files=      1 lines=       383  -> GroundTheory.LocalFields.ExistsUnitFiltrationUnitsLeAndRangePowLe:1, GroundTheory.LocalFields.ExamplesCharZero:1
+GroundTheory.PAdicHodge.WAKummerEps                files=      1 lines=       383  -> GroundTheory.PAdicHodge.BStPeriod:1, GroundTheory.PAdicHodge.BdRTGalois:1
+GroundTheory.LocalFields.ExistsUnitFiltrationUnitsLeRangeNormUnits files=      1 lines=       382  -> GroundTheory.LocalFields.Interface:1, GroundTheory.LocalFields.Uniqueness:1, GroundTheory.LocalFields.Integers:1, GroundTheory.LocalFields.UnitsBasic:1, GroundTheory.LocalFields.UnitsPowers:1, GroundTheory.LocalFields.ExistsUnitFiltrationUnitsLeAndRangePowLe:1
+GroundTheory.AutomorphicForms.CuspidalSplittingPositivity files=      1 lines=       381  -> GroundTheory.AutomorphicForms.CuspidalSplittingCoeff:1
+GroundTheory.PAdicHodge.BCrisPlusInvariants        files=      1 lines=       373  -> GroundTheory.PAdicHodge.ACrisFrobFixed:1, GroundTheory.PAdicHodge.BCrisGalois:1, GroundTheory.PAdicHodge.BdRInvariants:1
+GroundTheory.TateCohomology.TateLow                files=      1 lines=       372  -> GroundTheory.TateCohomology.ModuleHomologyData:1
+GroundTheory.AutomorphicForms.LeviStagesJacquet    files=      1 lines=       372  -> GroundTheory.AutomorphicForms.GeometricLemmaModular:1, GroundTheory.AutomorphicForms.GeometricLemmaCharacters:1, GroundTheory.AutomorphicForms.JacquetAdmissible:1
+GroundTheory.FunctionField.PlaceBridge             files=      1 lines=       372  -> GroundTheory.FunctionField.PlaceSum:1
+GroundTheory.AutomorphicForms.GeometricLemmaCharacters files=      1 lines=       371  -> GroundTheory.AutomorphicForms.GeometricLemmaJacquetCell:1, GroundTheory.AutomorphicForms.CuspidalAdmissible:1, GroundTheory.AutomorphicForms.JacquetAdmissible:1
+GroundTheory.LocalFields.LocalZetaIntegral         files=      1 lines=       370  -> GroundTheory.LocalFields.LocalZetaChar:1
+GroundTheory.AutomorphicForms.GeometricLemmaCellGroups files=      1 lines=       370  -> GroundTheory.AutomorphicForms.GeometricLemmaCompact:1, GroundTheory.AutomorphicForms.GeometricLemmaAverage:1
+GroundTheory.PAdicHodge.BdRField                   files=      1 lines=       370  -> GroundTheory.PAdicHodge.BdRGalois:1
+GroundTheory.LocalFields.PrincipalUnitsModule      files=      1 lines=       369  -> GroundTheory.LocalFields.PadicExp:1
+GroundTheory.AutomorphicForms.CompactSelfAdjoint   files=      1 lines=       368  -> 
+GroundTheory.LocalFields.LocalReciprocityFinite    files=      1 lines=       367  -> GroundTheory.LocalFields.LocalAxiom:1, GroundTheory.LocalFields.LocalReciprocityLimitAbstract:1
+GroundTheory.AutomorphicForms.RealGroupsHaar       files=      1 lines=       367  -> 
+GroundTheory.PAdicHodge.BdRInvariants              files=      1 lines=       367  -> GroundTheory.PAdicHodge.ThetaBDeRhamPlusFieldCycloUnitBdRZpow:1, GroundTheory.PAdicHodge.ExistsGalFixCyclotomicLayerCycloCharNeOne:1, GroundTheory.PAdicHodge.AdmissibleField:1
+GroundTheory.TateCohomology.AugmentationSES        files=      1 lines=       365  -> GroundTheory.TateCohomology.InducedNorm:1, GroundTheory.TateCohomology.DimensionShift:1, GroundTheory.TateCohomology.TateConnecting:1
+GroundTheory.AutomorphicForms.MacdonaldRecursion   files=      1 lines=       364  -> GroundTheory.AutomorphicForms.SatakeTriangular:1
+GroundTheory.PAdicHodge.CauchySeqOfIncrements      files=      1 lines=       362  -> GroundTheory.PAdicHodge.IsUnitOfRadOfMultEqZero:1
+GroundTheory.Brauer.CrossedProduct                 files=      1 lines=       362  -> 
+GroundTheory.AutomorphicForms.FiniteLengthSubquotient files=      1 lines=       360  -> GroundTheory.AutomorphicForms.FiniteLengthLattice:1, GroundTheory.AutomorphicForms.JacquetAdmissible:1
+GroundTheory.PAdicHodge.RobbaMittagLeffler         files=      1 lines=       360  -> GroundTheory.PAdicHodge.RobbaSeries:1, GroundTheory.PAdicHodge.HighIndexSingleZeroOne:1, GroundTheory.PAdicHodge.RobbaBounded:1, GroundTheory.PAdicHodge.RobbaNewton:1, GroundTheory.PAdicHodge.RobbaClosed:1
+GroundTheory.AutomorphicForms.FiniteBruhat         files=      1 lines=       358  -> 
+GroundTheory.FunctionField.PlaceSum                files=      1 lines=       358  -> GroundTheory.FunctionField.PlaceAbove:1
+GroundTheory.AutomorphicForms.GeometricLemmaNormal files=      1 lines=       357  -> GroundTheory.AutomorphicForms.GeometricLemmaUnnormalized:1, GroundTheory.AutomorphicForms.GeometricLemmaCharacters:1, GroundTheory.AutomorphicForms.GeometricLemmaModular:1, GroundTheory.AutomorphicForms.GeometricLemmaCellChar:1, GroundTheory.AutomorphicForms.GeometricLemmaCellSurjective:1
+GroundTheory.AutomorphicForms.GeometricLemmaCellKernel files=      1 lines=       355  -> GroundTheory.AutomorphicForms.GeometricLemmaJacquetCell:1, GroundTheory.AutomorphicForms.InductionJacquet:1
+GroundTheory.PAdicHodge.RobbaClosed                files=      1 lines=       355  -> GroundTheory.PAdicHodge.RobbaSeries:1, GroundTheory.PAdicHodge.HighIndexSingleZeroOne:1, GroundTheory.PAdicHodge.RobbaBounded:1, GroundTheory.PAdicHodge.RobbaNewton:1
+GroundTheory.IdeleRoots.ClassicalIdeles            files=      2 lines=       354  -> GroundTheory.GlobalFields.TateThesis:2, GroundTheory.GlobalFields.Adele:1, GroundTheory.AutomorphicForms.ReductionSiegel:1, GroundTheory.AutomorphicForms.ReductionSplitting:1
+GroundTheory.PAdicHodge.WAFracMain                 files=      1 lines=       353  -> GroundTheory.PAdicHodge.WAFracFinal:1, GroundTheory.PAdicHodge.ExistsFactorAnn:1
+GroundTheory.AutomorphicForms.DixmierMalliavinLineStage files=      1 lines=       352  -> GroundTheory.AutomorphicForms.DixmierMalliavinLineKernel:1
+GroundTheory.FunctionField.Divisor                 files=      1 lines=       350  -> GroundTheory.FunctionField.PlaceDefs:1, GroundTheory.FunctionField.PlaceBasic:1, GroundTheory.FunctionField.Approximation:1, GroundTheory.FunctionField.ValuationAevalSubCoeffZeroLe:1
+GroundTheory.PAdicHodge.Admissible                 files=      1 lines=       349  -> 
+GroundTheory.AutomorphicForms.SphericalIntegral    files=      1 lines=       347  -> GroundTheory.AutomorphicForms.SphericalMinuscule:1
+GroundTheory.PAdicHodge.ToUntiltFieldEqZeroIff     files=      1 lines=       346  -> GroundTheory.PAdicHodge.CauchySeqOfIncrements:1
+GroundTheory.LocalFields.LubinTateLimitGalois      files=      1 lines=       345  -> GroundTheory.LocalFields.LubinTateTowerMaps:1, GroundTheory.LocalFields.ExamplesLaurent:1
+GroundTheory.AutomorphicForms.MacdonaldWhittaker   files=      1 lines=       345  -> GroundTheory.AutomorphicForms.MacdonaldFormula:1
+GroundTheory.PAdicHodge.WAKummerLog                files=      1 lines=       345  -> GroundTheory.PAdicHodge.WAKummerEps:1, GroundTheory.PAdicHodge.FundamentalSeqLog:1, GroundTheory.PAdicHodge.FundamentalSeqBCris:1, GroundTheory.PAdicHodge.ACrisFrobFixed:1
+GroundTheory.PAdicHodge.NormalizedTrace            files=      1 lines=       344  -> GroundTheory.PAdicHodge.GaloisOnCp:1
+GroundTheory.Brauer.IsBrauerEquivalentIffNonemptyAlgEquiv files=      1 lines=       343  -> GroundTheory.Brauer.TensorSimple:1
+GroundTheory.AutomorphicForms.Measures             files=      1 lines=       341  -> GroundTheory.AutomorphicForms.MeasuresModulus:1, GroundTheory.AutomorphicForms.MeasuresChart:1, GroundTheory.AutomorphicForms.MeasuresGL:1, GroundTheory.AutomorphicForms.MeasuresParabolic:1, GroundTheory.AutomorphicForms.Iwasawa:1
+GroundTheory.AutomorphicForms.TraceFormulaGeometric files=      1 lines=       341  -> GroundTheory.AutomorphicForms.KernelTrace:1, GroundTheory.AutomorphicForms.TraceFormulaConvolution:1
+GroundTheory.AutomorphicForms.LeviStagesProduct    files=      1 lines=       341  -> GroundTheory.AutomorphicForms.LeviCartan:1, GroundTheory.AutomorphicForms.LeviStagesInduction:1
+GroundTheory.AutomorphicForms.HermitianWitt        files=      1 lines=       341  -> GroundTheory.AutomorphicForms.HermitianOrthogonal:1
+GroundTheory.AutomorphicForms.HermitianOrthogonal  files=      1 lines=       341  -> GroundTheory.AutomorphicForms.HermitianSpaces:1
+GroundTheory.Brauer.MulDistribMulActionQuotientFixedPoints files=      1 lines=       340  -> 
+GroundTheory.FunctionField.ValuationAevalSubCoeffZeroLe files=      1 lines=       339  -> GroundTheory.FunctionField.PlaceDefs:1, GroundTheory.FunctionField.PlaceBasic:1, GroundTheory.FunctionField.Approximation:1
+GroundTheory.Brauer.CrossedProductIso              files=      1 lines=       339  -> GroundTheory.Brauer.CrossedProduct:1, GroundTheory.Brauer.CrossedProductSimple:1, GroundTheory.Brauer.CrossedProductMaps:1, GroundTheory.Brauer.CrossedProductInj:1, GroundTheory.Brauer.CrossedProductTensor:1, GroundTheory.Brauer.SkolemNoether:1
+GroundTheory.AutomorphicForms.StrongApproximationSLDense files=      1 lines=       338  -> GroundTheory.AutomorphicForms.AdelicGLn:1, GroundTheory.AutomorphicForms.StrongApproximationSLElementary:1, GroundTheory.GlobalFields.Adele:1, GroundTheory.GlobalFields.TateThesis:1
+GroundTheory.PAdicHodge.WAFracAnnCris              files=      1 lines=       338  -> GroundTheory.PAdicHodge.WAFracAnn:1, GroundTheory.PAdicHodge.WAPeriodT:1, GroundTheory.PAdicHodge.BCrisNewtonApprox:1, GroundTheory.PAdicHodge.ACrisGalois:1
+GroundTheory.PAdicHodge.ExtRobbaUnion              files=      1 lines=       337  -> GroundTheory.PAdicHodge.ExtRobbaComplete:1, GroundTheory.PAdicHodge.ExtRobbaFrob:1
+GroundTheory.GlobalFields.SplittingFromInequality  files=      3 lines=       336  -> GroundTheory.GlobalFields.FirstInequalityStatement:1, GroundTheory.GlobalFields.IdeleGroups:1, GroundTheory.GlobalFields.Adele:1, GroundTheory.GlobalFields.SemilocalAlgebras:1, GroundTheory.GlobalFields.CompletionAtPlace:1, GroundTheory.LocalFields.UnramifiedGalois:1
+GroundTheory.AutomorphicForms.ReductionSiegel      files=      1 lines=       335  -> GroundTheory.AutomorphicForms.ReductionCore:1
+GroundTheory.AutomorphicForms.FiniteLengthPieces   files=      1 lines=       334  -> GroundTheory.AutomorphicForms.GeometricLemma:1, GroundTheory.AutomorphicForms.LeviStagesProduct:1
+GroundTheory.AutomorphicForms.Cartan               files=      1 lines=       333  -> GroundTheory.AutomorphicForms.GLnLattice:1
+GroundTheory.PAdicHodge.SlopeDescentFixed          files=      1 lines=       333  -> GroundTheory.PAdicHodge.SlopeDescentBounded:1, GroundTheory.PAdicHodge.ExtRobbaFixedBridge:1, GroundTheory.PAdicHodge.ExtRobbaFixedUnif:1
+GroundTheory.PAdicHodge.BCrisNewtonNorm            files=      1 lines=       331  -> GroundTheory.PAdicHodge.BCrisNewtonLift:1, GroundTheory.PAdicHodge.FactorizationFactorialLe:1, GroundTheory.PAdicHodge.KerTheta:1
+GroundTheory.PAdicHodge.BdRGalois                  files=      1 lines=       331  -> GroundTheory.PAdicHodge.ThetaPlus:1, GroundTheory.PAdicHodge.AInfGalois:1
+GroundTheory.LocalFields.LocalReciprocityUniversal files=      1 lines=       329  -> GroundTheory.LocalFields.LocalReciprocityFinite:1
+GroundTheory.AutomorphicForms.ReductionIwasawa     files=      1 lines=       329  -> GroundTheory.AutomorphicForms.ReductionHeight:1, GroundTheory.AutomorphicForms.Iwasawa:1, GroundTheory.AutomorphicForms.RealGroupsIwasawa:1, GroundTheory.GlobalFields.IdeleGroups:1
+GroundTheory.PAdicHodge.ExtRobbaIsoLift            files=      1 lines=       327  -> GroundTheory.PAdicHodge.ExtRobbaOrd:1
+GroundTheory.ProfiniteCohomology.Shapiro           files=      1 lines=       325  -> GroundTheory.ProfiniteCohomology.CohomologyFunctoriality:2, GroundTheory.ProfiniteCohomology.ShapiroDefs:1, GroundTheory.ProfiniteCohomology.CoinducedModules:1, GroundTheory.ProfiniteCohomology.InflationRestriction:1
+GroundTheory.PAdicHodge.ExtRobbaDMRankOne          files=      1 lines=       325  -> GroundTheory.PAdicHodge.ExtRobbaFrob:1
+GroundTheory.AutomorphicForms.Satake               files=      1 lines=       324  -> GroundTheory.AutomorphicForms.SatakeTriangular:1, GroundTheory.AutomorphicForms.Spherical:1
+GroundTheory.LocalFields.Different                 files=      1 lines=       323  -> GroundTheory.LocalFields.Monogenic:1, GroundTheory.LocalFields.ExistsUnitFiltrationUnitsLeRangeNormUnits:1, GroundTheory.LocalFields.Unramified:1
+GroundTheory.AutomorphicForms.InductionParabolic   files=      1 lines=       323  -> GroundTheory.AutomorphicForms.Induction:1, GroundTheory.AutomorphicForms.InductionJacquet:1, GroundTheory.AutomorphicForms.InductionParabolicLocal:1
+GroundTheory.LocalFields.ConductorLubinTate        files=      1 lines=       322  -> GroundTheory.LocalFields.ConductorFormalGroup:1, GroundTheory.LocalFields.LubinTatePrimitive:1, GroundTheory.LocalFields.LubinTateTowerMaps:1, GroundTheory.LocalFields.LubinTateLimitGalois:1, GroundTheory.LocalFields.SeparableClosureValuation:1, GroundTheory.LocalFields.Monogenic:1
+GroundTheory.AutomorphicForms.DixmierMalliavinHaarCoord files=      1 lines=       322  -> GroundTheory.AutomorphicForms.DixmierMalliavinBasic:1
+GroundTheory.AutomorphicForms.MeasuresModulus      files=      1 lines=       321  -> GroundTheory.AutomorphicForms.GLnLocal:1
+GroundTheory.AutomorphicForms.FiniteLengthLeviJacquet files=      1 lines=       320  -> GroundTheory.AutomorphicForms.GeometricLemma:1, GroundTheory.AutomorphicForms.LeviStagesInduction:1, GroundTheory.AutomorphicForms.LeviStagesExact:1
+GroundTheory.PAdicHodge.TiltValuation              files=      1 lines=       319  -> GroundTheory.PAdicHodge.PerfectoidField:1
+GroundTheory.PAdicHodge.UntiltApprox               files=      1 lines=       318  -> GroundTheory.PAdicHodge.UntiltField:1, GroundTheory.PAdicHodge.UntiltApproxLemmas:1, GroundTheory.PAdicHodge.UntiltPerfectoid:1, GroundTheory.PAdicHodge.TiltAlgClosed:1
+GroundTheory.LocalFields.LocalFourier              files=      1 lines=       316  -> GroundTheory.LocalFields.LocalFourierSchwartz:1
+GroundTheory.AutomorphicForms.GLnLocal             files=      1 lines=       316  -> GroundTheory.AutomorphicForms.LocallyProfinite:1
+GroundTheory.LocalFields.CompleteTrivial           files=      1 lines=       315  -> GroundTheory.LocalFields.FilteredSurj:1
+GroundTheory.AutomorphicForms.GeometricLemmaCompact files=      1 lines=       315  -> GroundTheory.AutomorphicForms.GeometricLemmaFiltration:1, GroundTheory.AutomorphicForms.GeometricLemmaOrbit:1, GroundTheory.AutomorphicForms.AdmissibleInduction:1
+GroundTheory.PAdicHodge.ExistsGalFixCyclotomicLayerCycloCharNeOne files=      1 lines=       311  -> GroundTheory.PAdicHodge.TateCpTwist:1, GroundTheory.PAdicHodge.AxLemma:1, GroundTheory.PAdicHodge.TateNormalizedTrace:1
+GroundTheory.AutomorphicForms.WhittakerLSpace      files=      1 lines=       310  -> GroundTheory.AutomorphicForms.LocallyProfinite:1, GroundTheory.AutomorphicForms.LocallyConstantCompact:1
+GroundTheory.PAdicHodge.RobbaBounded               files=      1 lines=       310  -> GroundTheory.PAdicHodge.RobbaSeries:1, GroundTheory.PAdicHodge.HighIndexSingleZeroOne:1, GroundTheory.PAdicHodge.PerfectoidField:1
+GroundTheory.PAdicHodge.RobbaLazard                files=      1 lines=       308  -> GroundTheory.PAdicHodge.RobbaSeries:1, GroundTheory.PAdicHodge.HighIndexSingleZeroOne:1, GroundTheory.PAdicHodge.RobbaBounded:1, GroundTheory.PAdicHodge.RobbaNewton:1, GroundTheory.PAdicHodge.RobbaClosed:1, GroundTheory.PAdicHodge.RobbaDivision:1
+GroundTheory.AutomorphicForms.HermitianClassification files=      1 lines=       307  -> GroundTheory.AutomorphicForms.HermitianDisc:1, GroundTheory.AutomorphicForms.HermitianWittExtension:1, GroundTheory.AutomorphicForms.HermitianSplit:1, GroundTheory.LocalFields.HerbrandLocal:1, GroundTheory.LocalFields.FiniteExtension:1, GroundTheory.LocalFields.UnramifiedHensel:1
+GroundTheory.PAdicHodge.SlopePhiSub                files=      1 lines=       307  -> GroundTheory.PAdicHodge.SlopePhiModule:1, GroundTheory.PAdicHodge.SlopeBezout:1
+GroundTheory.Brauer.CrossedProductTensor           files=      1 lines=       307  -> GroundTheory.Brauer.CrossedProduct:1, GroundTheory.Brauer.CrossedProductSimple:1, GroundTheory.Brauer.CrossedProductMaps:1, GroundTheory.Brauer.CrossedProductRegular:1, GroundTheory.Brauer.CrossedProductInj:1, GroundTheory.Brauer.TensorSimple:1
+GroundTheory.AutomorphicForms.SatakeTriangular     files=      1 lines=       306  -> GroundTheory.AutomorphicForms.SatakeNormalized:1
+GroundTheory.AutomorphicForms.RestrictedAddHaarProduct files=      1 lines=       306  -> GroundTheory.AutomorphicForms.RestrictedHaarProduct:1
+GroundTheory.PAdicHodge.FieldOfNormsRam            files=      1 lines=       306  -> GroundTheory.PAdicHodge.FieldOfNormsTower:1, GroundTheory.LocalFields.DifferentGalois:1, GroundTheory.LocalFields.RamificationStructure:1, GroundTheory.PAdicHodge.FieldOfNormsUpper:1
+GroundTheory.PAdicHodge.BoundOfEventuallyAntitone  files=      1 lines=       306  -> GroundTheory.PAdicHodge.ToUntiltFieldEqZeroIff:1
+GroundTheory.PAdicHodge.WABridgeCris               files=      1 lines=       305  -> GroundTheory.PAdicHodge.WAEval:1, GroundTheory.PAdicHodge.ACrisBdRGalois:1, GroundTheory.PAdicHodge.InstMulSemiringActionGalPlus:1, GroundTheory.PAdicHodge.BCrisNewtonApprox:1
+GroundTheory.LocalFields.QuadraticAbelian          files=      1 lines=       304  -> GroundTheory.LocalFields.LocalFourier:1, GroundTheory.LocalFields.LocalFourierTrace:1, GroundTheory.LocalFields.ExistsUnitFiltrationUnitsLeRangeNormUnits:1, GroundTheory.LocalFields.MaximalUnramified:1, GroundTheory.LocalFields.NormCorrespondence:1
+GroundTheory.AutomorphicForms.AdelicGLn            files=      1 lines=       304  -> GroundTheory.GlobalFields.Adele:3, GroundTheory.GlobalFields.LocalFieldAtPlace:1, GroundTheory.AutomorphicForms.GLnLocal:1, GroundTheory.AutomorphicForms.LocallyProfinite:1, GroundTheory.AutomorphicForms.RestrictedProductMatrix:1
+GroundTheory.PAdicHodge.SlopeBezout                files=      1 lines=       303  -> 
+GroundTheory.LocalFields.Uniqueness                files=      1 lines=       302  -> GroundTheory.LocalFields.Interface:1
+GroundTheory.PAdicHodge.NormalizedTraceTower       files=      1 lines=       302  -> GroundTheory.PAdicHodge.NormalizedTrace:1, GroundTheory.PAdicHodge.CyclotomicField:1
+GroundTheory.LocalFields.UnramifiedNormSurj        files=      1 lines=       301  -> GroundTheory.LocalFields.UnramifiedDefs:1, GroundTheory.LocalFields.ExistsUnitFiltrationUnitsLeRangeNormUnits:1, GroundTheory.LocalFields.FilteredSurj:1, GroundTheory.GlobalFields.KummerTheory:1
+GroundTheory.TateCohomology.CupCochains            files=      1 lines=       301  -> 
+GroundTheory.AutomorphicForms.GeometricLemmaCount  files=      1 lines=       301  -> GroundTheory.AutomorphicForms.GeometricLemmaAverage:1
+GroundTheory.PAdicHodge.SlopePhiModule             files=      1 lines=       301  -> 
+GroundTheory.GlobalFields.FirstInequality          files=      2 lines=       300  -> GroundTheory.GlobalFields.IdeleGroups:3, GroundTheory.GlobalFields.FirstInequalityStatement:1, GroundTheory.GlobalFields.HerbrandQuotients:1, GroundTheory.GlobalFields.CompletionAtPlace:1
+GroundTheory.AutomorphicForms.RealIwasawaUnipotentHaar files=      1 lines=       299  -> GroundTheory.AutomorphicForms.RealIwasawaSubgroups:1
+GroundTheory.LocalFields.WeilGroupDefs             files=      1 lines=       297  -> GroundTheory.LocalFields.MaximalUnramified:1
+GroundTheory.PAdicHodge.SenTateCharUnits           files=      1 lines=       297  -> 
+GroundTheory.PAdicHodge.FieldOfNormsResidue        files=      1 lines=       296  -> GroundTheory.PAdicHodge.FieldOfNorms:1
+GroundTheory.PAdicHodge.NormalizedTraceClosure     files=      1 lines=       296  -> GroundTheory.PAdicHodge.GaloisOnCp:1
+GroundTheory.PAdicHodge.ACrisFrobFixed             files=      1 lines=       295  -> GroundTheory.PAdicHodge.ACrisBdRGalois:1, GroundTheory.PAdicHodge.UnramifiedClosure:1
+GroundTheory.LocalFields.BrauerInductionLocal      files=      1 lines=       294  -> GroundTheory.LocalFields.BrauerInductionSpan:1
+GroundTheory.LocalFields.PrincipalUnitsRank        files=      1 lines=       294  -> GroundTheory.LocalFields.PadicLogLinear:1, GroundTheory.LocalFields.Integers:1
+GroundTheory.AutomorphicForms.MacdonaldWhittakerHecke files=      1 lines=       294  -> GroundTheory.AutomorphicForms.MacdonaldWhittaker:1
+GroundTheory.AutomorphicForms.AnisotropicUnitaryCompact files=      1 lines=       294  -> GroundTheory.AutomorphicForms.AnisotropicUnitaryHeight:1
+GroundTheory.PAdicHodge.ACrisGalois                files=      1 lines=       294  -> GroundTheory.PAdicHodge.FactorizationFactorialLe:1, GroundTheory.PAdicHodge.AInfGalois:1
+GroundTheory.PAdicHodge.FWGalois                   files=      1 lines=       294  -> GroundTheory.PAdicHodge.FWNatural:1, GroundTheory.PAdicHodge.FWGlue:1
+GroundTheory.LocalFields.UnramifiedGalois          files=      1 lines=       293  -> GroundTheory.LocalFields.Interface:1, GroundTheory.LocalFields.Uniqueness:1, GroundTheory.LocalFields.Integers:1, GroundTheory.LocalFields.UnitsPowers:1, GroundTheory.LocalFields.UnramifiedRootsOfUnity:1
+GroundTheory.PAdicHodge.UntiltApproxLemmas         files=      1 lines=       293  -> GroundTheory.PAdicHodge.TiltAlgebra:1, GroundTheory.PAdicHodge.AxLemma:1
+GroundTheory.AutomorphicForms.RestrictedProductMatrix files=      1 lines=       291  -> GroundTheory.GlobalFields.IdeleGroups:1
+GroundTheory.PAdicHodge.ACrisPhi                   files=      1 lines=       291  -> GroundTheory.PAdicHodge.ACrisLog:1, GroundTheory.PAdicHodge.LogPowSeries:1
+GroundTheory.PAdicHodge.FundamentalSeqLog          files=      1 lines=       290  -> GroundTheory.PAdicHodge.ACrisPhi:1
+GroundTheory.AutomorphicForms.HeckeAlgebraLevel    files=      1 lines=       289  -> GroundTheory.AutomorphicForms.HeckeAlgebra:1
+GroundTheory.PAdicHodge.FontaineLemmaPeriod        files=      1 lines=       289  -> GroundTheory.PAdicHodge.ACrisLog:1
+GroundTheory.AutomorphicForms.InductionJacquet     files=      1 lines=       288  -> GroundTheory.AutomorphicForms.SmoothRep:1
+GroundTheory.PAdicHodge.ExtRobbaPointDiv           files=      1 lines=       288  -> GroundTheory.PAdicHodge.ExtRobbaPointEval:1
+GroundTheory.LocalFields.LubinTatePrimitive        files=      1 lines=       287  -> GroundTheory.LocalFields.LubinTateTower:1
+GroundTheory.TateCohomology.TateConnecting         files=      1 lines=       287  -> GroundTheory.TateCohomology.CupConnecting:1
+GroundTheory.AutomorphicForms.MeasuresChart        files=      1 lines=       286  -> GroundTheory.AutomorphicForms.MeasuresModulus:1, GroundTheory.AutomorphicForms.LocallyProfinite:1
+GroundTheory.PAdicHodge.TiltField                  files=      1 lines=       286  -> GroundTheory.PAdicHodge.PerfectoidField:1, GroundTheory.PAdicHodge.TiltValuation:1, GroundTheory.PowerSubgroups.CountableNeighbourhoods:1
+GroundTheory.LocalFields.PadicLogHom               files=      1 lines=       285  -> GroundTheory.LocalFields.PadicLogSeries:1
+GroundTheory.AutomorphicForms.ReductionHeight      files=      1 lines=       285  -> GroundTheory.AutomorphicForms.AdelicGLn:1, GroundTheory.GlobalFields.IdeleGroups:1
+GroundTheory.PAdicHodge.BdRSeries                  files=      1 lines=       285  -> 
+GroundTheory.AutomorphicForms.CompactModCentre     files=      1 lines=       283  -> GroundTheory.AutomorphicForms.SchurOrthogonality:1
+GroundTheory.PAdicHodge.FieldOfNormsDef            files=      1 lines=       283  -> GroundTheory.PAdicHodge.FieldOfNormsAPF:1
+GroundTheory.PAdicHodge.SenTateCharTrace           files=      1 lines=       278  -> GroundTheory.PAdicHodge.SenTateCharLevels:1, GroundTheory.PAdicHodge.SenTateCharStep:1, GroundTheory.PAdicHodge.SenTateCharClosure:1
+GroundTheory.PAdicHodge.BCrisEigenWitt             files=      1 lines=       277  -> GroundTheory.PAdicHodge.AInfGalois:1, GroundTheory.PAdicHodge.TiltAlgClosed:1, GroundTheory.PAdicHodge.TiltField:1, GroundTheory.PAdicHodge.BdRAlg:1
+GroundTheory.PAdicHodge.ExtRobbaDMForward          files=      1 lines=       277  -> GroundTheory.PAdicHodge.ExtRobbaDMSplit:1
+GroundTheory.PAdicHodge.UntiltDegree               files=      1 lines=       277  -> GroundTheory.PAdicHodge.UntiltField:1, GroundTheory.PAdicHodge.UntiltIndep:1
+GroundTheory.PAdicHodge.BCrisEigen                 files=      1 lines=       276  -> GroundTheory.PAdicHodge.BCrisEigenFixed:1, GroundTheory.PAdicHodge.BCrisEigenChar:1, GroundTheory.PAdicHodge.BCrisEigenMaps:1
+GroundTheory.AutomorphicForms.GeometricLemmaGraded files=      1 lines=       275  -> GroundTheory.AutomorphicForms.GeometricLemmaJacquetCell:1
+GroundTheory.PAdicHodge.ExtRobbaDMSplit            files=      1 lines=       275  -> GroundTheory.PAdicHodge.ExtRobbaDMLinear:1
+GroundTheory.PAdicHodge.ExtRobbaLimit              files=      1 lines=       275  -> GroundTheory.PAdicHodge.ExtRobbaBounded:1
+GroundTheory.AutomorphicForms.SatakeNormalized     files=      1 lines=       274  -> GroundTheory.AutomorphicForms.SphericalIntegral:1, GroundTheory.AutomorphicForms.SatakeSymmetric:1, GroundTheory.LocalFields.LocalFourierHaar:1
+GroundTheory.PAdicHodge.WAFracFrobAnn              files=      1 lines=       274  -> GroundTheory.PAdicHodge.AnnNormAcrisToAnnPosBig:1, GroundTheory.PAdicHodge.WAFracGlue:1
+GroundTheory.PAdicHodge.KerFontaineThetaCompFrobeniusEquivSymmPow files=      1 lines=       274  -> GroundTheory.PAdicHodge.KerTheta:1, GroundTheory.PAdicHodge.TiltValuation:1
+GroundTheory.PAdicHodge.FieldOfNormsLocal          files=      1 lines=       274  -> GroundTheory.PAdicHodge.FieldOfNormsField:1, GroundTheory.LocalFields.Examples:1
+GroundTheory.AutomorphicForms.FiniteLengthSeries   files=      1 lines=       273  -> GroundTheory.AutomorphicForms.FiniteLengthJacquet:1, GroundTheory.AutomorphicForms.FiniteLengthPieces:1
+GroundTheory.AutomorphicForms.MacdonaldHecke       files=      1 lines=       273  -> GroundTheory.AutomorphicForms.MacdonaldAlternant:1, GroundTheory.AutomorphicForms.SatakeNormalized:1, GroundTheory.AutomorphicForms.WhittakerGroups:1, GroundTheory.AutomorphicForms.AffineBruhat:1, GroundTheory.AutomorphicForms.MeasuresGL:1
+GroundTheory.PAdicHodge.UnramifiedClosure          files=      1 lines=       273  -> GroundTheory.PAdicHodge.GaloisOnCp:1, GroundTheory.PowerSubgroups.CountableNeighbourhoods:1
+GroundTheory.PAdicHodge.AInfXi                     files=      1 lines=       272  -> GroundTheory.PAdicHodge.KerFontaineThetaCompFrobeniusEquivSymmPow:1
+GroundTheory.LocalFields.ExamplesLaurent           files=      1 lines=       271  -> GroundTheory.LocalFields.Examples:1, GroundTheory.LocalFields.ExamplesTeichmuller:1
+GroundTheory.PAdicHodge.BdRTGalois                 files=      1 lines=       271  -> GroundTheory.PAdicHodge.UntiltFrobeniusEquivSymmEpsilonNeOne:1
+GroundTheory.Brauer.Inflation                      files=      1 lines=       271  -> GroundTheory.Brauer.CrossedProduct:1, GroundTheory.Brauer.CrossedProductSimple:1, GroundTheory.Brauer.CrossedProductMaps:1, GroundTheory.Brauer.CrossedProductInj:1, GroundTheory.Brauer.CrossedProductTensor:1, GroundTheory.Brauer.IsBrauerEquivalentIffNonemptyAlgEquiv:1
+GroundTheory.ProfiniteCohomology.KummerBasic       files=      1 lines=       269  -> 
+GroundTheory.ProfiniteCohomology.Characters        files=      1 lines=       267  -> GroundTheory.ProfiniteCohomology.CharactersDefs:1, GroundTheory.ProfiniteCohomology.Colimit:1, GroundTheory.ProfiniteCohomology.ContinuousCochains:1, GroundTheory.ProfiniteCohomology.CupProducts:1, GroundTheory.TateCohomology.Characters:1
+GroundTheory.LocalFields.LocalFourierPadic         files=      1 lines=       267  -> GroundTheory.LocalFields.LocalFourierTrace:1
+GroundTheory.LocalFields.BrauerInductionSpan       files=      1 lines=       267  -> GroundTheory.LocalFields.BrauerInductionIntegral:1, GroundTheory.LocalFields.BrauerInductionElementary:1
+GroundTheory.LocalFields.KroneckerWeber            files=      1 lines=       266  -> GroundTheory.LocalFields.Existence:1, GroundTheory.LocalFields.LubinTateLimit:1, GroundTheory.LocalFields.PrincipalUnitsRank:1, GroundTheory.LocalFields.MaximalAbelianExtension:1
+GroundTheory.PAdicHodge.ExtRobbaLift               files=      1 lines=       264  -> GroundTheory.PAdicHodge.ExtRobbaGamma:1, GroundTheory.PAdicHodge.ExtRobbaFrob:1
+GroundTheory.AutomorphicForms.StrongApproximationSLDoubleCoset files=      1 lines=       263  -> GroundTheory.AutomorphicForms.StrongApproximationSLDense:1, GroundTheory.GlobalFields.ClassFieldConsequences:1, GroundTheory.GlobalFields.IdeleGroups:1
+GroundTheory.AutomorphicForms.Reduction            files=      1 lines=       263  -> GroundTheory.AutomorphicForms.NormDetDiagUnitsPosRealToUnits:1, GroundTheory.AutomorphicForms.ReductionSplitting:1, GroundTheory.AutomorphicForms.ReductionMeasure:1, GroundTheory.AutomorphicForms.ReductionLocalVolume:1
+GroundTheory.LocalFields.LocalZeta                 files=      1 lines=       262  -> GroundTheory.LocalFields.LocalZetaGauss:1
+GroundTheory.LocalFields.LocalFourierSchwartz      files=      1 lines=       262  -> GroundTheory.LocalFields.LocalFourierChar:1
+GroundTheory.AutomorphicForms.StableConjCyclic     files=      1 lines=       262  -> 
+GroundTheory.AutomorphicForms.TraceFormulaConvolution files=      1 lines=       262  -> GroundTheory.AutomorphicForms.QuotientKernel:1, GroundTheory.AutomorphicForms.KernelTraceComp:1, GroundTheory.AutomorphicForms.LocallyConstantCompact:1
+GroundTheory.PAdicHodge.WABridgeGerm               files=      1 lines=       262  -> GroundTheory.PAdicHodge.WABridgeCris:1
+GroundTheory.PAdicHodge.BCrisNewtonApprox          files=      1 lines=       262  -> GroundTheory.PAdicHodge.BCrisNewtonNorm:1, GroundTheory.PAdicHodge.ACrisBdRInj:1
+GroundTheory.LocalFields.MaximalAbelianExtension   files=      1 lines=       261  -> 
+GroundTheory.AutomorphicForms.MacdonaldFormula     files=      1 lines=       261  -> GroundTheory.AutomorphicForms.MacdonaldSpherical:1, GroundTheory.AutomorphicForms.MacdonaldNormalization:1
+GroundTheory.AutomorphicForms.StableConjInvariant  files=      1 lines=       260  -> GroundTheory.AutomorphicForms.StableConjTorus:1
+GroundTheory.AutomorphicForms.MeasuresGL           files=      1 lines=       260  -> GroundTheory.AutomorphicForms.MeasuresChart:1, GroundTheory.AutomorphicForms.RealGroupsHaar:1, GroundTheory.AutomorphicForms.Cartan:1
+GroundTheory.AutomorphicForms.TraceFormulaCompact  files=      1 lines=       260  -> GroundTheory.AutomorphicForms.DiscreteDecomposition:1, GroundTheory.AutomorphicForms.TraceFormulaSpectral:1, GroundTheory.AutomorphicForms.TraceFormulaMultiplicity:1, GroundTheory.AutomorphicForms.TraceFormulaGeometric:1, GroundTheory.AutomorphicForms.TraceFormulaCentralizer:1, GroundTheory.AutomorphicForms.TraceFormulaWeil:1
+GroundTheory.TateCohomology.CochainReverse         files=      1 lines=       259  -> GroundTheory.TateCohomology.DimensionShift:1
+GroundTheory.AutomorphicForms.GeometricLemmaFiltration files=      1 lines=       259  -> GroundTheory.AutomorphicForms.GeometricLemmaCells:1, GroundTheory.AutomorphicForms.InductionParabolic:1
+GroundTheory.PAdicHodge.SenTateCharStep            files=      1 lines=       259  -> GroundTheory.PAdicHodge.FieldOfNormsCyclBase:1, GroundTheory.PAdicHodge.FieldOfNormsRam:1, GroundTheory.PAdicHodge.NormalizedTrace:1
+GroundTheory.PAdicHodge.UntiltPerfectoid           files=      1 lines=       258  -> GroundTheory.PAdicHodge.UntiltDegree:1, GroundTheory.PAdicHodge.PerfectoidCriterion:1
+GroundTheory.PAdicHodge.FWCyclotomicNorm           files=      1 lines=       258  -> GroundTheory.PAdicHodge.CyclotomicTower:1, GroundTheory.PAdicHodge.TiltValuation:1
+GroundTheory.PAdicHodge.WABridge                   files=      1 lines=       257  -> GroundTheory.PAdicHodge.WABridgeApprox:1
+GroundTheory.AutomorphicForms.UnitarySplit         files=      1 lines=       256  -> GroundTheory.AutomorphicForms.UnitaryGroupScheme:1
+GroundTheory.LocalFields.ArtinConductorBrauer      files=      1 lines=       255  -> GroundTheory.LocalFields.ArtinConductorIrreducible:1, GroundTheory.LocalFields.ArtinConductorDiscriminant:1, GroundTheory.LocalFields.BrauerInduction:1
+GroundTheory.AutomorphicForms.AnisotropicHeight    files=      1 lines=       253  -> GroundTheory.AutomorphicForms.AnisotropicOrbit:1, GroundTheory.AutomorphicForms.AdelicUnitaryGroups:1
+GroundTheory.PAdicHodge.RobbaNewton                files=      1 lines=       253  -> GroundTheory.PAdicHodge.RobbaSeries:1, GroundTheory.PAdicHodge.HighIndexSingleZeroOne:1, GroundTheory.PAdicHodge.RobbaBounded:1
+GroundTheory.LocalFields.PadicExp                  files=      1 lines=       252  -> GroundTheory.LocalFields.PadicLogHom:1
+GroundTheory.AutomorphicForms.CuspidalSplittingProjective files=      1 lines=       252  -> GroundTheory.AutomorphicForms.CuspidalSplittingPositivity:1
+GroundTheory.AutomorphicForms.QuotientKernel       files=      1 lines=       252  -> GroundTheory.AutomorphicForms.QuotientRightRegular:1, GroundTheory.AutomorphicForms.HilbertSchmidtKernel:1, GroundTheory.AutomorphicForms.HilbertSchmidtCompact:1, GroundTheory.AutomorphicForms.DiscreteSpectrumAbstract:1
+GroundTheory.PAdicHodge.WAKummer                   files=      1 lines=       252  -> GroundTheory.PAdicHodge.WAKummerBCris:1
+GroundTheory.PAdicHodge.PerfectoidField            files=      1 lines=       249  -> 
+GroundTheory.AutomorphicForms.HilbertSchmidt       files=      1 lines=       248  -> 
+GroundTheory.AutomorphicForms.StableConjTorus      files=      1 lines=       248  -> GroundTheory.AutomorphicForms.HermitianOrthogonal:1, GroundTheory.AutomorphicForms.StableConjCyclic:1
+GroundTheory.AutomorphicForms.SphericalPrincipal   files=      1 lines=       247  -> GroundTheory.AutomorphicForms.SphericalCommutative:1, GroundTheory.AutomorphicForms.InductionParabolic:1
+GroundTheory.LocalFields.UnitsPowers               files=      1 lines=       243  -> GroundTheory.LocalFields.UnitsBasic:1
+GroundTheory.LocalFields.LocalZetaGauss            files=      1 lines=       243  -> GroundTheory.LocalFields.LocalZetaEpsilon:1
+GroundTheory.AutomorphicForms.TraceFormulaCentralizer files=      1 lines=       243  -> GroundTheory.AutomorphicForms.TraceFormulaGeometric:1
+GroundTheory.PAdicHodge.UntiltGaloisCorr           files=      1 lines=       243  -> GroundTheory.PAdicHodge.UntiltGalois:1
+GroundTheory.LocalFields.ArtinConductorAbelian     files=      1 lines=       242  -> GroundTheory.LocalFields.ArtinConductorInduced:1, GroundTheory.LocalFields.ConductorMatch:1
+GroundTheory.AutomorphicForms.WhittakerRelevance   files=      1 lines=       242  -> 
+GroundTheory.AutomorphicForms.DixmierMalliavinLineBounds files=      1 lines=       242  -> GroundTheory.AutomorphicForms.DixmierMalliavinLineStage:1
+GroundTheory.PAdicHodge.WACommonKappa              files=      1 lines=       242  -> GroundTheory.PAdicHodge.WACommon:1, GroundTheory.PAdicHodge.UnramifiedFrob:1
+GroundTheory.FunctionField.PlaceAbove              files=      1 lines=       242  -> GroundTheory.FunctionField.PlaceBasic:1
+GroundTheory.AutomorphicForms.HermitianExistenceLocal files=      1 lines=       241  -> GroundTheory.AutomorphicForms.HermitianHasse:1, GroundTheory.AutomorphicForms.HermitianClassification:1
+GroundTheory.PAdicHodge.AnnNormAcrisToAnnPosBig    files=      1 lines=       240  -> GroundTheory.PAdicHodge.WAFracAnnCris:1
+GroundTheory.Brauer.TensorSimple                   files=      1 lines=       240  -> 
+GroundTheory.PAdicHodge.WAFracAnnPt                files=      1 lines=       237  -> GroundTheory.PAdicHodge.WAFracAnn:1, GroundTheory.PAdicHodge.ToUntiltFieldEqZeroIff:1, GroundTheory.PAdicHodge.ExtRobbaRoot:1
+GroundTheory.FunctionField.DivisorDegree           files=      1 lines=       237  -> GroundTheory.FunctionField.PlaceDefs:1, GroundTheory.FunctionField.PlaceBasic:1, GroundTheory.FunctionField.ValuationAevalSubCoeffZeroLe:1, GroundTheory.FunctionField.Divisor:1
+GroundTheory.AutomorphicForms.HermitianNormLocal   files=      1 lines=       235  -> GroundTheory.GlobalFields.HasseNorm:1
+GroundTheory.LocalFields.Unramified                files=      1 lines=       234  -> GroundTheory.LocalFields.Interface:1, GroundTheory.LocalFields.Integers:1, GroundTheory.LocalFields.Uniqueness:1, GroundTheory.LocalFields.IntermediateField:1, GroundTheory.LocalFields.UnramifiedDefs:1, GroundTheory.LocalFields.UnramifiedHensel:1
+GroundTheory.AutomorphicForms.HermitianLocalForms  files=      1 lines=       234  -> GroundTheory.AutomorphicForms.HermitianBinaryValues:1, GroundTheory.AutomorphicForms.UnitaryGroupScheme:1
+GroundTheory.AutomorphicForms.SatakeSymmetric      files=      1 lines=       234  -> GroundTheory.AutomorphicForms.SphericalLaurent:1
+GroundTheory.AutomorphicForms.SphericalSatake      files=      1 lines=       234  -> GroundTheory.AutomorphicForms.SphericalPrincipal:1, GroundTheory.AutomorphicForms.SphericalLaurent:1
+GroundTheory.FunctionField.ExistsBoundDegSubFinrankL files=      1 lines=       233  -> GroundTheory.FunctionField.PlaceDefs:1, GroundTheory.FunctionField.PlaceBasic:1, GroundTheory.FunctionField.Divisor:1, GroundTheory.FunctionField.DivisorDegree:1, GroundTheory.FunctionField.Repartition:1
+GroundTheory.PAdicHodge.SlopeCauchyBinet           files=      1 lines=       232  -> GroundTheory.PowerSubgroups.CountableNeighbourhoods:1
+GroundTheory.LocalFields.BrauerInductionMonomial   files=      1 lines=       230  -> GroundTheory.LocalFields.BrauerInductionCharacters:1, GroundTheory.LocalFields.BrauerInductionInduced:1, GroundTheory.LocalFields.BrauerInductionClifford:1
+GroundTheory.AutomorphicForms.InductionParabolicLocal files=      1 lines=       230  -> GroundTheory.AutomorphicForms.InductionParabolicGroups:1, GroundTheory.AutomorphicForms.MeasuresParabolic:1
+GroundTheory.PAdicHodge.WittLift                   files=      1 lines=       230  -> GroundTheory.PAdicHodge.SemilinearResidue:1
+GroundTheory.LocalFields.UpperNumbering            files=      1 lines=       229  -> GroundTheory.LocalFields.HerbrandFunction:1, GroundTheory.LocalFields.LowerIndexQuotient:1
+GroundTheory.TateCohomology.ResCoresPos            files=      1 lines=       229  -> GroundTheory.TateCohomology.ResCores:1
+GroundTheory.AutomorphicForms.FiniteLengthLeviBlock files=      1 lines=       229  -> GroundTheory.AutomorphicForms.GeometricLemma:1, GroundTheory.AutomorphicForms.CuspidalSplitting:1
+GroundTheory.AutomorphicForms.ReductionLocalVolumeTorus files=      1 lines=       228  -> GroundTheory.AutomorphicForms.RealIwasawaSubgroups:1
+GroundTheory.PAdicHodge.TiltAlgClosed              files=      1 lines=       228  -> GroundTheory.PAdicHodge.PerfectoidField:1, GroundTheory.PAdicHodge.TiltValuation:1, GroundTheory.PAdicHodge.TiltField:1
+GroundTheory.TateCohomology.SplittingCohTrivial    files=      1 lines=       227  -> GroundTheory.TateCohomology.SplittingModule:1, GroundTheory.TateCohomology.CohTrivial:1, GroundTheory.TateCohomology.ResCores:1
+GroundTheory.PAdicHodge.TiltAlgebra                files=      1 lines=       226  -> GroundTheory.PAdicHodge.PerfectoidField:1, GroundTheory.PAdicHodge.TiltValuation:1, GroundTheory.PAdicHodge.TiltField:1, GroundTheory.PAdicHodge.KerTheta:1, GroundTheory.PAdicHodge.TiltMap:1
+GroundTheory.Brauer.CrossedProductMaps             files=      1 lines=       226  -> GroundTheory.Brauer.CrossedProduct:1, GroundTheory.Brauer.CrossedProductSimple:1
+GroundTheory.LocalFields.LocalZetaShell            files=      1 lines=       225  -> GroundTheory.LocalFields.LocalFourier:1
+GroundTheory.LocalFields.LubinTateTowerMaps        files=      1 lines=       224  -> GroundTheory.LocalFields.LubinTatePrimitive:1
+GroundTheory.AutomorphicForms.InductionParabolicGroups files=      1 lines=       224  -> GroundTheory.AutomorphicForms.Iwasawa:1
+GroundTheory.AutomorphicForms.AnisotropicUnitaryRes files=      1 lines=       223  -> GroundTheory.AutomorphicForms.AnisotropicRestrict:1, GroundTheory.AutomorphicForms.AdelicUnitaryGroups:1
+GroundTheory.TateCohomology.TateSubgroupMaps       files=      1 lines=       222  -> GroundTheory.TateCohomology.TateUnique:1, GroundTheory.TateCohomology.TateTransport:1, GroundTheory.TateCohomology.ResCoresZero:1
+GroundTheory.AutomorphicForms.FinePartition        files=      1 lines=       222  -> 
+GroundTheory.PAdicHodge.UnramifiedFrob             files=      1 lines=       222  -> GroundTheory.PAdicHodge.BCrisTensorK:1, GroundTheory.PAdicHodge.BCrisNewtonFrac:1, GroundTheory.PAdicHodge.CyclotomicTower:1
+GroundTheory.PAdicHodge.BCrisEigenFrob             files=      1 lines=       222  -> GroundTheory.PAdicHodge.BCrisEigenWitt:1, GroundTheory.PAdicHodge.LocalBridge:1, GroundTheory.PAdicHodge.UnramifiedACris:1, GroundTheory.PAdicHodge.UnramifiedClosure:1, GroundTheory.LocalFields.WeilGroupDefs:1
+GroundTheory.ProfiniteCohomology.EulerChar         files=      1 lines=       221  -> GroundTheory.ProfiniteCohomology.EulerCharDefs:1, GroundTheory.ProfiniteCohomology.ContinuousCochains:1, GroundTheory.ProfiniteCohomology.Shapiro:1
+GroundTheory.LocalFields.ArtinConductorDiscriminant files=      1 lines=       221  -> GroundTheory.LocalFields.ArtinConductorAbelian:1
+GroundTheory.AutomorphicForms.UnitaryGroupScheme   files=      1 lines=       221  -> GroundTheory.AutomorphicForms.HermitianSpaces:1
+GroundTheory.AutomorphicForms.AnisotropicUnitaryHeight files=      1 lines=       221  -> GroundTheory.AutomorphicForms.AnisotropicUnitaryRes:1, GroundTheory.AutomorphicForms.AnisotropicHeight:1
+GroundTheory.PAdicHodge.UntiltIndep                files=      1 lines=       221  -> GroundTheory.PAdicHodge.TiltAlgebra:1, GroundTheory.PAdicHodge.OrthoBasis:1
+GroundTheory.LocalFields.ExtensionsOfDegree        files=      1 lines=       220  -> GroundTheory.LocalFields.FiniteExtension:1, GroundTheory.LocalFields.Eisenstein:1, GroundTheory.LocalFields.SeparableClosure:1, GroundTheory.LocalFields.UnramifiedExistence:1, GroundTheory.LocalFields.MaximalUnramified:1
+GroundTheory.PAdicHodge.WAFracLemmaO               files=      1 lines=       220  -> GroundTheory.PAdicHodge.WAFracBridge:1, GroundTheory.PAdicHodge.WAFracOrbit:1, GroundTheory.PAdicHodge.WAFracNorm:1, GroundTheory.PAdicHodge.AnnNormAcrisToAnnPosBig:1, GroundTheory.PAdicHodge.WAFracAnnPt:1, GroundTheory.PAdicHodge.FundamentalSeqSurj:1
+GroundTheory.AutomorphicForms.TraceFormulaSpectral files=      1 lines=       219  -> GroundTheory.AutomorphicForms.DiscreteSpectrumAbstract:1, GroundTheory.AutomorphicForms.TraceClass:1, GroundTheory.AutomorphicForms.UnitaryRepresentations:1
+GroundTheory.AutomorphicForms.DixmierMalliavinLineLimit files=      1 lines=       219  -> 
+GroundTheory.AutomorphicForms.CuspidalSplittingCoeff files=      1 lines=       218  -> GroundTheory.AutomorphicForms.CuspidalSplittingSums:1
+GroundTheory.AutomorphicForms.AnisotropicRestrict  files=      1 lines=       217  -> 
+GroundTheory.AutomorphicForms.RealGroupsIwasawaHaar files=      1 lines=       217  -> GroundTheory.AutomorphicForms.RealGroupsIwasawa:1, GroundTheory.AutomorphicForms.RealGroupsHaar:1
+GroundTheory.PAdicHodge.PerfectoidCriterion        files=      1 lines=       217  -> GroundTheory.PAdicHodge.PerfectoidField:1
+GroundTheory.ProfiniteCohomology.KummerFinite      files=      1 lines=       216  -> GroundTheory.ProfiniteCohomology.KummerBasic:1
+GroundTheory.PAdicHodge.WAFracBridge               files=      1 lines=       216  -> GroundTheory.PAdicHodge.WABridge:1
+GroundTheory.PAdicHodge.SemilinearResidue          files=      1 lines=       215  -> 
+GroundTheory.LocalFields.LocalAxiomTransport       files=      1 lines=       214  -> GroundTheory.LocalFields.AbstractLocalReciprocity:1, GroundTheory.LocalFields.CompleteTrivial:1
+GroundTheory.PAdicHodge.ExtRobbaFixedTerm          files=      1 lines=       214  -> GroundTheory.PAdicHodge.DMTeichBasic:1, GroundTheory.PAdicHodge.DMTeichPow:1
+GroundTheory.AutomorphicForms.AnisotropicDivision  files=      1 lines=       213  -> GroundTheory.AutomorphicForms.AnisotropicRestrict:1, GroundTheory.AutomorphicForms.AnisotropicHeight:1
+GroundTheory.ProfiniteCohomology.Bridge            files=      1 lines=       212  -> GroundTheory.ProfiniteCohomology.ContinuousCochains:1, GroundTheory.ProfiniteCohomology.BridgeDefs:1, GroundTheory.ProfiniteCohomology.BridgeNested:1
+GroundTheory.LocalFields.BrauerInductionInduced    files=      1 lines=       212  -> GroundTheory.LocalFields.BrauerInductionCharacters:1
+GroundTheory.AutomorphicForms.Induction            files=      1 lines=       212  -> GroundTheory.AutomorphicForms.SmoothRep:1
+GroundTheory.Brauer.DoubleCentralizer              files=      1 lines=       212  -> GroundTheory.Brauer.TensorSimple:1, GroundTheory.Brauer.SkolemNoether:1
+GroundTheory.LocalFields.ConductorReciprocity      files=      1 lines=       211  -> GroundTheory.LocalFields.ConductorLubinTate:1, GroundTheory.LocalFields.ConductorTransport:1, GroundTheory.LocalFields.LocalArtinMap:1, GroundTheory.LocalFields.KroneckerWeber:1
+GroundTheory.PAdicHodge.SlopeDescentBounded        files=      1 lines=       211  -> GroundTheory.PAdicHodge.ExtRobbaEigenGlue:1, GroundTheory.PAdicHodge.ExtRobbaLimit:1
+GroundTheory.ProfiniteCohomology.LocalClassFormationAlt files=      1 lines=       210  -> GroundTheory.ProfiniteCohomology.LocalClassFormation:1, GroundTheory.ProfiniteCohomology.ClassFormations:1
+GroundTheory.AutomorphicForms.MacdonaldSpherical   files=      1 lines=       210  -> GroundTheory.AutomorphicForms.MacdonaldHecke:1
+GroundTheory.AutomorphicForms.TraceFormulaMultiplicity files=      1 lines=       210  -> GroundTheory.AutomorphicForms.TraceFormulaSpectral:1, GroundTheory.AutomorphicForms.UnitaryRepresentations:1
+GroundTheory.PAdicHodge.BCrisNewtonFrac            files=      1 lines=       210  -> GroundTheory.PAdicHodge.BCrisNewtonKey:1
+GroundTheory.TateCohomology.CupProduct             files=      1 lines=       209  -> GroundTheory.TateCohomology.CupCochains:1
+GroundTheory.AutomorphicForms.HarishChandraInvariance files=      1 lines=       209  -> GroundTheory.AutomorphicForms.HarishChandraRegularity:1
+GroundTheory.PAdicHodge.ACrisBdRGalois             files=      1 lines=       208  -> GroundTheory.PAdicHodge.ACrisBdRInj:1, GroundTheory.PAdicHodge.ACrisLog:1, GroundTheory.PAdicHodge.ACrisGalois:1, GroundTheory.PAdicHodge.InstMulSemiringActionGalPlus:1, GroundTheory.PAdicHodge.BdRGalois:1, GroundTheory.PAdicHodge.UntiltFrobeniusEquivSymmEpsilonNeOne:1
+GroundTheory.ProfiniteCohomology.CyclicCupBrauer   files=      1 lines=       207  -> GroundTheory.ProfiniteCohomology.CyclicCupProf:1, GroundTheory.ProfiniteCohomology.GaloisCohomology:1, GroundTheory.ProfiniteCohomology.InflationRestriction:1
+GroundTheory.AutomorphicForms.HilbertSchmidtKernel files=      1 lines=       207  -> GroundTheory.AutomorphicForms.HilbertSchmidt:1
+GroundTheory.PAdicHodge.WABridgeApprox             files=      1 lines=       207  -> GroundTheory.PAdicHodge.WABridgeGerm:1
+GroundTheory.LocalFields.LocalFourierTrace         files=      1 lines=       205  -> GroundTheory.LocalFields.Different:1, GroundTheory.LocalFields.LocalFourierExistence:1
+GroundTheory.AutomorphicForms.QuotientRightRegular files=      1 lines=       205  -> GroundTheory.AutomorphicForms.QuotientMeasure:1
+GroundTheory.AutomorphicForms.LeviCartan           files=      1 lines=       205  -> GroundTheory.AutomorphicForms.AdmissibleInduction:1, GroundTheory.AutomorphicForms.Cartan:1
+GroundTheory.AutomorphicForms.ReductionLocalVolume files=      1 lines=       204  -> GroundTheory.AutomorphicForms.ReductionLocalVolumeGL:1, GroundTheory.AutomorphicForms.ReductionSiegel:1, GroundTheory.AutomorphicForms.RestrictedProductMatrix:1, GroundTheory.GlobalFields.TateThesis:1
+GroundTheory.LocalFields.UnramifiedHensel          files=      1 lines=       203  -> GroundTheory.LocalFields.Interface:1, GroundTheory.LocalFields.Integers:1, GroundTheory.LocalFields.IntermediateField:1, GroundTheory.LocalFields.UnramifiedDefs:1, GroundTheory.LocalFields.UnitsPowers:1
+GroundTheory.LocalFields.ExistsUnitFiltrationUnitsLeAndRangePowLe files=      1 lines=       202  -> GroundTheory.LocalFields.UnitsBasic:1, GroundTheory.LocalFields.UnitsPowers:1
+GroundTheory.AutomorphicForms.DixmierMalliavinSeries files=      1 lines=       202  -> GroundTheory.AutomorphicForms.DixmierMalliavinBasic:1, GroundTheory.AutomorphicForms.GKModules:1
+GroundTheory.PAdicHodge.SenTateCharClosure         files=      1 lines=       202  -> GroundTheory.PAdicHodge.SenTateCharUnits:1, GroundTheory.PAdicHodge.NormalizedTraceClosure:1, GroundTheory.PAdicHodge.NormalizedTrace:1, GroundTheory.PAdicHodge.AxLemma:1, GroundTheory.PAdicHodge.TateCpTwist:1
+GroundTheory.PAdicHodge.BCrisNewtonKey             files=      1 lines=       202  -> GroundTheory.PAdicHodge.BCrisNewtonValue:1
+GroundTheory.LocalFields.FilteredSurj              files=      1 lines=       201  -> 
+GroundTheory.LocalFields.ExamplesCharZero          files=      1 lines=       200  -> GroundTheory.LocalFields.Examples:1
+GroundTheory.PAdicHodge.SenTateCharUnitPow         files=      1 lines=       200  -> GroundTheory.LocalFields.PadicExp:1, GroundTheory.LocalFields.UnitsPowers:1, GroundTheory.LocalFields.PrincipalUnitsModule:1, GroundTheory.PAdicHodge.FieldOfNormsRam:1, GroundTheory.LocalFields.Examples:1
+GroundTheory.PAdicHodge.SenTateCharTower           files=      1 lines=       199  -> GroundTheory.LocalFields.ConductorMatch:1, GroundTheory.PAdicHodge.FieldOfNormsCyclBase:1, GroundTheory.PAdicHodge.FieldOfNormsRam:1, GroundTheory.PAdicHodge.SenTateCharUnits:1
+GroundTheory.LocalFields.RamificationUnits         files=      1 lines=       198  -> GroundTheory.LocalFields.Ramification:1
+GroundTheory.TateCohomology.Characters             files=      1 lines=       198  -> GroundTheory.TateCohomology.UniquelyDivisible:1
+GroundTheory.PAdicHodge.ExistsIsRootForallNormPowMulLe files=      1 lines=       198  -> GroundTheory.PAdicHodge.ExtRobbaRootPoly:1, GroundTheory.PAdicHodge.ExtRobbaUntilt:1, GroundTheory.PAdicHodge.ExtRobbaNewton:1
+GroundTheory.TateCohomology.PGroupFree             files=      1 lines=       197  -> GroundTheory.TateCohomology.InducedNorm:1, GroundTheory.TateCohomology.TateAddEquivAbelianizationTateClass:1, GroundTheory.TateCohomology.PGroupFixed:1
+GroundTheory.AutomorphicForms.SmoothRepContragredient files=      1 lines=       197  -> GroundTheory.AutomorphicForms.SmoothRep:1
+GroundTheory.AutomorphicForms.AdmissibleInduction  files=      1 lines=       197  -> GroundTheory.AutomorphicForms.InductionParabolic:1
+GroundTheory.Brauer.CrossedProductInj              files=      1 lines=       197  -> GroundTheory.Brauer.CrossedProduct:1, GroundTheory.Brauer.CrossedProductSimple:1, GroundTheory.Brauer.CrossedProductMaps:1, GroundTheory.Brauer.SkolemNoether:1, GroundTheory.Brauer.IsBrauerEquivalentIffNonemptyAlgEquiv:1, GroundTheory.Brauer.MulDistribMulActionQuotientFixedPoints:1
+GroundTheory.PAdicHodge.FundamentalSeqSurj         files=      1 lines=       196  -> GroundTheory.PAdicHodge.FundamentalSeqLog:1, GroundTheory.PAdicHodge.GalSmulAlgebraMapPadicPlus:1
+GroundTheory.PAdicHodge.LocalBridge                files=      1 lines=       195  -> GroundTheory.LocalFields.Examples:1, GroundTheory.LocalFields.Interface:1, GroundTheory.LocalFields.Uniqueness:1, GroundTheory.LocalFields.FiniteExtension:1, GroundTheory.LocalFields.DifferentGalois:1, GroundTheory.LocalFields.UpperNumbering:1
+GroundTheory.AutomorphicForms.HermitianSpaces      files=      1 lines=       194  -> GroundTheory.AutomorphicForms.QuadraticConj:1
+GroundTheory.PAdicHodge.WAFracGlue                 files=      1 lines=       194  -> GroundTheory.PAdicHodge.ExtRobbaEigen:1
+GroundTheory.AutomorphicForms.TraceFormulaWeil     files=      1 lines=       192  -> GroundTheory.AutomorphicForms.TraceFormulaCentralizer:1
+GroundTheory.AutomorphicForms.SmoothRepSchur       files=      1 lines=       191  -> GroundTheory.AutomorphicForms.SmoothRep:1
+GroundTheory.PAdicHodge.BCrisTensorK               files=      1 lines=       191  -> GroundTheory.PAdicHodge.BCrisTensorKAlg:1, GroundTheory.PAdicHodge.BCrisNewton:1
+GroundTheory.PAdicHodge.BCrisEigenChar             files=      1 lines=       191  -> GroundTheory.PAdicHodge.BCrisEigenFrob:1
+GroundTheory.AutomorphicForms.SphericalCommutative files=      1 lines=       190  -> GroundTheory.AutomorphicForms.HeckeIrreducible:1, GroundTheory.AutomorphicForms.MeasuresGL:1
+GroundTheory.AutomorphicForms.SphericalLaurent     files=      1 lines=       189  -> 
+GroundTheory.PAdicHodge.FontaineLemmaPhi           files=      1 lines=       189  -> GroundTheory.PAdicHodge.FontaineLemmaAInf:1, GroundTheory.PAdicHodge.ACrisFrobFixed:1, GroundTheory.PowerSubgroups.CountableNeighbourhoods:1
+GroundTheory.LocalFields.LubinTateLimit            files=      1 lines=       188  -> GroundTheory.LocalFields.LubinTatePrimitive:1, GroundTheory.LocalFields.LubinTateTowerMaps:1, GroundTheory.LocalFields.LubinTateLimitGalois:1, GroundTheory.LocalFields.LubinTateUnramified:1
+GroundTheory.AutomorphicForms.HermitianLocalSplit  files=      1 lines=       187  -> GroundTheory.AutomorphicForms.HermitianClassification:1, GroundTheory.AutomorphicForms.HermitianNormLocal:1, GroundTheory.LocalFields.ExistsUnitFiltrationUnitsLeAndRangePowLe:1
+GroundTheory.PAdicHodge.FieldOfNormsUpper          files=      1 lines=       187  -> GroundTheory.LocalFields.ConductorTransport:1, GroundTheory.LocalFields.SeparableClosure:1
+GroundTheory.LocalFields.LocalZetaChar             files=      1 lines=       186  -> GroundTheory.LocalFields.LocalZetaShell:1
+GroundTheory.LocalFields.Integers                  files=      1 lines=       185  -> GroundTheory.LocalFields.Interface:1, GroundTheory.LocalFields.FiniteExtension:1
+GroundTheory.PAdicHodge.ExtRobbaDMLinear           files=      1 lines=       185  -> GroundTheory.PAdicHodge.ExtRobbaDMRankOne:1
+GroundTheory.PAdicHodge.FiniteFlat                 files=      1 lines=       185  -> 
+GroundTheory.LocalFields.ConductorMatch            files=      1 lines=       184  -> GroundTheory.LocalFields.ConductorReciprocity:1
+GroundTheory.TateCohomology.InfRes                 files=      1 lines=       184  -> GroundTheory.TateCohomology.DeltaMap:1, GroundTheory.TateCohomology.CoindOne:1
+GroundTheory.PAdicHodge.BdRAlgCl                   files=      1 lines=       184  -> GroundTheory.PAdicHodge.BdRAlg:1, GroundTheory.PAdicHodge.BdRGalois:1
+GroundTheory.LocalFields.LocalAxiom                files=      1 lines=       183  -> GroundTheory.LocalFields.LocalAxiomDictionary:1, GroundTheory.LocalFields.HerbrandLocal:1, GroundTheory.LocalFields.MaximalUnramified:1, GroundTheory.LocalFields.SeparableClosure:1, GroundTheory.LocalFields.SeparableClosureValuation:1
+GroundTheory.LocalFields.LocalZetaTate             files=      1 lines=       183  -> GroundTheory.LocalFields.LocalZetaIntegral:1
+GroundTheory.AutomorphicForms.HermitianDisc        files=      1 lines=       182  -> GroundTheory.AutomorphicForms.HermitianWitt:1, GroundTheory.LocalFields.ExistsUnitFiltrationUnitsLeRangeNormUnits:1
+GroundTheory.PAdicHodge.BdRLattice                 files=      1 lines=       182  -> GroundTheory.PAdicHodge.ThetaPlus:1
+GroundTheory.TateCohomology.ModuleHomologyData     files=      1 lines=       181  -> 
+GroundTheory.AutomorphicForms.FiniteLengthLattice  files=      1 lines=       181  -> 
+GroundTheory.AutomorphicForms.RealGroupsPolar      files=      1 lines=       181  -> GroundTheory.AutomorphicForms.RealGroupsLie:1
+GroundTheory.LocalFields.LocalArtinMap             files=      1 lines=       180  -> GroundTheory.LocalFields.MaximalAbelianExtension:1, GroundTheory.LocalFields.LocalReciprocityUniversal:1, GroundTheory.LocalFields.Existence:1
+GroundTheory.ProfiniteCohomology.NotDvdSuperIndexIffMap files=      1 lines=       179  -> GroundTheory.ProfiniteCohomology.OpenNormal:1, GroundTheory.ProfiniteCohomology.Supernatural:1, GroundTheory.ProfiniteCohomology.OfNatRelIndexSupAntitone:1, GroundTheory.ProfiniteCohomology.IsProPGroupSubgroupIffIsPGroupMap:1
+GroundTheory.LocalFields.Ramification              files=      1 lines=       179  -> GroundTheory.LocalFields.Interface:1, GroundTheory.LocalFields.Uniqueness:1, GroundTheory.LocalFields.Integers:1, GroundTheory.LocalFields.UnitsBasic:1, GroundTheory.LocalFields.UnitsPowers:1
+GroundTheory.PAdicHodge.ExtRobbaDMApprox           files=      1 lines=       179  -> GroundTheory.PAdicHodge.ExtRobbaDMForward:1
+GroundTheory.ProfiniteCohomology.ColimitDefs       files=      1 lines=       177  -> GroundTheory.ProfiniteCohomology.ContinuousCochains:1, GroundTheory.ProfiniteCohomology.OpenNormal:1
+GroundTheory.AutomorphicForms.StrongApproximationSLElementary files=      1 lines=       177  -> 
+GroundTheory.AutomorphicForms.FiniteLengthJacquet  files=      1 lines=       175  -> GroundTheory.AutomorphicForms.FiniteLengthSubquotient:1, GroundTheory.AutomorphicForms.GeometricLemma:1
+GroundTheory.LocalFields.HerbrandLocalBase         files=      1 lines=       174  -> GroundTheory.LocalFields.HerbrandCyclic:1, GroundTheory.LocalFields.HilbertCyclic:1, GroundTheory.LocalFields.UnitsGalois:1, GroundTheory.LocalFields.ExistsUnitFiltrationUnitsLeAndRangePowLe:1, GroundTheory.LocalFields.ExistsUnitFiltrationUnitsLeRangeNormUnits:1, GroundTheory.GlobalFields.HerbrandQuotients:1
+GroundTheory.TateCohomology.DimensionShift         files=      1 lines=       174  -> GroundTheory.TateCohomology.Induced:1, GroundTheory.TateCohomology.InducedNorm:1
+GroundTheory.PAdicHodge.GaloisOnCp                 files=      1 lines=       174  -> 
+GroundTheory.PAdicHodge.ExtRobbaOrd                files=      1 lines=       174  -> GroundTheory.PAdicHodge.ExtRobbaUnits:1, GroundTheory.PAdicHodge.SlopePhiModule:1
+GroundTheory.PAdicHodge.TiltMap                    files=      1 lines=       174  -> GroundTheory.PAdicHodge.PerfectoidField:1, GroundTheory.PAdicHodge.TiltValuation:1, GroundTheory.PAdicHodge.TiltField:1, GroundTheory.PAdicHodge.KerTheta:1, GroundTheory.PAdicHodge.KerFontaineThetaCompFrobeniusEquivSymmPow:1
+GroundTheory.Brauer.BaseChangeCentralizer          files=      1 lines=       174  -> GroundTheory.Brauer.CrossedProductIso:1, GroundTheory.Brauer.CrossedProductTensor:1, GroundTheory.Brauer.BaseChange:1, GroundTheory.Brauer.DoubleCentralizer:1, GroundTheory.Brauer.Splitting:1
+GroundTheory.LocalFields.LocalArtinCompletion      files=      1 lines=       173  -> GroundTheory.LocalFields.NormCorrespondence:1, GroundTheory.LocalFields.OpenCompletion:1
+GroundTheory.PAdicHodge.FontaineLemmaAInf          files=      1 lines=       173  -> GroundTheory.PAdicHodge.AInfXi:1, GroundTheory.PAdicHodge.AInfTopology:1
+GroundTheory.FunctionField.Approximation           files=      1 lines=       173  -> GroundTheory.FunctionField.PlaceDefs:1, GroundTheory.FunctionField.PlaceBasic:1
+GroundTheory.AutomorphicForms.AnisotropicOrbit     files=      1 lines=       171  -> GroundTheory.AutomorphicForms.ReductionMahler:1
+GroundTheory.AutomorphicForms.ReductionSplitting   files=      1 lines=       171  -> GroundTheory.AutomorphicForms.ReductionMahler:1, GroundTheory.PowerSubgroups.CountableNeighbourhoods:1
+GroundTheory.GlobalFields.SUnits                   files=      1 lines=       171  -> GroundTheory.GlobalFields.SUnitsKernel:1
+GroundTheory.ProfiniteCohomology.ShapiroDefs       files=      1 lines=       170  -> GroundTheory.ProfiniteCohomology.CohomologyFunctoriality:1, GroundTheory.ProfiniteCohomology.CoinducedModules:1
+GroundTheory.ProfiniteCohomology.FilteredHomology  files=      1 lines=       169  -> 
+GroundTheory.PAdicHodge.UntiltFrobeniusEquivSymmEpsilonNeOne files=      1 lines=       168  -> GroundTheory.PAdicHodge.BdRAlg:1, GroundTheory.PAdicHodge.BdRSeries:1, GroundTheory.PAdicHodge.BdRLattice:1, GroundTheory.PAdicHodge.BdRGalois:1, GroundTheory.PAdicHodge.AInfXi:1, GroundTheory.PAdicHodge.TateCpTwist:1
+GroundTheory.PAdicHodge.BCrisNewtonLift            files=      1 lines=       168  -> GroundTheory.PAdicHodge.TiltField:1, GroundTheory.PAdicHodge.ExtRobbaBounded:1, GroundTheory.PAdicHodge.KerFontaineThetaCompFrobeniusEquivSymmPow:1
+GroundTheory.PAdicHodge.BCrisTensorKAlg            files=      1 lines=       168  -> 
+GroundTheory.PAdicHodge.TateNormalizedTrace        files=      1 lines=       168  -> GroundTheory.PAdicHodge.NormalizedTraceTower:1, GroundTheory.PAdicHodge.NormalizedTraceClosure:1, GroundTheory.PAdicHodge.CyclotomicTower:1
+GroundTheory.LocalFields.UnramifiedExistence       files=      1 lines=       167  -> GroundTheory.LocalFields.Interface:1, GroundTheory.LocalFields.FiniteExtension:1, GroundTheory.LocalFields.Uniqueness:1, GroundTheory.LocalFields.Integers:1, GroundTheory.LocalFields.UnitsPowers:1, GroundTheory.LocalFields.UnramifiedRootsOfUnity:1
+GroundTheory.ProfiniteCohomology.TorsionDualFinite files=      1 lines=       166  -> GroundTheory.ProfiniteCohomology.TorsionDualDefs:1
+GroundTheory.PAdicHodge.AInfGalois                 files=      1 lines=       166  -> GroundTheory.PAdicHodge.KerFontaineThetaCompFrobeniusEquivSymmPow:1, GroundTheory.PAdicHodge.AInfTopology:1, GroundTheory.PAdicHodge.TiltMap:1, GroundTheory.PAdicHodge.TiltAlgebra:1, GroundTheory.PAdicHodge.GaloisOnCp:1
+GroundTheory.PAdicHodge.RobbaAnnulusBezout         files=      1 lines=       166  -> GroundTheory.PAdicHodge.RobbaSeries:1, GroundTheory.PAdicHodge.HighIndexSingleZeroOne:1, GroundTheory.PAdicHodge.RobbaBounded:1, GroundTheory.PAdicHodge.RobbaNewton:1, GroundTheory.PAdicHodge.RobbaClosed:1, GroundTheory.PAdicHodge.RobbaDivision:1
+GroundTheory.LocalFields.Existence                 files=      1 lines=       165  -> GroundTheory.LocalFields.ExistenceDictionary:1, GroundTheory.LocalFields.LubinTateReciprocity:1, GroundTheory.LocalFields.LubinTateLimit:1
+GroundTheory.AutomorphicForms.HermitianBinaryValues files=      1 lines=       165  -> GroundTheory.GlobalFields.Adele:2, GroundTheory.AutomorphicForms.HermitianLocalSplit:1, GroundTheory.GlobalFields.LocalFieldAtPlace:1
+GroundTheory.LocalFields.HerbrandCyclic            files=      1 lines=       164  -> GroundTheory.TateCohomology.HerbrandAbstract:1, GroundTheory.GlobalFields.HerbrandQuotients:1, GroundTheory.LocalFields.CompleteTrivial:1
+GroundTheory.TateCohomology.CupTate                files=      1 lines=       164  -> GroundTheory.TateCohomology.CupTateShift:1
+GroundTheory.AutomorphicForms.HermitianWittExtension files=      1 lines=       163  -> GroundTheory.AutomorphicForms.HermitianWitt:1
+GroundTheory.PAdicHodge.WAFracGeneric              files=      1 lines=       163  -> GroundTheory.PAdicHodge.ExistsNormLeOfNormLtOneFinite:1
+GroundTheory.PAdicHodge.OrthoBasis                 files=      1 lines=       163  -> 
+GroundTheory.LocalFields.LowerIndex                files=      1 lines=       162  -> GroundTheory.LocalFields.Ramification:1, GroundTheory.LocalFields.Monogenic:1, GroundTheory.LocalFields.Unramified:1
+GroundTheory.LocalFields.BrauerInductionIntegral   files=      1 lines=       161  -> GroundTheory.LocalFields.BrauerInductionInduced:1
+GroundTheory.AutomorphicForms.QuadraticConj        files=      1 lines=       161  -> 
+GroundTheory.ProfiniteCohomology.OfNatRelIndexSupAntitone files=      1 lines=       160  -> GroundTheory.ProfiniteCohomology.OpenNormal:1, GroundTheory.ProfiniteCohomology.Supernatural:1
+GroundTheory.LocalFields.RamificationStructure     files=      1 lines=       160  -> GroundTheory.LocalFields.RamificationUnits:1
+GroundTheory.LocalFields.FiniteExtension           files=      1 lines=       159  -> GroundTheory.LocalFields.Interface:1
+GroundTheory.TateCohomology.CohTrivialBasic        files=      1 lines=       159  -> GroundTheory.TateCohomology.DimensionShift:1, GroundTheory.TateCohomology.InducedNorm:1, GroundTheory.TateCohomology.CoindOne:1, GroundTheory.TateCohomology.UniquelyDivisible:1
+GroundTheory.AutomorphicForms.DixmierMalliavin     files=      1 lines=       159  -> GroundTheory.AutomorphicForms.DixmierMalliavinSeries:1, GroundTheory.AutomorphicForms.DixmierMalliavinProducts:1, GroundTheory.AutomorphicForms.DixmierMalliavinLine:1, GroundTheory.AutomorphicForms.DixmierMalliavinHaarDensity:1, GroundTheory.AutomorphicForms.HeckeAlgebra:1
+GroundTheory.PAdicHodge.FieldOfNorms               files=      1 lines=       159  -> GroundTheory.PAdicHodge.FieldOfNormsDef:1
+GroundTheory.ProfiniteCohomology.ColimitUnion      files=      1 lines=       158  -> GroundTheory.ProfiniteCohomology.ContinuousCochains:1, GroundTheory.ProfiniteCohomology.FilteredHomology:1, GroundTheory.ProfiniteCohomology.DiscreteModules:1
+GroundTheory.LocalFields.LocalArtinAbstractField   files=      1 lines=       158  -> GroundTheory.LocalFields.LocalArtinTransport:1
+GroundTheory.TateCohomology.CohTrivialPGroup       files=      1 lines=       157  -> GroundTheory.TateCohomology.PGroupCohTrivialInt:1, GroundTheory.TateCohomology.Annihilation:1
+GroundTheory.LocalFields.LocalArtinUniqueness      files=      1 lines=       156  -> GroundTheory.LocalFields.LocalArtinMap:1, GroundTheory.LocalFields.KroneckerWeber:1
+GroundTheory.TateCohomology.CupConnecting          files=      1 lines=       156  -> GroundTheory.TateCohomology.CupProduct:1
+GroundTheory.AutomorphicForms.LocallyConstantCompact files=      1 lines=       156  -> GroundTheory.AutomorphicForms.LocallyProfinite:1
+GroundTheory.PAdicHodge.LogMul                     files=      1 lines=       156  -> GroundTheory.PAdicHodge.BdRSeries:1
+GroundTheory.PAdicHodge.FWGlue                     files=      1 lines=       156  -> 
+GroundTheory.LocalFields.LubinTateUnramified       files=      1 lines=       155  -> GroundTheory.LocalFields.LubinTateLimitGalois:1, GroundTheory.LocalFields.MaximalUnramified:1
+GroundTheory.TateCohomology.ResCoresZero           files=      1 lines=       155  -> GroundTheory.TateCohomology.CoresRes:1, GroundTheory.TateCohomology.TateZeroClass:1
+GroundTheory.PAdicHodge.FWNatural                  files=      1 lines=       154  -> GroundTheory.PAdicHodge.TiltEquiv:1
+GroundTheory.PAdicHodge.UntiltField                files=      1 lines=       152  -> GroundTheory.PAdicHodge.TiltAlgebra:1
+GroundTheory.PAdicHodge.FundamentalSeqBCris        files=      1 lines=       152  -> GroundTheory.PAdicHodge.FundamentalSeqFixed:1
+GroundTheory.Brauer.SkolemNoether                  files=      1 lines=       152  -> GroundTheory.Brauer.TensorSimple:1
+GroundTheory.PAdicHodge.PhiGammaBase               files=      1 lines=       151  -> GroundTheory.PAdicHodge.AInfGalois:1, GroundTheory.PAdicHodge.AInfXi:1, GroundTheory.PAdicHodge.TiltAlgClosed:1, GroundTheory.PAdicHodge.TiltAlgebra:1, GroundTheory.PAdicHodge.TateCpTwist:1
+GroundTheory.ProfiniteCohomology.CyclicCupProf     files=      1 lines=       149  -> GroundTheory.ProfiniteCohomology.CupProducts:2, GroundTheory.ProfiniteCohomology.CyclicCupGaloisDefs:1, GroundTheory.ProfiniteCohomology.CyclicCupInflation:1
+GroundTheory.TateCohomology.PGroupCohTrivialInt    files=      1 lines=       149  -> GroundTheory.TateCohomology.PGroupCohTrivial:1, GroundTheory.TateCohomology.TateAddEquivAbelianizationTateClass:1
+GroundTheory.AutomorphicForms.DixmierMalliavinProducts files=      1 lines=       149  -> GroundTheory.AutomorphicForms.DixmierMalliavinBasic:1, GroundTheory.AutomorphicForms.GKModules:1
+GroundTheory.TateCohomology.Herbrand               files=      1 lines=       148  -> GroundTheory.TateCohomology.HerbrandTate:1
+GroundTheory.PAdicHodge.WAFracB                    files=      1 lines=       148  -> GroundTheory.PAdicHodge.WAFracMain:1, GroundTheory.PAdicHodge.WAFracGeneric:1, GroundTheory.PAdicHodge.BCrisNewton:1
+GroundTheory.LocalFields.ConductorTransport        files=      1 lines=       147  -> GroundTheory.LocalFields.UpperNumbering:1, GroundTheory.LocalFields.LubinTateTowerMaps:1, GroundTheory.LocalFields.SeparableClosure:1
+GroundTheory.AutomorphicForms.FiniteLength         files=      1 lines=       147  -> GroundTheory.AutomorphicForms.FiniteLengthCuspidal:1, GroundTheory.AutomorphicForms.FiniteLengthLeviJacquet:1, GroundTheory.AutomorphicForms.FiniteLengthSeries:1
+GroundTheory.ProfiniteCohomology.CartierDualDefs   files=      1 lines=       146  -> GroundTheory.ProfiniteCohomology.CupProducts:1, GroundTheory.ProfiniteCohomology.GaloisCohomology:1
+GroundTheory.TateCohomology.TateGroupIso           files=      1 lines=       146  -> GroundTheory.TateCohomology.CohTrivialBasic:1, GroundTheory.TateCohomology.TateLow:1
+GroundTheory.TateCohomology.Induced                files=      1 lines=       146  -> 
+GroundTheory.PAdicHodge.BCrisNewtonValue           files=      1 lines=       145  -> GroundTheory.PAdicHodge.BCrisNewtonSlope:1, GroundTheory.PAdicHodge.BCrisNewtonDom:1, GroundTheory.PAdicHodge.BCrisPlusInvariants:1
+GroundTheory.LocalFields.BrauerInductionElementary files=      1 lines=       141  -> 
+GroundTheory.PAdicHodge.FWCharP                    files=      1 lines=       141  -> GroundTheory.PAdicHodge.FWGlue:1, GroundTheory.PAdicHodge.TiltEquiv:1
+GroundTheory.PAdicHodge.BStPeriod                  files=      1 lines=       141  -> GroundTheory.PAdicHodge.ThetaBDeRhamPlusFieldCycloUnitBdRZpow:1, GroundTheory.PAdicHodge.LogMul:1, GroundTheory.PAdicHodge.TiltValuation:1
+GroundTheory.PAdicHodge.BCrisNewton                files=      1 lines=       140  -> GroundTheory.PAdicHodge.BCrisNewtonFrac:1, GroundTheory.PAdicHodge.BCrisRegular:1
+GroundTheory.AutomorphicForms.ReductionBlock       files=      1 lines=       139  -> 
+GroundTheory.Brauer.CrossedProductRegular          files=      1 lines=       138  -> GroundTheory.Brauer.CrossedProduct:1, GroundTheory.Brauer.CrossedProductSimple:1, GroundTheory.Brauer.CrossedProductMaps:1
+GroundTheory.PAdicHodge.AdmissibleField            files=      1 lines=       137  -> GroundTheory.PAdicHodge.Admissible:1
+GroundTheory.GlobalFields.LocalAtPlace             files=      1 lines=       137  -> 
+GroundTheory.TateCohomology.AugTrivial             files=      1 lines=       136  -> GroundTheory.TateCohomology.AugmentationSES:1, GroundTheory.TateCohomology.CohTrivialBasic:1
+GroundTheory.Brauer.BaseChangeCSA                  files=      1 lines=       136  -> GroundTheory.Brauer.TensorSimple:1
+GroundTheory.AutomorphicForms.TraceStrongLimit     files=      1 lines=       135  -> GroundTheory.AutomorphicForms.TraceNormComp:1
+GroundTheory.AutomorphicForms.GeometricLemmaOrbit  files=      1 lines=       135  -> 
+GroundTheory.PAdicHodge.InstMulSemiringActionGalPlus files=      1 lines=       135  -> GroundTheory.PAdicHodge.ACrisPhi:1, GroundTheory.PAdicHodge.ACrisGalois:1
+GroundTheory.LocalFields.ExistenceDictionary       files=      1 lines=       134  -> GroundTheory.LocalFields.LocalReciprocityFinite:1, GroundTheory.LocalFields.AbstractLocalReciprocity:1
+GroundTheory.AutomorphicForms.Spherical            files=      1 lines=       134  -> GroundTheory.AutomorphicForms.SphericalIntegral:1
+GroundTheory.PAdicHodge.ACrisBdRInj                files=      1 lines=       134  -> GroundTheory.PAdicHodge.ACrisBdR:1
+GroundTheory.LocalFields.LocalFourierExistence     files=      1 lines=       133  -> GroundTheory.LocalFields.LocalFourier:1
+GroundTheory.PAdicHodge.LogPowSeries               files=      1 lines=       133  -> 
+GroundTheory.LocalFields.Examples                  files=      1 lines=       132  -> 
+GroundTheory.AutomorphicForms.RealGroups           files=      1 lines=       132  -> GroundTheory.AutomorphicForms.RealGroupsLie:1, GroundTheory.AutomorphicForms.RealGroupsPolar:1, GroundTheory.AutomorphicForms.RealGroupsKAK:1, GroundTheory.AutomorphicForms.RealGroupsIwasawa:1, GroundTheory.AutomorphicForms.RealGroupsHaar:1, GroundTheory.AutomorphicForms.RealGroupsIwasawaHaar:1
+GroundTheory.PAdicHodge.TiltEquiv                  files=      1 lines=       132  -> GroundTheory.PAdicHodge.UntiltPerfectoid:1, GroundTheory.PAdicHodge.UntiltApprox:1, GroundTheory.PAdicHodge.UntiltGalois:1, GroundTheory.PAdicHodge.UntiltGaloisCorr:1, GroundTheory.PAdicHodge.CompletedAlgClosure:1, GroundTheory.PAdicHodge.PerfectoidCharP:1
+GroundTheory.TateCohomology.TateCupUnit            files=      1 lines=       131  -> GroundTheory.TateCohomology.CupTate:1, GroundTheory.TateCohomology.DimensionShift:1
+GroundTheory.TateCohomology.TateTransport          files=      1 lines=       131  -> GroundTheory.TateCohomology.TateGroupIso:1, GroundTheory.TateCohomology.TateZeroClass:1
+GroundTheory.ProfiniteCohomology.Colimit           files=      1 lines=       130  -> GroundTheory.ProfiniteCohomology.ColimitDefs:1, GroundTheory.ProfiniteCohomology.FilteredHomology:1, GroundTheory.ProfiniteCohomology.Factor:1, GroundTheory.ProfiniteCohomology.DiscreteModules:1, GroundTheory.TateCohomology.Annihilation:1
+GroundTheory.TateCohomology.CohTrivial             files=      1 lines=       130  -> GroundTheory.TateCohomology.CohTrivialPGroup:1, GroundTheory.TateCohomology.TateGroupIso:1, GroundTheory.TateCohomology.CoresRes:1
+GroundTheory.AutomorphicForms.CuspidalSplitting    files=      1 lines=       129  -> GroundTheory.AutomorphicForms.CuspidalSplittingIsotypic:1, GroundTheory.AutomorphicForms.LeviStagesProduct:1, GroundTheory.AutomorphicForms.LeviStagesExact:1
+GroundTheory.PAdicHodge.BCrisGalois                files=      1 lines=       129  -> GroundTheory.PAdicHodge.ACrisBdRGalois:1, GroundTheory.PAdicHodge.BdRTGalois:1
+GroundTheory.TateCohomology.ConjAction             files=      1 lines=       128  -> 
+GroundTheory.AutomorphicForms.CompactFormulaUnitary files=      1 lines=       128  -> GroundTheory.AutomorphicForms.CompactFormulaSums:1, GroundTheory.AutomorphicForms.CompactFormulaCountable:1, GroundTheory.AutomorphicForms.Anisotropic:1
+GroundTheory.ProfiniteCohomology.CyclicCupInflation files=      1 lines=       127  -> GroundTheory.ProfiniteCohomology.CyclicCup:1, GroundTheory.TateCohomology.InfRes:1
+GroundTheory.LocalFields.Monogenic                 files=      1 lines=       127  -> GroundTheory.LocalFields.Eisenstein:1
+GroundTheory.AutomorphicForms.ReductionMeasure     files=      1 lines=       126  -> GroundTheory.GlobalFields.TateThesis:3, GroundTheory.AutomorphicForms.ReductionMahler:1
+GroundTheory.PAdicHodge.RobbaAmice                 files=      1 lines=       126  -> GroundTheory.PAdicHodge.RobbaSeries:1, GroundTheory.PAdicHodge.HighIndexSingleZeroOne:1, GroundTheory.PAdicHodge.RobbaBounded:1, GroundTheory.PAdicHodge.RobbaNewton:1, GroundTheory.PAdicHodge.RobbaClosed:1, GroundTheory.PAdicHodge.RobbaLazard:1
+GroundTheory.LocalFields.OpenCompletion            files=      1 lines=       125  -> 
+GroundTheory.Brauer.BaseChangeRestriction          files=      1 lines=       125  -> GroundTheory.Brauer.AbsoluteGalois:1, GroundTheory.Brauer.BaseChangeCentralizer:1, GroundTheory.ProfiniteCohomology.CohomologyFunctoriality:1
+GroundTheory.AutomorphicForms.AnisotropicDivisionCompact files=      1 lines=       124  -> GroundTheory.AutomorphicForms.AnisotropicDivision:1
+GroundTheory.PAdicHodge.FontaineLemma              files=      1 lines=       124  -> GroundTheory.PAdicHodge.FontaineLemmaPhi:1, GroundTheory.PAdicHodge.FontaineLemmaPeriod:1
+GroundTheory.ProfiniteCohomology.BridgeNested      files=      1 lines=       123  -> 
+GroundTheory.AutomorphicForms.KernelTraceComp      files=      1 lines=       121  -> GroundTheory.AutomorphicForms.KernelTrace:1
+GroundTheory.Brauer.CrossedProductSimple           files=      1 lines=       121  -> GroundTheory.Brauer.CrossedProduct:1
+GroundTheory.LocalFields.IntermediateField         files=      1 lines=       120  -> GroundTheory.LocalFields.Interface:1, GroundTheory.LocalFields.Uniqueness:1
+GroundTheory.LocalFields.LocalReciprocityLimitAbstract files=      1 lines=       119  -> GroundTheory.LocalFields.AbstractLocalReciprocity:2
+GroundTheory.TateCohomology.ResCores               files=      1 lines=       119  -> GroundTheory.TateCohomology.TateShapiro:1
+GroundTheory.PAdicHodge.WAFracFinal                files=      1 lines=       119  -> GroundTheory.PAdicHodge.WAFracLemmaO:1, GroundTheory.PAdicHodge.WAFracHelp:1, GroundTheory.PAdicHodge.WAFracAlg:1, GroundTheory.PAdicHodge.WAKummer:1
+GroundTheory.FunctionField.PlaceBasic              files=      1 lines=       119  -> GroundTheory.FunctionField.PlaceDefs:1
+GroundTheory.GlobalFields.HasseNorm                files=      1 lines=       119  -> GroundTheory.GlobalFields.IdeleGroups:2, GroundTheory.GlobalFields.SecondInequality:1
+GroundTheory.LocalFields.ArtinConductorInduced     files=      1 lines=       118  -> GroundTheory.LocalFields.ArtinConductor:1, GroundTheory.LocalFields.ConductorTransport:1
+GroundTheory.ProfiniteCohomology.Supernatural      files=      1 lines=       117  -> 
+GroundTheory.AutomorphicForms.HermitianHasse       files=      1 lines=       117  -> GroundTheory.AutomorphicForms.HermitianValues:1
+GroundTheory.LocalFields.LowerIndexQuotient        files=      1 lines=       116  -> GroundTheory.LocalFields.LowerIndex:1, GroundTheory.LocalFields.IntermediateField:1
+GroundTheory.PAdicHodge.SlopeFiltration            files=      1 lines=       116  -> GroundTheory.PAdicHodge.SlopeRobbaPure:1
+GroundTheory.PAdicHodge.FontaineWintenberger       files=      1 lines=       116  -> GroundTheory.PAdicHodge.FWGalois:1, GroundTheory.PAdicHodge.FWCharP:1
+GroundTheory.PAdicHodge.GalSmulAlgebraMapPadicPlus files=      1 lines=       116  -> GroundTheory.PAdicHodge.FontaineLemmaInvariants:1
+GroundTheory.ArithmeticGeometry.SelmerPairing      files=      1 lines=       116  -> GroundTheory.ProfiniteCohomology.CupProducts:2, GroundTheory.ProfiniteCohomology.InflationRestriction:1, GroundTheory.ProfiniteCohomology.Procyclic:1, GroundTheory.LocalFields.WildInertia:1
+GroundTheory.AutomorphicForms.LocallyProfinite     files=      1 lines=       114  -> 
+GroundTheory.PAdicHodge.BdRAlg                     files=      1 lines=       113  -> GroundTheory.PAdicHodge.ThetaPlus:1
+GroundTheory.GlobalFields.LocalFieldAtPlace        files=      1 lines=       113  -> GroundTheory.GlobalFields.LocalAtPlace:1
+GroundTheory.TateCohomology.PullbackExtension      files=      1 lines=       112  -> GroundTheory.TateCohomology.AugmentationSES:1
+GroundTheory.TateCohomology.PGroupFixed            files=      1 lines=       111  -> 
+GroundTheory.AutomorphicForms.GeometricLemma       files=      1 lines=       111  -> GroundTheory.AutomorphicForms.GeometricLemmaUnnormalized:1, GroundTheory.AutomorphicForms.GeometricLemmaNormal:1
+GroundTheory.ProfiniteCohomology.MackeyDefs        files=      1 lines=       110  -> GroundTheory.ProfiniteCohomology.ShapiroDefs:1
+GroundTheory.TateCohomology.InducedNorm            files=      1 lines=       110  -> GroundTheory.TateCohomology.Induced:1
+GroundTheory.TateCohomology.TateCup                files=      1 lines=       109  -> GroundTheory.TateCohomology.TateTheorem:1, GroundTheory.TateCohomology.TateCupUnit:1
+GroundTheory.PAdicHodge.BCrisNewtonDom             files=      1 lines=       109  -> GroundTheory.PAdicHodge.BCrisNewtonApprox:1
+GroundTheory.PAdicHodge.FWCyclotomic               files=      1 lines=       108  -> GroundTheory.PAdicHodge.FWCyclotomicNorm:1, GroundTheory.PAdicHodge.FontaineWintenberger:1, GroundTheory.PAdicHodge.PerfectoidCriterion:1
+GroundTheory.PAdicHodge.BCrisRegular               files=      1 lines=       108  -> GroundTheory.PAdicHodge.BCrisPlusInvariants:1
+GroundTheory.PAdicHodge.FundamentalSeq             files=      1 lines=       107  -> GroundTheory.PAdicHodge.FundamentalSeqBCris:1
+GroundTheory.PAdicHodge.SenTateCharacters          files=      1 lines=       107  -> GroundTheory.PAdicHodge.SenTateCharTrace:1, GroundTheory.PAdicHodge.SenTateCharQp:1
+GroundTheory.AutomorphicForms.WhittakerLocal       files=      1 lines=       106  -> GroundTheory.AutomorphicForms.WhittakerDistribution:1, GroundTheory.AutomorphicForms.WhittakerCriterion:1, GroundTheory.AutomorphicForms.MeasuresGL:1
+GroundTheory.TateCohomology.CoindOne               files=      1 lines=       105  -> 
+GroundTheory.LocalFields.UnramifiedRootsOfUnity    files=      1 lines=       104  -> GroundTheory.LocalFields.Interface:1, GroundTheory.LocalFields.Uniqueness:1, GroundTheory.LocalFields.Integers:1, GroundTheory.LocalFields.UnitsPowers:1
+GroundTheory.TateCohomology.SplittingModule        files=      1 lines=       104  -> GroundTheory.TateCohomology.PullbackExtension:1, GroundTheory.TateCohomology.AugTrivial:1, GroundTheory.TateCohomology.DeltaMap:1, GroundTheory.TateCohomology.DimensionShift:1, GroundTheory.TateCohomology.TateConnecting:1
+GroundTheory.Brauer.Degree                         files=      1 lines=       104  -> GroundTheory.Brauer.BaseChangeCSA:1, GroundTheory.Brauer.IsBrauerEquivalentIffNonemptyAlgEquiv:1
+GroundTheory.LocalFields.ArtinConductorMax         files=      1 lines=       103  -> GroundTheory.LocalFields.ArtinConductorDiscriminant:1
+GroundTheory.LocalFields.DifferentGalois           files=      1 lines=       103  -> GroundTheory.LocalFields.Different:1, GroundTheory.LocalFields.LowerIndexQuotient:1
+GroundTheory.TateCohomology.DiagonalSuccIsoFreeInvSingle files=      1 lines=       103  -> 
+GroundTheory.TateCohomology.TateTheorem            files=      1 lines=       103  -> GroundTheory.TateCohomology.SplittingCohTrivial:1, GroundTheory.TateCohomology.TateDeltaZero:1, GroundTheory.TateCohomology.TateSubgroupMaps:1
+GroundTheory.AutomorphicForms.FiniteLengthCuspidal files=      1 lines=       103  -> GroundTheory.AutomorphicForms.FiniteLengthJacquet:1, GroundTheory.AutomorphicForms.FiniteLengthPieces:1, GroundTheory.AutomorphicForms.FiniteLengthLevi:1
+GroundTheory.AutomorphicForms.Anisotropic          files=      1 lines=       103  -> GroundTheory.AutomorphicForms.AnisotropicUnitaryCompact:1, GroundTheory.AutomorphicForms.AnisotropicDivisionCompact:1
+GroundTheory.LocalFields.NormCorrespondence        files=      1 lines=       102  -> GroundTheory.LocalFields.LocalArtinMap:1
+GroundTheory.PAdicHodge.TateCpTwist                files=      1 lines=       102  -> GroundTheory.PAdicHodge.GaloisOnCp:1
+GroundTheory.ProfiniteCohomology.AdditiveHilbert   files=      1 lines=       101  -> 
+GroundTheory.LocalFields.ExamplesTeichmuller       files=      1 lines=       101  -> 
+GroundTheory.AutomorphicForms.NormDetDiagUnitsPosRealToUnits files=      1 lines=       101  -> GroundTheory.AutomorphicForms.ReductionMahler:1
+GroundTheory.GlobalFields.SUnitsKernel             files=      1 lines=       101  -> 
+GroundTheory.AutomorphicForms.HermitianExistenceSymbol files=      1 lines=       100  -> GroundTheory.GlobalFields.SemilocalAlgebras:3, GroundTheory.GlobalFields.IdeleGroups:2, GroundTheory.AutomorphicForms.HermitianExistence:1, GroundTheory.GlobalFields.GlobalReciprocity:1
+GroundTheory.Brauer.BaseChange                     files=      1 lines=       100  -> GroundTheory.Brauer.IsBrauerEquivalentIffNonemptyAlgEquiv:1, GroundTheory.Brauer.BaseChangeCSA:1
+GroundTheory.TateCohomology.CupTateNatural         files=      1 lines=        99  -> GroundTheory.TateCohomology.CupTate:1
+GroundTheory.AutomorphicForms.LeviStagesExact      files=      1 lines=        99  -> GroundTheory.AutomorphicForms.LeviStagesJacquet:1
+GroundTheory.PAdicHodge.ThetaBDeRhamPlusFieldCycloUnitBdRZpow files=      1 lines=        98  -> GroundTheory.PAdicHodge.UntiltFrobeniusEquivSymmEpsilonNeOne:1, GroundTheory.PAdicHodge.BdRTGalois:1, GroundTheory.PAdicHodge.BdRField:1, GroundTheory.PAdicHodge.BdRAlgCl:1
+GroundTheory.ProfiniteCohomology.ClassFormationDefs files=      1 lines=        97  -> GroundTheory.ProfiniteCohomology.CohomologyFunctoriality:1, GroundTheory.ProfiniteCohomology.TorsionDualDefs:1
+GroundTheory.ProfiniteCohomology.CohomologyTwoIntAddEquivQZSymmApply files=      1 lines=        96  -> GroundTheory.ProfiniteCohomology.Procyclic:1, GroundTheory.ProfiniteCohomology.Characters:1
+GroundTheory.LocalFields.RamificationTame          files=      1 lines=        96  -> GroundTheory.LocalFields.Eisenstein:1, GroundTheory.LocalFields.UnitsPowers:1, GroundTheory.LocalFields.RamificationStructure:1, GroundTheory.LocalFields.UnramifiedDefs:1, GroundTheory.LocalFields.IntermediateField:1
+GroundTheory.AutomorphicForms.DixmierMalliavinHaarDensity files=      1 lines=        96  -> GroundTheory.AutomorphicForms.DixmierMalliavinHaar:1, GroundTheory.AutomorphicForms.GKModules:1
+GroundTheory.PAdicHodge.ExtRobbaFixedBridge        files=      1 lines=        96  -> GroundTheory.PAdicHodge.ExtRobbaFixedTerm:1, GroundTheory.PAdicHodge.ExtRobbaFixedSum:1
+GroundTheory.PAdicHodge.BCrisNewtonSlope           files=      1 lines=        96  -> GroundTheory.PAdicHodge.BCrisNewtonApprox:1
+GroundTheory.ProfiniteCohomology.TorsionDualDefs   files=      1 lines=        95  -> 
+GroundTheory.LocalFields.LocalArtinFunctoriality   files=      1 lines=        94  -> GroundTheory.LocalFields.LocalArtinBaseChange:1, GroundTheory.LocalFields.LocalArtinTransport:1
+GroundTheory.AutomorphicForms.CuspidalSplittingSums files=      1 lines=        93  -> GroundTheory.AutomorphicForms.SupercuspidalCoefficients:1
+GroundTheory.ProfiniteCohomology.IsProPGroupSubgroupIffIsPGroupMap files=      1 lines=        92  -> GroundTheory.ProfiniteCohomology.OpenNormal:1, GroundTheory.ProfiniteCohomology.OfNatRelIndexSupAntitone:1
+GroundTheory.AutomorphicForms.HilbertSchmidtCompact files=      1 lines=        92  -> GroundTheory.AutomorphicForms.HilbertSchmidt:1
+GroundTheory.PAdicHodge.ExistsFactorAnn            files=      1 lines=        91  -> GroundTheory.PAdicHodge.PtEvalPtProdEqZeroOfMem:1
+GroundTheory.PAdicHodge.UnramifiedACris            files=      1 lines=        91  -> GroundTheory.PAdicHodge.LocalBridge:1, GroundTheory.PAdicHodge.ACrisGalois:1, GroundTheory.LocalFields.Unramified:1, GroundTheory.LocalFields.PrincipalUnitsRank:1
+GroundTheory.AutomorphicForms.GeometricLemmaUnnormalized files=      1 lines=        90  -> GroundTheory.AutomorphicForms.GeometricLemmaGraded:1, GroundTheory.AutomorphicForms.GeometricLemmaCellKernel:1, GroundTheory.AutomorphicForms.GeometricLemmaCellSurjective:1
+GroundTheory.LocalFields.HilbertCyclic             files=      1 lines=        89  -> GroundTheory.LocalFields.CompleteTrivial:1
+GroundTheory.TateCohomology.CupGraded              files=      1 lines=        88  -> GroundTheory.TateCohomology.CupProduct:1, GroundTheory.TateCohomology.CochainReverse:1
+GroundTheory.AutomorphicForms.CompactFormulaSums   files=      1 lines=        88  -> GroundTheory.AutomorphicForms.TraceFormulaCompact:1
+GroundTheory.PAdicHodge.BCrisEigenFixed            files=      1 lines=        88  -> GroundTheory.PAdicHodge.BCrisNewton:1, GroundTheory.PAdicHodge.GalSmulAlgebraMapPadicPlus:1
+GroundTheory.ArithmeticGeometry.IwasawaModules     files=      1 lines=        88  -> 
+GroundTheory.LocalFields.ConductorFormalGroup      files=      1 lines=        87  -> GroundTheory.LocalFields.LubinTateReciprocity:1
+GroundTheory.AutomorphicForms.HermitianExistence   files=      1 lines=        87  -> GroundTheory.AutomorphicForms.HermitianExistenceLocal:1
+GroundTheory.PAdicHodge.WAFracHelp                 files=      1 lines=        85  -> GroundTheory.PAdicHodge.WAFracFrobAnn:1, GroundTheory.PAdicHodge.WAFracAnnPt:1, GroundTheory.PAdicHodge.WAFracOrbit:1
+GroundTheory.LocalFields.UnramifiedNorms           files=      1 lines=        84  -> GroundTheory.LocalFields.UnramifiedNormSurj:1, GroundTheory.LocalFields.UnitsGalois:1, GroundTheory.LocalFields.CompleteTrivial:1, GroundTheory.LocalFields.HilbertCyclic:1
+GroundTheory.AutomorphicForms.AdelicDixmierMalliavinLie files=      1 lines=        84  -> GroundTheory.AutomorphicForms.RealGroupsLie:1
+GroundTheory.PAdicHodge.DMTeichPow                 files=      1 lines=        84  -> GroundTheory.PAdicHodge.ExistsWeightLeOfConvergesAt:1, GroundTheory.PAdicHodge.ExtRobbaDMLinear:1
+GroundTheory.LocalFields.UnramifiedDefs            files=      1 lines=        83  -> GroundTheory.LocalFields.Interface:1, GroundTheory.LocalFields.Integers:1
+GroundTheory.LocalFields.LocalFourierMult          files=      1 lines=        83  -> GroundTheory.LocalFields.LocalFourierPadic:1
+GroundTheory.TateCohomology.TateAddEquivAbelianizationTateClass files=      1 lines=        83  -> 
+GroundTheory.PAdicHodge.ExtRobbaFixedUnif          files=      1 lines=        83  -> GroundTheory.PAdicHodge.ExtRobbaDMRankOne:1
+GroundTheory.PAdicHodge.WAFracNorm                 files=      1 lines=        83  -> GroundTheory.PAdicHodge.BCrisRegularFinal:1
+GroundTheory.LocalFields.PadicLogLinear            files=      1 lines=        82  -> GroundTheory.LocalFields.PrincipalUnitsModule:1
+GroundTheory.LocalFields.HerbrandLocal             files=      1 lines=        81  -> GroundTheory.LocalFields.HerbrandLocalBase:1, GroundTheory.LocalFields.CompleteTrivialLocal:1
+GroundTheory.TateCohomology.CoresRes               files=      1 lines=        80  -> GroundTheory.TateCohomology.ResCores:1
+GroundTheory.PAdicHodge.SenTateCharQp              files=      1 lines=        78  -> 
+GroundTheory.PAdicHodge.WAKummerBCris              files=      1 lines=        78  -> GroundTheory.PAdicHodge.ExistsNormLeOfNormLtOneFinite:1
+GroundTheory.PAdicHodge.CyclotomicField            files=      1 lines=        76  -> GroundTheory.PAdicHodge.NormalizedTrace:1
+GroundTheory.PAdicHodge.BCrisRegularSenTate        files=      1 lines=        76  -> GroundTheory.PAdicHodge.BCrisEigen:1, GroundTheory.PAdicHodge.SenTateCharacters:1
+GroundTheory.LocalFields.MainTheorem               files=      1 lines=        75  -> GroundTheory.LocalFields.LocalArtinUniqueness:1, GroundTheory.LocalFields.LocalArtinCompletion:1, GroundTheory.LocalFields.LocalArtinFunctoriality:1, GroundTheory.LocalFields.LocalArtinTransport:1
+GroundTheory.PAdicHodge.CompletedAlgClosure        files=      1 lines=        72  -> 
+GroundTheory.LocalFields.Interface                 files=      1 lines=        71  -> 
+GroundTheory.AutomorphicForms.CompactFormulaCountable files=      1 lines=        71  -> GroundTheory.GlobalFields.TateThesis:2, GroundTheory.GlobalFields.Adele:1
+GroundTheory.ProfiniteCohomology.CyclicCupGaloisDefs files=      1 lines=        70  -> GroundTheory.ProfiniteCohomology.CyclicCupDefs:1, GroundTheory.ProfiniteCohomology.Characters:1, GroundTheory.ProfiniteCohomology.CupProducts:1, GroundTheory.ProfiniteCohomology.ContinuousCochains:1, GroundTheory.ProfiniteCohomology.GaloisModules:1
+GroundTheory.PAdicHodge.BCrisEigenMaps             files=      1 lines=        70  -> GroundTheory.PAdicHodge.BCrisEigenFixed:1
+GroundTheory.GlobalFields.FirstInequalityStatement files=      1 lines=        70  -> GroundTheory.GlobalFields.IdeleGroups:1
+GroundTheory.ProfiniteCohomology.Factor            files=      1 lines=        69  -> GroundTheory.ProfiniteCohomology.OpenNormal:1
+GroundTheory.TateCohomology.CupFunctorial          files=      1 lines=        68  -> GroundTheory.TateCohomology.CupProduct:1
+GroundTheory.LocalFields.ArtinConductorIrreducible files=      1 lines=        67  -> GroundTheory.LocalFields.ArtinConductorInduced:1, GroundTheory.LocalFields.BrauerInductionInduced:1
+GroundTheory.TateCohomology.UniquelyDivisible      files=      1 lines=        67  -> GroundTheory.TateCohomology.Induced:1, GroundTheory.TateCohomology.InducedNorm:1
+GroundTheory.PAdicHodge.ExtRobbaTrivialUnits       files=      1 lines=        67  -> GroundTheory.PAdicHodge.ExtRobbaTrivialSB:1
+GroundTheory.LocalFields.WildInertia               files=      1 lines=        62  -> GroundTheory.LocalFields.TameExtension:1, GroundTheory.ProfiniteCohomology.IsProPGroupSubgroupIffIsPGroupMap:1, GroundTheory.ProfiniteCohomology.NotDvdSuperIndexIffMap:1, GroundTheory.ProfiniteCohomology.GaloisModules:1
+GroundTheory.AutomorphicForms.TraceNormComp        files=      1 lines=        61  -> GroundTheory.AutomorphicForms.TraceClass:1
+GroundTheory.LocalFields.BrauerInductionAssembly   files=      1 lines=        60  -> GroundTheory.LocalFields.BrauerInductionPrime:1
+GroundTheory.TateCohomology.TateUnique             files=      1 lines=        60  -> GroundTheory.TateCohomology.CohTrivialBasic:1, GroundTheory.TateCohomology.DimensionShift:1
+GroundTheory.AutomorphicForms.UnitaryGroupEquations files=      1 lines=        60  -> GroundTheory.AutomorphicForms.UnitaryGroupScheme:1
+GroundTheory.PAdicHodge.ExtRobbaFixedSum           files=      1 lines=        58  -> GroundTheory.PAdicHodge.ExtRobbaPointEval:1, GroundTheory.PAdicHodge.ExistsWeightLeOfConvergesAt:1
+GroundTheory.TateCohomology.PGroupCohTrivial       files=      1 lines=        57  -> GroundTheory.TateCohomology.CohTrivialBasic:1, GroundTheory.TateCohomology.PGroupFree:1
+GroundTheory.TateCohomology.Annihilation           files=      1 lines=        57  -> GroundTheory.TateCohomology.DimensionShift:1, GroundTheory.TateCohomology.TateLow:1
+GroundTheory.AutomorphicForms.DixmierMalliavinBasic files=      1 lines=        56  -> GroundTheory.AutomorphicForms.RealGroupsLie:1
+GroundTheory.PAdicHodge.PerfectoidCharP            files=      1 lines=        56  -> GroundTheory.PAdicHodge.PerfectoidField:1
+GroundTheory.TateCohomology.HerbrandTate           files=      1 lines=        55  -> GroundTheory.TateCohomology.HerbrandRep:1, GroundTheory.TateCohomology.TateLow:1
+GroundTheory.TateCohomology.TateDeltaZero          files=      1 lines=        51  -> GroundTheory.TateCohomology.TateConnecting:1, GroundTheory.TateCohomology.TateLow:1
+GroundTheory.ProfiniteCohomology.EulerCharDefs     files=      1 lines=        50  -> GroundTheory.ProfiniteCohomology.ContinuousCochains:1
+GroundTheory.ProfiniteCohomology.OpenNormal        files=      1 lines=        49  -> 
+GroundTheory.PAdicHodge.BCrisRegularFinal          files=      1 lines=        49  -> GroundTheory.PAdicHodge.BCrisRegularSenTate:1
+GroundTheory.TateCohomology.TateZeroClass          files=      1 lines=        48  -> GroundTheory.TateCohomology.TateLow:1
+GroundTheory.AutomorphicForms.AdmissibleFiniteLength files=      1 lines=        48  -> GroundTheory.AutomorphicForms.AdmissibleInduction:1, GroundTheory.AutomorphicForms.CuspidalAdmissible:1, GroundTheory.AutomorphicForms.JacquetAdmissible:1, GroundTheory.AutomorphicForms.SupercuspidalCoefficients:1, GroundTheory.AutomorphicForms.IwahoriFactorization:1
+GroundTheory.AutomorphicForms.HaarCosets           files=      1 lines=        48  -> GroundTheory.AutomorphicForms.LocallyConstantCompact:1
+GroundTheory.PAdicHodge.ExtRobbaTrivialV           files=      1 lines=        47  -> GroundTheory.PAdicHodge.SlopeFiltration:1, GroundTheory.PAdicHodge.ExtRobbaEigen:1, GroundTheory.PAdicHodge.ExtRobbaOrd:1, GroundTheory.PAdicHodge.DMTeichPow:1, GroundTheory.PAdicHodge.DMTeichBasic:1
+GroundTheory.ProfiniteCohomology.ProcyclicDefs     files=      1 lines=        46  -> 
+GroundTheory.ProfiniteCohomology.BridgeDefs        files=      1 lines=        45  -> GroundTheory.ProfiniteCohomology.DiscreteModules:1
+GroundTheory.ProfiniteCohomology.CharactersDefs    files=      1 lines=        42  -> GroundTheory.ProfiniteCohomology.TorsionDualDefs:1
+GroundTheory.AutomorphicForms.DiscreteDecomposition files=      1 lines=        42  -> GroundTheory.AutomorphicForms.QuotientKernel:1, GroundTheory.AutomorphicForms.DiscreteSpectrumAbstract:1
+GroundTheory.PAdicHodge.FieldOfNormsCyclBase       files=      1 lines=        42  -> GroundTheory.PAdicHodge.FieldOfNormsResidue:1, GroundTheory.PAdicHodge.FWCyclotomic:1, GroundTheory.LocalFields.KroneckerWeber:1
+GroundTheory.AutomorphicForms.ReductionIdele       files=      1 lines=        41  -> GroundTheory.GlobalFields.IdeleGroups:1, GroundTheory.GlobalFields.TateThesis:1
+GroundTheory.TateCohomology.DeltaMap               files=      1 lines=        40  -> 
+GroundTheory.PAdicHodge.ExtRobba                   files=      1 lines=        39  -> GroundTheory.PAdicHodge.ExtRobbaLift:1, GroundTheory.PAdicHodge.ExtRobbaUnits:1, GroundTheory.PAdicHodge.ExtRobbaNewton:1
+GroundTheory.TateCohomology.DoubleCosetSum         files=      1 lines=        38  -> 
+GroundTheory.PAdicHodge.ExtRobbaBezout             files=      1 lines=        36  -> GroundTheory.PAdicHodge.ConvergesAtOfNormLeSeq:1, GroundTheory.PAdicHodge.BoundOfEventuallyAntitone:1, GroundTheory.PAdicHodge.ExtRobba:1
+GroundTheory.AutomorphicForms.HermitianValues      files=      1 lines=        35  -> GroundTheory.AutomorphicForms.HermitianBinaryValues:1, GroundTheory.AutomorphicForms.HermitianLocalForms:1
+GroundTheory.ProfiniteCohomology.CyclicCupDefs     files=      1 lines=        34  -> GroundTheory.TateCohomology.Characters:1, GroundTheory.TateCohomology.CupProduct:1
+GroundTheory.LocalFields.RamificationTameStructure files=      1 lines=        34  -> GroundTheory.LocalFields.RamificationTame:1, GroundTheory.LocalFields.UnramifiedHensel:1
+GroundTheory.LocalFields.UnitsGalois               files=      1 lines=        33  -> GroundTheory.LocalFields.Uniqueness:1, GroundTheory.LocalFields.UnitsBasic:1
+GroundTheory.GlobalFields.PowerSubgroupIndex       files=      1 lines=        32  -> GroundTheory.GlobalFields.FirstInequality:1, GroundTheory.GlobalFields.ExistenceTheorem:1, GroundTheory.GlobalFields.KummerTheory:1
+GroundTheory.PAdicHodge.ExtRobbaTrivialSB          files=      1 lines=        30  -> GroundTheory.PAdicHodge.ExtRobbaTrivialV:1, GroundTheory.PAdicHodge.ExtRobbaBezout:1
+GroundTheory.TateCohomology.HerbrandRep            files=      1 lines=        28  -> GroundTheory.TateCohomology.HerbrandAbstract:1
+GroundTheory.PAdicHodge.ExtRobbaRootPoly           files=      1 lines=        28  -> 
+GroundTheory.PAdicHodge.WAFracAlg                  files=      1 lines=        28  -> 
+GroundTheory.AutomorphicForms.RealGroupsKAK        files=      1 lines=        26  -> GroundTheory.AutomorphicForms.RealGroupsPolar:1
+GroundTheory.LocalFields.BrauerInduction           files=      1 lines=        24  -> GroundTheory.LocalFields.BrauerInductionAssembly:1, GroundTheory.LocalFields.BrauerInductionMonomial:1
+GroundTheory.AutomorphicForms.HermitianSplit       files=      1 lines=        24  -> GroundTheory.AutomorphicForms.UnitarySplit:1, GroundTheory.AutomorphicForms.HermitianSpaces:1
+GroundTheory.TateCohomology.TateResEqZeroOfNsmulEqZero files=      1 lines=        19  -> GroundTheory.TateCohomology.CoresRes:1

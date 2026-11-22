@@ -1,0 +1,611 @@
+
+=== C01 det_mono (PosDef/PSD determinant monotonicity)
+    ./Analysis/Matrix/Order.lean:200:lemma PosSemidef.posDef_iff_det_ne_zero [DecidableEq n] {A : Matrix n n 𝕜} (hA : A.PosSemidef) :
+
+=== C02 gramSt_hadamard (Hadamard determinant inequality, PosDef)
+    (no matches)
+
+=== C04 hasDerivAt_det (derivative of det along a path)
+    (no matches)
+
+=== C05 Cauchy–Binet (det (A*B) = Σ over injections)
+    (no matches)
+
+=== C06 matrix similar to its transpose
+    ./LinearAlgebra/Matrix/ConjTranspose.lean:150:theorem transpose_conjTranspose [Star α] (M : Matrix m n α) :
+    ./LinearAlgebra/Matrix/ConjTranspose.lean:154:theorem conjTranspose_transpose_eq_transpose_conjTranspose [Star α] (M : Matrix m n α) :
+
+=== C07 det (mulLeft A) = det A ^ n
+    ./LinearAlgebra/Determinant.lean:380:lemma det_mulLeft (a : R) : (mulLeft R a).det = a := by simp
+    ./LinearAlgebra/Determinant.lean:381:lemma det_mulRight (a : R) : (mulRight R a).det = a := by simp
+
+=== C08 IsRegularLocalRing.isDomain
+    (no matches)
+
+=== C09 quotient of regular local ring by regular element is regular local, dim +1
+    ./Algebra/Module/SpanRankOperations.lean:76:lemma spanFinrank_eq_finrank_quotient (N : Submodule R M) (fg : N.FG) :
+    ./RingTheory/KrullDimension/Regular.lean:122:lemma _root_.ringKrullDim_quotient_span_singleton_succ_eq_ringKrullDim_of_mem_jacobson {x : R}
+    ./RingTheory/KrullDimension/Regular.lean:181:lemma _root_.ringKrullDim_quotient_span_singleton_succ_eq_ringKrullDim {x : R}
+    ./RingTheory/KrullDimension/Regular.lean:189:lemma _root_.ringKrullDim_quotient_span_singleton_succ_eq_ringKrullDim_of_mem_nonZeroDivisors
+    ./RingTheory/Ideal/KrullsHeightTheorem.lean:359:lemma height_le_ringKrullDim_quotient_add_spanFinrank {p I : Ideal R} [p.IsPrime] (h : I ≤ p) :
+    ./RingTheory/Ideal/KrullsHeightTheorem.lean:368:lemma ringKrullDim_le_ringKrullDim_quotient_add_spanFinrank (I : Ideal R)
+
+=== C10 maximalIdeal ≤ m² → m = ⊥ (Nakayama form)
+    ./RingTheory/LocalRing/MaximalIdeal/Square.lean:23:lemma IsLocalRing.maximalIdeal_sq_lt_maximalIdeal :
+    ./RingTheory/LocalRing/MaximalIdeal/Square.lean:34:lemma IsLocalRing.maximalIdeal_sq_lt_of_ringKrullDim_ne_zero (h : ringKrullDim R ≠ 0) :
+    ./RingTheory/LocalRing/MaximalIdeal/Square.lean:40:lemma IsLocalRing.maximalIdeal_sq_lt (h : 0 < ringKrullDim R) :
+    ./RingTheory/LocalRing/MaximalIdeal/Basic.lean:122:theorem maximalIdeal_eq_bot {R : Type*} [Field R] : IsLocalRing.maximalIdeal R = ⊥ :=
+    ./RingTheory/Nakayama.lean:72:lemma eq_bot_of_eq_ideal_smul_of_le_jacobson_annihilator {I : Ideal R}
+
+=== C11 Krull dim: P ≤ Q, x ∈ Q∖P → dim(R/Q)+1 ≤ dim(R/P)
+    ./RingTheory/KrullDimension/NonZeroDivisors.lean:37:lemma ringKrullDim_quotient_succ_le_of_nonZeroDivisor
+    ./RingTheory/KrullDimension/Basic.lean:60:theorem ringKrullDim_quotient_le {R : Type*} [CommRing R] (I : Ideal R) :
+    ./RingTheory/KrullDimension/Module.lean:49:lemma supportDim_eq_ringKrullDim_quotient_annihilator [Module.Finite R M] :
+    ./RingTheory/KrullDimension/Regular.lean:122:lemma _root_.ringKrullDim_quotient_span_singleton_succ_eq_ringKrullDim_of_mem_jacobson {x : R}
+    ./RingTheory/KrullDimension/Regular.lean:181:lemma _root_.ringKrullDim_quotient_span_singleton_succ_eq_ringKrullDim {x : R}
+    ./RingTheory/KrullDimension/Regular.lean:189:lemma _root_.ringKrullDim_quotient_span_singleton_succ_eq_ringKrullDim_of_mem_nonZeroDivisors
+    ./RingTheory/Ideal/KrullsHeightTheorem.lean:359:lemma height_le_ringKrullDim_quotient_add_spanFinrank {p I : Ideal R} [p.IsPrime] (h : I ≤ p) :
+    ./RingTheory/Ideal/KrullsHeightTheorem.lean:368:lemma ringKrullDim_le_ringKrullDim_quotient_add_spanFinrank (I : Ideal R)
+    ./RingTheory/Ideal/KrullsHeightTheorem.lean:386:lemma Ideal.height_le_ringKrullDim_quotient_add_encard {p : Ideal R} [p.IsPrime]
+    ./RingTheory/Ideal/KrullsHeightTheorem.lean:397:lemma Ideal.height_le_ringKrullDim_quotient_add_one {r : R} {p : Ideal R} [p.IsPrime]
+    ./RingTheory/Ideal/KrullsHeightTheorem.lean:402:lemma ringKrullDim_le_ringKrullDim_quotient_add_encard (s : Set R) (hs : s ⊆ Ring.jacobson R) :
+    ./RingTheory/Ideal/KrullsHeightTheorem.lean:408:lemma ringKrullDim_le_ringKrullDim_quotient_add_card (s : Finset R)
+
+=== C12 minimal prime p, q prime ≤ p → p ≤ q
+    ./RingTheory/KrullDimension/Zero.lean:30:lemma Ring.KrullDimLE.mem_minimalPrimes_iff_le_of_isPrime {I J : Ideal R} [I.IsPrime] :
+    ./RingTheory/Ideal/Height.lean:213:lemma Ideal.mem_minimalPrimes_of_height_le {I J : Ideal R} (e : I ≤ J) [J.IsPrime]
+    ./RingTheory/Ideal/Height.lean:224:alias Ideal.mem_minimalPrimes_of_height_eq := Ideal.mem_minimalPrimes_of_height_le
+    ./RingTheory/Ideal/AssociatedPrime/Localization.lean:128:lemma minimalPrimes_annihilator_subset_associatedPrimes [IsNoetherianRing R] [Module.Finite R M] :
+    ./RingTheory/Ideal/MinimalPrime/Basic.lean:75:theorem Ideal.exists_minimalPrimes_le [J.IsPrime] (e : I ≤ J) : ∃ p ∈ I.minimalPrimes, p ≤ J := by
+    ./RingTheory/Ideal/MinimalPrime/Basic.lean:134:theorem Ideal.minimalPrimes_eq_subsingleton (hI : I.IsPrimary) : I.minimalPrimes = {I.radical} := by
+    ./RingTheory/Ideal/MinimalPrime/Basic.lean:143:theorem Ideal.minimalPrimes_eq_subsingleton_self [I.IsPrime] : I.minimalPrimes = {I} := by
+    ./RingTheory/Ideal/MinimalPrime/Basic.lean:150:theorem IsDomain.minimalPrimes_eq_singleton_bot [IsDomain R] :
+
+=== C13 Module.length additivity for quotient
+    ./RingTheory/Length.lean:124:lemma Module.length_quotient {N : Submodule R M} :
+    ./RingTheory/Length.lean:171:lemma Module.length_eq_add_of_exact :
+
+=== C14 length (R/(t^k)) = k in a DVR
+    ./RingTheory/DiscreteValuationRing/Basic.lean:555:theorem length_quotient_pow_maximalIdeal (n : ℕ) :
+
+=== C15 spectral theorem: compact self-adjoint ⟹ Hilbert basis of eigenvectors
+    ./FieldTheory/IsAlgClosed/Spectrum.lean:170:lemma IsIdempotentElem.finite_spectrum (𝕜 : Type*) {A : Type*} [Field 𝕜] [Ring A] [Algebra 𝕜 A]
+    ./Analysis/Matrix/Spectrum.lean:33:lemma finite_real_spectrum [DecidableEq n] : (spectrum ℝ A).Finite := by
+    ./Analysis/Matrix/Spectrum.lean:37:instance [DecidableEq n] : Finite (spectrum ℝ A) := A.finite_real_spectrum
+    ./LinearAlgebra/Eigenspace/Minpoly.lean:140:theorem Module.End.finite_spectrum {K : Type v} {V : Type w} [Field K] [AddCommGroup V]
+    ./LinearAlgebra/Eigenspace/Minpoly.lean:150:theorem Matrix.finite_spectrum (A : Matrix n n R) : Set.Finite (spectrum R A) := by
+    ./LinearAlgebra/Eigenspace/Minpoly.lean:154:instance Matrix.instFiniteSpectrum (A : Matrix n n R) : Finite (spectrum R A) :=
+    ./LinearAlgebra/Eigenspace/Basic.lean:231:lemma hasUnifEigenvalue_iff_mem_spectrum [FiniteDimensional K V] {f : End K V} {μ : K} :
+    ./LinearAlgebra/Eigenspace/Basic.lean:507:theorem hasEigenvalue_iff_mem_spectrum [FiniteDimensional K V] {f : End K V} {μ : K} :
+    ./LinearAlgebra/Eigenspace/Triangularizable.lean:63:theorem exists_eigenvalue [IsAlgClosed K] [FiniteDimensional K V] [Nontrivial V] (f : End K V) :
+    ./Analysis/CStarAlgebra/Spectrum.lean:153:theorem toReal_spectralRadius_star_mul_self_eq_norm_sq (a : A) :
+    ./Analysis/CStarAlgebra/Spectrum.lean:158:theorem toReal_spectralRadius_self_mul_star_eq_norm_sq (a : A) :
+    ./Analysis/CStarAlgebra/Spectrum.lean:162:theorem sqrt_toReal_spectralRadius_star_mul_self_eq_norm (a : A) :
+
+=== C17 0 ∈ spectrum of compact operator on infinite-dim space
+    ./Algebra/Algebra/Spectrum/Quasispectrum.lean:337:lemma zero_mem_spectrum_inr (R S : Type*) {A : Type*} [CommSemiring R]
+
+=== C18 eigenspace of a continuous linear map is closed
+    ./LinearAlgebra/Eigenspace/ContinuousLinearMap.lean:31:instance isClosed_eigenspace : IsClosed (eigenspace (f : End R M) μ : Set M) :=
+
+=== C19 finite_setOf_mem_of_orthonormal
+    ./RingTheory/Noetherian/Basic.lean:267:theorem LinearIndependent.finite_of_isNoetherian [Nontrivial R] {ι} {v : ι → M}
+    ./RingTheory/Noetherian/Basic.lean:283:theorem LinearIndependent.set_finite_of_isNoetherian [Nontrivial R] {s : Set M}
+    ./Analysis/InnerProductSpace/Projection/FiniteDimensional.lean:408:theorem maximal_orthonormal_iff_basis_of_finiteDimensional (hv : Orthonormal 𝕜 ((↑) : v → E)) :
+
+=== C20 C^∞ + Cauchy bounds on iterated FDeriv ⟹ analytic
+    ./Analysis/Normed/Module/Multilinear/Basic.lean:1217:lemma norm_iteratedFDeriv_le' (f : ContinuousMultilinearMap 𝕜 E₁ G) (k : ℕ) (x : (i : ι) → E₁ i) :
+    ./Analysis/Distribution/TemperateGrowth.lean:85:theorem HasTemperateGrowth.norm_iteratedFDeriv_le_uniform {f : E → F}
+    ./Analysis/Distribution/SchwartzSpace/Basic.lean:447:theorem norm_iteratedFDeriv_le_seminorm (f : 𝓢(E, F)) (n : ℕ) (x₀ : E) :
+    ./Analysis/Calculus/FDeriv/Analytic.lean:793:theorem norm_iteratedFDeriv_le (n : ℕ) (x : (i : ι) → E i) :
+    ./Analysis/Calculus/ContDiff/Bounds.lean:203:theorem ContinuousLinearMap.norm_iteratedFDeriv_le_of_bilinear (B : E →L[𝕜] F →L[𝕜] G) {f : D → E}
+    ./Analysis/Calculus/ContDiff/Bounds.lean:227:theorem ContinuousLinearMap.norm_iteratedFDeriv_le_of_bilinear_of_le_one (B : E →L[𝕜] F →L[𝕜] G)
+    ./Analysis/Calculus/ContDiff/Defs.lean:754:theorem contDiffOn_of_analyticOn_iteratedFDerivWithin
+
+=== C22 perm with ∀ x, π x ≤ x is identity
+    ./LinearAlgebra/Matrix/Permanent.lean:50:theorem permanent_eq_one_of_card_eq_zero {A : Matrix n n R} (h : card n = 0) : permanent A = 1 :=
+    ./LinearAlgebra/Matrix/Permanent.lean:66:theorem permanent_eq_elem_of_card_eq_one {A : Matrix n n R} (h : card n = 1) (k : n) :
+
+=== C23 |∏a − ∏b| ≤ Σ|a−b| for entries in unit disk
+    (no matches)
+
+=== C24 fibre_sum_le (sum over fibers with bounded cardinality)
+    ./Analysis/BoxIntegral/Partition/Basic.lean:567:theorem sum_fiberwise {α M} [AddCommMonoid M] (π : Prepartition I) (f : Box ι → α) (g : Box ι → M) :
+    ./Topology/Algebra/InfiniteSum/ENNReal.lean:322:theorem tsum_fiberwise (f : β → ℝ≥0∞) (g : β → γ) :
+    ./Topology/Algebra/InfiniteSum/ENNReal.lean:634:lemma tsum_set_one : ∑' _ : s, (1 : ℝ≥0∞) = s.encard := by
+    ./Topology/Algebra/InfiniteSum/ENNReal.lean:641:lemma tsum_set_const (c : ℝ≥0∞) : ∑' _ : s, c = s.encard * c := by
+    ./Combinatorics/Pigeonhole.lean:120:theorem exists_lt_sum_fiber_of_maps_to_of_nsmul_lt_sum (hf : ∀ a ∈ s, f a ∈ t)
+    ./Combinatorics/Pigeonhole.lean:128:theorem exists_sum_fiber_lt_of_maps_to_of_sum_lt_nsmul (hf : ∀ a ∈ s, f a ∈ t)
+    ./Combinatorics/Pigeonhole.lean:137:theorem exists_lt_sum_fiber_of_sum_fiber_nonpos_of_nsmul_lt_sum
+    ./Combinatorics/Pigeonhole.lean:150:theorem exists_sum_fiber_lt_of_sum_fiber_nonneg_of_sum_lt_nsmul
+    ./Combinatorics/Pigeonhole.lean:164:theorem exists_le_sum_fiber_of_maps_to_of_nsmul_le_sum (hf : ∀ a ∈ s, f a ∈ t) (ht : t.Nonempty)
+    ./Combinatorics/Pigeonhole.lean:172:theorem exists_sum_fiber_le_of_maps_to_of_sum_le_nsmul (hf : ∀ a ∈ s, f a ∈ t) (ht : t.Nonempty)
+    ./Combinatorics/Pigeonhole.lean:181:theorem exists_le_sum_fiber_of_sum_fiber_nonpos_of_nsmul_le_sum
+    ./Combinatorics/Pigeonhole.lean:195:theorem exists_sum_fiber_le_of_sum_fiber_nonneg_of_sum_le_nsmul
+
+=== C25 power-sum bounds n^{k+1} ≤ (k+1)Σa^k ≤ n^{k+1}+(k+1)n^k
+    ./SetTheory/Cardinal/Arithmetic.lean:742:theorem sum_pow_eq_max_aleph0 {x : Cardinal} (h : x ≠ 0) : sum (fun n ↦ x ^ n) = max ℵ₀ x := by
+    ./SetTheory/Cardinal/Arithmetic.lean:752:theorem sum_pow_le_max_aleph0 (x : Cardinal) : sum (fun n ↦ x ^ n) ≤ max ℵ₀ x := by
+    ./Data/Nat/Choose/Sum.lean:218:theorem sum_powerset_neg_one_pow_card {α : Type*} [DecidableEq α] {x : Finset α} :
+    ./Algebra/Order/Chebyshev.lean:119:lemma pow_sum_le_card_mul_sum_pow (hf : ∀ i ∈ s, 0 ≤ f i) :
+    ./Algebra/Order/Chebyshev.lean:162:lemma pow_sum_div_card_le_sum_pow (hf : ∀ i ∈ s, 0 ≤ f i) (n : ℕ) :
+    ./FieldTheory/Finite/Basic.lean:290:theorem sum_pow_units [DecidableEq K] (i : ℕ) :
+    ./Analysis/Normed/Lp/lpSpace.lean:618:theorem sum_rpow_le_norm_rpow (hp : 0 < p.toReal) (f : lp E p) (s : Finset α) :
+    ./Analysis/Normed/Lp/lpSpace.lean:1300:theorem sum_rpow_le_of_tendsto (hp : p ≠ ∞) {C : ℝ} {F : ι → lp E p} (hCF : ∀ᶠ k in l, ‖F k‖ ≤ C)
+    ./MeasureTheory/Measure/Lebesgue/VolumeOfBalls.lean:206:theorem MeasureTheory.volume_sum_rpow_le [Nonempty ι] {p : ℝ} (hp : 1 ≤ p) (r : ℝ) :
+    ./MeasureTheory/Measure/Lebesgue/VolumeOfBalls.lean:283:theorem Complex.volume_sum_rpow_le [Nonempty ι] {p : ℝ} (hp : 1 ≤ p) (r : ℝ) :
+    ./Topology/Algebra/InfiniteSum/Ring.lean:279:theorem Summable.tsum_pow_mul_one_sub {x : α} (h : Summable (x ^ ·)) :
+    ./Topology/Algebra/InfiniteSum/Ring.lean:284:theorem Summable.one_sub_mul_tsum_pow {x : α} (h : Summable (x ^ ·)) :
+
+=== C26 Σ log(1+t) ≤ N log(1+Σt/N) (concavity)
+    (no matches)
+
+=== C27 ∫₀¹ C(D,i) t^i (1−t)^{D−i} = 1/(D+1)
+    ./Analysis/Distribution/TemperateGrowth.lean:495:lemma _root_.integral_pow_mul_le_of_le_of_pow_mul_le
+
+=== C28 mean value on circle: 2π‖g 0‖² ≤ ∫‖g(se^{iθ})‖²
+    (no matches)
+
+=== C29 polar coordinates on disk in ℂ
+    ./NumberTheory/NumberField/CanonicalEmbedding/PolarCoord.lean:96:def polarCoordReal : OpenPartialHomeomorph (realMixedSpace K) (realMixedSpace K) :=
+    ./NumberTheory/NumberField/CanonicalEmbedding/PolarCoord.lean:99:theorem measurable_polarCoordReal_symm :
+    ./NumberTheory/NumberField/CanonicalEmbedding/PolarCoord.lean:105:theorem polarCoordReal_source :
+    ./NumberTheory/NumberField/CanonicalEmbedding/PolarCoord.lean:120:theorem hasFDerivAt_polarCoordReal_symm (x : realMixedSpace K) :
+    ./NumberTheory/NumberField/CanonicalEmbedding/PolarCoord.lean:134:theorem polarCoordReal_symm_target_ae_eq_univ :
+    ./NumberTheory/NumberField/CanonicalEmbedding/PolarCoord.lean:141:theorem integral_comp_polarCoordReal_symm {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    ./NumberTheory/NumberField/CanonicalEmbedding/PolarCoord.lean:155:theorem lintegral_comp_polarCoordReal_symm (f : realMixedSpace K → ℝ≥0∞) :
+    ./NumberTheory/NumberField/CanonicalEmbedding/PolarCoord.lean:182:theorem polarCoord_target_eq_polarCoordReal_target :
+    ./NumberTheory/NumberField/CanonicalEmbedding/PolarCoord.lean:185:theorem polarCoord_symm_eq :
+    ./NumberTheory/NumberField/CanonicalEmbedding/PolarCoord.lean:189:theorem measurable_polarCoord_symm :
+    ./NumberTheory/NumberField/CanonicalEmbedding/PolarCoord.lean:194:theorem normAtPlace_polarCoord_symm_of_isReal (x : realMixedSpace K) {w : InfinitePlace K}
+    ./NumberTheory/NumberField/CanonicalEmbedding/PolarCoord.lean:199:theorem normAtPlace_polarCoord_symm_of_isComplex (x : realMixedSpace K)
+
+=== C30 isDiscrete {w | exp w = c}
+    (no matches)
+
+=== C31 bdd_of_exp_tendsto (exp(f) → L≠0 ⟹ f locally bounded)
+    ./Analysis/SpecialFunctions/Exp.lean:515:theorem tendsto_exp_comap_re_atTop : Tendsto exp (comap re atTop) (cobounded ℂ) :=
+
+=== C32 Lp (p=2) norm squared = ∫‖f‖²
+    ./MeasureTheory/Function/L2Space.lean:107:theorem eLpNorm_rpow_two_norm_lt_top (f : Lp F 2 μ) :
+    ./Analysis/Normed/Lp/ProdLp.lean:813:theorem prod_norm_sq_eq_of_L2 (x : WithLp 2 (α × β)) : ‖x‖ ^ 2 = ‖x.fst‖ ^ 2 + ‖x.snd‖ ^ 2 := by
+    ./Analysis/Normed/Lp/PiLp.lean:791:theorem norm_sq_eq_of_L2 (β : ι → Type*) [∀ i, SeminormedAddCommGroup (β i)] (x : PiLp 2 β) :
+
+=== C33 GL(n) is a Lie group
+    (no matches)
+
+=== C34 compact open subgroup in locally compact totally disconnected group
+    ./AlgebraicGeometry/Cover/QuasiCompact.lean:44:lemma IsAffineOpen.isCompactOpenCovered [QuasiCompactCover 𝒰] {U : S.Opens} (hU : IsAffineOpen U) :
+    ./AlgebraicGeometry/Cover/QuasiCompact.lean:50:lemma isCompactOpenCovered_of_isCompact [QuasiCompactCover 𝒰]
+    ./AlgebraicGeometry/Morphisms/QuasiCompact.lean:241:theorem compact_open_induction_on {P : X.Opens → Prop} (S : X.Opens)
+    ./Topology/Algebra/Group/Basic.lean:1260:theorem compact_open_separated_mul_right {K U : Set G} (hK : IsCompact K) (hU : IsOpen U)
+    ./Topology/Algebra/Group/Basic.lean:1286:theorem compact_open_separated_mul_left {K U : Set G} (hK : IsCompact K) (hU : IsOpen U)
+    ./Topology/ContinuousMap/SecondCountableSpace.lean:28:theorem compactOpen_eq_generateFrom {S : Set (Set X)} {T : Set (Set Y)}
+    ./Topology/CompactOpen.lean:51:instance compactOpen : TopologicalSpace C(X, Y) :=
+    ./Topology/CompactOpen.lean:55:theorem compactOpen_eq : @compactOpen X Y _ _ =
+    ./Topology/CompactOpen.lean:81:lemma nhds_compactOpen (f : C(X, Y)) :
+    ./Topology/CompactOpen.lean:87:lemma tendsto_nhds_compactOpen {l : Filter α} {f : α → C(Y, Z)} {g : C(Y, Z)} :
+    ./Topology/CompactOpen.lean:92:lemma continuous_compactOpen {f : X → C(Y, Z)} :
+    ./Topology/CompactOpen.lean:337:theorem compactOpen_le_induced (s : Set X) :
+
+=== C35 relIndex finite for compact open subgroup
+    ./NumberTheory/ModularForms/Cusps.lean:77:lemma isCusp_iff_of_relIndex_ne_zero {𝒢 𝒢' : Subgroup (GL (Fin 2) ℝ)}
+    ./NumberTheory/ModularForms/ArithmeticSubgroups.lean:209:lemma Subgroup.relIndex_adjoinNegOne_ne_zero (𝒢 : Subgroup (GL n R)) :
+    ./GroupTheory/Index.lean:376:lemma relIndex_comap_ne_zero (f : G →* G') {J K : Subgroup G'} (hJK : J.relIndex K ≠ 0) :
+    ./GroupTheory/Index.lean:396:theorem relIndex_ne_zero_trans (hHK : H.relIndex K ≠ 0) (hKL : K.relIndex L ≠ 0) :
+    ./GroupTheory/Index.lean:402:theorem relIndex_inf_ne_zero (hH : H.relIndex L ≠ 0) (hK : K.relIndex L ≠ 0) :
+    ./GroupTheory/Index.lean:417:lemma relIndex_inter_ne_zero {J K : Subgroup G} (hJK : J.relIndex K ≠ 0) (L : Subgroup G) :
+    ./GroupTheory/Index.lean:436:theorem relIndex_iInf_ne_zero {ι : Type*} [_hι : Finite ι] {f : ι → Subgroup G}
+    ./GroupTheory/Index.lean:595:lemma exists_pow_mem_of_relIndex_ne_zero (h : H.relIndex K ≠ 0) {a : G} (ha : a ∈ K) :
+    ./GroupTheory/Index.lean:610:lemma pow_mem_of_relIndex_ne_zero_of_dvd (h : H.relIndex K ≠ 0) {a : G} (ha : a ∈ K) {n : ℕ}
+    ./GroupTheory/Index.lean:681:lemma isFiniteRelIndex_iff_relIndex_ne_zero : H.IsFiniteRelIndex K ↔ H.relIndex K ≠ 0 :=
+
+=== C36 sum over α/s of right-t-invariant function = index • sum over α/t
+    (no matches)
+
+=== C37 Hilbert–Schmidt: Σ‖Tbᵢ‖² = Σ‖T†cⱼ‖²
+    (no matches)
+
+=== C38 cyclic vector when charpoly separable
+    ./Algebra/Homology/HomologySequenceLemmas.lean:232:lemma acyclic_X₁ (hS : S.ShortExact) (hg : _root_.QuasiIso S.g) : S.X₁.Acyclic :=
+    ./Algebra/Homology/HomologySequenceLemmas.lean:235:lemma acyclic_X₂ (hS : S.ShortExact) (h₁ : S.X₁.Acyclic) (h₃ : S.X₃.Acyclic) :
+    ./Algebra/Homology/HomologySequenceLemmas.lean:239:lemma acyclic_X₃ (hS : S.ShortExact) (h : _root_.QuasiIso S.f) : S.X₃.Acyclic :=
+    ./Algebra/Homology/HomotopyCategory/Acyclic.lean:37:def subcategoryAcyclic : ObjectProperty (HomotopyCategory C (ComplexShape.up ℤ)) :=
+    ./Algebra/Homology/HomotopyCategory/Acyclic.lean:40:instance : (subcategoryAcyclic C).IsTriangulated := by
+    ./Algebra/Homology/HomotopyCategory/Acyclic.lean:44:instance : (subcategoryAcyclic C).IsClosedUnderIsomorphisms := by
+    ./Algebra/Homology/HomotopyCategory/Acyclic.lean:50:lemma mem_subcategoryAcyclic_iff (X : HomotopyCategory C (ComplexShape.up ℤ)) :
+    ./Algebra/Homology/HomotopyCategory/Acyclic.lean:54:lemma quotient_obj_mem_subcategoryAcyclic_iff_exactAt (K : CochainComplex C ℤ) :
+    ./Algebra/Homology/HomotopyCategory/Acyclic.lean:61:lemma quotient_obj_mem_subcategoryAcyclic_iff_acyclic (K : CochainComplex C ℤ) :
+    ./Algebra/Homology/HomotopyCategory/Acyclic.lean:67:lemma quasiIso_eq_trW_subcategoryAcyclic :
+    ./Algebra/Homology/DerivedCategory/Plus.lean:37:abbrev subcategoryAcyclic :
+    ./Algebra/Homology/DerivedCategory/Plus.lean:42:lemma quasiIso_eq_subcategoryAcyclic_trW :
+
+=== C39 symmetric polynomials: adjoin = symmetricSubalgebra
+    ./Analysis/InnerProductSpace/Adjoint.lean:169:theorem _root_.LinearMap.IsSymmetric.clm_adjoint_eq {A : E →L[𝕜] E} (hA : A.IsSymmetric) :
+    ./Analysis/InnerProductSpace/Adjoint.lean:619:theorem IsSymmetric.adjoint_eq {A : E →ₗ[𝕜] E} (hA : A.IsSymmetric) :
+    ./Analysis/InnerProductSpace/Adjoint.lean:744:theorem IsSymmetric.conj_adjoint {T : E →ₗ[𝕜] E} (hT : T.IsSymmetric) (S : E →ₗ[𝕜] F) :
+    ./Analysis/InnerProductSpace/Adjoint.lean:751:theorem IsSymmetric.adjoint_conj {T : E →ₗ[𝕜] E} (hT : T.IsSymmetric) (S : F →ₗ[𝕜] E) :
+    ./Analysis/InnerProductSpace/Adjoint.lean:761:theorem isSymmetric_adjoint_mul_self (T : E →ₗ[𝕜] E) : IsSymmetric (T.adjoint * T) := by
+    ./RingTheory/MvPolynomial/Symmetric/Defs.lean:108:def symmetricSubalgebra (σ R : Type*) [CommSemiring R] : Subalgebra R (MvPolynomial σ R) where
+    ./RingTheory/MvPolynomial/Symmetric/Defs.lean:115:theorem mem_symmetricSubalgebra [CommSemiring R] (p : MvPolynomial σ R) :
+
+=== C40 sl2 ladder: J(R^j t) = (κ+2j) R^j t
+    ./Algebra/Exact/Basic.lean:205:lemma iff_of_ladder_mulEquiv (comm₁₂ : g₁₂.comp e₁ = MonoidHom.comp e₂ f₁₂)
+    ./Algebra/Exact/Basic.lean:211:lemma of_ladder_mulEquiv_of_mulExact (comm₁₂ : g₁₂.comp e₁ = MonoidHom.comp e₂ f₁₂)
+    ./Algebra/Exact/Basic.lean:216:lemma of_ladder_mulEquiv_of_mulExact' (comm₁₂ : g₁₂.comp e₁ = MonoidHom.comp e₂ f₁₂)
+    ./Algebra/Exact/Basic.lean:341:lemma iff_of_ladder_linearEquiv
+    ./Algebra/Exact/Basic.lean:348:lemma of_ladder_linearEquiv_of_exact
+    ./Algebra/Lie/Weights/IsSimple.lean:207:lemma restr_eq_iSup_sl2SubmoduleOfRoot (I : LieIdeal K L) :
+    ./Algebra/Lie/Weights/Killing.lean:638:lemma mem_sl2SubalgebraOfRoot_iff {α : Weight K H L} (hα : α.IsNonZero) {h e f : L}
+    ./Algebra/Lie/Weights/Killing.lean:698:lemma sl2SubmoduleOfRoot_eq_sup (α : Weight K H L) (hα : α.IsNonZero) :
+    ./Algebra/Lie/Weights/Killing.lean:729:lemma sl2SubmoduleOfRoot_ne_bot (α : Weight K H L) (hα : α.IsNonZero) :
+
+=== C41 Farkas / Weyl–Minkowski for finitely generated cones
+    ./Geometry/Convex/Cone/Dual.lean:89:lemma subset_dual_dual : s ⊆ dual p.flip (dual p s) := fun _x hx _y hy ↦ hy hx
+    ./Geometry/Convex/Cone/Dual.lean:128:lemma dual_eq_dual_id_map (C : PointedCone R M) : dual p C = dual .id (map p C) := by simp
+    ./Geometry/Convex/Cone/DualFinite.lean:45:def DualFG (C : PointedCone R N) : Prop := ∃ s : Finset M, dual p s = C
+    ./Geometry/Convex/Cone/DualFinite.lean:51:lemma DualFG.exists_fg_dual {C : PointedCone R N} (hC : C.DualFG p) :
+    ./Geometry/Convex/Cone/DualFinite.lean:57:lemma DualFG.iff_exists_fg_dual {C : PointedCone R N} :
+    ./Geometry/Convex/Cone/DualFinite.lean:65:lemma DualFG.id {C : PointedCone R N} (hC : C.DualFG p) : C.DualFG .id := by classical
+    ./Geometry/Convex/Cone/DualFinite.lean:72:lemma DualFG.dual_of_finset (s : Finset M) : (dual p s).DualFG p := by use s
+    ./Geometry/Convex/Cone/DualFinite.lean:76:lemma DualFG.dual_of_finite {s : Set M} (hs : s.Finite) : (dual p s).DualFG p := by
+    ./Geometry/Convex/Cone/DualFinite.lean:82:lemma DualFG.dual_of_fg {C : PointedCone R M} (hC : C.FG) : (dual p C).DualFG p := by
+    ./Geometry/Convex/Cone/DualFinite.lean:86:alias FG.dual_dualfg := DualFG.dual_of_fg
+    ./Geometry/Convex/Cone/DualFinite.lean:89:lemma DualFG.inf {C D : PointedCone R N} (hC : C.DualFG p) (hD : D.DualFG p) :
+    ./Geometry/Convex/Cone/DualFinite.lean:96:lemma DualFG.dual_dual_flip {C : PointedCone R N} (hC : C.DualFG p) :
+
+=== C42 Krull domain: mem range iff locally principal at height one primes (x ∈ frac A)
+    (no matches)
+
+=== C43 height_eq_one_of_isAssociatedPrime
+    ./RingTheory/KrullDimension/PID.lean:47:lemma IsPrincipalIdealRing.height_eq_one_of_isMaximal {R : Type*} [CommRing R] [IsDomain R]
+    ./RingTheory/Ideal/Height.lean:265:theorem Ideal.ne_bot_of_height_eq_one [IsDomain R] {I : Ideal R} (h : I.height = 1) : I ≠ ⊥ :=
+    ./RingTheory/Ideal/Height.lean:564:lemma Ideal.eq_span_singleton_of_height_eq_one [IsDomain R] {p : Ideal R} [p.IsPrime]
+    ./RingTheory/Ideal/UFD.lean:61:theorem isPrincipal_of_height_eq_one [UniqueFactorizationMonoid R]
+    ./RingTheory/Ideal/UFD.lean:69:theorem of_forall_isPrincipal_of_height_eq_one
+    ./RingTheory/Ideal/UFD.lean:87:theorem iff_forall_isPrincipal_of_height_eq_one :
+    ./AlgebraicGeometry/OrderOfVanishing.lean:57:lemma ord_eq_ordHom_of_coheight_eq_one {z : X} (hz : coheight z = 1) (f : X.functionField) :
+
+=== C44 semisimple module W, simple S with same annihilator ⟹ Hom(W,S) ≠ 0
+    ./Algebra/Lie/Semisimple/Basic.lean:304:instance (priority := 100) IsSimple.instIsSemisimple [IsSimple R L] :
+    ./RingTheory/SimpleModule/WedderburnArtin.lean:63:theorem IsSimpleRing.isSemisimpleRing_iff_isArtinianRing [IsSimpleRing R] :
+    ./RingTheory/SimpleModule/Basic.lean:68:instance [IsSimpleModule R M] : IsSemisimpleModule R M where
+    ./RingTheory/SimpleModule/Basic.lean:424:theorem IsSemisimpleRing.exists_linearEquiv_ideal_of_isSimpleModule [IsSemisimpleRing R]
+    ./RingTheory/SimpleModule/Basic.lean:520:theorem linearEquiv_of_ne_zero [IsSemisimpleModule R M] [IsSimpleModule R N]
+
+=== C45 AlgEquiv orbit of integral element is finite: ∃ n≠0, σⁿ y = y
+    ./RingTheory/IntegralClosure/Algebra/Basic.lean:53:theorem AlgEquiv.isIntegral_iff (e : A ≃ₐ[R] B) : Algebra.IsIntegral R A ↔ Algebra.IsIntegral R B :=
+
+=== C46 involution τ on field k: θ − τθ ≠ 0 ⟹ card k = (card fixed)²
+    (no matches)
+
+=== C47 Multiset: s ≤ map f t → ∃ u ≤ t, map f u = s
+    ./Order/BourbakiWitt.lean:87:lemma ici_isAdmissible (le_map : ∀ x, x ≤ f x) : IsAdmissible x f (Ici x) where
+    ./Order/BourbakiWitt.lean:100:lemma bot_isAdmissible (le_map : ∀ x, x ≤ f x) : IsAdmissible x f (bot x f) where
+    ./Order/BourbakiWitt.lean:117:lemma map_mem_bot {y : α} (le_map : ∀ x, x ≤ f x) (h : y ∈ bot x f) : f y ∈ bot x f :=
+    ./Order/BourbakiWitt.lean:131:lemma bot_eq_of_le_or_map_le {y : α} (le_map : ∀ x, x ≤ f x) (hy : IsExtremePt x f y) :
+    ./Order/BourbakiWitt.lean:156:lemma setOfPred_isExtremePt_isAdmissible (le_map : ∀ x, x ≤ f x) :
+    ./Order/BourbakiWitt.lean:199:lemma setOfPred_isExtremePt_eq_bot (le_map : ∀ x, x ≤ f x) : {y | IsExtremePt x f y} = bot x f := by
+    ./Order/BourbakiWitt.lean:207:lemma mem_bot_iff_isExtremePt {y : α} (le_map : ∀ x, x ≤ f x) :
+    ./Order/BourbakiWitt.lean:211:lemma bot_isChain (le_map : ∀ x, x ≤ f x) : IsChain (· ≤ ·) (bot x f) := by
+    ./Order/BourbakiWitt.lean:225:theorem nonempty_fixedPoints_of_inflationary [Nonempty α] (le_map : ∀ x, x ≤ f x) :
+    ./Order/FixedPoints.lean:78:theorem lfp_le_map {a : α} (ha : f.lfp ≤ a) : f.lfp ≤ f a :=
+    ./Order/FixedPoints.lean:114:theorem gfp_le_map {a : α} (ha : f.gfp ≤ a) : f.gfp ≤ f a :=
+    ./Order/FixedPoints.lean:208:theorem le_map_sup_fixedPoints (x y : fixedPoints f) : (x ⊔ y : α) ≤ f (x ⊔ y) :=
+
+=== C48 p ∈ P prime ideal, n ∈ P → ∃ prime p ∣ n, p ∈ P
+    ./RingTheory/Ideal/Operations.lean:1004:theorem IsPrime.multiset_prod_mem_iff_exists_mem {I : Ideal R} (hI : I.IsPrime) (s : Multiset R) :
+    ./RingTheory/Ideal/Operations.lean:1033:theorem IsPrime.prod_mem_iff_exists_mem {I : Ideal R} (hI : I.IsPrime) (s : Finset R) :
+    ./Data/Nat/PrimeFin.lean:47:lemma Prime.mem_primeFactors (hp : p.Prime) (hdvd : p ∣ n) (hn : n ≠ 0) : p ∈ n.primeFactors :=
+    ./Data/Nat/PrimeFin.lean:51:lemma Prime.mem_primeFactors' (hp : p.Prime) (hdvd : p ∣ n) [NeZero n] : p ∈ n.primeFactors :=
+    ./Data/Nat/Factorization/PrimePow.lean:65:theorem IsPrimePow.exists_ordCompl_eq_one {n : ℕ} (h : IsPrimePow n) :
+
+=== C49 base-B digit uniqueness: Σ cₘ Bᵐ = 0, |cₘ|<B → c = 0
+    ./Data/Nat/Digits/Defs.lean:145:def ofDigits {α : Type*} [Semiring α] (b : α) : List ℕ → α
+    ./Data/Nat/Digits/Defs.lean:149:theorem ofDigits_eq_foldr {α : Type*} [Semiring α] (b : α) (L : List ℕ) :
+    ./Data/Nat/Digits/Defs.lean:156:theorem ofDigits_nil {b : ℕ} : ofDigits b [] = 0 := rfl
+    ./Data/Nat/Digits/Defs.lean:159:theorem ofDigits_singleton {b n : ℕ} : ofDigits b [n] = n := by simp [ofDigits]
+    ./Data/Nat/Digits/Defs.lean:162:theorem ofDigits_one_cons {α : Type*} [Semiring α] (h : ℕ) (L : List ℕ) :
+    ./Data/Nat/Digits/Defs.lean:165:theorem ofDigits_cons {b hd} {tl : List ℕ} :
+    ./Data/Nat/Digits/Defs.lean:168:theorem ofDigits_append {b : ℕ} {l1 l2 : List ℕ} :
+    ./Data/Nat/Digits/Defs.lean:177:theorem ofDigits_append_zero {b : ℕ} (l : List ℕ) :
+    ./Data/Nat/Digits/Defs.lean:182:theorem ofDigits_replicate_zero {b k : ℕ} : ofDigits b (List.replicate k 0) = 0 := by
+    ./Data/Nat/Digits/Defs.lean:188:theorem ofDigits_append_replicate_zero {b k : ℕ} (l : List ℕ) :
+    ./Data/Nat/Digits/Defs.lean:193:theorem ofDigits_reverse_cons {b : ℕ} (l : List ℕ) (d : ℕ) :
+    ./Data/Nat/Digits/Defs.lean:199:theorem ofDigits_reverse_zero_cons {b : ℕ} (l : List ℕ) :
+
+=== C50 LDU uniqueness (unit triangular N, invertible U)
+    ./LinearAlgebra/Dual/Lemmas.lean:226:instance instNontrivialDual [Nontrivial V] : Nontrivial (Dual K V) :=
+    ./LinearAlgebra/Matrix/Block.lean:280:theorem twoBlockTriangular_det (M : Matrix m m R) (p : m → Prop) [DecidablePred p]
+    ./LinearAlgebra/Matrix/Block.lean:290:theorem twoBlockTriangular_det' (M : Matrix m m R) (p : m → Prop) [DecidablePred p]
+    ./LinearAlgebra/Matrix/Block.lean:331:theorem BlockTriangular.det_fintype [DecidableEq α] [Fintype α] [LinearOrder α]
+    ./RingTheory/Valuation/ValuationSubring.lean:721:def unitGroupToResidueFieldUnits : A.unitGroup →* (IsLocalRing.ResidueField A)ˣ :=
+    ./RingTheory/Valuation/ValuationSubring.lean:725:theorem coe_unitGroupToResidueFieldUnits_apply (x : A.unitGroup) :
+    ./RingTheory/Valuation/ValuationSubring.lean:731:theorem ker_unitGroupToResidueFieldUnits :
+    ./RingTheory/Valuation/ValuationSubring.lean:739:theorem surjective_unitGroupToResidueFieldUnits :
+    ./RingTheory/Valuation/ValuationSubring.lean:746:def unitsModPrincipalUnitsEquivResidueFieldUnits :
+    ./RingTheory/Valuation/ValuationSubring.lean:752:theorem unitsModPrincipalUnitsEquivResidueFieldUnits_comp_quotientGroup_mk :
+    ./RingTheory/Valuation/ValuationSubring.lean:757:theorem unitsModPrincipalUnitsEquivResidueFieldUnits_comp_quotientGroup_mk_apply
+    ./Order/Hom/Basic.lean:1016:def dualDual : α ≃o αᵒᵈᵒᵈ :=
+
+=== C51 continuous hom ℝ→ℂ with ‖f‖=1 is exp(ib·)
+    ./Analysis/SpecialFunctions/Log/RpowTendsto.lean:29:lemma Real.norm_inv_mul_rpow_sub_one_sub_log_le {p x : ℝ} (p_pos : 0 < p) (x_pos : 0 < x)
+    ./Analysis/SpecialFunctions/Complex/Circle.lean:407:theorem continuous_toCircle : Continuous (@toCircle T) :=
+    ./Analysis/InnerProductSpace/Basic.lean:432:alias norm_sub_pow_two := norm_sub_sq
+    ./Analysis/InnerProductSpace/Basic.lean:438:alias norm_sub_pow_two_real := norm_sub_sq_real
+
+=== C53 monic integral-poly root in ultrametric field has ‖x‖ ≤ 1
+    ./NumberTheory/MahlerMeasure.lean:171:lemma norm_root_le_one_of_mahlerMeasure_eq_one : ‖z‖ ≤ 1 := by
+    ./Analysis/Normed/Group/Hom.lean:277:alias _root_.AddMonoidHom.mkNormedAddGroupHom_norm_le := mkNormedAddGroupHom_norm_le
+    ./Analysis/Normed/Group/Hom.lean:279:alias _root_.AddMonoidHom.mkNormedAddGroupHom_norm_le' := mkNormedAddGroupHom_norm_le'
+    ./MeasureTheory/Integral/IntegralEqImproper.lean:1026:lemma _root_.HasCompactSupport.enorm_le_lintegral_Ici_deriv
+
+=== C54 linear indep. of simultaneous eigenvectors with distinct characters
+    ./Algebra/GroupWithZero/Basic.lean:330:instance (priority := 100) [IsLeftCancelMulZero M₀] : IsDedekindFiniteMonoid M₀ where
+    ./Algebra/GroupWithZero/Basic.lean:337:instance (priority := 100) [IsRightCancelMulZero M₀] : IsDedekindFiniteMonoid M₀ where
+    ./Data/Matrix/Mul.lean:1237:instance [IsStablyFiniteRing R] : IsDedekindFiniteMonoid (Matrix n n R) :=
+    ./NumberTheory/NumberField/AdeleRing.lean:47:def AdeleRing (R K : Type*) [CommRing R] [IsDedekindDomain R] [Field K]
+    ./NumberTheory/NumberField/Basic.lean:316:instance : IsDedekindDomain (𝓞 K) :=
+    ./NumberTheory/NumberField/Completion/FinitePlace.lean:467:alias IsDedekindDomain.HeightOneSpectrum.equivHeightOneSpectrum_symm_apply :=
+    ./NumberTheory/NumberField/Completion/FinitePlace.lean:470:alias IsDedekindDomain.HeightOneSpectrum.embedding_mul_absNorm := embedding_mul_absNorm
+    ./FieldTheory/RatFunc/AsPolynomial.lean:286:def idealX : IsDedekindDomain.HeightOneSpectrum K[X] where
+    ./NumberTheory/FunctionField.lean:136:instance [Algebra.IsSeparable F⟮X⟯ K] : IsDedekindDomain (ringOfIntegers F K) :=
+    ./NumberTheory/RamificationInertia/Ramification.lean:230:theorem ramificationIdx'_map_self_eq_one [IsDedekindDomain S]
+    ./NumberTheory/RamificationInertia/Ramification.lean:339:theorem emultiplicity_map_eq_zero_of_ne [IsDedekindDomain R] {v : Ideal R}
+    ./NumberTheory/RamificationInertia/Ramification.lean:364:theorem emultiplicity_map_eq_ramificationIdx'_mul [IsDedekindDomain R]
+
+=== C56 maxGenEigenspace (AB) ⊇ maxGenEigenspace A ⊓ maxGenEigenspace B (commute)
+    ./LinearAlgebra/Eigenspace/Basic.lean:609:lemma mapsTo_maxGenEigenspace_of_comm {f g : End R M} (h : Commute f g) (μ : R) :
+    ./LinearAlgebra/Eigenspace/Pi.lean:194:theorem iSup_iInf_maxGenEigenspace_eq_top_of_iSup_maxGenEigenspace_eq_top_of_commute
+
+=== C57 a − C(eval p a) ∈ span {X i − C(p i)}
+    ./LinearAlgebra/Lagrange.lean:587:theorem X_sub_C_dvd_nodal (v : ι → R) {i : ι} (hi : i ∈ s) : X - C (v i) ∣ nodal s v := by
+    ./LinearAlgebra/Lagrange.lean:680:theorem interpolate_eq_nodalWeight_mul_nodal_div_X_sub_C :
+    ./Algebra/CubicDiscriminant.lean:73:theorem C_mul_prod_X_sub_C_eq [CommRing S] {w x y z : S} :
+    ./Algebra/CubicDiscriminant.lean:79:theorem prod_X_sub_C_eq [CommRing S] {x y z : S} :
+    ./Algebra/Polynomial/Roots.lean:188:theorem roots_X_sub_C (r : R) : roots (X - C r) = {r} := by
+    ./Algebra/Polynomial/Roots.lean:194:theorem roots_X_add_C (r : R) : roots (X + C r) = {-r} := by simpa using roots_X_sub_C (-r)
+    ./Algebra/Polynomial/Roots.lean:197:theorem roots_X : roots (X : R[X]) = {0} := by rw [← roots_X_sub_C, C_0, sub_zero]
+    ./Algebra/Polynomial/Roots.lean:254:theorem roots_C_mul_X_sub_C_of_IsUnit (b : R) (a : Rˣ) : (C (a : R) * X - C b).roots =
+    ./Algebra/Polynomial/Roots.lean:301:theorem roots_prod_X_sub_C (s : Finset R) : (s.prod fun a => X - C a).roots = s.val := by
+    ./Algebra/Polynomial/Roots.lean:308:theorem roots_multiset_prod_X_sub_C (s : Multiset R) : (s.map fun a => X - C a).prod.roots = s := by
+    ./Algebra/Polynomial/Roots.lean:496:theorem aroots_X_sub_C [CommRing S] [IsDomain S] [Algebra T S]
+    ./Algebra/Polynomial/Roots.lean:781:theorem monic_multisetProd_X_sub_C (s : Multiset R) : Monic (s.map fun a => X - C a).prod :=
+
+=== C58 PosDef is open along continuous family of Hermitian matrices
+    (no matches)
+
+=== C59 semisimple (simple) module: W semisimple, S simple, Ann W ⊆ Ann S ⟹ Hom ≠ 0 (variant)
+    ./RingTheory/Jacobson/Semiprimary.lean:44:theorem IsSemisimpleModule.jacobson_le_annihilator [IsSemisimpleModule R M] :
+    ./RingTheory/SimpleModule/Basic.lean:289:theorem annihilator_isRadical (R) [CommRing R] [Module R M] [IsSemisimpleModule R M] :
+
+=== C60 trace of matrix stabilizing an 𝓞-lattice is an algebraic integer
+    ./RingTheory/DedekindDomain/Different.lean:188:lemma isIntegral_discr_mul_of_mem_traceDual
+    ./RingTheory/Trace/Basic.lean:101:theorem trace_gen_eq_zero {x : L} (hx : ¬IsIntegral K x) :
+    ./RingTheory/Trace/Basic.lean:136:theorem trace_adjoinSimpleGen {x : L} (hx : IsIntegral K x) :
+    ./RingTheory/Trace/Basic.lean:162:theorem Algebra.isIntegral_trace [FiniteDimensional L F] {x : F} (hx : IsIntegral R x) :
+
+=== C61 change of basis over a subring (P Q = 1)
+    (no matches)
+
+=== C62 clearing denominators: z ∈ span_K L (L an R-lattice, R domain with frac field K) → ∃ d ≠ 0, d • z ∈ L
+    (no matches)
+
+=== C63 weak approximation on Dedekind domain with prescribed bounds
+    ./Topology/UniformSpace/ProdApproximation.lean:39:lemma exists_finite_sum_smul_approximation_of_mem_uniformity [TopologicalSpace R]
+    ./Topology/UniformSpace/ProdApproximation.lean:60:lemma exists_finite_sum_mul_approximation_of_mem_uniformity [Ring R] [UniformSpace R]
+    ./Topology/Separation/DisjointCover.lean:140:lemma exists_finite_approximation_of_mem_nhds_diagonal (hS : S ∈ nhdsSet (diagonal V)) :
+    ./Topology/Separation/DisjointCover.lean:167:lemma exists_finite_sum_const_mulIndicator_approximation_of_mem_nhds_diagonal [CommMonoid V]
+
+=== C64 length of cokernel of injective endomorphism of free DVR module = addVal det
+    (no matches)
+
+=== C65 complement of a submodule above a complemented one over a PID
+    ./NumberTheory/NumberField/CanonicalEmbedding/ConvexBody.lean:497:theorem exists_ne_zero_mem_ideal_lt' (w₀ : {w : InfinitePlace K // IsComplex w})
+    ./NumberTheory/NumberField/CanonicalEmbedding/ConvexBody.lean:521:theorem exists_ne_zero_mem_ringOfIntegers_lt' (w₀ : {w : InfinitePlace K // IsComplex w})
+    ./NumberTheory/NumberField/CanonicalEmbedding/ConvexBody.lean:546:theorem exists_primitive_element_lt_of_isComplex {w₀ : InfinitePlace K} (hw₀ : IsComplex w₀)
+    ./RepresentationTheory/Maschke.lean:162:theorem exists_isCompl (p : Submodule k[G] V) : ∃ q : Submodule k[G] V, IsCompl p q := by
+    ./LinearAlgebra/Basis/VectorSpace.lean:280:theorem Submodule.exists_isCompl (p : Submodule K V) : ∃ q : Submodule K V, IsCompl p q :=
+    ./LinearAlgebra/Projection.lean:235:theorem existsUnique_add_of_isCompl_prod (hc : IsCompl p q) (x : E) :
+    ./LinearAlgebra/Projection.lean:239:theorem existsUnique_add_of_isCompl (hc : IsCompl p q) (x : E) :
+    ./Combinatorics/SimpleGraph/CompleteMultipartite.lean:145:lemma exists_isPathGraph3Compl_of_not_isCompleteMultipartite (h : ¬ IsCompleteMultipartite G) :
+    ./MeasureTheory/Measure/RegularityCompacts.lean:70:theorem innerRegularWRT_of_exists_compl_lt {p q : Set α → Prop} (hpq : ∀ A B, p A → q B → p (A ∩ B))
+    ./Data/Finset/Sups.lean:615:lemma exists_compls_iff {p : α → Prop} : (∃ a ∈ sᶜˢ, p a) ↔ ∃ a ∈ s, p aᶜ := by aesop
+    ./MeasureTheory/Constructions/Polish/StronglyMeasurable.lean:35:theorem measurableSet_exists_tendsto [IsCompletelyPseudoMetrizableSpace E]
+    ./Analysis/InnerProductSpace/Projection/Minimal.lean:34:theorem exists_norm_eq_iInf_of_complete_convex {K : Set F} (ne : K.Nonempty) (h₁ : IsComplete K)
+
+=== C66 LDU-type decomposition over local ring (unit diagonal, ideals U, L)
+    ./GroupTheory/GroupAction/Iwasawa.lean:47:structure IwasawaStructure where
+    ./GroupTheory/GroupAction/Iwasawa.lean:64:theorem commutator_le (IwaS : IwasawaStructure M α) [IsQuasiPreprimitive M α]
+    ./GroupTheory/SpecificGroups/Alternating/Simple.lean:106:def iwasawaStructure_three : IwasawaStructure (alternatingGroup α) (Set.powersetCard α 3) where
+
+=== C67 polynomial divisibility from pointwise growth bound
+    ./Algebra/Order/Module/HahnEmbedding.lean:598:theorem archimedeanClassMk_le_of_eval_eq [IsOrderedAddMonoid R] [Archimedean R] {x : M}
+    ./LinearAlgebra/Lagrange.lean:75:theorem eq_of_degree_le_of_eval_finset_eq
+    ./LinearAlgebra/Lagrange.lean:117:theorem eq_of_degree_le_of_eval_index_eq (hvs : Set.InjOn v s)
+
+=== C68 Cauchy estimate: ‖fderiv f y‖ ≤ C/R on a ball
+    ./NumberTheory/NumberField/Ideal/Asymptotics.lean:126:theorem tendsto_norm_le_div_atTop₀ :
+    ./NumberTheory/NumberField/Ideal/Asymptotics.lean:150:theorem tendsto_norm_le_div_atTop :
+    ./MeasureTheory/Integral/IntervalIntegral/DistLEIntegral.lean:42:lemma norm_sub_le_integral_of_norm_deriv_le_of_le {B : ℝ → ℝ} (hab : a ≤ b)
+    ./MeasureTheory/Integral/IntervalIntegral/DistLEIntegral.lean:85:lemma norm_sub_le_mul_volume_of_norm_deriv_le_of_le {C : ℝ} (hab : a ≤ b)
+    ./MeasureTheory/Integral/IntervalIntegral/DistLEIntegral.lean:153:lemma norm_sub_le_mul_volume_of_norm_fderiv_le (hs : IsOpen s) (hf : DiffContOnCl ℝ f s)
+    ./Analysis/Analytic/ConvergenceRadius.lean:218:theorem norm_le_div_pow_of_pos_of_lt_radius (p : FormalMultilinearSeries 𝕜 E F) {r : ℝ≥0}
+    ./Analysis/Polynomial/CauchyBound.lean:37:lemma one_le_cauchyBound (p : K[X]) : 1 ≤ cauchyBound p := by
+    ./Analysis/Polynomial/CauchyBound.lean:41:lemma cauchyBound_zero : cauchyBound (0 : K[X]) = 1 := by
+    ./Analysis/Polynomial/CauchyBound.lean:45:lemma cauchyBound_C (x : K) : cauchyBound (C x) = 1 := by
+    ./Analysis/Polynomial/CauchyBound.lean:49:lemma cauchyBound_one : cauchyBound (1 : K[X]) = 1 := cauchyBound_C 1
+    ./Analysis/Polynomial/CauchyBound.lean:52:lemma cauchyBound_X : cauchyBound (X : K[X]) = 1 := by
+    ./Analysis/Polynomial/CauchyBound.lean:56:lemma cauchyBound_X_add_C (x : K) : cauchyBound (X + C x) = ‖x‖₊ + 1 := by
+
+=== C69 det (A t) derivative at 0 = trace A′ when A 0 = 1
+    ./LinearAlgebra/Matrix/Charpoly/Coeff.lean:156:lemma derivative_det_one_add_X_smul_aux {n} (M : Matrix (Fin n) (Fin n) R) :
+    ./LinearAlgebra/Matrix/Charpoly/Coeff.lean:183:lemma derivative_det_one_add_X_smul (M : Matrix n n R) :
+
+=== C70 x² = x + c (c ∈ ℤ) ⟹ x integral
+    ./Algebra/BigOperators/Ring/Finset.lean:233:theorem sum_pow_mul_eq_add_pow (a b : R) (s : Finset ι) :
+    ./Algebra/BigOperators/Ring/Finset.lean:244:lemma _root_.Fintype.sum_pow_mul_eq_add_pow (ι : Type*) [Fintype ι] (a b : R) :
+    ./Algebra/BigOperators/Fin.lean:462:theorem sum_pow_mul_eq_add_pow {n : ℕ} {R : Type*} [CommSemiring R] (a b : R) :
+
+=== C71 IsUnit a, m ∈ 𝔪 → IsUnit (a − m)
+    ./Analysis/Normed/Algebra/Spectrum.lean:354:theorem isUnit_one_sub_smul_of_lt_inv_radius {a : A} {z : 𝕜} (h : ↑‖z‖₊ < (spectralRadius 𝕜 a)⁻¹) :
+    ./Analysis/SpecificLimits/Normed.lean:350:lemma isUnit_one_sub_of_norm_lt_one {x : R} (h : ‖x‖ < 1) : IsUnit (1 - x) :=
+    ./RingTheory/Henselian.lean:266:theorem IsLocalRing.eq_of_eval_eq_zero_of_not_isUnit_sub {R : Type*} [CommRing R] [IsLocalRing R]
+    ./RingTheory/LocalRing/Basic.lean:96:theorem of_isUnit_or_isUnit_one_sub_self [Nontrivial R] (h : ∀ a : R, IsUnit a ∨ IsUnit (1 - a)) :
+    ./RingTheory/LocalRing/Basic.lean:106:theorem isUnit_or_isUnit_one_sub_self (a : R) : IsUnit a ∨ IsUnit (1 - a) :=
+    ./RingTheory/LocalRing/Basic.lean:112:theorem isUnit_one_sub_self_of_mem_nonunits (a : R) (h : a ∈ nonunits R) : IsUnit (1 - a) :=
+    ./RingTheory/Nilpotent/Basic.lean:72:theorem IsNilpotent.isUnit_one_sub [Ring R] {r : R} (hnil : IsNilpotent r) : IsUnit (1 - r) := by
+    ./RingTheory/Polynomial/Nilpotent.lean:211:lemma isUnit_aeval_of_isUnit_aeval_of_isNilpotent_sub
+    ./RingTheory/Jacobson/Ideal.lean:282:theorem isUnit_of_sub_one_mem_jacobson_bot (r : R) (h : r - 1 ∈ jacobson (⊥ : Ideal R)) :
+
+=== C72 augmented algebra, nilpotent augmentation ideal: IsUnit(aug a) → IsUnit a
+    ./Algebra/Polynomial/Eval/Degree.lean:235:lemma isUnit_of_isUnit_leadingCoeff_of_isUnit_map (hf : IsUnit f.leadingCoeff)
+    ./Algebra/MvPolynomial/Nilpotent.lean:58:theorem isUnit_iff : IsUnit P ↔ IsUnit (P.coeff 0) ∧ ∀ i ≠ 0, IsNilpotent (P.coeff i) := by
+    ./Dynamics/Newton.lean:53:theorem newtonMap_apply_of_isUnit (h : IsUnit <| aeval x (derivative P)) :
+    ./Dynamics/Newton.lean:57:theorem newtonMap_apply_of_not_isUnit (h : ¬ (IsUnit <| aeval x (derivative P))) :
+    ./Dynamics/Newton.lean:75:theorem isFixedPt_newtonMap_of_isUnit_iff (h : IsUnit <| aeval x (derivative P)) :
+
+=== C73 padicValNat of multiset product
+    (no matches)
+
+=== C74 IsRegularLocalRing quotient_span_singleton (regular local quotient by non-square-degenerate element)
+    ./RingTheory/OrderOfVanishing/Basic.lean:292:theorem _root_.isFiniteLength_quotient_span_singleton [IsNoetherianRing R]
+    ./RingTheory/KrullDimension/Regular.lean:122:lemma _root_.ringKrullDim_quotient_span_singleton_succ_eq_ringKrullDim_of_mem_jacobson {x : R}
+    ./RingTheory/KrullDimension/Regular.lean:181:lemma _root_.ringKrullDim_quotient_span_singleton_succ_eq_ringKrullDim {x : R}
+    ./RingTheory/KrullDimension/Regular.lean:189:lemma _root_.ringKrullDim_quotient_span_singleton_succ_eq_ringKrullDim_of_mem_nonZeroDivisors
+
+=== C75 exp(2πi x) = 1 ↔ x ∈ ℤ
+    ./Analysis/Complex/Exponential.lean:328:theorem exp_eq_one_iff : exp x = 1 ↔ x = 0 :=
+    ./Analysis/SpecialFunctions/Complex/Log.lean:141:theorem exp_eq_one_iff {x : ℂ} : exp x = 1 ↔ ∃ n : ℤ, x = n * (2 * π * I) := by
+    ./Analysis/SpecialFunctions/Complex/Log.lean:152:theorem exp_eq_one_iff_of_im_nonneg {x : ℂ} (hx : 0 ≤ x.im) :
+    ./GroupTheory/Exponent.lean:183:theorem exp_eq_one_iff : exponent G = 1 ↔ Subsingleton G := by
+
+=== C76 charpoly root gives eigenvector
+    ./LinearAlgebra/Eigenspace/Minpoly.lean:79:theorem hasEigenvalue_of_isRoot (h : (minpoly R f).IsRoot μ) : f.HasEigenvalue μ := by
+    ./LinearAlgebra/Eigenspace/Minpoly.lean:95:theorem hasEigenvalue_iff_isRoot : f.HasEigenvalue μ ↔ (minpoly R f).IsRoot μ :=
+    ./LinearAlgebra/Eigenspace/Basic.lean:420:lemma hasEigenvector_iff {f : End R M} {μ : R} {x : M} :
+
+=== C77 matrix ↔ 𝔸 module stability under polynomial (aeval)
+    (no matches)
+
+=== C78 sum (cₘ Bᵐ) uniqueness base B
+    ./Algebra/Exact/Sequence.lean:39:public lemma sum_neg_one_pow_finrank_eq_zero_of_exact {n : ℕ} (V : Fin (n + 2) → Type*)
+    ./Algebra/Exact/Sequence.lean:70:lemma en route to `Module.sum_neg_one_pow_finrank_eq_zero_of_exact_six`. -/
+    ./Algebra/Exact/Sequence.lean:105:public lemma sum_neg_one_pow_finrank_eq_zero_of_exact_six
+    ./Data/Nat/Digits/Defs.lean:41:def digitsAux0 : ℕ → List ℕ
+    ./Data/Nat/Digits/Defs.lean:46:def digitsAux1 (n : ℕ) : List ℕ :=
+    ./Data/Nat/Digits/Defs.lean:57:theorem digitsAux_zero (b : ℕ) (h : 2 ≤ b) : digitsAux b h 0 = [] := rfl
+    ./Data/Nat/Digits/Defs.lean:59:theorem digitsAux_def (b : ℕ) (h : 2 ≤ b) (n : ℕ) (w : 0 < n) :
+    ./Data/Nat/Digits/Defs.lean:78:def digits : ℕ → ℕ → List ℕ
+    ./Data/Nat/Digits/Defs.lean:84:theorem digits_zero (b : ℕ) : digits b 0 = [] := by
+    ./Data/Nat/Digits/Defs.lean:87:theorem digits_zero_zero : digits 0 0 = [] :=
+    ./Data/Nat/Digits/Defs.lean:91:theorem digits_zero_succ (n : ℕ) : digits 0 n.succ = [n+1] :=
+    ./Data/Nat/Digits/Defs.lean:94:theorem digits_zero_succ' : ∀ {n : ℕ}, n ≠ 0 → digits 0 n = [n]
+
+=== C79 (Fin n) filter antitone: θ ≤ f j ↔ j < card {i | θ ≤ f i}
+    ./Data/Multiset/Filter.lean:163:lemma card_filter_le_iff (s : Multiset α) (P : α → Prop) [DecidablePred P] (n : ℕ) :
+    ./Data/Multiset/Filter.lean:270:theorem countP_eq_card_filter (s) : countP p s = card (filter p s) :=
+    ./Data/Multiset/Filter.lean:403:theorem count_eq_card_filter_eq [DecidableEq α] (s : Multiset α) (a : α) :
+    ./Data/Multiset/Filter.lean:415:theorem map_count_True_eq_filter_card (s : Multiset α) (p : α → Prop) [DecidablePred p] :
+    ./Data/Fintype/Fin.lean:47:theorem card_filter_val_lt {m : ℕ} : #{i : Fin n | i < m} = min n m := by
+    ./Data/Fintype/Fin.lean:70:theorem lt_card_filter_univ_iff_apply_of_imp {j : Fin n} (p : Fin n → Prop) [DecidablePred p]
+    ./Data/Finset/Card.lean:305:alias ⟨filter_card_eq, _⟩ := card_filter_eq_iff
+    ./Data/Finset/Card.lean:647:theorem card_filter_add_card_filter_not
+    ./NumberTheory/NumberField/InfinitePlace/Basic.lean:307:theorem card_filter_mk_eq [NumberField K] (w : InfinitePlace K) : #{φ | mk φ = w} = mult w := by
+
+=== C80 finite index / index of subgroup via surjection with coset fibers
+    ./Algebra/Module/LinearMap/Index.lean:63:public lemma index_of_surjective (hf : Surjective f) :
+    ./GroupTheory/Focal.lean:177:lemma focalSubgroupOf.pow_index_surjective :
+    ./GroupTheory/Commutator/Finite.lean:61:lemma index_center_le_pow : (center G).index ≤ Nat.card (commutatorSet G) ^ Group.rank G := by
+    ./GroupTheory/Complement.lean:240:lemma IsComplement.card_left (h : IsComplement S H) : Nat.card S = H.index :=
+    ./GroupTheory/Complement.lean:248:lemma IsComplement.card_right (h : IsComplement H T) : Nat.card T = H.index :=
+    ./GroupTheory/Complement.lean:642:theorem IsComplement'.index_eq_card (h : IsComplement' H K) : K.index = Nat.card H :=
+    ./GroupTheory/Index.lean:68:theorem index_comap_of_surjective {f : G' →* G} (hf : Function.Surjective f) :
+    ./GroupTheory/Index.lean:260:theorem index_bot : (⊥ : Subgroup G).index = Nat.card G :=
+    ./GroupTheory/Index.lean:282:theorem index_ker (f : G →* G') : f.ker.index = Nat.card f.range := by
+    ./GroupTheory/Index.lean:290:theorem card_mul_index : Nat.card H * H.index = Nat.card G := by
+    ./GroupTheory/Index.lean:348:theorem index_eq_card : H.index = Nat.card (G ⧸ H) :=
+    ./GroupTheory/Index.lean:352:theorem index_mul_card : H.index * Nat.card H = Nat.card G := by
+
+=== C81 tsum over group = tsum over quotient × subgroup (ℝ≥0∞)
+    (no matches)
+
+=== C82 ∫ ξ, 𝓕f ξ • g ξ = ∫ x, φ x • 𝓕 g x (Fourier swap)
+    ./Analysis/Distribution/SchwartzSpace/Fourier.lean:245:theorem integral_fourier_smul_eq (f : 𝓢(V, ℂ)) (g : 𝓢(V, F)) :
+    ./Analysis/Distribution/SchwartzSpace/Fourier.lean:250:theorem integral_fourier_mul_eq (f : 𝓢(V, ℂ)) (g : 𝓢(V, ℂ)) :
+    ./Analysis/Distribution/SchwartzSpace/Fourier.lean:264:theorem integral_fourierInv_smul_eq (f : 𝓢(V, ℂ)) (g : 𝓢(V, F)) :
+    ./Analysis/Distribution/SchwartzSpace/Fourier.lean:269:theorem integral_fourierInv_mul_eq (f : 𝓢(V, ℂ)) (g : 𝓢(V, ℂ)) :
+    ./Analysis/Fourier/FourierTransform.lean:100:theorem norm_fourierIntegral_le_integral_norm (e : AddChar 𝕜 𝕊) (μ : Measure V)
+    ./Analysis/Fourier/FourierTransform.lean:188:theorem integral_fourierIntegral_swap
+    ./Analysis/Fourier/FourierTransform.lean:242:theorem integral_fourierIntegral_smul_eq_flip
+    ./Analysis/Fourier/FourierTransform.lean:352:theorem norm_fourierIntegral_le_integral_norm (e : AddChar 𝕜 𝕊) (μ : Measure 𝕜)
+    ./Analysis/Fourier/FourierTransform.lean:375:theorem vector_fourierIntegral_eq_integral_exp_smul {V : Type*} [AddCommGroup V] [Module ℝ V]
+    ./Analysis/Fourier/FourierTransform.lean:485:theorem fourier_real_eq_integral_exp_smul (f : ℝ → E) (w : ℝ) :
+    ./Analysis/Fourier/AddCircle.lean:357:theorem fourierCoeffOn_eq_integral {a b : ℝ} (f : ℝ → E) (n : ℤ) (hab : a < b) :
+    ./Analysis/Fourier/AddCircleMulti.lean:251:theorem mFourierCoeff_eq_integral (f : UnitAddTorus d → E) (n : d → ℤ) (a : d → ℝ) :
+
+=== C83 norm_sq convex combination: ‖a z + b w‖² ≤ a‖z‖² + b‖w‖²
+    ./Analysis/Normed/Module/Convex.lean:44:theorem convexOn_norm (hs : Convex ℝ s) : ConvexOn ℝ s norm :=
+    ./Analysis/Normed/Module/Convex.lean:53:theorem convexOn_univ_norm : ConvexOn ℝ univ (norm : E → ℝ) :=
+
+=== C84 x² + txy + my² = e solvable over finite field when t² ≠ 4m
+    ./Algebra/Order/Chebyshev.lean:136:theorem sq_sum_le_card_mul_sum_sq : (∑ i ∈ s, f i) ^ 2 ≤ #s * ∑ i ∈ s, f i ^ 2 := by
+    ./Algebra/Order/Chebyshev.lean:169:theorem sum_div_card_sq_le_sum_sq_div_card :
+    ./Algebra/Ring/SumsOfSquares.lean:138:theorem IsSumSq.sum_sq [CommSemiring R] {ι : Type*} (I : Finset ι) (a : ι → R) :
+    ./Geometry/Group/Growth/QuotientInter.lean:62:lemma le_card_quotient_mul_sq_inter_subgroup (hAsymm : A⁻¹ = A) :
+    ./Algebra/Squarefree/Basic.lean:151:theorem squarefree_iff_irreducible_sq_not_dvd_of_exists_irreducible {r : R}
+    ./Algebra/Order/Antidiag/Nat.lean:235:theorem card_finMulAntidiag_of_squarefree {d n : ℕ} (hn : Squarefree n) :
+    ./Algebra/Order/BigOperators/Ring/Finset.lean:35:lemma sum_sq_le_sq_sum_of_nonneg (hf : ∀ i ∈ s, 0 ≤ f i) :
+    ./Algebra/Order/BigOperators/Ring/Finset.lean:126:lemma sum_sq_le_sum_mul_sum_of_sq_le_mul [CommSemiring R] [LinearOrder R] [IsStrictOrderedRing R]
+    ./Algebra/Order/BigOperators/Ring/Finset.lean:152:lemma sum_sq_le_sum_mul_sum_of_sq_eq_mul [CommSemiring R] [LinearOrder R] [IsStrictOrderedRing R]
+    ./Algebra/Order/BigOperators/Ring/Finset.lean:169:theorem sq_sum_div_le_sum_sq_div [Semifield R] [LinearOrder R] [IsStrictOrderedRing R]
+    ./Algebra/CharP/Two.lean:156:theorem list_sum_sq (l : List R) : l.sum ^ 2 = (l.map (· ^ 2)).sum :=
+    ./Algebra/CharP/Two.lean:162:theorem multiset_sum_sq (l : Multiset R) : l.sum ^ 2 = (l.map (· ^ 2)).sum :=
+
+=== C85 ℤ-lattice: bounded set ∩ L finite
+    ./Algebra/Module/ZLattice/Basic.lean:432:class IsZLattice (K : Type*) [NormedField K] {E : Type*} [NormedAddCommGroup E] [NormedSpace K E]
+    ./Algebra/Module/ZLattice/Basic.lean:437:instance instIsZLatticeRealSpan {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    ./Algebra/Module/ZLattice/Basic.lean:449:theorem ZLattice.FG [hs : IsZLattice K L] : L.FG := by
+    ./Algebra/Module/ZLattice/Basic.lean:485:theorem ZLattice.module_finite [IsZLattice K L] : Module.Finite ℤ L :=
+    ./Algebra/Module/ZLattice/Basic.lean:509:theorem ZLattice.module_free [IsZLattice K L] : Module.Free ℤ L := by
+    ./Algebra/Module/ZLattice/Basic.lean:522:theorem ZLattice.rank [hs : IsZLattice K L] : finrank ℤ L = finrank K E := by
+    ./Algebra/Module/ZLattice/Basic.lean:609:def ofZLatticeBasis : Basis ι K E := by
+    ./Algebra/Module/ZLattice/Basic.lean:620:theorem ofZLatticeBasis_apply (i : ι) : b.ofZLatticeBasis K L i = b i := by
+    ./Algebra/Module/ZLattice/Basic.lean:624:theorem ofZLatticeBasis_repr_apply (x : L) (i : ι) :
+    ./Algebra/Module/ZLattice/Basic.lean:634:theorem ofZLatticeBasis_span : span ℤ (Set.range (b.ofZLatticeBasis K)) = L := by
+    ./Algebra/Module/ZLattice/Basic.lean:643:theorem ZLattice.isAddFundamentalDomain {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    ./Algebra/Module/ZLattice/Basic.lean:683:def IsZLattice.basis : Basis ι ℤ L :=
+
+=== C86 measure(S)/covol ≤ #(S ∩ L) for symmetric convex S
+    ./MeasureTheory/Function/Egorov.lean:57:theorem measure_inter_notConvergentSeq_eq_zero [SemilatticeSup ι] [Nonempty ι]
+    ./MeasureTheory/Function/Egorov.lean:76:theorem measure_notConvergentSeq_tendsto_zero [SemilatticeSup ι] [Countable ι]
+    ./MeasureTheory/Function/L1Space/Integrable.lean:701:lemma Integrable.measure_ge_lt_top {f : α → β} [Lattice β] [HasSolidNorm β] [AddLeftMono β]
+    ./MeasureTheory/Function/L1Space/Integrable.lean:710:lemma Integrable.measure_le_lt_top {f : α → β} [Lattice β] [HasSolidNorm β] [AddLeftMono β]
+    ./MeasureTheory/Function/L1Space/Integrable.lean:720:lemma Integrable.measure_gt_lt_top {f : α → β} [Lattice β] [HasSolidNorm β] [AddLeftMono β]
+    ./MeasureTheory/Function/L1Space/Integrable.lean:728:lemma Integrable.measure_lt_lt_top {f : α → β} [Lattice β] [HasSolidNorm β] [AddLeftMono β]
+
+=== C03 gramSt_fischer (Fischer inequality)
+    (no matches)
+
+=== C16 compact self-adjoint: eigenvalues |μ|≥ε finite / spectrum countable
+    ./FieldTheory/IsAlgClosed/Spectrum.lean:170:lemma IsIdempotentElem.finite_spectrum (𝕜 : Type*) {A : Type*} [Field 𝕜] [Ring A] [Algebra 𝕜 A]
+    ./LinearAlgebra/Eigenspace/Minpoly.lean:140:theorem Module.End.finite_spectrum {K : Type v} {V : Type w} [Field K] [AddCommGroup V]
+    ./LinearAlgebra/Eigenspace/Minpoly.lean:150:theorem Matrix.finite_spectrum (A : Matrix n n R) : Set.Finite (spectrum R A) := by
+    ./LinearAlgebra/Eigenspace/Minpoly.lean:154:instance Matrix.instFiniteSpectrum (A : Matrix n n R) : Finite (spectrum R A) :=
+    ./LinearAlgebra/Eigenspace/Basic.lean:231:lemma hasUnifEigenvalue_iff_mem_spectrum [FiniteDimensional K V] {f : End K V} {μ : K} :
+    ./LinearAlgebra/Eigenspace/Basic.lean:507:theorem hasEigenvalue_iff_mem_spectrum [FiniteDimensional K V] {f : End K V} {μ : K} :
+    ./LinearAlgebra/Eigenspace/Triangularizable.lean:63:theorem exists_eigenvalue [IsAlgClosed K] [FiniteDimensional K V] [Nontrivial V] (f : End K V) :
+    ./Analysis/InnerProductSpace/Positive.lean:155:theorem IsPositive.nonneg_eigenvalues [FiniteDimensional 𝕜 E]
+    ./Analysis/Matrix/Spectrum.lean:33:lemma finite_real_spectrum [DecidableEq n] : (spectrum ℝ A).Finite := by
+    ./Analysis/Matrix/Spectrum.lean:37:instance [DecidableEq n] : Finite (spectrum ℝ A) := A.finite_real_spectrum
+
+=== C21 charpoly coefficients continuous
+    (no matches)
+
+=== C52 ultrametric: ‖x‖,‖y‖≤1 → ‖xⁿ−yⁿ‖ ≤ ‖x−y‖
+    ./Analysis/SpecialFunctions/Log/RpowTendsto.lean:29:lemma Real.norm_inv_mul_rpow_sub_one_sub_log_le {p x : ℝ} (p_pos : 0 < p) (x_pos : 0 < x)
+    ./Analysis/InnerProductSpace/Basic.lean:432:alias norm_sub_pow_two := norm_sub_sq
+    ./Analysis/InnerProductSpace/Basic.lean:438:alias norm_sub_pow_two_real := norm_sub_sq_real
+
+=== C55 iSupIndep of eigenspaces for distinct characters
+    ./LinearAlgebra/Eigenspace/Basic.lean:720:theorem eigenspaces_iSupIndep [IsDomain R] [IsTorsionFree R M] (f : End R M) :

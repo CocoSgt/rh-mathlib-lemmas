@@ -1,0 +1,24 @@
+scratch/src/ReciprocityTheory_Chebotarev_SplitF.lean:36:74: warning: Variable name `hS` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hS
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+       18.37 real         4.53 user         5.40 sys
+          5726011392  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              490037  page reclaims
+                6421  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                2893  voluntary context switches
+                9559  involuntary context switches
+          3892339925  instructions retired
+          1795505393  cycles elapsed
+           138485384  peak memory footprint

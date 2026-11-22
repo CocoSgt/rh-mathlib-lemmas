@@ -1,0 +1,19 @@
+scratch/src/Formalism_GammaFactorNonvanishing_CritLine.lean:9:8: warning: declaration uses `sorry`
+       16.86 real         4.07 user         5.07 sys
+          5488377856  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              496343  page reclaims
+                8015  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                5075  voluntary context switches
+               18472  involuntary context switches
+          3900818840  instructions retired
+          1475135774  cycles elapsed
+           138452616  peak memory footprint

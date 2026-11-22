@@ -1,0 +1,117 @@
+== Formalism at depth 2: 18254 files, 3200748 lines
+Formalism.LocalToGlobal                            files=   5501 lines=    955843  -> Formalism.SharpRestriction:743, Formalism.PeriodIntegrals:667, Formalism.LocalRingCardinality:229, Formalism.GL3MeanSquares:150, Formalism.HermitianCurvature:147, Formalism.SatakeDualWeyl:112
+Formalism.SharpRestriction                         files=   3093 lines=    709436  -> Formalism.LocalRingCardinality:362, Formalism.LocalToGlobal:202, Formalism.PeriodIntegrals:184, Formalism.HermitianCurvature:104, Formalism.SatakeDualWeyl:53, Formalism.FlagUnipotentLattices:51
+Formalism.HermitianCurvature                       files=   1922 lines=    460802  -> Formalism.PeriodIntegrals:117, Formalism.FormalDegreeBessel:96, Formalism.RealPlaceAnalysis:36, Formalism.DoubleCosetMeasures:18, Formalism.SharpRestriction:15, Formalism.FlagUnipotentLattices:10
+Formalism.PeriodIntegrals                          files=   4350 lines=    451856  -> Formalism.LocalToGlobal:266, Formalism.SharpRestriction:136, Formalism.HermitianCurvature:127, Formalism.FormalDegreeBessel:75, Formalism.GradedWeylDivisibility:61, Formalism.RealPlaceAnalysis:61
+Formalism.GL3MeanSquares                           files=    440 lines=     78320  -> Formalism.LandauZeroFreeBounds:34, Formalism.HermitianLattices:24, Formalism.LogVandermondeBounds:19, Formalism.FormalGroupWitt:8, Formalism.LFunctionBounds:7, Formalism.FrobeniusOrbits:6
+Formalism.ThetaLogCoordinates                      files=    292 lines=     54555  -> Formalism.GradedWeylDivisibility:30, Formalism.GaussJetBounds:17, Formalism.MahlerMeasure:13, Formalism.PolynomialDimension:8, Formalism.GrowthSums:5, Formalism.SubspaceCounting:4
+Formalism.WachLatticeTwists                        files=    262 lines=     38367  -> Formalism.CharacterColumnKernels:30, Formalism.CoboundaryTransfers:8, Formalism.WindowSums:5, Formalism.LagrangeIdealLifts:4, Formalism.TruncatedSeriesCounting:3, Formalism.ResultantValuation:1
+Formalism.LocalRingCardinality                     files=    173 lines=     35348  -> Formalism.SharpRestriction:51, Formalism.FrobeniusOrbits:11, Formalism.SatakeDualWeyl:9, Formalism.LocalToGlobal:9, Formalism.GradedWeylDivisibility:6, Formalism.CyclotomicNorms:6
+Formalism.FlagUnipotentLattices                    files=     77 lines=     31383  -> Formalism.HyperbolicPlaceProducts:20, Formalism.FormalDegreeBessel:6, Formalism.LatticeRigidity:5, Formalism.SobolevGaussianKernels:5, Formalism.LogSumExpBounds:3, Formalism.HarderNarasimhan:3
+Formalism.PieriBlockIdeals                         files=     98 lines=     29254  -> Formalism.GradedWeylDivisibility:24, Formalism.RankGapBounds:13, Formalism.QuotientMetricDivisors:2, Formalism.MirabolicMackeyTheory:2, Formalism.SatakeDualWeyl:2, Formalism.PeriodIntegrals:1
+Formalism.SizeWindowBrackets                       files=     64 lines=     28345  -> Formalism.HarderNarasimhan:17, Formalism.RankGapBounds:10, Formalism.FrobeniusOrbits:6, Formalism.LandauZeroFreeBounds:4, Formalism.ThickAverageLoss:4, Formalism.ZetaNonvanishing:3
+Formalism.AdmissibleDesigns                        files=     93 lines=     20476  -> Formalism.SharpRestriction:23, Formalism.WachLatticeTwists:4, Formalism.PeriodIntegrals:2, Formalism.AdicCompletionExports:2, Formalism.WeaklyAdmissibleFiltrations:2, Formalism.LocalRingCardinality:2
+Formalism.MahlerMeasure                            files=     54 lines=     16821  -> Formalism.SmithDeterminants:1
+Formalism.PadicSubsetSums                          files=     82 lines=     15796  -> Formalism.ResultantValuation:25, Formalism.CyclotomicNorms:7, Formalism.GaloisIrreducibility:5, Formalism.EisensteinCokernelLengths:3, Formalism.WindowSums:1, Formalism.FrobeniusContraction:1
+Formalism.PolynomialDimension                      files=     41 lines=     15760  -> Formalism.MahlerMeasure:12, Formalism.SubspaceCounting:2
+Formalism.QuotientMetricDivisors                   files=     63 lines=     15247  -> Formalism.HarderNarasimhan:15, Formalism.HermitianLattices:12, Formalism.LogFactorialIndices:9, Formalism.LogFactorialBounds:1
+Formalism.SatakeDualWeyl                           files=     85 lines=     14777  -> Formalism.HermitianLattices:7, Formalism.GradedWeylDivisibility:3
+Formalism.DistinguishedUnitIdeals                  files=     44 lines=     14285  -> Formalism.TruncatedSeriesCounting:2, Formalism.WindowSums:1, Formalism.EisensteinCokernelLengths:1, Formalism.GaussValuationBounds:1
+Formalism.GaussJetBounds                           files=     90 lines=     13581  -> Formalism.IncomingBounds:7, Formalism.FormalGroupWitt:3, Formalism.TorsionNormIteration:1, Formalism.FormalGroupLog:1, Formalism.GradedWeylDivisibility:1
+Formalism.RealPlaceAnalysis                        files=     54 lines=     10653  -> 
+Formalism.HarderNarasimhan                         files=     43 lines=     10412  -> Formalism.LatticeSlopes:37, Formalism.CorankShare:5, Formalism.HermitianLattices:1
+Formalism.EllipticTorsion                          files=     48 lines=      8816  -> Formalism.FormalGroupLog:7
+Formalism.GradedWeylDivisibility                   files=    103 lines=      8125  -> Formalism.RealPlaceAnalysis:6
+Formalism.BranchSandwichDivisors                   files=     22 lines=      7889  -> Formalism.GradedWeylDivisibility:8, Formalism.QuotientMetricDivisors:7, Formalism.HarderNarasimhan:5, Formalism.HermitianLattices:2, Formalism.RealPlaceAnalysis:1, Formalism.MeanHeightDescent:1
+Formalism.FrobeniusOrbits                          files=     32 lines=      7736  -> Formalism.TameInertiaTowers:11, Formalism.DirichletDensity:1, Formalism.CMTypeGalois:1
+Formalism.CharacterColumnKernels                   files=     54 lines=      7550  -> 
+Formalism.HermitianLattices                        files=     43 lines=      7418  -> Formalism.ThetaLiftIndependence:3, Formalism.FockGram:3, Formalism.AlphaUniqueness:2, Formalism.LatticeTheta:2, Formalism.GelfandTransference:1, Formalism.SuccessiveMinima:1
+Formalism.SubspaceCounting                         files=     32 lines=      7069  -> 
+Formalism.LandauZeroFreeBounds                     files=     58 lines=      6579  -> Formalism.ZeroFreeRegion:16, Formalism.LFunctionBounds:2, Formalism.TwistFamilyExistence:1, Formalism.ZetaNonvanishing:1
+Formalism.FormalDegreeBessel                       files=     31 lines=      5655  -> Formalism.RealPlaceAnalysis:8, Formalism.YangianSpanCharacter:1
+Formalism.MirabolicMackeyTheory                    files=     26 lines=      4636  -> Formalism.QuotientMetricDivisors:17, Formalism.HermitianLattices:6, Formalism.PeriodIntegrals:2, Formalism.LogFactorialIndices:1
+Formalism.UnipotentAdelicQuotients                 files=     44 lines=      4570  -> 
+Formalism.FilteredPoleLength                       files=     36 lines=      4117  -> Formalism.LogFactorialIndices:10, Formalism.IncomingBounds:2, Formalism.GelfandTransference:1
+Formalism.LogVandermondeBounds                     files=     26 lines=      3995  -> 
+Formalism.IncomingBounds                           files=     21 lines=      3742  -> Formalism.LogFactorialIndices:2
+Formalism.TruncatedSeriesCounting                  files=     39 lines=      3676  -> Formalism.FrobeniusContraction:9, Formalism.WindowSums:8, Formalism.GaussValuationBounds:4, Formalism.CharacterColumnKernels:2, Formalism.LagrangeIdealLifts:2
+Formalism.CyclotomicNorms                          files=     21 lines=      3643  -> Formalism.GaloisIrreducibility:3, Formalism.TameInertiaTowers:1
+Formalism.DoubleCosetMeasures                      files=     15 lines=      3487  -> 
+Formalism.ThetaSupremumBounds                      files=     19 lines=      3287  -> Formalism.QuotientMetricDivisors:6, Formalism.LogFactorialIndices:3, Formalism.LogFactorialBounds:1
+Formalism.ZeroFreeRegion                           files=     34 lines=      3189  -> Formalism.StatementOC:1, Formalism.LFunctionBounds:1, Formalism.ZetaNonvanishing:1
+Formalism.TameInertiaTowers                        files=     15 lines=      3127  -> 
+Formalism.MeanHeightDescent                        files=     24 lines=      3013  -> Formalism.HarderNarasimhan:26, Formalism.QuotientMetricDivisors:4, Formalism.LatticeSlopes:2, Formalism.LogFactorialBounds:1
+Formalism.FormalGroupWitt                          files=     21 lines=      3000  -> Formalism.TorsionNormIteration:5, Formalism.FormalGroupLog:3
+Formalism.TorsionNormIteration                     files=     15 lines=      2644  -> Formalism.FormalGroupLog:5
+Formalism.WeaklyAdmissibleFiltrations              files=     20 lines=      2416  -> Formalism.CoboundaryTransfers:3
+Formalism.ZetaNonvanishing                         files=     15 lines=      2338  -> Formalism.ZetaRealNonvanish:8, Formalism.DefsOC:3, Formalism.StatementU:2
+Formalism.NormUnitaryBounds                        files=     14 lines=      2086  -> Formalism.LatticeSlopes:10
+Formalism.CoboundaryTransfers                      files=     16 lines=      2074  -> Formalism.LagrangeIdealLifts:3, Formalism.FrobeniusContraction:3, Formalism.WachModuleLifts:2
+Formalism.LatticeSlopes                            files=     18 lines=      1977  -> 
+Formalism.RankGapBounds                            files=     17 lines=      1967  -> Formalism.SatakeDualWeyl:1
+Formalism.FrobeniusBaseCase                        files=     12 lines=      1962  -> 
+Formalism.TranslateCocycles                        files=      7 lines=      1952  -> 
+Formalism.GaussValuationBounds                     files=     16 lines=      1914  -> Formalism.FrobeniusContraction:10, Formalism.WindowSums:5, Formalism.WachModuleLifts:3
+Formalism.HyperbolicPlaceProducts                  files=     14 lines=      1895  -> Formalism.GelfandTransference:1
+Formalism.LogSumExpBounds                          files=     16 lines=      1744  -> 
+Formalism.CMTypeGalois                             files=     14 lines=      1724  -> Formalism.StatementCM:1
+Formalism.JumpKernelCokernel                       files=     27 lines=      1694  -> Formalism.TruncatedSeriesCounting:6, Formalism.EisensteinCokernelLengths:3
+Formalism.SuccessiveMinima                         files=     15 lines=      1693  -> 
+Formalism.GaloisIrreducibility                     files=     17 lines=      1661  -> 
+Formalism.TowerValuationBounds                     files=      4 lines=      1547  -> 
+Formalism.FrobeniusContraction                     files=     13 lines=      1539  -> 
+Formalism.LagrangeIdealLifts                       files=      9 lines=      1437  -> Formalism.WindowSums:4
+Formalism.DivisorInequality                        files=      5 lines=      1411  -> Formalism.QuotientMetricDivisors:14, Formalism.MirabolicMackeyTheory:4, Formalism.BranchSandwichDivisors:2, Formalism.ThetaSupremumBounds:1, Formalism.MeanHeightDescent:1
+Formalism.LogFactorialIndices                      files=     11 lines=      1403  -> 
+Formalism.WachModuleLifts                          files=      9 lines=      1239  -> 
+Formalism.EisensteinCokernelLengths                files=     12 lines=      1201  -> Formalism.FrobeniusContraction:9, Formalism.WindowSums:5, Formalism.GaussValuationBounds:3, Formalism.LagrangeIdealLifts:3
+Formalism.MonomialMeanResidues                     files=      6 lines=      1175  -> Formalism.MeanHeightDescent:4, Formalism.HarderNarasimhan:4
+Formalism.YangianSpanCharacter                     files=     17 lines=      1132  -> Formalism.FormalDegreeBessel:1
+Formalism.LatticeRigidity                          files=     12 lines=      1130  -> Formalism.GelfandTransference:2
+Formalism.LatticeTheta                             files=     14 lines=      1106  -> 
+Formalism.ThickAverageLoss                         files=      5 lines=      1079  -> Formalism.WideWeightTheorem:1, Formalism.StatementU:1, Formalism.CorankShare:1
+Formalism.BehrendSets                              files=     14 lines=      1074  -> 
+Formalism.DirichletDensity                         files=      8 lines=      1012  -> Formalism.CMTypeGalois:3
+Formalism.WindowSums                               files=     11 lines=      1002  -> Formalism.WachModuleLifts:1
+Formalism.LFunctionBounds                          files=      7 lines=       988  -> Formalism.StatementFL:1
+Formalism.FormalGroupLog                           files=      5 lines=       935  -> 
+Formalism.DegreeFormula                            files=      5 lines=       902  -> Formalism.MoebiusJetDuality:1, Formalism.SatakeDualWeyl:1
+Formalism.GrowthSums                               files=     14 lines=       847  -> Formalism.SubspaceCounting:2
+Formalism.ResultantValuation                       files=     13 lines=       842  -> Formalism.CyclotomicNorms:1
+Formalism.SelfDualUnimodular                       files=      6 lines=       822  -> Formalism.LocalToGlobal:3, Formalism.HermitianLattices:1
+Formalism.ThetaLiftIndependence                    files=     10 lines=       802  -> Formalism.HermitianLattices:4, Formalism.SatakeDualWeyl:2
+Formalism.GelfandTransference                      files=      7 lines=       793  -> Formalism.NormUnitaryBounds:3, Formalism.LatticeTheta:1
+Formalism.FockGram                                 files=     14 lines=       773  -> Formalism.SmithDeterminants:1
+Formalism.PairingDivisors                          files=      7 lines=       700  -> Formalism.QuotientMetricDivisors:3
+Formalism.SobolevGaussianKernels                   files=     12 lines=       578  -> Formalism.CorankShare:1
+Formalism.CorankShare                              files=      3 lines=       563  -> 
+Formalism.ArtinHasse                               files=      2 lines=       513  -> 
+Formalism.SmithDeterminants                        files=      6 lines=       403  -> 
+Formalism.GaloisCohomology                         files=      6 lines=       400  -> 
+Formalism.MoebiusJetDuality                        files=      5 lines=       384  -> Formalism.SatakeDualWeyl:1, Formalism.RealPlaceAnalysis:1
+Formalism.LogFactorialBounds                       files=      5 lines=       371  -> 
+Formalism.DropLevelBounds                          files=      4 lines=       366  -> Formalism.IncomingBounds:3
+Formalism.GaussIdealIdentity                       files=      2 lines=       275  -> 
+Formalism.WeightedDeltaMeans                       files=      2 lines=       241  -> 
+Formalism.AlgebraicWeights                         files=      2 lines=       228  -> Formalism.SatakeDualWeyl:2, Formalism.ConjugateSelfDual:1
+Formalism.LatticeLocalGlobal                       files=      2 lines=       216  -> 
+Formalism.JacobiWeightFamilies                     files=      2 lines=       209  -> Formalism.HalfLinks:1, Formalism.LFunctionBounds:1
+Formalism.AdicCompletionExports                    files=      3 lines=       202  -> Formalism.WachLatticeTwists:1, Formalism.LocalToGlobal:1, Formalism.QuotientMetricDivisors:1
+Formalism.HalfLinks                                files=      1 lines=       186  -> Formalism.ZetaNonvanishingChebyshevWeights:1, Formalism.StatementCM:1, Formalism.ProductFormula:1
+Formalism.ProductFormula                           files=      1 lines=       162  -> Formalism.StatementCM:1, Formalism.StatementU:1
+Formalism.JacquetSubsetSums                        files=      2 lines=       149  -> Formalism.QuotientMetricDivisors:1
+Formalism.ConjugateSelfDual                        files=      3 lines=       146  -> 
+Formalism.AlphaUniqueness                          files=      1 lines=        97  -> 
+Formalism.GammaFactorNonvanishing                  files=      2 lines=        94  -> 
+Formalism.TwistFamilyExistence                     files=      1 lines=        87  -> Formalism.JacobiWeightFamilies:1
+Formalism.WideWeightTheorem                        files=      1 lines=        85  -> Formalism.JacobiWeightFamilies:1
+Formalism.ZetaRealNonvanish                        files=      1 lines=        80  -> Formalism.Statement:1
+Formalism.PrimeAboveExistence                      files=      1 lines=        76  -> Formalism.ConjugateSelfDual:1
+Formalism.StatementOC                              files=      1 lines=        73  -> Formalism.Statement:1
+Formalism.Statement                                files=      1 lines=        50  -> 
+Formalism.DefsOC                                   files=      1 lines=        48  -> Formalism.StatementOC:1, Formalism.ZetaRealNonvanish:1
+Formalism.StatementU                               files=      1 lines=        47  -> Formalism.StatementOC:1
+Formalism.StatementCM                              files=      1 lines=        45  -> Formalism.StatementOC:1
+Formalism.StatementFL                              files=      1 lines=        44  -> Formalism.ZetaNonvanishingChebyshevWeights:1
+Formalism.ZetaNonvanishingChebyshevWeights         files=      1 lines=        36  -> Formalism.ZetaNonvanishingGeneralWeights:1
+Formalism.ZetaNonvanishingGeneralWeights           files=      1 lines=        26  -> Formalism.StatementU:1

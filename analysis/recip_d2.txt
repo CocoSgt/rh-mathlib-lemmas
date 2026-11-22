@@ -1,0 +1,25 @@
+== ReciprocityTheory at depth 2: 3845 files, 563016 lines
+ReciprocityTheory.ReductiveGroups                  files=   2799 lines=    409976  -> ReciprocityTheory.SemistableReduction:58, ReciprocityTheory.L2DbarEstimates:52, ReciprocityTheory.AnalyticForms:49, ReciprocityTheory.DualLattices:12, ReciprocityTheory.GeometryOfNumbers:10, ReciprocityTheory.CommutativeAlgebra:9
+ReciprocityTheory.AnalyticForms                    files=    192 lines=     36680  -> ReciprocityTheory.CommutativeAlgebra:10
+ReciprocityTheory.L2DbarEstimates                  files=    227 lines=     33734  -> 
+ReciprocityTheory.DualLattices                     files=    183 lines=     24554  -> 
+ReciprocityTheory.SemistableReduction              files=    119 lines=     14578  -> ReciprocityTheory.L2DbarEstimates:3, ReciprocityTheory.AnalyticForms:1, ReciprocityTheory.ReductiveGroups:1
+ReciprocityTheory.ClassFieldTheory                 files=     91 lines=     11830  -> ReciprocityTheory.GroupCohomology:25, ReciprocityTheory.NeutralLocalFields:15, ReciprocityTheory.GaloisValuations:1, ReciprocityTheory.ResidueCardinality:1
+ReciprocityTheory.GroupCohomology                  files=     56 lines=      8227  -> ReciprocityTheory.GaloisValuations:1
+ReciprocityTheory.GeometryOfNumbers                files=     39 lines=      5256  -> 
+ReciprocityTheory.NeutralLocalFields               files=     20 lines=      4711  -> ReciprocityTheory.Hypotheses:3
+ReciprocityTheory.Chebotarev                       files=     47 lines=      4382  -> 
+ReciprocityTheory.CommutativeAlgebra               files=     26 lines=      3014  -> 
+ReciprocityTheory.GaloisValuations                 files=      9 lines=      1866  -> ReciprocityTheory.Hypotheses:1
+ReciprocityTheory.ReducedBases                     files=      9 lines=      1217  -> 
+ReciprocityTheory.ThetaQuasiPeriods                files=      5 lines=       771  -> 
+ReciprocityTheory.Hypotheses                       files=      3 lines=       476  -> ReciprocityTheory.GaloisValuations:3
+ReciprocityTheory.Automorphisms                    files=      4 lines=       461  -> 
+ReciprocityTheory.ThetaSummability                 files=      7 lines=       359  -> 
+ReciprocityTheory.AdeleApproximation               files=      1 lines=       178  -> 
+ReciprocityTheory.BurnsideSurjectivity             files=      1 lines=       178  -> 
+ReciprocityTheory.ResidueCardinality               files=      1 lines=       151  -> ReciprocityTheory.Automorphisms:1
+ReciprocityTheory.BasicDefinitions                 files=      2 lines=       136  -> 
+ReciprocityTheory.EigenFrames                      files=      2 lines=       136  -> 
+ReciprocityTheory.AdicCompleteness                 files=      1 lines=       111  -> 
+ReciprocityTheory.GeneralLinearIntegers            files=      1 lines=        34  -> 

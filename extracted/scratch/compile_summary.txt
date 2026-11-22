@@ -1,0 +1,5 @@
+Development_CharacterBoxes_ClaimStrip.lean rc=1 time=13s peakRSS=0GB errors=1
+Development_CharacterBoxes_RiemannHypothesisOfEveryCharacter.lean rc=0 time=279s peakRSS=5GB errors=0
+Formalism_GammaFactorNonvanishing_CritLine.lean rc=0 time=17s peakRSS=5GB errors=0
+Formalism_GammaFactorNonvanishing_RhOfRight.lean rc=0 time=104s peakRSS=5GB errors=0
+DONE scratch/glue.txt

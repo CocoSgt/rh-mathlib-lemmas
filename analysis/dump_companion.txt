@@ -1,0 +1,321 @@
+### CompanionTheory.AutomorphicTheory.BesselWaveGrids.InterlacingGrids.CloudProd:7  GroundTheory.BlockD.FourierDecayAlt.WaveGridLiftGrid.cloud_weight_prod
+theorem cloud_weight_prod (c : ℝ) (n : ℕ) : ∏ j ∈ range (n + 1), (if j = 0 then 2 + c else 1 + 1 / (j : ℝ)) = (2 + c) * (n + 1)
+
+### CompanionTheory.AutomorphicTheory.BesselWaveGrids.InterlacingGrids.CloudProd:17  GroundTheory.BlockD.FourierDecayAlt.WaveGridLiftGrid.cloud_factor_le
+theorem cloud_factor_le (c g d : ℝ) (j : ℕ) (hc : 0 ≤ c) (hg : 1 + c ≤ g) (hd : (j : ℝ) * g ≤ d) : 1 + (1 + c) / max d 1 ≤ (if j = 0 then 2 + c else 1 + 1 / (j : ℝ))
+
+### CompanionTheory.AutomorphicTheory.BesselWaveGrids.InterlacingGrids.CloudProd:34  GroundTheory.BlockD.FourierDecayAlt.WaveGridLiftGrid.prod_le_prod_range_of_rank
+theorem prod_le_prod_range_of_rank (A : Finset ℕ) (F : ℕ → ℝ) (φ : ℕ → ℕ) (w : ℕ → ℝ) (k : ℕ) (hF0 : ∀ s ∈ A, 0 ≤ F s) (hF : ∀ s ∈ A, F s ≤ w (φ s)) (hinj : Set.InjOn φ A) (hmap : ∀ s ∈ A, φ s < k) (hw : ∀ j, 1 ≤ w j) : ∏ s ∈ A, F s ≤ ∏ j ∈ range k, w j
+
+### CompanionTheory.AutomorphicTheory.BesselWaveGrids.InterlacingGrids.CloudProd:51  GroundTheory.BlockD.FourierDecayAlt.WaveGridLiftGrid.cloud_gap_sum
+theorem cloud_gap_sum (k : ℕ) (lam : ℕ → ℝ) (g : ℝ) (hgap : ∀ s, 1 ≤ s → s + 1 ≤ k - 1 → lam (s + 1) + g ≤ lam s) (s : ℕ) (hs : 1 ≤ s) : ∀ s', s ≤ s' → s' ≤ k - 1 → lam s' + ((s' : ℝ) - s) * g ≤ lam s
+
+### CompanionTheory.AutomorphicTheory.BesselWaveGrids.InterlacingGrids.CloudProd:65  GroundTheory.BlockD.FourierDecayAlt.WaveGridLiftGrid.cloud_prod_le
+theorem cloud_prod_le (k : ℕ) (lam : ℕ → ℝ) (c g Y : ℝ) (hk : 1 ≤ k) (hc : 0 ≤ c) (hg : 1 + c ≤ g) (hgap : ∀ s, 1 ≤ s → s + 1 ≤ k - 1 → lam (s + 1) + g ≤ lam s) : ∏ s ∈ Icc 1 (k - 1), (1 + (1 + c) / max |Y + lam s| 1) ≤ (2 + c) ^ 2 * (k : ℝ) ^ 2
+
+### CompanionTheory.AutomorphicTheory.BesselWaveGrids.InterlacingGrids.FreeFamily:7  GroundTheory.BlockD.FourierDecayAlt.WaveGridLiftGrid.exists_free_family
+theorem exists_free_family (Y : Finset ℝ) (w : List (Bool × ℝ)) (K D : ℕ) (hw : ∀ l ∈ w, ∃ y ∈ Y, l = (true, y) ∨ l = (false, y + 1)) (hcard : w.length + K * D ≤ Y.card) : ∃ g : Fin K → Fin D → ℝ, (∀ a i, g a i ∈ Y) ∧ (∀ a i a' i', g a i = g a' i' → a = a' ∧ i = i') ∧ ∀ a i, ∀ l ∈ w, ∃ y ∈ Y, y ≠ g a i ∧ (l = (true, y) ∨ l = (false, y + 1))
+
+### CompanionTheory.AutomorphicTheory.BesselWaveGrids.InterlacingGrids.GridSum:7  GroundTheory.BlockD.FourierDecayAlt.WaveGridLiftGrid.grid_sqrt_le
+theorem grid_sqrt_le {K d : ℕ} (grid : Fin K → Fin (d + 1) → ℝ) (nn Q : ℝ → ℝ) (β : ℝ) (hβ : 0 ≤ β) (hpos : ∀ a i, 0 < nn (grid a i) ∧ 0 < nn (grid a i + 1) ∧ 0 < Q (grid a i)) (hb : ∀ a i, nn (grid a i) * nn (grid a i + 1) ≤ β ^ 2 * Q (grid a i)) (n : Fin K → Fin (d + 1)) : Real.sqrt (((List.ofFn fun a => grid a (n a)).map nn).prod * ((List.ofFn fun a => grid a (n a)).map fun y => nn (y + 1)).prod / ((List.ofFn fun a => grid a (n a)).map Q).prod) ≤ β ^ K
+
+### CompanionTheory.AutomorphicTheory.BesselWaveGrids.InterlacingGrids.GridSum:36  GroundTheory.BlockD.FourierDecayAlt.WaveGridLiftGrid.grid_sum_le
+theorem grid_sum_le {K d : ℕ} (grid c : Fin K → Fin (d + 1) → ℝ) (nn Q : ℝ → ℝ) (β : ℝ) (hβ : 0 ≤ β) (hc : ∀ a, ∑ i, |c a i| ≤ 1) (hpos : ∀ a i, 0 < nn (grid a i) ∧ 0 < nn (grid a i + 1) ∧ 0 < Q (grid a i)) (hb : ∀ a i, nn (grid a i) * nn (grid a i + 1) ≤ β ^ 2 * Q (grid a i)) : ∑ n : Fin K → Fin (d + 1), |∏ a, c a (n a)| * Real.sqrt (((List.ofFn fun a => grid a (n a)).map nn).prod * ((List.ofFn fun a => grid a (n a)).map fun y => nn (y + 1)).prod / ((List.ofFn fun a => grid a (n a)).map Q).prod) ≤ β ^ K
+
+### CompanionTheory.AutomorphicTheory.BesselWaveGrids.InterlacingGrids.LagSum:7  GroundTheory.BlockD.FourierDecayAlt.WaveGridLiftGrid.lag_abs_term_le
+theorem lag_abs_term_le {d : ℕ} (y : Fin (d + 1) → ℝ) (h : ∀ i j, i ≠ j → 5 ≤ |y i - y j|) (j : Fin (d + 1)) : |∏ i ∈ (univ : Finset (Fin (d + 1))).erase j, (y j - y i)⁻¹| ≤ (1 / 5 : ℝ) ^ d
+
+### CompanionTheory.AutomorphicTheory.BesselWaveGrids.InterlacingGrids.LagSum:23  GroundTheory.BlockD.FourierDecayAlt.WaveGridLiftGrid.lag_abs_sum_le_one
+theorem lag_abs_sum_le_one {d : ℕ} (y : Fin (d + 1) → ℝ) (h : ∀ i j, i ≠ j → 5 ≤ |y i - y j|) : ∑ j, |∏ i ∈ (univ : Finset (Fin (d + 1))).erase j, (y j - y i)⁻¹| ≤ 1
+
+### CompanionTheory.AutomorphicTheory.BesselWaveGrids.InterlacingGrids.ProgYInjective:9  GroundTheory.BlockD.FourierDecayAlt.WaveGridLiftGrid.progY_injective
+lemma progY_injective (y0 : ℝ) : Function.Injective fun i : ℕ => y0 + 5 * (i : ℝ)
+
+### CompanionTheory.AutomorphicTheory.DiscreteGroupWaves.IntegralEqOfSqrtCauchy:7  CompanionTheory.NFCpt.ae_coords_ne_zero
+theorem ae_coords_ne_zero (n : ℕ) : ∀ᵐ c : Fin n → ℂ, ∀ a, c a ≠ 0
+
+### CompanionTheory.AutomorphicTheory.DiscreteGroupWaves.IntegralEqOfSqrtCauchy:14  CompanionTheory.NFCpt.ae_ne_zero_c
+theorem ae_ne_zero_c : ∀ᵐ t : ℂ, t ≠ 0
+
+### CompanionTheory.AutomorphicTheory.DiscreteGroupWaves.IntegralEqOfSqrtCauchy:18  CompanionTheory.NFCpt.tower_integral
+theorem tower_integral : ∀ (n : ℕ) (E : (j : ℕ) → (Fin j → ℂ) → ℝ), AEStronglyMeasurable (E n) volume → (∀ c, (∀ a, c a ≠ 0) → 0 ≤ E n c) → (∀ j, j < n → ∀ c : Fin j → ℂ, (∀ a, c a ≠ 0) → Integrable (fun t : ℂ => E (j + 1) (Fin.snoc c t)) ∧ ∫ t : ℂ, E (j + 1) (Fin.snoc c t) = E j c) → Integrable (E n) ∧ ∫ c, E n c = E 0 (fun a => a.elim0) | 0, E, _, _, _ => by have e : E 0 = fun _ => E 0 (fun a => a.elim0)
+
+### CompanionTheory.AutomorphicTheory.DiscreteGroupWaves.IntegralEqOfSqrtCauchy:82  CompanionTheory.NFCpt.abs_sub_le_of_sqrt
+theorem abs_sub_le_of_sqrt {a b d δ : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b) (hd : 0 ≤ d) (hδ : 0 < δ) (h : |Real.sqrt a - Real.sqrt b| ≤ Real.sqrt d) : |a - b| ≤ d / δ + δ * (a + b)
+
+### CompanionTheory.AutomorphicTheory.DiscreteGroupWaves.IntegralEqOfSqrtCauchy:101  CompanionTheory.NFCpt.integral_eq_of_sqrt_cauchy
+theorem integral_eq_of_sqrt_cauchy {α : Type*} [MeasurableSpace α] {μ : Measure α} {q : ℕ → α → ℝ} {v : α → ℝ} {d : ℕ → ℕ → α → ℝ} {a : ℝ} (hq : ∀ n, Integrable (q n) μ) (hq0 : ∀ n x, 0 ≤ q n x) (hd : ∀ n m, Integrable (d n m) μ) (hd0 : ∀ n m x, 0 ≤ d n m x) (htri : ∀ n m x, |Real.sqrt (q n x) - Real.sqrt (q m x)| ≤ Real.sqrt (d n m x)) (hlim : ∀ᵐ x ∂μ, Tendsto (fun n => q n x) atTop (𝓝 (v x))) (ha : Tendsto (fun n => ∫ x, q n x ∂μ) atTop (𝓝 a)) (hC : ∀ η : ℝ, 0 < η → ∃ N : ℕ, ∀ n m, N ≤ n → N ≤ m → ∫ x, d n m x ∂μ ≤ η) : Integrable v μ ∧ ∫ x, v x ∂μ = a
+
+### CompanionTheory.AutomorphicTheory.HeckeStandardModules.ExistsCen:12  CompanionTheory.PlaceDict.int_mem
+theorem int_mem (A : ValuationSubring Ω) (b : 𝓞 Ω) : (b : Ω) ∈ A
+
+### CompanionTheory.AutomorphicTheory.HeckeStandardModules.ExistsCen:18  CompanionTheory.PlaceDict.int_le
+theorem int_le (A : ValuationSubring Ω) (b : 𝓞 Ω) : A.valuation (b : Ω) ≤ 1
+
+### CompanionTheory.AutomorphicTheory.HeckeStandardModules.ExistsCen:74  CompanionTheory.PlaceDict.coe_smul
+theorem coe_smul (g : Ω ≃ₐ[E] Ω) (b : 𝓞 Ω) : ((g • b : 𝓞 Ω) : Ω) = g b
+
+### CompanionTheory.AutomorphicTheory.HeckeStandardModules.ExistsCen:115  CompanionTheory.PlaceDict.lift
+theorem lift [IsGalois E Ω] (L : IntermediateField E Ω) [FiniteDimensional E L] [Normal E L] (Q : Ideal (𝓞 Ω)) [hQ : Q.IsMaximal] (τ : L ≃ₐ[E] L) (θ : 𝓞 Ω ⧸ Q →+* 𝓞 Ω ⧸ Q) (hτ : ∀ x : 𝓞 L, Ideal.Quotient.mk Q (algebraMap (𝓞 L) (𝓞 Ω) (τ • x)) = θ (Ideal.Quotient.mk Q (algebraMap (𝓞 L) (𝓞 Ω) x))) : ∃ φ : Ω ≃ₐ[E] Ω, AlgEquiv.restrictNormalHom L φ = τ ∧ ∀ b : 𝓞 Ω, Ideal.Quotient.mk Q (φ • b) = θ (Ideal.Quotient.mk Q b)
+
+### CompanionTheory.AutomorphicTheory.JacobiDiagonalBounds.Vander:5  Formalism.FourierDecayAlt.P.NormalFormRelations.vander'
+theorem vander' (Q : ℕ) : ∃ lam : Fin (Q + 1) → Fin (Q + 1) → ℂ, ∀ (E : Type) [AddCommGroup E] [Module ℂ E] (a : Fin (Q + 1) → E) (q : Fin (Q + 1)), a q = ∑ s : Fin (Q + 1), lam q s • ∑ j : Fin (Q + 1), (((s : ℕ) : ℂ) ^ (j : ℕ)) • a j
+
+### CompanionTheory.AutomorphicTheory.SchurLimitBounds.SchurOrthogonality.URepBasic:28  CompanionTheory.LimBd.URep.UnitaryRep.coe_apply
+lemma coe_apply (g : G) : π g = (π.toHom g : H →L[ℂ] H)
+
+### CompanionTheory.AutomorphicTheory.SchurLimitBounds.SchurOrthogonality.URepBasic:30  CompanionTheory.LimBd.URep.UnitaryRep.continuous_orbit
+lemma continuous_orbit (v : H) : Continuous fun g => π g v
+
+### CompanionTheory.AutomorphicTheory.SchurLimitBounds.SchurOrthogonality.URepBasic:32  CompanionTheory.LimBd.URep.UnitaryRep.map_one
+@[simp] lemma map_one : π 1 = 1
+
+### CompanionTheory.AutomorphicTheory.SchurLimitBounds.SchurOrthogonality.URepBasic:36  CompanionTheory.LimBd.URep.UnitaryRep.map_mul
+@[simp] lemma map_mul (g h : G) : π (g * h) = π g * π h
+
+### CompanionTheory.AutomorphicTheory.SchurLimitBounds.SchurOrthogonality.URepBasic:41  CompanionTheory.LimBd.URep.UnitaryRep.map_mul_apply
+lemma map_mul_apply (g h : G) (v : H) : π (g * h) v = π g (π h v)
+
+### CompanionTheory.AutomorphicTheory.SchurLimitBounds.SchurOrthogonality.URepBasic:44  CompanionTheory.LimBd.URep.UnitaryRep.map_one_apply
+@[simp] lemma map_one_apply (v : H) : π 1 v = v
+
+### CompanionTheory.AutomorphicTheory.SchurLimitBounds.SchurOrthogonality.URepBasic:46  CompanionTheory.LimBd.URep.UnitaryRep.norm_map
+@[simp] lemma norm_map (g : G) (v : H) : ‖π g v‖ = ‖v‖
+
+### CompanionTheory.AutomorphicTheory.SchurLimitBounds.SchurOrthogonality.URepBasic:48  CompanionTheory.LimBd.URep.UnitaryRep.inner_map_map
+@[simp] lemma inner_map_map (g : G) (v w : H) : ⟪π g v, π g w⟫_ℂ = ⟪v, w⟫_ℂ
+
+### CompanionTheory.AutomorphicTheory.SchurLimitBounds.SchurOrthogonality.URepBasic:51  CompanionTheory.LimBd.URep.UnitaryRep.mem_unitary
+lemma mem_unitary (g : G) : π g ∈ unitary (H →L[ℂ] H)
+
+### CompanionTheory.AutomorphicTheory.SchurLimitBounds.SchurOrthogonality.URepBasic:53  CompanionTheory.LimBd.URep.UnitaryRep.star_map
+@[simp] lemma star_map (g : G) : star (π g) = π g⁻¹
+
+### CompanionTheory.AutomorphicTheory.SchurLimitBounds.SchurOrthogonality.URepBasic:58  CompanionTheory.LimBd.URep.UnitaryRep.adjoint_map
+@[simp] lemma adjoint_map (g : G) : adjoint (π g) = π g⁻¹
+
+### CompanionTheory.AutomorphicTheory.SchurLimitBounds.SchurOrthogonality.URepBasic:61  CompanionTheory.LimBd.URep.UnitaryRep.map_inv_apply_map
+@[simp] lemma map_inv_apply_map (g : G) (v : H) : π g⁻¹ (π g v) = v
+
+### CompanionTheory.AutomorphicTheory.SchurLimitBounds.SchurOrthogonality.URepBasic:64  CompanionTheory.LimBd.URep.UnitaryRep.map_apply_map_inv
+@[simp] lemma map_apply_map_inv (g : G) (v : H) : π g (π g⁻¹ v) = v
+
+### CompanionTheory.AutomorphicTheory.SchurLimitBounds.SchurOrthogonality.URepBasic:67  CompanionTheory.LimBd.URep.UnitaryRep.inner_map_left
+lemma inner_map_left (g : G) (v w : H) : ⟪π g v, w⟫_ℂ = ⟪v, π g⁻¹ w⟫_ℂ
+
+### CompanionTheory.AutomorphicTheory.SchurLimitBounds.SchurOrthogonality.URepBasic:70  CompanionTheory.LimBd.URep.UnitaryRep.inner_map_right
+lemma inner_map_right (g : G) (v w : H) : ⟪v, π g w⟫_ℂ = ⟪π g⁻¹ v, w⟫_ℂ
+
+### CompanionTheory.AutomorphicTheory.SchurLimitBounds.SchurOrthogonality.URepBasic:73  CompanionTheory.LimBd.URep.UnitaryRep.norm_map_le
+lemma norm_map_le (g : G) : ‖π g‖ ≤ 1
+
+### CompanionTheory.AutomorphicTheory.SchurLimitBounds.SchurOrthogonality.URepBasic:76  CompanionTheory.LimBd.URep.UnitaryRep.map_injective
+lemma map_injective (g : G) : Function.Injective (π g)
+
+### CompanionTheory.AutomorphicTheory.SchurLimitBounds.SchurOrthogonality.URepBasic:89  CompanionTheory.LimBd.URep.UnitaryRep.continuous_of_weak
+theorem continuous_of_weak (ρ : G →* unitary (H →L[ℂ] H)) (hρ : ∀ v w : H, Continuous fun g => ⟪(ρ g : H →L[ℂ] H) v, w⟫_ℂ) (v : H) : Continuous fun g => (ρ g : H →L[ℂ] H) v
+
+### CompanionTheory.AutomorphicTheory.SchurLimitBounds.SchurOrthogonality.URepBasic:111  CompanionTheory.LimBd.URep.UnitaryRep.continuous_of_continuousAt_one
+theorem continuous_of_continuousAt_one [IsTopologicalGroup G] (ρ : G →* unitary (H →L[ℂ] H)) (hρ : ∀ v : H, ContinuousAt (fun g => (ρ g : H →L[ℂ] H) v) 1) (v : H) : Continuous fun g => (ρ g : H →L[ℂ] H) v
+
+### CompanionTheory.AutomorphicTheory.SchurLimitBounds.SchurOrthogonality.URepBasic:134  CompanionTheory.LimBd.URep.UnitaryRep.continuous_action
+theorem continuous_action : Continuous fun p : G × H => π p.1 p.2
+
+### CompanionTheory.AutomorphicTheory.SchurLimitBounds.SchurOrthogonality.URepBasic:155  CompanionTheory.LimBd.URep.UnitaryRep.continuous_inner_orbit
+lemma continuous_inner_orbit (v w : H) : Continuous fun g => ⟪π g v, w⟫_ℂ
+
+### CompanionTheory.AutomorphicTheory.ThetaDilations.Nuabs:8  CompanionTheory.PlacePermOperatorBicommutantSpan.lower
+theorem lower : ∀ (G : Type) [Group G] [TopologicalSpace G] [IsTopologicalGroup G] [T2Space G] [LocallyCompactSpace G] [SecondCountableTopology G] [MeasurableSpace G] [BorelSpace G] (P : Subgroup G) (ν : Measure G) [SFinite ν], (∀ p ∈ P, ν.map (fun g => p * g) = ν) → (∀ U ∈ 𝓝 (1 : G), ν U ≠ 0) → ∀ C : Set G, IsCompact C → ∀ φ : G → ℝ≥0∞, Continuous φ → (∀ c ∈ C, φ c ≠ 0) → ∃ m : ℝ≥0∞, m ≠ 0 ∧ m ≠ ⊤ ∧ ∀ p ∈ P, ∀ c ∈ C, m ≤ ∫⁻ q, φ (q⁻¹ * (p * c)) ∂ν
+
+### CompanionTheory.AutomorphicTheory.ThetaDilations.Nuabs:37  CompanionTheory.PlacePermOperatorBicommutantSpan.cover
+theorem cover : ∀ (G : Type) [Group G] [TopologicalSpace G] [IsTopologicalGroup G] [T2Space G] [LocallyCompactSpace G] [SecondCountableTopology G] [MeasurableSpace G] [BorelSpace G] (μ : Measure G) [μ.IsHaarMeasure] (P : Subgroup G) (ν : Measure G) [SFinite ν], (∀ p ∈ P, ν.map (fun g => p * g) = ν) → (∀ U ∈ 𝓝 (1 : G), ν U ≠ 0) → ∀ C : Set G, IsCompact C → ∃ (C' : Set G) (K : ℝ≥0∞), IsCompact C' ∧ K < ⊤ ∧ ∀ (Γ : Subgroup G) [Countable Γ], Γ ≤ P → ∀ 𝓕 : Set G, IsFundamentalDomain Γ 𝓕 μ → ∀ S : Set G, MeasurableSet S → (∀ᵐ p ∂ν, ∃ γ ∈ Γ, γ * p ∈ S) → ∀ f g : G → ℝ≥0∞, Measurable f → Measurable g → (∀ γ ∈ Γ, ∀ x, f (γ * x) = f x) → (∀ x, f x ≠ 0 → ∃ p ∈ P, ∃ c ∈ C, x = p * c) → (∀ p ∈ S, ∀ c ∈ C', f (p * c) ≤ g p) → ∫⁻ x in 𝓕, f x ∂μ ≤ K * ∫⁻ p in S, g p ∂ν
+
+### CompanionTheory.AutomorphicTheory.ThetaDilations.Nuabs:82  CompanionTheory.PlacePermOperatorBicommutantSpan.unf
+theorem unf : ∀ (G : Type) [Group G] [TopologicalSpace G] [IsTopologicalGroup G] [T2Space G] [LocallyCompactSpace G] [SecondCountableTopology G] [MeasurableSpace G] [BorelSpace G] (μ : Measure G) [μ.IsMulLeftInvariant] (Γ Γ' : Subgroup G) [Countable Γ], Γ' ≤ Γ → ∀ 𝓕 : Set G, IsFundamentalDomain Γ 𝓕 μ → ∀ (Q : Type) (r : Q → G), (∀ q, r q ∈ Γ) → (∀ γ ∈ Γ, ∃! q, γ * (r q)⁻¹ ∈ Γ') → ∃ 𝓕' : Set G, IsFundamentalDomain Γ' 𝓕' μ ∧ ∀ f : G → ℝ≥0∞, Measurable f → ∫⁻ h in 𝓕, ∑' q, f (r q * h) ∂μ = ∫⁻ h in 𝓕', f h ∂μ
+
+### CompanionTheory.AutomorphicTheory.ThetaDilations.Nuabs:107  CompanionTheory.PlacePermOperatorBicommutantSpan.nuabs
+theorem nuabs : ∀ (G N H T : Type) [Group G] [MeasurableSpace G] [MeasurableMul₂ G] [MeasurableSpace N] [Group H] [MeasurableSpace H] [MeasurableMul H] [CommGroup T] [MeasurableSpace T] [MeasurableMul T] (μN : Measure N) [SFinite μN] (μH : Measure H) [SFinite μH] [μH.IsMulLeftInvariant] (μT : Measure T) [SFinite μT] [μT.IsMulLeftInvariant] (nn : N → G) (ι : H →* G) (mm : T →* G) (χ : T →* ℝ≥0), Measurable nn → Measurable ι → Measurable mm → Measurable χ → (∀ p, ∃ L : N → N, MeasurePreserving L μN μN ∧ ∀ x, nn p * nn x = nn (L x)) → (∀ u, ∃ L : N → N, MeasurePreserving L μN μN ∧ ∀ x, ι u * nn x = nn (L x) * ι u) → (∀ t, ∃ L : N → N, Measurable L ∧ μN.map L = χ t • μN ∧ ∀ x, mm t * nn x = nn (L x) * mm t) → (∀ u t, mm t * ι u = ι u * mm t) → ∀ (p : N) (u : H) (t : T), ((μN.prod (μH.prod (μT.withDensity fun s => (χ s : ℝ≥0∞)))).map fun z => nn z.1 * ι z.2.1 * mm z.2.2).map (fun g => nn p * ι u * mm t * g) = (μN.prod (μH.prod (μT.withDensity fun s => (χ s : ℝ≥0∞)))).map fun z => nn z.1 * ι z.2.1 * mm z.2.2
+
+### CompanionTheory.HarishChandraModules.BesselParameterIntegrals.ContDiffOnExpPartialHomeomorphSymm:14  CompanionTheory.D.Upq.contDiff_exp
+theorem contDiff_exp {n : WithTop ℕ∞} : ContDiff 𝕂 n (exp : 𝔸 → 𝔸)
+
+### CompanionTheory.HarishChandraModules.BesselParameterIntegrals.ContDiffOnExpPartialHomeomorphSymm:20  CompanionTheory.D.Upq.exp_add_of_commute'
+theorem exp_add_of_commute' {x y : 𝔸} (h : Commute x y) : exp (x + y) = exp x * exp y
+
+### CompanionTheory.HarishChandraModules.BesselParameterIntegrals.ContDiffOnExpPartialHomeomorphSymm:33  CompanionTheory.D.Upq.hasStrictFDerivAt_exp_zero_equiv
+theorem hasStrictFDerivAt_exp_zero_equiv : HasStrictFDerivAt (exp : 𝔸 → 𝔸) ((ContinuousLinearEquiv.refl 𝕂 𝔸 : 𝔸 →L[𝕂] 𝔸)) 0
+
+### CompanionTheory.HarishChandraModules.BesselParameterIntegrals.ContDiffOnExpPartialHomeomorphSymm:174  CompanionTheory.D.Upq.lieGroup_GL
+theorem lieGroup_GL (𝕂 : Type*) [RCLike 𝕂] (n : ℕ) (k : WithTop ℕ∞) : LieGroup 𝓘(𝕂, Matrix (Fin n) (Fin n) 𝕂) k (GL (Fin n) 𝕂)
+
+### CompanionTheory.HarishChandraModules.BesselParameterIntegrals.ContDiffOnExpPartialHomeomorphSymm:177  CompanionTheory.D.Upq.lieGroup_GL_complex_real
+theorem lieGroup_GL_complex_real (n : ℕ) (k : WithTop ℕ∞) : LieGroup 𝓘(ℝ, Matrix (Fin n) (Fin n) ℂ) k (GL (Fin n) ℂ)
+
+### CompanionTheory.HarishChandraModules.BesselParameterIntegrals.ContDiffOnExpPartialHomeomorphSymm:207  CompanionTheory.D.Upq.continuous_val_val
+theorem continuous_val_val (G : Subgroup 𝔸ˣ) : Continuous (fun x : G => ((x : 𝔸ˣ) : 𝔸))
+
+### CompanionTheory.HarishChandraModules.BesselParameterIntegrals.ContDiffOnExpPartialHomeomorphSymm:311  CompanionTheory.D.Upq.IsExpLieAlgebra.isManifold
+theorem isManifold (n : WithTop ℕ∞) : letI
+
+### CompanionTheory.HarishChandraModules.BesselParameterIntegrals.ContDiffOnExpPartialHomeomorphSymm:327  CompanionTheory.D.Upq.IsExpLieAlgebra.contMDiff_val
+theorem contMDiff_val (n : WithTop ℕ∞) : letI
+
+### CompanionTheory.HarishChandraModules.BesselParameterIntegrals.ContDiffOnExpPartialHomeomorphSymm:338  CompanionTheory.D.Upq.IsExpLieAlgebra.contMDiffAt_of_val
+theorem contMDiffAt_of_val {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {H : Type*} [TopologicalSpace H] {I : ModelWithCorners ℝ E H} {M : Type*} [TopologicalSpace M] [ChartedSpace H M] {n : WithTop ℕ∞} {f : M → G} {x : M} (hf : ContMDiffAt I 𝓘(ℝ, 𝔸) n (fun y => ((f y : 𝔸ˣ) : 𝔸)) x) : letI
+
+### CompanionTheory.HarishChandraModules.BesselParameterIntegrals.ContDiffOnExpPartialHomeomorphSymm:361  CompanionTheory.D.Upq.IsExpLieAlgebra.lieGroup
+theorem lieGroup (n : WithTop ℕ∞) : letI
+
+### CompanionTheory.HarishChandraModules.BesselParameterIntegrals.ContDiffOnExpPartialHomeomorphSymm:474  CompanionTheory.D.Upq.exp_mul_exp_neg
+theorem exp_mul_exp_neg (X : 𝔐) : exp X * exp (-X) = 1
+
+### CompanionTheory.HarishChandraModules.BesselParameterIntegrals.ContDiffOnExpPartialHomeomorphSymm:475  CompanionTheory.D.Upq.exp_neg_mul_exp
+theorem exp_neg_mul_exp (X : 𝔐) : exp (-X) * exp X = 1
+
+### CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors.AdmissibleSmoothVectors.GardingAvg:15  CompanionTheory.D.gk.admitted.Gard.continuous_iter_partial
+theorem continuous_iter_partial (Φ : P × Q → E) (hΦ : ContDiff ℝ ∞ Φ) (k : ℕ) : Continuous fun p : P × Q => iteratedFDeriv ℝ k (fun y => Φ (y, p.2)) p.1
+
+### CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors.AdmissibleSmoothVectors.GardingAvg:42  CompanionTheory.D.gk.admitted.Gard.integrable_w
+theorem integrable_w (ρ : G → H →L[ℂ] H) (hρ : ∀ u, Continuous fun x => ρ x u) {w : G → ℝ} (hw : Continuous w) (hc : HasCompactSupport w) (u : H) : Integrable (fun x => w x • ρ x u) μ
+
+### CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors.AdmissibleSmoothVectors.GardingAvg:46  CompanionTheory.D.gk.admitted.Gard.exists_strictHenselian_absolutely_closed_local_ring
+theorem exists_strictHenselian_absolutely_closed_local_ring (ρ : G → H →L[ℂ] H) (hρ : ∀ u, Continuous fun x => ρ x u) (hiso : ∀ x u, ‖ρ x u‖ = ‖u‖) {w : G → ℝ} (hw : Continuous w) (hc : HasCompactSupport w) : ∃ T : H →L[ℂ] H, ∀ u, T u = ∫ x, w x • ρ x u ∂μ
+
+### CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors.AdmissibleSmoothVectors.GardingAvg:63  CompanionTheory.D.gk.admitted.Gard.integral_mul_right_of_conj
+theorem integral_mul_right_of_conj {w : G → ℝ} (hw : Continuous w) (hc : HasCompactSupport w) (h0 : 0 ≤ w) (h1 : w 1 ≠ 0) (k : G) (hk : ∀ x, w (k⁻¹ * x * k) = w x) (F : G → H) : ∫ x, F (x * k) ∂μ = ∫ x, F x ∂μ
+
+### CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors.AdmissibleSmoothVectors.GardingAvg:80  CompanionTheory.D.gk.admitted.Gard.apply_alt
+theorem apply_alt (ρ : G → H →L[ℂ] H) (hρ : ∀ u, Continuous fun x => ρ x u) (hmul : ∀ x y u, ρ (x * y) u = ρ x (ρ y u)) {w : G → ℝ} (hw : Continuous w) (hc : HasCompactSupport w) (g : G) (u : H) : ρ g (∫ x, w x • ρ x u ∂μ) = ∫ x, w (g⁻¹ * x) • ρ x u ∂μ
+
+### CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors.AdmissibleSmoothVectors.GardingAvg:90  CompanionTheory.D.gk.admitted.Gard.T_comm
+theorem T_comm (ρ : G → H →L[ℂ] H) (hρ : ∀ u, Continuous fun x => ρ x u) (hmul : ∀ x y u, ρ (x * y) u = ρ x (ρ y u)) {w : G → ℝ} (hw : Continuous w) (hc : HasCompactSupport w) (h0 : 0 ≤ w) (h1 : w 1 ≠ 0) (k : G) (hk : ∀ x, w (k⁻¹ * x * k) = w x) (u : H) : ∫ x, w x • ρ x (ρ k u) ∂μ = ρ k (∫ x, w x • ρ x u ∂μ)
+
+### CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors.AdmissibleSmoothVectors.GardingAvg:100  CompanionTheory.D.gk.admitted.Gard.exists_nhds_close
+theorem exists_nhds_close (ρ : G → H →L[ℂ] H) (hρ : ∀ u, Continuous fun x => ρ x u) (h1 : ∀ u, ρ 1 u = u) (Y : Submodule ℂ H) [FiniteDimensional ℂ Y] : ∃ V ∈ 𝓝 (1 : G), ∀ x ∈ V, ∀ y ∈ Y, ‖ρ x y - y‖ ≤ 1 / 2 * ‖y‖
+
+### CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors.AdmissibleSmoothVectors.GardingAvg:116  CompanionTheory.D.gk.admitted.Gard.eq_zero_of_alt_alt
+theorem eq_zero_of_alt_alt (ρ : G → H →L[ℂ] H) (hρ : ∀ u, Continuous fun x => ρ x u) {w : G → ℝ} (hw : Continuous w) (hc : HasCompactSupport w) (h0 : 0 ≤ w) (h1 : w 1 ≠ 0) (y : H) (hy : ∀ x, w x ≠ 0 → ‖ρ x y - y‖ ≤ 1 / 2 * ‖y‖) (hT : ∫ x, w x • ρ x y ∂μ = 0) : y = 0
+
+### CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors.AdmissibleSmoothVectors.GardingAvg:137  CompanionTheory.D.gk.admitted.Gard.exists_preimage
+theorem exists_preimage {H : Type*} [NormedAddCommGroup H] [NormedSpace ℂ H] (Y : Submodule ℂ H) [FiniteDimensional ℂ Y] (T : H →L[ℂ] H) (hT : ∀ y ∈ Y, T y ∈ Y) (hi : ∀ y ∈ Y, T y = 0 → y = 0) : ∀ v ∈ Y, ∃ u, T u = v
+
+### CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors.AdmissibleSmoothVectors.IwaChol:12  CompanionTheory.D.gk.admitted.CholeskyDecomposition.isUpperTriangular_conjTranspose_iff
+theorem isUpperTriangular_conjTranspose_iff {A : Matrix n n 𝕜} : Aᴴ.IsUpperTriangular ↔ A.IsLowerTriangular
+
+### CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors.AdmissibleSmoothVectors.IwaChol:26  CompanionTheory.D.gk.admitted.CholeskyDecomposition.exists_isUpperTriangular_conjTranspose_mul_self
+theorem exists_isUpperTriangular_conjTranspose_mul_self {S : Matrix n n 𝕜} (hS : S.PosDef) : ∃ R : Matrix n n 𝕜, R.IsUpperTriangular ∧ Rᴴ * R = S
+
+### CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors.AdmissibleSmoothVectors.IwaChol:64  CompanionTheory.D.gk.admitted.CholeskyDecomposition.star_mul_self_norm_div
+theorem star_mul_self_norm_div {x : 𝕜} (hx : x ≠ 0) : star ((‖x‖ : 𝕜) / x) * ((‖x‖ : 𝕜) / x) = 1
+
+### CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors.AdmissibleSmoothVectors.IwaChol:69  CompanionTheory.D.gk.admitted.CholeskyDecomposition.exists_cholesky
+theorem exists_cholesky {S : Matrix n n 𝕜} (hS : S.PosDef) : ∃ B : Matrix n n 𝕜, ∃ a : n → ℝ, B.IsUpperTriangular ∧ (∀ i, 0 < a i) ∧ (∀ i, B i i = a i) ∧ Bᴴ * B = S
+
+### CompanionTheory.HarishChandraModules.NonemptyRepresentations.ExpEntry:7  CompanionTheory.D.Inhab.exp_entry
+theorem exp_entry (N : ℕ) (X : Matrix (Fin N) (Fin N) ℂ) (i j : Fin N) : HasDerivAt (fun t : ℝ => (NormedSpace.exp ((t : ℂ) • X)) i j) (X i j) 0
+
+### CompanionTheory.HarishChandraModules.NonemptyRepresentations.NonemptyOfAntitone:30  CompanionTheory.D.Inhab.HWRep.differentiable_det
+theorem differentiable_det : Differentiable ℂ (fun B : Fin k → Fin k → ℂ => (Matrix.of B).det)
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.AdelicAnalysis.AdeleRingStableRangeOne:8  GlobalTheory.CompanionTheory.AdeleStableRange.local_val
+theorem local_val {K Γ : Type*} [Field K] [LinearOrderedCommGroupWithZero Γ] (w : Valuation K Γ) (a b x y : K) (h : x * a + y * b = 1) : ∃ t : K, (t = 0 ∨ t = 1) ∧ a + t * b ≠ 0 ∧ (w a ≤ 1 → w b ≤ 1 → w x ≤ 1 → w y ≤ 1 → w (a + t * b) = 1)
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.AdelicAnalysis.AdeleRingStableRangeOne:49  GlobalTheory.CompanionTheory.AdeleStableRange.local_field
+theorem local_field {K : Type*} [Field K] (a b x y : K) (h : x * a + y * b = 1) : ∃ t : K, IsUnit (a + t * b)
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.AdelicAnalysis.AdeleRingStableRangeOne:59  GlobalTheory.CompanionTheory.AdeleStableRange.finite_part
+theorem finite_part (R K : Type*) [CommRing R] [IsDedekindDomain R] [Field K] [Algebra R K] [IsFractionRing R K] (a b : FiniteAdeleRing R K) (hab : IsCoprime a b) : ∃ t : FiniteAdeleRing R K, IsUnit (a + t * b)
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.AdelicAnalysis.AdeleRingStableRangeOne:79  GlobalTheory.CompanionTheory.AdeleStableRange.infinite_part
+theorem infinite_part (K : Type*) [Field K] [NumberField K] (a b : InfiniteAdeleRing K) (hab : IsCoprime a b) : ∃ t : InfiniteAdeleRing K, IsUnit (a + t * b)
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.AdelicAnalysis.AdeleRingStableRangeOne:87  GlobalTheory.CompanionTheory.AdeleStableRange.adeleRing_stableRange_one
+theorem adeleRing_stableRange_one : ∀ (F : Type) [Field F] [NumberField F] (a b : AdeleRing (𝓞 F) F), IsCoprime a b → ∃ t, IsUnit (a + t * b)
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.AdelicAnalysis.CompactPartClosedOrbit:8  GlobalTheory.CompanionTheory.Adelic.compact_part_closed_orbit
+theorem compact_part_closed_orbit : ∀ (G : Type) [Group G] [TopologicalSpace G] [IsTopologicalGroup G] [T2Space G] [LocallyCompactSpace G] [SecondCountableTopology G] (V : Type) [TopologicalSpace V] [T2Space V] [LocallyCompactSpace V] (a : G → V → V), (Continuous fun p : G × V => a p.1 p.2) → (∀ y, a 1 y = y) → (∀ g h y, a (g * h) y = a g (a h y)) → ∀ (Z : Set V) (x : V), IsClosed Z → (∀ y, y ∈ Z ↔ ∃ g, a g x = y) → ∀ Ω : Set V, IsCompact Ω → ∃ C : Set G, IsCompact C ∧ ∀ y ∈ Ω, y ∈ Z → ∃ c ∈ C, a c x = y
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.AdelicAnalysis.ExistsCompactForMeasurePreservingEndos:8  GlobalTheory.CompanionTheory.Adelic.lattice_pigeonhole_measure_preserving
+theorem lattice_pigeonhole_measure_preserving : ∀ (V : Type) [AddCommGroup V] [TopologicalSpace V] [IsTopologicalAddGroup V] [T2Space V] [LocallyCompactSpace V] [SecondCountableTopology V] [MeasurableSpace V] [BorelSpace V] (μ : Measure V) [μ.IsAddHaarMeasure], μ Set.univ = ⊤ → ∀ (Λ : Type) [AddCommGroup Λ] [Countable Λ] (j : Λ →+ V) (C : Set V), IsCompact C → (∀ y, ∃ l, y - j l ∈ C) → ∃ Ω : Set V, IsCompact Ω ∧ ∀ e : V →+ V, Continuous e → μ.map e = μ → ∃ l, l ≠ 0 ∧ e (j l) ∈ Ω
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.AdelicAnalysis.FiniteCovolumeUnimodular:8  GlobalTheory.CompanionTheory.SW.LatticeUnimod.unimodular_of_isFundamentalDomain
+theorem unimodular_of_isFundamentalDomain : ∀ (G : Type) [Group G] [TopologicalSpace G] [IsTopologicalGroup G] [T2Space G] [LocallyCompactSpace G] [SecondCountableTopology G] [MeasurableSpace G] [BorelSpace G] (Γ : Subgroup G) [Countable Γ] (μ : Measure G) [μ.IsHaarMeasure] (𝓕 : Set G), IsFundamentalDomain Γ 𝓕 μ → μ 𝓕 < ⊤ → μ 𝓕 ≠ 0 ∧ μ.IsMulRightInvariant ∧ μ.IsInvInvariant
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.AdelicAnalysis.GeomSumIntLe:8  GlobalTheory.CompanionTheory.Adelic.geom_sum_int_le
+theorem geom_sum_int_le (D M : ℕ) (hD : 0 < D) (hM : 1 ≤ M) (x₀ C : ℝ) : ∃ C' : ℝ, ∀ r : ℝ, 0 < r → ∑' j : ℤ, (if (j : ℝ) + Real.log r < x₀ then 0 else ENNReal.ofReal (C * Real.exp (2 * D * ((j : ℝ) + Real.log r)))) * ENNReal.ofReal (Real.exp (-(2 * D * (M + 1) * (j : ℝ)))) ≤ ENNReal.ofReal (C' * r ^ (2 * D * (M + 1)))
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.AdelicAnalysis.GeomSumIntLe:116  GlobalTheory.CompanionTheory.Adelic.geom_sum_int
+theorem geom_sum_int : ∀ (D M : ℕ), 0 < D → 1 ≤ M → ∀ (x₀ C : ℝ), ∃ C' : ℝ, ∀ r : ℝ, 0 < r → ∑' j : ℤ, (if (j : ℝ) + Real.log r < x₀ then 0 else ENNReal.ofReal (C * Real.exp (2 * D * ((j : ℝ) + Real.log r)))) * ENNReal.ofReal (Real.exp (-(2 * D * (M + 1) * (j : ℝ)))) ≤ ENNReal.ofReal (C' * r ^ (2 * D * (M + 1)))
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.AdelicAnalysis.GroupActionHaarScalingContinuous:8  GlobalTheory.CompanionTheory.Adelic.ModulusAction.exists_continuous_modulus
+theorem exists_continuous_modulus : ∀ (V : Type) [AddCommGroup V] [TopologicalSpace V] [IsTopologicalAddGroup V] [T2Space V] [LocallyCompactSpace V] [SecondCountableTopology V] [MeasurableSpace V] [BorelSpace V] (μ : Measure V) [μ.IsAddHaarMeasure] (T : Type) [Group T] [TopologicalSpace T] [FirstCountableTopology T] [LocallyCompactSpace T] (a : T → V →+ V), (Continuous fun p : T × V => a p.1 p.2) → Continuous (fun t : T => t⁻¹) → (∀ y, a 1 y = y) → (∀ s t y, a (s * t) y = a s (a t y)) → ∃ χ : T →* ℝ≥0, Continuous χ ∧ ∀ t, μ.map (a t) = χ t • μ
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.AdelicAnalysis.InfiniteProductMultipliable:8  GlobalTheory.CompanionTheory.SW.AbsTprod.multipliable_of_summable_abs_sub_one
+theorem multipliable_of_summable_abs_sub_one {ι : Type} {a : ι → ℝ} (h : Summable (fun v => |a v - 1|)) : Multipliable a
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.AdelicAnalysis.InfiniteProductMultipliable:15  GlobalTheory.CompanionTheory.SW.AbsTprod.tprod_nonneg_of_nonneg
+theorem tprod_nonneg_of_nonneg {ι : Type} {a : ι → ℝ} (hm : Multipliable a) (h0 : ∀ v, 0 ≤ a v) : 0 ≤ ∏' v, a v
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.AdelicAnalysis.InfiniteProductMultipliable:19  GlobalTheory.CompanionTheory.SW.AbsTprod.tprod_ne_zero_of_summable
+theorem tprod_ne_zero_of_summable {ι : Type} {a : ι → ℝ} (h : Summable (fun v => |a v - 1|)) (h0 : ∀ v, a v ≠ 0) : ∏' v, a v ≠ 0
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.AdelicAnalysis.InfiniteProductMultipliable:26  GlobalTheory.CompanionTheory.SW.AbsTprod.tprod_eq_prod_mul_tprod_compl
+theorem tprod_eq_prod_mul_tprod_compl {ι : Type} {a : ι → ℝ} (h : Summable (fun v => |a v - 1|)) (S : Finset ι) : Multipliable (fun v : {v // v ∉ S} => a v.1) ∧ ∏' v, a v = (∏ v ∈ S, a v) * ∏' v : {v // v ∉ S}, a v.1
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.AdelicAnalysis.InfiniteProductMultipliable:39  GlobalTheory.CompanionTheory.SW.AbsTprod.abs_tprod
+theorem abs_tprod : ∀ (ι : Type) (a : ι → ℝ), Summable (fun v => |a v - 1|) → Multipliable a ∧ (∀ S : Finset ι, Multipliable (fun v : {v // v ∉ S} => a v.1) ∧ ∏' v, a v = (∏ v ∈ S, a v) * ∏' v : {v // v ∉ S}, a v.1) ∧ ((∀ v, 0 < a v) → 0 < ∏' v, a v) ∧ ((∀ v, 0 ≤ a v) → 0 ≤ ∏' v, a v)
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.AdelicAnalysis.MatrixInductionTransvectionDiagonal:298  GlobalTheory.CompanionTheory.Adelic.StableRangeOne.matrix_induction
+theorem matrix_induction : ∀ (R : Type) [CommRing R], (∀ a b : R, IsCoprime a b → ∃ t, IsUnit (a + t * b)) → ∀ (ι : Type) [Fintype ι] [DecidableEq ι] (p : Matrix ι ι R → Prop), (∀ (i j : ι) (c : R), i ≠ j → p (Matrix.transvection i j c)) → (∀ D : ι → R, (∀ i, IsUnit (D i)) → p (Matrix.diagonal D)) → (∀ A B, IsUnit A.det → IsUnit B.det → p A → p B → p (A * B)) → ∀ A : Matrix ι ι R, IsUnit A.det → p A
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.AdelicAnalysis.SymmetricInvertibleExistsPosdefCongruence:7  GlobalTheory.CompanionTheory.SW.exists_posDef_majorant_of_isSymm
+theorem exists_posDef_majorant_of_isSymm : ∀ (ι : Type) [Fintype ι] [DecidableEq ι] (B : Matrix ι ι ℝ), B.IsSymm → B.det ≠ 0 → ∃ P : Matrix ι ι ℝ, P.PosDef ∧ P * B⁻¹ * P = B
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.AdelicAnalysis.TotallyRealContinuousEmbeddingInfiniteAdeles:8  GlobalTheory.CompanionTheory.AdelicRealLine.norm_eq_abs_ringEquiv
+theorem norm_eq_abs_ringEquiv {F : Type} [Field F] {w : InfinitePlace F} (hw : w.IsReal) (x : w.Completion) : ‖x‖ = |InfinitePlace.Completion.ringEquivRealOfIsReal hw x|
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.AdelicAnalysis.TotallyRealContinuousEmbeddingInfiniteAdeles:18  GlobalTheory.CompanionTheory.AdelicRealLine.exists_continuous_real_embedding
+theorem exists_continuous_real_embedding : ∀ (F : Type) [Field F] [NumberField F], IsTotallyReal F → (∃ θ : ℝ →+* InfiniteAdeleRing F, Continuous θ) ∧ ∀ θ : ℝ →+* InfiniteAdeleRing F, Continuous θ → ∀ (t : ℝ) (w : InfinitePlace F), ‖θ t w‖ = |t|
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.StableLattices.CommuteOfMemAdjoin:7  GlobalTheory.CompanionTheory.CommStep.commute_of_mem_adjoin
+theorem commute_of_mem_adjoin {V : Type} [AddCommGroup V] [Module ℂ V] {l : ℕ} (a : Fin (l + 1) → Module.End ℂ V) (hc : ∀ i j, Commute (a i) (a j)) (i : Fin (l + 1)) {y : Module.End ℂ V} (hy : y ∈ Algebra.adjoin ℂ (Set.range a)) : Commute y (a i)
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.StableLattices.CommuteOfMemAdjoin:18  GlobalTheory.CompanionTheory.CommStep.adjoin_le_sup
+theorem adjoin_le_sup {V : Type} [AddCommGroup V] [Module ℂ V] {l : ℕ} (a : Fin (l + 1) → Module.End ℂ V) (hc : ∀ i j, Commute (a i) (a j)) : Subalgebra.toSubmodule (Algebra.adjoin ℂ (Set.range a)) ≤ Subalgebra.toSubmodule (Algebra.adjoin ℂ (Set.range fun i : Fin l => a i.succ)) ⊔ (Subalgebra.toSubmodule (Algebra.adjoin ℂ (Set.range a))).map (LinearMap.mulRight ℂ (a 0))
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.StableLattices.CommuteOfMemAdjoin:65  GlobalTheory.CompanionTheory.CommStep.finrank_map_pow_le
+theorem finrank_map_pow_le {V : Type} [AddCommGroup V] [Module ℂ V] [FiniteDimensional ℂ V] {l : ℕ} (a : Fin (l + 1) → Module.End ℂ V) (hc : ∀ i j, Commute (a i) (a j)) (k : ℕ) : finrank ℂ ((Subalgebra.toSubmodule (Algebra.adjoin ℂ (Set.range a))).map (LinearMap.mulRight ℂ (a 0 ^ k))) ≤ finrank ℂ (Algebra.adjoin ℂ (Set.range fun i : Fin l => a i.succ)) + finrank ℂ ((Subalgebra.toSubmodule (Algebra.adjoin ℂ (Set.range a))).map (LinearMap.mulRight ℂ (a 0 ^ (k + 1))))
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.StableLattices.CommuteOfMemAdjoin:90  GlobalTheory.CompanionTheory.CommStep.comm_step
+theorem comm_step : ∀ (V : Type) [AddCommGroup V] [Module ℂ V] [FiniteDimensional ℂ V] (l : ℕ) (a : Fin (l + 1) → Module.End ℂ V), (∀ i j, Commute (a i) (a j)) → ∀ x : ℕ, Module.finrank ℂ (Algebra.adjoin ℂ (Set.range a)) ≤ x * Module.finrank ℂ (Algebra.adjoin ℂ (Set.range fun i : Fin l => a i.succ)) + Module.finrank ℂ ((Subalgebra.toSubmodule (Algebra.adjoin ℂ (Set.range a))).map (LinearMap.mulRight ℂ (a 0 ^ x)))
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.StableLattices.CompactSubgroupFiniteOpenCosets:5  GlobalTheory.CompanionTheory.CosetCover.exists_finite_coset_cover
+theorem exists_finite_coset_cover : ∀ (G : Type) [Group G] [TopologicalSpace G] [IsTopologicalGroup G] (K₀ K : Subgroup G), IsCompact (K₀ : Set G) → IsOpen (K : Set G) → ∃ (d : ℕ) (c : Fin d → G), (∀ i, c i ∈ K₀) ∧ ∀ g ∈ K₀, ∃ i, ∃ κ ∈ K, g = κ * c i
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.StableLattices.FinrankAdjoinLeAdd:71  GlobalTheory.CompanionTheory.CommSplit.finrank_adjoin_le_add
+theorem finrank_adjoin_le_add : ∀ (V : Type) [AddCommGroup V] [Module ℂ V] [FiniteDimensional ℂ V] (l : ℕ) (a : Fin l → Module.End ℂ V) (W W' : Submodule ℂ V), IsCompl W W' → ∀ (h : ∀ i, ∀ w ∈ W, a i w ∈ W) (h' : ∀ i, ∀ w ∈ W', a i w ∈ W'), Module.finrank ℂ (Algebra.adjoin ℂ (Set.range a)) ≤ Module.finrank ℂ (Algebra.adjoin ℂ (Set.range fun i => ((a i).restrict (h i) : Module.End ℂ W))) + Module.finrank ℂ (Algebra.adjoin ℂ (Set.range fun i => ((a i).restrict (h' i) : Module.End ℂ W')))
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.StableLattices.FinrankRangePowConvex:17  GlobalTheory.CompanionTheory.CommNil.exists_rel_compl
+theorem exists_rel_compl [FiniteDimensional ℂ V] (W' W : Submodule ℂ V) (h : W' ≤ W) : ∃ Y : Submodule ℂ V, Y ⊔ W' = W ∧ finrank ℂ Y + finrank ℂ W' = finrank ℂ W
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.StableLattices.FinrankRangePowConvex:31  GlobalTheory.CompanionTheory.CommNil.range_pow_succ
+theorem range_pow_succ (a : Module.End ℂ V) (i : ℕ) : LinearMap.range (a ^ (i + 1)) = (LinearMap.range (a ^ i)).map a
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.StableLattices.FinrankRangePowConvex:35  GlobalTheory.CompanionTheory.CommNil.range_pow_succ_le
+theorem range_pow_succ_le (a : Module.End ℂ V) (i : ℕ) : LinearMap.range (a ^ (i + 1)) ≤ LinearMap.range (a ^ i)
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.StableLattices.FinrankRangePowConvex:40  GlobalTheory.CompanionTheory.CommNil.finrank_range_pow_convex
+theorem finrank_range_pow_convex [FiniteDimensional ℂ V] (a : Module.End ℂ V) (i : ℕ) : 2 * finrank ℂ (LinearMap.range (a ^ (i + 1))) ≤ finrank ℂ (LinearMap.range (a ^ i)) + finrank ℂ (LinearMap.range (a ^ (i + 2)))
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.StableLattices.FinrankRangePowConvex:59  GlobalTheory.CompanionTheory.CommNil.succ_mul_drop_le
+theorem succ_mul_drop_le [FiniteDimensional ℂ V] (a : Module.End ℂ V) (x : ℕ) : (x + 1) * finrank ℂ (LinearMap.range (a ^ x)) + finrank ℂ (LinearMap.range (a ^ (x + 1))) ≤ (x + 1) * finrank ℂ (LinearMap.range (a ^ (x + 1))) + finrank ℂ (LinearMap.range (a ^ 0))
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.StableLattices.FinrankRangePowConvex:72  GlobalTheory.CompanionTheory.CommNil.range_le_ker_of_commute
+theorem range_le_ker_of_commute (a b : Module.End ℂ V) (hab : Commute b a) (ha : IsNilpotent a) (x : ℕ) (Y : Submodule ℂ V) (hY : Y ⊔ LinearMap.range (a ^ (x + 1)) = LinearMap.range (a ^ x)) (hb : Y ≤ LinearMap.ker b) : LinearMap.range (a ^ x) ≤ LinearMap.ker b
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.StableLattices.FinrankRangePowConvex:100  GlobalTheory.CompanionTheory.CommNil.finrank_map_le_of_ker
+theorem finrank_map_le_of_ker {E F G : Type} [AddCommGroup E] [Module ℂ E] [FiniteDimensional ℂ E] [AddCommGroup F] [Module ℂ F] [AddCommGroup G] [Module ℂ G] (f : E →ₗ[ℂ] F) (T : E →ₗ[ℂ] G) (A : Submodule ℂ E) (h : ∀ b ∈ A, T b = 0 → f b = 0) : finrank ℂ (A.map f) ≤ finrank ℂ (A.map T)
+
+### CompanionTheory.SpectralGeometry.LocalGlobalProofs.StableLattices.FinrankRangePowConvex:111  GlobalTheory.CompanionTheory.CommNil.succ_mul_finrank_map_le
+theorem succ_mul_finrank_map_le : ∀ (V : Type) [AddCommGroup V] [Module ℂ V] [FiniteDimensional ℂ V] (a : Module.End ℂ V), IsNilpotent a → ∀ (x : ℕ) (A : Submodule ℂ (Module.End ℂ V)), (∀ b ∈ A, Commute b a) → (x + 1) * Module.finrank ℂ (A.map (LinearMap.mulRight ℂ (a ^ x))) ≤ Module.finrank ℂ V ^ 2
+

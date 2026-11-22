@@ -1,0 +1,1200 @@
+### Formalism.FormalGroupLog.FormalGroupLogProofs.ChainRule:65  Formalism.G.LogCR.pderiv_aeval
+theorem pderiv_aeval [Fintype σ] (p : MvPolynomial σ R) (A : σ → MvPowerSeries τ R) (i : τ) : MvPowerSeries.pderiv R i (MvPolynomial.aeval A p) = ∑ j, MvPolynomial.aeval A (MvPolynomial.pderiv j p) * MvPowerSeries.pderiv R i (A j)
+
+### Formalism.FormalGroupLog.FormalGroupLogProofs.ChainRule:82  Formalism.G.LogCR.pderiv_subst
+theorem pderiv_subst [Fintype σ] [Finite τ] {a : σ → MvPowerSeries τ R} (ha : ∀ j, constantCoeff (a j) = 0) (f : MvPowerSeries σ R) (i : τ) : MvPowerSeries.pderiv R i (f.subst a) = ∑ j, (MvPowerSeries.pderiv R j f).subst a * MvPowerSeries.pderiv R i (a j)
+
+### Formalism.FormalGroupLog.FormalGroupLogProofs.ChainRule:115  Formalism.G.LogCR.pderiv_psubst
+theorem pderiv_psubst [Finite τ] {a : MvPowerSeries τ R} (ha : constantCoeff a = 0) (f : PowerSeries R) (i : τ) : MvPowerSeries.pderiv R i (f.subst a) = (PowerSeries.derivative R f).subst a * MvPowerSeries.pderiv R i a
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExceptionalCharacterBounds.EffConsts:7  Formalism.HermitianLattices.Ext.SupplyAP.constsOf_core
+theorem constsOf_core (n : ℕ) (c c₀ C R l T M : ℝ) (hn : 1 ≤ n) (hc : 0 < c) (hc₀ : 0 < c₀) (hC : 0 ≤ C) (hA1 : 4 * (n : ℝ) + 4 * (24 / c₀) ≤ R) (hA2 : (n : ℝ) + 2 * C / c₀ ≤ c * R) (hl : 1 ≤ l) (hT : R ^ 2 * l ^ 2 ≤ T) (hM : 0 < M) (hMl : M ≤ Real.exp l) : 4 ≤ T ∧ M ≤ Real.exp (c * Real.sqrt T) ∧ 3 * (Real.exp (T / 2) * T) ≤ c₀ * Real.exp T / M ^ n - C * Real.exp T * Real.exp (-c * Real.sqrt T)
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExceptionalCharacterBounds.EffConsts:113  Formalism.HermitianLattices.Ext.SupplyAP.constsOf
+theorem constsOf (A : ℕ) (c c₀ C : ℝ) (hc : 0 < c) (hc₀ : 0 < c₀) (hC : 0 ≤ C) : ∃ K : ℝ, 4 ≤ K ∧ ∀ (m : ℕ) (x : ℝ), 1 ≤ m → 0 < x → K * Real.log (3 * m) ^ 2 ≤ Real.log x → 4 ≤ Real.log x ∧ (m : ℝ) ≤ Real.exp (c * Real.sqrt (Real.log x)) ∧ 3 * (Real.sqrt x * Real.log x) ≤ c₀ * x / (m : ℝ) ^ (A + 1) - C * x * Real.exp (-c * Real.sqrt (Real.log x))
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExceptionalCharacterBounds.ExcTerm:7  Formalism.HermitianLattices.Ext.SupplyAP.excTerm
+theorem excTerm (x β : ℝ) (hx : 0 < x) (hL : 4 ≤ Real.log x) (hβ1 : 1 / 2 ≤ β) (hβ2 : β ≤ 1) : x ^ β / β ≤ x * (1 - (1 - β) / 2)
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExceptionalCharacterBounds.ExcTerm:37  Formalism.HermitianLattices.Ext.SupplyAP.excTerm_ofReal
+theorem excTerm_ofReal (x β : ℝ) (hx : 0 ≤ x) : (x : ℂ) ^ (β : ℂ) / (β : ℂ) = ((x ^ β / β : ℝ) : ℂ)
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExistsFarFromPoints:9  Formalism.HermitianLattices.Ext.PrimesInProgressions.T2.pow_key
+theorem pow_key (x : ℝ) (hx0 : 0 < x) (a k : ℕ) (hka : k ≤ a) : x ^ (a + k) ≤ (5 * x) ^ a * (x / 5) ^ k
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExistsFarFromPoints:20  Formalism.HermitianLattices.Ext.PrimesInProgressions.T2.prodDist_step
+theorem prodDist_step {ι : Type*} [DecidableEq ι] (t : ι → ℝ) (s S : Finset ι) (hS : S ⊆ s) (h3 : 3 * S.card ≤ s.card) (r ρ : ℝ) (hr : 0 < r) (hfar : ∀ j ∈ s, j ∉ S → r / 5 ≤ |ρ - t j|) (hin : ((r / 5) / 25) ^ S.card ≤ ∏ j ∈ S, |ρ - t j|) : (r / 25) ^ s.card ≤ ∏ j ∈ s, |ρ - t j|
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExistsFarFromPoints:92  Formalism.HermitianLattices.Ext.PrimesInProgressions.T2.exists_far_from_points
+theorem exists_far_from_points {ι : Type*} [DecidableEq ι] (t : ι → ℝ) : ∀ (N : ℕ) (s : Finset ι), s.card = N → ∀ (c r : ℝ), 0 < r → ∃ ρ : ℝ, |ρ - c| ≤ r ∧ (r / 25) ^ s.card ≤ ∏ j ∈ s, |ρ - t j|
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExistsFarFromPoints:119  Formalism.HermitianLattices.Ext.PrimesInProgressions.T2.prodDist
+theorem prodDist {ι : Type*} [DecidableEq ι] (t : ι → ℝ) (s : Finset ι) (c r : ℝ) (hr : 0 < r) : ∃ ρ : ℝ, |ρ - c| ≤ r ∧ (r / 25) ^ s.card ≤ ∏ j ∈ s, |ρ - t j|
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExistsPowerSumLowerBound:9  Formalism.HermitianLattices.Ext.PrimesInProgressions.TuranPowerSumBounds.exists_power_sum_lower_bound
+theorem exists_power_sum_lower_bound (C : ℝ) (a : ℕ) (hC : 0 < C) (hT : ∀ (n m : ℕ) (z : Fin n → ℂ), 1 ≤ n → (∀ i, ‖z i‖ ≤ 1) → (∃ i, ‖z i‖ = 1) → ∃ k : ℕ, m + 1 ≤ k ∧ k ≤ m + a * n ∧ ((n : ℝ) / (C * ((m : ℝ) + n))) ^ (a * n) ≤ ‖∑ i, z i ^ k‖) (ε : ℝ) (hε0 : 0 < ε) (hε : ε ≤ 1 / 2) (N : ℕ) (u : Fin N → ℂ) (hu : ∀ i, ‖u i‖ ^ 2 ≤ (u i).re) (hi : ∃ i, 1 / 2 ≤ ‖u i‖) (m : ℕ) (hm : 1 ≤ m) : ∃ j n : ℕ, m + 1 ≤ j ∧ j ≤ m + a * n ∧ 1 ≤ n ∧ (n : ℝ) * ε ^ 2 ≤ ∑ i, (u i).re ∧ (1 / 2) ^ j * ((n : ℝ) / (C * ((m : ℝ) + n))) ^ (a * n) ≤ ‖∑ i, u i ^ j‖ + ε ^ (j - 2) * ∑ i, (u i).re
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExistsPowerSumLowerBound:109  Formalism.HermitianLattices.Ext.PrimesInProgressions.TuranPowerSumBounds.turan_lb
+theorem turan_lb (C : ℝ) (hC : 0 < C) (a n m : ℕ) (hn : 1 ≤ n) : Real.exp (-((a : ℝ) * m) - a * n * Real.log (max C 1)) ≤ ((n : ℝ) / (C * ((m : ℝ) + n))) ^ (a * n)
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExistsPowerSumLowerBound:140  Formalism.HermitianLattices.Ext.PrimesInProgressions.TuranPowerSumBounds.fact_bound
+theorem fact_bound (x : ℝ) (hx : 0 ≤ x) (j : ℕ) (hj : 1 ≤ j) : x ^ j / ((j - 1).factorial : ℝ) ≤ j * (Real.exp 1 * x / j) ^ j
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExistsPowerSumLowerBound:173  Formalism.HermitianLattices.Ext.PrimesInProgressions.TuranPowerSumBounds.log_sq_bound
+theorem log_sq_bound (M : ℝ) (hM : 1 ≤ M) : Real.log (3 * M) ^ 2 ≤ 32 * Real.sqrt M
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.MSqMainA:9  Formalism.HermitianLattices.Ext.LogarithmicIntegralBounds.meansq_expand
+theorem meansq_expand (PP I : Finset ℕ) (c : ℕ → ℝ) (hc : ∀ n, 0 ≤ c n) (κ : ℕ → ℂ) (hκ : ∀ n, ‖κ n‖ ≤ 1) (J : ℕ → ℕ → ℤ) : (∑ q ∈ PP, ‖∑ n ∈ I, ((c n : ℝ) : ℂ) * κ n * ((J n q : ℤ) : ℂ)‖ ^ 2) ≤ ∑ n ∈ I, ∑ n' ∈ I, c n * c n' * |∑ q ∈ PP, ((J n q * J n' q : ℤ) : ℝ)|
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.MSqMainB:9  Formalism.HermitianLattices.Ext.LogarithmicIntegralBounds.meansq_split
+theorem meansq_split (I : Finset ℕ) (c : ℕ → ℝ) (hc : ∀ n, 0 ≤ c n) (r : ℕ → ℕ → ℕ) (A : ℕ → ℕ → ℝ) (P η : ℝ) (hP : 0 ≤ P) (hη : 0 ≤ η) (nstar : ℕ) (hA : ∀ n ∈ I, ∀ n' ∈ I, A n n' ≤ P) (hA' : ∀ n ∈ I, ∀ n' ∈ I, r n n' ≠ 1 → r n n' ≠ nstar → A n n' ≤ η * P) : ∑ n ∈ I, ∑ n' ∈ I, c n * c n' * A n n' ≤ ((∑ n ∈ I, ∑ n' ∈ I, if r n n' = 1 then c n * c n' else 0) + (∑ n ∈ I, ∑ n' ∈ I, if r n n' = nstar then c n * c n' else 0) + η * (∑ n ∈ I, c n) ^ 2) * P
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.MSqMainB:38  Formalism.HermitianLattices.Ext.LogarithmicIntegralBounds.pow_le_sqrt_of_rpow_le_log
+theorem pow_le_sqrt_of_rpow_le_log (ε : ℝ) (hε : 0 < ε) (x X : ℝ) (hx3 : 3 ≤ x) (hx : (19200 / ε) ^ (12 / ε) ≤ x) (hX : 0 < X) (hlog : x ^ (ε / 6) ≤ Real.log X) : x ^ 800 ≤ X ^ (1 / 2 : ℝ)
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.MSqMainB:72  Formalism.HermitianLattices.Ext.LogarithmicIntegralBounds.final_size
+theorem final_size (ε : ℝ) (hε1 : ε ≤ 1) (x : ℝ) (hx3 : 3 ≤ x) (C1 C2 C3 C4 S1 Sd R : ℝ) (hS0 : 0 ≤ S1) (hS1 : S1 ≤ C1 * x * Real.log x) (hSd : Sd ≤ C4 * x * Real.log x) (hR0 : 0 ≤ R) (hR : R ≤ C3 * (Real.sqrt x + x ^ (ε / 5) * Real.log x)) : Sd + R ^ 2 + (2 * (|C2| * Real.log x) ^ 2 + 2 * (|C2| * Real.log x) * R) + x ^ (-3 : ℝ) * S1 ^ 2 ≤ (|C4| + 25 * C3 ^ 2 + 2 * C2 ^ 2 + 10 * |C2| * |C3| + C1 ^ 2) * x * Real.log x
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTBAsmA:7  Formalism.HermitianLattices.Ext.PrimesInProgressions.num_alg
+theorem num_alg (M y C D Pt t lg lm : ℝ) (hM : 1 ≤ M) (hy : M ^ 5 ≤ y) (hC : 0 ≤ C) (hD : 0 ≤ D) (hPt : Pt ≤ (M ^ 8)⁻¹) (ht : t ≤ (M ^ 2)⁻¹) (hlg : lg ≤ D * M ^ 2) (hlm0 : 0 ≤ lm) (hlm : lm ≤ 13 * M) : M * (4 * y * (C * (Pt + lg * lm ^ 2 / M ^ 12)) / (M ^ 5)⁻¹ + 4 * ((M ^ 5)⁻¹ * y + 1) * lg) + 20 * (M ^ 5)⁻¹ * y + 2 * y * t ≤ (4 * C + 676 * C * D + 8 * D + 22) * y * (M ^ 2)⁻¹
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTBAsmA:57  Formalism.HermitianLattices.Ext.PrimesInProgressions.one_le_log_of_three_le
+theorem one_le_log_of_three_le {x : ℝ} (hx : 3 ≤ x) : 1 ≤ Real.log x
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTBAsmA:62  Formalism.HermitianLattices.Ext.PrimesInProgressions.inv_pow_eq_exp
+theorem inv_pow_eq_exp {M : ℝ} (hM : 0 < M) (n : ℕ) : (M ^ n)⁻¹ = Real.exp (-(n * Real.log M))
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTBAsmA:65  Formalism.HermitianLattices.Ext.PrimesInProgressions.logy_lt
+theorem logy_lt {cA M y : ℝ} (hcA : 0 < cA) (hy : 2 ≤ y) (h : cA * Real.sqrt (Real.log y) < Real.log M) : cA ^ 2 * Real.log y < Real.log M ^ 2
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTBAsmA:74  Formalism.HermitianLattices.Ext.PrimesInProgressions.inv_le_exp
+theorem inv_le_exp {cA c M y : ℝ} (hcA : 0 < cA) (hc : 0 < c) (hc' : c ≤ cA ^ 2) (hM : 8 ≤ M) (hy : 2 ≤ y) (h : cA * Real.sqrt (Real.log y) < Real.log M) : M⁻¹ ≤ Real.exp (-(c * Real.log y / Real.log M))
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTBAsmA:88  Formalism.HermitianLattices.Ext.PrimesInProgressions.num_main
+theorem num_main (cA κ C : ℝ) (hcA : 0 < cA) (hκ : 0 < κ) (hC : 0 < C) : ∃ C₀ B : ℝ, 0 ≤ C₀ ∧ 0 ≤ B ∧ ∀ M y : ℝ, 8 ≤ M → 2 ≤ y → C₀ * Real.log M * Real.log (Real.log M + 2) ≤ Real.log y → cA * Real.sqrt (Real.log y) < Real.log M → M * (4 * y * (C * ((M * M ^ (12 : ℝ)) ^ C * y ^ (-(κ / 2)) + Real.log (2 * y) * Real.log (M * M ^ (12 : ℝ)) ^ 2 / M ^ (12 : ℝ))) / (M ^ 5)⁻¹ + 4 * ((M ^ 5)⁻¹ * y + 1) * Real.log (2 * y)) + 20 * (M ^ 5)⁻¹ * y + 2 * y * y ^ (-(κ / 2)) ≤ B * y * (M⁻¹ * M⁻¹)
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTDHFinishA:9  Formalism.HermitianLattices.Ext.PrimesInProgressions.DHF.near_far
+theorem near_far (c : ℝ) (A B : ℕ) (hc : 0 < c) (hT : ∀ (n K : ℕ) (z : Fin n → ℂ), 1 ≤ n → B * n ≤ K → (∀ i, ‖z i‖ ≤ 1) → (∃ i, ‖z i‖ = 1) → (∀ i, ‖z i‖ ^ 2 ≤ 2 * (z i).re) → ∃ k : ℕ, K ≤ k ∧ k ≤ A * K ∧ c ^ K ≤ (∑ i, z i ^ k).re) (ε : ℝ) (hε0 : 0 < ε) (hε : ε ≤ 1 / 2) (N : ℕ) (u : Fin N → ℂ) (hu : ∀ i, ‖u i‖ ^ 2 ≤ (u i).re) (hi : ∃ i, 1 / 2 ≤ ‖u i‖) (K : ℕ) (hK2 : 2 ≤ K) (hKB : (B : ℝ) * (∑ i, (u i).re) ≤ ε ^ 2 * K) : ∃ j : ℕ, K ≤ j ∧ j ≤ A * K ∧ c ^ K * (1 / 2) ^ j ≤ (∑ i, u i ^ j).re + ε ^ (j - 2) * ∑ i, (u i).re
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTDHFinishA:121  Formalism.HermitianLattices.Ext.PrimesInProgressions.DHF.pow_small_a
+theorem pow_small_a (q : ℝ) (hq0 : 0 ≤ q) (hq1 : q ≤ 1) (K : ℕ) (hK3 : 3 ≤ K) : (K : ℝ) * (q ^ 2 / 8) ^ (K - 1) ≤ q ^ K / 8
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTDHFinishA:140  Formalism.HermitianLattices.Ext.PrimesInProgressions.DHF.pow_small_b
+theorem pow_small_b (q : ℝ) (hq0 : 0 ≤ q) (K : ℕ) (hK3 : 3 ≤ K) : (K : ℝ) * (q / 4) ^ K ≤ q ^ K / 8
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTDHFinishA:155  Formalism.HermitianLattices.Ext.PrimesInProgressions.DHF.final_contra
+theorem final_contra (q A K0 a b l : ℝ) (K : ℕ) (hq0 : 0 < q) (hq : q ≤ 1 / 4) (hl : l = -Real.log q) (hA : 1 ≤ A) (hK3 : 3 ≤ K) (hK0 : 0 < K0) (ha0 : 0 ≤ a) (ha : a * (2 * l + 2) ≤ 1) (hb : 0 ≤ b) (hKab : (K : ℝ) ≤ a * K0 + b) (hbig : b + 64 * A * Real.exp (l * b) < K0) (hmain : q ^ K ≤ 2 * A * K * Real.exp (-K0) + K * (q ^ 2 / 8) ^ (K - 1) + K * (q / 4) ^ K) : False
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTDHPrimeB:9  Formalism.HermitianLattices.Ext.PrimesInProgressions.dhpr_pow_exp_le
+lemma dhpr_pow_exp_le (m : ℕ) {b t : ℝ} (hb : 0 ≤ b) (ht : 0 ≤ t) : b ^ m * (t ^ m * Real.exp (-(b * t))) ≤ (m.factorial : ℝ)
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTDHPrimeB:23  Formalism.HermitianLattices.Ext.PrimesInProgressions.dhpr_one_sub_exp_neg
+lemma dhpr_one_sub_exp_neg {a : ℝ} (ha : 0 < a) : a / (1 + a) ≤ 1 - Real.exp (-a)
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTDHPrimeB:33  Formalism.HermitianLattices.Ext.PrimesInProgressions.dhpr_pow_ratio
+lemma dhpr_pow_ratio (m : ℕ) : ((m : ℝ) + 1) ^ m ≤ Real.exp 1 * (m : ℝ) ^ m
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTDHPrimeB:50  Formalism.HermitianLattices.Ext.PrimesInProgressions.dhpr_wsup
+lemma dhpr_wsup (m : ℕ) {η : ℝ} (hη : 0 < η) (hη1 : η ≤ 1) (v : ℕ) : ((v : ℝ) + 1) ^ m * Real.exp (-(η * v)) ≤ Real.exp 1 * m.factorial / η ^ m
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTDHPrimeB:72  Formalism.HermitianLattices.Ext.PrimesInProgressions.dhpr_wsum
+lemma dhpr_wsum (m : ℕ) {η : ℝ} (hη : 0 < η) (hη1 : η ≤ 1) (v0 V : ℕ) : ∑ v ∈ Ico v0 V, ((v : ℝ) + 1) ^ m * Real.exp (-(η * v)) ≤ 2 * Real.exp 2 * ((m : ℝ) + 1) * (m.factorial : ℝ) / η ^ (m + 1)
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTDHPrimeB:163  Formalism.HermitianLattices.Ext.PrimesInProgressions.dhpr_esum
+lemma dhpr_esum (v0 V : ℕ) : ∑ v ∈ Ico v0 V, ((v : ℝ) + 1) * Real.exp (-((v : ℝ) / 2)) ≤ 20 * Real.exp (-((v0 : ℝ) / 4))
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTDHPrimeB:208  Formalism.HermitianLattices.Ext.PrimesInProgressions.dhpr_floor_mono
+lemma dhpr_floor_mono {v w : ℕ} (h : v ≤ w) : ⌊Real.exp (v : ℝ)⌋₊ ≤ ⌊Real.exp (w : ℝ)⌋₊
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTDHPrimeB:212  Formalism.HermitianLattices.Ext.PrimesInProgressions.dhpr_blocks
+lemma dhpr_blocks (g : ℕ → ℝ) (v0 : ℕ) : ∀ V, v0 ≤ V → ∑ n ∈ Ioc ⌊Real.exp (v0 : ℝ)⌋₊ ⌊Real.exp (V : ℝ)⌋₊, g n = ∑ v ∈ Ico v0 V, ∑ n ∈ Ioc ⌊Real.exp (v : ℝ)⌋₊ ⌊Real.exp ((v + 1 : ℕ) : ℝ)⌋₊, g n
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTExplMainA:9  Formalism.HermitianLattices.Ext.PrimesInProgressions.exm_alg
+theorem exm_alg (S Ifull R Lf Bt Tp K D Sg : ℂ) (y : ℝ) (hy : 0 < y) (hS : S = (1 / (2 * Real.pi) : ℂ) * Ifull) (hrect : Bt - Tp + I * R - I * Lf = 2 * Real.pi * I * (K * y + D - Sg)) : S / y - K - D / y + Sg / y = (1 / (2 * Real.pi * y) : ℂ) * ((Ifull - R) + Lf + I * (Bt - Tp))
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTExplMainA:24  Formalism.HermitianLattices.Ext.PrimesInProgressions.exm_norm
+theorem exm_norm (Ifull R Lf Bt Tp : ℂ) (y a b c d : ℝ) (hy : 0 < y) (ha : ‖Ifull - R‖ ≤ a) (hb : ‖Lf‖ ≤ b) (hc : ‖Bt‖ ≤ c) (hd : ‖Tp‖ ≤ d) : ‖(1 / (2 * Real.pi * y) : ℂ) * ((Ifull - R) + Lf + I * (Bt - Tp))‖ ≤ 1 / (2 * Real.pi * y) * (a + b + (c + d))
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTExplMainA:39  Formalism.HermitianLattices.Ext.PrimesInProgressions.exm_log_le
+theorem exm_log_le (M T u : ℝ) (hM : 3 ≤ M) (hT : 2 ≤ T) (hu0 : 0 ≤ u) (hu : u ≤ T + 1) : Real.log (M * (u + 2)) ≤ 2 * Real.log (M * T)
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTExplMainA:52  Formalism.HermitianLattices.Ext.PrimesInProgressions.exm_log_ge_one
+theorem exm_log_ge_one (M T : ℝ) (hM : 3 ≤ M) (hT : 2 ≤ T) : 1 ≤ Real.log (M * T)
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTExplMainA:57  Formalism.HermitianLattices.Ext.PrimesInProgressions.exm_N_le
+theorem exm_N_le (κ C₁ C₂ M T δ : ℝ) (hκ : 0 < κ) (hC₁ : 0 < C₁) (hC₂ : 0 < C₂) (hM : 3 ≤ M) (hT : 2 ≤ T) (_hδ0 : 0 < δ) (hδ : κ / (C₁ * (T + 1) * Real.log (M * (T + 2))) ≤ δ) : C₂ * (2 * Real.log (M * T)) / δ ≤ 6 * C₁ * C₂ / κ * (T * Real.log (M * T) ^ 2)
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTExplMainA:85  Formalism.HermitianLattices.Ext.PrimesInProgressions.exm_log_y
+theorem exm_log_y (y : ℝ) (hy : 2 ≤ y) : 1 / 2 ≤ Real.log y
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTExplMainA:89  Formalism.HermitianLattices.Ext.PrimesInProgressions.exm_tail_num
+theorem exm_tail_num (C₃ T T' y l : ℝ) (hC₃ : 0 ≤ C₃) (hT : 2 ≤ T) (hT' : T ≤ T') (hy : 2 ≤ y) (hl : 1 ≤ l) : 1 / (2 * Real.pi * y) * (2 * (Real.log y + C₃) * (Real.exp 1 * y) / T') ≤ (1 + 2 * C₃) * (Real.log y * l ^ 2 / T)
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTExplMainA:118  Formalism.HermitianLattices.Ext.PrimesInProgressions.exm_horiz_num
+theorem exm_horiz_num (G N T T' y l : ℝ) (hG : 0 ≤ G) (hN0 : 0 ≤ N) (hN : N ≤ G * (T * l ^ 2)) (hT : 2 ≤ T) (hT' : T ≤ T') (hy : 2 ≤ y) (hl : 1 ≤ l) : 1 / (2 * Real.pi * y) * (3 * (N + 1) * (Real.exp 1 * y) / T' ^ 2) ≤ 3 * (G + 1) * (Real.log y * l ^ 2 / T)
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTExplMainA:152  Formalism.HermitianLattices.Ext.PrimesInProgressions.exm_left_num
+theorem exm_left_num (κ G N M T T' σ₁ y : ℝ) (hκ : 0 < κ) (hκ' : κ ≤ 1 / 20) (hG : 0 ≤ G) (hN0 : 0 ≤ N) (hN : N ≤ G * (T * Real.log (M * T) ^ 2)) (hM : 3 ≤ M) (hT : 2 ≤ T) (hT0' : T ≤ T') (hT' : T' ≤ T + 1) (hσ : 1 - κ ≤ σ₁) (hσ' : σ₁ ≤ 1 - 3 * κ / 4) (hy : 2 ≤ y) : 1 / (2 * Real.pi * y) * (2 * T' * (N + 4 / (3 * κ)) * y ^ σ₁ / (σ₁ * (1 - σ₁))) ≤ 3 * (G + 4 / (3 * κ)) * (2 / κ) * ((M * T) ^ 4 * y ^ (-(κ / 2)))
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTExplMainA:238  Formalism.HermitianLattices.Ext.PrimesInProgressions.sum_le_mul_rpow_add
+theorem sum_le_mul_rpow_add (AL AW C X Y W : ℝ) (hC4 : 4 ≤ C) (hCL : AL ≤ C) (hCW : AW ≤ C) (hX : 1 ≤ X) (hY : 0 ≤ Y) (hW : 0 ≤ W) : AL * (X ^ 4 * Y) + AW * W ≤ C * (X ^ C * Y + W)
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTSharpA:9  Formalism.HermitianLattices.Ext.PrimesInProgressions.sharp_cpow_sub_one
+lemma sharp_cpow_sub_one {ρ : ℂ} (hρ0 : ρ ≠ 0) (hre : ρ.re ≤ 1) {t : ℝ} (ht : 1 ≤ t) : ‖(t : ℂ) ^ ρ - 1‖ ≤ ‖ρ‖ * (t - 1)
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTSharpA:26  Formalism.HermitianLattices.Ext.PrimesInProgressions.differenced_kernel_bound
+lemma differenced_kernel_bound {ρ : ℂ} (hρ0 : ρ ≠ 0) (hρ1 : ρ ≠ 1) (hre : ρ.re ≤ 1) {δ : ℝ} (hδ : 0 < δ) : ‖(((1 + δ : ℝ) : ℂ) ^ (ρ - 1) - 1) / (ρ - 1) + (((1 + δ)⁻¹ - 1 : ℝ) : ℂ)‖ ≤ ‖ρ‖ * δ * δ
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.PNTSharpA:62  Formalism.HermitianLattices.Ext.PrimesInProgressions.sharp_kernel
+lemma sharp_kernel {ρ : ℂ} (hρ0 : ρ ≠ 0) (hρ1 : ρ ≠ 1) (hre : ρ.re ≤ 1) {δ : ℝ} (hδ : 0 < δ) (hδ2 : δ ≤ 1 / 2) : ‖(((1 + δ) / δ : ℝ) : ℂ) * ((((1 + δ : ℝ) : ℂ) ^ (ρ - 1) - 1) / (ρ - 1)) - 1‖ ≤ 2 * δ * ‖ρ‖
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.RootNorm:9  Formalism.HermitianLattices.Ext.PrimesInProgressions.T2.rootSum
+theorem rootSum (N : ℕ) (hN : 0 < N) (t : ℕ) (ht : t < N) : ∑ k ∈ range N, (cexp (2 * Real.pi * I / N) ^ k) ^ t = if t = 0 then (N : ℂ) else 0
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.RootNorm:22  Formalism.HermitianLattices.Ext.PrimesInProgressions.T2.rootNorm
+theorem rootNorm (N : ℕ) (_hN : 0 < N) (k : ℕ) : ‖cexp (2 * Real.pi * I / N) ^ k‖ = 1
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.RootNorm:26  Formalism.HermitianLattices.Ext.PrimesInProgressions.T2.rootPowN
+theorem rootPowN (N : ℕ) (hN : 0 < N) (k : ℕ) : (cexp (2 * Real.pi * I / N) ^ k) ^ N = 1
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.RootNorm:30  Formalism.HermitianLattices.Ext.PrimesInProgressions.T2.rootAvg
+theorem rootAvg (N : ℕ) (j : ℕ) (hj : 1 ≤ j) (hjN : j < N) (y : ℂ) (hy : ‖y‖ ≠ 1) : ∑ k ∈ range N, (y * cexp (2 * Real.pi * I / N) ^ k) ^ j / (1 - y * cexp (2 * Real.pi * I / N) ^ k) = N * (y ^ N / (1 - y ^ N))
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.RootNorm:84  Formalism.HermitianLattices.Ext.PrimesInProgressions.T2.ratioLim
+theorem ratioLim (y : ℂ) (hy : ‖y‖ ≠ 1) : Tendsto (fun N : ℕ => y ^ N / (1 - y ^ N)) atTop (𝓝 (if 1 < ‖y‖ then (-1 : ℂ) else 0))
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.RootNorm:112  Formalism.HermitianLattices.Ext.PrimesInProgressions.T2.avgLimit
+theorem avgLimit {n : ℕ} (y : Fin n → ℂ) (hy : ∀ i, ‖y i‖ ≠ 1) (j : ℕ) (hj : 1 ≤ j) (K : ℝ) (hK : ∀ ζ : ℂ, ‖ζ‖ = 1 → ‖∑ i, (y i * ζ) ^ j / (1 - y i * ζ)‖ ≤ K) : ((univ.filter (fun i => 1 < ‖y i‖)).card : ℝ) ≤ K
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.TailKernel:9  Formalism.HermitianLattices.Ext.BoxTail.norm_exp_sub_one_le_of_re_nonneg
+theorem norm_exp_sub_one_le_of_re_nonneg (u : ℂ) (hu : 0 ≤ u.re) : ‖Complex.exp u - 1‖ ≤ Real.exp u.re * ‖u‖
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.TailKernel:27  Formalism.HermitianLattices.Ext.BoxTail.tail_kernel_cpow
+theorem tail_kernel_cpow (y η : ℝ) (hy : 0 < y) (hη : 0 ≤ η) (hη1 : η ≤ 1) (w : ℂ) (hw0 : 0 ≤ w.re) (hw2 : w.re ≤ 2) : ‖((y * (1 + η) : ℝ) : ℂ) ^ w - (y : ℂ) ^ w‖ ≤ 4 * η * ‖w‖ * y ^ w.re
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.TailKernel:66  Formalism.HermitianLattices.Ext.BoxTail.tail_kernel_norm_lower
+theorem tail_kernel_norm_lower (σ u : ℝ) (hσ1 : σ ≤ 1 - 1 / 800) : (1 / 800 + |u|) / 2 ≤ ‖(σ : ℂ) + (u : ℂ) * I - 1‖
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.TailKernel:78  Formalism.HermitianLattices.Ext.BoxTail.tail_kernel_half
+theorem tail_kernel_half (T : ℝ) (hT : 0 ≤ T) : ∫ u in (0 : ℝ)..T, 2 / (1 / 800 + u) = 2 * Real.log (1 + 800 * T)
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.TailKernel:89  Formalism.HermitianLattices.Ext.BoxTail.tail_kernel_line
+theorem tail_kernel_line (σ T : ℝ) (hσ0 : 1 / 2 ≤ σ) (hσ1 : σ ≤ 1 - 1 / 800) (hT : 0 ≤ T) : ∫ u in (-T)..T, 1 / ‖(σ : ℂ) + (u : ℂ) * I - 1‖ ≤ 4 * Real.log (1 + 800 * T)
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.TailMertens:9  Formalism.HermitianLattices.Ext.BoxTail.tail_mertens_psi
+theorem tail_mertens_psi (N : ℕ) : ∑ n ∈ Icc 1 N, (Λ n : ℝ) ≤ (Real.log 4 + 4) * (N : ℝ)
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.TailMertens:26  Formalism.HermitianLattices.Ext.BoxTail.tail_mertens_nat
+theorem tail_mertens_nat (N : ℕ) : ∑ n ∈ Icc 1 (N + 1), (Λ n : ℝ) / (n : ℝ) ≤ (∑ n ∈ Icc 1 (N + 1), (Λ n : ℝ)) / ((N : ℝ) + 1) + (Real.log 4 + 4) * Real.log ((N : ℝ) + 1)
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.TailMertens:61  Formalism.HermitianLattices.Ext.BoxTail.tail_mertens
+theorem tail_mertens : ∃ C : ℝ, 0 ≤ C ∧ ∀ y : ℝ, 2 ≤ y → ∑ n ∈ Icc 1 ⌊y⌋₊, (Λ n : ℝ) / (n : ℝ) ≤ C * Real.log y
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.TailNum:7  Formalism.HermitianLattices.Ext.BoxTail.tail_num_rpow
+theorem tail_num_rpow (x ε : ℝ) (hx : 0 < x) : (x ^ 400) ^ (1 - 1 / 400 + ε / 1600 : ℝ) = x ^ 399 * x ^ (ε / 4)
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.TailNum:15  Formalism.HermitianLattices.Ext.BoxTail.tail_num_alg
+theorem tail_num_alg (x Q K l a g : ℝ) (hx : 0 < x) (hQ : 0 < Q) : x * ((K * l * (l * (1 / x ^ 2) * (x ^ 399 * a) + (x ^ 400) ^ 2 / Q) + x ^ 400 * (1 / x ^ 2) * (x ^ 400 * (1 / x ^ 2) + 1) * g / x ^ 400) / (x ^ 400 * (1 / x ^ 2))) = K * l ^ 2 * a + K * (l * x ^ 403 / Q) + (x ^ 398 + 1) * g / x ^ 399
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.TailNum:24  Formalism.HermitianLattices.Ext.BoxTail.tail_num_third
+theorem tail_num_third (x : ℝ) (hx : 3 ≤ x) : (x ^ 398 + 1) * Real.log (x ^ 400 + x ^ 400 * (1 / x ^ 2)) / x ^ 399 ≤ 802
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.TailNum:56  Formalism.HermitianLattices.Ext.BoxTail.tail_num_exp
+theorem tail_num_exp (ε K : ℝ) (hε : 0 < ε) : ∀ᶠ x : ℝ in Filter.atTop, K * (x ^ 404 * Real.exp (-(x ^ (ε / 6)))) ≤ 1 / 3
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.TailNum:76  Formalism.HermitianLattices.Ext.BoxTail.tail_num
+theorem tail_num (ε K : ℝ) (hε : 0 < ε) (hε1 : ε ≤ 1) (hK : 0 ≤ K) : ∃ x₀ : ℝ, 3 ≤ x₀ ∧ ∀ x Q : ℝ, x₀ ≤ x → 0 < Q → x ^ (ε / 6) ≤ Real.log Q → Real.log Q ≤ x ^ (ε / 4) → x * ((K * Real.log Q * (Real.log Q * (1 / x ^ 2) * (x ^ 400) ^ (1 - 1 / 400 + ε / 1600) + (x ^ 400) ^ 2 / Q) + x ^ 400 * (1 / x ^ 2) * (x ^ 400 * (1 / x ^ 2) + 1) * Real.log (x ^ 400 + x ^ 400 * (1 / x ^ 2)) / x ^ 400) / (x ^ 400 * (1 / x ^ 2))) ≤ x ^ ε
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.CardFiberMulCardRange:5  Formalism.HermitianLattices.Ext.L3.NormLifting.card_fiber_mul_card_range
+theorem card_fiber_mul_card_range {G H : Type*} [AddCommGroup G] [AddCommGroup H] (f : G →+ H) (h : H) (hh : h ∈ f.range) : Nat.card {g : G // f g = h} * Nat.card f.range = Nat.card G
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.CardFiberMulCardRange:18  Formalism.HermitianLattices.Ext.L3.NormLifting.card_eq_mul_of_fibers
+theorem card_eq_mul_of_fibers {X Y : Type*} [Finite X] (f : X → Y) (c : ℕ) (hc : ∀ y, Nat.card {x : X // f x = y} = c) : Nat.card X = c * Nat.card Y
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.CardFiberMulCardRange:58  Formalism.HermitianLattices.Ext.L3.NormLifting.map_inv_eq_neg
+theorem map_inv_eq_neg (hσ : ∀ a, σ (σ a) = a) {θ e : A} (he : (θ - σ θ) * e = 1) : σ e = -e
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.CardFiberMulCardRange:179  Formalism.HermitianLattices.Ext.L3.NormLifting.card_lift
+theorem card_lift [Finite A] (hπ : Function.Surjective π) (hστ : ∀ a, π (σ a) = τ (π a)) (hσ : ∀ a, σ (σ a) = a) (hsq : ∀ a b, π a = 0 → π b = 0 → a * b = 0) {θ e : A} (he : (θ - σ θ) * e = 1) {n m : A} (hnm : n * m = 1) (hn : σ n = n) (q : ℕ) (hq : Nat.card A = q ^ 2 * Nat.card B) (M : ℕ) (hM : 1 ≤ M) : Nat.card {x : Fin M → A // ∑ i, σ (x i) * x i = n} = q ^ (2 * M - 1) * Nat.card {x : Fin M → B // ∑ i, τ (x i) * x i = π n}
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.CardFilterResCharLe:15  Formalism.HermitianLattices.Ext.L3.IdealNormInequalities.under_ne_bot
+theorem under_ne_bot {P : Ideal (𝓞 K)} (hP : P.IsMaximal) : P.under ℤ ≠ ⊥
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.CardFilterResCharLe:20  Formalism.HermitianLattices.Ext.L3.IdealNormInequalities.under_isMaximal
+theorem under_isMaximal {P : Ideal (𝓞 K)} (hP : P.IsMaximal) : (P.under ℤ).IsMaximal
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.DetMulLeftCompMulRight:42  Formalism.HermitianLattices.Ext.L3.LITr.exists_decomp
+theorem exists_decomp {δ : K} (hδ : star δ = -δ) (hδ0 : δ ≠ 0) (a : K) : ∃ x y : F, a = algebraMap F K x + δ * algebraMap F K y
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.DiscreteTopologyOfZsmul:47  Formalism.HermitianLattices.Ext.L3.BallA.volume_image_equivFun
+theorem volume_image_equivFun {ι : Type*} [Fintype ι] (b : Basis ι ℤ L) (s : Set E) : volume ((b.ofZLatticeBasis ℝ L).equivFun '' s) = μ s / ENNReal.ofReal (ZLattice.covolume L μ)
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.DiscreteTopologyOfZsmul:65  Formalism.HermitianLattices.Ext.L3.BallA.tendsto_card_div_pow
+theorem tendsto_card_div_pow {s : Set E} (hs₁ : IsBounded s) (hs₂ : MeasurableSet s) (hs₃ : μ (frontier s) = 0) : Tendsto (fun n : ℕ ↦ (Nat.card (s ∩ (n : ℝ)⁻¹ • L : Set E) : ℝ) / n ^ finrank ℝ E) atTop (𝓝 (μ.real s / ZLattice.covolume L μ))
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.DiscreteTopologyOfZsmul:85  Formalism.HermitianLattices.Ext.L3.BallA.covolume_div_covolume
+theorem covolume_div_covolume (L₁ L₂ : Submodule ℤ E) [DiscreteTopology L₁] [IsZLattice ℝ L₁] [DiscreteTopology L₂] [IsZLattice ℝ L₂] (h : L₁ ≤ L₂) : ZLattice.covolume L₁ μ / ZLattice.covolume L₂ μ = L₁.toAddSubgroup.relIndex L₂.toAddSubgroup
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.DiscreteTopologyOfZsmul:105  Formalism.HermitianLattices.Ext.L3.BallA.discreteTopology_of_zsmul
+theorem discreteTopology_of_zsmul {Λ₁ Λ : Submodule ℤ E} [DiscreteTopology Λ₁] {N : ℤ} (hN : N ≠ 0) (h : ∀ y ∈ Λ, N • y ∈ Λ₁) : DiscreteTopology Λ
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.DiscreteTopologyOfZsmul:115  Formalism.HermitianLattices.Ext.L3.BallA.tendsto_card_of_le
+theorem tendsto_card_of_le (Λ₁ Λ : Submodule ℤ E) [DiscreteTopology Λ₁] [IsZLattice ℝ Λ₁] (hle : Λ₁ ≤ Λ) {N : ℤ} (hN : N ≠ 0) (h : ∀ y ∈ Λ, N • y ∈ Λ₁) {s : Set E} (hs₁ : IsBounded s) (hs₂ : MeasurableSet s) (hs₃ : Convex ℝ s) : Λ₁.toAddSubgroup.relIndex Λ.toAddSubgroup ≠ 0 ∧ Tendsto (fun n : ℕ ↦ (Nat.card (s ∩ (n : ℝ)⁻¹ • Λ : Set E) : ℝ) / n ^ finrank ℝ E) atTop (𝓝 (μ.real s * (Λ₁.toAddSubgroup.relIndex Λ.toAddSubgroup : ℝ) / ZLattice.covolume Λ₁ μ))
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.ExistsMulSubOneMemPow:11  Formalism.HermitianLattices.Ext.L3.MeanA.exists_mul_sub_one_mem_pow
+theorem exists_mul_sub_one_mem_pow {R : Type*} [CommRing R] {𝔭 : Ideal R} (h𝔭 : 𝔭.IsMaximal) {t : R} (ht : t ∉ 𝔭) (k : ℕ) : ∃ u : R, u * t - 1 ∈ 𝔭 ^ k
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.ExistsMulSubOneMemPow:21  Formalism.HermitianLattices.Ext.L3.MeanA.mem_pow_of_mul_mem
+theorem mem_pow_of_mul_mem {R : Type*} [CommRing R] {𝔭 : Ideal R} (h𝔭 : 𝔭.IsMaximal) {t c : R} (ht : t ∉ 𝔭) {k : ℕ} (h : t * c ∈ 𝔭 ^ k) : c ∈ 𝔭 ^ k
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.ExistsMulSubOneMemPow:32  Formalism.HermitianLattices.Ext.L3.MeanA.exists_local_basis
+theorem exists_local_basis (M : Submodule R V) (hfg : M.FG) (hspan : Submodule.span F (M : Set V) = ⊤) {𝔭 : Ideal R} (h𝔭 : 𝔭.IsMaximal) : ∃ (x : Fin (finrank F V) → M) (s : R), s ∉ 𝔭 ∧ LinearIndependent R x ∧ ∀ v : M, s • v ∈ Submodule.span R (Set.range x)
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.ExistsMulSubOneMemPow:99  Formalism.HermitianLattices.Ext.L3.MeanA.card_quot_pow_smul_top
+theorem card_quot_pow_smul_top (M : Submodule R V) (hfg : M.FG) (hspan : Submodule.span F (M : Set V) = ⊤) {𝔭 : Ideal R} (h𝔭 : 𝔭.IsMaximal) (k : ℕ) : Nat.card (M ⧸ (𝔭 ^ k • ⊤ : Submodule R M)) = Nat.card (R ⧸ 𝔭 ^ k) ^ finrank F V
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.MassLandDA:11  Formalism.HermitianLattices.Ext.L3.QuadAdj.monic_pol
+theorem monic_pol : (X ^ 2 - C c : F[X]).Monic
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.MassLandDA:13  Formalism.HermitianLattices.Ext.L3.QuadAdj.natDegree_pol
+theorem natDegree_pol : (X ^ 2 - C c : F[X]).natDegree = 2
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.MassLandDA:15  Formalism.HermitianLattices.Ext.L3.QuadAdj.root_mul_root
+theorem root_mul_root : AdjoinRoot.root (X ^ 2 - C c) * AdjoinRoot.root (X ^ 2 - C c) = AdjoinRoot.of (X ^ 2 - C c) c
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.MassLandDA:21  Formalism.HermitianLattices.Ext.L3.QuadAdj.exists_rep
+theorem exists_rep (y : AdjoinRoot (X ^ 2 - C c)) : ∃ a b : F, y = AdjoinRoot.of _ a + AdjoinRoot.of _ b * AdjoinRoot.root _
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.MassLandDA:39  Formalism.HermitianLattices.Ext.L3.QuadAdj.rep_eq_zero
+theorem rep_eq_zero {a b : F} (h : AdjoinRoot.of (X ^ 2 - C c) a + AdjoinRoot.of _ b * AdjoinRoot.root _ = 0) : a = 0 ∧ b = 0
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.MassLandDA:57  Formalism.HermitianLattices.Ext.L3.QuadAdj.rep_inj
+theorem rep_inj {a b a' b' : F} (h : AdjoinRoot.of (X ^ 2 - C c) a + AdjoinRoot.of _ b * AdjoinRoot.root _ = AdjoinRoot.of _ a' + AdjoinRoot.of _ b' * AdjoinRoot.root _) : a = a' ∧ b = b'
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.MassLandDA:66  Formalism.HermitianLattices.Ext.L3.QuadAdj.finrank_adj
+theorem finrank_adj : finrank F (AdjoinRoot (X ^ 2 - C c)) = 2
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.MassLandDA:92  Formalism.HermitianLattices.Ext.L3.QuadAdj.gal_root
+theorem gal_root (τ : AdjoinRoot (X ^ 2 - C c) ≃ₐ[F] AdjoinRoot (X ^ 2 - C c)) : τ (AdjoinRoot.root _) = AdjoinRoot.root _ ∨ τ (AdjoinRoot.root _) = -AdjoinRoot.root _
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.RelIndexEqOfCover:25  Formalism.HermitianLattices.Ext.L3.LIOrb.relIndex_eq_of_cover
+theorem relIndex_eq_of_cover (S C H' : Subgroup G) (h1 : H' ≤ S) (h2 : ∀ s ∈ S, ∃ t ∈ H', t * s ∈ C) : C.relIndex S = C.relIndex H'
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.RelIndexEqOfCover:45  Formalism.HermitianLattices.Ext.L3.LIOrb.index_tube
+theorem index_tube (H S C H' : Subgroup G) (hS : S ≤ H) (hC : C ≤ H) (h1 : H' ≤ S) (h2 : ∀ s ∈ S, ∃ t ∈ H', t * s ∈ C) : S.relIndex H * C.relIndex H' = C.relIndex H * S.relIndex C
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.RelIndexEqOfCover:51  Formalism.HermitianLattices.Ext.L3.LIOrb.relIndex_cocycle
+theorem relIndex_cocycle (A B C : Subgroup G) (hAC : C.relIndex A ≠ 0) (hBA : A.relIndex B ≠ 0) (hCB : B.relIndex C ≠ 0) : B.relIndex A * C.relIndex B * A.relIndex C = A.relIndex B * B.relIndex C * C.relIndex A
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.RelIndexEqOfCover:84  Formalism.HermitianLattices.Ext.L3.LIOrb.ncard_biUnion_finset
+theorem ncard_biUnion_finset {ι X : Type*} (s : Finset ι) (f : ι → Set X) (hf : ∀ i ∈ s, (f i).Finite) (hd : (s : Set ι).PairwiseDisjoint f) : (⋃ i ∈ s, f i).ncard = ∑ i ∈ s, (f i).ncard
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.RelIndexEqOfCover:102  Formalism.HermitianLattices.Ext.L3.LIOrb.ncard_orb
+theorem ncard_orb {X Y : Type*} [MulAction G X] [MulAction G Y] (t : X) (y : Y) : {x : X | ∃ g : G, g • y = y ∧ g • t = x}.ncard = (MulAction.stabilizer G t).relIndex (MulAction.stabilizer G y)
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.RelIndexEqOfCover:107  Formalism.HermitianLattices.Ext.L3.LIOrb.sum_relIndex_fibre
+theorem sum_relIndex_fibre {X Y : Type*} [MulAction G X] [MulAction G Y] (π : X → Y) (hπ : ∀ (g : G) x, π (g • x) = g • π x) (A : Set X) (hA : ∀ g : G, ∀ x ∈ A, g • x ∈ A) (sX : Finset X) (sY : Finset Y) (hsX : ∀ x ∈ sX, x ∈ A ∧ π x ∈ sY) (hX : ∀ x ∈ A, ∃! t, t ∈ sX ∧ ∃ g : G, g • t = x) (hY : ∀ y ∈ sY, ∀ y' ∈ sY, (∃ g : G, g • y = y') → y = y') (hfin : ∀ x ∈ sX, (MulAction.stabilizer G x).relIndex (MulAction.stabilizer G (π x)) ≠ 0) (w : Y → ℝ) : ∑ x ∈ sX, ((MulAction.stabilizer G x).relIndex (MulAction.stabilizer G (π x)) : ℝ) * w (π x) = ∑ y ∈ sY, (Nat.card {x // x ∈ A ∧ π x = y} : ℝ) * w y
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.SummableSqGeom:63  Formalism.HermitianLattices.Ext.L3.A5.summable_prod
+theorem summable_prod {u : ι → ℕ → ℝ} (hu0 : ∀ i, u i 0 = 1) (hu : ∀ i j, 0 ≤ u i j) {t : ι → ℝ} (ht : Summable t) (hut : ∀ i J, ∑ j ∈ range (J + 1), u i j ≤ 1 + t i) : Summable fun v : ι →₀ ℕ => v.prod u
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.SummableSqGeom:93  Formalism.HermitianLattices.Ext.L3.A5.summable_sq_geom
+theorem summable_sq_geom : Summable fun j : ℕ => 8 * ((j : ℝ) + 2) ^ 2 * (1 / 2 : ℝ) ^ j
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.TendstoTsumDivPow:14  Formalism.HermitianLattices.Ext.L3.LatSum.map_equivFun
+theorem map_equivFun (μ : Measure E) [μ.IsAddHaarMeasure] (b : Basis ι ℤ L) : μ.map (b.ofZLatticeBasis ℝ L).equivFunL = ENNReal.ofReal (covolume L μ) • volume
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.TendstoTsumDivPow:36  Formalism.HermitianLattices.Ext.L3.LatSum.tendsto_tsum_div_pow
+theorem tendsto_tsum_div_pow (μ : Measure E) [μ.IsAddHaarMeasure] {s : Set E} (hs₁ : IsBounded s) (hs₂ : MeasurableSet s) (hs₃ : μ (frontier s) = 0) {G : E → ℝ} (hG : Continuous G) : Tendsto (fun n : ℕ ↦ (∑' x : ↑(s ∩ (n : ℝ)⁻¹ • (L : Set E)), G x) / (n : ℝ) ^ finrank ℝ E) atTop (𝓝 ((∫ x in s, G x ∂μ) / covolume L μ))
+
+### Formalism.GL3MeanSquares.GenusMeanAsymptotics.UnimodularClassRepresentatives.VolumeNormSqLeOne:9  Formalism.HermitianLattices.Ext.L3.BallC.volume_normSq_le_one
+theorem volume_normSq_le_one (M : ℕ) : volume {x : Fin M → ℂ | ∑ i, Complex.normSq (x i) ≤ 1} = ENNReal.ofReal (Real.pi ^ M / (M.factorial : ℝ))
+
+### Formalism.GammaFactorNonvanishing.RhOfRight:5  Formalism.VW.rh_of_right
+theorem Formalism.VW.rh_of_right (hz : ∀ s : ℂ, 1 / 2 < s.re → s ≠ 1 → riemannZeta s ≠ 0) : RiemannHypothesis
+
+### Formalism.GradedWeylDivisibility.FockSpaceTableaux.LCassemLemmas:9  Formalism.GradedWeylDivisibility.lcassem_sub_lt
+theorem lcassem_sub_lt {σ R : Type*} [CommRing R] (o : MonomialOrder σ) {f g : MvPolynomial σ R} (hdeg : o.degree g = o.degree f) (hlc : o.leadingCoeff g = 1) (hne : f - o.leadingCoeff f • g ≠ 0) : o.degree (f - o.leadingCoeff f • g) ≺[o] o.degree f
+
+### Formalism.GrowthSums.FactorialBaseGrowth.KapPrime:9  Formalism.GrowthSums.KapPrime.u1
+lemma u1 {k p Y : ℝ} (hk : 1 ≤ k) (hY : 1 ≤ Y) (hp : k ^ 2 * Y ^ 2 ≤ p) : k / p ^ 2 ≤ 1 / Y
+
+### Formalism.GrowthSums.FactorialBaseGrowth.KapPrime:18  Formalism.GrowthSums.KapPrime.u2
+lemma u2 {k p Y a b' : ℝ} (hk : 1 ≤ k) (hY : 1 ≤ Y) (hp : k ^ 2 * Y ^ 2 ≤ p) (hb0 : 0 < b') (hab : b' ≤ a) : k * b' / (p * a) ≤ 1 / Y
+
+### Formalism.GrowthSums.FactorialBaseGrowth.KapPrime:31  Formalism.GrowthSums.KapPrime.u3
+lemma u3 {k p Y La N₁ : ℝ} (hk : 1 ≤ k) (hY : 1 ≤ Y) (hN₁ : 1 ≤ N₁) (hp : k ^ 2 * Y ^ 2 ≤ p) (_hLa0 : 0 ≤ La) (hLa : La < k) : La * N₁ / p ≤ N₁ / Y
+
+### Formalism.GrowthSums.FactorialBaseGrowth.KapPrime:43  Formalism.GrowthSums.KapPrime.u4
+lemma u4 {k Y Yb N La la a b' : ℝ} (hk : 1 ≤ k) (hY : 1 ≤ Y) (hYb : 1 ≤ Yb) (hN : 1 ≤ N) (hla : 1 ≤ la) (hLa : 1 ≤ La) (hb0 : 0 < b') (ha : k * Y ^ 2 * Yb * N * La * la * b' ≤ a) : La * b' / a ≤ 1 / Y
+
+### Formalism.GrowthSums.FactorialBaseGrowth.KapPrime:66  Formalism.GrowthSums.KapPrime.u5
+lemma u5 {Cc k N N₁ Q c a Y Z : ℝ} (hk : 1 ≤ k) (hN : 1 ≤ N) (hN₁ : 1 ≤ N₁) (hQ : 1 ≤ Q) (hY : 1 ≤ Y) (hZ : 1 ≤ Z) (hc0 : 0 ≤ c) (hc : c ≤ 2 * Cc * Z) (ha : k ^ 3 * N * Q ^ 4 * Z * Y ≤ a) : k ^ 3 * N₁ * Q ^ 2 * c / a ≤ 2 * Cc * N₁ / (N * Y)
+
+### Formalism.HermitianCurvature.HermitianCurvatureProofs.CoeffOfValues:38  Formalism.FourierDecayAlt.P.VandermondePolynomialIntegral.poly_integral
+theorem poly_integral (μ : Measure X) (d : ℕ) (I : ℝ → X → E) (T : X → E) (hI : ∀ y, Integrable (I y) μ) (hP : ∀ᵐ x ∂μ, ∃ c : Fin (d + 1) → E, c (Fin.last d) = T x ∧ ∀ y : ℝ, I y x = ∑ n : Fin (d + 1), ((y : ℂ) ^ (n : ℕ)) • c n) : ∃ c : Fin (d + 1) → E, c (Fin.last d) = ∫ x, T x ∂μ ∧ ∀ y : ℝ, ∫ x, I y x ∂μ = ∑ n : Fin (d + 1), ((y : ℂ) ^ (n : ℕ)) • c n
+
+### Formalism.HermitianCurvature.HermitianCurvatureProofs.ContinuousOnG2SymmetricInterval:79  Formalism.FourierDecayAlt.P.DiscFubiniVolume.hp1
+lemma hp1 (t : ℝ) : HasDerivAt (fun y : ℝ => 1 - y ^ 2) (-(2 * t)) t
+
+### Formalism.HermitianCurvature.HermitianCurvatureProofs.HasDerivAtTMul:13  Formalism.FourierDecayAlt.P.CutMP.Gauge.GC.Ann.hasDerivAt_t_mul
+theorem hasDerivAt_t_mul (hω : ∀ p ∈ S, HasFDerivAt ω (fderiv ℝ ω p) p) (hsym : ∀ p ∈ S, ∀ h k : ℂ, fderiv ℝ ω p h k = fderiv ℝ ω p k h) {w : ℂ} {t : ℝ} (hγ : w₀ + (t : ℂ) * (w - w₀) ∈ S) (h : ℂ) : HasDerivAt (fun s : ℝ => s * ω (w₀ + (s : ℂ) * (w - w₀)) h) (ω (w₀ + (t : ℂ) * (w - w₀)) h + t * fderiv ℝ ω (w₀ + (t : ℂ) * (w - w₀)) h (w - w₀)) t
+
+### Formalism.HermitianCurvature.HermitianCurvatureProofs.IntegralIteratedFDerivEqZero:14  Formalism.FourierDecayAlt.P5.HerC.Fou.integral_fderiv_eq_zero
+theorem integral_fderiv_eq_zero {W : Type*} [NormedAddCommGroup W] [NormedSpace ℝ W] [CompleteSpace W] {F : V → W} (hd : Differentiable ℝ F) (hF : Integrable F) (hF' : Integrable (fderiv ℝ F)) (v : V) : ∫ x, fderiv ℝ F x v = 0
+
+### Formalism.HermitianCurvature.HermitianCurvatureProofs.IntegralIteratedFDerivEqZero:24  Formalism.FourierDecayAlt.P5.HerC.Fou.integrable_of_decay
+theorem integrable_of_decay {W : Type*} [NormedAddCommGroup W] [NormedSpace ℝ W] {u : V → W} (hu : Continuous u) (C : ℝ) (hdec : ∀ x, ‖u x‖ ≤ C * (1 + ‖x‖) ^ (-((finrank ℝ V : ℝ) + 1))) : Integrable u
+
+### Formalism.HermitianCurvature.HermitianCurvatureProofs.IntegralIteratedFDerivEqZero:29  Formalism.FourierDecayAlt.P5.HerC.Fou.integral_iteratedFDeriv_eq_zero
+theorem integral_iteratedFDeriv_eq_zero {W : Type*} [NormedAddCommGroup W] [NormedSpace ℝ W] [CompleteSpace W] {D : V → W} {m : ℕ} (hD : ContDiff ℝ m D) (C : ℝ) (hdec : ∀ j ≤ m, ∀ x, ‖iteratedFDeriv ℝ j D x‖ ≤ C * (1 + ‖x‖) ^ (-((finrank ℝ V : ℝ) + 1))) (j : ℕ) (hj1 : 1 ≤ j) (hjm : j ≤ m) : Integrable (iteratedFDeriv ℝ j D) ∧ ∫ x, iteratedFDeriv ℝ j D x = 0
+
+### Formalism.HermitianCurvature.HermitianCurvatureProofs.MomentIntegrable:15  Formalism.FourierDecayAlt.P5.HerC.Fou.moment_integrable
+theorem moment_integrable {u : V → ℂ} (hu : Continuous u) (m : ℕ) (C : ℝ) (hdec : ∀ w, ‖u w‖ ≤ C * (1 + ‖w‖) ^ (-((m : ℝ) + finrank ℝ V + 1))) (n : ℕ) (hn : n ≤ m) : Integrable (fun v => ‖v‖ ^ n * ‖u v‖)
+
+### Formalism.HermitianCurvature.HermitianCurvatureProofs.MomentIntegrable:42  Formalism.FourierDecayAlt.P5.HerC.Fou.fourier_smooth
+theorem fourier_smooth (D : V → ℂ) (m : ℕ) (C : ℝ) (hD : Integrable D) (hdec : ∀ w, ‖𝓕 D w‖ ≤ C * (1 + ‖w‖) ^ (-((m : ℝ) + finrank ℝ V + 1))) : ∃ D' : V → ℂ, ContDiff ℝ m D' ∧ (∀ j ≤ m, ∃ B, ∀ t, ‖iteratedFDeriv ℝ j D' t‖ ≤ B) ∧ ∀ t, ContinuousAt D t → D' t = D t
+
+### Formalism.HermitianCurvature.HermitianCurvatureProofs.NormSumLeOfForm:14  Formalism.FourierDecayAlt.P.FormNormSumIdentities.inner_sum_smul
+theorem inner_sum_smul (k : ι → ι → ℂ) (v : ι → H) (hv : ∀ p q, k p q = ⟪v p, v q⟫_ℂ) (J : Finset κ) (a : κ → ℂ) (P : κ → ι) : ⟪∑ j ∈ J, a j • v (P j), ∑ l ∈ J, a l • v (P l)⟫_ℂ = ∑ j ∈ J, ∑ l ∈ J, conj (a j) * a l * k (P j) (P l)
+
+### Formalism.HermitianCurvature.HermitianCurvatureProofs.NormSumLeOfForm:27  Formalism.FourierDecayAlt.P.FormNormSumIdentities.form_sum_conj
+theorem form_sum_conj (B : V →ₗ[ℂ] V →ₗ⋆[ℂ] ℂ) (J : Finset κ) (a : κ → ℂ) (y : κ → V) : B (∑ j ∈ J, conj (a j) • y j) (∑ l ∈ J, conj (a l) • y l) = ∑ j ∈ J, ∑ l ∈ J, conj (a j) * a l * B (y j) (y l)
+
+### Formalism.HermitianCurvature.HermitianCurvatureProofs.NormSumLeOfForm:37  Formalism.FourierDecayAlt.P.FormNormSumIdentities.norm_sq_sum_eq_form
+theorem norm_sq_sum_eq_form (k : ι → ι → ℂ) (v : ι → H) (hv : ∀ p q, k p q = ⟪v p, v q⟫_ℂ) (B : V →ₗ[ℂ] V →ₗ⋆[ℂ] ℂ) (J : Finset κ) (a : κ → ℂ) (P : κ → ι) (y : κ → V) (hy : ∀ j ∈ J, ∀ l ∈ J, k (P j) (P l) = B (y j) (y l)) : ‖∑ j ∈ J, a j • v (P j)‖ ^ 2 = (B (∑ j ∈ J, conj (a j) • y j) (∑ j ∈ J, conj (a j) • y j)).re
+
+### Formalism.HermitianCurvature.HermitianCurvatureProofs.NormSumLeOfForm:46  Formalism.FourierDecayAlt.P.FormNormSumIdentities.norm_sum_le_of_form
+theorem norm_sum_le_of_form {W : Type*} [SeminormedAddCommGroup W] [Module ℂ W] (k : ι → ι → ℂ) (v : ι → H) (hv : ∀ p q, k p q = ⟪v p, v q⟫_ℂ) (B : W →ₗ[ℂ] W →ₗ⋆[ℂ] ℂ) (Cp : ℝ) (hCp : 0 ≤ Cp) (hB : ∀ x, (B x x).re ≤ (Cp * ‖x‖) ^ 2) (J : Finset κ) (a : κ → ℂ) (P : κ → ι) (y : κ → W) (hy : ∀ j ∈ J, ∀ l ∈ J, k (P j) (P l) = B (y j) (y l)) : ‖∑ j ∈ J, a j • v (P j)‖ ≤ Cp * ‖∑ j ∈ J, conj (a j) • y j‖
+
+### Formalism.HermitianCurvature.HermitianCurvatureProofs.NormSumLeOfGram:8  Formalism.FourierDecayAlt.P.GermRateSplit.norm_sq_comb
+theorem norm_sq_comb {κ : Type} {W : Type} [NormedAddCommGroup W] [InnerProductSpace ℂ W] (J : Finset κ) (b : κ → ℂ) (y : κ → W) : ((‖∑ j ∈ J, b j • y j‖ ^ 2 : ℝ) : ℂ) = ∑ j ∈ J, ∑ l ∈ J, conj (b j) * b l * ⟪y j, y l⟫_ℂ
+
+### Formalism.HermitianCurvature.HermitianCurvatureProofs.NormSumLeOfGram:19  Formalism.FourierDecayAlt.P.GermRateSplit.sum_sq_le_sq_sum
+theorem sum_sq_le_sq_sum {I : Type} [Fintype I] (x : I → ℝ) (hx : ∀ i, 0 ≤ x i) : ∑ i, x i ^ 2 ≤ (∑ i, x i) ^ 2
+
+### Formalism.HermitianCurvature.HermitianCurvatureProofs.NormSumLeOfGram:26  Formalism.FourierDecayAlt.P.GermRateSplit.norm_sum_le_of_gram
+theorem norm_sum_le_of_gram {ι κ I : Type} [Fintype I] {H : Type} [NormedAddCommGroup H] [InnerProductSpace ℂ H] {W : Type} [NormedAddCommGroup W] [InnerProductSpace ℂ W] (k : ι → ι → ℂ) (v : ι → H) (hv : ∀ P Q, k P Q = ⟪v P, v Q⟫_ℂ) (c : I → ℝ) (hc : ∀ i, 0 ≤ c i) (Y : I → ι → W) (J : Finset κ) (P : κ → ι) (hk : ∀ j ∈ J, ∀ l ∈ J, k (P j) (P l) = ∑ i, (c i : ℂ) * ⟪Y i (P l), Y i (P j)⟫_ℂ) (a : κ → ℂ) : ‖∑ j ∈ J, a j • v (P j)‖ ≤ ∑ i, √(c i) * ‖∑ j ∈ J, conj (a j) • Y i (P j)‖
+
+### Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.AbsZeroTermSecondDifferenceLe:21  Formalism.ZeroFreeDirichlet.abs_zero_term_second_difference_le
+lemma abs_zero_term_second_difference_le {y h β : ℝ} (hy : 1 ≤ y) (hh : 0 < h) (_hh1 : h ≤ 1) (hβ1 : 1 / 2 ≤ β) (hβ2 : β < 1) : |(y * (1 + h)) * (y ^ β / (β * (β - 1))) - y * ((y * (1 + h)) ^ β / (β * (β - 1))) + y * h * (y ^ β / β)| ≤ 2 * y ^ 2 * h ^ 2
+
+### Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.AbsZeroTermSecondDifferenceLe:68  Formalism.ZeroFreeDirichlet.abs_main_term_second_difference_le
+lemma abs_main_term_second_difference_le {y h γ : ℝ} (hy : 0 < y) (hh : 0 < h) : |y * ((y * (1 + h)) * Real.log (y * (1 + h)) - (1 + γ) * (y * (1 + h))) - (y * (1 + h)) * (y * Real.log y - (1 + γ) * y) - y * h * y| ≤ y ^ 2 * h ^ 2
+
+### Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.AbsZeroTermSecondDifferenceLe:88  Formalism.ZeroFreeDirichlet.exp_neg_sqrt_log_le_sq
+lemma exp_neg_sqrt_log_le_sq {cs c₀ y z : ℝ} (hc0 : 0 ≤ c₀) (hcs : c₀ ≤ cs) (hy : 1 ≤ y) (hyz : y ≤ z) : Real.exp (-cs * Real.sqrt (Real.log z)) ≤ Real.exp (-(c₀ / 2) * Real.sqrt (Real.log y)) ^ 2
+
+### Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.LeOfSecondDifferenceBound:9  Formalism.ZeroFreeDirichlet.le_of_second_difference_bound
+lemma le_of_second_difference_bound {y c₀ C N eY ey h : ℝ} (hy : 2 ≤ y) (hc0 : 0 < c₀) (hc01 : c₀ ≤ 1) (hC : 0 ≤ C) (hh : h = Real.exp (-(c₀ / 2) * Real.sqrt (Real.log y))) (hey0 : 0 ≤ ey) (heY0 : 0 ≤ eY) (hey : ey ≤ h ^ 2) (heY : eY ≤ h ^ 2) (hmain : y * h * N ≤ (y * (1 + h) - y + 1) * ((y * (1 + h) - y) * Real.log (y * (1 + h))) + 2 * y ^ 2 * h ^ 2 + y * (C * (y * (1 + h)) * eY) + y * (1 + h) * (C * y * ey)) : N ≤ (128 / c₀ ^ 2 + 2 + 4 * C) * y * Real.exp (-(c₀ / 4) * Real.sqrt (Real.log y))
+
+### Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.LeOfSecondDifferenceBound:127  Formalism.ZeroFreeDirichlet.mul_le_of_log_bounds
+lemma mul_le_of_log_bounds {y c₀ K lq : ℝ} (hy : 2 ≤ y) (hc0 : 0 < c₀) (hc01 : c₀ ≤ 1) (hK : K * Real.log 2 ≤ Real.log y) (hK0 : 0 ≤ K) (hlq0 : 0 ≤ lq) (hlq : lq ≤ c₀ / 4 * Real.sqrt (Real.log y)) : K * lq ≤ 16 * y * Real.exp (-(c₀ / 4) * Real.sqrt (Real.log y))
+
+### Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.SumVonMangoldtNotCoprimeLe:13  Formalism.ZeroFreeDirichlet.sum_Icc_eq_add_sum_Ioc
+lemma sum_Icc_eq_add_sum_Ioc (g : ℕ → ℂ) {a b : ℕ} (hab : a ≤ b) : ∑ n ∈ Icc 1 b, g n = ∑ n ∈ Icc 1 a, g n + ∑ n ∈ Ioc a b, g n
+
+### Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.SumVonMangoldtNotCoprimeLe:31  Formalism.ZeroFreeDirichlet.norm_sum_Ioc_le
+lemma norm_sum_Ioc_le (f : ℕ → ℂ) (hf : ∀ n, ‖f n‖ ≤ Λ n) {y Y : ℝ} (hy : 1 ≤ y) (hyY : y ≤ Y) : ‖∑ n ∈ Ioc ⌊y⌋₊ ⌊Y⌋₊, f n * ((y * (Y / n - 1) : ℝ) : ℂ)‖ ≤ (Y - y + 1) * ((Y - y) * Real.log Y)
+
+### Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.SumVonMangoldtNotCoprimeLe:83  Formalism.ZeroFreeDirichlet.sum_vonMangoldt_not_coprime_le
+lemma sum_vonMangoldt_not_coprime_le (q : ℕ) (hq : q ≠ 0) (N : ℕ) : ∑ n ∈ Icc 1 N, Λ n * (if n.Coprime q then 0 else 1) ≤ (Nat.log 2 N : ℝ) * Real.log q
+
+### Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.SumVonMangoldtNotCoprimeLe:111  Formalism.ZeroFreeDirichlet.one_apply_natCast
+lemma one_apply_natCast {q : ℕ} (n : ℕ) : (1 : DirichletCharacter ℂ q) (n : ZMod q) = if n.Coprime q then 1 else 0
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.BasisOfBasisF:14  Formalism.BasicNotions.Examples.isFrac_tensor
+theorem isFrac_tensor (hinj : Function.Injective (algebraMap A B)) : IsFractionRing B (B ⊗[A] FractionRing A)
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.BasisOfBasisF:61  Formalism.BasicNotions.Examples.single_li
+theorem single_li (hB : Function.Injective (algebraMap B (FractionRing B))) : LinearIndependent B (fun a : ι => (Pi.single a 1 : ι → FractionRing B))
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.BasisOfBasisF:73  Formalism.BasicNotions.Examples.basis_of_basisF
+theorem basis_of_basisF {K F W M ι κ : Type} [Field K] [Field F] [AddCommGroup W] [Module K W] [AddCommGroup M] [Module F M] [Fintype ι] [Fintype κ] (σ : K →+* F) (e : W →ₛₗ[σ] M) (b : Module.Basis ι K W) (hb : LinearIndependent F (fun i => e (b i)) ∧ Submodule.span F (Set.range fun i => e (b i)) = ⊤) (b' : Module.Basis κ K W) : LinearIndependent F (fun i => e (b' i)) ∧ Submodule.span F (Set.range fun i => e (b' i)) = ⊤
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.GatRing:11  Formalism.BasicNotions.Examples.om_sq
+theorem om_sq : (ω : QuadraticAlgebra W ϖ 0) ^ 2 = algebraMap W _ ϖ
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.GatRing:14  Formalism.BasicNotions.Examples.om_pow
+theorem om_pow (n : ℕ) : (ω : QuadraticAlgebra W ϖ 0) ^ (2 * n) = algebraMap W _ (ϖ ^ n)
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.GatRing:17  Formalism.BasicNotions.Examples.isUnit_of_re
+theorem isUnit_of_re (hϖ : Irreducible ϖ) (z : QuadraticAlgebra W ϖ 0) (h : IsUnit z.re) : IsUnit z
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.GatRing:27  Formalism.BasicNotions.Examples.om_not_isUnit
+theorem om_not_isUnit (hϖ : Irreducible ϖ) : ¬ IsUnit (ω : QuadraticAlgebra W ϖ 0)
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.GatRing:35  Formalism.BasicNotions.Examples.fact
+theorem fact (hϖ : Irreducible ϖ) (z : QuadraticAlgebra W ϖ 0) (hz : z ≠ 0) : ∃ (n : ℕ) (u : QuadraticAlgebra W ϖ 0), IsUnit u ∧ z = ω ^ n * u
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.GatRing:64  Formalism.BasicNotions.Examples.om_pow_ne_zero
+theorem om_pow_ne_zero (hϖ : Irreducible ϖ) (n : ℕ) : (ω : QuadraticAlgebra W ϖ 0) ^ n ≠ 0
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.GatRing:70  Formalism.BasicNotions.Examples.isDomain
+theorem isDomain (hϖ : Irreducible ϖ) : IsDomain (QuadraticAlgebra W ϖ 0)
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.GatRing:81  Formalism.BasicNotions.Examples.om_irreducible
+theorem om_irreducible (hϖ : Irreducible ϖ) : Irreducible (ω : QuadraticAlgebra W ϖ 0)
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.GatRing:99  Formalism.BasicNotions.Examples.isDVR
+theorem isDVR (hϖ : Irreducible ϖ) : haveI
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.GatRing:107  Formalism.BasicNotions.Examples.mem_span_om_pow
+theorem mem_span_om_pow (m : ℕ) (z : QuadraticAlgebra W ϖ 0) : z ∈ Ideal.span {(ω : QuadraticAlgebra W ϖ 0) ^ (2 * m)} ↔ ϖ ^ m ∣ z.re ∧ ϖ ^ m ∣ z.im
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.GatRing:116  Formalism.BasicNotions.Examples.isAdicComplete
+theorem isAdicComplete (hϖ : Irreducible ϖ) (hC : IsAdicComplete (Ideal.span {ϖ}) W) : haveI
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.HasStrictFDerivAtExpZero:11  Formalism.BasicNotions.Examples.hasStrictFDerivAt_exp_zero_alt
+theorem hasStrictFDerivAt_exp_zero_alt : HasStrictFDerivAt (exp : 𝔸 → 𝔸) ((ContinuousLinearEquiv.refl ℝ 𝔸 : 𝔸 ≃L[ℝ] 𝔸) : 𝔸 →L[ℝ] 𝔸) 0
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.HasStrictFDerivAtExpZero:37  Formalism.BasicNotions.Examples.exp_cont
+theorem exp_cont : Continuous (exp : 𝔸 → 𝔸)
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.HasStrictFDerivAtExpZero:41  Formalism.BasicNotions.Examples.exp_neg_mul
+theorem exp_neg_mul (X : 𝔸) : exp (-X) * exp X = 1
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.HasStrictFDerivAtExpZero:45  Formalism.BasicNotions.Examples.exp_mul_neg
+theorem exp_mul_neg (X : 𝔸) : exp X * exp (-X) = 1
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.HasStrictFDerivAtExpZero:53  Formalism.BasicNotions.Examples.hasStrict_exp_comp
+theorem hasStrict_exp_comp (L : 𝔸 × 𝔸 →L[ℝ] 𝔸) : HasStrictFDerivAt (fun p : 𝔸 × 𝔸 => exp (L p)) L (0 : 𝔸 × 𝔸)
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.HasStrictFDerivAtExpZero:88  Formalism.BasicNotions.Examples.eventually_pair
+theorem eventually_pair {P : 𝔸 × 𝔸 → Prop} (h : ∀ᶠ p in 𝓝 (0 : 𝔸 × 𝔸), P p) : ∃ δ > 0, ∀ X Y : 𝔸, ‖X‖ < δ → ‖Y‖ < δ → P (X, Y)
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.HasStrictFDerivAtExpZero:95  Formalism.BasicNotions.Examples.strict_est
+theorem strict_est {F : 𝔸 × 𝔸 → 𝔸} {F' : 𝔸 × 𝔸 →L[ℝ] 𝔸} (hF : HasStrictFDerivAt F F' 0) {ε : ℝ} (hε : 0 < ε) : ∃ δ > 0, ∀ X Y : 𝔸, ‖X‖ < δ → ‖Y‖ < δ → ‖F (X, Y) - F (X, 0) - F' (0, Y)‖ ≤ ε * ‖Y‖
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.LeOfEventuallyDown:18  Formalism.BasicNotions.Examples.tendsto_mul_pos
+theorem tendsto_mul_pos {t : ℝ} (ht : 0 < t) : Tendsto (fun r : ℝ => t * r) (𝓝[>] 0) (𝓝[>] 0)
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.LeOfEventuallyDown:93  Formalism.BasicNotions.Examples.tendsto_ofReal_pow
+theorem tendsto_ofReal_pow (n : ℕ) (σ : ℝ) : Tendsto (fun ε : ℝ => ENNReal.ofReal ((1 + σ * ε) ^ n)) (𝓝[>] 0) (𝓝 1)
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.LeOfEventuallyDown:239  Formalism.BasicNotions.Examples.tendsto_ratio
+theorem tendsto_ratio {c : ℝ≥0∞} (hup : ∀ C : ℝ≥0, c < C → ∃ δ > 0, ∀ s ⊆ ball (0 : V) δ, nu s ≤ C * lam s) (hdown : ∀ C : ℝ≥0, (C : ℝ≥0∞) < c → ∃ δ > 0, ∀ s ⊆ ball (0 : V) δ, C * lam s ≤ nu s) (S : ℝ → Set V) (hS : ∀ δ > 0, ∀ᶠ r in 𝓝[>] (0 : ℝ), S r ⊆ ball 0 δ) (hS0 : ∀ᶠ r in 𝓝[>] (0 : ℝ), lam (S r) ≠ 0 ∧ lam (S r) ≠ ⊤) : Tendsto (fun r => nu (S r) / lam (S r)) (𝓝[>] 0) (𝓝 c)
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.NZColB:11  Formalism.BasicNotions.Examples.not_le_of_prod
+theorem not_le_of_prod {S : Finset (HeightOneSpectrum R)} (m : HeightOneSpectrum R → ℕ) (w : HeightOneSpectrum R) (hw : w ∉ S) : ¬ (∏ v ∈ S, v.asIdeal ^ m v) ≤ w.asIdeal
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.NZTypeD:17  Formalism.BasicNotions.Examples.coeff_mul_fintype
+theorem coeff_mul_fintype {Γ : Type} [Group Γ] [Fintype Γ] (x y : MonoidAlgebra k Γ) (g : Γ) : (x * y).coeff g = ∑ h, x.coeff h * y.coeff (h⁻¹ * g)
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.NZTypeD:60  Formalism.BasicNotions.Examples.commute_of_single
+theorem commute_of_single {Γ : Type} [Group Γ] (z : MonoidAlgebra k Γ) (h : ∀ g : Γ, z * single g 1 = single g 1 * z) (a : MonoidAlgebra k Γ) : z * a = a * z
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.NZTypeD:150  Formalism.BasicNotions.Examples.exists_char_comm
+theorem exists_char_comm (Z : Type) [CommRing Z] [Algebra ℂ Z] [FiniteDimensional ℂ Z] (e : Z) (hi : e * e = e) (h0 : e ≠ 0) : ∃ ω : Z →ₐ[ℂ] ℂ, ω e = 1
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.NZTypeD:174  Formalism.BasicNotions.Examples.exists_char
+theorem exists_char {Γ : Type} [Group Γ] [Finite Γ] (e : MonoidAlgebra ℂ Γ) (hc : e ∈ Subalgebra.center ℂ (MonoidAlgebra ℂ Γ)) (hi : e * e = e) (h0 : e ≠ 0) : ∃ ω : Subalgebra.center ℂ (MonoidAlgebra ℂ Γ) →ₐ[ℂ] ℂ, ω ⟨e, hc⟩ = 1
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.RelDetCore:16  Formalism.BasicNotions.Examples.of_mulVec_eq
+theorem of_mulVec_eq (γ : Matrix (Fin N) (Fin N) E) (v : Fin N → Fin N → E) : Matrix.of (fun j => γ.mulVec (v j)) = Matrix.of v * γ.transpose
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.RelDetCore:109  Formalism.BasicNotions.Examples.isIntegral_det_of_stab
+theorem isIntegral_det_of_stab (γ : Matrix (Fin N) (Fin N) E) (L : Submodule (𝓞 E) (Fin N → E)) (hfg : L.FG) (hsp : Submodule.span E (L : Set (Fin N → E)) = ⊤) (hγ : ∀ x ∈ L, γ.mulVec x ∈ L) : IsIntegral ℤ γ.det
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.RelDetCore:119  Formalism.BasicNotions.Examples.det_root_of_unity_of_stab
+theorem det_root_of_unity_of_stab [StarRing E] (hstar : ∀ (φ : E →+* ℂ) (x : E), φ (star x) = starRingEnd ℂ (φ x)) (γ : Matrix (Fin N) (Fin N) E) (hu : γ.det ∈ unitary E) (L : Submodule (𝓞 E) (Fin N → E)) (hfg : L.FG) (hsp : Submodule.span E (L : Set (Fin N → E)) = ⊤) (hγ : ∀ x ∈ L, γ.mulVec x ∈ L) : ∃ n : ℕ, 0 < n ∧ γ.det ^ n = 1
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.UnitsPowSurjective:13  Formalism.BasicNotions.Examples.teich_charZero
+theorem teich_charZero : CharZero (WittVector p (AlgebraicClosure (ZMod p)))
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.UnitsPowSurjective:22  Formalism.BasicNotions.Examples.teich_card_Fbar
+theorem teich_card_Fbar : #(AlgebraicClosure (ZMod p)) = ℵ₀
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.UnitsPowSurjective:34  Formalism.BasicNotions.Examples.mk_wittVector
+theorem mk_wittVector : #(WittVector p (AlgebraicClosure (ZMod p))) = 𝔠
+
+### Formalism.LocalRingCardinality.SpanPowerMembership.UnitsPowSurjective:114  Formalism.BasicNotions.Examples.units_pow_surjective
+theorem units_pow_surjective (L : Type*) [Field L] [IsAlgClosed L] {n : ℕ} (hn : n ≠ 0) : Function.Surjective (fun a : Lˣ => a ^ n)
+
+### Formalism.LocalToGlobal.CharacterGerms.AltInv:166  Formalism.L2.FormalSeriesBounds.AltInv.deg_one_single
+theorem deg_one_single (d : σ →₀ ℕ) (h : d.degree = 1) : ∃ y, d = Finsupp.single y 1
+
+### Formalism.LocalToGlobal.CharacterGerms.ExistsStrictMonoMinor:20  Formalism.L2.FormalSeriesBounds.S4.le_v_sum
+theorem le_v_sum (v : AddValuation R (WithTop ℝ)) {ι : Type*} [DecidableEq ι] (s : Finset ι) (f : ι → R) (g : WithTop ℝ) (hg : ∀ i ∈ s, g ≤ v (f i)) : g ≤ v (∑ i ∈ s, f i)
+
+### Formalism.LocalToGlobal.CharacterGerms.ExistsStrictMonoMinor:43  Formalism.L2.FormalSeriesBounds.S4.exists_topMinor_le
+theorem exists_topMinor_le (v : AddValuation R (WithTop ℝ)) (hv : ∀ x, 0 ≤ v x) (n : ℕ) : ∀ (k : ℕ) (Y : Matrix (Fin (n + k)) (Fin (n + k)) R), ∃ f : Fin n → Fin (n + k), StrictMono f ∧ v (Y.submatrix (Fin.castAdd k) f).det ≤ v Y.det
+
+### Formalism.LocalToGlobal.CharacterGerms.ExistsStrictMonoMinor:71  Formalism.L2.FormalSeriesBounds.S4.exists_strictMono_minor
+theorem exists_strictMono_minor (v : AddValuation R (WithTop ℝ)) {n h : ℕ} (B : Matrix (Fin n) (Fin h) R) (g : Fin n → Fin h) (hg : (B.submatrix id g).det ≠ 0) : ∃ f : Fin n → Fin h, StrictMono f ∧ v (B.submatrix id f).det = v (B.submatrix id g).det
+
+### Formalism.LocalToGlobal.CharacterGerms.ExistsStrictMonoMinor:195  Formalism.L2.FormalSeriesBounds.S4.parity_of_alt
+theorem parity_of_alt {d : ℕ} (big : ZMod d → Prop) (halt : ∀ b, big (b + 1) ↔ ¬ big b) (a : ZMod d) (ha : big a) : ∀ k : ℕ, big (a + (k : ZMod d)) ↔ Even k
+
+### Formalism.LocalToGlobal.CharacterGerms.ExistsStrictMonoMinor:279  Formalism.L2.FormalSeriesBounds.S4.ofFn_prod_apply
+theorem ofFn_prod_apply {F : Type*} [AddCommGroup F] [Module R F] (g : F) : ∀ {m : ℕ} (E : Fin m → Module.End R F) (s : Fin m → R), (∀ i, E i g = s i • g) → (List.ofFn E).prod g = (∏ i, s i) • g
+
+### Formalism.LocalToGlobal.CharacterGerms.ExistsStrictMonoMinor:315  Formalism.L2.FormalSeriesBounds.S4.derivation_prod
+theorem derivation_prod {F : Type*} [CommRing F] [Algebra R F] {n : ℕ} (D : Derivation R F F) (χ : Fin n → F) (b : Fin n → R) (hD : ∀ σ, D (χ σ) = b σ • χ σ) (s : Finset (Fin n)) : D (∏ σ ∈ s, χ σ) = (∑ σ ∈ s, b σ) • ∏ σ ∈ s, χ σ
+
+### Formalism.LocalToGlobal.CharacterGerms.GeNatCast:68  Formalism.L2.FormalSeriesBounds.VF.l_ne_zero
+theorem l_ne_zero : (V.l : C) ≠ 0
+
+### Formalism.LocalToGlobal.CharacterGerms.PoincEx:7  Formalism.L2.FormalSeriesBounds.LogEx.poinc_ex
+theorem poinc_ex {σ K : Type} [CommRing K] (c : (σ →₀ ℕ) → K) : ∃ g : MvPowerSeries σ K, ∀ μ, coeff μ g = c μ
+
+### Formalism.LocalToGlobal.CharacterGerms.PoincEx:11  Formalism.L2.FormalSeriesBounds.LogEx.poinc
+theorem poinc {σ : Type} [Fintype σ] {K : Type} [Field K] [CharZero K] (ω : σ → MvPowerSeries σ K) (hω : ∀ j l, MvPowerSeries.pderiv K j (ω l) = MvPowerSeries.pderiv K l (ω j)) : ∃ g : MvPowerSeries σ K, MvPowerSeries.constantCoeff g = 0 ∧ ∀ j, MvPowerSeries.pderiv K j g = ω j
+
+### Formalism.LocalToGlobal.GlobalTheory.BlockActions.ExtendOneMulVecSingleLast:80  Formalism.L2.GlobalTheoryTheory.Br.ext_general
+theorem ext_general {E : Type} [Field E] (φ : E →+* R) {N : ℕ} (hN : n + 1 = N) (A : Matrix (Fin N) (Fin n) E) (z : Fin N → E) (hB : IsUnit (Matrix.of (fun a (b : Fin N) => if hb : (b : ℕ) < n then A a ⟨b, hb⟩ else z a)).det) (g : Matrix (Fin n) (Fin n) R) : ∃ G : Matrix (Fin N) (Fin N) R, G * A.map φ = A.map φ * g ∧ G *ᵥ (fun a => φ (z a)) = (fun a => φ (z a)) ∧ (IsUnit g.det → IsUnit G.det)
+
+### Formalism.LocalToGlobal.GlobalTheory.CoordinateLengths.PairingContinuityBound:5  Formalism.L2.GlobalTheoryTheory.LemB.len_equiv_semilinear
+theorem len_equiv_semilinear {R R' M M' : Type*} [Ring R] [Ring R'] [AddCommGroup M] [Module R M] [AddCommGroup M'] [Module R' M'] {σ : R →+* R'} {σ' : R' →+* R} [RingHomInvPair σ σ'] [RingHomInvPair σ' σ] (e : M ≃ₛₗ[σ] M') : Module.length R M = Module.length R' M'
+
+### Formalism.LocalToGlobal.GlobalTheory.CoordinateLengths.PairingContinuityBound:25  Formalism.L2.GlobalTheoryTheory.LemB.len_quot_semilinear
+theorem len_quot_semilinear {R R' M M' : Type*} [Ring R] [Ring R'] [AddCommGroup M] [Module R M] [AddCommGroup M'] [Module R' M'] {σ : R →+* R'} {σ' : R' →+* R} [RingHomInvPair σ σ'] [RingHomInvPair σ' σ] (f : M →ₛₗ[σ] M') (hf : Function.Injective f) (A B : Submodule R M) : Module.length R (A ⧸ B.comap A.subtype) = Module.length R' (A.map f ⧸ (B.map f).comap (A.map f).subtype)
+
+### Formalism.LocalToGlobal.GlobalTheory.CoordinateLengths.PairingContinuityBound:45  Formalism.L2.GlobalTheoryTheory.LemB.len_pi_sum
+theorem len_pi_sum {R : Type*} [CommRing R] {G : Type*} [Fintype G] [DecidableEq G] {M : G → Type*} [∀ g, AddCommGroup (M g)] [∀ g, Module R (M g)] (A B : ∀ g, Submodule R (M g)) : Module.length R ((Submodule.pi Set.univ A) ⧸ (Submodule.pi Set.univ B).comap (Submodule.pi Set.univ A).subtype) = ∑ g, Module.length R (A g ⧸ (B g).comap (A g).subtype)
+
+### Formalism.LocalToGlobal.GlobalTheory.ElemZeroZeroMulApply:29  Formalism.L2.GlobalTheoryTheory.ColValS.zero_eq_succ_iff
+@[simp] theorem zero_eq_succ_iff {m : ℕ} (k : Fin m) : ((0 : Fin (m+1)) = k.succ) ↔ False
+
+### Formalism.LocalToGlobal.GlobalTheory.GL1.CompactFixesLattice.AdeleIntA:36  Formalism.L2.GlobalTheoryTheory.FiltrationBoundaryCriterion.CompactFixesLatticeTheory.AdeleIntA.int_R
+theorem int_R (v : HeightOneSpectrum R) (r : R) : algebraMap K (v.adicCompletion K) (algebraMap R K r) ∈ v.adicCompletionIntegers K
+
+### Formalism.LocalToGlobal.GlobalTheory.GL1.CompactFixesLattice.AdeleIntA:44  Formalism.L2.GlobalTheoryTheory.FiltrationBoundaryCriterion.CompactFixesLatticeTheory.AdeleIntA.val_R
+theorem val_R (v : HeightOneSpectrum R) (r : R) : Valued.v (algebraMap K (v.adicCompletion K) (algebraMap R K r)) = v.intValuation r
+
+### Formalism.LocalToGlobal.GlobalTheory.GL1.CompactFixesLattice.AdeleIntA:47  Formalism.L2.GlobalTheoryTheory.FiltrationBoundaryCriterion.CompactFixesLatticeTheory.AdeleIntA.exists_near
+theorem exists_near (v : HeightOneSpectrum R) (y : v.adicCompletion K) : ∃ k : K, y - algebraMap K (v.adicCompletion K) k ∈ v.adicCompletionIntegers K
+
+### Formalism.LocalToGlobal.GlobalTheory.GL1.CompactFixesLattice.AdeleIntA:73  Formalism.L2.GlobalTheoryTheory.FiltrationBoundaryCriterion.CompactFixesLatticeTheory.AdeleIntA.exists_den_local
+theorem exists_den_local (v : HeightOneSpectrum R) (y : v.adicCompletion K) : ∃ s : R, s ≠ 0 ∧ algebraMap K (v.adicCompletion K) (algebraMap R K s) * y ∈ v.adicCompletionIntegers K
+
+### Formalism.LocalToGlobal.GlobalTheory.GL1.CompactFixesLattice.AdeleIntA:148  Formalism.L2.GlobalTheoryTheory.FiltrationBoundaryCriterion.CompactFixesLatticeTheory.AdeleIntA.exists_approx_local
+theorem exists_approx_local (v : HeightOneSpectrum R) (c : v.adicCompletion K) (hc : c ∈ v.adicCompletionIntegers K) (r : R) (hr : r ≠ 0) : ∃ a : R, Valued.v (c - algebraMap K _ (algebraMap R K a)) ≤ v.intValuation r
+
+### Formalism.LocalToGlobal.GlobalTheory.GL3.PFourSq:9  Formalism.L2.GlobalTheoryTheory.IntegralLatticeDensity.FS.rat_four_sq
+theorem rat_four_sq (p : ℚ) (hp : 0 ≤ p) : ∃ a b c d : ℚ, p = a ^ 2 + b ^ 2 + c ^ 2 + d ^ 2
+
+### Formalism.LocalToGlobal.GlobalTheory.GL4.PLemTAmgm:11  Formalism.L2.GlobalTheoryTheory.TraceIntegrality.LT.abs_norm_eq_prod_re
+theorem abs_norm_eq_prod_re (a : E) (hpos : ∀ φ : E →+* ℂ, ∃ c : ℝ, 0 < c ∧ φ a = c) : |((Algebra.norm ℚ a : ℚ) : ℝ)| = ∏ φ : E →+* ℂ, (φ a).re
+
+### Formalism.LocalToGlobal.GlobalTheory.GL4.PLemTAmgm:26  Formalism.L2.GlobalTheoryTheory.TraceIntegrality.LT.sum_re_ge
+theorem sum_re_ge (a : E) (hpos : ∀ φ : E →+* ℂ, ∃ c : ℝ, 0 < c ∧ φ a = c) (X : ℝ) (hX : 0 < X) (h1 : 1 ≤ |((Algebra.norm ℚ a : ℚ) : ℝ)| * X) : (Module.finrank ℚ E : ℝ) * X ^ (-(1 / (Module.finrank ℚ E : ℝ))) ≤ ∑ φ : E →+* ℂ, (φ a).re
+
+### Formalism.LocalToGlobal.GlobalTheory.GL6.CoordMapInjective:36  Formalism.L2.GlobalTheoryTheory.LocalLatticeBases.exists_smul_out_eq
+theorem exists_smul_out_eq (c : Cl) : ∃ g : G, g • Quotient.out (Quotient.mk (MulAction.orbitRel G Cl) c) = c
+
+### Formalism.LocalToGlobal.GlobalTheory.GL6.CoordMapInjective:56  Formalism.L2.GlobalTheoryTheory.LocalLatticeBases.card_mul_card_orbits
+theorem card_mul_card_orbits (hfree : ∀ (g : G) (c : Cl), g • c = c → g = 1) : Fintype.card G * Fintype.card (MulAction.orbitRel.Quotient G Cl) = Fintype.card Cl
+
+### Formalism.LocalToGlobal.GlobalTheory.GL6.LinearIndependentProdRenameOfCard:11  Formalism.L2.GlobalTheoryTheory.LocalLatticeBases.sumAlgEquiv_rename_inl
+theorem sumAlgEquiv_rename_inl (a : MvPolynomial S₁ K) : sumAlgEquiv K S₁ S₂ (rename Sum.inl a) = map (C : K →+* MvPolynomial S₂ K) a
+
+### Formalism.LocalToGlobal.GlobalTheory.GL6.LinearIndependentProdRenameOfCard:16  Formalism.L2.GlobalTheoryTheory.LocalLatticeBases.sumAlgEquiv_rename_inr_eq_C'
+theorem sumAlgEquiv_rename_inr_eq_C' (b : MvPolynomial S₂ K) : sumAlgEquiv K S₁ S₂ (rename Sum.inr b) = C b
+
+### Formalism.LocalToGlobal.GlobalTheory.GL6.LinearIndependentProdRenameOfCard:30  Formalism.L2.GlobalTheoryTheory.LocalLatticeBases.linearIndependent_rename_mul
+theorem linearIndependent_rename_mul {κ₁ κ₂ : Type*} (v : κ₁ → MvPolynomial S₁ K) (w : κ₂ → MvPolynomial S₂ K) (hv : LinearIndependent K v) (hw : LinearIndependent K w) : LinearIndependent K fun p : κ₁ × κ₂ => rename Sum.inl (v p.1) * rename Sum.inr (w p.2)
+
+### Formalism.LocalToGlobal.GlobalTheory.GL6.LinearIndependentProdRenameOfCard:58  Formalism.L2.GlobalTheoryTheory.LocalLatticeBases.linearIndependent_prod_rename_of_card
+theorem linearIndependent_prod_rename_of_card (n : ℕ) : ∀ (ι : Type) [Fintype ι] [DecidableEq ι], Fintype.card ι = n → ∀ {σ : Type} (κ : ι → Type) (b : ∀ τ, κ τ → MvPolynomial σ K), (∀ τ, LinearIndependent K (b τ)) → LinearIndependent K (fun g : (∀ τ, κ τ) => ∏ τ, rename (Prod.mk τ) (b τ (g τ)))
+
+### Formalism.LocalToGlobal.GlobalTheory.GL6.LinearIndependentProdRenameOfCard:95  Formalism.L2.GlobalTheoryTheory.LocalLatticeBases.linearIndependent_prod_rename_of_forall
+theorem linearIndependent_prod_rename_of_forall {ι σ : Type} [Fintype ι] [DecidableEq ι] (κ : ι → Type) (b : ∀ τ, κ τ → MvPolynomial σ K) (hb : ∀ τ, LinearIndependent K (b τ)) : LinearIndependent K (fun g : (∀ τ, κ τ) => ∏ τ, rename (Prod.mk τ) (b τ (g τ)))
+
+### Formalism.LocalToGlobal.GlobalTheory.GL6.LinearIndependentProdRenameOfCard:102  Formalism.L2.GlobalTheoryTheory.LocalLatticeBases.length_quot_map_of_injective
+theorem length_quot_map_of_injective {O M M' : Type*} [CommRing O] [AddCommGroup M] [Module O M] [AddCommGroup M'] [Module O M'] (f : M →ₗ[O] M') (hf : Function.Injective f) (A B : Submodule O M) : Module.length O (A.map f ⧸ (B.map f).comap (A.map f).subtype) = Module.length O (A ⧸ B.comap A.subtype)
+
+### Formalism.LocalToGlobal.GlobalTheory.GL6.LinearIndependentProdRenameOfCard:121  Formalism.L2.GlobalTheoryTheory.LocalLatticeBases.length_quot_pi_const
+theorem length_quot_pi_const {O M : Type*} [CommRing O] [AddCommGroup M] [Module O M] (G : Type*) [Fintype G] [DecidableEq G] (A B : Submodule O M) : Module.length O ((Submodule.pi Set.univ fun _ : G => A) ⧸ (Submodule.pi Set.univ fun _ : G => B).comap (Submodule.pi Set.univ fun _ : G => A).subtype) = Fintype.card G • Module.length O (A ⧸ B.comap A.subtype)
+
+### Formalism.LocalToGlobal.GlobalTheory.GL6.LinearIndependentProdRenameOfCard:163  Formalism.L2.GlobalTheoryTheory.LocalLatticeBases.eq_zero_of_sum_rename_mul
+theorem eq_zero_of_sum_rename_mul {S₁ S₂ κ : Type*} [Fintype κ] (w : κ → MvPolynomial S₂ K) (hw : LinearIndependent K w) (a : κ → MvPolynomial S₁ K) (h : ∑ j, rename Sum.inl (a j) * rename Sum.inr (w j) = 0) : a = 0
+
+### Formalism.LocalToGlobal.GlobalTheory.UnramifiedTrace.CardFilterSubtype:17  Formalism.L2.GlobalTheoryTheory.UnramifiedTrace.card_fib_mul
+theorem card_fib_mul {V W : Type*} [AddCommGroup V] [AddCommGroup W] [Fintype V] [Fintype W] [DecidableEq W] (f : V →+ W) (hf : Function.Surjective f) (w : W) : (Finset.univ.filter (fun v => f v = w)).card * Fintype.card W = Fintype.card V
+
+### Formalism.LocalToGlobal.GlobalTheory.UnramifiedTrace.CardFilterSubtype:48  Formalism.L2.GlobalTheoryTheory.UnramifiedTrace.exists_dual_one
+theorem exists_dual_one {Y : Type*} [AddCommGroup Y] [Module K Y] [FiniteDimensional K Y] (y : Y) (hy : y ≠ 0) : ∃ g : Module.Dual K Y, g y = 1
+
+### Formalism.LocalToGlobal.GlobalTheory.UnramifiedTrace.CardFilterSubtype:57  Formalism.L2.GlobalTheoryTheory.UnramifiedTrace.card_dual
+theorem card_dual : Fintype.card (Module.Dual K X) = Fintype.card K ^ Module.finrank K X
+
+### Formalism.LocalToGlobal.GlobalTheory.UnramifiedTrace.CardFilterSubtype:60  Formalism.L2.GlobalTheoryTheory.UnramifiedTrace.card_dual_one
+theorem card_dual_one (x : X) (hx : x ≠ 0) : (Finset.univ.filter (fun g : Module.Dual K X => g x = 1)).card = Fintype.card K ^ (Module.finrank K X - 1)
+
+### Formalism.LocalToGlobal.GlobalTheory.UnramifiedTrace.CardFilterSubtype:74  Formalism.L2.GlobalTheoryTheory.UnramifiedTrace.card_dual_two
+theorem card_dual_two (te x : X) (hte : te ≠ 0) (hx : x ∉ Submodule.span K {te}) : (Finset.univ.filter (fun g : Module.Dual K X => g te = 1 ∧ g x = 1)).card = Fintype.card K ^ (Module.finrank K X - 2)
+
+### Formalism.LocalToGlobal.GlobalTheory.UnramifiedTrace.CardFilterSubtype:122  Formalism.L2.GlobalTheoryTheory.UnramifiedTrace.card_dual_line
+theorem card_dual_line (te x : X) (hx : x ∈ Submodule.span K {te}) (hne : x ≠ te) : (Finset.univ.filter (fun g : Module.Dual K X => g te = 1 ∧ g x = 1)).card = 0
+
+### Formalism.LocalToGlobal.GlobalTheory.UnramifiedTrace.CardFilterSubtype:131  Formalism.L2.GlobalTheoryTheory.UnramifiedTrace.card_sig_fib
+theorem card_sig_fib {A : Type*} {B : A → Type*} [Fintype A] [∀ a, Fintype (B a)] {Y : Type*} [DecidableEq Y] (ι : ∀ a, B a → Y) (P : A → Y → Prop) [∀ a y, Decidable (P a y)] (hι : ∀ a b, P a (ι a b)) (hu : ∀ a y, P a y → ∃! b, ι a b = y) (y : Y) : (Finset.univ.filter (fun p : (Σ a, B a) => ι p.1 p.2 = y)).card = (Finset.univ.filter (fun a => P a y)).card
+
+### Formalism.LocalToGlobal.GlobalTheory.UnramifiedTrace.CardFilterSubtype:151  Formalism.L2.GlobalTheoryTheory.UnramifiedTrace.card_filter_subtype
+theorem card_filter_subtype {α : Type*} [Fintype α] (p q : α → Prop) [DecidablePred p] [DecidablePred q] [Fintype {a // p a}] : (Finset.univ.filter (fun a : {a // p a} => q a.1)).card = (Finset.univ.filter (fun a => p a ∧ q a)).card
+
+### Formalism.LocalToGlobal.GlobalTheory.UnramifiedTrace.SumFib:7  Formalism.L2.GlobalTheoryTheory.UnramifiedTrace.sum_fib
+theorem sum_fib {X P : Type*} [Fintype X] [DecidableEq X] [Fintype P] (π : P → X) (V : P → ℂ) (w : X → ℂ) (hV : ∀ p, V p = w (π p)) : ∑ p, V p = ∑ x, ((Finset.univ.filter (fun p => π p = x)).card : ℂ) * w x
+
+### Formalism.LocalToGlobal.GlobalTheory.UnramifiedTrace.SumFib:19  Formalism.L2.GlobalTheoryTheory.UnramifiedTrace.comb_du
+theorem comb_du {K X PD PE : Type*} [Field K] [Fintype K] [DecidableEq K] [AddCommGroup X] [Module K X] [Fintype X] [DecidableEq X] {iPD : Fintype PD} {iPE : Fintype PE} (te : X) (hte0 : te ≠ 0) (Tn n1 n2 : ℕ) (hTn : Tn ≠ 0) (πD : PD → X) (πE : PE → X) (VD : PD → ℂ) (VE : PE → ℂ) (Φ : ℂ) (Dl : Kˣ → ℂ) (τ : Kˣ ≃ Kˣ) (hcE : ∀ x, (Finset.univ.filter (fun q => πE q = x)).card = if x = 0 then 0 else Tn ^ n1) (hcD : ∀ x, (Finset.univ.filter (fun p => πD p = x)).card = if x = te then Tn ^ n1 else if x ∈ Submodule.span K {te} then 0 else Tn ^ n2) (hself : ∀ p, πD p = te → VD p = Φ) (hDE : ∀ p q, πD p = πE q → VD p = VE q) (hEE : ∀ p q, πE p = πE q → VE p = VE q) (hline : ∀ (a : Kˣ) q, πE q = (a : K) • te → VE q = Dl (τ a)) : ∑ p, VD p = (Tn : ℂ) ^ n1 * Φ - (Tn : ℂ) ^ n2 * ∑ a, Dl a + (Tn : ℂ) ^ n2 * (((Tn : ℂ) ^ n1)⁻¹ * ∑ p, VE p)
+
+### Formalism.LocalToGlobal.GroupLattices.ComparisonMaps.IsComplRatCompl:31  Formalism.L2.G.Cmp.inj_of_li
+theorem inj_of_li (c0 : V0 →ₛₗ[e] W0) (b : Module.Basis ι LL V0) (hli : LinearIndependent Kf fun i => c0 (b i)) : Function.Injective c0
+
+### Formalism.LocalToGlobal.GroupLattices.ComparisonMaps.IsComplRatCompl:126  Formalism.L2.G.Cmp.li_basis
+theorem li_basis (c0 : V0 →ₛₗ[e] W0) (b : Module.Basis ι LL V0) (hli : LinearIndependent Kf fun i => c0 (b i)) (b' : Module.Basis ι' LL V0) : LinearIndependent Kf fun i => c0 (b' i)
+
+### Formalism.LocalToGlobal.GroupLattices.ComparisonMaps.IsComplRatCompl:131  Formalism.L2.G.Cmp.li_of_li
+theorem li_of_li {κ : Type*} (c0 : V0 →ₛₗ[e] W0) (b : Module.Basis ι LL V0) (hli : LinearIndependent Kf fun i => c0 (b i)) (v : κ → V0) (hv : LinearIndependent LL v) : LinearIndependent Kf fun k => c0 (v k)
+
+### Formalism.LocalToGlobal.GroupLattices.PerfectRings.ExistsSqEqIntCast:130  Formalism.L2.G.precomplete_pi
+theorem precomplete_pi {R : Type*} [CommRing R] (π : R) [IsPrecomplete (Ideal.span {π}) R] (d : ℕ) : IsPrecomplete (Ideal.span {π}) (Fin d → R)
+
+### Formalism.LocalToGlobal.GroupLattices.TiedFamilies.TieDim:7  Formalism.L2.G.finrank_span_le
+theorem finrank_span_le {O Kf W : Type} [CommRing O] [IsDomain O] [Field Kf] [Algebra O Kf] [IsFractionRing O Kf] [AddCommGroup W] [Module Kf W] [Module O W] [IsScalarTower O Kf W] (M : Submodule O W) [Module.Finite O M] : Module.rank Kf (Submodule.span Kf (M : Set W)) ≤ (Module.finrank O M : Cardinal)
+
+### Formalism.LocalToGlobal.GroupLattices.TiedFamilies.TieDim:23  Formalism.L2.G.mem_span_of_card
+theorem mem_span_of_card {O Kf W ι : Type} [CommRing O] [IsDomain O] [Field Kf] [Algebra O Kf] [IsFractionRing O Kf] [AddCommGroup W] [Module Kf W] [Module O W] [IsScalarTower O Kf W] (M : Submodule O W) [Module.Finite O M] [Fintype ι] (c : ι → W) (hli : LinearIndependent Kf c) (hc : ∀ i, c i ∈ Submodule.span Kf (M : Set W)) (hcard : Fintype.card ι = Module.finrank O M) (F : W) (hF : F ∈ M) : F ∈ Submodule.span Kf (Set.range c)
+
+### Formalism.LocalToGlobal.IndefiniteReal.DeterminantProjection:13  Formalism.IndefR.DeterminantProjection.unitary_of_proj
+theorem unitary_of_proj (σ : A →+* A) (J R : Matrix n n A) (hRR : R * R = R) (hJR : J * R = (R.map σ)ᵀ * J) (x : A) (hx : σ x * x = 1) : ((1 + (x - 1) • R).map σ)ᵀ * J * (1 + (x - 1) • R) = J
+
+### Formalism.LocalToGlobal.IndefiniteReal.DeterminantProjection:32  Formalism.IndefR.DeterminantProjection.det_proj
+theorem det_proj (u r : n → A) (hru : r ⬝ᵥ u = 1) (x : A) : (1 + (x - 1) • (replicateCol Unit u * replicateRow Unit r)).det = x
+
+### Formalism.LocalToGlobal.IndefiniteReal.DeterminantProjection:38  Formalism.IndefR.DeterminantProjection.proj_idem
+theorem proj_idem (u r : n → A) (hru : r ⬝ᵥ u = 1) : (replicateCol Unit u * replicateRow Unit r) * (replicateCol Unit u * replicateRow Unit r) = replicateCol Unit u * replicateRow Unit r
+
+### Formalism.LocalToGlobal.IndefiniteReal.EigenDecomposition:9  Formalism.IndefR.EigenDecomposition.exists_onb_of_parts
+theorem exists_onb_of_parts {I : Type*} [Finite I] (P : I → Submodule ℂ H) (horth : ∀ i j, i ≠ j → P i ⟂ P j) (htop : ⨆ i, P i = ⊤) : ∃ (n : ℕ) (b : OrthonormalBasis (Fin n) ℂ H) (lab : Fin n → I), ∀ k, b k ∈ P (lab k)
+
+### Formalism.LocalToGlobal.IndefiniteReal.EigenDecomposition:24  Formalism.IndefR.EigenDecomposition.exists_onb_of_parts_set
+theorem exists_onb_of_parts_set {L : Type*} (S : Set L) (hS : S.Finite) (P : L → Submodule ℂ H) (horth : ∀ c ∈ S, ∀ d ∈ S, c ≠ d → P c ⟂ P d) (htop : ⨆ c ∈ S, P c = ⊤) : ∃ (n : ℕ) (b : OrthonormalBasis (Fin n) ℂ H) (lab : Fin n → L), (∀ k, lab k ∈ S) ∧ ∀ k, b k ∈ P (lab k)
+
+### Formalism.LocalToGlobal.IndefiniteReal.EigenDecomposition:45  Formalism.IndefR.EigenDecomposition.exists_onb_of_commuting
+theorem exists_onb_of_commuting (A : Set (H →ₗ[ℂ] H)) (hcomm : ∀ S ∈ A, ∀ T ∈ A, Commute S T) (hadj : ∀ T ∈ A, LinearMap.adjoint T ∈ A) : ∃ (n : ℕ) (b : OrthonormalBasis (Fin n) ℂ H), ∀ k, ∀ T ∈ A, ∃ μ : ℂ, T (b k) = μ • b k
+
+### Formalism.LocalToGlobal.IndefiniteReal.RationalAdjoints.CoordRat:9  Formalism.IndefR.Rat.coord_rat
+theorem coord_rat {K : Type} [Field K] (σ : K →+* ℂ) {E : Type} [AddCommGroup E] [Module ℂ E] {κ : Type} [Fintype κ] [DecidableEq κ] {ι : Type} [Fintype ι] [DecidableEq ι] (ψ : κ → Module.Dual ℂ E) (hψ : ∀ e, (∀ i, ψ i e = 0) → e = 0) (f : (ι → ℂ) →ₗ[ℂ] E) (hf : Function.Injective f) (hfr : ∀ i l, ψ i (f (Pi.single l 1)) ∈ Set.range σ) (c : ι → ℂ) (hc : ∀ i, ψ i (f c) ∈ Set.range σ) : ∀ l, c l ∈ Set.range σ
+
+### Formalism.LocalToGlobal.IndefiniteReal.SobolevIteration.DifferentiableUpdate:119  Formalism.IndefR.Tow.OrbStPf.update_add_single
+lemma update_add_single {i j : Fin N} (hij : i ≠ j) (r : Fin N → ℝ) (s t : ℝ) : Function.update (r + t • Pi.single i 1) j s = Function.update r j s + t • Pi.single i 1
+
+### Formalism.LocalToGlobal.IndefiniteReal.SobolevIteration.DifferentiableUpdate:124  Formalism.IndefR.Tow.OrbStPf.differentiable_update
+lemma differentiable_update (j : Fin N) (s : ℝ) : Differentiable ℝ (fun r : Fin N → ℝ => Function.update r j s)
+
+### Formalism.LocalToGlobal.IndefiniteReal.SobolevIteration.HasFDerivAtIntegralPIter:18  Formalism.IndefR.Tow.SobPf.Avg.ae_mem_of_compl
+theorem ae_mem_of_compl {μ : Measure X} {K : Set X} (hμK : μ Kᶜ = 0) : ∀ᵐ x ∂μ, x ∈ K
+
+### Formalism.LocalToGlobal.IndefiniteReal.SobolevIteration.HasFDerivAtIntegralPIter:21  Formalism.IndefR.Tow.SobPf.Avg.aesm_of_continuousOn
+theorem aesm_of_continuousOn {μ : Measure X} {K : Set X} (hKm : MeasurableSet K) (hμK : μ Kᶜ = 0) {F : Type*} [NormedAddCommGroup F] {f : X → F} (hf : ContinuousOn f K) : AEStronglyMeasurable f μ
+
+### Formalism.LocalToGlobal.KernelLattices.DeterminantCokernelCount.CokernelIndexFactors.IdxSmith:16  DVRLatticeIndex.range_toLin'_eq_top_of_isUnit_det
+theorem range_toLin'_eq_top_of_isUnit_det {ι : Type*} [Fintype ι] [DecidableEq ι] (C : Matrix ι ι O) (h : IsUnit C.det) : LinearMap.range (Matrix.toLin' C) = ⊤
+
+### Formalism.LocalToGlobal.KernelLattices.DeterminantCokernelCount.CokernelIndexFactors.IdxSmith:23  DVRLatticeIndex.card_quot_range_of_isUnit_det
+theorem card_quot_range_of_isUnit_det {ι : Type*} [Fintype ι] [DecidableEq ι] (C : Matrix ι ι O) (h : IsUnit C.det) : Nat.card ((ι → O) ⧸ LinearMap.range (Matrix.toLin' C)) = 1
+
+### Formalism.LocalToGlobal.KernelLattices.DeterminantCokernelCount.CokernelIndexFactors.IdxSmith:32  DVRLatticeIndex.injective_toLin'_of_det_ne_zero
+theorem injective_toLin'_of_det_ne_zero {ι : Type*} [Fintype ι] [DecidableEq ι] (C : Matrix ι ι O) (h : C.det ≠ 0) : Function.Injective (Matrix.toLin' C)
+
+### Formalism.LocalToGlobal.KernelLattices.DeterminantCokernelCount.CokernelIndexFactors.IdxSmith:45  DVRLatticeIndex.card_quot_range_comp
+theorem card_quot_range_comp {M : Type*} [AddCommGroup M] [Module O M] (A B : M →ₗ[O] M) (hA : Function.Injective A) : Nat.card (M ⧸ LinearMap.range (A ∘ₗ B)) = Nat.card (M ⧸ LinearMap.range B) * Nat.card (M ⧸ LinearMap.range A)
+
+### Formalism.LocalToGlobal.KernelLattices.DeterminantCokernelCount.CokernelIndexFactors.IdxSmith:94  DVRLatticeIndex.card_quot_range_toLin_clean
+theorem card_quot_range_toLin_clean {ι : Type*} [Fintype ι] [DecidableEq ι] (ϖ : O) (hϖ : Irreducible ϖ) (C : Matrix ι ι O) (e : ℕ) (w : Oˣ) (hC : C.det = ϖ ^ e * w) : Nat.card ((ι → O) ⧸ LinearMap.range (Matrix.toLin' C)) = Nat.card (IsLocalRing.ResidueField O) ^ e
+
+### Formalism.LocalToGlobal.LatticeGeometry.RealizationNorms.ExistsStarMulSelf:10  Formalism.L2.Geo.Rec.TraceQuadraticBound.exists_star_mul_self
+theorem exists_star_mul_self {A : Matrix n n ℂ} (hA : A.PosSemidef) : ∃ B : Matrix n n ℂ, A = Bᴴ * B
+
+### Formalism.LocalToGlobal.LatticeGeometry.RealizationNorms.ExistsStarMulSelf:15  Formalism.L2.Geo.Rec.TraceQuadraticBound.frame_exists
+theorem frame_exists {A : Matrix n n ℂ} (hA : A.PosSemidef) (hd : A.det ≠ 0) : ∃ X : Matrix n n ℂ, X * Xᴴ = A ∧ IsUnit X.det
+
+### Formalism.LocalToGlobal.LatticeGeometry.RealizationNorms.ExistsStarMulSelf:22  Formalism.L2.Geo.Rec.TraceQuadraticBound.re_star_dot_self
+theorem re_star_dot_self (v : n → ℂ) : (star v ⬝ᵥ v).re = ∑ i, ‖v i‖ ^ 2
+
+### Formalism.LocalToGlobal.LatticeGeometry.RealizationNorms.ExistsStarMulSelf:28  Formalism.L2.Geo.Rec.TraceQuadraticBound.norm_sum_sq_le
+theorem norm_sum_sq_le (a w : n → ℂ) : ‖∑ k, a k * w k‖ ^ 2 ≤ (∑ k, ‖a k‖ ^ 2) * ∑ k, ‖w k‖ ^ 2
+
+### Formalism.LocalToGlobal.LatticeGeometry.RealizationNorms.ExistsStarMulSelf:36  Formalism.L2.Geo.Rec.TraceQuadraticBound.quad_le_trace_HH
+theorem quad_le_trace_HH (H : Matrix n n ℂ) (w : n → ℂ) : (star w ⬝ᵥ (Hᴴ * H) *ᵥ w).re ≤ (Hᴴ * H).trace.re * ∑ i, ‖w i‖ ^ 2
+
+### Formalism.LocalToGlobal.LatticeGeometry.RealizationNorms.ExistsStarMulSelf:49  Formalism.L2.Geo.Rec.TraceQuadraticBound.quad_le_trace
+theorem quad_le_trace {b : Matrix n n ℂ} (hb : b.PosSemidef) (Y : Matrix n n ℂ) (w : n → ℂ) : (star (Y *ᵥ w) ⬝ᵥ b *ᵥ (Y *ᵥ w)).re ≤ (b * (Y * Yᴴ)).trace.re * ∑ i, ‖w i‖ ^ 2
+
+### Formalism.LocalToGlobal.LatticeGeometry.RealizationNorms.ExistsStarMulSelf:59  Formalism.L2.Geo.Rec.TraceQuadraticBound.trace_nonneg
+theorem trace_nonneg {b : Matrix n n ℂ} (hb : b.PosSemidef) (Y : Matrix n n ℂ) : 0 ≤ (b * (Y * Yᴴ)).trace.re
+
+### Formalism.LocalToGlobal.LatticeGeometry.RealizationNorms.ExistsStarMulSelf:69  Formalism.L2.Geo.Rec.TraceQuadraticBound.trace_pos
+theorem trace_pos {b : Matrix n n ℂ} (hb : b.PosSemidef) (hb0 : b ≠ 0) (Y : Matrix n n ℂ) (hY : IsUnit Y.det) : 0 < (b * (Y * Yᴴ)).trace.re
+
+### Formalism.LocalToGlobal.LatticeGeometry.RealizationNorms.ExistsStarMulSelf:100  Formalism.L2.Geo.Rec.TraceQuadraticBound.denseRange_emb
+theorem denseRange_emb (σ : K →+* ℂ) (z : K) (hz : (σ z).im ≠ 0) : DenseRange σ
+
+### Formalism.LocalToGlobal.LatticeGeometry.RealizationNorms.ExistsStarMulSelf:116  Formalism.L2.Geo.Rec.TraceQuadraticBound.psd_map
+theorem psd_map {m : ℕ} (cj : K → K) (σ : K →+* ℂ) (hσ : ∀ z, σ (cj z) = star (σ z)) (hd : DenseRange σ) (A : Matrix (Fin m) (Fin m) K) (hH : ∀ i k, A k i = cj (A i k)) (hP : ∀ l : Fin m → K, l ≠ 0 → 0 < (σ (∑ i, ∑ k, l i * A i k * cj (l k))).re) : (A.map σ).PosSemidef ∧ (A.map σ).det ≠ 0
+
+### Formalism.LocalToGlobal.NormalizedHeckeFactors.CoverLen:12  Formalism.L2.NCov.length_eq_of_bijective
+theorem length_eq_of_bijective (φ : R ≃+* R') (f : M →ₛₗ[(φ : R →+* R')] M') (hf : Function.Bijective f) : Module.length R' M' = Module.length R M
+
+### Formalism.LocalToGlobal.NormalizedHeckeFactors.CoverLen:38  Formalism.L2.NCov.length_quot_map
+theorem length_quot_map (φ : R ≃+* R') (f : M →ₛₗ[(φ : R →+* R')] M') (hf : Function.Injective f) (p q : Submodule R M) : haveI
+
+### Formalism.LocalToGlobal.NormalizedHeckeFactors.CoverLen:64  Formalism.L2.NCov.length_quot_natCast
+theorem length_quot_natCast (φ : R ≃+* R') (n : ℕ) : Module.length R' (R' ⧸ Ideal.span {(n : R')}) = Module.length R (R ⧸ Ideal.span {(n : R)})
+
+### Formalism.LocalToGlobal.NormalizedHeckeFactors.CoverPoly:10  Formalism.L2.NCov.repr_transport
+theorem repr_transport (σ : K₁ →+* K₂) (ι : V₁ →ₛₗ[σ] V₂) {n : Type*} [Fintype n] [DecidableEq n] (b : Module.Basis n K₁ V₁) (hli : LinearIndependent K₂ (ι ∘ b)) (hsp : Submodule.span K₂ (Set.range (ι ∘ b)) = ⊤) (x : V₁) (r : n) : (Module.Basis.mk hli hsp.ge).repr (ι x) r = σ (b.repr x r)
+
+### Formalism.LocalToGlobal.NormalizedHeckeFactors.CoverPoly:25  Formalism.L2.NCov.charpoly_transport_basis
+theorem charpoly_transport_basis [Module.Finite K₁ V₁] [Module.Finite K₂ V₂] (σ : K₁ →+* K₂) (ι : V₁ →ₛₗ[σ] V₂) {n : Type*} [Fintype n] [DecidableEq n] (b : Module.Basis n K₁ V₁) (hli : LinearIndependent K₂ (ι ∘ b)) (hsp : Submodule.span K₂ (Set.range (ι ∘ b)) = ⊤) (A₁ : Module.End K₁ V₁) (A₂ : Module.End K₂ V₂) (h : ∀ a, A₂ (ι (b a)) = ι (A₁ (b a))) : A₂.charpoly = A₁.charpoly.map σ
+
+### Formalism.LocalToGlobal.NormalizedHeckeFactors.CoverPoly:38  Formalism.L2.NCov.charpoly_transport
+theorem charpoly_transport [Module.Finite K₁ V₁] [Module.Finite K₂ V₂] (σ : K₁ →+* K₂) (ι : V₁ →ₛₗ[σ] V₂) {n : Type*} [Fintype n] [DecidableEq n] (b : Module.Basis n K₁ V₁) (hli : LinearIndependent K₂ (ι ∘ b)) (hsp : Submodule.span K₂ (Set.range (ι ∘ b)) = ⊤) (A₁ : Module.End K₁ V₁) (A₂ : Module.End K₂ V₂) (h : ∀ x, A₂ (ι x) = ι (A₁ x)) : A₂.charpoly = A₁.charpoly.map σ
+
+### Formalism.LocalToGlobal.NormalizedHeckeFactors.CoverVal:11  Formalism.L2.NCov.nonneg_of_isIntegral
+theorem nonneg_of_isIntegral {y : F} (hy : IsIntegral ℤ y) : 0 ≤ v y
+
+### Formalism.LocalToGlobal.NormalizedHeckeFactors.CoverVal:18  Formalism.L2.NCov.nonneg_of_isIntegral_pow_mul
+theorem nonneg_of_isIntegral_pow_mul {p : F} (hp : v p = 0) {y : F} {N : ℕ} (hy : IsIntegral ℤ (p ^ N * y)) : 0 ≤ v y
+
+### Formalism.LocalToGlobal.NormalizedHeckeFactors.CoverVal:23  Formalism.L2.NCov.withTop_add_pos
+theorem withTop_add_pos {x y : WithTop ℤ} (hx : 0 ≤ x) (hy : 0 < y) : 0 < x + y
+
+### Formalism.LocalToGlobal.NormalizedHeckeFactors.CoverVal:33  Formalism.L2.NCov.val_prime_eq_zero
+theorem val_prime_eq_zero {l p : ℕ} (hl : l.Prime) (hp : p.Prime) (hne : p ≠ l) (hvl : 0 < v (l : F)) : v (p : F) = 0
+
+### Formalism.LocalToGlobal.NormalizedHeckeFactors.CoverVal:56  Formalism.L2.NCov.val_prime_pow_eq_zero
+theorem val_prime_pow_eq_zero {l p : ℕ} (hl : l.Prime) (hp : p.Prime) (hne : p ≠ l) (hvl : 0 < v (l : F)) (f : ℕ) : v ((p ^ f : ℕ) : F) = 0
+
+### Formalism.LocalToGlobal.NormalizedHeckeFactors.CoverVal:66  Formalism.L2.NCov.mem_range_of_isRoot
+theorem mem_range_of_isRoot (P : (FractionRing O)[X]) (hm : P.Monic) (hc : ∀ i, P.coeff i ∈ (algebraMap O (FractionRing O)).range) {μ : FractionRing O} (hμ : P.IsRoot μ) : μ ∈ (algebraMap O (FractionRing O)).range
+
+### Formalism.LocalToGlobal.NormalizedHeckeFactors.ExtNRowsGen:13  Formalism.L2.N.ExtNRows.finrank_span_image_le
+theorem finrank_span_image_le {n : ℕ} (σ : K →+* ℂ) (j : (Fin n → K) →ₛₗ[σ] W) (A : Submodule K (Fin n → K)) : finrank ℂ (Submodule.span ℂ (j '' (A : Set (Fin n → K)))) ≤ finrank K A
+
+### Formalism.LocalToGlobal.NormalizedHeckeFactors.ExtNRowsGen:32  Formalism.L2.N.ExtNRows.sum_finrank_indep
+theorem sum_finrank_indep {ι : Type} [Fintype ι] (B : ι → Submodule ℂ W) (hi : iSupIndep B) : ∑ i, finrank ℂ (B i) = finrank ℂ (⨆ i, B i : Submodule ℂ W)
+
+### Formalism.LocalToGlobal.NormalizedHeckeFactors.ExtNRowsGen:38  Formalism.L2.N.ExtNRows.internal_of_top_le
+theorem internal_of_top_le {ι : Type} [Fintype ι] [DecidableEq ι] (B : ι → Submodule ℂ W) (ht : (⨆ i, B i) = ⊤) (hle : ∑ i, finrank ℂ (B i) ≤ finrank ℂ W) : DirectSum.IsInternal B
+
+### Formalism.LocalToGlobal.PairingIndexBounds.SplitPairEquations.IntegralSquareRoots.HenselQuad:7  Formalism.L2.PairingIndexBounds.Eq.J.Neg.hensel_quad
+theorem hensel_quad (p : ℕ) [Fact p.Prime] (a b t : ℤ) (h : ‖((a * t ^ 2 + b : ℤ) : ℤ_[p])‖ < ‖((2 * a * t : ℤ) : ℤ_[p])‖ ^ 2) : ∃ z : ℤ_[p], (a : ℤ_[p]) * z ^ 2 + (b : ℤ_[p]) = 0
+
+### Formalism.LocalToGlobal.PairingIndexBounds.SplitPairEquations.IntegralSquareRoots.HenselQuad:21  Formalism.L2.PairingIndexBounds.Eq.J.Neg.norm_unit
+theorem norm_unit (p : ℕ) [Fact p.Prime] (k : ℤ) (h : ¬ (p : ℤ) ∣ k) : ‖(k : ℤ_[p])‖ = 1
+
+### Formalism.LocalToGlobal.PairingIndexBounds.SplitPairEquations.IntegralSquareRoots.HenselQuad:31  Formalism.L2.PairingIndexBounds.Eq.J.Neg.rep_odd
+theorem rep_odd (p : ℕ) [hp : Fact p.Prime] (hp2 : p ≠ 2) (c : ℕ) (hc : ¬ p ∣ c) : ∃ x y : ℤ_[p], x ^ 2 + (c : ℤ_[p]) * y ^ 2 = -1
+
+### Formalism.LocalToGlobal.PairingIndexBounds.SplitPairEquations.IntegralSquareRoots.HenselQuad:73  Formalism.L2.PairingIndexBounds.Eq.J.Neg.rep_two
+theorem rep_two (c : ℕ) (hc : c % 8 = 3) : ∃ x y : ℤ_[2], x ^ 2 + (c : ℤ_[2]) * y ^ 2 = -1
+
+### Formalism.LocalToGlobal.PairingIndexBounds.SplitPairEquations.IntegralSquareRoots.HenselQuad:137  Formalism.L2.PairingIndexBounds.Eq.J.Neg.rep_int
+theorem rep_int (q d : ℕ) (hq : q.Prime) (hd : d.Prime) (hq8 : q % 8 = 3) (hqd : q ≠ d) (m : ℕ) (hm : 0 < m) : ∃ α β γ δ s : ℤ, (α ^ 2 + q * β ^ 2) * (γ ^ 2 + d * δ ^ 2) = -1 + m * s
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ArchimedeanQuadraticData.DiscrMulIntegral:11  Formalism.L2.Pj.FundamentalDomainD5.discr_mul_integral
+theorem discr_mul_integral {K : Type} [Field K] [NumberField K] (z : K) (hz : ∀ a : 𝓞 K, ∃ n : ℤ, Algebra.trace ℚ K (z * a) = n) : IsIntegral ℤ ((NumberField.discr K : K) * z)
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ArchimedeanQuadraticData.DotSelfEqSqNorm:11  Formalism.L2.Pj.FundamentalDomainD5.dot_self_eq_sq_norm
+theorem dot_self_eq_sq_norm {N : ℕ} (v : Fin N → ℝ) : v ⬝ᵥ v = ‖(WithLp.linearEquiv 2 ℝ (Fin N → ℝ)).symm v‖ ^ 2
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ArchimedeanQuadraticData.DotSelfEqSqNorm:16  Formalism.L2.Pj.FundamentalDomainD5.cover_round
+theorem cover_round {N : ℕ} (b : Fin N → Fin N → ℝ) (hb : LinearIndependent ℝ b) (ℓ : ℝ) (hℓ : ∀ j, b j ⬝ᵥ b j ≤ ℓ ^ 2) (w : Fin N → ℝ) : ∃ n : Fin N → ℤ, (w - ∑ j, (n j : ℝ) • b j) ⬝ᵥ (w - ∑ j, (n j : ℝ) • b j) ≤ ((N : ℝ) * ℓ / 2) ^ 2
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ArchimedeanQuadraticData.ExistsBasisIn:9  Formalism.L2.Pj.FundamentalDomainD5.exists_basis_in
+theorem exists_basis_in {K : Type} [Field K] {r : ℕ} (S : Set (Fin r → K)) (hS : Submodule.span K S = ⊤) : ∃ v : Fin r → Fin r → K, (∀ j, v j ∈ S) ∧ LinearIndependent K v
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ArchimedeanQuadraticData.FinrankCmType:12  Formalism.L2.Pj.FundamentalDomainD5.conj_conj_emb
+lemma conj_conj_emb {K : Type} [Field K] (φ : K →+* ℂ) : ComplexEmbedding.conjugate (ComplexEmbedding.conjugate φ) = φ
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ArchimedeanQuadraticData.FinrankCmType:49  Formalism.L2.Pj.FundamentalDomainD5.sum_re_cmType
+theorem sum_re_cmType {K : Type} [Field K] [NumberField K] {ι : Type} [Fintype ι] (σ : ι → K →+* ℂ) (hinj : Function.Injective σ) (hcm : ∀ τ : K →+* ℂ, (∃ i, σ i = τ) ↔ ¬ ∃ i, σ i = ComplexEmbedding.conjugate τ) (z : K) : ∑ i, (σ i z).re = (1 / 2 : ℝ) * ((Algebra.trace ℚ K z : ℚ) : ℝ)
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ArchimedeanQuadraticData.FinrankCmType:66  Formalism.L2.Pj.FundamentalDomainD5.finrank_cmType
+theorem finrank_cmType {K : Type} [Field K] [NumberField K] {ι : Type} [Fintype ι] (σ : ι → K →+* ℂ) (hinj : Function.Injective σ) (hcm : ∀ τ : K →+* ℂ, (∃ i, σ i = τ) ↔ ¬ ∃ i, σ i = ComplexEmbedding.conjugate τ) : Module.finrank ℚ K = 2 * Fintype.card ι
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ArchimedeanQuadraticData.LatticeZbasis:11  Formalism.L2.Pj.FundamentalDomainD5.lattice_zbasis
+theorem lattice_zbasis {K : Type} [Field K] [NumberField K] {r : ℕ} (L : Submodule (𝓞 K) (Fin r → K)) (hfg : L.FG) (hspan : Submodule.span K (L : Set (Fin r → K)) = ⊤) : ∃ e : Fin (Module.finrank ℚ K * r) → (Fin r → K), (∀ j, e j ∈ L) ∧ LinearIndependent ℚ e ∧ ∀ v ∈ L, ∃ n : Fin (Module.finrank ℚ K * r) → ℤ, v = ∑ j, (n j : ℚ) • e j
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ArchimedeanQuadraticData.TieLDA:29  Formalism.L2.Pj.QAt.TieLDA.smulT_def
+theorem smulT_def (T : Subring K₁) (t : T) (l : K₁ ⊗[K] U) : t • l = (t : K₁) • l
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ArchimedeanQuadraticData.TieLDA:34  Formalism.L2.Pj.QAt.TieLDA.smulK_eq
+theorem smulK_eq (k : K) (l : K₁ ⊗[K] U) : k • l = algebraMap K K₁ k • l
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ArchimedeanQuadraticData.TieLDA:46  Formalism.L2.Pj.QAt.TieLDA.smulR_def
+theorem smulR_def (r : R) (l : K₁ ⊗[K] U) : r • l = algebraMap R K r • l
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ArchimedeanQuadraticData.TieLDA:59  Formalism.L2.Pj.QAt.TieLDA.tower
+theorem tower : IsScalarTower R T (K₁ ⊗[K] U)
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ArchimedeanQuadraticData.TieLDA:117  Formalism.L2.Pj.QAt.TieLDA.isTorsionFree_sub
+theorem isTorsionFree_sub (X : Submodule R U) : Module.IsTorsionFree R X
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ArchimedeanQuadraticData.TieLDA:297  Formalism.L2.Pj.QAt.TieLDA.length_self_eq_top
+theorem length_self_eq_top (T : Type*) [CommRing T] [IsDomain T] [IsDiscreteValuationRing T] : Module.length T T = ⊤
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ArchimedeanQuadraticData.TieLDA:304  Formalism.L2.Pj.QAt.TieLDA.length_quot_span_pow
+theorem length_quot_span_pow {R : Type*} [CommRing R] [IsDomain R] [IsDiscreteValuationRing R] {p : R} (hp : Irreducible p) (e : ℕ) : Module.length R (R ⧸ R ∙ p ^ e) = e
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ArchimedeanQuadraticData.TieLDA:312  Formalism.L2.Pj.QAt.TieLDA.length_tensor_eq_top
+theorem length_tensor_eq_top {R T : Type*} [CommRing R] [IsDomain R] [IsDiscreteValuationRing R] [CommRing T] [IsDomain T] [IsDiscreteValuationRing T] [Algebra R T] (N : Type*) [AddCommGroup N] [Module R N] [Module.Finite R N] (h : Module.length R N = ⊤) : Module.length T (T ⊗[R] N) = ⊤
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ArchimedeanQuadraticData.TieLDB:11  Formalism.L2.Pj.QAt.TieLDB.smul_comm'
+theorem smul_comm' (s : A) (o : Localization.AtPrime p) (v : V) : s • (o • v) = o • (s • v)
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ArchimedeanQuadraticData.TieLDB:14  Formalism.L2.Pj.QAt.TieLDB.exists_smul_mem
+theorem exists_smul_mem (G : Submodule A V) {x : V} (hx : x ∈ Submodule.span (Localization.AtPrime p) (G : Set V)) : ∃ s ∈ p.primeCompl, s • x ∈ G
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ArchimedeanQuadraticData.TieLDB:37  Formalism.L2.Pj.QAt.TieLDB.span_inf_eq
+theorem span_inf_eq (M : Submodule A V) (W : Submodule (Localization.AtPrime p) V) : Submodule.span (Localization.AtPrime p) ((M ⊓ W.restrictScalars A : Submodule A V) : Set V) = Submodule.span (Localization.AtPrime p) (M : Set V) ⊓ W
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ArchimedeanQuadraticData.TieLDB:113  Formalism.L2.Pj.QAt.TieLDB.length_localized_eq
+theorem length_localized_eq {P : Type*} [AddCommGroup P] [Module A P] (e : P ≃ₗ[A] H ⧸ G.comap H.subtype) : Module.length (Localization.AtPrime p) (LocalizedModule p.primeCompl P) = Module.length (Localization.AtPrime p) (↥(Submodule.span (Localization.AtPrime p) (H : Set V)) ⧸ (Submodule.span (Localization.AtPrime p) (G : Set V)).comap (Submodule.span (Localization.AtPrime p) (H : Set V)).subtype)
+
+### Formalism.LocalToGlobal.ProjectiveLattices.AvMono:14  Formalism.L2.Pj.AvAlg.mem_adjoin_mod
+theorem mem_adjoin_mod (α : B) (hres : Algebra.adjoin (ResidueField A) {residue B α} = ⊤) (f : A[X]) (hβ : Irreducible (aeval α f)) : ∀ (n : ℕ) (b : B), ∃ s ∈ Algebra.adjoin A {α}, ∃ c : B, b = s + aeval α f ^ n * c
+
+### Formalism.LocalToGlobal.ProjectiveLattices.AvMono:56  Formalism.L2.Pj.AvAlg.adjoin_eq_top_of_gen
+theorem adjoin_eq_top_of_gen [Module.Finite A B] (hinj : Function.Injective (algebraMap A B)) (α : B) (hres : Algebra.adjoin (ResidueField A) {residue B α} = ⊤) (f : A[X]) (hβ : Irreducible (aeval α f)) : Algebra.adjoin A {α} = ⊤
+
+### Formalism.LocalToGlobal.ProjectiveLattices.AvMono:88  Formalism.L2.Pj.AvAlg.residue_aeval
+theorem residue_aeval (α : B) (G : A[X]) : residue B (aeval α G) = aeval (residue B α) (G.map (residue A))
+
+### Formalism.LocalToGlobal.ProjectiveLattices.AvMono:94  Formalism.L2.Pj.AvAlg.adjoin_residue_gen
+theorem adjoin_residue_gen [Finite (ResidueField B)] : ∃ γ : ResidueField B, Algebra.adjoin (ResidueField A) {γ} = ⊤
+
+### Formalism.LocalToGlobal.ProjectiveLattices.AvMono:109  Formalism.L2.Pj.AvAlg.exists_adjoin_eq_top
+theorem exists_adjoin_eq_top [Module.Finite A B] [Finite (ResidueField A)] (hinj : Function.Injective (algebraMap A B)) : ∃ α : B, Algebra.adjoin A {α} = ⊤
+
+### Formalism.LocalToGlobal.ProjectiveLattices.CompSplitPfC:12  Formalism.L2.Pj.CompSplitPfC.cspC_alg
+theorem cspC_alg (s : S) : algebraMap S (S ⊗[P] FractionRing P) s = s ⊗ₜ (1 : FractionRing P)
+
+### Formalism.LocalToGlobal.ProjectiveLattices.CompSplitPfC:14  Formalism.L2.Pj.CompSplitPfC.cspC_inj
+theorem cspC_inj : Function.Injective (algebraMap S (S ⊗[P] FractionRing P))
+
+### Formalism.LocalToGlobal.ProjectiveLattices.CompSplitPfC:27  Formalism.L2.Pj.CompSplitPfC.cspC_artinian
+theorem cspC_artinian : IsArtinianRing (S ⊗[P] FractionRing P)
+
+### Formalism.LocalToGlobal.ProjectiveLattices.CompSplitPfC:35  Formalism.L2.Pj.CompSplitPfC.cspC_range
+theorem cspC_range (y : S ⊗[P] integralClosure P (FractionRing P)) : ∃ s : S, algebraMap S (S ⊗[P] FractionRing P) s = Algebra.TensorProduct.map (AlgHom.id P S) (integralClosure P (FractionRing P)).val y
+
+### Formalism.LocalToGlobal.ProjectiveLattices.CompSplitPfC:50  Formalism.L2.Pj.CompSplitPfC.cspC_idem_of
+theorem cspC_idem_of {r : S ⊗[P] FractionRing P} (hr : IsIdempotentElem r) : ∃ s : S, algebraMap S (S ⊗[P] FractionRing P) s = r
+
+### Formalism.LocalToGlobal.ProjectiveLattices.CompSplitPfC:63  Formalism.L2.Pj.CompSplitPfC.cspC_minimal_unique
+theorem cspC_minimal_unique {q P1 P2 : Ideal S} [hq : q.IsPrime] (h1 : P1 ∈ minimalPrimes S) (h2 : P2 ∈ minimalPrimes S) (hq1 : P1 ≤ q) (hq2 : P2 ≤ q) : P1 = P2
+
+### Formalism.LocalToGlobal.ProjectiveLattices.CurveCountA:7  Formalism.L2.Pj.CurveCount.eval
+theorem eval₂_mul_homog {R S σ : Type*} [CommSemiring R] [CommSemiring S] (f : R →+* S) (c : S) (g : σ → S) {P : MvPolynomial σ R} {k : ℕ} (hP : P.IsHomogeneous k) : P.eval₂ f (fun i => c * g i) = c ^ k * P.eval₂ f g
+
+### Formalism.LocalToGlobal.ProjectiveLattices.CurveCountA:18  Formalism.L2.Pj.CurveCount.aeval_div_homog
+theorem aeval_div_homog {K L σ : Type*} [Field K] [Field L] [Algebra K L] (g : σ → L) (c : L) {P : MvPolynomial σ K} {k : ℕ} (hP : P.IsHomogeneous k) : aeval (fun i => g i / c) P = c⁻¹ ^ k * aeval g P
+
+### Formalism.LocalToGlobal.ProjectiveLattices.CurveCountA:29  Formalism.L2.Pj.CurveCount.exists_indep_ratios
+theorem exists_indep_ratios {K κ : Type*} [Field K] [Field κ] [Algebra K κ] {N D : ℕ} (x : Fin N → κ) (a : Fin N) (hxa : x a ≠ 0) (t : Fin (D + 1) × Fin N → κ) (ht : AlgebraicIndependent K t) (hlin : ∀ i : Fin D, ∑ k, t (i.succ, k) * x k = 0) (hlin0 : ∑ k, t (0, k) * x k = 1) : ∃ s : Finset κ, s.card = D ∧ (↑s : Set κ) ⊆ Set.range (fun i => x i / x a) ∧ AlgebraicIndepOn K id (↑s : Set κ)
+
+### Formalism.LocalToGlobal.ProjectiveLattices.CurveCountA:118  Formalism.L2.Pj.CurveCount.countCore
+theorem countCore {K κ Ω : Type*} [Field K] [Field κ] [Field Ω] [Algebra K κ] [Algebra K Ω] {N D : ℕ} (v : Fin N → Ω) (x : Fin N → κ) (a : Fin N) (hva : v a ≠ 0) (hxa : x a ≠ 0) (htr : Algebra.trdeg K (IntermediateField.adjoin K (Set.range fun i => v i / v a)) ≤ D) (htrans : ∀ Q : MvPolynomial (Fin N) K, aeval (fun i => v i / v a) Q = 0 → aeval (fun i => x i / x a) Q = 0) (t : Fin (D + 1) × Fin N → κ) (ht : AlgebraicIndependent K t) (hlin : ∀ i : Fin D, ∑ k, t (i.succ, k) * x k = 0) (hlin0 : ∑ k, t (0, k) * x k = 1) (P : MvPolynomial (Fin N) K) {k : ℕ} (hP : P.IsHomogeneous k) (hPv : aeval v P ≠ 0) : aeval x P ≠ 0
+
+### Formalism.LocalToGlobal.ProjectiveLattices.DatMat:13  Formalism.L2.Pj.DatLin.star_mulVec_dot
+theorem star_mulVec_dot (A B : Matrix m m ℂ) (u w : m → ℂ) : star (A *ᵥ u) ⬝ᵥ (B *ᵥ w) = star u ⬝ᵥ ((Aᴴ * B) *ᵥ w)
+
+### Formalism.LocalToGlobal.ProjectiveLattices.DatMat:17  Formalism.L2.Pj.DatLin.star_dot_self_eq
+theorem star_dot_self_eq (w : m → ℂ) : star w ⬝ᵥ w = ((∑ i, Complex.normSq (w i) : ℝ) : ℂ)
+
+### Formalism.LocalToGlobal.ProjectiveLattices.DatMat:20  Formalism.L2.Pj.DatLin.sum_normSq_pos
+theorem sum_normSq_pos {w : m → ℂ} (hw : w ≠ 0) : 0 < ∑ i, Complex.normSq (w i)
+
+### Formalism.LocalToGlobal.ProjectiveLattices.DatMat:24  Formalism.L2.Pj.DatLin.cplx_str_core
+theorem cplx_str_core (H P Q J : Matrix m m ℂ) (hPQ : P * Q = 1) (hQP : Q * P = 1) (hJ2 : J * J = 1) (hJh : Jᴴ = J) (hH : Pᴴ * H * P = J) : let K
+
+### Formalism.LocalToGlobal.ProjectiveLattices.DatMat:53  Formalism.L2.Pj.DatLin.exists_cplx_str
+theorem exists_cplx_str {n : Type} [Fintype n] [DecidableEq n] (H : Matrix n n ℂ) (p q : ℕ) (e : n ≃ Fin p ⊕ Fin q) (P : GL (Fin p ⊕ Fin q) ℂ) (hP : ((P : Matrix (Fin p ⊕ Fin q) (Fin p ⊕ Fin q) ℂ).map (starRingEnd ℂ))ᵀ * H.reindex e e * (P : Matrix (Fin p ⊕ Fin q) (Fin p ⊕ Fin q) ℂ) = Matrix.fromBlocks 1 0 0 (-1)) : ∃ K : Matrix n n ℂ, (∀ u, K *ᵥ (K *ᵥ u) = -u) ∧ (∀ u w, star (K *ᵥ u) ⬝ᵥ (H *ᵥ (K *ᵥ w)) = star u ⬝ᵥ (H *ᵥ w)) ∧ (∀ u : n → ℂ, u ≠ 0 → ∃ ρ : ℝ, 0 < ρ ∧ star (K *ᵥ u) ⬝ᵥ (H *ᵥ u) = -(Complex.I * ρ)) ∧ K.trace = Complex.I * ((p : ℂ) - q)
+
+### Formalism.LocalToGlobal.ProjectiveLattices.DatMat:135  Formalism.L2.Pj.DatLin.trace_restrict_complex
+theorem trace_restrict_complex {M : Type} [AddCommGroup M] [Module ℂ M] [Module ℝ M] [IsScalarTower ℝ ℂ M] [Module.Free ℂ M] [Module.Finite ℂ M] (f : M →ₗ[ℂ] M) : LinearMap.trace ℝ M (f.restrictScalars ℝ) = 2 * (LinearMap.trace ℂ M f).re
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ErealAddIInf:79  Formalism.L2.Pj.ereal_add_iInf
+theorem ereal_add_iInf {ι : Type} (c : ℝ) (f : ι → EReal) : (c : EReal) + ⨅ i, f i = ⨅ i, ((c : EReal) + f i)
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ExistsOfValILeOne:26  Formalism.L2.Pj.exists_clear_col
+theorem exists_clear_col {n : ℕ} (A : Matrix (Fin (n + 1)) (Fin (n + 1)) F) (hA : A.det ≠ 0) : ∃ Q : Matrix (Fin (n + 1)) (Fin (n + 1)) V, IsUnit Q.det ∧ ∀ i : Fin n, (Q.map (algebraMap V F) * A) i.succ 0 = 0
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ExistsOfValILeOne:85  Formalism.L2.Pj.iwasawa
+theorem iwasawa : ∀ {n : ℕ} (A : Matrix (Fin n) (Fin n) F), A.det ≠ 0 → ∃ (k : Matrix (Fin n) (Fin n) V) (U : Matrix (Fin n) (Fin n) F), IsUnit k.det ∧ U.BlockTriangular id ∧ (∀ i, U i i ≠ 0) ∧ A = k.map (algebraMap V F) * U | 0, A, _ => ⟨1, A, by simp, fun i => i.elim0, fun i => i.elim0, by ext i; exact i.elim0⟩ | n + 1, A, hA => by obtain ⟨Q, hQ, hQA⟩
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ExistsOfValILeOne:140  Formalism.L2.Pj.upper_inv
+theorem upper_inv {m : ℕ} (U : Matrix (Fin m) (Fin m) F) (hU : U.BlockTriangular id) (hd : ∀ i, U i i ≠ 0) : U⁻¹.BlockTriangular id ∧ (∀ i, U⁻¹ i i ≠ 0) ∧ U * U⁻¹ = 1
+
+### Formalism.LocalToGlobal.ProjectiveLattices.ExistsOfValILeOne:161  Formalism.L2.Pj.iwasawa'
+theorem iwasawa' {n : ℕ} (A : Matrix (Fin n) (Fin n) F) (hA : A.det ≠ 0) : ∃ (k : Matrix (Fin n) (Fin n) V) (N : Matrix (Fin n) (Fin n) F), IsUnit k.det ∧ N.BlockTriangular id ∧ (∀ i, N i i ≠ 0) ∧ A * N = k.map (algebraMap V F)
+
+### Formalism.LocalToGlobal.ProjectiveLattices.GenSpecLocFrM:12  Formalism.L2.Pj.LocFrM.range_projective
+theorem range_projective (e : Module.End O V) (he : IsIdempotentElem e) : Module.Projective O (LinearMap.range e)
+
+### Formalism.LocalToGlobal.ProjectiveLattices.GenSpecLocFrM:21  Formalism.L2.Pj.LocFrM.range_free
+theorem range_free (e : Module.End O V) (he : IsIdempotentElem e) : Module.Free O (LinearMap.range e)
+
+### Formalism.LocalToGlobal.ProjectiveLattices.KapTrdegPfA:7  Formalism.L2.Pj.TranscendenceDegreeLemmas.trdeg_residueField_of_minimal
+theorem trdeg_residueField_of_minimal {K A : Type} [Field K] [CommRing A] [Algebra K A] (n : ℕ) [Algebra.IsStandardSmoothOfRelativeDimension n K A] (p : Ideal A) [p.IsPrime] (hp : p ∈ minimalPrimes A) : Algebra.trdeg K p.ResidueField = n
+
+### Formalism.LocalToGlobal.ProjectiveLattices.LieAlg:12  Formalism.L2.Pj.LieAlg.exists_divisor
+theorem exists_divisor (s : Finset K) : ∃ t : K, (t = 0 → ∀ x ∈ s, x = 0) ∧ (t = 0 ∨ t ∈ s) ∧ ∀ x ∈ s, ∃ r : V, x = algebraMap V K r * t
+
+### Formalism.LocalToGlobal.ProjectiveLattices.LieAlg:50  Formalism.L2.Pj.LieAlg.fg_eq_span_singleton
+theorem fg_eq_span_singleton (S : Submodule V K) (hS : S.FG) : ∃ t : K, S = span V {t}
+
+### Formalism.LocalToGlobal.ProjectiveLattices.LieAlg:71  Formalism.L2.Pj.LieAlg.herm
+theorem herm (m : ℕ) (Λ : Submodule V (Fin m → K)) (hfg : Λ.FG) (hne : ∀ i : Fin m, ∃ α ∈ Λ, (∀ j, i < j → α j = 0) ∧ α i ≠ 0) : ∃ β : Fin m → (Fin m → K), (∀ i, β i ∈ Λ) ∧ (∀ i j, i < j → β i j = 0) ∧ (∀ i, β i i ≠ 0) ∧ ∀ α ∈ Λ, ∃! r : Fin m → V, α = ∑ i, r i • β i
+
+### Formalism.LocalToGlobal.ProjectiveLattices.LieAlg:168  Formalism.L2.Pj.LieAlg.eig_basis
+theorem eig_basis {n m : ℕ} {ι : Type} (L : ι → (Fin n → V) →ₗ[V] (Fin n → V)) (χ : ι → V) (M : ι → (Fin n → K) →ₗ[K] (Fin n → K)) (hM : ∀ a c, M a (fun j => algebraMap V K (c j)) = fun j => algebraMap V K (L a c j)) (v : Fin m → (Fin n → K)) (hv : ∀ a i, M a (v i) = algebraMap V K (χ a) • v i) (hb : ∀ w, (∀ a, M a w = algebraMap V K (χ a) • w) → ∃! cf : Fin m → K, w = ∑ i, cf i • v i) : ∃ b : Fin m → (Fin n → V), (∀ a i, L a (b i) = χ a • b i) ∧ (∀ c, (∀ a, L a c = χ a • c) → ∃! r : Fin m → V, c = ∑ i, r i • b i) ∧ ∀ i, ∃ cf : Fin m → K, cf i ≠ 0 ∧ (∀ j, i < j → cf j = 0) ∧ (fun j => algebraMap V K (b i j)) = ∑ j, cf j • v j
+
+### Formalism.LocalToGlobal.ProjectiveLattices.LieAlg:261  Formalism.L2.Pj.LieAlg.tri_basis
+theorem tri_basis {n m : ℕ} (P : (Fin n → K) → Prop) (v : Fin m → (Fin n → K)) (hb : ∀ w, P w → ∃! cf : Fin m → K, w = ∑ i, cf i • v i) (C : Fin m → Fin m → K) (hCz : ∀ i j, i < j → C i j = 0) (hCd : ∀ i, C i i ≠ 0) : ∀ w, P w → ∃! d : Fin m → K, w = ∑ i, d i • ∑ j, C i j • v j
+
+### Formalism.LocalToGlobal.ProjectiveLattices.OneLtAbsNormReal:171  Formalism.L2.Pj.one_lt_absNorm_real
+lemma one_lt_absNorm_real : (1 : ℝ) < (Ideal.absNorm la.asIdeal : ℝ)
+
+### Formalism.LocalToGlobal.ProjectiveLattices.SumEmbeddingsEq:11  Formalism.L2.Pj.DatLin.sum_embeddings_eq
+theorem sum_embeddings_eq (z : E) : (((Algebra.trace ℚ E z : ℚ) : ℂ)) = ∑ σ : E →+* ℂ, σ z
+
+### Formalism.LocalToGlobal.ProjectiveLattices.SumEmbeddingsEq:16  Formalism.L2.Pj.DatLin.trace_eq_sum_psi
+theorem trace_eq_sum_psi (Ψ : Finset (E →+* ℂ)) (hΨ : ∀ σ : E →+* ℂ, σ ∈ Ψ ↔ ComplexEmbedding.conjugate σ ∉ Ψ) (z : E) : ((Algebra.trace ℚ E z : ℚ) : ℝ) = ∑ τ ∈ Ψ, 2 * (τ z).re
+
+### Formalism.LocalToGlobal.ProjectiveLattices.SumEmbeddingsEq:38  Formalism.L2.Pj.DatLin.sesq_repr
+theorem sesq_repr [StarRing E] {V : Type} [AddCommGroup V] [Module E V] {ι : Type} [Fintype ι] (h : V →ₗ⋆[E] V →ₗ[E] E) (b : Module.Basis ι E V) (x y : V) : h x y = ∑ i, ∑ j, star (b.repr x i) * h (b i) (b j) * b.repr y j
+
+### Formalism.LocalToGlobal.ProjectiveLattices.UnramBridgeHolds:9  Formalism.L2.Pj.unramBridge_holds
+theorem unramBridge_holds : ∀ (K : Type) [Field K] [NumberField K] [IsCMField K], (∀ P : Ideal (𝓞 K), P.IsMaximal → ∃ θ : 𝓞 K, θ - RingOfIntegers.mapRingEquiv (IsCMField.complexConj K : K ≃+* K) θ ∉ P) → Algebra.Unramified (𝓞 (maximalRealSubfield K)) (𝓞 K)
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CasimirReductionTheory.OneParameterDerivatives.WeilIndicatorMeasures.MeasurableUnitMulIndicator:14  Formalism.L2.SG.Pf.Weil.QuotInt.measurable_mulH
+lemma measurable_mulH : Measurable (fun p : G × H => p.1 * (p.2 : G))
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CasimirReductionTheory.OneParameterDerivatives.WeilIndicatorMeasures.MeasurableUnitMulIndicator:29  Formalism.L2.SG.Pf.Weil.QuotInt.measurable_mk
+lemma measurable_mk : Measurable ((↑) : G → G ⧸ H)
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CasimirReductionTheory.OneParameterDerivatives.WeilIndicatorMeasures.MeasurableUnitMulIndicator:32  Formalism.L2.SG.Pf.Weil.QuotInt.measure_coset_le
+lemma measure_coset_le (κ : Measure H) [κ.IsMulLeftInvariant] (y : G) (E : Set G) : κ {h : H | y * h ∈ E} ≤ κ {h : H | (h : G) ∈ E⁻¹ * E}
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CasimirReductionTheory.OneParameterDerivatives.WeilIndicatorMeasures.MeasurableUnitMulIndicator:53  Formalism.L2.SG.Pf.Weil.QuotInt.measure_coset_lt_top
+lemma measure_coset_lt_top (hH : IsClosed (H : Set G)) (κ : Measure H) [IsFiniteMeasureOnCompacts κ] {E : Set G} (hE : IsCompact E) : κ {h : H | (h : G) ∈ E⁻¹ * E} < ∞
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CasimirReductionTheory.OneParameterDerivatives.WeilIndicatorMeasures.MeasurableUnitMulIndicator:69  Formalism.L2.SG.Pf.Weil.QuotInt.measure_nhds_pos
+lemma measure_nhds_pos (κ : Measure H) [IsOpenPosMeasure κ] {V : Set G} (hV : V ∈ 𝓝 (1 : G)) : 0 < κ {h : H | (h : G) ∈ V}
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CasimirVolumeRatios.AdeleLC:12  Formalism.L2.S.S7.AdeleLC.exists_mul_mem
+theorem exists_mul_mem (x : K) (hx : v.valuation K x ≤ 1) : ∃ s : 𝓞 K, s ∉ v.asIdeal ∧ ∃ a : 𝓞 K, (s : K) * x = (a : K)
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CasimirVolumeRatios.AdeleLC:66  Formalism.L2.S.S7.AdeleLC.dense_algebraMap
+theorem dense_algebraMap : DenseRange (algebraMap K (v.adicCompletion K))
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CasimirVolumeRatios.AdeleLC:76  Formalism.L2.S.S7.AdeleLC.valued_algebraMap
+theorem valued_algebraMap (x : K) : Valued.v (algebraMap K (v.adicCompletion K) x) = v.valuation K x
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CasimirVolumeRatios.AdeleLC:79  Formalism.L2.S.S7.AdeleLC.exists_approx
+theorem exists_approx (y : v.adicCompletion K) (hy : Valued.v y ≤ 1) : ∃ r : 𝓞 K, Valued.v (y - algebraMap K (v.adicCompletion K) (r : K)) < 1
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CasimirVolumeRatios.AdeleLC:125  Formalism.L2.S.S7.AdeleLC.mem_max_iff
+theorem mem_max_iff (y : Valued.integer (v.adicCompletion K)) : y ∈ IsLocalRing.maximalIdeal (Valued.integer (v.adicCompletion K)) ↔ Valued.v (y : v.adicCompletion K) < 1
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CasimirVolumeRatios.AdeleLC:132  Formalism.L2.S.S7.AdeleLC.finite_residue
+theorem finite_residue : Finite (IsLocalRing.ResidueField (Valued.integer (v.adicCompletion K)))
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CasimirVolumeRatios.AdeleLC:159  Formalism.L2.S.S7.AdeleLC.isClosed_integer
+theorem isClosed_integer : IsClosed (Valued.integer (v.adicCompletion K) : Set (v.adicCompletion K))
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CasimirVolumeRatios.AdeleLC:163  Formalism.L2.S.S7.AdeleLC.compactSpace_integer
+theorem compactSpace_integer : CompactSpace (Valued.integer (v.adicCompletion K))
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CasimirVolumeRatios.AdeleLC:170  Formalism.L2.S.S7.AdeleLC.isCompact_integers
+theorem isCompact_integers : IsCompact (v.adicCompletionIntegers K : Set (v.adicCompletion K))
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CasimirVolumeRatios.AdeleLC:174  Formalism.L2.S.S7.AdeleLC.isOpen_integers
+theorem isOpen_integers : IsOpen (v.adicCompletionIntegers K : Set (v.adicCompletion K))
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.EqOneOfZpowMem:15  Formalism.L2.SG.RealObj.InfCut.UnitaryIsometries.Modular.map_right
+theorem map_right (g : G) : (Measure.haar : Measure G).map (· * g) = Δ g • (Measure.haar : Measure G)
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.EqOneOfZpowMem:18  Formalism.L2.SG.RealObj.InfCut.UnitaryIsometries.Modular.haar_preimage
+theorem haar_preimage (g : G) {A : Set G} (hA : MeasurableSet A) : (Measure.haar : Measure G) ((· * g) ⁻¹' A) = (Δ g : ℝ≥0∞) * (Measure.haar : Measure G) A
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.EqOneOfZpowMem:24  Formalism.L2.SG.RealObj.InfCut.UnitaryIsometries.Modular.exists_compact_pos
+theorem exists_compact_pos : ∃ C : Set G, IsCompact C ∧ 0 < (Measure.haar : Measure G) C ∧ (Measure.haar : Measure G) C ≠ ⊤
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.EqOneOfZpowMem:30  Formalism.L2.SG.RealObj.InfCut.UnitaryIsometries.Modular.eq_one_of_zpow_mem
+theorem eq_one_of_zpow_mem {k : G} {Q : Set G} (hQ : IsCompact Q) (hk : ∀ j : ℤ, k ^ j ∈ Q) : Δ k = 1
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.EqOneOfZpowMem:70  Formalism.L2.SG.RealObj.InfCut.UnitaryIsometries.Modular.eventually_lt
+theorem eventually_lt (ε : ℝ) (hε : 0 < ε) : ∀ᶠ h in 𝓝 (1 : G), (Δ h : ℝ) < 1 + ε
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.EqOneOfZpowMem:95  Formalism.L2.SG.RealObj.InfCut.UnitaryIsometries.Modular.comp_aut
+theorem comp_aut (α : G ≃ₜ* G) (g : G) : Δ (α g) = Δ g
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.EqOneOfZpowMem:117  Formalism.L2.SG.RealObj.InfCut.UnitaryIsometries.Modular.eq_one_of_iterate
+theorem eq_one_of_iterate (α : G ≃ₜ* G) (g k : G) (hk : Δ k = 1) (hlim : Tendsto (fun m : ℕ => (⇑α)^[m] g) atTop (𝓝 k)) : Δ g = 1
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.LieAveraging.LsSetresAvg:10  Formalism.L2.SG.AvgPf.isFD_of_strict
+theorem isFD_of_strict {Γ α : Type*} [Group Γ] [MulAction Γ α] [MeasurableSpace α] (μ : Measure α) {S : Set α} (hS : MeasurableSet S) (hcov : ∀ᵐ x ∂μ, ∃ g : Γ, g • x ∈ S) (huniq : ∀ x ∈ S, ∀ g : Γ, g • x ∈ S → g = 1) : IsFundamentalDomain Γ S μ
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.LieAveraging.LsSetresAvg:27  Formalism.L2.SG.AvgPf.fd_ne_zero
+theorem fd_ne_zero {Γ α : Type*} [Group Γ] [MulAction Γ α] [MeasurableSpace α] {μ : Measure α} [MeasurableConstSMul Γ α] [SMulInvariantMeasure Γ α μ] [Countable Γ] {S : Set α} (h : IsFundamentalDomain Γ S μ) (hμ : μ univ ≠ 0) : μ S ≠ 0
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.LieAveraging.LsSetresAvg:36  Formalism.L2.SG.AvgPf.exists_fd
+theorem exists_fd (R Γ : Subgroup G) (hR : IsClosed (R : Set G)) (hΓR : Γ ≤ R) [DiscreteTopology Γ] [Countable Γ] (K : Set G) (hK : IsCompact K) (hKc : ∀ r ∈ R, ∃ s ∈ Γ, s * r ∈ K) : ∃ D : Set G, MeasurableSet D ∧ D ⊆ K ∧ D ⊆ (R : Set G) ∧ (∀ r ∈ R, ∃ s ∈ Γ, s * r ∈ D) ∧ (∀ r ∈ D, ∀ s ∈ Γ, s * r ∈ D → s = 1)
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.LintegralFinProd:10  Formalism.L2.SG.RealObj.InfCut.ProductExactness.PiM.lintegral_fin_prod
+theorem lintegral_fin_prod : ∀ (m : ℕ) {α : Fin m → Type} [∀ i, MeasurableSpace (α i)] (μ : ∀ i, Measure (α i)) [∀ i, SigmaFinite (μ i)] (f : ∀ i, α i → ℝ≥0∞), (∀ i, Measurable (f i)) → ∫⁻ x, ∏ i, f i (x i) ∂Measure.pi μ = ∏ i, ∫⁻ x, f i x ∂μ i | 0, α, _, μ, _, f, _ => by simp | m + 1, α, _, μ, _, f, hf => by have hmp
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.LintegralFinProd:35  Formalism.L2.SG.RealObj.InfCut.ProductExactness.PiM.lintegral_pi_prod
+theorem lintegral_pi_prod {ι : Type} [Fintype ι] {α : ι → Type} [∀ i, MeasurableSpace (α i)] (μ : ∀ i, Measure (α i)) [∀ i, SigmaFinite (μ i)] (f : ∀ i, α i → ℝ≥0∞) (hf : ∀ i, Measurable (f i)) : ∫⁻ x, ∏ i, f i (x i) ∂Measure.pi μ = ∏ i, ∫⁻ x, f i x ∂μ i
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.MpUncurry:9  Formalism.MainNotions.S.Gauge.mp_uncurry
+theorem mp_uncurry (κ : Type*) [Fintype κ] : MeasurePreserving (MeasurableEquiv.curry κ (Fin 2) ℝ).symm volume volume
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.MpUncurry:21  Formalism.MainNotions.S.Gauge.mp_cF
+theorem mp_cF (κ : Type*) [Fintype κ] : MeasurePreserving (fun y : EuclideanSpace ℝ (κ × Fin 2) => fun k => (y (k, 0) : ℂ) + (y (k, 1) : ℂ) * Complex.I) volume volume
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.RegroupPfUnfold:27  Formalism.L2.SG.Pf.RegroupPf.isFund_of_exact
+theorem isFund_of_exact (μ : Measure H) (R : Subgroup H) (W : Set H) (hm : MeasurableSet W) (hc : ∀ x, ∃ g ∈ R, g * x ∈ W) (hu : ∀ x ∈ W, ∀ g ∈ R, g * x ∈ W → g = 1) : IsFundamentalDomain R W μ
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.RegroupPfUnfold:39  Formalism.L2.SG.Pf.RegroupPf.orbit_unfold
+theorem orbit_unfold (μ : Measure H) [μ.IsMulLeftInvariant] (N : Subgroup H) [Countable N] {C : Type*} [Countable C] (act : N → C → C) (h1 : ∀ c, act 1 c = c) (hmul : ∀ n m c, act (n * m) c = act n (act m c)) (F : C → H → ℂ) (hFm : ∀ c, Measurable (F c)) (hFeq : ∀ (n : N) c y, F (act n c) y = F c ((n : H)⁻¹ * y)) (Ω : Set H) (hΩm : MeasurableSet Ω) (hΩc : ∀ x, ∃ n : N, (n : H) * x ∈ Ω) (hΩu : ∀ x ∈ Ω, ∀ n : N, (n : H) * x ∈ Ω → n = 1) {J : Type*} (r : J → C) (hcov : ∀ c, ∃ j n, act n (r j) = c) (huniq : ∀ j j' n, act n (r j) = r j' → j = j') (ΩJ : J → Set H) (hJm : ∀ j, MeasurableSet (ΩJ j)) (hJc : ∀ j x, ∃ n : N, act n (r j) = r j ∧ (n : H) * x ∈ ΩJ j) (hJu : ∀ j, ∀ x ∈ ΩJ j, ∀ n : N, act n (r j) = r j → (n : H) * x ∈ ΩJ j → n = 1) (hint : ∫⁻ y in Ω, ∑' c, ‖F c y‖ₑ ∂μ < ⊤) : IntegrableOn (fun y => ∑' c, F c y) Ω μ ∧ ∫ y in Ω, ∑' c, F c y ∂μ = ∑' j, ∫ y in ΩJ j, F (r j) y ∂μ
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.RelativeIndexFlags.RelIndexEqIndexOfMul:7  Formalism.L2.SG.Pf.RelativeIndexFlags.Filt.relIndex_eq_index_of_mul
+theorem relIndex_eq_index_of_mul (A R : Subgroup G) (h : ∀ y : G, ∃ r ∈ R, ∃ a ∈ A, y = r * a) : A.relIndex R = A.index
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.RelativeIndexFlags.RelIndexEqIndexOfMul:28  Formalism.L2.SG.Pf.RelativeIndexFlags.Filt.relIndex_eq_of_mul
+theorem relIndex_eq_of_mul (A B B' : Subgroup G) (hBB : B ≤ B') (h : ∀ y ∈ B', ∃ b ∈ B, ∃ a ∈ A, y = b * a) : A.relIndex B = A.relIndex B'
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.RelativeIndexFlags.RelIndexEqIndexOfMul:42  Formalism.L2.SG.Pf.RelativeIndexFlags.Filt.inf_relIndex_of_le
+theorem inf_relIndex_of_le (H N L : Subgroup G) (hL : L ≤ N) : (H ⊓ N).relIndex L = H.relIndex L
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.RelativeIndexFlags.RelIndexEqIndexOfMul:50  Formalism.L2.SG.Pf.RelativeIndexFlags.Filt.relIndex_split
+theorem relIndex_split (N : Subgroup G) [hN : N.Normal] (H X : Subgroup G) (hHX : H ≤ X) : H.relIndex X = (H ⊓ N).relIndex (X ⊓ N) * (H ⊔ N).relIndex (X ⊔ N)
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.RelativeIndexFlags.RelIndexInfRightNeZero:11  Formalism.L2.SG.Pf.RelativeIndexFlags.real_ratio_eq
+theorem real_ratio_eq (a e c f β δ : ℕ) (hβ : β ≠ 0) (hδ : δ ≠ 0) (h1 : β * a = δ * c) (h2 : β * e = δ * f) : (a : ℝ) / e = c / f
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.RelativeIndexFlags.RelIndexInfRightNeZero:19  Formalism.L2.SG.Pf.RelativeIndexFlags.relIndex_inf_right_ne_zero
+theorem relIndex_inf_right_ne_zero {T S : Subgroup G} (h : T.relIndex S ≠ 0) (B : Subgroup G) : T.relIndex (S ⊓ B) ≠ 0
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.SigmaFiniteOfFcG:20  Formalism.L2.SG.RealObj.InfCut.JacobianCoordinates.JL.HaarCore.pull
+theorem pull (S : Subgroup G) (hS : IsClosed (S : Set G)) (ν : Measure G) (hνc : ν (S : Set G)ᶜ = 0) (hνi : ∀ s ∈ S, ν.map (fun x => s * x) = ν) (hνf : IsFiniteMeasureOnCompacts ν) : (ν.comap (Subtype.val : S → G)).IsMulLeftInvariant ∧ IsFiniteMeasureOnCompacts (ν.comap (Subtype.val : S → G)) ∧ (ν.comap (Subtype.val : S → G)).map Subtype.val = ν
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.SigmaFiniteOfFcG:45  Formalism.L2.SG.RealObj.InfCut.JacobianCoordinates.JL.HaarCore.haar_unique
+theorem haar_unique (S : Subgroup G) (hS : IsClosed (S : Set G)) (μ m : Measure G) (hμ0 : μ ≠ 0) (hμc : μ (S : Set G)ᶜ = 0) (hμi : ∀ s ∈ S, μ.map (fun x => s * x) = μ) (hμf : IsFiniteMeasureOnCompacts μ) (hmc : m (S : Set G)ᶜ = 0) (hmi : ∀ s ∈ S, m.map (fun x => s * x) = m) (hmf : IsFiniteMeasureOnCompacts m) : ∃ c : ℝ≥0∞, c ≠ ∞ ∧ m = c • μ
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.VolumeZeroFintype:13  Formalism.L2.SG.RealObj.InfCut.NilradicalHermitianFrames.PF_eval
+theorem PF_eval {ι : Type*} (p : MvPolynomial ι ℂ) (y : ι → ℝ) : (MvPolynomial.aeval (R := ℂ) (fun i (y : ι → ℝ) => (y i : ℂ)) p : (ι → ℝ) → ℂ) y = MvPolynomial.eval (fun i => (y i : ℂ)) p
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.CountableConjSub:117  Formalism.L2.SG.MeasureShiftInvariance.ind_mul_right
+theorem ind_mul_right {M : Type*} [Zero M] [One M] {B : Set G} (x : G) : (fun r => B.indicator (1 : G → M) (r * x)) = {r | r * x ∈ B}.indicator 1
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.CountableConjSub:124  Formalism.L2.SG.MeasureShiftInvariance.ind_inv_mul
+theorem ind_inv_mul {M : Type*} [Zero M] [One M] {A : Set G} (y : G) : (fun r => A.indicator (1 : G → M) (r⁻¹ * y)) = {r | r⁻¹ * y ∈ A}.indicator 1
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.CountableConjSub:136  Formalism.L2.SG.MeasureShiftInvariance.lint_eq
+theorem lint_eq {A B : Set G} (hA : MeasurableSet A) (hB : MeasurableSet B) (c : ℝ≥0∞) (hcB : ∀ x, ν {r | r * x ∈ B} = c) (hcA : ∀ y, ν {r | r⁻¹ * y ∈ A} = c) (g : G → ℝ≥0∞) (hg : AEMeasurable g μ) (hinv : ∀ᵐ r ∂ν, ∀ x, g (r⁻¹ * x) = g x) : c * ∫⁻ x in A, g x ∂μ = c * ∫⁻ x in B, g x ∂μ
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.CountableConjSub:245  Formalism.L2.SG.MeasureShiftInvariance.int_eq
+theorem int_eq {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E] {A B : Set G} (hA : MeasurableSet A) (hB : MeasurableSet B) (c : ℝ≥0∞) (hc0 : c ≠ 0) (hct : c ≠ ⊤) (hcB : ∀ x, ν {r | r * x ∈ B} = c) (hcA : ∀ y, ν {r | r⁻¹ * y ∈ A} = c) (f : G → E) (hf : AEStronglyMeasurable f μ) (hinv : ∀ᵐ r ∂ν, ∀ x, f (r⁻¹ * x) = f x) (hfA : IntegrableOn f A μ) : ∫ x in A, f x ∂μ = ∫ x in B, f x ∂μ
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.CountableConjSub:287  Formalism.L2.SG.MeasureShiftInvariance.fd_instances
+theorem fd_instances (Γ : Subgroup G) (ν : Measure G) (hν : ∀ s ∈ Γ, ν.map (fun x => s * x) = ν) : MeasurableSMul Γ G ∧ SMulInvariantMeasure Γ G ν
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.CovolIdxK:12  Formalism.L2.SG.Pf.NcReal.JX.CovB.IdxK.exists_prim
+theorem exists_prim {m : ℕ} (c : Fin m → 𝓞 K) (hc : c ≠ 0) (𝔭 : Ideal (𝓞 K)) (h𝔭 : 𝔭 ≠ ⊤) : ∃ t : K, (∀ i, ∃ o : 𝓞 K, (o : K) = t * (c i : K)) ∧ ∃ i, ∀ o : 𝓞 K, (o : K) = t * (c i : K) → o ∉ 𝔭
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.CovolIdxK:105  Formalism.L2.SG.Pf.NcReal.JX.CovB.IdxK.card_quot_le
+theorem card_quot_le (𝔭 : Ideal (𝓞 K)) [h𝔭 : 𝔭.IsMaximal] (n : ℕ) (hdep : ∀ y : Fin (n + 1) → M, ∃ c : Fin (n + 1) → 𝓞 K, c ≠ 0 ∧ ∑ i, c i • y i = 0) : Nat.card (M ⧸ 𝔭 • (⊤ : Submodule (𝓞 K) M)) ≤ Nat.card (𝓞 K ⧸ 𝔭) ^ n
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.CovolIdxK:165  Formalism.L2.SG.Pf.NcReal.JX.CovB.IdxK.smul_toAddSubgroup
+theorem smul_toAddSubgroup (π : 𝓞 K) (N : Submodule (𝓞 K) M) : (Ideal.span {π} • N).toAddSubgroup = N.toAddSubgroup.map (DistribSMul.toAddMonoidHom M π)
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.CovolIdxK:174  Formalism.L2.SG.Pf.NcReal.JX.CovB.IdxK.smul_inj
+theorem smul_inj (π : 𝓞 K) (hπ : π ≠ 0) : Function.Injective (DistribSMul.toAddMonoidHom M π)
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.CovolIdxK:218  Formalism.L2.SG.Pf.NcReal.JX.CovB.IdxK.relIndex_smul_ne_zero
+theorem relIndex_smul_ne_zero (N : Submodule (𝓞 K) M) (hN : N.FG) (d : 𝓞 K) (hd : d ≠ 0) : (Ideal.span {d} • N).toAddSubgroup.relIndex N.toAddSubgroup ≠ 0
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.CovolIdxK:240  Formalism.L2.SG.Pf.NcReal.JX.CovB.IdxK.relIndex_principal
+theorem relIndex_principal (N : Submodule (𝓞 K) M) (hN : N.FG) (n : ℕ) (ι : (Fin n → 𝓞 K) →ₗ[𝓞 K] M) (hι : Function.Injective ι) (hιN : LinearMap.range ι ≤ N) (d : 𝓞 K) (hd : d ≠ 0) (hdN : Ideal.span {d} • N ≤ LinearMap.range ι) (π : 𝓞 K) (hπ : π ≠ 0) : (Ideal.span {π} • N).toAddSubgroup.relIndex N.toAddSubgroup = (Algebra.norm ℤ π).natAbs ^ n
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.CovolIdxK:320  Formalism.L2.SG.Pf.NcReal.JX.CovB.IdxK.relIndex_eq_card
+theorem relIndex_eq_card (I : Ideal (𝓞 K)) (N : Submodule (𝓞 K) M) : (I • N).toAddSubgroup.relIndex N.toAddSubgroup = Nat.card (N ⧸ I • (⊤ : Submodule (𝓞 K) N))
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.CovolIdxK:324  Formalism.L2.SG.Pf.NcReal.JX.CovB.IdxK.fg_smul
+theorem fg_smul (I : Ideal (𝓞 K)) (N : Submodule (𝓞 K) M) (hN : N.FG) : (I • N).FG
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.HasProdFiniteSupport:11  Formalism.L2.SG.Pf.HasProdFiniteSupport.hasProd_inv
+theorem hasProd_inv₀' {f : ι → ℝ} {a : ℝ} (h : HasProd f a) (ha : a ≠ 0) : HasProd (fun i => (f i)⁻¹) a⁻¹
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.HasProdFiniteSupport:17  Formalism.L2.SG.Pf.HasProdFiniteSupport.hasProd_rpow'
+theorem hasProd_rpow' {f : ι → ℝ} {a : ℝ} (p : ℝ) (hf : ∀ i, 0 ≤ f i) (h : HasProd f a) (ha : a ≠ 0) : HasProd (fun i => f i ^ p) (a ^ p)
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.HasProdFiniteSupport:23  Formalism.L2.SG.Pf.HasProdFiniteSupport.hasProd_of_compl
+theorem hasProd_of_compl (P : ι → Prop) [DecidablePred P] [Fintype {i // P i}] {f : ι → ℝ} {a : ℝ} (h : HasProd (fun i : {i // ¬ P i} => f i) a) : HasProd f (a * ∏ i : {i // P i}, f i)
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.HasProdFiniteSupport:35  Formalism.L2.SG.Pf.HasProdFiniteSupport.hasProd_compl_of
+theorem hasProd_compl_of (P : ι → Prop) [DecidablePred P] [Fintype {i // P i}] {f : ι → ℝ} {a : ℝ} (h : HasProd f a) (hf : ∀ i, P i → f i ≠ 0) : HasProd (fun i : {i // ¬ P i} => f i) (a * (∏ i : {i // P i}, f i)⁻¹)
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.HasProdFiniteSupport:52  Formalism.L2.SG.Pf.HasProdFiniteSupport.hasProd_of_finite_support
+theorem hasProd_of_finite_support {f : ι → ℝ} (s : Set ι) (hs : s.Finite) (h1 : ∀ i ∉ s, f i = 1) : HasProd f (∏ i ∈ hs.toFinset, f i)
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.HasProdFiniteSupport:56  Formalism.L2.SG.Pf.HasProdFiniteSupport.hasProd_of_compl'
+theorem hasProd_of_compl' (s : Finset ι) {f : ι → ℝ} {a : ℝ} (h : HasProd (fun i : {i // i ∉ s} => f i) a) : HasProd f (a * ∏ i : s, f i)
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.HasProdFiniteSupport:68  Formalism.L2.SG.Pf.HasProdFiniteSupport.hasProd_compl_of'
+theorem hasProd_compl_of' (s : Finset ι) {f : ι → ℝ} {a : ℝ} (h : HasProd f a) (hf : ∀ i ∈ s, f i ≠ 0) : HasProd (fun i : {i // i ∉ s} => f i) (a * (∏ i : s, f i)⁻¹)
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.NcSGLP:9  Formalism.L2.SG.Pf.NcS.LT.GLP.surj_equiv
+theorem surj_equiv {C W : Type*} [AddCommGroup C] [Module K C] [FiniteDimensional K C] [AddCommGroup W] [Module K W] (L1 L2 : C →ₗ[K] W) (h1 : Function.Surjective L1) (h2 : Function.Surjective L2) : ∃ δ : C ≃ₗ[K] C, ∀ c, L1 (δ c) = L2 c
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.NcSGLP:60  Formalism.L2.SG.Pf.NcS.LT.GLP.pi_surj
+theorem pi_surj {V : Type*} [AddCommGroup V] [Module K V] {a : ℕ} (ψ : Fin a → Module.Dual K V) (hψ : LinearIndependent K ψ) : Function.Surjective (LinearMap.pi ψ)
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.NcSGLP:82  Formalism.L2.SG.Pf.NcS.LT.GLP.trans_tuple
+theorem trans_tuple {V : Type*} [AddCommGroup V] [Module K V] [FiniteDimensional K V] {a : ℕ} (x y : Fin a → V) (hx : LinearIndependent K x) (hy : LinearIndependent K y) : ∃ A : V ≃ₗ[K] V, ∀ j, A (x j) = y j
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.NcSGLP:222  Formalism.L2.SG.Pf.NcS.LT.GLP.fix_tuple
+theorem fix_tuple {V : Type*} [AddCommGroup V] [Module K V] [FiniteDimensional K V] {a : ℕ} (x : Fin a → V) (hx : LinearIndependent K x) (φ ψ : Fin a → Module.Dual K V) (hφ : LinearIndependent K φ) (hψ : LinearIndependent K ψ) (h : ∀ i j, φ i (x j) = ψ i (x j)) : ∃ B : V ≃ₗ[K] V, (∀ j, B (x j) = x j) ∧ ∀ i v, ψ i (B v) = φ i v
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.NcSGLP:291  Formalism.L2.SG.Pf.NcS.LT.GLP.glPair
+theorem glPair {V : Type*} [AddCommGroup V] [Module K V] [FiniteDimensional K V] {a : ℕ} (x y : Fin a → V) (ξ η : Fin a → Module.Dual K V) (hx : LinearIndependent K x) (hy : LinearIndependent K y) (hξ : LinearIndependent K ξ) (hη : LinearIndependent K η) (h : ∀ i j, ξ i (x j) = η i (y j)) : ∃ A : V ≃ₗ[K] V, (∀ j, A (x j) = y j) ∧ ∀ i v, η i (A v) = ξ i v
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.NcXGLP:9  Formalism.L2.SG.Pf.NcX.LT.GLP.surj_equiv
+theorem surj_equiv {C W : Type*} [AddCommGroup C] [Module K C] [FiniteDimensional K C] [AddCommGroup W] [Module K W] (L1 L2 : C →ₗ[K] W) (h1 : Function.Surjective L1) (h2 : Function.Surjective L2) : ∃ δ : C ≃ₗ[K] C, ∀ c, L1 (δ c) = L2 c
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.NcXGLP:42  Formalism.L2.SG.Pf.NcX.LT.GLP.pi_surj
+theorem pi_surj {V : Type*} [AddCommGroup V] [Module K V] {a : ℕ} (ψ : Fin a → Module.Dual K V) (hψ : LinearIndependent K ψ) : Function.Surjective (LinearMap.pi ψ)
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.NcXGLP:62  Formalism.L2.SG.Pf.NcX.LT.GLP.trans_tuple
+theorem trans_tuple {V : Type*} [AddCommGroup V] [Module K V] [FiniteDimensional K V] {a : ℕ} (x y : Fin a → V) (hx : LinearIndependent K x) (hy : LinearIndependent K y) : ∃ A : V ≃ₗ[K] V, ∀ j, A (x j) = y j
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.NcXGLP:90  Formalism.L2.SG.Pf.NcX.LT.GLP.fix_tuple
+theorem fix_tuple {V : Type*} [AddCommGroup V] [Module K V] [FiniteDimensional K V] {a : ℕ} (x : Fin a → V) (hx : LinearIndependent K x) (φ ψ : Fin a → Module.Dual K V) (hφ : LinearIndependent K φ) (hψ : LinearIndependent K ψ) (h : ∀ i j, φ i (x j) = ψ i (x j)) : ∃ B : V ≃ₗ[K] V, (∀ j, B (x j) = x j) ∧ ∀ i v, ψ i (B v) = φ i v
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.NcXGLP:177  Formalism.L2.SG.Pf.NcX.LT.GLP.glPair
+theorem glPair {V : Type*} [AddCommGroup V] [Module K V] [FiniteDimensional K V] {a : ℕ} (x y : Fin a → V) (ξ η : Fin a → Module.Dual K V) (hx : LinearIndependent K x) (hy : LinearIndependent K y) (hξ : LinearIndependent K ξ) (hη : LinearIndependent K η) (h : ∀ i j, ξ i (x j) = η i (y j)) : ∃ A : V ≃ₗ[K] V, (∀ j, A (x j) = y j) ∧ ∀ i v, η i (A v) = ξ i v
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.DualFamilyCounting.RealCovolume:58  Formalism.L2.SG.Pf.RealCovolume.isAddHaar_vol
+theorem isAddHaar_vol : (volume : Measure (ι → κ → ℂ)).IsAddHaarMeasure
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.IsMulRightInvariantOfLattice:19  Formalism.L2.SG.CovariantRepresentation.finite_hits
+theorem finite_hits (Γ : Subgroup H) [DiscreteTopology Γ] {K : Set H} (hK : IsCompact K) (x : H) : {γ : Γ | (γ : H) * x ∈ K}.Finite
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.IsMulRightInvariantOfLattice:72  Formalism.L2.SG.CovariantRepresentation.lintegral_eq_of_tsum
+theorem lintegral_eq_of_tsum (μ : Measure H) [μ.IsMulLeftInvariant] (Γ : Subgroup H) [Countable Γ] {f g : H → ℝ≥0∞} (hf : Measurable f) (hg : Measurable g) (hf1 : ∀ x, ∑' γ : Γ, f ((γ : H) * x) = 1) (hg1 : ∀ x, ∑' γ : Γ, g ((γ : H) * x) = 1) : ∫⁻ x, f x ∂μ = ∫⁻ x, g x ∂μ
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.IsMulRightInvariantOfLattice:93  Formalism.L2.SG.CovariantRepresentation.map_mul_right_eq_modular
+theorem map_mul_right_eq_modular (μ : Measure H) [IsHaarMeasure μ] (g : H) : μ.map (· * g) = ((modularCharacterFun g : ℝ≥0) : ℝ≥0∞) • μ
+
+### Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.IsMulRightInvariantOfLattice:98  Formalism.L2.SG.CovariantRepresentation.modular_eq_one_of_mem
+theorem modular_eq_one_of_mem (μ : Measure H) [IsHaarMeasure μ] (Γ : Subgroup H) [Countable Γ] [DiscreteTopology Γ] {K : Set H} (hK : IsCompact K) (hcov : ∀ x : H, ∃ s ∈ Γ, s * x ∈ K) {δ : H} (hδ : δ ∈ Γ) : modularCharacterFun δ = 1
+

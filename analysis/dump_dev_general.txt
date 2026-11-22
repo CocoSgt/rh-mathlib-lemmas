@@ -1,0 +1,1200 @@
+### Development.AbelianVarietyTheory.BlockTheory.CMModuli.HostConjugateIdeal:39  GlobalTheory.IndefiniteRowSideFullHecke.HostConjugateIdeal.Host.isCMField_complexConj_s_eq_neg
+theorem isCMField_complexConj_s_eq_neg : IsCMField.complexConj E H.s = -H.s
+
+### Development.AbelianVarietyTheory.BlockTheory.CMModuli.HostConjugateIdeal:67  GlobalTheory.IndefiniteRowSideFullHecke.HostConjugateIdeal.Host.isIntegral_half
+theorem isIntegral_half : IsIntegral ℤ ((1 + H.s) / 2)
+
+### Development.AbelianVarietyTheory.BlockTheory.DivisorBase.TraceDualDifferent:77  GlobalTheory.IndefiniteRowSideFullHecke.TraceDualDifferent._root_.GlobalTheory.IndefiniteRowSideFullHecke.TraceDualDifferent.card_realEmb
+theorem _root_.GlobalTheory.IndefiniteRowSideFullHecke.TraceDualDifferent.card_realEmb [IsTotallyReal F] : Fintype.card (F →+* ℝ) = Module.finrank ℚ F
+
+### Development.AbelianVarietyTheory.BlockTheory.HeightDefect.SchurLatticeConjugates:26  GlobalTheory.IndefiniteRowSideFullHecke.DifferentConjugateDefects.span_natCast_ne_bot
+theorem span_natCast_ne_bot {K : Type} [Field K] [NumberField K] (n' : ℕ+) : Ideal.span {((n' : ℕ) : 𝓞 K)} ≠ ⊥
+
+### Development.AbelianVarietyTheory.BlockTheory.HeightDefect.SphereBlockLogMean:96  GlobalTheory.IndefiniteRowSideFullHecke.UnitSphereMeasure.finitePlace_eq_absNorm_zpow
+theorem finitePlace_eq_absNorm_zpow (w : FinitePlace K) {c : K} (hc : c ≠ 0) : w c = (Ideal.absNorm w.maximalIdeal.asIdeal : ℝ) ^ (WithZero.log (w.maximalIdeal.valuation K c))
+
+### Development.AbelianVarietyTheory.BlockTheory.JetGauges.RelativeDifferentValues:65  GlobalTheory.IndefiniteRowSideFullHecke.RelativeDifferentValues.finite_of_ne_bot
+theorem finite_of_ne_bot {E : Type} [Field E] [NumberField E] (P : HeightOneSpectrum (𝓞 E)) {I : Ideal (𝓞 E)} (hI : I ≠ ⊥) : FiniteMultiplicity P.asIdeal I
+
+### Development.AbelianVarietyTheory.BlockTheory.JetGauges.RelativeDifferentValues:69  GlobalTheory.IndefiniteRowSideFullHecke.RelativeDifferentValues.finite_different
+theorem finite_different {E : Type} [Field E] [NumberField E] (P : HeightOneSpectrum (𝓞 E)) : FiniteMultiplicity P.asIdeal (differentIdeal ℤ (𝓞 E))
+
+### Development.AbelianVarietyTheory.BlockTheory.JetGauges.RelativeDifferentValues:73  GlobalTheory.IndefiniteRowSideFullHecke.RelativeDifferentValues.finite_span
+theorem finite_span {E : Type} [Field E] [NumberField E] (P : HeightOneSpectrum (𝓞 E)) {p : ℕ} (hp : p.Prime) : FiniteMultiplicity P.asIdeal (Ideal.span {(p : 𝓞 E)})
+
+### Development.AbelianVarietyTheory.BlockTheory.JetGauges.RelativeDifferentValues:77  GlobalTheory.IndefiniteRowSideFullHecke.RelativeDifferentValues.multiplicity_span_pos
+theorem multiplicity_span_pos {E : Type} [Field E] [NumberField E] (P : HeightOneSpectrum (𝓞 E)) {p : ℕ} (h : (p : 𝓞 E) ∈ P.asIdeal) : 0 < multiplicity P.asIdeal (Ideal.span {(p : 𝓞 E)})
+
+### Development.AbelianVarietyTheory.BlockTheory.JetGauges.RelativeDifferentValues:86  GlobalTheory.IndefiniteRowSideFullHecke.RelativeDifferentValues.isIntegral_I_mul_sqrt
+theorem isIntegral_I_mul_sqrt (m : ℕ) : IsIntegral ℚ (Complex.I * (Real.sqrt m : ℂ))
+
+### Development.AbelianVarietyTheory.BlockTheory.JetGauges.RootValueClassBasis:152  GlobalTheory.IndefiniteRowSideFullHecke.RootValueClassBasis.exists_basis
+theorem exists_basis (G : Type) [CommGroup G] [Finite G] : ∃ (k : ℕ) (g : Fin k → G), (∀ x, ∃ a : Fin k → ℤ, x = ∏ i, g i ^ a i) ∧ ∀ a : Fin k → ℤ, ∏ i, g i ^ a i = 1 → ∀ i, g i ^ a i = 1
+
+### Development.AbelianVarietyTheory.BlockTheory.JetGauges.RootValueClassBasis:187  GlobalTheory.IndefiniteRowSideFullHecke.RootValueClassBasis.exists_gen
+theorem exists_gen {I : (FractionalIdeal (𝓞 E)⁰ E)ˣ} (h : ClassGroup.mk E I = 1) : ∃ γ : Eˣ, I = toPrincipalIdeal (𝓞 E) E γ
+
+### Development.AbelianVarietyTheory.BlockTheory.PoincareCuspForms.WordDerivativeBlocks:100  GlobalTheory.IndefiniteRowSideFullHecke.WordBlockPolynomials.iteratedFDeriv_directions_comp_perm_of_analyticAt
+theorem iteratedFDeriv_directions_comp_perm_of_analyticAt (dir : Λ → W) {F : W → ℂ} {p : W} (hF : AnalyticAt ℂ F p) {k : ℕ} (u v : Fin k → Λ) (σ : Equiv.Perm (Fin k)) (h : u = v ∘ σ) : iteratedFDeriv ℂ k F p (fun j => dir (u j)) = iteratedFDeriv ℂ k F p (fun j => dir (v j))
+
+### Development.AbelianVarietyTheory.BlockTheory.TwistedDiscreteSeries.AdjointRadical:43  GlobalTheory.IndefiniteRowSideFullHecke.AdjointRadical.blockTriangular_inv
+theorem blockTriangular_inv {α : Type} [LinearOrder α] {c : Fin r → α} {g : GL (Fin r) k} (hg : (g : Matrix (Fin r) (Fin r) k).BlockTriangular c) : ((g⁻¹ : GL (Fin r) k) : Matrix (Fin r) (Fin r) k).BlockTriangular c
+
+### Development.AbelianVarietyTheory.BlockTheory.TwistedDiscreteSeries.MinorOrderedEntries:72  GlobalTheory.IndefiniteRowSideFullHecke.MinorOrderedEntries.span_orbit_le
+theorem span_orbit_le {G V : Type} [Monoid G] [AddCommGroup V] [Module ℂ V] (ρ : Representation ℂ G V) (v : V) (g : G) : Submodule.span ℂ (Set.range fun h : G => ρ h v) ≤ (Submodule.span ℂ (Set.range fun h : G => ρ h v)).comap (ρ g)
+
+### Development.AbelianVarietyTheory.Counterexamples.JetSurvey.PremisesInhabited:8  GlobalTheory.LatticeBoundTests.integral_of_sum
+theorem integral_of_sum (Y : Type) [AddCommGroup Y] (S : Submodule ℝ (Y →ₗ[ℤ] Y →ₗ[ℤ] ℝ)) (l : S →ₗ[ℝ] ℝ) (m : ℕ) (x x' : Fin m → Y) (h : ∀ β : S, l β = ∑ i, (β : Y →ₗ[ℤ] Y →ₗ[ℤ] ℝ) (x i) (x' i)) (β : S) (hβ : ∀ a c, ∃ z : ℤ, (β : Y →ₗ[ℤ] Y →ₗ[ℤ] ℝ) a c = z) : ∃ z : ℤ, l β = z
+
+### Development.AbelianVarietyTheory.Counterexamples.JetSurvey.PremisesInhabited:114  GlobalTheory.LatticeBoundTests.premises_inhabited
+theorem premises_inhabited : ∃ (E : Type) (_ : Field E) (_ : NumberField E) (cj : E → E) (w : 𝓞 E) (Y : Type) (_ : AddCommGroup Y) (_ : Module (𝓞 E) Y) (_ : Module.Free ℤ Y) (_ : Module.Finite ℤ Y) (β : Y →ₗ[ℤ] Y →ₗ[ℤ] ℝ), (∀ (φ : E →+* ℂ) (z : E), φ (cj z) = star (φ z)) ∧ (∃ z, cj z ≠ z) ∧ (∀ c : 𝓞 E, ∃ c' : 𝓞 E, (c' : E) = cj c) ∧ (w : E) + cj w = 1 ∧ 0 < Module.finrank ℤ Y ∧ (∀ x y, β x y = β y x) ∧ (∀ c c' : 𝓞 E, (c' : E) = cj c → ∀ x y, β (c • x) y = β x (c' • y)) ∧ ∃ (ι : Type) (_ : Fintype ι) (b : Module.Basis ι ℤ Y), (Matrix.of fun i j => β (b i) (b j)).PosDef
+
+### Development.AbelianVarietyTheory.Counterexamples.LevelGroupExamples.RightInvariantOfCovolume:77  GlobalTheory.AutQuotCheck._root_.GlobalTheory.AutQuotCheck.rightInvariant_of_covolume
+theorem _root_.GlobalTheory.AutQuotCheck.rightInvariant_of_covolume (μ : Measure G) [μ.IsHaarMeasure] {F : Set G} (h : IsFundamentalDomain Γ F μ) (h0 : μ F ≠ 0) (h1 : μ F ≠ ⊤) (g : G) : μ.map (· * g) = μ
+
+### Development.AbelianVarietyTheory.Definitions.AutomorphicMembership.NonemptyRayDataOfNeZero:18  GlobalTheory.Mem.RayCl.one_mul_mem
+theorem one_mul_mem {R : Type} [CommRing R] {A : Ideal R} {a b : R} (ha : a - 1 ∈ A) (hb : b - 1 ∈ A) : a * b - 1 ∈ A
+
+### Development.AbelianVarietyTheory.Definitions.AutomorphicMembership.NonemptyRayDataOfNeZero:37  GlobalTheory.Mem.RayCl.exists_beta
+theorem exists_beta {M : ℕ} {α : 𝓞 K} (h : IsCoprime (Ideal.span {α}) (Ideal.span {(M : 𝓞 K)})) : ∃ β : 𝓞 K, β ≠ 0 ∧ β * α - 1 ∈ Ideal.span {(M : 𝓞 K)}
+
+### Development.AbelianVarietyTheory.Definitions.AutomorphicMembership.NonemptyRayDataOfNeZero:141  GlobalTheory.Mem.RayCl.ne_bot_of_cop
+theorem ne_bot_of_cop {M : ℕ} (hM : 2 ≤ M) {I : Ideal (𝓞 K)} (h : IsCoprime I (Ideal.span {(M : 𝓞 K)})) : I ≠ ⊥
+
+### Development.AbelianVarietyTheory.Definitions.AutomorphicMembership.NonemptyRayDataOfNeZero:226  GlobalTheory.Mem.RayData.cls_mul_of_two_le
+theorem cls_mul_of_two_le (hM : 2 ≤ M) {I J : Ideal (𝓞 K)} (hI : IsCoprime I (Ideal.span {(M : 𝓞 K)})) (hJ : IsCoprime J (Ideal.span {(M : 𝓞 K)})) : D.cls (I * J) = D.cls I * D.cls J
+
+### Development.AbelianVarietyTheory.Definitions.AutomorphicMembership.NonemptyRayDataOfNeZero:238  GlobalTheory.Mem.RayData.cls_eq_one_iff
+theorem cls_eq_one_iff {I : Ideal (𝓞 K)} (hI : IsCoprime I (Ideal.span {(M : 𝓞 K)})) (hI' : I ≠ ⊥) : D.cls I = 1 ↔ ∃ a b : 𝓞 K, a ≠ 0 ∧ b ≠ 0 ∧ a - 1 ∈ Ideal.span {(M : 𝓞 K)} ∧ b - 1 ∈ Ideal.span {(M : 𝓞 K)} ∧ Ideal.span {a} * I = Ideal.span {b}
+
+### Development.AbelianVarietyTheory.Definitions.AutomorphicMembership.NonemptyRayDataOfNeZero:244  GlobalTheory.Mem.RayData.cls_span
+theorem cls_span {a : 𝓞 K} (ha : a ≠ 0) (h : a - 1 ∈ Ideal.span {(M : 𝓞 K)}) : D.cls (Ideal.span {a}) = 1
+
+### Development.AbelianVarietyTheory.Definitions.AutomorphicMembership.NonemptyRayDataOfNeZero:282  GlobalTheory.Mem.RayData.finite_cnt
+theorem finite_cnt (c : D.G) (n : ℕ) : Finite {I : Ideal (𝓞 K) // IsCoprime I (Ideal.span {(M : 𝓞 K)}) ∧ Ideal.absNorm I = n ∧ D.cls I = c}
+
+### Development.AbelianVarietyTheory.Definitions.Divisors.IsCyclotomicExtensionQI:652  GlobalTheory.LKTrip.map_nonsingInv
+theorem map_nonsingInv {K L : Type*} [CommRing K] [CommRing L] (f : K →+* L) {A : Matrix (Fin n) (Fin n) K} (hA : IsUnit A.det) : (A⁻¹).map f = (A.map f)⁻¹
+
+### Development.AbelianVarietyTheory.Definitions.Divisors.IsCyclotomicExtensionQI:683  GlobalTheory.LKTrip.map_conj_conj
+theorem map_conj_conj (x : Matrix (Fin n) (Fin n) F) : (x.map (IsCMField.complexConj F : F →+* F)).map (IsCMField.complexConj F : F →+* F) = x
+
+### Development.AbelianVarietyTheory.Definitions.Divisors.IsCyclotomicExtensionQI:724  GlobalTheory.LKTrip.mul_eq_smul_one_comm
+theorem mul_eq_smul_one_comm {K : Type*} [Field K] {A B : Matrix (Fin n) (Fin n) K} {c : K} (hc : c ≠ 0) : A * B = c • 1 ↔ B * A = c • 1
+
+### Development.AbelianVarietyTheory.Definitions.Divisors.IsRightActFunPull:205  GlobalTheory.LevDesc.map_mem_smul_top
+theorem map_mem_smul_top {M M' : Type} [AddCommGroup M] [Module O M] [AddCommGroup M'] [Module O M'] (f : M →ₗ[O] M') {x : M} (hx : x ∈ J • (⊤ : Submodule O M)) : f x ∈ J • (⊤ : Submodule O M')
+
+### Development.AbelianVarietyTheory.Definitions.Divisors.IsRightActFunPull:282  GlobalTheory.LevDesc.mem_iInf_smul_top
+theorem mem_iInf_smul_top {ι M : Type} [Finite ι] [AddCommGroup M] [Module O M] {Js : ι → Ideal O} (hc : Pairwise (Function.onFun IsCoprime Js)) {x : M} (hx : ∀ i, x ∈ Js i • (⊤ : Submodule O M)) : x ∈ (⨅ i, Js i) • (⊤ : Submodule O M)
+
+### Development.AbelianVarietyTheory.Definitions.Foundations.ExistsFinsetOfEventually:54  GlobalTheory.RestrMeas.exists_finset_of_eventually
+theorem exists_finset_of_eventually {p : V → Prop} (h : ∀ᶠ v in cofinite, p v) : ∃ S : Finset V, ∀ v ∉ S, p v
+
+### Development.AbelianVarietyTheory.Definitions.Foundations.ExistsFinsetOfEventually:57  GlobalTheory.RestrMeas.eventually_of_finset
+theorem eventually_of_finset {p : V → Prop} (S : Finset V) (h : ∀ v ∉ S, p v) : ∀ᶠ v in cofinite, p v
+
+### Development.AbelianVarietyTheory.Definitions.Foundations.MemPuncturedRingIffPowerSeriesPart:1028  GlobalTheory.Conv.eventually_iff_exp
+theorem eventually_iff_exp {p : ℂ → Prop} : (∀ᶠ v in 𝓝[≠] (0 : ℂ), p v) ↔ ∃ T : ℝ, ∀ w : ℂ, T < w.im → p (Complex.exp (2 * Real.pi * Complex.I * w))
+
+### Development.AbelianVarietyTheory.Definitions.Foundations.MemPuncturedRingIffPowerSeriesPart:1059  GlobalTheory.Conv.exists_chart_of_isLocalRing
+theorem exists_chart_of_isLocalRing {Y : Scheme.{0}} (s : Y ⟶ Spec (.of ℂ)) [LocallyOfFiniteType s] {R : Type} [CommRing R] [IsLocalRing R] [Algebra ℂ R] (x : Spec (.of R) ⟶ Y) (hx : x ≫ s = Spec.map (CommRingCat.ofHom (algebraMap ℂ R))) : ∃ (A : CommRingCat.{0}) (_ : Algebra ℂ A) (_ : Algebra.FiniteType ℂ A) (i : Spec A ⟶ Y) (φ : A →ₐ[ℂ] R), IsOpenImmersion i ∧ i ≫ s = Spec.map (CommRingCat.ofHom (algebraMap ℂ A)) ∧ Spec.map (CommRingCat.ofHom (φ : A →+* R)) ≫ i = x
+
+### Development.AbelianVarietyTheory.Definitions.Foundations.MemUnitaryGroupIffIsIsometry:46  GlobalTheory.HermForm.conj_apply
+@[simp] theorem conj_apply (x y : M) : starRingEnd R (h x y) = h y x
+
+### Development.AbelianVarietyTheory.Definitions.Foundations.MemUnitaryGroupIffIsIsometry:64  GlobalTheory.HermForm.sum_left
+theorem sum_left {ι : Type*} (s : Finset ι) (f : ι → M) (y : M) : h (∑ i ∈ s, f i) y = ∑ i ∈ s, h (f i) y
+
+### Development.AbelianVarietyTheory.Definitions.Foundations.MemUnitaryGroupIffIsIsometry:67  GlobalTheory.HermForm.sum_right
+theorem sum_right {ι : Type*} (s : Finset ι) (x : M) (f : ι → M) : h x (∑ i ∈ s, f i) = ∑ i ∈ s, h x (f i)
+
+### Development.AbelianVarietyTheory.Definitions.Foundations.MemUnitaryGroupIffIsIsometry:496  GlobalTheory.starModule_toAlgebra
+theorem starModule_toAlgebra {R S : Type*} [CommSemiring R] [CommSemiring S] [StarRing R] [StarRing S] (φ : R →+* S) (hφ : ∀ x, φ (star x) = star (φ x)) : letI
+
+### Development.AbelianVarietyTheory.Definitions.Foundations.MemUnitaryGroupIffIsIsometry:505  GlobalTheory.starModule_of_algebraMap
+theorem starModule_of_algebraMap {R S : Type*} [CommSemiring R] [CommSemiring S] [StarRing R] [StarRing S] [Algebra R S] (hφ : ∀ x, algebraMap R S (star x) = star (algebraMap R S x)) : StarModule R S
+
+### Development.AbelianVarietyTheory.Definitions.Foundations.MemUnitaryGroupIffIsIsometry:805  GlobalTheory.star_eq_complexConj
+theorem star_eq_complexConj (x : E) : star x = IsCMField.complexConj E x
+
+### Development.AbelianVarietyTheory.Definitions.Foundations.MemUnitaryGroupIffIsIsometry:842  GlobalTheory.ringOfIntegers_star_def
+theorem ringOfIntegers_star_def (x : 𝓞 E) : star x = IsCMField.ringOfIntegersComplexConj E x
+
+### Development.AbelianVarietyTheory.Definitions.Foundations.NotCoboundaryConstantOne:261  GlobalTheory.K5.Basic.tw_prim_step
+theorem tw_prim_step {Ω : Type*} [Field Ω] {ζ z : Ω} {n : ℕ} (hζ : IsPrimitiveRoot ζ (p ^ (n + 1))) (hz : z ^ p = ζ) : IsPrimitiveRoot z (p ^ (n + 2))
+
+### Development.AbelianVarietyTheory.Definitions.Foundations.NotCoboundaryConstantOne:283  GlobalTheory.K5.Basic.tw_exists_prim_p
+theorem tw_exists_prim_p (Ω : Type*) [Field Ω] [IsAlgClosed Ω] [CharZero Ω] : ∃ z : Ω, IsPrimitiveRoot z p
+
+### Development.AbelianVarietyTheory.Definitions.Foundations.NotCoboundaryConstantOne:289  GlobalTheory.K5.Basic.tw_exists_root_chain
+theorem tw_exists_root_chain {Ω : Type*} [Field Ω] [IsAlgClosed Ω] (a : Ω) : ∃ f : ℕ → Ω, f 0 = a ∧ ∀ n, f (n + 1) ^ p = f n
+
+### Development.AbelianVarietyTheory.Definitions.Foundations.ValuedAlgebraMapEqOne:42  GlobalTheory.Mem.Chr.valued_algebraMap_eq_one
+theorem valued_algebraMap_eq_one (v : HeightOneSpectrum (𝓞 L)) (x : 𝓞 L) (hx : x ∉ v.asIdeal) : Valued.v (algebraMap L (v.adicCompletion L) (algebraMap (𝓞 L) L x)) = 1
+
+### Development.AbelianVarietyTheory.Definitions.GaloisGeometry.FiniteResidueFieldPadicInt:110  GlobalTheory.LatHecke.pow_smul_eq_bot
+theorem pow_smul_eq_bot {Q : Type} [AddCommGroup Q] [Module O Q] [Finite Q] (N : ℕ) : ∀ S : Submodule O Q, Nat.card S ≤ N + 1 → IsLocalRing.maximalIdeal O ^ N • S = ⊥
+
+### Development.AbelianVarietyTheory.Definitions.GaloisGeometry.FiniteResidueFieldPadicInt:302  GlobalTheory.LatHecke.finite_residueField_padicInt
+theorem finite_residueField_padicInt (p : ℕ) [Fact p.Prime] : Finite (IsLocalRing.ResidueField ℤ_[p])
+
+### Development.AbelianVarietyTheory.Definitions.GaloisGeometry.IsGrothendieckAbelianPresheaf:19  GlobalTheory.ChangeRing.exists_shift
+theorem exists_shift {Z : A} (F : A) (n : ℕ) : ∃ (I Q : A) (i : F ⟶ I) (q : I ⟶ Q) (h : i ≫ q = 0) (hS : (ShortComplex.mk i q h).ShortExact), Injective I ∧ ∀ x : Ext.{w} Z F (n + 1), ∃ y : Ext.{w} Z Q n, y.comp hS.extClass rfl = x
+
+### Development.AbelianVarietyTheory.Definitions.GaloisGeometry.IsGrothendieckAbelianPresheaf:153  GlobalTheory.ChangeRing.isGrothendieckAbelian_sheaf
+theorem isGrothendieckAbelian_sheaf (R : Type 1) [CommRing R] : IsGrothendieckAbelian.{1} (Sheaf J (ModuleCat.{1} R))
+
+### Development.AbelianVarietyTheory.Definitions.GaloisGeometry.ReductionUniformizerPoint:88  GlobalTheory.Strata.orderEmbOfFin_erase
+theorem orderEmbOfFin_erase {S : Finset ι} {n : ℕ} (h : S.card = n + 1) (k : Fin (n + 1)) (h' : (S.erase (S.orderEmbOfFin h k)).card = n) (m : Fin n) : (S.erase (S.orderEmbOfFin h k)).orderEmbOfFin h' m = S.orderEmbOfFin h (k.succAbove m)
+
+### Development.AbelianVarietyTheory.Definitions.GaloisGeometry.ReductionUniformizerPoint:344  GlobalTheory.Strata.orderEmbOfFin_univ_fin
+theorem orderEmbOfFin_univ_fin {n : ℕ} (h : (Finset.univ : Finset (Fin n)).card = n) : ((Finset.univ : Finset (Fin n)).orderEmbOfFin h : Fin n → Fin n) = id
+
+### Development.AbelianVarietyTheory.Definitions.NonGaloisDescent.FiniteCocycles:581  GlobalTheory.Pat.Example.three_mem
+theorem three_mem : ((3 : ℕ) : ℤ_[3]) ∈ maximalIdeal ℤ_[3]
+
+### Development.AbelianVarietyTheory.Definitions.NonGaloisDescent.FiniteCocycles:618  GlobalTheory.Pat.Example.three_k
+theorem three_k : (3 : ResidueField ℤ_[3]) = 0
+
+### Development.AbelianVarietyTheory.Definitions.NonGaloisDescent.FiniteCocycles:623  GlobalTheory.Pat.Example.neg_one_ne
+theorem neg_one_ne : (-1 : ResidueField ℤ_[3]) ≠ 1
+
+### Development.AbelianVarietyTheory.Definitions.NonGaloisDescent.FiniteCocycles:714  GlobalTheory.Pat.Example.j_eq
+theorem j_eq : (MvPowerSeries.constantCoeff : MvPowerSeries (Fin 0) ℤ_[3] →+* ℤ_[3]).comp MvPowerSeries.C = RingHom.id _
+
+### Development.AbelianVarietyTheory.Definitions.NonGaloisDescent.InvertibleSpanSingleton:190  GlobalTheory.Prism.invertible_span_singleton
+theorem invertible_span_singleton {A : Type} [CommRing A] {q : A} (hq : q ∈ nonZeroDivisors A) : Module.Invertible A ↥(Ideal.span {q})
+
+### Development.AbelianVarietyTheory.Definitions.NonGaloisDescent.MapCSmulMulVec:336  GlobalTheory.NB.Hom.map_C_smul_mulVec
+theorem map_C_smul_mulVec (c : O) (B : Matrix (Fin r') (Fin r) O⟦X⟧) (x : Fin r → R.EE) : (((C c : O⟦X⟧) • B).map R.ι).mulVec x = c • (B.map R.ι).mulVec x
+
+### Development.AbelianVarietyTheory.Definitions.QuasicoherentCohomology.AlgebraMapBaseMemMaximalIdealIff:226  GlobalTheory.GaussLocal.residueField_eq_div
+theorem residueField_eq_div (c : p.ResidueField) : ∃ a b : O, c = algebraMap O p.ResidueField a / algebraMap O p.ResidueField b
+
+### Development.AbelianVarietyTheory.Definitions.QuasicoherentCohomology.IsIsoTermComparisonRestrictScalars:934  GlobalTheory.homology_directSum_bijective
+theorem homology_directSum_bijective {K : κ → CochainComplex (ModuleCat.{v} R) ℕ} {L : CochainComplex (ModuleCat.{v} R) ℕ} (i : ∀ k, K k ⟶ L) (π : ∀ k, L ⟶ K k) (h₁ : ∀ k, i k ≫ π k = 𝟙 _) (h₂ : ∀ k j, k ≠ j → i k ≫ π j = 0) (p : ℕ) (h₃ : ∀ z : L.X p, ∃ T : Finset κ, ∑ k ∈ T, ((π k ≫ i k).f p).hom z = z) : Function.Bijective (DirectSum.toModule R κ (L.homology p) fun k => (HomologicalComplex.homologyMap (i k) p).hom)
+
+### Development.AbelianVarietyTheory.Definitions.QuasicoherentCohomology.IsQuasiRegularSeqSelfIffLocalizationMaximal:146  GlobalTheory.powGr.pow_succ_smul_le
+theorem pow_succ_smul_le : (I ^ (a + 1) • ⊤ : Submodule R M) ≤ I ^ a • ⊤
+
+### Development.AbelianVarietyTheory.Definitions.QuasicoherentCohomology.IsQuasiRegularSeqSelfIffLocalizationMaximal:621  GlobalTheory.exists_smul_mem_smul_top_of_isLocalizedModule
+theorem exists_smul_mem_smul_top_of_isLocalizedModule (T : Submonoid R) (g : M →ₗ[R] N) [IsLocalizedModule T g] (J : Ideal R) {x : M} (hx : g x ∈ (J • ⊤ : Submodule R N)) : ∃ s ∈ T, s • x ∈ (J • ⊤ : Submodule R M)
+
+### Development.AbelianVarietyTheory.Definitions.QuasicoherentCohomology.LengthCommensurableMapIffOfInjective:148  GlobalTheory.length_eq_of_semilinear_bijective
+theorem length_eq_of_semilinear_bijective (f : V →ₛₗ[σ] V') (hf : Function.Bijective f) : Module.length R V = Module.length S V'
+
+### Development.AbelianVarietyTheory.Definitions.QuasicoherentCohomology.MemHomogIffIsHomogeneous:173  GlobalTheory.SymAlg.isBaseChange_dual
+theorem isBaseChange_dual [Module.Finite R M] [Module.Projective R M] {j : M →ₗ[R] W} (h : IsBaseChange S j) : IsBaseChange S h.toDual
+
+### Development.AbelianVarietyTheory.Definitions.QuasicoherentCohomology.MemSaturatedOrderIsoSubspaceSpanSymmApply:571  GlobalTheory.mk'_mem_localized'_iff
+theorem mk'_mem_localized'_iff (N : Submodule R M) (x : M) (s : p) : IsLocalizedModule.mk' f x s ∈ N.localized' S p f ↔ ∃ a ∈ p, a • x ∈ N
+
+### Development.AbelianVarietyTheory.Definitions.QuasicoherentCohomology.MemSaturatedOrderIsoSubspaceSpanSymmApply:658  GlobalTheory.mem_span_localization_iff
+theorem mem_span_localization_iff (N : Submodule R V) (x : V) : x ∈ Submodule.span S (N : Set V) ↔ ∃ a ∈ p, a • x ∈ N
+
+### Development.AbelianVarietyTheory.Definitions.QuasicoherentCohomology.MemSaturatedOrderIsoSubspaceSpanSymmApply:689  GlobalTheory.isLocalizedModule_inclusionSpan
+theorem isLocalizedModule_inclusionSpan (M : Submodule R V) : IsLocalizedModule p (M.inclusionSpan S) where map_units
+
+### Development.AbelianVarietyTheory.Definitions.QuasicoherentCohomology.MemSaturatedOrderIsoSubspaceSpanSymmApply:712  GlobalTheory.span_localization_inf
+theorem span_localization_inf (M N : Submodule R V) : Submodule.span S ((M ⊓ N : Submodule R V) : Set V) = Submodule.span S (M : Set V) ⊓ Submodule.span S (N : Set V)
+
+### Development.AbelianVarietyTheory.Definitions.QuasicoherentCohomology.MemSaturatedOrderIsoSubspaceSpanSymmApply:728  GlobalTheory.span_localization_inf_restrictScalars
+theorem span_localization_inf_restrictScalars (M : Submodule R V) (W : Submodule S V) : Submodule.span S ((M ⊓ W.restrictScalars R : Submodule R V) : Set V) = Submodule.span S (M : Set V) ⊓ W
+
+### Development.AbelianVarietyTheory.Definitions.QuasicoherentCohomology.MemSaturatedOrderIsoSubspaceSpanSymmApply:884  GlobalTheory.span_inf_restrictScalars
+theorem span_inf_restrictScalars (M : Submodule R V) (W : Submodule K V) : Submodule.span K ((M ⊓ W.restrictScalars R : Submodule R V) : Set V) = Submodule.span K (M : Set V) ⊓ W
+
+### Development.AbelianVarietyTheory.Definitions.QuasicoherentCohomology.MemSaturatedOrderIsoSubspaceSpanSymmApply:890  GlobalTheory.span_inf_restrictScalars_of_le
+theorem span_inf_restrictScalars_of_le {M : Submodule R V} {W : Submodule K V} (h : W ≤ Submodule.span K (M : Set V)) : Submodule.span K ((M ⊓ W.restrictScalars R : Submodule R V) : Set V) = W
+
+### Development.AbelianVarietyTheory.Definitions.QuasicoherentCohomology.MemSaturatedOrderIsoSubspaceSpanSymmApply:941  GlobalTheory.rank_eq_rank_span
+theorem rank_eq_rank_span (N : Submodule R V) : Module.rank R N = Module.rank K (Submodule.span K (N : Set V))
+
+### Development.AbelianVarietyTheory.Definitions.QuasicoherentCohomology.MemSaturatedOrderIsoSubspaceSpanSymmApply:948  GlobalTheory.rank_inf_restrictScalars
+theorem rank_inf_restrictScalars {M : Submodule R V} {W : Submodule K V} (h : W ≤ Submodule.span K (M : Set V)) : Module.rank R (M ⊓ W.restrictScalars R : Submodule R V) = Module.rank K W
+
+### Development.AbelianVarietyTheory.Definitions.QuasicoherentCohomology.MemSaturatedOrderIsoSubspaceSpanSymmApply:955  GlobalTheory.finrank_inf_restrictScalars
+theorem finrank_inf_restrictScalars {M : Submodule R V} {W : Submodule K V} [FiniteDimensional K W] (h : W ≤ Submodule.span K (M : Set V)) : Module.finrank R (M ⊓ W.restrictScalars R : Submodule R V) = Module.finrank K W
+
+### Development.AbelianVarietyTheory.Definitions.QuasicoherentCohomology.MemSaturatedOrderIsoSubspaceSpanSymmApply:962  GlobalTheory.smul_inf_restrictScalars
+theorem smul_inf_restrictScalars (M : Submodule R V) (W : Submodule K V) {c : K} (hc : c ≠ 0) : c • M ⊓ W.restrictScalars R = c • (M ⊓ W.restrictScalars R)
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.AwayLiftCompFromZeroRingHom:104  GlobalTheory.ProjPoint.map_irrelevant_comp
+theorem map_irrelevant_comp {φ : A →+* B} (hφ : (irrelevant 𝒜).toIdeal.map φ = ⊤) (ψ : B →+* C) : (irrelevant 𝒜).toIdeal.map (ψ.comp φ) = ⊤
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.AwayLiftCompFromZeroRingHom:228  GlobalTheory.ProjPoint.map_irrelevant_comp_graded
+theorem map_irrelevant_comp_graded (g : 𝒜₀ →+*ᵍ ℬ) (hg : irrelevant ℬ ≤ (irrelevant 𝒜₀).map g) {φ : A' →+* B} (hφ : (irrelevant ℬ).toIdeal.map φ = ⊤) : (irrelevant 𝒜₀).toIdeal.map (φ.comp g.toRingHom) = ⊤
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.ExistsIsAdaptedOfIsLocalRing:120  GlobalTheory.upperTriangular_mul_diag
+theorem upperTriangular_mul_diag {a b : Matrix ι ι R} (ha : a.IsUpperTriangular) (hb : b.IsUpperTriangular) (i : ι) : (a * b) i i = a i i * b i i
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.ExistsIsAdaptedOfIsLocalRing:146  GlobalTheory.mem_basis_flag_iff
+theorem mem_basis_flag_iff (b : Basis (Fin n) R M) (k : Fin (n + 1)) (x : M) : x ∈ b.flag k ↔ ∀ i : Fin n, k ≤ i.castSucc → b.repr x i = 0
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.ExistsIsAdaptedOfIsLocalRing:444  GlobalTheory.FullFlag.free_baseChange_of_algHom
+theorem free_baseChange_of_algHom {L S T : Type*} [AddCommGroup L] [Module R L] [CommRing S] [CommRing T] [Algebra R S] [Algebra R T] (φ : S →ₐ[R] T) [Module.Free S (S ⊗[R] L)] : Module.Free T (T ⊗[R] L)
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.FlatImageOfOverFractionFieldOfValuationRing:23  GlobalTheory.schemeDominant_specMap_iff
+theorem schemeDominant_specMap_iff {R R' : CommRingCat.{u}} (φ : R ⟶ R') : IsSchemeTheoreticallyDominant (Spec.map φ) ↔ Function.Injective φ.hom
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.FlatImageOfOverFractionFieldOfValuationRing:48  GlobalTheory.isIntegral_of_schemeDominant
+theorem isIntegral_of_schemeDominant (d : T' ⟶ T) [IsSchemeTheoreticallyDominant d] [QuasiCompact d] [IsIntegral T'] : IsIntegral T
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.FlatImageOfOverFractionFieldOfValuationRing:77  GlobalTheory.flat_of_schemeDominant_of_torsionFree_flat
+theorem flat_of_schemeDominant_of_torsionFree_flat {O : CommRingCat.{u}} (hO : ∀ (M : Type u) [AddCommGroup M] [Module O M], Submodule.torsion O M = ⊥ → Module.Flat O M) (d : T' ⟶ T) (s : T ⟶ Spec O) [IsSchemeTheoreticallyDominant d] [QuasiCompact d] [Flat (d ≫ s)] : Flat s
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.FlatImageOfOverFractionFieldOfValuationRing:104  GlobalTheory.flat_of_schemeDominant_of_isDedekindDomain
+theorem flat_of_schemeDominant_of_isDedekindDomain {O : CommRingCat.{u}} [IsDedekindDomain O] (d : T' ⟶ T) (s : T ⟶ Spec O) [IsSchemeTheoreticallyDominant d] [QuasiCompact d] [Flat (d ≫ s)] : Flat s
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.FlatImageOfOverFractionFieldOfValuationRing:110  GlobalTheory.flat_of_schemeDominant_of_isBezout
+theorem flat_of_schemeDominant_of_isBezout {O : CommRingCat.{u}} [IsDomain O] [IsBezout O] (d : T' ⟶ T) (s : T ⟶ Spec O) [IsSchemeTheoreticallyDominant d] [QuasiCompact d] [Flat (d ≫ s)] : Flat s
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.FlatImageOfOverFractionFieldOfValuationRing:116  GlobalTheory.flat_specMap_localization
+theorem flat_specMap_localization {O : Type u} [CommRing O] (M : Submonoid O) (K : Type u) [CommRing K] [Algebra O K] [IsLocalization M K] : Flat (Spec.map (CommRingCat.ofHom (algebraMap O K)))
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.FlatImageOfOverFractionFieldOfValuationRing:122  GlobalTheory.mono_specMap_localization
+theorem mono_specMap_localization {O : Type u} [CommRing O] (M : Submonoid O) (K : Type u) [CommRing K] [Algebra O K] [IsLocalization M K] : Mono (Spec.map (CommRingCat.ofHom (algebraMap O K)))
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.FlatImageOfOverFractionFieldOfValuationRing:128  GlobalTheory.flat_of_over_fractionField
+theorem flat_of_over_fractionField {O K : Type u} [CommRing O] [Field K] [Algebra O K] [IsFractionRing O K] (s : T ⟶ Spec (.of O)) (s' : T ⟶ Spec (.of K)) (h : s' ≫ Spec.map (CommRingCat.ofHom (algebraMap O K)) = s) : Flat s
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.FlatImageOfOverFractionFieldOfValuationRing:176  GlobalTheory.existsUnique_closureLift_of_injective
+theorem existsUnique_closureLift_of_injective {R R' : CommRingCat.{u}} (φ : R ⟶ R') (hφ : Function.Injective φ.hom) (t : Spec R ⟶ P) (w : Spec R' ⟶ W) (h : Spec.map φ ≫ t = w ≫ j) : ∃! l : Spec R ⟶ j.image, l ≫ j.imageι = t
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.FlatImageOfOverFractionFieldOfValuationRing:228  GlobalTheory.isOpenImmersion_toImage
+theorem isOpenImmersion_toImage [IsImmersion j] [QuasiCompact j] : IsOpenImmersion j.toImage
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.FlatImageOfOverFractionFieldOfValuationRing:231  GlobalTheory.range_image
+theorem range_imageι [QuasiCompact j] : Set.range j.imageι = closure (Set.range j)
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.FlatImageOfOverFractionFieldOfValuationRing:240  GlobalTheory.flat_image_of_isDedekindDomain
+theorem flat_image_of_isDedekindDomain {O : CommRingCat.{u}} [IsDedekindDomain O] (s : P ⟶ Spec O) [QuasiCompact j] [Flat (j ≫ s)] : Flat (j.imageι ≫ s)
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.FlatImageOfOverFractionFieldOfValuationRing:245  GlobalTheory.flat_image_of_isBezout
+theorem flat_image_of_isBezout {O : CommRingCat.{u}} [IsDomain O] [IsBezout O] (s : P ⟶ Spec O) [QuasiCompact j] [Flat (j ≫ s)] : Flat (j.imageι ≫ s)
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.FlatImageOfOverFractionFieldOfValuationRing:250  GlobalTheory.flat_image_of_valuationRing
+theorem flat_image_of_valuationRing {O : CommRingCat.{u}} [IsDomain O] [ValuationRing O] (s : P ⟶ Spec O) [QuasiCompact j] [Flat (j ≫ s)] : Flat (j.imageι ≫ s)
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.FlatImageOfOverFractionFieldOfValuationRing:254  GlobalTheory.flat_image_of_over_fractionField
+theorem flat_image_of_over_fractionField {O K : Type u} [CommRing O] [IsDedekindDomain O] [Field K] [Algebra O K] [IsFractionRing O K] (s : P ⟶ Spec (.of O)) (s' : W ⟶ Spec (.of K)) (h : s' ≫ Spec.map (CommRingCat.ofHom (algebraMap O K)) = j ≫ s) [QuasiCompact j] : Flat (j.imageι ≫ s)
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.FlatImageOfOverFractionFieldOfValuationRing:261  GlobalTheory.flat_image_of_over_fractionField_of_valuationRing
+theorem flat_image_of_over_fractionField_of_valuationRing {O K : Type u} [CommRing O] [IsDomain O] [ValuationRing O] [Field K] [Algebra O K] [IsFractionRing O K] (s : P ⟶ Spec (.of O)) (s' : W ⟶ Spec (.of K)) (h : s' ≫ Spec.map (CommRingCat.ofHom (algebraMap O K)) = j ≫ s) [QuasiCompact j] : Flat (j.imageι ≫ s)
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.FlatImageOfOverFractionFieldOfValuationRing:295  GlobalTheory.ker_eq_comap_of_flat
+theorem ker_eq_comap_of_flat {W' P' : Scheme.{u}} {j' : W' ⟶ P'} {w : W' ⟶ W} {g : P' ⟶ P} (H : IsPullback j' w g j) [Flat g] [QuasiCompact j] : j'.ker = j.ker.comap g
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.FlatImageOfOverFractionFieldOfValuationRing:311  GlobalTheory.isPullback_toImage_of_isClosedImmersion
+theorem isPullback_toImage_of_isClosedImmersion {P' : Scheme.{u}} (c : W ⟶ P') (u : P' ⟶ P) [IsClosedImmersion c] [Flat u] [Mono u] (h : c ≫ u = j) [QuasiCompact j] : IsPullback c j.toImage u j.imageι
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.FlatImageOfOverFractionFieldOfValuationRing:321  GlobalTheory.range_toImage_of_isClosedImmersion
+theorem range_toImage_of_isClosedImmersion {P' : Scheme.{u}} (c : W ⟶ P') (u : P' ⟶ P) [IsClosedImmersion c] [Flat u] [Mono u] (h : c ≫ u = j) [QuasiCompact j] : Set.range j.toImage = j.imageι ⁻¹' Set.range u
+
+### Development.AbelianVarietyTheory.Definitions.ShimuraVarieties.PiTensorLiftCompSingle:43  GlobalTheory.piTensor_induction
+theorem piTensor_induction (P : ∀ (B : Type (max u v w)) [CommRing B] [Algebra A B], Prop) (equiv : ∀ (B C : Type (max u v w)) [CommRing B] [Algebra A B] [CommRing C] [Algebra A C], (B ≃ₐ[A] C) → P B → P C) (base : ∀ (B : Type (max u v w)) [CommRing B] [Algebra A B], (A ≃ₐ[A] B) → P B) (σ : Type w) [Fintype σ] : ∀ (X : σ → Type v) [∀ s, CommRing (X s)] [∀ s, Algebra A (X s)], (∀ s (B : Type (max u v w)) [CommRing B] [Algebra A B], P B → P (B ⊗[A] X s)) → P (⨂[A] s, X s)
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.EqZeroOrSingleOfDegreeLtTwo:30  GlobalTheory.FormalSeries.le_order_sum
+theorem le_order_sum {ι : Type*} {k : ℕ∞} (s : Finset ι) {f : ι → MvPowerSeries σ R} (hf : ∀ i ∈ s, k ≤ (f i).order) : k ≤ (∑ i ∈ s, f i).order
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.EventuallyDifferentiableAtOfContDiffAtTwo:283  GlobalTheory.fderiv_ofReal_apply
+theorem fderiv_ofReal_apply {u : E → ℝ} (hu : DifferentiableAt ℝ u z) (v : E) : fderiv ℝ (fun x => (u x : ℂ)) z v = (fderiv ℝ u z v : ℂ)
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.EventuallyDifferentiableAtOfContDiffAtTwo:317  GlobalTheory.differentiableAt_fderiv_of_contDiffAt_two
+theorem differentiableAt_fderiv_of_contDiffAt_two (hu : ContDiffAt ℝ 2 u z) : DifferentiableAt ℝ (fderiv ℝ u) z
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.EventuallyDifferentiableAtOfContDiffAtTwo:321  GlobalTheory.eventually_differentiableAt_of_contDiffAt_two
+theorem eventually_differentiableAt_of_contDiffAt_two {𝕜 : Type*} [NontriviallyNormedField 𝕜] [NormedSpace 𝕜 E] [NormedSpace 𝕜 F] (hu : ContDiffAt 𝕜 2 u z) : ∀ᶠ x in 𝓝 z, DifferentiableAt 𝕜 u x
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.EventuallyDifferentiableAtOfContDiffAtTwo:654  GlobalTheory.deriv_log_add_const
+theorem deriv_log_add_const (δ : ℝ) : deriv (fun t : ℝ => Real.log (t + δ)) = fun t => (t + δ)⁻¹
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.EventuallyDifferentiableAtOfContDiffAtTwo:658  GlobalTheory.deriv_deriv_log_add_const
+theorem deriv_deriv_log_add_const (δ t : ℝ) : deriv (deriv fun t : ℝ => Real.log (t + δ)) t = -((t + δ) ^ 2)⁻¹
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.EventuallyDifferentiableAtOfContDiffAtTwo:672  GlobalTheory.contDiffAt_log_normSq_add_comp
+theorem contDiffAt_log_normSq_add_comp {δ : ℝ} (hφ : ContDiffAt ℂ 2 φ z) (hz : ‖φ z‖ ^ 2 + δ ≠ 0) : ContDiffAt ℝ 2 (fun x => Real.log (‖φ x‖ ^ 2 + δ)) z
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.ExistsLinearIndependentNormLeSuccMin:21  GlobalTheory.natCast_le_rank_span_iff
+theorem natCast_le_rank_span_iff {T : Set V} {i : ℕ} : (i : Cardinal) ≤ Module.rank K (span K T) ↔ ∃ v : Fin i → V, LinearIndependent K v ∧ ∀ j, v j ∈ T
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.ExistsLinearIndependentNormLeSuccMin:171  GlobalTheory.finrank_span_eq_finrank_int
+theorem finrank_span_eq_finrank_int [FiniteDimensional ℝ E] (L : Submodule ℤ E) [DiscreteTopology L] : finrank ℝ (span ℝ (L : Set E)) = finrank ℤ L
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.ExistsLinearIndependentNormLeSuccMin:177  GlobalTheory.finrank_span_of_isZLattice
+theorem finrank_span_of_isZLattice (L : Submodule ℤ E) [DiscreteTopology L] [IsZLattice ℝ L] : finrank ℝ (span ℝ (L : Set E)) = finrank ℝ E
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.ExistsLinearIndependentNormLeSuccMin:185  GlobalTheory.natCast_le_rank_of_le_finrank
+theorem natCast_le_rank_of_le_finrank {K W : Type*} [DivisionRing K] [AddCommGroup W] [Module K W] (h : i ≤ finrank K W) : (i : Cardinal) ≤ Module.rank K W
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.ExistsLinearIndependentNormLeSuccMin:189  GlobalTheory.one_le_rank_span_of_ne_bot
+theorem one_le_rank_span_of_ne_bot (h : L ≠ ⊥) : ((1 : ℕ) : Cardinal) ≤ Module.rank ℝ (span ℝ (L : Set E))
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.ExistsLinearIndependentNormLeSuccMin:195  GlobalTheory.finite_mem_and_norm_le
+theorem finite_mem_and_norm_le [FiniteDimensional ℝ E] (L : Submodule ℤ E) [DiscreteTopology L] (R : ℝ) : {x : E | x ∈ L ∧ ‖x‖ ≤ R}.Finite
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.ExistsLinearIndependentNormLeSuccMin:266  GlobalTheory.smul_eq_map
+theorem smul_eq_map (c : ℝ) (L : Submodule ℤ E) : c • L = L.map ((c • LinearMap.id : E →ₗ[ℝ] E).restrictScalars ℤ)
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.ExistsLinearIndependentNormLeSuccMin:286  GlobalTheory.exists_norm_sub_eq_infDist
+theorem exists_norm_sub_eq_infDist [FiniteDimensional ℝ E] (L : Submodule ℤ E) [DiscreteTopology L] (x : E) : ∃ w ∈ L, ‖x - w‖ = Metric.infDist x (L : Set E)
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.ExistsLinearIndependentNormLeSuccMin:315  GlobalTheory.inner
+theorem innerₗ_nondegenerate (E : Type*) [NormedAddCommGroup E] [InnerProductSpace ℝ E] : LinearMap.BilinForm.Nondegenerate (innerₗ E)
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.ExistsLinearIndependentNormLeSuccMin:517  GlobalTheory.mem_one_real_iff
+theorem mem_one_real_iff {x : ℝ} : x ∈ (1 : Submodule ℤ ℝ) ↔ ∃ m : ℤ, (m : ℝ) = x
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.HasSumLocallyUniformlyWeierstrassZetaExcept:1086  GlobalTheory.eq_const_of_periodic_of_tendsto
+theorem eq_const_of_periodic_of_tendsto {f : ℂ → ℂ} {c : ℂ} (hf : DifferentiableOn ℂ f (L.lattice : Set ℂ)ᶜ) (hper : ∀ z ∉ L.lattice, ∀ w ∈ L.lattice, f (z + w) = f z) (hc : Tendsto f (𝓝[≠] 0) (𝓝 c)) {z : ℂ} (hz : z ∉ L.lattice) : f z = c
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.HasSumLocallyUniformlyWeierstrassZetaExcept:1119  GlobalTheory.exists_eq_const_of_periodic_of_even
+theorem exists_eq_const_of_periodic_of_even {f N : ℂ → ℂ} (hf : DifferentiableOn ℂ f (L.lattice : Set ℂ)ᶜ) (hper : ∀ z ∉ L.lattice, ∀ w ∈ L.lattice, f (z + w) = f z) (hN : AnalyticAt ℂ N 0) (he : ∀ z, N (-z) = N z) (h0 : N 0 = 0) (hfN : ∀ z ∉ L.lattice, z ^ 2 * f z = N z) : ∃ c, ∀ z ∉ L.lattice, f z = c
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.HasSumLocallyUniformlyWeierstrassZetaExcept:1216  GlobalTheory.exists_eq_const_of_periodic_of_simple_pole
+theorem exists_eq_const_of_periodic_of_simple_pole {f N : ℂ → ℂ} (hf : DifferentiableOn ℂ f (L.lattice : Set ℂ)ᶜ) (hper : ∀ z ∉ L.lattice, ∀ w ∈ L.lattice, f (z + w) = f z) (hN : AnalyticAt ℂ N 0) (hfN : ∀ᶠ z in 𝓝[≠] 0, z * f z = N z) : ∃ c, ∀ z ∉ L.lattice, f z = c
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.IsAddFundamentalDomainLatticeDomain:169  GlobalTheory.exists_forall_le_of_periodic
+theorem exists_forall_le_of_periodic {f : E → ℝ} (hc : Continuous f) (hf : ∀ a ∈ L, ∀ x, f (x + a) = f x) : ∃ x₀, ∀ x, f x ≤ f x₀
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.IsWeightedHomogeneousOfMemOrbitSpan:229  GlobalTheory.Harm.det_isWeightedHomogeneous
+theorem det_isWeightedHomogeneous {σ ι : Type*} [Fintype ι] [DecidableEq ι] (w : σ → M) (A : Matrix ι ι (MvPolynomial σ R)) (u : ι → M) (h : ∀ a b, IsWeightedHomogeneous w (A a b) (u a)) : IsWeightedHomogeneous w A.det (∑ a, u a)
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.MemIffConjugateNotMem:93  GlobalTheory.CMType.two_mul_card
+theorem two_mul_card : 2 * Fintype.card Φ = Module.finrank ℚ E
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.MemIffConjugateNotMem:96  GlobalTheory.CMType.card_eq_finrank
+theorem card_eq_finrank [IsCMField E] : Fintype.card Φ = Module.finrank ℚ (maximalRealSubfield E)
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.NormDetStrongContragredientDomRestrictAnnihilato:56  GlobalTheory.gram_sum_smul
+theorem gram_sum_smul (v : ι → V) (Y : Matrix ι κ 𝕜) : gram 𝕜 (fun j => ∑ i, Y i j • v i) = Yᴴ * gram 𝕜 v * Y
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.SumFinsuppAntidiagProdPowDivMultiFactorial:152  GlobalTheory.MvPoly.sum_le_sqrt_card_mul_sqrt_sum_sq
+theorem sum_le_sqrt_card_mul_sqrt_sum_sq {ι : Type*} (s : Finset ι) (f : ι → ℝ) : ∑ i ∈ s, f i ≤ √(#s) * √(∑ i ∈ s, f i ^ 2)
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.SumFinsuppAntidiagProdPowDivMultiFactorial:215  GlobalTheory.MvPoly.degree_le_totalDegree
+theorem degree_le_totalDegree {R : Type*} [CommSemiring R] {P : MvPolynomial σ R} {α : σ →₀ ℕ} (h : α ∈ P.support) : α.degree ≤ P.totalDegree
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.SumFinsuppAntidiagProdPowDivMultiFactorial:248  GlobalTheory.MvPoly.norm_eval_le_sum
+theorem norm_eval_le_sum [NormOneClass K] (x : σ → K) (P : MvPolynomial σ K) {R : ℝ} (h : ∀ i, ‖x i‖ ≤ R) : ‖eval x P‖ ≤ ∑ α ∈ P.support, ‖P.coeff α‖ * R ^ α.degree
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.SumFinsuppAntidiagProdPowDivMultiFactorial:299  GlobalTheory.MvPoly.card_support_le_choose
+theorem card_support_le_choose {R : Type*} [CommSemiring R] {P : MvPolynomial σ R} {d : ℕ} (h : P.totalDegree ≤ d) : #P.support ≤ (Fintype.card σ + d).choose d
+
+### Development.AbelianVarietyTheory.Definitions.ThetaMetrics.SumFinsuppAntidiagProdPowDivMultiFactorial:316  GlobalTheory.MvPoly.finrank_restrictTotalDegree
+theorem finrank_restrictTotalDegree (R : Type*) [CommRing R] [Nontrivial R] (d : ℕ) : Module.finrank R (restrictTotalDegree σ R d) = (Fintype.card σ + d).choose d
+
+### Development.AbelianVarietyTheory.Proofs.AbelianSchemeLawProofs.CoequifiberedDiagramMap:66  GlobalTheory.AffineQuotient.isLocalization_preimage
+lemma isLocalization_preimage [QuasiCompact f] [QuasiSeparated f] {U : Y.Opens} (hU : IsAffineOpen U) (r : Γ(Y, U)) : letI
+
+### Development.AbelianVarietyTheory.Proofs.AbelianSchemeLawProofs.CoequifiberedDiagramMap:76  GlobalTheory.AffineQuotient.isLocalization_eqLocus
+lemma isLocalization_eqLocus {B T B' T' : Type} [CommRing B] [CommRing T] [CommRing B'] [CommRing T'] [Algebra B B'] [Algebra T T'] (α β : B →+* T) (α' β' : B' →+* T') (hα : ∀ x, α' (algebraMap B B' x) = algebraMap T T' (α x)) (hβ : ∀ x, β' (algebraMap B B' x) = algebraMap T T' (β x)) (r : α.eqLocus β) [IsLocalization.Away (r : B) B'] [IsLocalization.Away (α r) T'] [Algebra (α.eqLocus β) (α'.eqLocus β')] (h : ∀ x, (algebraMap (α.eqLocus β) (α'.eqLocus β') x : B') = algebraMap B B' x) : IsLocalization.Away r (α'.eqLocus β')
+
+### Development.AbelianVarietyTheory.Proofs.AbelianSchemeLawProofs.SpecHomCompCoaction:92  GlobalTheory.AffineQuotient.coaction_assoc
+lemma coaction_assoc [IsCommMonObj A] [IsMonHom i] [Mono v] (b : B) : TensorProduct.assoc R B Λ Λ (ρ.toLinearMap.rTensor Λ (ρ b)) = (Coalgebra.comul (R := R) (A := Λ)).lTensor B (ρ b)
+
+### Development.AbelianVarietyTheory.Proofs.AbelianSchemeLawProofs.SpecHomCompCoaction:138  GlobalTheory.AffineQuotient.coaction_free
+lemma coaction_free [Mono i] [Module.Finite R Λ] : Function.Surjective (productMap (includeLeft : B →ₐ[R] B ⊗[R] Λ) ρ)
+
+### Development.AbelianVarietyTheory.Proofs.AbelianSchemeLawProofs.SpecHomCompCoaction:178  GlobalTheory.AffineQuotient.isPushout_equalizer
+lemma isPushout_equalizer {T : Type} [CommRing T] [Algebra R T] (α β : B →ₐ[R] T) (h₁ : Function.Surjective (productMap β α)) (h₂ : RingHom.ker (productMap β α) = Ideal.span {z | ∃ b ∈ AlgHom.equalizer α β, z = b ⊗ₜ[R] (1 : B) - (1 : B) ⊗ₜ[R] b}) : IsPushout (CommRingCat.ofHom (α.toRingHom.eqLocus β.toRingHom).subtype) (CommRingCat.ofHom (α.toRingHom.eqLocus β.toRingHom).subtype) (CommRingCat.ofHom α.toRingHom) (CommRingCat.ofHom β.toRingHom)
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.BinaryFormUniversal:9  GlobalTheory.BinaryFormUniversal.binary_form_universal
+theorem binary_form_universal {k : Type u_1} [Field k] [Finite k] {a n : k} (hD : a ^ (2 : ℕ) - (4 : k) * n ≠ (0 : k)) (u : k) : ∃ (r : k) (s : k), r ^ (2 : ℕ) + a * r * s + n * s ^ (2 : ℕ) = u
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.CharSeriesExistsNeZero:7  GlobalTheory.charSeries_kill_finset
+theorem charSeries_kill_finset {A I : Type} [AddCommGroup A] (e : I → A → ℂ) (c : I → ℂ) (i₀ : I) (hmul : ∀ i a b, e i (a + b) = e i a * e i b) (hle : ∀ i a, ‖e i a‖ ≤ 1) (h0 : ∀ a, e i₀ a = 1) (hneg : ∀ i, i ≠ i₀ → ∃ a, e i a = -1) (hs : Summable (fun i => ‖c i‖)) (hF : ∀ a, ∑' i, c i * e i a = 0) (s : Finset I) : ∃ c' : I → ℂ, c' i₀ = c i₀ ∧ (∀ i ∈ s, i ≠ i₀ → c' i = 0) ∧ (∀ i, ‖c' i‖ ≤ ‖c i‖) ∧ ∀ a, ∑' i, c' i * e i a = 0
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.CharSeriesExistsNeZero:53  GlobalTheory.charSeries_exists_ne_zero
+theorem charSeries_exists_ne_zero : ∀ (A I : Type) [AddCommGroup A] (e : I → A → ℂ) (c : I → ℂ) (i₀ : I), (∀ i a b, e i (a + b) = e i a * e i b) → (∀ i a, ‖e i a‖ ≤ 1) → (∀ a, e i₀ a = 1) → (∀ i, i ≠ i₀ → ∃ a, e i a = -1) → Summable (fun i => ‖c i‖) → c i₀ ≠ 0 → ∃ a, ∑' i, c i * e i a ≠ 0
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.CircleHomEqZpow:9  GlobalTheory.circle_hom_eq_zpow
+theorem circle_hom_eq_zpow : ∀ f : Circle →* Circle, Continuous f → ∃ n : ℤ, ∀ z, f z = z ^ n
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ClassGroupCoprimeRepresentative:7  GlobalTheory.exists_integral_ideal_in_class_coprime
+theorem exists_integral_ideal_in_class_coprime : ∀ (K : Type) [Field K] [NumberField K] (m : Ideal (𝓞 K)), m ≠ ⊥ → ∀ c : ClassGroup (𝓞 K), ∃ b : (Ideal (𝓞 K))⁰, ClassGroup.mk0 b = c ∧ (b : Ideal (𝓞 K)) ⊔ m = ⊤
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ContinuousHomDifferentiable:7  GlobalTheory.ContinuousHomDifferentiable.exists_integral_ne_zero
+theorem exists_integral_ne_zero (χ : ℝ → ℂ) (hc : Continuous χ) (h0 : χ 0 = 1) : ∃ δ : ℝ, (∫ x in (0:ℝ)..δ, χ x) ≠ 0
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ContinuousHomDifferentiable:20  GlobalTheory.ContinuousHomDifferentiable.continuous_hom_differentiable
+theorem continuous_hom_differentiable : ∀ (χ : ℝ → ℂ), Continuous χ → χ (0 : ℝ) = (1 : ℂ) → (∀ (s t : ℝ), χ (s + t) = χ s * χ t) → Differentiable ℝ χ
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.DifferentiableExpMulOfAnnihilated:8  GlobalTheory._root_.GlobalTheory.differentiable_exp_mul_of_annihilated
+theorem _root_.GlobalTheory.differentiable_exp_mul_of_annihilated : ∀ (g : ℕ) (Hm : Matrix (Fin g) (Fin g) ℂ), Hm.IsHermitian → ∀ f : (Fin g → ℂ) → ℂ, Differentiable ℝ f → (∀ w z : Fin g → ℂ, (fderiv ℝ f w z + Real.pi * Complex.I * ((w ⬝ᵥ Hm.mulVec (star z)).im : ℂ) * f w) + Complex.I * (fderiv ℝ f w (Complex.I • z) + Real.pi * Complex.I * ((w ⬝ᵥ Hm.mulVec (star (Complex.I • z))).im : ℂ) * f w) = 0) → Differentiable ℂ fun w : Fin g → ℂ => Complex.exp (Real.pi / 2 * (w ⬝ᵥ Hm.mulVec (star w))) * f w
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.EqZeroOfContractions:5  GlobalTheory.CoefficientContraction.coeff_eq_contraction
+theorem coeff_eq_contraction {V W : Type} [AddCommGroup V] [Module ℚ V] [AddCommGroup W] [Module ℚ W] {κ : Type} [DecidableEq κ] (b : Module.Basis κ ℚ W) (i : κ) (t : TensorProduct ℚ V W) : TensorProduct.equivFinsuppOfBasisRight b t i = TensorProduct.rid ℚ V (LinearMap.lTensor V (b.coord i) t)
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.EqZeroOfContractions:15  GlobalTheory.CoefficientContraction.eq_zero_of_contractions
+theorem eq_zero_of_contractions {V W : Type} [AddCommGroup V] [Module ℚ V] [AddCommGroup W] [Module ℚ W] (t : TensorProduct ℚ V W) (h : ∀ m : W →ₗ[ℚ] ℚ, TensorProduct.rid ℚ V (LinearMap.lTensor V m t) = 0) : t = 0
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsContinuousCircleCharExtension:7  GlobalTheory.circle_hom_extend_of_injective
+theorem circle_hom_extend_of_injective {A B : Type} [CommGroup A] [CommGroup B] (i : A →* B) (hi : Function.Injective i) (ψ : A →* Circle) : ∃ χ : B →* Circle, ∀ a, χ (i a) = ψ a
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsContinuousCircleCharExtension:22  GlobalTheory.exists_continuous_circle_char_extension
+theorem exists_continuous_circle_char_extension : ∀ (G : Type) [CommGroup G] [TopologicalSpace G] [IsTopologicalGroup G] (H N : Subgroup G) (ψ : H →* Circle), IsOpen (H : Set G) → Continuous ψ → (∀ x : H, (x : G) ∈ N → ψ x = 1) → ∃ χ : G →* Circle, Continuous χ ∧ (∀ x ∈ N, χ x = 1) ∧ ∀ x : H, χ x = ψ x
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsEntireMellinSmoothedDirichletSum:9  GlobalTheory.SmoothedSumMellin.weight_bound
+lemma weight_bound {wt : ℝ → ℂ} (hc : Continuous wt) {a b : ℝ} (hs : ∀ y, wt y ≠ 0 → a ≤ y ∧ y ≤ b) : ∃ M : ℝ, 0 ≤ M ∧ ∀ y : ℝ, 0 < y → ‖wt y‖ ≤ M * y ^ (-2 : ℝ)
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsEntireMellinSmoothedDirichletSum:28  GlobalTheory.SmoothedSumMellin.weight_mellinConvergent
+lemma weight_mellinConvergent {wt : ℝ → ℂ} (hc : Continuous wt) {a b : ℝ} (ha : 0 < a) (hs : ∀ y, wt y ≠ 0 → a ≤ y ∧ y ≤ b) (s : ℂ) : MellinConvergent wt s
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsEntireMellinSmoothedDirichletSum:45  GlobalTheory.SmoothedSumMellin.continuousOn_sum
+lemma continuousOn_sum {ι : Type} {a : ι → ℂ} {N : ι → ℝ} {wt : ℝ → ℂ} (hc : Continuous wt) {α β : ℝ} (hs : ∀ y, wt y ≠ 0 → α ≤ y ∧ y ≤ β) (hN : ∀ i, a i ≠ 0 → 1 ≤ N i) (hsum : Summable fun i => ‖a i‖ * N i ^ (-2 : ℝ)) : ContinuousOn (fun t : ℝ => ∑' i, a i * wt (t * N i)) (Ioi 0)
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsEntireMellinSmoothedDirichletSum:153  GlobalTheory.SmoothedSumMellin.exists_entire_mellin
+theorem exists_entire_mellin : ∀ (ι : Type) [Countable ι] (a : ι → ℂ) (N : ι → ℝ) (R : ℂ) (wt : ℝ → ℂ), ContDiff ℝ ∞ wt → (∃ a b : ℝ, 0 < a ∧ ∀ y, wt y ≠ 0 → a ≤ y ∧ y ≤ b) → (∀ i, a i ≠ 0 → 1 ≤ N i) → (∀ σ : ℝ, 1 < σ → Summable fun i => ‖a i‖ * N i ^ (-σ)) → (∀ A : ℕ, ∃ C : ℝ, ∀ t : ℝ, 0 < t → t ≤ 1 → ‖∑' i, a i * wt (t * N i) - R / (t : ℂ)‖ ≤ C * t ^ A) → ∃ Z : ℂ → ℂ, Differentiable ℂ Z ∧ Z 1 = R ∧ ∀ s : ℂ, 1 < s.re → Z s = mellin wt s * ((s - 1) * ∑' i, a i * (N i : ℂ) ^ (-s))
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsForallAbvSubLt:11  GlobalTheory.LocalQuad.Approx._root_.GlobalTheory.LocalQuad.Approx.exists_forall_abv_sub_lt
+theorem _root_.GlobalTheory.LocalQuad.Approx.exists_forall_abv_sub_lt {F : Type*} [Field F] {ι : Type*} [Finite ι] {v : ι → AbsoluteValue F ℝ} (h : ∀ i, (v i).IsNontrivial) (hv : Pairwise fun i j ↦ ¬(v i).IsEquiv (v j)) (z : ι → F) {ε : ℝ} (hε : 0 < ε) : ∃ x : F, ∀ i, v i (z i - x) < ε
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsForallAbvSubLt:106  _root_.GlobalTheory.LocalQuad.denseRange_finite_real
+theorem _root_.GlobalTheory.LocalQuad.denseRange_finite_real (F : Type) [Field F] [NumberField F] (T : Finset (HeightOneSpectrum (𝓞 F))) : DenseRange (fun x : F => ((fun v : T => algebraMap F (v.1.adicCompletion F) x, fun σ : F →+* ℝ => σ x) : ((v : T) → v.1.adicCompletion F) × ((F →+* ℝ) → ℝ)))
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsIsUnitFormSelfOfNotMem:11  GlobalTheory.QuadraticEtale.isIntegral_of_involution
+theorem isIntegral_of_involution (hσ : ∀ x, σ (σ x) = x) (hfix : ∀ x, σ x = x → x ∈ (algebraMap R S).range) : Algebra.IsIntegral R S
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsIsUnitFormSelfOfNotMem:24  GlobalTheory.QuadraticEtale.algebraMap_mem_of_isMaximal
+theorem algebraMap_mem_of_isMaximal [Algebra.IsIntegral R S] (n : Ideal S) [n.IsMaximal] {r : R} (hr : r ∈ maximalIdeal R) : algebraMap R S r ∈ n
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsIsUnitFormSelfOfNotMem:30  GlobalTheory.QuadraticEtale.isUnit_or_mem_of_fixed
+theorem isUnit_or_mem_of_fixed (hfix : ∀ x, σ x = x → x ∈ (algebraMap R S).range) {x : S} (hx : σ x = x) : IsUnit x ∨ x ∈ (maximalIdeal R).map (algebraMap R S)
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsIsUnitFormSelfOfNotMem:93  GlobalTheory.QuadraticEtale.exists_basis_one
+theorem exists_basis_one [IsLocalRing R] [Module.Free R S] (hrank : finrank R S = 2) : ∃ B : Basis (Fin 2) R S, B 0 = 1
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsIsUnitFormSelfOfNotMem:138  GlobalTheory.QuadraticEtale.eq_coord
+theorem eq_coord (B : Basis (Fin 2) R S) (hB : B 0 = 1) (x : S) : x = algebraMap R S (B.repr x 0) + algebraMap R S (B.repr x 1) * B 1
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsIsUnitFormSelfOfNotMem:143  GlobalTheory.QuadraticEtale.repr_coord_zero
+theorem repr_coord_zero (B : Basis (Fin 2) R S) (hB : B 0 = 1) (r s : R) : B.repr (algebraMap R S r + algebraMap R S s * B 1) 0 = r
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsIsUnitFormSelfOfNotMem:148  GlobalTheory.QuadraticEtale.repr_coord_one
+theorem repr_coord_one (B : Basis (Fin 2) R S) (hB : B 0 = 1) (r s : R) : B.repr (algebraMap R S r + algebraMap R S s * B 1) 1 = s
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsIsUnitFormSelfOfNotMem:153  GlobalTheory.QuadraticEtale.coord_inj
+theorem coord_inj (B : Basis (Fin 2) R S) (hB : B 0 = 1) {r s r' s' : R} (h : algebraMap R S r + algebraMap R S s * B 1 = algebraMap R S r' + algebraMap R S s' * B 1) : r = r' ∧ s = s'
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsIsUnitFormSelfOfNotMem:159  GlobalTheory.QuadraticEtale.trace_coord
+theorem trace_coord (B : Basis (Fin 2) R S) (hB : B 0 = 1) {a b : R} (hab : B 1 * B 1 = algebraMap R S b + algebraMap R S a * B 1) (r s : R) : Algebra.trace R S (algebraMap R S r + algebraMap R S s * B 1) = 2 * r + s * a
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsIsUnitFormSelfOfNotMem:171  GlobalTheory.QuadraticEtale.norm_coord
+theorem norm_coord (B : Basis (Fin 2) R S) (hB : B 0 = 1) {a b : R} (hab : B 1 * B 1 = algebraMap R S b + algebraMap R S a * B 1) (r s : R) : Algebra.norm R (algebraMap R S r + algebraMap R S s * B 1) = r * (r + s * a) - s * b * s
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsIsUnitFormSelfOfNotMem:184  GlobalTheory.QuadraticEtale.isUnit_different
+theorem isUnit_different [Algebra.FormallyUnramified R S] (B : Basis (Fin 2) R S) (hB : B 0 = 1) {a b : R} (hab : B 1 * B 1 = algebraMap R S b + algebraMap R S a * B 1) : IsUnit (2 * B 1 - algebraMap R S a)
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsIsUnitFormSelfOfNotMem:218  GlobalTheory.QuadraticEtale.apply_eq_of_ne_one
+theorem apply_eq_of_ne_one [IsLocalRing R] [Algebra.FormallyUnramified R S] (B : Basis (Fin 2) R S) (hB : B 0 = 1) {a b : R} (hab : B 1 * B 1 = algebraMap R S b + algebraMap R S a * B 1) (σ : S ≃ₐ[R] S) (hσ : σ ≠ 1) : σ (B 1) = algebraMap R S a - B 1
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsNatSmulMem:7  GlobalTheory.NatMulIntegral.exists_nat_mul_isIntegral
+theorem exists_nat_mul_isIntegral {E : Type} [Field E] [NumberField E] (a : E) : ∃ d : ℕ, 0 < d ∧ IsIntegral ℤ ((d : E) * a)
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsNatSmulMem:22  GlobalTheory.NatMulIntegral.nat_smul_mem
+theorem nat_smul_mem {E : Type} [Field E] [NumberField E] {n : ℕ} (L : Submodule (RingOfIntegers E) (Fin n → E)) (d : ℕ) {x : Fin n → E} (hx : x ∈ L) : (d : E) • x ∈ L
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsNatSmulMem:28  GlobalTheory.NatMulIntegral.exists_nat_smul_mem
+theorem exists_nat_smul_mem {E : Type} [Field E] [NumberField E] {n : ℕ} (L : Submodule (RingOfIntegers E) (Fin n → E)) (hL : Submodule.span E (L : Set (Fin n → E)) = ⊤) (y : Fin n → E) : ∃ d : ℕ, 0 < d ∧ (d : E) • y ∈ L
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsNonzeroIsotropic:9  GlobalTheory.NonzeroIsotropic.quadForm_totalDegree_le
+theorem quadForm_totalDegree_le {k : Type u_1} [Field k] (a : Fin 3 → Fin 3 → k) : (∑ i : Fin 3, ∑ j : Fin 3, C (a i j) * X i * X j : MvPolynomial (Fin 3) k).totalDegree ≤ 2
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsNonzeroIsotropic:20  GlobalTheory.NonzeroIsotropic.exists_nonzero_isotropic
+theorem exists_nonzero_isotropic : ∀ {k : Type u_1} [inst : Field k] [Finite k] (a : Fin (3 : ℕ) → Fin (3 : ℕ) → k), ∃ (x : Fin (3 : ℕ) → k), x ≠ (0 : Fin (3 : ℕ) → k) ∧ ∑ i : Fin (3 : ℕ), ∑ j : Fin (3 : ℕ), a i j * x i * x j = (0 : k)
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsNsmulMem:7  GlobalTheory.IntegralMultipleOfVectors.exists_nat_mul_integral
+theorem exists_nat_mul_integral {E : Type} [Field E] [NumberField E] (a : E) : ∃ (e : ℕ) (b : RingOfIntegers E), 0 < e ∧ (e : E) * a = algebraMap (RingOfIntegers E) E b
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsNsmulMem:24  GlobalTheory.IntegralMultipleOfVectors.exists_nsmul_mem
+theorem exists_nsmul_mem {E : Type} [Field E] {n : ℕ} [NumberField E] (L : Submodule (RingOfIntegers E) (Fin n → E)) (hL : Submodule.span E (L : Set (Fin n → E)) = ⊤) (w : Fin n → E) : ∃ d : ℕ, 0 < d ∧ d • w ∈ L
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsNsmulMem:52  GlobalTheory.IntegralMultipleOfVectors.exists_nsmul_mulVec_mem
+theorem exists_nsmul_mulVec_mem {E : Type} [Field E] {n : ℕ} [NumberField E] (L : Submodule (RingOfIntegers E) (Fin n → E)) (hfg : L.FG) (hL : Submodule.span E (L : Set (Fin n → E)) = ⊤) (M : Matrix (Fin n) (Fin n) E) : ∃ d : ℕ, 0 < d ∧ ∀ v ∈ L, d • M.mulVec v ∈ L
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsNsmulMulVecMem:7  GlobalTheory.IntegralMultipleClearDenominators.exists_nat_mul_integral
+theorem exists_nat_mul_integral {E : Type} [Field E] [NumberField E] (c : E) : ∃ K : ℕ, 0 < K ∧ IsIntegral ℤ ((K : E) * c)
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsNsmulMulVecMem:25  GlobalTheory.IntegralMultipleClearDenominators.exists_nsmul_mem
+theorem exists_nsmul_mem {E : Type} [Field E] [NumberField E] {n : ℕ} (L : Submodule (RingOfIntegers E) (Fin n → E)) (hL : Submodule.span E (↑L : Set (Fin n → E)) = ⊤) (w : Fin n → E) : ∃ N : ℕ, 0 < N ∧ N • w ∈ L
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsNsmulMulVecMem:53  GlobalTheory.IntegralMultipleClearDenominators.exists_nsmul_mulVec_mem
+theorem exists_nsmul_mulVec_mem {E : Type} [Field E] [NumberField E] {n : ℕ} (L : Submodule (RingOfIntegers E) (Fin n → E)) (hfg : L.FG) (hL : Submodule.span E (↑L : Set (Fin n → E)) = ⊤) (M : Matrix (Fin n) (Fin n) E) : ∃ N : ℕ, 0 < N ∧ ∀ v ∈ L, N • Matrix.mulVec M v ∈ L
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsPosMulNormSqLe:5  GlobalTheory.IntegralPointNormSquareBound.exists_pos_mul_norm_sq_le
+theorem exists_pos_mul_norm_sq_le {V : Type} [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V] (om : V →ₗ[ℝ] V →ₗ[ℝ] ℝ) (J : V →ₗ[ℝ] V) (h : ∀ v : V, v ≠ 0 → 0 < om v (J v)) : ∃ c : ℝ, 0 < c ∧ ∀ v : V, c * ‖v‖ ^ 2 ≤ om v (J v)
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsPosNatMulMemRingOfIntegers:5  GlobalTheory.NatMultipleRingOfIntegers.exists_pos_nat_mul_mem_ringOfIntegers
+theorem exists_pos_nat_mul_mem_ringOfIntegers {E : Type} [Field E] [NumberField E] (a : E) : ∃ m : ℕ, 0 < m ∧ ∃ b : NumberField.RingOfIntegers E, (b : E) = (m : E) * a
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsPrimeInvolutionOfRingInvolution:8  GlobalTheory.exists_primeInvolution_of_ringInvolution
+theorem exists_primeInvolution_of_ringInvolution {R : Type} [CommRing R] [IsDedekindDomain R] [Module.Free ℤ R] [Module.Finite ℤ R] (s : R ≃+* R) (hs : ∀ x, s (s x) = x) : ∃ c : HeightOneSpectrum R ≃ HeightOneSpectrum R, (∀ P, c (c P) = P) ∧ (∀ P, Ideal.absNorm (c P).asIdeal = Ideal.absNorm P.asIdeal) ∧ (∀ P x, s x ∈ (c P).asIdeal ↔ x ∈ P.asIdeal) ∧ (∀ P x, s x ∈ (c P).asIdeal ^ 2 ↔ x ∈ P.asIdeal ^ 2)
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsPrimeInvolutionOfRingInvolution:52  GlobalTheory.cmConjugation_on_primes
+theorem cmConjugation_on_primes : ∀ (F E : Type) [Field F] [NumberField F] [Field E] [NumberField E] [Algebra F E] (σ : E →ₐ[F] E), IsTotallyReal F → IsTotallyComplex E → Module.finrank F E = 2 → (∀ (τ : E →+* ℂ) (x : E), τ (σ x) = star (τ x)) → (∀ x, σ (σ x) = x) ∧ ∃ c : HeightOneSpectrum (𝓞 E) ≃ HeightOneSpectrum (𝓞 E), (∀ P, c (c P) = P) ∧ (∀ P, Ideal.absNorm (c P).asIdeal = Ideal.absNorm P.asIdeal) ∧ (∀ x : 𝓞 E, ∃ y : 𝓞 E, (y : E) = σ x) ∧ (∀ P (x y : 𝓞 E), (y : E) = σ x → (y ∈ (c P).asIdeal ↔ x ∈ P.asIdeal) ∧ (y ∈ (c P).asIdeal ^ 2 ↔ x ∈ P.asIdeal ^ 2)) ∧ ∀ P Q : HeightOneSpectrum (𝓞 E), P.under (𝓞 F) = Q.under (𝓞 F) ↔ Q = P ∨ Q = c P
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsRatBilinForm:5  GlobalTheory.RationalValueRealScalar.map_rat_smul_real
+theorem map_rat_smul_real {U : Type} [AddCommGroup U] [Module ℝ U] {V : Type} [AddCommGroup V] [Module ℚ V] (p : V →+ U) (c : ℚ) (x : V) : p (c • x) = (c : ℝ) • p x
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsRatBilinForm:19  GlobalTheory.RationalValueRealScalar.exists_rat_value
+theorem exists_rat_value {U : Type} [AddCommGroup U] [Module ℝ U] (om : U →ₗ[ℝ] U →ₗ[ℝ] ℝ) {V : Type} [AddCommGroup V] (p : V →+ U) (L : AddSubgroup V) (hL : ∀ x : V, ∃ N : ℕ, 0 < N ∧ N • x ∈ L) (hint : ∀ x ∈ L, ∀ y ∈ L, ∃ k : ℤ, om (p x) (p y) = (k : ℝ)) (u v : V) : ∃ q : ℚ, (q : ℝ) = -(om (p u) (p v))
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsRatBilinForm:34  GlobalTheory.RationalValueRealScalar.exists_rat_bilinForm
+theorem exists_rat_bilinForm {U : Type} [AddCommGroup U] [Module ℝ U] (om : U →ₗ[ℝ] U →ₗ[ℝ] ℝ) {V : Type} [AddCommGroup V] [Module ℚ V] (p : V →+ U) (L : AddSubgroup V) (hL : ∀ x : V, ∃ N : ℕ, 0 < N ∧ N • x ∈ L) (hint : ∀ x ∈ L, ∀ y ∈ L, ∃ k : ℤ, om (p x) (p y) = (k : ℝ)) : ∃ B : LinearMap.BilinForm ℚ V, ∀ u v : V, ((B u v : ℚ) : ℝ) = -(om (p u) (p v))
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsRingHomAdicCompletion:6  GlobalTheory.LocalQuad.exists_ringHom_adicCompletion
+theorem GlobalTheory.LocalQuad.exists_ringHom_adicCompletion (K L : Type) [Field K] [NumberField K] [Field L] [NumberField L] [Algebra K L] (w : HeightOneSpectrum (𝓞 L)) : ∃ (v : HeightOneSpectrum (𝓞 K)) (φ : v.adicCompletion K →+* w.adicCompletion L), ∀ x : K, φ (algebraMap K (v.adicCompletion K) x) = algebraMap L (w.adicCompletion L) (algebraMap K L x)
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsZeroFiveOfValuation:193  GlobalTheory.LocalQuad.FiveVar.exists_three
+lemma exists_three (f : Fin 5 → Bool) : ∃ i j k : Fin 5, i ≠ j ∧ i ≠ k ∧ j ≠ k ∧ f j = f i ∧ f k = f i
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsZeroFiveOfValuation:218  GlobalTheory.LocalQuad.exists_zero_five_of_valuation
+theorem exists_zero_five_of_valuation {K : Type*} [Field K] (h2 : (2 : K) ≠ 0) (v : Valuation K ℤᵐ⁰) (hv : Function.Surjective v) (hsq : ∀ x : K, v (x - 1) < v 4 → IsSquare x) (hcw : ∀ c : Fin 3 → Fin 3 → K, (∀ i j, v (c i j) ≤ 1) → ∃ x : Fin 3 → K, (∀ i, v (x i) ≤ 1) ∧ (∃ i, v (x i) = 1) ∧ v (∑ i, ∑ j, c i j * x i * x j) < 1) (a : Fin 5 → K) : ∃ x : Fin 5 → K, x ≠ 0 ∧ ∑ i, a i * x i ^ 2 = 0
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExpSeriesContDiffAndHasDerivAt:103  GlobalTheory._root_.GlobalTheory.expSeries_contDiff_and_hasDerivAt
+theorem _root_.GlobalTheory.expSeries_contDiff_and_hasDerivAt : ∀ (V : Type) [NormedAddCommGroup V] [NormedSpace ℝ V] (I : Type) (c : I → ℂ) (m : I → V →L[ℝ] ℂ), (∀ R : ℝ, Summable fun i => ‖c i‖ * Real.exp (R * ‖m i‖)) → ContDiff ℝ ∞ (fun v : V => ∑' i, c i * Complex.exp (m i v)) ∧ ∀ z : V, Summable (fun i => c i * m i z) ∧ HasDerivAt (fun t : ℝ => ∑' i, c i * Complex.exp (m i (t • z))) (∑' i, c i * m i z) 0
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.HasSumLogZetaSqMul:8  GlobalTheory.LogEulerSeries.hasSum_neg_log_succ
+theorem hasSum_neg_log_succ {z : ℂ} (hz : ‖z‖ < 1) : HasSum (fun k : ℕ => z ^ (k + 1) / ((k : ℂ) + 1)) (-Complex.log (1 - z))
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.HasSumLogZetaSqMul:14  GlobalTheory.LogEulerSeries.hasSum_prod_neg_log
+theorem hasSum_prod_neg_log {ι : Type} (z : ι → ℂ) (hz : ∀ i, ‖z i‖ ≤ 1 / 2) (hs : Summable fun i => ‖z i‖) : HasSum (fun p : ι × ℕ => z p.1 ^ (p.2 + 1) / ((p.2 : ℂ) + 1)) (∑' i, -Complex.log (1 - z i))
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.HasSumLogZetaSqMul:37  GlobalTheory.LogEulerSeries.hasSum_one
+theorem hasSum_one {ι : Type} (N : ι → ℕ) (c : ι → ℂ) (hN : ∀ i, 2 ≤ N i) (hc : ∀ i, ‖c i‖ ≤ 1) (s : ℂ) (hs : 1 < s.re) (hsum : Summable fun i => (N i : ℝ) ^ (-s.re)) : HasSum (fun p : ι × ℕ => c p.1 ^ (p.2 + 1) / ((p.2 : ℂ) + 1) * Complex.exp (-((((p.2 : ℝ) + 1) * Real.log (N p.1) : ℝ) : ℂ) * s)) (∑' i, -Complex.log (1 - c i * ((N i : ℕ) : ℂ) ^ (-s)))
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.HasSumLogZetaSqMul:63  GlobalTheory.LogEulerSeries.hasSum_log_zeta_sq_mul
+theorem hasSum_log_zeta_sq_mul : ∀ (ι : Type) (N : ι → ℕ) (c : ι → ℂ), (∀ i, 2 ≤ N i) → (∀ i, ‖c i‖ ≤ 1) → (∀ σ : ℝ, 1 < σ → Summable fun i => (N i : ℝ) ^ (-σ)) → ∀ s : ℂ, 1 < s.re → HasSum (fun p : ι × ℕ => (((2 + 2 * (c p.1 ^ (p.2 + 1)).re) / ((p.2 : ℝ) + 1) : ℝ) : ℂ) * Complex.exp (-((((p.2 : ℝ) + 1) * Real.log (N p.1) : ℝ) : ℂ) * s)) (2 * (∑' i, -Complex.log (1 - 1 * ((N i : ℕ) : ℂ) ^ (-s))) + (∑' i, -Complex.log (1 - c i * ((N i : ℕ) : ℂ) ^ (-s))) + (∑' i, -Complex.log (1 - starRingEnd ℂ (c i) * ((N i : ℕ) : ℂ) ^ (-s))))
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.Imports:7  GlobalTheory.NatMulMem.exists_nat_mul_mem
+lemma exists_nat_mul_mem {E : Type} [Field E] [NumberField E] (c : E) : ∃ m : ℕ, 0 < m ∧ IsIntegral ℤ ((m : E) * c)
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.Imports:24  GlobalTheory.NatMulMem.main
+theorem main {E : Type} [Field E] {n : ℕ} [NumberField E] (L : Submodule (RingOfIntegers E) (Fin n → E)) : Submodule.span E (L : Set (Fin n → E)) = ⊤ → ∀ x : Fin n → E, ∃ d : ℕ, 0 < d ∧ d • x ∈ L
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ImportsBis:5  GlobalTheory.NatMulIntegralNsmul.exists_nat_mul_integral
+theorem exists_nat_mul_integral {E : Type} [Field E] [NumberField E] (a : E) : ∃ M : ℕ, 0 < M ∧ IsIntegral ℤ ((M : E) * a)
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ImportsBis:19  GlobalTheory.NatMulIntegralNsmul.exists_nsmul_mem
+theorem exists_nsmul_mem {E : Type} [inst : Field E] [NumberField E] {n : ℕ} (Λ : Submodule (NumberField.RingOfIntegers E) (Fin n → E)) (h : Submodule.IsLattice E Λ) (v : Fin n → E) : ∃ (N : ℕ), (0 : ℕ) < N ∧ N • v ∈ Λ
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ImportsTer:7  GlobalTheory.NatSmulIntegral.exists_nat_mul_integral
+theorem exists_nat_mul_integral {E : Type} [Field E] [NumberField E] (c : E) : ∃ N : ℕ, 0 < N ∧ ∃ a : 𝓞 E, (a : E) = (N : E) * c
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ImportsTer:27  GlobalTheory.NatSmulIntegral.exists_nat_smul_mem
+theorem exists_nat_smul_mem {E : Type} [Field E] [NumberField E] {n : ℕ} (L : Submodule (𝓞 E) (Fin n → E)) (hL : Submodule.span E (↑L : Set (Fin n → E)) = ⊤) (y : Fin n → E) : ∃ N : ℕ, 0 < N ∧ N • y ∈ L
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.IsSquareOfValuedSubOneLt:12  GlobalTheory.LocalQuad.SquareTheorem._root_.GlobalTheory.LocalQuad.SquareTheorem.isSquare_of_norm_sub_one_lt
+theorem _root_.GlobalTheory.LocalQuad.SquareTheorem.isSquare_of_norm_sub_one_lt {K : Type*} [NormedField K] [CompleteSpace K] [IsUltrametricDist K] (x : K) (h : ‖x - 1‖ < ‖(4 : K)‖) : IsSquare x
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.IsSquareOfValuedSubOneLt:57  GlobalTheory.LocalQuad._root_.GlobalTheory.LocalQuad.isSquare_of_valued_sub_one_lt
+theorem _root_.GlobalTheory.LocalQuad.isSquare_of_valued_sub_one_lt (F : Type) [Field F] [NumberField F] (v : HeightOneSpectrum (𝓞 F)) (x : v.adicCompletion F) (h : Valued.v (x - 1) < Valued.v (4 : v.adicCompletion F)) : IsSquare x
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.LandauSummableOfExpDirichletSeriesEntire:46  GlobalTheory._root_.GlobalTheory.hasSum_tuple_prod_exp
+theorem _root_.GlobalTheory.hasSum_tuple_prod_exp {ι : Type} (z : ι → ℂ) (g : ℂ) (h : HasSum z g) : HasSum (fun p : (Σ n : ℕ, Fin n → ι) => (∏ k, z (p.2 k)) / (p.1.factorial : ℂ)) (Complex.exp g)
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.LandauSummableOfExpDirichletSeriesEntire:84  GlobalTheory._root_.GlobalTheory.landau_exp_summable
+theorem _root_.GlobalTheory.landau_exp_summable : ∀ (ι : Type) (a l : ι → ℝ) (F : ℂ → ℂ), (∀ i, 0 ≤ a i) → (∀ i, 0 ≤ l i) → Differentiable ℂ F → (∀ s : ℂ, 1 < s.re → ∃ g : ℂ, HasSum (fun i => (a i : ℂ) * Complex.exp (-(l i : ℂ) * s)) g ∧ F s = Complex.exp g) → Summable a
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.MemRangeAlgebraMapOfConjFixed:8  GlobalTheory.mem_range_algebraMap_of_conj_fixed
+theorem mem_range_algebraMap_of_conj_fixed (F E : Type) [Field F] [Field E] [NumberField E] [Algebra F E] (σ : E →ₐ[F] E) (hE : IsTotallyComplex E) (h2 : Module.finrank F E = 2) (hσ : ∀ (τ : E →+* ℂ) (x : E), τ (σ x) = star (τ x)) (e : E) (he : σ e = e) : ∃ c : F, algebraMap F E c = e
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.MemRangeAlgebraMapOfConjFixed:30  GlobalTheory.exists_mul_conj_eq_algebraMap
+theorem exists_mul_conj_eq_algebraMap (F E : Type) [Field F] [NumberField F] [Field E] [NumberField E] [Algebra F E] (σ : E →ₐ[F] E) (hE : IsTotallyComplex E) (h2 : Module.finrank F E = 2) (hσ : ∀ (τ : E →+* ℂ) (x : E), τ (σ x) = star (τ x)) (R : Type) [CommRing R] [Algebra F R] (y : R ⊗[F] E) : ∃ n : R, y * Algebra.TensorProduct.map (AlgHom.id F R) σ y = algebraMap R (R ⊗[F] E) n
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.MemRangeAlgebraMapOfConjFixed:74  GlobalTheory.exists_unit_mul_conj_eq_algebraMap
+theorem exists_unit_mul_conj_eq_algebraMap : ∀ (F E : Type) [Field F] [NumberField F] [Field E] [NumberField E] [Algebra F E] (σ : E →ₐ[F] E), IsTotallyReal F → IsTotallyComplex E → Module.finrank F E = 2 → (∀ (τ : E →+* ℂ) (x : E), τ (σ x) = star (τ x)) → ∀ (R : Type) [CommRing R] [Algebra F R] (x : (R ⊗[F] E)ˣ), ∃ n : Rˣ, (x : R ⊗[F] E) * Algebra.TensorProduct.map (AlgHom.id F R) σ (x : R ⊗[F] E) = algebraMap R (R ⊗[F] E) n
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.MinkowskiLinearForms:7  GlobalTheory.MinkowskiLinearForms.minkowski_linear_forms
+theorem minkowski_linear_forms {ι : Type} [Fintype ι] [DecidableEq ι] (A : Matrix ι ι ℝ) (hA : Matrix.det A ≠ (0 : ℝ)) {t : ℝ} (ht : (0 : ℝ) < t) (hlt : |Matrix.det A| < t ^ Fintype.card ι) : ∃ (z : ι → ℤ), z ≠ (0 : ι → ℤ) ∧ ∀ (j : ι), |∑ i : ι, (↑(z i) : ℝ) * A i j| < t
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.NormOneInfinite:5  GlobalTheory.NormOneInfinite.normOne_infinite
+theorem normOne_infinite {F E : Type} [Field F] [Field E] [CharZero E] [Algebra F E] (c : Gal(E/F)) (hc : ∀ x : E, (c : E → E) ((c : E → E) x) = x) (h1 : c ≠ (1 : Gal(E/F))) : Set.Infinite {l : E | l * (c : E → E) l = (1 : E)}
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.OneSubRePosOfNormLeHalf:30  GlobalTheory.eulerProduct_eq_exp_and_pos
+theorem eulerProduct_eq_exp_and_pos : ∀ (ι : Type) (N : ι → ℕ) (c : ι → ℂ), (∀ i, 2 ≤ N i) → (∀ i, ‖c i‖ ≤ 1) → (∀ σ : ℝ, 1 < σ → Summable fun i => (N i : ℝ) ^ (-σ)) → (∀ s : ℂ, 1 < s.re → Summable (fun i => -Complex.log (1 - c i * ((N i : ℕ) : ℂ) ^ (-s))) ∧ HasProd (fun i => (1 - c i * ((N i : ℕ) : ℂ) ^ (-s))⁻¹) (Complex.exp (∑' i, -Complex.log (1 - c i * ((N i : ℕ) : ℂ) ^ (-s))))) ∧ ∀ e : ι ≃ ι, (∀ i, N (e i) = N i) → (∀ i, c (e i) = starRingEnd ℂ (c i)) → ∀ s : ℂ, 1 < s.re → s.im = 0 → (Complex.exp (∑' i, -Complex.log (1 - c i * ((N i : ℕ) : ℂ) ^ (-s)))).im = 0 ∧ 0 < (Complex.exp (∑' i, -Complex.log (1 - c i * ((N i : ℕ) : ℂ) ^ (-s)))).re
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ProdLeftEqMaps:7  GlobalTheory.ProductLeftMaps.prodLeft_eq_maps
+theorem prodLeft_eq_maps {F A B E : Type} [Field F] [CommRing A] [CommRing B] [CommRing E] [Algebra F A] [Algebra F B] [Algebra F E] (z : TensorProduct F (A × B) E) : TensorProduct.prodLeft F F A B E z = ((Algebra.TensorProduct.map (AlgHom.fst F A B) (AlgHom.id F E) : TensorProduct F (A × B) E → TensorProduct F A E) z, (Algebra.TensorProduct.map (AlgHom.snd F A B) (AlgHom.id F E) : TensorProduct F (A × B) E → TensorProduct F B E) z)
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ProdLeftEqMaps:23  GlobalTheory.ProductLeftMaps.main
+theorem main : ∀ {F A B E : Type} [inst : Field F] [inst_1 : CommRing A] [inst_2 : CommRing B] [inst_3 : CommRing E] [inst_4 : Algebra F A] [inst_5 : Algebra F B] [inst_6 : Algebra F E] (z : TensorProduct F (A × B) E), (Algebra.TensorProduct.map (AlgHom.fst F A B) (AlgHom.id F E) : TensorProduct F (A × B) E → TensorProduct F A E) z = (0 : TensorProduct F A E) → (Algebra.TensorProduct.map (AlgHom.snd F A B) (AlgHom.id F E) : TensorProduct F (A × B) E → TensorProduct F B E) z = (0 : TensorProduct F B E) → z = (0 : TensorProduct F (A × B) E)
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.RayCharacterExtendsToIdeals:10  GlobalTheory.exists_multiplicative_ideal_extension
+theorem exists_multiplicative_ideal_extension : ∀ (K : Type) [Field K] [NumberField K] (m : Ideal (𝓞 K)) (c : HeightOneSpectrum (𝓞 K) → ℂ), (∀ P, ¬ m ≤ P.asIdeal → ‖c P‖ = 1) → ∃ X : Ideal (𝓞 K) → ℂ, X ⊥ = 0 ∧ X ⊤ = 1 ∧ (∀ I J, X (I * J) = X I * X J) ∧ (∀ I, I ≠ ⊥ → I ⊔ m = ⊤ → ‖X I‖ = 1) ∧ (∀ I, I ⊔ m ≠ ⊤ → X I = 0) ∧ ∀ P, ¬ m ≤ P.asIdeal → X P.asIdeal = c P
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.RayInvariantContinuousEqOne:7  GlobalTheory.exists_near_one_mod_ideal
+theorem exists_near_one_mod_ideal (K : Type) [Field K] [NumberField K] (m : Ideal (𝓞 K)) (hm : m ≠ ⊥) : ∃ C : ℝ, ∀ z : mixedSpace K, ∃ β : 𝓞 K, β - 1 ∈ m ∧ ‖z - mixedEmbedding K β‖ ≤ C
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.RayInvariantContinuousEqOne:30  GlobalTheory.eq_one_of_homogeneous_of_eq_one_on_class
+theorem eq_one_of_homogeneous_of_eq_one_on_class : ∀ (K : Type) [Field K] [NumberField K] (m : Ideal (𝓞 K)) (φ : mixedSpace K → ℂ), m ≠ ⊥ → ContinuousOn φ {x | mixedEmbedding.norm x ≠ 0} → (∀ (t : ℝ) x, 0 < t → φ (t • x) = φ x) → (∀ β : 𝓞 K, β ≠ 0 → β - 1 ∈ m → φ (mixedEmbedding K β) = 1) → ∀ x, mixedEmbedding.norm x ≠ 0 → φ x = 1
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.SummableGaussianCoset:7  GlobalTheory.GaussCoset.exp_le_inv_pow
+theorem exp_le_inv_pow {c : ℝ} (hc : 0 < c) (R : ℝ) (n : ℕ) {t : ℝ} (ht : 0 < t) : Real.exp (-c * t ^ 2 + R * t) ≤ ((n.factorial : ℝ) * Real.exp ((R + 1) ^ 2 / (4 * c))) * t⁻¹ ^ n
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.SummableGaussianCoset:29  GlobalTheory.GaussCoset.summable_lattice
+theorem summable_lattice {V : Type} [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V] (L : Submodule ℤ V) [DiscreteTopology L] {c : ℝ} (hc : 0 < c) (R : ℝ) (x : V) : Summable fun z : L => Real.exp (-c * ‖(z : V) - x‖ ^ 2 + R * ‖(z : V) - x‖)
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.SummableGaussianCoset:47  GlobalTheory.GaussCoset.discrete_of_finite
+theorem discrete_of_finite {V : Type} [NormedAddCommGroup V] (L : AddSubgroup V) (h : {v : V | v ∈ L ∧ ‖v‖ ≤ 1}.Finite) : DiscreteTopology L
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.SummableGaussianCoset:72  GlobalTheory.GaussCoset.summable_gaussian_coset
+theorem summable_gaussian_coset : ∀ (G V : Type) [AddCommGroup G] [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V] (p : G →+ V) (Γ U : AddSubgroup G), (∀ g ∈ Γ, p g = 0 → g = 0) → (∀ R : ℝ, {g : G | g ∈ Γ ∧ g ∈ U ∧ ‖p g‖ ≤ R}.Finite) → ∀ (c : ℝ), 0 < c → ∀ (R : ℝ) (w : G) (y : V), Summable fun g : Γ => Set.indicator (U : Set G) (fun _ => Real.exp (-c * ‖p g + y‖ ^ 2 + R * ‖p g + y‖)) ((g : G) + w)
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.TsumIdealEqSumClassGroup:10  GlobalTheory._root_.GlobalTheory.existsUnique_isPrincipal_mul_classRep
+theorem _root_.GlobalTheory.existsUnique_isPrincipal_mul_classRep {K : Type} [Field K] [NumberField K] (b : ClassGroup (𝓞 K) → (Ideal (𝓞 K))⁰) (hb : Function.Bijective (fun c => ClassGroup.mk0 (b c))) (I : Ideal (𝓞 K)) (hI : I ≠ ⊥) : ∃! c, (I * (b c : Ideal (𝓞 K))).IsPrincipal
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.TsumIdealEqSumClassGroup:30  GlobalTheory._root_.GlobalTheory.tsum_isPrincipal_mul_eq
+theorem _root_.GlobalTheory.tsum_isPrincipal_mul_eq {K : Type} [Field K] [NumberField K] (B : Ideal (𝓞 K)) (hB : B ≠ ⊥) (F : Ideal (𝓞 K) → ℂ) : ∑' I : {I : Ideal (𝓞 K) // I ≠ ⊥ ∧ (I * B).IsPrincipal}, F (I * B) = ∑' J : {J : Ideal (𝓞 K) // J ≠ ⊥ ∧ J.IsPrincipal ∧ J ≤ B}, F J
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ValuationAlgebraMapEqCount:11  GlobalTheory.AdicValuationCountFactors.valuation_algebraMap_eq_count
+theorem valuation_algebraMap_eq_count {r : R} (hr : r ≠ 0) : v.valuation K (algebraMap R K r) = WithZero.exp (-FractionalIdeal.count K v (spanSingleton R⁰ (algebraMap R K r)))
+
+### Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ValuationAlgebraMapEqCount:20  GlobalTheory.AdicValuationCountFactors.valuation_eq_exp_neg_count
+theorem valuation_eq_exp_neg_count {x : K} (hx : x ≠ 0) : v.valuation K x = WithZero.exp (-FractionalIdeal.count K v (spanSingleton R⁰ x))
+
+### Development.AbelianVarietyTheory.Proofs.CharacterTheory.AsAlgebraHomSurjectiveOfFinrankIntertwiningMapEq:7  GlobalTheory.asAlgebraHom_surjective_of_finrank_intertwiningMap_eq_one
+theorem asAlgebraHom_surjective_of_finrank_intertwiningMap_eq_one : ∀ (K : Type) [Field K] [CharZero K] (G : Type) [Group G] [Finite G] (V : Type) [AddCommGroup V] [Module K V] [FiniteDimensional K V] (τ : Representation K G V), Module.finrank K (Representation.IntertwiningMap τ τ) = 1 → Nontrivial V ∧ Function.Surjective τ.asAlgebraHom
+
+### Development.AbelianVarietyTheory.Proofs.CharacterTheory.CardFixedByPowPrimePowModEq:5  GlobalTheory.card_fixedBy_pow_prime_pow_modEq
+theorem card_fixedBy_pow_prime_pow_modEq (G : Type) [Group G] (X : Type) [Finite X] [MulAction G X] (x : G) (p k : ℕ) (hp : p.Prime) : Nat.card (MulAction.fixedBy X (x ^ p ^ k)) ≡ Nat.card (MulAction.fixedBy X x) [MOD p]
+
+### Development.AbelianVarietyTheory.Proofs.CharacterTheory.CardFixedByQuotientEqRelIndexOfPRegular:5  GlobalTheory.conj_mem_zpowers_of_mem_of_pRegular
+theorem conj_mem_zpowers_of_mem_of_pRegular {G : Type} [Group G] (c : G) (p : ℕ) (H : Subgroup G) (hc : Nat.Coprime (orderOf c) p) (hp : ∀ h ∈ H, ∃ k : ℕ, h ^ p ^ k ∈ Subgroup.zpowers c) (g : G) (hg : g⁻¹ * c * g ∈ H) : g⁻¹ * c * g ∈ Subgroup.zpowers c
+
+### Development.AbelianVarietyTheory.Proofs.CharacterTheory.CardFixedByQuotientEqRelIndexOfPRegular:20  GlobalTheory.card_fixedBy_quotient_eq_relIndex_of_pRegular
+theorem card_fixedBy_quotient_eq_relIndex_of_pRegular : ∀ (G : Type) [Group G] [Finite G] (c : G) (p : ℕ) (H N : Subgroup G), Nat.Coprime (orderOf c) p → Subgroup.zpowers c ≤ H → (∀ h ∈ H, ∃ k : ℕ, h ^ p ^ k ∈ Subgroup.zpowers c) → (∀ g : G, g ∈ N ↔ ∀ d ∈ Subgroup.zpowers c, g * d * g⁻¹ ∈ Subgroup.zpowers c) → Nat.card (MulAction.fixedBy (G ⧸ H) c) = H.relIndex N
+
+### Development.AbelianVarietyTheory.Proofs.CharacterTheory.ExistsCoprimeOrderOfPowPrimePow:5  GlobalTheory.exists_coprime_orderOf_pow_prime_pow
+theorem exists_coprime_orderOf_pow_prime_pow (G : Type) [Group G] [Finite G] (x : G) (p : ℕ) (hp : p.Prime) : ∃ k : ℕ, Nat.Coprime (orderOf (x ^ p ^ k)) p
+
+### Development.AbelianVarietyTheory.Proofs.CharacterTheory.ExistsSmulEqTransposeMulDiagonalMul:8  GlobalTheory.exists_rat_eq_transpose_mul_diagonal_mul
+theorem exists_rat_eq_transpose_mul_diagonal_mul {n : ℕ} (A : Matrix (Fin n) (Fin n) ℚ) (hs : A.IsSymm) (hp : ∀ x : Fin n → ℚ, x ≠ 0 → 0 < x ⬝ᵥ A *ᵥ x) : ∃ (d : Fin n → ℚ) (Q : Matrix (Fin n) (Fin n) ℚ), (∀ i, 0 < d i) ∧ Q.det ≠ 0 ∧ A = Qᵀ * Matrix.diagonal d * Q
+
+### Development.AbelianVarietyTheory.Proofs.CharacterTheory.ExistsSmulEqTransposeMulDiagonalMul:63  GlobalTheory.exists_smul_eq_transpose_mul_diagonal_mul
+theorem exists_smul_eq_transpose_mul_diagonal_mul : (∀ (n : ℕ) (A : Matrix (Fin n) (Fin n) ℤ), (A.map (fun x : ℤ => (x : ℝ))).PosDef → ∃ (N : ℕ) (c : Fin n → ℕ) (l : Matrix (Fin n) (Fin n) ℤ), 0 < N ∧ (∀ i, 0 < c i) ∧ l.det ≠ 0 ∧ (N : ℤ) • A = lᵀ * Matrix.diagonal (fun i => (c i : ℤ)) * l)
+
+### Development.AbelianVarietyTheory.Proofs.CharacterTheory.ExistsSylowOverSubgroup:5  GlobalTheory.exists_sylow_over_subgroup
+theorem exists_sylow_over_subgroup (G : Type) [Group G] [Finite G] (C : Subgroup G) (p : ℕ) (hp : p.Prime) : ∃ H : Subgroup G, C ≤ H ∧ (∀ h ∈ H, ∀ c ∈ C, h * c * h⁻¹ ∈ C) ∧ (∀ h ∈ H, ∃ k : ℕ, h ^ p ^ k ∈ C) ∧ ∀ N : Subgroup G, (∀ g : G, g ∈ N ↔ ∀ c ∈ C, g * c * g⁻¹ ∈ C) → ¬ p ∣ H.relIndex N
+
+### Development.AbelianVarietyTheory.Proofs.CharacterTheory.ExistsWeightIdempotent:7  GlobalTheory.exists_weight_idempotent
+theorem exists_weight_idempotent (L : Type) [Field L] [CharZero L] (G : Type) [Group G] [Finite G] (V : Type) [AddCommGroup V] [Module L V] (ρ : Representation L G V) (B T : Subgroup G) (lam : B →* Lˣ) (v : V) (hB : B.Normal) (hv : v ≠ 0) (hlam : ∀ b : B, ρ b v = (lam b : L) • v) (hT : ∀ g : G, g ∈ T ↔ ∀ b b' : B, (b' : G) = g⁻¹ * b * g → lam b' = lam b) : ∃ e : Module.End L V, e ≠ 0 ∧ e * e = e ∧ (∀ b : B, ρ b * e = (lam b : L) • e) ∧ (∀ t ∈ T, ρ t * e = e * ρ t) ∧ ∀ g ∉ T, e * ρ g * e = 0
+
+### Development.AbelianVarietyTheory.Proofs.CharacterTheory.Imports:5  GlobalTheory.UnimodularLatticeLemma.main
+theorem main {L : Type} [Field L] [IsAlgClosed L] {ι V : Type} [AddCommGroup V] [Module L V] [FiniteDimensional L V] [Nontrivial V] (f : ι → Module.End L V) (hc : ∀ (a b : ι), f a * f b = f b * f a) : ∃ (v : V), v ≠ (0 : V) ∧ ∀ (b : ι), ∃ (μ : L), (f b : V → V) v = μ • v
+
+### Development.AbelianVarietyTheory.Proofs.CharacterTheory.ImportsAlt:9  GlobalTheory.UnimodularLatticeExistence.main
+theorem main : ∀ {G : Type u_1} [inst : Group G] {V : Type u_2} [inst_1 : AddCommGroup V] [inst_2 : Module ℂ V] (ρ : Representation ℂ G V), Representation.IsIrreducible ρ ↔ Nontrivial V ∧ ∀ (U : Submodule ℂ V), (∀ (g : G), ∀ v ∈ U, ((ρ : G → V →ₗ[ℂ] V) g : V → V) v ∈ U) → U = ⊥ ∨ U = ⊤
+
+### Development.AbelianVarietyTheory.Proofs.CharacterTheory.IrreducibleIdempotentEqOneAndCharacterEqWeightAl:5  GlobalTheory.irreducible_idempotent_eq_one_and_character_eq_weight
+theorem irreducible_idempotent_eq_one_and_character_eq_weight (L : Type) [Field L] (G : Type) [Group G] (V : Type) [AddCommGroup V] [Module L V] [FiniteDimensional L V] (ρ : Representation L G V) (hρ : ρ.IsIrreducible) : (∀ e : Module.End L V, e ≠ 0 → e * e = e → (∀ g, ρ g * e = e * ρ g) → e = 1) ∧ (∀ (lam : G →* Lˣ) (v : V), v ≠ 0 → (∀ g, ρ g v = (lam g : L) • v) → ∀ g, ρ.character g = (lam g : L))
+
+### Development.AbelianVarietyTheory.Proofs.CharacterTheory.LinearMapShortExactCommute:5  GlobalTheory.trace_eq_add_of_shortExact
+theorem trace_eq_add_of_shortExact (K : Type) [Field K] (U : Type) [AddCommGroup U] [Module K U] [FiniteDimensional K U] (V : Type) [AddCommGroup V] [Module K V] [FiniteDimensional K V] (W : Type) [AddCommGroup W] [Module K W] [FiniteDimensional K W] (i : U →ₗ[K] V) (p : V →ₗ[K] W) (a : U →ₗ[K] U) (b : V →ₗ[K] V) (c : W →ₗ[K] W) (hi : Function.Injective i) (hp : Function.Surjective p) (hex : LinearMap.range i = LinearMap.ker p) (hb : b ∘ₗ i = i ∘ₗ a) (hc : p ∘ₗ b = c ∘ₗ p) : LinearMap.trace K V b = LinearMap.trace K U a + LinearMap.trace K W c
+
+### Development.AbelianVarietyTheory.Proofs.CharacterTheory.OneMemOfMulMemOfForallPrimeNotDvd:5  GlobalTheory.one_mem_of_mul_mem_of_forall_prime_not_dvd
+theorem one_mem_of_mul_mem_of_forall_prime_not_dvd (X : Type) [Finite X] (S : AddSubgroup (X → ℤ)) (hmul : ∀ f ∈ S, ∀ g ∈ S, f * g ∈ S) (hp : ∀ (x : X) (p : ℕ), p.Prime → ∃ f ∈ S, ¬ (p : ℤ) ∣ f x) : (1 : X → ℤ) ∈ S
+
+### Development.AbelianVarietyTheory.Proofs.CharacterTheory.SumConjIdempotentEqCardSmul:5  GlobalTheory.sum_conj_idempotent_eq_card_smul
+theorem sum_conj_idempotent_eq_card_smul (L : Type) [Field L] (G : Type) [Group G] [Fintype G] (V : Type) [AddCommGroup V] [Module L V] (ρ : Representation L G V) (T : Subgroup G) (e : Module.End L V) (hirr : ρ.IsIrreducible) (he0 : e ≠ 0) (hee : e * e = e) (hT : ∀ t ∈ T, ρ t * e = e * ρ t) (hoff : ∀ g ∉ T, e * ρ g * e = 0) : ∑ x : G, ρ x * e * ρ x⁻¹ = (Nat.card T : L) • (1 : Module.End L V)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.AlternatingMapSumSmulEqDetSmul:68  GlobalTheory.alternating_map_sum_smul_eq_det_smul
+theorem alternating_map_sum_smul_eq_det_smul {n : ℕ} (ω : M [⋀^Fin n]→ₗ[A] N) (a : Matrix (Fin n) (Fin n) A) (w : Fin n → M) : ω (fun i => ∑ k, a i k • w k) = a.det • ω w
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.AlternatingMapSumSmulEqDetSmul:100  GlobalTheory.alternating_sub_mem_smul_top
+theorem alternating_sub_mem_smul_top (ω : M [⋀^Fin D]→ₗ[A] N) (I : Ideal A) (v w : Fin D → M) (hvw : ∀ k, v k - w k ∈ I • (⊤ : Submodule A M)) : ω v - ω w ∈ I • (⊤ : Submodule A N)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.AlternatingMapSumSmulEqDetSmul:148  GlobalTheory.form_d_mul_sub_mem
+theorem form_d_mul_sub_mem (I : Ideal A) (h : A) (g : Fin D → A) (hg : ∀ k, g k ∈ I) : ω (fun k => d (h * g k)) - h ^ D • ω (fun k => d (g k)) ∈ I • (⊤ : Submodule A N)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsAddEquivOfSurjectiveOfKerIff:7  GlobalTheory.AddEquivOfSurjectiveKernel.exists_addEquiv_of_surjective_of_ker_iff
+theorem exists_addEquiv_of_surjective_of_ker_iff {A : Type u_1} {B : Type u_2} {C : Type u_3} [AddCommGroup A] [AddCommGroup B] [AddCommGroup C] (f : A →+ B) (g : A →+ C) (hf : Function.Surjective f) (hg : Function.Surjective g) (h : ∀ a : A, f a = 0 ↔ g a = 0) : ∃ e : B ≃+ C, ∀ a : A, e (f a) = g a
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsBasicOpenEqZeroOfMemIInfPowSmul:11  GlobalTheory.localizedModule_mk_one_eq_zero_iff
+theorem localizedModule_mk_one_eq_zero_iff (p : Ideal A) [p.IsPrime] (x : M) : (LocalizedModule.mk x 1 : LocalizedModule p.primeCompl M) = 0 ↔ ∃ s ∉ p, s • x = 0
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsBasicOpenEqZeroOfMemIInfPowSmul:21  GlobalTheory.exists_smul_eq_zero_of_mem_iInf_pow_smul
+theorem exists_smul_eq_zero_of_mem_iInf_pow_smul (I : Ideal A) {x : M} (hx : x ∈ (⨅ n : ℕ, I ^ n • ⊤ : Submodule A M)) : ∃ f : A, f - 1 ∈ I ∧ f • x = 0
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsBasicOpenEqZeroOfMemIInfPowSmul:47  GlobalTheory.under_mem_associatedPrimes
+theorem under_mem_associatedPrimes [Module B M] [IsScalarTower A B M] {q : Ideal B} (hq : q ∈ associatedPrimes B M) : q.under A ∈ associatedPrimes A M
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsBasicOpenEqZeroOfMemIInfPowSmul:56  GlobalTheory.associatedPrimes_subset_of_flat
+theorem associatedPrimes_subset_of_flat [IsNoetherianRing A] [Module.Flat A M] : associatedPrimes A M ⊆ associatedPrimes A A
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsBasicOpenEqZeroOfMemIInfPowSmul:91  GlobalTheory.under_eq_of_mem_associatedPrimes_tensor_quotient
+theorem under_eq_of_mem_associatedPrimes_tensor_quotient (p : Ideal A) [hp : p.IsPrime] {q : Ideal B} (hq : q ∈ associatedPrimes B (M ⊗[A] (A ⧸ p))) : q.under A = p
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsBasicOpenEqZeroOfMemIInfPowSmul:118  GlobalTheory.mem_associatedPrimes_tensor_quotient_under
+theorem mem_associatedPrimes_tensor_quotient_under [IsNoetherianRing A] {N : Type*} [AddCommGroup N] [Module A N] [hN : Module.Finite A N] {q : Ideal B} (hq : q ∈ associatedPrimes B (M ⊗[A] N)) : q ∈ associatedPrimes B (M ⊗[A] (A ⧸ q.under A))
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsBasicOpenEqZeroOfMemIInfPowSmul:135  GlobalTheory.injective_lTensor_residueField
+theorem injective_lTensor_residueField (p : Ideal A) [p.IsPrime] : Function.Injective (AlgebraTensorModule.lTensor B M (IsScalarTower.toAlgHom A (A ⧸ p) p.ResidueField).toLinearMap)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsBasicOpenEqZeroOfMemIInfPowSmul:141  GlobalTheory.associatedPrimes_tensor_residueField
+theorem associatedPrimes_tensor_residueField (p : Ideal A) [hp : p.IsPrime] : associatedPrimes B (M ⊗[A] p.ResidueField) = associatedPrimes B (M ⊗[A] (A ⧸ p))
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsBasicOpenEqZeroOfMemIInfPowSmul:183  GlobalTheory.mem_associatedPrimes_iff_of_flat_module
+theorem mem_associatedPrimes_iff_of_flat_module [IsNoetherianRing A] (q : Ideal B) [q.IsPrime] : q ∈ associatedPrimes B M ↔ q.under A ∈ associatedPrimes A A ∧ q ∈ associatedPrimes B (M ⊗[A] (q.under A).ResidueField)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsBasicOpenEqZeroOfMemIInfPowSmul:200  GlobalTheory.mem_associatedPrimes_tensor_residueField_iff
+theorem mem_associatedPrimes_tensor_residueField_iff (p : Ideal A) [p.IsPrime] (q : Ideal B) : q ∈ associatedPrimes B (B ⊗[A] p.ResidueField) ↔ ∃ Q ∈ associatedPrimes (p.Fiber B) (p.Fiber B), Q.comap (Algebra.TensorProduct.includeRight : B →ₐ[A] p.Fiber B) = q
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsBasicOpenEqZeroOfMemIInfPowSmul:243  GlobalTheory.mem_associatedPrimes_iff_of_flat
+theorem mem_associatedPrimes_iff_of_flat [IsNoetherianRing A] (q : Ideal B) [q.IsPrime] : q ∈ associatedPrimes B B ↔ q.under A ∈ associatedPrimes A A ∧ ∃ Q ∈ associatedPrimes ((q.under A).Fiber B) ((q.under A).Fiber B), Q.comap (Algebra.TensorProduct.includeRight : B →ₐ[A] (q.under A).Fiber B) = q
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsBasicOpenEqZeroOfMemIInfPowSmul:250  GlobalTheory.ker_includeRight_fiber
+theorem ker_includeRight_fiber (p : Ideal A) [p.IsPrime] : RingHom.ker (Algebra.TensorProduct.includeRight : B →ₐ[A] p.Fiber B) = p.map (algebraMap A B)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsBasicOpenEqZeroOfMemIInfPowSmul:261  GlobalTheory.mem_associatedPrimes_iff_eq_map_of_flat
+theorem mem_associatedPrimes_iff_eq_map_of_flat [IsNoetherianRing A] (q : Ideal B) [hq : q.IsPrime] [NoZeroDivisors ((q.under A).Fiber B)] : q ∈ associatedPrimes B B ↔ q.under A ∈ associatedPrimes A A ∧ q = (q.under A).map (algebraMap A B)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsBasicOpenEqZeroOfMemIInfPowSmul:291  GlobalTheory.mem_associatedPrimes_iff_generic_of_flat
+theorem mem_associatedPrimes_iff_generic_of_flat [IsNoetherianRing A] (q : Ideal B) [hq : q.IsPrime] [NoZeroDivisors ((q.under A).Fiber B)] : q ∈ associatedPrimes B B ↔ q.under A ∈ associatedPrimes A A ∧ ∀ q' : Ideal B, q'.IsPrime → q'.under A = q.under A → q ≤ q'
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsBasicOpenEqZeroOfMemIInfPowSmul:313  GlobalTheory.eq_zero_of_flat_of_forall_fiber
+theorem eq_zero_of_flat_of_forall_fiber [IsNoetherianRing A] [IsNoetherianRing B] {L : Type*} [AddCommGroup L] [Module B L] [Module.Flat B L] (hfib : ∀ p : PrimeSpectrum A, p.asIdeal ∈ associatedPrimes A A → NoZeroDivisors (p.asIdeal.Fiber B)) {x : L} (hx : ∀ q : PrimeSpectrum B, q.asIdeal.under A ∈ associatedPrimes A A → ∃ q' : PrimeSpectrum B, q'.asIdeal.under A = q.asIdeal.under A ∧ (LocalizedModule.mk x 1 : LocalizedModule q'.asIdeal.primeCompl L) = 0) : x = 0
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsBasicOpenEqZeroOfMemIInfPowSmul:342  GlobalTheory.exists_sup_maximalIdeal_pow_stable
+theorem exists_sup_maximalIdeal_pow_stable [IsNoetherianRing R] [IsLocalRing R] (J : ℕ → Ideal R) (hJ : Antitone J) (k : ℕ) : ∃ m, ∀ m' ≥ m, J m' ⊔ maximalIdeal R ^ k = J m ⊔ maximalIdeal R ^ k
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsBasicOpenEqZeroOfMemIInfPowSmul:372  GlobalTheory.exists_le_maximalIdeal_pow_of_iInf_eq_bot
+theorem exists_le_maximalIdeal_pow_of_iInf_eq_bot [IsNoetherianRing R] [IsLocalRing R] [IsPrecomplete (maximalIdeal R) R] (J : ℕ → Ideal R) (hJ : Antitone J) (h0 : ⨅ m, J m = ⊥) (k : ℕ) : ∃ m, J m ≤ maximalIdeal R ^ k
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsBasisMapOfLiftBaseChangeSurjective:19  GlobalTheory.Avoid._root_.GlobalTheory.Avoid.exists_basis_map_one_tmul_of_surjective
+theorem _root_.GlobalTheory.Avoid.exists_basis_map_one_tmul_of_surjective {K L V W ι : Type*} [CommRing K] [Field L] [Algebra K L] [AddCommGroup V] [Module K V] [AddCommGroup W] [Module L W] [Module.Finite L W] {d : ℕ} (hd : finrank L W = d) (G : L ⊗[K] V →ₗ[L] W) (hG : Surjective G) (v : ι → V) (hv : Submodule.span K (Set.range v) = ⊤) : ∃ (σ : Fin d → ι) (b : Basis (Fin d) L W), Injective σ ∧ ∀ k, b k = G (1 ⊗ₜ v (σ k))
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsBasisMapOfLiftBaseChangeSurjective:62  GlobalTheory.Avoid.pairingDual_
+theorem pairingDual_ιMulti_comp {R M N : Type*} [CommRing R] [AddCommGroup M] [Module R M] [AddCommGroup N] [Module R N] {r : ℕ} (φ : M →ₗ[R] N) (f : Fin r → Dual R N) (x : ⋀[R]^r M) : pairingDual R M r (ιMulti R r fun k => f k ∘ₗ φ) x = pairingDual R N r (ιMulti R r f) (exteriorPower.map r φ x)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsBasisMapOfLiftBaseChangeSurjective:74  GlobalTheory.Avoid.exists_minor_ne_zero_of_separating
+theorem exists_minor_ne_zero_of_separating {K V ι : Type*} [Field K] [AddCommGroup V] [Module K V] [Finite ι] [LinearOrder ι] (c : ι → Dual K V) (hc : ∀ v : V, (∀ j, c j v = 0) → v = 0) {r : ℕ} (x : ⋀[K]^r V) (hx : x ≠ 0) : ∃ J : Set.powersetCard ι r, pairingDual K V r (ιMulti_family K r c J) x ≠ 0
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsBasisMapOfLiftBaseChangeSurjective:94  GlobalTheory.Avoid.exists_minor_ne_zero_of_span
+theorem exists_minor_ne_zero_of_span {K V ι : Type*} [Field K] [AddCommGroup V] [Module K V] [Finite ι] [LinearOrder ι] (c : ι → Dual K V) (hc : Submodule.span K (Set.range c) = ⊤) {r : ℕ} (x : ⋀[K]^r V) (hx : x ≠ 0) : ∃ J : Set.powersetCard ι r, pairingDual K V r (ιMulti_family K r c J) x ≠ 0
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsBasisMapOfLiftBaseChangeSurjective:106  GlobalTheory.Avoid.exists_minor_ne_zero
+theorem exists_minor_ne_zero {K V ι : Type*} [Field K] [AddCommGroup V] [Module K V] [Finite ι] [LinearOrder ι] (c : Basis ι K (Dual K V)) {r : ℕ} (x : ⋀[K]^r V) (hx : x ≠ 0) : ∃ J : Set.powersetCard ι r, pairingDual K V r (ιMulti_family K r c J) x ≠ 0
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsBasisMapOfLiftBaseChangeSurjective:116  GlobalTheory.Avoid._root_.GlobalTheory.Avoid.exists_orderEmbedding_minor_ne_zero
+theorem _root_.GlobalTheory.Avoid.exists_orderEmbedding_minor_ne_zero {K V ι : Type*} [Field K] [AddCommGroup V] [Module K V] [Finite ι] [LinearOrder ι] (c : ι → Dual K V) (hc : Submodule.span K (Set.range c) = ⊤) {r : ℕ} (x : ⋀[K]^r V) (hx : x ≠ 0) : ∃ J : Fin r ↪o ι, pairingDual K V r (ιMulti K r fun k => c (J k)) x ≠ 0
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsBasisMapOfLiftBaseChangeSurjective:149  GlobalTheory.Avoid.minor_
+theorem minor_ιMulti {R V ι : Type*} [CommRing R] [AddCommGroup V] [Module R V] [LinearOrder ι] (c : ι → Dual R V) {r : ℕ} (J : Set.powersetCard ι r) (v : Fin r → V) : pairingDual R V r (ιMulti_family R r c J) (ιMulti R r v) = (Matrix.of fun i j => c (Set.powersetCard.ofFinEmbEquiv.symm J j) (v i)).det
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsDualNeZeroCompEqZero:9  GlobalTheory.LengthDualFunctional.exists_dual_ne_zero_comp_eq_zero
+theorem exists_dual_ne_zero_comp_eq_zero {R : Type u_1} [CommRing R] [IsDomain R] {M : Type u_2} [AddCommGroup M] [Module R M] [Module.Free R M] [Module.Finite R M] {f : M →ₗ[R] M} (h : LinearMap.det f = 0) : ∃ φ : Module.Dual R M, φ ≠ 0 ∧ φ ∘ₗ f = 0
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsDualNeZeroCompEqZero:18  GlobalTheory.LengthDualFunctional.length_self_eq_top
+theorem length_self_eq_top (R : Type u_1) [CommRing R] [IsDomain R] [IsDiscreteValuationRing R] : Module.length R R = ⊤
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsDualNeZeroCompEqZero:26  GlobalTheory.LengthDualFunctional.main
+theorem main : ∀ {R : Type u_1} [inst : CommRing R] [inst_1 : IsDomain R] [IsDiscreteValuationRing R] {M : Type u_2} [inst_3 : AddCommGroup M] [inst_4 : Module R M] [Module.Free R M] [Module.Finite R M] {f : M →ₗ[R] M}, (LinearMap.det : (M →ₗ[R] M) → R) f = (0 : R) → Module.length R (M ⧸ LinearMap.range f) = ⊤
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsFiniteProjectiveComplexQuasiIso:14  GlobalTheory.flat_of_shortExact_of_flat_of_flat
+theorem flat_of_shortExact_of_flat_of_flat (f : A →ₗ[R] B) (g : B →ₗ[R] C) (hf : Function.Injective f) (hg : Function.Surjective g) (h : Function.Exact f g) [Module.Flat R B] [Module.Flat R C] : Module.Flat R A
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsFiniteProjectiveComplexQuasiIso:28  GlobalTheory.flat_prod
+theorem flat_prod [Module.Flat R A] [Module.Flat R B] : Module.Flat R (A × B)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsFiniteProjectiveComplexQuasiIso:48  GlobalTheory.exact_range_subtype_rangeRestrict
+theorem exact_range_subtype_rangeRestrict {f : A →ₗ[R] B} {g : B →ₗ[R] C} (h : Function.Exact f g) : Function.Exact (LinearMap.range f).subtype g.rangeRestrict
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsFiniteProjectiveComplexQuasiIso:53  GlobalTheory.flat_range_of_exact
+theorem flat_range_of_exact {f : A →ₗ[R] B} {g : B →ₗ[R] C} (h : Function.Exact f g) [Module.Flat R B] [Module.Flat R (LinearMap.range g)] : Module.Flat R (LinearMap.range f)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsFiniteProjectiveComplexQuasiIso:58  GlobalTheory.lTensor_exact_of_flat_range
+theorem lTensor_exact_of_flat_range {f : A →ₗ[R] B} {g : B →ₗ[R] C} {k : C →ₗ[R] D} (h : Function.Exact f g) (h' : Function.Exact g k) [Module.Flat R (LinearMap.range k)] (M : Type*) [AddCommGroup M] [Module R M] : Function.Exact (f.lTensor M) (g.lTensor M)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsFiniteProjectiveComplexQuasiIso:74  GlobalTheory.flat_range_of_exact_of_bounded
+theorem flat_range_of_exact_of_bounded {E : ℕ → Type*} [∀ p, AddCommGroup (E p)] [∀ p, Module R (E p)] [∀ p, Module.Flat R (E p)] (D : ∀ p, E p →ₗ[R] E (p + 1)) (hD : ∀ p, Function.Exact (D p) (D (p + 1))) (n : ℕ) (hn : ∀ p, n < p → Subsingleton (E p)) (p : ℕ) : Module.Flat R (LinearMap.range (D p))
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsFiniteProjectiveComplexQuasiIso:255  GlobalTheory.exists_free_step
+theorem exists_free_step {C₀ C₁ K₁ K₂ : Type*} [AddCommGroup C₀] [AddCommGroup C₁] [AddCommGroup K₁] [AddCommGroup K₂] [Module R C₀] [Module R C₁] [Module R K₁] [Module R K₂] [Module.Finite R K₁] (d : C₀ →ₗ[R] C₁) (φ : K₁ →ₗ[R] C₁) (δ : K₁ →ₗ[R] K₂) (B : Submodule R C₀) [Module.Finite R (LinearMap.ker d ⧸ B.comap (LinearMap.ker d).subtype)] : ∃ (m : ℕ) (φ₀ : (Fin m → R) →ₗ[R] C₀) (δ₀ : (Fin m → R) →ₗ[R] K₁), (∀ x, d (φ₀ x) = φ (δ₀ x)) ∧ (∀ x, δ (δ₀ x) = 0) ∧ ∀ c k, d c = φ k → δ k = 0 → ∃ x, c - φ₀ x ∈ B ∧ δ₀ x = k
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsFiniteProjectiveComplexQuasiIso:299  GlobalTheory.exists_free_complex
+theorem exists_free_complex (n : ℕ) : ∀ (C : ℕ → ModuleCat.{v} R) (d : ∀ p, C p →ₗ[R] C (p + 1)) (B : Submodule R (C 0)) (_ : ∀ p, n ≤ p → Subsingleton (C p)) (_ : Module.Finite R (LinearMap.ker (d 0) ⧸ B.comap (LinearMap.ker (d 0)).subtype)) (_ : ∀ p, Module.Finite R (LinearMap.ker (d (p + 1)) ⧸ (LinearMap.range (d p)).comap (LinearMap.ker (d (p + 1))).subtype)), ∃ (m : ℕ → ℕ) (δ : ∀ p, (Fin (m p) → R) →ₗ[R] (Fin (m (p + 1)) → R)) (φ : ∀ p, (Fin (m p) → R) →ₗ[R] C p), (∀ p, n ≤ p → m p = 0) ∧ (∀ p x, δ (p + 1) (δ p x) = 0) ∧ (∀ p x, d p (φ p x) = φ (p + 1) (δ p x)) ∧ (∀ c k, d 0 c = φ 1 k → δ 1 k = 0 → ∃ x, c - φ 0 x ∈ B ∧ δ 0 x = k) ∧ ∀ p c k, d (p + 1) c = φ (p + 2) k → δ (p + 2) k = 0 → ∃ c' k', d p c' + φ (p + 1) k' = c ∧ δ (p + 1) k' = k
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsFiniteProjectiveComplexQuasiIso:350  GlobalTheory.shortComplex_quasiIso_iff
+theorem shortComplex_quasiIso_iff {S T : ShortComplex (ModuleCat.{v} R)} (φ : S ⟶ T) : ShortComplex.QuasiIso φ ↔ (∀ y : T.X₂, T.g y = 0 → ∃ (x : S.X₂) (z : T.X₁), S.g x = 0 ∧ T.f z + φ.τ₂ x = y) ∧ (∀ (x : S.X₂) (z : T.X₁), S.g x = 0 → T.f z = φ.τ₂ x → ∃ w : S.X₁, S.f w = x)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsFiniteProjectiveComplexQuasiIso:486  GlobalTheory.quasiIso_tensorLeft_of_flat
+theorem quasiIso_tensorLeft_of_flat {K C : CochainComplex (ModuleCat.{u} R) ℕ} (φ : K ⟶ C) [QuasiIso φ] (hK : ∀ p, Module.Flat R (K.X p)) (hC : ∀ p, Module.Flat R (C.X p)) (n : ℕ) (hnK : ∀ p, n < p → IsZero (K.X p)) (hnC : ∀ p, n < p → IsZero (C.X p)) (M : ModuleCat.{u} R) : QuasiIso (((MonoidalCategory.tensorLeft M).mapHomologicalComplex _).map φ)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsFiniteProjectiveComplexQuasiIso:500  GlobalTheory.quasiIso_extendScalars_of_flat
+theorem quasiIso_extendScalars_of_flat {K C : CochainComplex (ModuleCat.{v} R) ℕ} (φ : K ⟶ C) [QuasiIso φ] (hK : ∀ p, Module.Flat R (K.X p)) (hC : ∀ p, Module.Flat R (C.X p)) (n : ℕ) (hnK : ∀ p, n < p → IsZero (K.X p)) (hnC : ∀ p, n < p → IsZero (C.X p)) {S : Type w} [CommRing S] (f : R →+* S) : QuasiIso (((ModuleCat.extendScalars.{u, w, v} f).mapHomologicalComplex _).map φ)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsFiniteProjectiveComplexQuasiIso:508  GlobalTheory.finite_ker_quotient_of_finite_homology
+theorem finite_ker_quotient_of_finite_homology (C : CochainComplex (ModuleCat.{v} R) ℕ) (i j k : ℕ) (hi : (ComplexShape.up ℕ).prev j = i) (hk : (ComplexShape.up ℕ).next j = k) [Module.Finite R (C.homology j)] : Module.Finite R (LinearMap.ker (C.d j k).hom ⧸ (LinearMap.range (C.d i j).hom).comap (LinearMap.ker (C.d j k).hom).subtype)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsFiniteProjectiveComplexQuasiIso:521  GlobalTheory.exists_finite_complex_quasiIso
+theorem exists_finite_complex_quasiIso [IsNoetherianRing R] (C : CochainComplex (ModuleCat.{u} R) ℕ) (n : ℕ) (hn : ∀ p, n < p → IsZero (C.X p)) (hfin : ∀ p, Module.Finite R (C.homology p)) : ∃ (K : CochainComplex (ModuleCat.{u} R) ℕ) (φ : K ⟶ C), (∀ p, n < p → IsZero (K.X p)) ∧ (∀ p, Module.Finite R (K.X p)) ∧ (∀ p, 1 ≤ p → Module.Free R (K.X p)) ∧ QuasiIso φ
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsFiniteProjectiveComplexQuasiIso:583  GlobalTheory.flat_zero_of_quasiIso
+theorem flat_zero_of_quasiIso {K C : CochainComplex (ModuleCat.{v} R) ℕ} (φ : K ⟶ C) [hφ : QuasiIso φ] (hK : ∀ p, 1 ≤ p → Module.Flat R (K.X p)) (hC : ∀ p, Module.Flat R (C.X p)) (n : ℕ) (hnK : ∀ p, n < p → IsZero (K.X p)) (hnC : ∀ p, n < p → IsZero (C.X p)) : Module.Flat R (K.X 0)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsFiniteProjectiveComplexQuasiIso:597  GlobalTheory.exists_finite_projective_complex_quasiIso
+theorem exists_finite_projective_complex_quasiIso [IsNoetherianRing R] (C : CochainComplex (ModuleCat.{u} R) ℕ) (n : ℕ) (hn : ∀ p, n < p → IsZero (C.X p)) (hflat : ∀ p, Module.Flat R (C.X p)) (hfin : ∀ p, Module.Finite R (C.homology p)) : ∃ (K : CochainComplex (ModuleCat.{u} R) ℕ) (φ : K ⟶ C), (∀ p, n < p → IsZero (K.X p)) ∧ (∀ p, Module.Finite R (K.X p)) ∧ (∀ p, 1 ≤ p → Module.Free R (K.X p)) ∧ (∀ p, Module.Projective R (K.X p)) ∧ QuasiIso φ ∧ (∀ M : ModuleCat.{u} R, QuasiIso (((MonoidalCategory.tensorLeft M).mapHomologicalComplex _).map φ)) ∧ (∀ (S : Type w) [CommRing S] [Algebra R S], QuasiIso (((ModuleCat.extendScalars.{u, w, u} (algebraMap R S)).mapHomologicalComplex _).map φ))
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsIsRegularQuotSMulTop:9  GlobalTheory.RegularElementQuotient.maximalIdeal_smul_top_lt_top
+theorem maximalIdeal_smul_top_lt_top {R : Type u_1} [CommRing R] [IsLocalRing R] (M : Type u_2) [AddCommGroup M] [Module R M] [Module.Finite R M] [Nontrivial M] : IsLocalRing.maximalIdeal R • (⊤ : Submodule R M) < ⊤
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsIsRegularQuotSMulTop:20  GlobalTheory.RegularElementQuotient.exists_isRegular_quotSMulTop
+theorem exists_isRegular_quotSMulTop {R : Type u_1} [CommRing R] [IsNoetherianRing R] [IsLocalRing R] [Small.{u_2, u_1} R] {M : Type u_2} [AddCommGroup M] [Module R M] [Module.Finite R M] {xs : List R} (hxs : IsRegular M xs) {n : ℕ} (hn : n + 1 ≤ xs.length) {y : R} (hy : y ∈ IsLocalRing.maximalIdeal R) (hreg : IsSMulRegular M y) : ∃ zs : List R, zs.length = n ∧ IsRegular (QuotSMulTop y M) zs
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsLinearEquivMapLatticeEq:9  GlobalTheory.LatticeLinearEquivBasis.span_range_basis_coe
+theorem span_range_basis_coe {R : Type*} [CommRing R] {V : Type*} [AddCommGroup V] [Module R V] {ι : Type*} (A : Submodule R V) (b : Basis ι R A) : Submodule.span R (Set.range fun i => (b i : V)) = A
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsLinearEquivMapLatticeEq:16  GlobalTheory.LatticeLinearEquivBasis.exists_linearEquiv_map_lattice_eq
+theorem exists_linearEquiv_map_lattice_eq : ∀ {R : Type u_1} [inst : CommRing R] [inst_1 : IsDomain R] [IsDiscreteValuationRing R] (K : Type u_2) [inst_3 : Field K] [inst_4 : Algebra R K] [IsFractionRing R K] {V : Type u_3} [inst_6 : AddCommGroup V] [inst_7 : Module K V] [inst_8 : Module R V] [inst_9 : IsScalarTower R K V] (A B : Submodule R V) [Submodule.IsLattice K A] [Submodule.IsLattice K B], Exists fun (g : LinearEquiv (RingHom.id K) V V) ↦ Eq (Submodule.map (LinearMap.restrictScalars R (LinearEquiv.toLinearMap g)) A) B
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsMvPolynomialOfIteratedBackwardDifferenceVa:50  GlobalTheory.of'_sum
+theorem of'_sum {ι : Type*} (s : Finset ι) (g : ι → G) : AddMonoidAlgebra.of' ℤ G (∑ i ∈ s, g i) = ∏ i ∈ s, AddMonoidAlgebra.of' ℤ G (g i)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsMvPolynomialOfIteratedBackwardDifferenceVa:289  GlobalTheory.pow_sub_pow_mem_pow_succ
+theorem pow_sub_pow_mem_pow_succ {R : Type*} [CommRing R] {I : Ideal R} {a b : R} (ha : a ∈ I) (hb : b ∈ I) (hab : a - b ∈ I ^ 2) (d : ℕ) : a ^ d - b ^ d ∈ I ^ (d + 1)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:14  GlobalTheory.mem_fixedSubalgebra_iff
+theorem mem_fixedSubalgebra_iff (R : Type*) [CommRing R] [Algebra R A] [SMulCommClass G R A] {a : A} : a ∈ FixedPoints.subalgebra R A G ↔ ∀ g : G, g • a = a
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:25  GlobalTheory.isIntegral_fixedSubring
+theorem isIntegral_fixedSubring [Finite G] : Algebra.IsIntegral (FixedPoints.subring A G) A
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:28  GlobalTheory.isIntegral_fixedSubalgebra
+theorem isIntegral_fixedSubalgebra [Finite G] (R : Type*) [CommRing R] [Algebra R A] [SMulCommClass G R A] : Algebra.IsIntegral (FixedPoints.subalgebra R A G) A
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:32  GlobalTheory.isIntegrallyClosed_of_isInvariant
+theorem isIntegrallyClosed_of_isInvariant (B : Type*) [CommRing B] [Algebra B A] [FaithfulSMul B A] [SMulCommClass G B A] [Algebra.IsInvariant B A G] [IsDomain A] [IsIntegrallyClosed A] : IsDomain B ∧ IsIntegrallyClosed B
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:69  GlobalTheory.isIntegrallyClosed_fixedSubring
+theorem isIntegrallyClosed_fixedSubring [IsDomain A] [IsIntegrallyClosed A] : IsIntegrallyClosed (FixedPoints.subring A G)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:73  GlobalTheory.isIntegrallyClosed_fixedSubalgebra
+theorem isIntegrallyClosed_fixedSubalgebra (R : Type*) [CommRing R] [Algebra R A] [SMulCommClass G R A] [IsDomain A] [IsIntegrallyClosed A] : IsIntegrallyClosed (FixedPoints.subalgebra R A G)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:78  GlobalTheory.finite_of_isInvariant
+theorem finite_of_isInvariant [Finite G] (R B : Type*) [CommRing R] [CommRing B] [Algebra R A] [Algebra R B] [Algebra B A] [IsScalarTower R B A] [Algebra.IsInvariant B A G] [Algebra.FiniteType R A] : Module.Finite B A
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:85  GlobalTheory.finiteType_of_isInvariant
+theorem finiteType_of_isInvariant [Finite G] (R B : Type*) [CommRing R] [CommRing B] [Algebra R A] [Algebra R B] [Algebra B A] [IsScalarTower R B A] [FaithfulSMul B A] [Algebra.IsInvariant B A G] [IsNoetherianRing R] [Algebra.FiniteType R A] : Algebra.FiniteType R B
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:93  GlobalTheory.finite_fixedSubalgebra
+theorem finite_fixedSubalgebra [Finite G] (R : Type*) [CommRing R] [Algebra R A] [SMulCommClass G R A] [Algebra.FiniteType R A] : Module.Finite (FixedPoints.subalgebra R A G) A
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:98  GlobalTheory.finiteType_fixedSubalgebra
+theorem finiteType_fixedSubalgebra [Finite G] (R : Type*) [CommRing R] [Algebra R A] [SMulCommClass G R A] [IsNoetherianRing R] [Algebra.FiniteType R A] : Algebra.FiniteType R (FixedPoints.subalgebra R A G)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:103  GlobalTheory.isNoetherianRing_fixedSubalgebra
+theorem isNoetherianRing_fixedSubalgebra [Finite G] (R : Type*) [CommRing R] [Algebra R A] [SMulCommClass G R A] [IsNoetherianRing R] [Algebra.FiniteType R A] : IsNoetherianRing (FixedPoints.subalgebra R A G)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:109  GlobalTheory.exists_orbit_eq_primesOver_of_isInvariant
+theorem exists_orbit_eq_primesOver_of_isInvariant [Finite G] (B : Type*) [CommRing B] [Algebra B A] [FaithfulSMul B A] [SMulCommClass G B A] [Algebra.IsInvariant B A G] (P : Ideal B) [P.IsPrime] : ∃ Q : Ideal A, Q.IsPrime ∧ Q.LiesOver P ∧ MulAction.orbit G Q = P.primesOver A
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:117  GlobalTheory.exists_orbit_eq_primesOver
+theorem exists_orbit_eq_primesOver [Finite G] (P : Ideal (FixedPoints.subring A G)) [P.IsPrime] : ∃ Q : Ideal A, Q.IsPrime ∧ Q.LiesOver P ∧ MulAction.orbit G Q = P.primesOver A
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:121  GlobalTheory.under_eq_iff_exists_smul
+theorem under_eq_iff_exists_smul [Finite G] (B : Type*) [CommRing B] [Algebra B A] [SMulCommClass G B A] [Algebra.IsInvariant B A G] (Q Q' : Ideal A) [Q.IsPrime] [Q'.IsPrime] : Q.under B = Q'.under B ↔ ∃ g : G, Q' = g • Q
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:136  GlobalTheory.isBaseChange_of_forall_eq
+theorem isBaseChange_of_forall_eq [Module.Flat R S] {ι : Type*} [Finite ι] {P P' : ι → Type*} [∀ i, AddCommGroup (P i)] [∀ i, Module R (P i)] [∀ i, AddCommGroup (P' i)] [∀ i, Module R (P' i)] [∀ i, Module S (P' i)] [∀ i, IsScalarTower R S (P' i)] {N N' : Type*} [AddCommGroup N] [Module R N] [AddCommGroup N'] [Module R N'] [Module S N'] [IsScalarTower R S N'] (φ ψ : ∀ i, M →ₗ[R] P i) (φ' ψ' : ∀ i, M' →ₗ[S] P' i) (f : M →ₗ[R] M') (hf : IsBaseChange S f) (h : ∀ i, P i →ₗ[R] P' i) (hh : ∀ i, IsBaseChange S (h i)) (hφ : ∀ i x, h i (φ i x) = φ' i (f x)) (hψ : ∀ i x, h i (ψ i x) = ψ' i (f x)) (j : N →ₗ[R] M) (hj : Function.Injective j) (hj' : ∀ x, x ∈ Set.range j ↔ ∀ i, φ i x = ψ i x) (j' : N' →ₗ[S] M') (hj₁ : Function.Injective j') (hj₁' : ∀ x, x ∈ Set.range j' ↔ ∀ i, φ' i x = ψ' i x) (k : N →ₗ[R] N') (hk : ∀ x, j' (k x) = f (j x)) : IsBaseChange S k
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:183  GlobalTheory.span_image_invariants
+theorem span_image_invariants [Finite G] [Module.Flat R S] (ρ : Representation R G M) (ρ' : Representation S G M') (f : M →ₗ[R] M') (hb : IsBaseChange S f) (hf : ∀ g x, f (ρ g x) = ρ' g (f x)) : Submodule.span S (f '' ρ.invariants) = ρ'.invariants
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:201  GlobalTheory.mem_baseChange_invariants_iff
+theorem mem_baseChange_invariants_iff [Finite G] [Module.Flat R S] (ρ : Representation R G M) (x : S ⊗[R] M) : x ∈ ρ.invariants.baseChange S ↔ ∀ g, (ρ g).baseChange S x = x
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:210  GlobalTheory.injective_baseChange_invariants_subtype
+theorem injective_baseChange_invariants_subtype [Module.Flat R S] (ρ : Representation R G M) : Function.Injective (ρ.invariants.subtype.baseChange S)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:222  GlobalTheory.span_inf_restrictScalars_of_isLocalization
+theorem span_inf_restrictScalars_of_isLocalization (T : Submonoid R) [IsLocalization T S] (L : Submodule R M') (W : Submodule S M') : Submodule.span S ((L ⊓ W.restrictScalars R : Submodule R M') : Set M') = Submodule.span S (L : Set M') ⊓ W
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:296  GlobalTheory.isInvariant_of_isBaseChange
+theorem isInvariant_of_isBaseChange [Finite G] [Module.Flat R S] [Algebra.IsInvariant R A G] (f : A →ₐ[R] A') (hb : IsBaseChange S f.toLinearMap) (hf : ∀ (g : G) a, f (g • a) = g • f a) : Algebra.IsInvariant S A' G
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:321  GlobalTheory.faithfulSMul_of_isBaseChange
+theorem faithfulSMul_of_isBaseChange [Module.Flat R S] [FaithfulSMul R A] (f : A →ₐ[R] A') (hb : IsBaseChange S f.toLinearMap) : FaithfulSMul S A'
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:376  GlobalTheory.isBaseChange_fixedSubalgebra_tensor
+theorem isBaseChange_fixedSubalgebra_tensor [Finite G] [Module.Flat R S] : letI
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:390  GlobalTheory.isInvariant_tensor
+theorem isInvariant_tensor [Finite G] [Module.Flat R S] [Algebra.IsInvariant R A G] : letI
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:425  GlobalTheory.localizationMulSemiringAction_smul_algebraMap
+theorem localizationMulSemiringAction_smul_algebraMap (U : Submonoid A) (hU : ∀ (g : G), ∀ u ∈ U, g • u ∈ U) (A' : Type*) [CommRing A'] [Algebra A A'] [IsLocalization U A'] (g : G) (a : A) : letI
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:432  GlobalTheory.localizationMulSemiringAction_smulDistribClass
+theorem localizationMulSemiringAction_smulDistribClass (U : Submonoid A) (hU : ∀ (g : G), ∀ u ∈ U, g • u ∈ U) (A' : Type*) [CommRing A'] [Algebra A A'] [IsLocalization U A'] : letI
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:450  GlobalTheory.isInvariant_of_isLocalization
+theorem isInvariant_of_isLocalization [Finite G] [Algebra.IsInvariant B A G] (T : Submonoid B) (B' A' : Type*) [CommRing B'] [CommRing A'] [Algebra B B'] [Algebra A A'] [Algebra B' A'] [Algebra B A'] [IsScalarTower B B' A'] [IsScalarTower B A A'] [IsLocalization T B'] [IsLocalization (Algebra.algebraMapSubmonoid A T) A'] [MulSemiringAction G A'] [SMulDistribClass G A A'] : SMulCommClass G B' A' ∧ Algebra.IsInvariant B' A' G ∧ (FaithfulSMul B A → FaithfulSMul B' A')
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:483  GlobalTheory.invertible_of_bijective_toSpanSingleton
+theorem invertible_of_bijective_toSpanSingleton {M : Type*} [AddCommGroup M] [Module A M] {e : M} (he : Function.Bijective (LinearMap.toSpanSingleton A M e)) : Module.Invertible A M
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:487  GlobalTheory.exists_unit_smul_eq_of_bijective_toSpanSingleton
+theorem exists_unit_smul_eq_of_bijective_toSpanSingleton {M : Type*} [AddCommGroup M] [Module A M] {e e' : M} (he : Function.Bijective (LinearMap.toSpanSingleton A M e)) (he' : Function.Bijective (LinearMap.toSpanSingleton A M e')) : ∃ u : Aˣ, e' = (u : A) • e
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:497  GlobalTheory.bijective_toSpanSingleton_tprod
+theorem bijective_toSpanSingleton_tprod {ι : Type*} [Finite ι] {M : ι → Type*} [∀ i, AddCommGroup (M i)] [∀ i, Module A (M i)] (e : ∀ i, M i) (he : ∀ i, Function.Bijective (LinearMap.toSpanSingleton A (M i) (e i))) : Function.Bijective (LinearMap.toSpanSingleton A (⨂[A] i, M i) (PiTensorProduct.tprod A e))
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:528  GlobalTheory.dual_apply_smul_comm
+theorem dual_apply_smul_comm [Module.Invertible A M] (f : Module.Dual A M) (x y : M) : f x • y = f y • x
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:534  GlobalTheory.exists_sum_dual_apply_eq_one
+theorem exists_sum_dual_apply_eq_one (A M : Type*) [CommRing A] [AddCommGroup M] [Module A M] [Module.Invertible A M] : ∃ s : Finset (Module.Dual A M × M), ∑ p ∈ s, p.1 p.2 = 1
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:540  GlobalTheory.tprod_comp_perm
+theorem tprod_comp_perm [Module.Invertible A M] {ι : Type*} [Finite ι] (x : ι → M) (σ : Equiv.Perm ι) : PiTensorProduct.tprod A (s := fun _ ↦ M) (fun i ↦ x (σ i)) = PiTensorProduct.tprod A (s := fun _ ↦ M) x
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:566  GlobalTheory.free_of_invertible_of_finite_maximalSpectrum
+theorem free_of_invertible_of_finite_maximalSpectrum (A M : Type*) [CommRing A] [AddCommGroup M] [Module A M] [Finite (MaximalSpectrum A)] [Module.Invertible A M] : Module.Free A M
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:571  GlobalTheory.exists_bijective_toSpanSingleton_of_finite_maximalSpectrum
+theorem exists_bijective_toSpanSingleton_of_finite_maximalSpectrum (A M : Type*) [CommRing A] [AddCommGroup M] [Module A M] [Finite (MaximalSpectrum A)] [Module.Invertible A M] : ∃ e : M, Function.Bijective (LinearMap.toSpanSingleton A M e)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:581  GlobalTheory.exists_dual_apply_notMem_of_finite
+theorem exists_dual_apply_notMem_of_finite (M : Type*) [AddCommGroup M] [Module A M] [Module.Invertible A M] (s : Set (Ideal A)) (hs : s.Finite) (hp : ∀ P ∈ s, P.IsPrime) : ∃ (e : M) (f : Module.Dual A M), ∀ P ∈ s, f e ∉ P
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:631  GlobalTheory.bijective_toSpanSingleton_of_isBaseChange
+theorem bijective_toSpanSingleton_of_isBaseChange [Module.Invertible A M] (f : Module.Dual A M) (e : M) {A' M' : Type*} [CommRing A'] [Algebra A A'] [AddCommGroup M'] [Module A M'] [Module A' M'] [IsScalarTower A A' M'] (l : M →ₗ[A] M') (hl : IsBaseChange A' l) (hu : IsUnit (algebraMap A A' (f e))) : Function.Bijective (LinearMap.toSpanSingleton A' M' (l e))
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:654  GlobalTheory.exists_invariant_notMem_orbit_generator
+theorem exists_invariant_notMem_orbit_generator (G : Type*) [Group G] [Finite G] [MulSemiringAction G A] (M : Type*) [AddCommGroup M] [Module A M] [Module.Invertible A M] (Q : Ideal A) [Q.IsPrime] : ∃ (s : A) (e : M), (∀ g : G, g • s = s) ∧ (∀ g : G, s ∉ g • Q) ∧ ∃ f : Module.Dual A M, f e = s
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:724  GlobalTheory.smulCommClass_of_smulDistribClass
+theorem smulCommClass_of_smulDistribClass (B : Type*) [CommRing B] [Algebra B A] [SMulCommClass G B A] [Module B M] [IsScalarTower B A M] : SMulCommClass G B M
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:734  GlobalTheory.bijective_toSpanSingleton_smul
+theorem bijective_toSpanSingleton_smul {e : M} (he : Function.Bijective (LinearMap.toSpanSingleton A M e)) (g : G) : Function.Bijective (LinearMap.toSpanSingleton A M (g • e))
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:744  GlobalTheory.forall_smul_eq_iff_of_invariant_generator
+theorem forall_smul_eq_iff_of_invariant_generator {n : M} (hn : Function.Bijective (LinearMap.toSpanSingleton A M n)) (hn' : ∀ g : G, g • n = n) (y : M) : (∀ g : G, g • y = y) ↔ ∃ a ∈ FixedPoints.subring A G, y = a • n
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:758  GlobalTheory.bijective_toSpanSingleton_invariants
+theorem bijective_toSpanSingleton_invariants {n : M} (hn : Function.Bijective (LinearMap.toSpanSingleton A M n)) (hn' : ∀ g : G, g • n = n) : Function.Bijective (LinearMap.toSpanSingleton B (Representation.ofDistribMulAction B G M).invariants ⟨n, hn'⟩)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:772  GlobalTheory.isBaseChange_invariants_subtype
+theorem isBaseChange_invariants_subtype {n : M} (hn : Function.Bijective (LinearMap.toSpanSingleton A M n)) (hn' : ∀ g : G, g • n = n) : IsBaseChange A (Representation.ofDistribMulAction B G M).invariants.subtype
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:847  GlobalTheory.smul_tensorNorm
+theorem smul_tensorNorm [Finite G] [Module.Invertible A M] (κ : ι ≃ G) (x : M) (g : G) : letI
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:874  GlobalTheory.forall_smul_eq_iff_tensorNorm
+theorem forall_smul_eq_iff_tensorNorm [Finite G] (κ : ι ≃ G) {e : M} (he : Function.Bijective (LinearMap.toSpanSingleton A M e)) (y : ⨂[A] _ : ι, M) : letI
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsUnitSmulEqOfBijectiveToSpanSingleton:888  GlobalTheory.exists_invariant_notMem_orbit_bijective
+theorem exists_invariant_notMem_orbit_bijective (G : Type*) [Group G] [Finite G] {A : Type*} [CommRing A] [MulSemiringAction G A] (M : Type*) [AddCommGroup M] [Module A M] [Module.Invertible A M] (Q : Ideal A) [Q.IsPrime] : ∃ (s : A) (e : M), (∀ g : G, g • s = s) ∧ (∀ g : G, s ∉ g • Q) ∧ Function.Bijective (LinearMap.toSpanSingleton (Localization.Away s) (LocalizedModule (.powers s) M) (LocalizedModule.mkLinearMap (.powers s) M e))
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.Imports:7  GlobalTheory.AdditiveValuationProduct.addVal_prod
+theorem addVal_prod : ∀ {R : Type u_1} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {ι : Type u_2} (s : Finset ι) (a : ι → R), (IsDiscreteValuationRing.addVal R : R → ℕ∞) (∏ i ∈ s, a i) = ∑ i ∈ s, (IsDiscreteValuationRing.addVal R : R → ℕ∞) (a i)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IntegralAgainstLinearApply:10  GlobalTheory.IntegralAgainstMeasure.integrable_smul
+theorem integrable_smul (μ : Measure K) [IsFiniteMeasure μ] (p : C(K, B)) (f : C(K, ℂ)) : Integrable (fun k => f k • p k) μ
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IntegralAgainstLinearApply:28  GlobalTheory.IntegralAgainstMeasure.norm_integral_smul_le
+theorem norm_integral_smul_le (μ : Measure K) [IsFiniteMeasure μ] (p : C(K, B)) (f : C(K, ℂ)) : ‖∫ k, f k • p k ∂μ‖ ≤ (μ.real Set.univ * ‖p‖) * ‖f‖
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsDiscreteValuationRingLocalizationOfIsDedekindD:14  GlobalTheory.NormVal.length_quot_span_singleton
+lemma length_quot_span_singleton (a : R) : Module.length R (R ⧸ Ideal.span {a}) = addVal R a
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsDiscreteValuationRingLocalizationOfIsDedekindD:17  GlobalTheory.NormVal.addVal_prod
+lemma addVal_prod {ι : Type*} (s : Finset ι) (a : ι → R) : addVal R (∏ i ∈ s, a i) = ∑ i ∈ s, addVal R (a i)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsDiscreteValuationRingLocalizationOfIsDedekindD:24  GlobalTheory.NormVal.addVal_det_of_injective
+lemma addVal_det_of_injective (f : M →ₗ[R] M) (hf : Function.Injective f) : addVal R (LinearMap.det f) = Module.length R (M ⧸ LinearMap.range f)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsDiscreteValuationRingLocalizationOfIsDedekindD:56  GlobalTheory.NormVal.length_quot_range_of_not_injective
+lemma length_quot_range_of_not_injective (f : M →ₗ[R] M) (hf : ¬ Function.Injective f) : Module.length R (M ⧸ LinearMap.range f) = ⊤
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsDiscreteValuationRingLocalizationOfIsDedekindD:83  GlobalTheory.NormVal.addVal_det
+lemma addVal_det (f : M →ₗ[R] M) : addVal R (LinearMap.det f) = Module.length R (M ⧸ LinearMap.range f)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsDiscreteValuationRingLocalizationOfIsDedekindD:98  GlobalTheory.NormVal.liesOver_maximalIdeal
+lemma liesOver_maximalIdeal (n : Ideal S) [n.IsMaximal] : n.LiesOver (maximalIdeal R)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsDiscreteValuationRingLocalizationOfIsDedekindD:101  GlobalTheory.NormVal.length_quot_maximal
+lemma length_quot_maximal (n : Ideal S) [n.IsMaximal] : Module.length R (S ⧸ n) = n.inertiaDeg R
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsDiscreteValuationRingLocalizationOfIsDedekindD:110  GlobalTheory.NormVal.isLocalHom_algebraMap
+lemma isLocalHom_algebraMap (n : Ideal S) [n.IsMaximal] (B : Type*) [CommRing B] [IsLocalRing B] [Algebra S B] [IsLocalization.AtPrime B n] [Algebra R B] [IsScalarTower R S B] : IsLocalHom (algebraMap R B)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsDiscreteValuationRingLocalizationOfIsDedekindD:119  GlobalTheory.NormVal.inertiaDeg_eq_finrank_residueField
+lemma inertiaDeg_eq_finrank_residueField (n : Ideal S) [n.IsMaximal] (B : Type*) [CommRing B] [IsLocalRing B] [Algebra S B] [IsLocalization.AtPrime B n] [Algebra R B] [IsScalarTower R S B] [IsLocalHom (algebraMap R B)] : n.inertiaDeg R = Module.finrank (ResidueField R) (ResidueField B)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsDiscreteValuationRingLocalizationOfIsDedekindD:133  GlobalTheory.NormVal.finite_residueField
+lemma finite_residueField (n : Ideal S) [n.IsMaximal] (B : Type*) [CommRing B] [IsLocalRing B] [Algebra S B] [IsLocalization.AtPrime B n] [Algebra R B] [IsScalarTower R S B] [IsLocalHom (algebraMap R B)] : Module.Finite (ResidueField R) (ResidueField B)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsDiscreteValuationRingLocalizationOfIsDedekindD:152  GlobalTheory.NormVal.length_localization_quot_maximal
+lemma length_localization_quot_maximal (m n : MaximalSpectrum S) [Decidable (n = m)] (B : Type*) [CommRing B] [Algebra S B] [IsLocalization.AtPrime B n.asIdeal] : Module.length B (B ⧸ m.asIdeal.map (algebraMap S B)) = if n = m then 1 else 0
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsDiscreteValuationRingLocalizationOfIsDedekindD:171  GlobalTheory.NormVal.length_eq_sum_tensor
+lemma length_eq_sum_tensor {X : Type*} [AddCommGroup X] [Module S X] (hX : IsFiniteLength S X) : ∀ [Module R X] [IsScalarTower R S X], Module.length R X = ∑ n : MaximalSpectrum S, Module.length (A n) (A n ⊗[S] X) * n.asIdeal.inertiaDeg R
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsDiscreteValuationRingLocalizationOfIsDedekindD:201  GlobalTheory.NormVal.length_quot_eq_sum
+lemma length_quot_eq_sum (I : Ideal S) (hI : Module.length R (S ⧸ I) ≠ ⊤) : Module.length R (S ⧸ I) = ∑ n : MaximalSpectrum S, Module.length (A n) (A n ⧸ I.map (algebraMap S (A n))) * n.asIdeal.inertiaDeg R
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsDiscreteValuationRingLocalizationOfIsDedekindD:221  GlobalTheory.addVal_norm_eq_length
+theorem addVal_norm_eq_length (x : S) : addVal R (Algebra.norm R x) = Module.length R (S ⧸ Ideal.span {x})
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsDiscreteValuationRingLocalizationOfIsDedekindD:236  GlobalTheory.length_quot_span_ne_top_iff
+theorem length_quot_span_ne_top_iff (x : S) : Module.length R (S ⧸ Ideal.span {x}) ≠ ⊤ ↔ x ∈ nonZeroDivisors S
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsDiscreteValuationRingLocalizationOfIsDedekindD:245  GlobalTheory.addVal_norm_eq_sum_length
+theorem addVal_norm_eq_sum_length {x : S} (hx : x ∈ nonZeroDivisors S) : addVal R (Algebra.norm R x) = ∑ n : MaximalSpectrum S, Module.length (A n) (A n ⧸ Ideal.span {algebraMap S (A n) x}) * n.asIdeal.inertiaDeg R
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsDiscreteValuationRingLocalizationOfIsDedekindD:254  GlobalTheory.addVal_norm_eq_sum
+theorem addVal_norm_eq_sum (x : S) : addVal R (Algebra.norm R x) = ∑ n : MaximalSpectrum S, addVal (A n) (algebraMap S (A n) x) * n.asIdeal.inertiaDeg R
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsDiscreteValuationRingLocalizationOfIsDedekindD:302  GlobalTheory.isDiscreteValuationRing_localization_of_isDedekindDomain
+theorem isDiscreteValuationRing_localization_of_isDedekindDomain [IsDedekindDomain S] (n : MaximalSpectrum S) : IsDiscreteValuationRing (Localization.AtPrime n.asIdeal)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsQuasicoherentOfForallExistsAffine:188  GlobalTheory.QCoh.nonempty_presentation_Spec
+theorem nonempty_presentation_Spec {R : CommRingCat.{u}} (M : (Spec R).Modules) [M.IsQuasicoherent] : Nonempty M.Presentation
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsQuasicoherentOfForallExistsAffine:303  GlobalTheory.QCoh.isLocalizedModule_of_ringHom
+theorem isLocalizedModule_of_ringHom (hU : IsAffineOpen U) {A : Type*} [CommRing A] (φ : A →+* Γ(X, U)) (a : A) (h : V ≤ U) (hV : V = X.basicOpen (φ a)) [Module A Γ(F, U)] [Module A Γ(F, V)] (hsU : ∀ (r : A) (s : Γ(F, U)), r • s = φ r • s) (hsV : ∀ (r : A) (s : Γ(F, V)), r • s = X.presheaf.map (homOfLE h).op (φ r) • s) (l : Γ(F, U) →ₗ[A] Γ(F, V)) (hl : ∀ s, l s = F.presheaf.map (homOfLE h).op s) : IsLocalizedModule.Away a l
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsQuasicoherentOfForallExistsAffine:326  GlobalTheory.QCoh.bijective_of_isLocalizedModule_comp
+theorem bijective_of_isLocalizedModule_comp {B M N : Type*} [CommRing B] [AddCommGroup M] [Module B M] [AddCommGroup N] [Module B N] (φ : M →ₗ[B] N) (s : Set B) (hs : Ideal.span s = ⊤) (P : s → Type*) [∀ b, AddCommGroup (P b)] [∀ b, Module B (P b)] (g : ∀ b, N →ₗ[B] P b) [∀ b : s, IsLocalizedModule.Away b.1 (g b)] [∀ b : s, IsLocalizedModule.Away b.1 (g b ∘ₗ φ)] : Function.Bijective φ
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsQuasicoherentOfForallExistsAffine:339  GlobalTheory.QCoh.isLocalizedModule_comp_liftBaseChange
+theorem isLocalizedModule_comp_liftBaseChange {A B M N P : Type*} (C : Type*) [CommRing A] [CommRing B] [CommRing C] [Algebra A B] [Algebra A C] [Algebra B C] [IsScalarTower A B C] [AddCommGroup M] [Module A M] [AddCommGroup N] [Module A N] [Module B N] [IsScalarTower A B N] [AddCommGroup P] [Module A P] [Module B P] [Module C P] [IsScalarTower A B P] [IsScalarTower A C P] [IsScalarTower B C P] (l : M →ₗ[A] N) (g : N →ₗ[B] P) (S : Submonoid B) [IsLocalization S C] (h : IsBaseChange C (g.restrictScalars A ∘ₗ l)) : IsLocalizedModule S (g ∘ₗ l.liftBaseChange B)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsQuasicoherentOfForallExistsAffine:452  GlobalTheory.QCoh.mem_primeCompl_primeIdealOf_iff
+theorem mem_primeCompl_primeIdealOf_iff (hU : IsAffineOpen U) (x : U) (f : Γ(X, U)) : f ∈ (hU.primeIdealOf x).asIdeal.primeCompl ↔ (x : X) ∈ X.basicOpen f
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsWeaklyRegularMapCAppendMapLinForm:96  GlobalTheory.mem_map_C_of_X_mul_mem
+theorem mem_map_C_of_X_mul_mem (x : σ) (I : Ideal R) {p : MvPolynomial σ R} (hp : X x * p ∈ I.map (C : R →+* MvPolynomial σ R)) : p ∈ I.map (C : R →+* MvPolynomial σ R)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsWeaklyRegularMapCAppendMapLinForm:104  GlobalTheory.mem_of_X_mul_mem
+theorem mem_of_X_mul_mem {S : Set σ} {x : σ} (hx : x ∉ S) (I : Ideal R) {p : MvPolynomial σ R} (hp : X x * p ∈ I.map (C : R →+* MvPolynomial σ R) ⊔ Ideal.span (X '' S)) : p ∈ I.map (C : R →+* MvPolynomial σ R) ⊔ Ideal.span (X '' S)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsWeaklyRegularMapCAppendMapLinForm:111  GlobalTheory.ofList_map_C_append_map_X
+theorem ofList_map_C_append_map_X (rs : List R) (l : List σ) : Ideal.ofList (rs.map (C : R →+* MvPolynomial σ R) ++ l.map X) = (Ideal.ofList rs).map C ⊔ Ideal.span (X '' {x | x ∈ l})
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsWeaklyRegularMapCAppendMapLinForm:121  GlobalTheory.isWeaklyRegular_map_C_append_map_X
+theorem isWeaklyRegular_map_C_append_map_X {rs : List R} (hrs : IsWeaklyRegular R rs) {l : List σ} (hl : l.Nodup) : IsWeaklyRegular (MvPolynomial σ R) (rs.map (C : R →+* MvPolynomial σ R) ++ l.map X)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsWeaklyRegularMapCAppendMapLinForm:136  GlobalTheory.isRegular_map_C_append_map_X
+theorem isRegular_map_C_append_map_X {rs : List R} (hrs : RingTheory.Sequence.IsRegular R rs) {l : List σ} (hl : l.Nodup) : RingTheory.Sequence.IsRegular (MvPolynomial σ R) (rs.map (C : R →+* MvPolynomial σ R) ++ l.map X)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsWeaklyRegularMapCAppendMapLinForm:146  GlobalTheory.isWeaklyRegular_map_X
+theorem isWeaklyRegular_map_X {l : List σ} (hl : l.Nodup) : IsWeaklyRegular (MvPolynomial σ R) (l.map X : List (MvPolynomial σ R))
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsWeaklyRegularMapCAppendMapLinForm:150  GlobalTheory.isRegular_map_X
+theorem isRegular_map_X [Nontrivial R] {l : List σ} (hl : l.Nodup) : RingTheory.Sequence.IsRegular (MvPolynomial σ R) (l.map X : List (MvPolynomial σ R))
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsWeaklyRegularMapCAppendMapLinForm:154  GlobalTheory.isWeaklyRegular_ofFn_X
+theorem isWeaklyRegular_ofFn_X {n : ℕ} {e : Fin n → σ} (he : Function.Injective e) : IsWeaklyRegular (MvPolynomial σ R) (List.ofFn fun k => (X (e k) : MvPolynomial σ R))
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsWeaklyRegularMapCAppendMapLinForm:159  GlobalTheory.isRegular_ofFn_X
+theorem isRegular_ofFn_X [Nontrivial R] {n : ℕ} {e : Fin n → σ} (he : Function.Injective e) : RingTheory.Sequence.IsRegular (MvPolynomial σ R) (List.ofFn fun k => (X (e k) : MvPolynomial σ R))
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsWeaklyRegularMapCAppendMapLinForm:164  GlobalTheory.isPrime_map_C_sup_span_X
+theorem isPrime_map_C_sup_span_X (S : Set σ) (I : Ideal R) [I.IsPrime] : (I.map (C : R →+* MvPolynomial σ R) ⊔ Ideal.span (X '' S)).IsPrime
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthBaseChangeQuotientOfMapMaximalIdeal:11  GlobalTheory.nonempty_baseChange_subquotient_equiv
+theorem nonempty_baseChange_subquotient_equiv [Module.Flat R S] {X : Type*} [AddCommGroup X] [Module R X] (A B : Submodule R X) : Nonempty ((S ⊗[R] (A ⧸ B.submoduleOf A)) ≃ₗ[S] (A.baseChange S ⧸ (B.baseChange S).submoduleOf (A.baseChange S)))
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthBaseChangeQuotientOfMapMaximalIdeal:47  GlobalTheory.length_baseChange_flat
+theorem length_baseChange_flat : Module.length S (S ⊗[R] X) = Module.length R X * Module.length S (S ⧸ (maximalIdeal R).map (algebraMap R S))
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthBaseChangeQuotientOfMapMaximalIdeal:54  GlobalTheory.length_baseChange_subquotient_flat
+theorem length_baseChange_subquotient_flat (A B : Submodule R X) : Module.length S (A.baseChange S ⧸ (B.baseChange S).submoduleOf (A.baseChange S)) = Module.length R (A ⧸ B.submoduleOf A) * Module.length S (S ⧸ (maximalIdeal R).map (algebraMap R S))
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthBaseChangeQuotientOfMapMaximalIdeal:72  GlobalTheory.length_quotient_span_singleton_eq_addVal
+theorem length_quotient_span_singleton_eq_addVal {S : Type*} [CommRing S] [IsDomain S] [IsDiscreteValuationRing S] (x : S) : Module.length S (S ⧸ Ideal.span {x}) = addVal S x
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthBaseChangeQuotientOfMapMaximalIdeal:89  GlobalTheory.map_maximalIdeal_eq_pow_ramificationIdx
+theorem map_maximalIdeal_eq_pow_ramificationIdx : (maximalIdeal R).map (algebraMap R S) = maximalIdeal S ^ ((maximalIdeal S).ramificationIdx R)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthBaseChangeQuotientOfMapMaximalIdeal:102  GlobalTheory.length_fibre_eq_ramificationIdx
+theorem length_fibre_eq_ramificationIdx : Module.length S (S ⧸ (maximalIdeal R).map (algebraMap R S)) = ((maximalIdeal S).ramificationIdx R : ℕ)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthBaseChangeQuotientOfMapMaximalIdeal:108  GlobalTheory.ramificationIdx_maximalIdeal_pos
+theorem ramificationIdx_maximalIdeal_pos : 0 < (maximalIdeal S).ramificationIdx R
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthBaseChangeQuotientOfMapMaximalIdeal:116  GlobalTheory.addVal_algebraMap_uniformizer
+theorem addVal_algebraMap_uniformizer {ϖ : R} (hϖ : Irreducible ϖ) : addVal S (algebraMap R S ϖ) = ((maximalIdeal S).ramificationIdx R : ℕ)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthBaseChangeQuotientOfMapMaximalIdeal:123  GlobalTheory.addVal_algebraMap
+theorem addVal_algebraMap (x : R) : addVal S (algebraMap R S x) = addVal R x * ((maximalIdeal S).ramificationIdx R : ℕ)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthBaseChangeQuotientOfMapMaximalIdeal:136  GlobalTheory.length_baseChange_dvr
+theorem length_baseChange_dvr : Module.length S (S ⊗[R] X) = Module.length R X * ((maximalIdeal S).ramificationIdx R : ℕ)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthBaseChangeQuotientOfMapMaximalIdeal:143  GlobalTheory.length_baseChange_subquotient_dvr
+theorem length_baseChange_subquotient_dvr (A B : Submodule R X) : Module.length S (A.baseChange S ⧸ (B.baseChange S).submoduleOf (A.baseChange S)) = Module.length R (A ⧸ B.submoduleOf A) * ((maximalIdeal S).ramificationIdx R : ℕ)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthEqTopOfFinrankNeZero:11  GlobalTheory.LengthCokernelFinrank.length_self_eq_top
+theorem length_self_eq_top : Module.length R R = ⊤
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthEqTopOfFinrankNeZero:21  GlobalTheory.LengthCokernelFinrank.addVal_prod
+theorem addVal_prod {ι : Type*} (s : Finset ι) (a : ι → R) : addVal R (∏ i ∈ s, a i) = ∑ i ∈ s, addVal R (a i)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthEqTopOfFinrankNeZero:30  GlobalTheory.LengthCokernelFinrank.length_eq_top_of_finrank_ne_zero
+theorem length_eq_top_of_finrank_ne_zero [Module.Finite R M] (h : finrank R M ≠ 0) : Module.length R M = ⊤
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthEqTopOfFinrankNeZero:49  GlobalTheory.LengthCokernelFinrank.length_coker_eq_addVal_det
+theorem length_coker_eq_addVal_det [Module.Free R M] [Module.Finite R M] (f : M →ₗ[R] M) : Module.length R (M ⧸ LinearMap.range f) = addVal R (LinearMap.det f)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthQuotientSpanSingleton:11  GlobalTheory.LengthQuotientValuationDet.addVal_prod
+theorem addVal_prod {ι : Type*} (s : Finset ι) (f : ι → R) : addVal R (∏ i ∈ s, f i) = ∑ i ∈ s, addVal R (f i)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthQuotientSpanSingleton:18  GlobalTheory.LengthQuotientValuationDet.length_quotient_span_singleton
+theorem length_quotient_span_singleton {x : R} (hx : x ≠ 0) : Module.length R (R ⧸ Ideal.span ({x} : Set R)) = addVal R x
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthQuotientSpanSingleton:25  GlobalTheory.LengthQuotientValuationDet.length_quotient_eq_addVal_det
+theorem length_quotient_eq_addVal_det {R : Type u_1} [CommRing R] [IsDomain R] [IsDiscreteValuationRing R] {M : Type u_2} [AddCommGroup M] [Module R M] [Module.Free R M] [Module.Finite R M] (N : Submodule R M) (e : M ≃ₗ[R] N) : Module.length R (M ⧸ N) = (addVal R : R → ℕ∞) (LinearMap.det (N.subtype ∘ₗ (e : M →ₗ[R] N)))
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthRestrictScalarsEqSumInertiaDegOfSubset:12  GlobalTheory.length_restrictScalars_of_isLocalHom
+theorem length_restrictScalars_of_isLocalHom [Module.Finite (ResidueField R) (ResidueField S)] : Module.length R X = Module.length S X * (Module.finrank (ResidueField R) (ResidueField S) : ℕ∞)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthRestrictScalarsEqSumInertiaDegOfSubset:18  GlobalTheory.isFiniteLength_restrictScalars_iff_of_isLocalHom
+theorem isFiniteLength_restrictScalars_iff_of_isLocalHom [Module.Finite (ResidueField R) (ResidueField S)] : IsFiniteLength R X ↔ IsFiniteLength S X
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthRestrictScalarsEqSumInertiaDegOfSubset:37  GlobalTheory.length_eq_length_localizedModule
+theorem length_eq_length_localizedModule (T : Submonoid S) (A : Type*) [CommRing A] [Algebra S A] [IsLocalization T A] {X X' : Type*} [AddCommGroup X] [Module S X] [AddCommGroup X'] [Module S X'] [Module A X'] [IsScalarTower S A X'] (f : X →ₗ[S] X') [IsLocalizedModule T f] : Module.length A X' = Module.length (Localization T) (LocalizedModule T X)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthRestrictScalarsEqSumInertiaDegOfSubset:52  GlobalTheory.length_localizedModule_eq_add_of_exact
+theorem length_localizedModule_eq_add_of_exact (T : Submonoid S) {N M P : Type*} [AddCommGroup N] [AddCommGroup M] [AddCommGroup P] [Module S N] [Module S M] [Module S P] (f : N →ₗ[S] M) (g : M →ₗ[S] P) (hf : Function.Injective f) (hg : Function.Surjective g) (H : Function.Exact f g) : Module.length (Localization T) (LocalizedModule T M) = Module.length (Localization T) (LocalizedModule T N) + Module.length (Localization T) (LocalizedModule T P)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthRestrictScalarsEqSumInertiaDegOfSubset:63  GlobalTheory.length_localizedModule_congr
+theorem length_localizedModule_congr (T : Submonoid S) {M N : Type*} [AddCommGroup M] [AddCommGroup N] [Module S M] [Module S N] (e : M ≃ₗ[S] N) : Module.length (Localization T) (LocalizedModule T M) = Module.length (Localization T) (LocalizedModule T N)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthRestrictScalarsEqSumInertiaDegOfSubset:70  GlobalTheory.length_localizedModule_quotient_self
+theorem length_localizedModule_quotient_self (m : Ideal S) [hm : m.IsMaximal] : Module.length (Localization.AtPrime m) (LocalizedModule m.primeCompl (S ⧸ m)) = 1
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthRestrictScalarsEqSumInertiaDegOfSubset:93  GlobalTheory.length_localizedModule_quotient_of_ne
+theorem length_localizedModule_quotient_of_ne (m n : Ideal S) [hm : m.IsMaximal] [hn : n.IsPrime] (h : n ≠ m) : Module.length (Localization.AtPrime n) (LocalizedModule n.primeCompl (S ⧸ m)) = 0
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthRestrictScalarsEqSumInertiaDegOfSubset:105  GlobalTheory.length_localizedModule_atPrime_le
+theorem length_localizedModule_atPrime_le (n : Ideal S) [n.IsPrime] {X : Type*} [AddCommGroup X] [Module S X] (h : IsFiniteLength S X) : Module.length (Localization.AtPrime n) (LocalizedModule n.primeCompl X) ≤ Module.length S X
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthRestrictScalarsEqSumInertiaDegOfSubset:125  GlobalTheory.finite_support_length_localizedModule
+theorem finite_support_length_localizedModule {X : Type*} [AddCommGroup X] [Module S X] (h : IsFiniteLength S X) : {n : MaximalSpectrum S | Module.length (Localization.AtPrime n.asIdeal) (LocalizedModule n.asIdeal.primeCompl X) ≠ 0}.Finite
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthRestrictScalarsEqSumInertiaDegOfSubset:149  GlobalTheory.length_restrictScalars_eq_sum_of_subset
+theorem length_restrictScalars_eq_sum_of_subset {X : Type*} [AddCommGroup X] [Module S X] (h : IsFiniteLength S X) [iR : Module R X] [iT : IsScalarTower R S X] (T : Finset (MaximalSpectrum S)) (hT : ∀ n ∉ T, Module.length (Localization.AtPrime n.asIdeal) (LocalizedModule n.asIdeal.primeCompl X) = 0) : Module.length R X = ∑ n ∈ T, Module.length (Localization.AtPrime n.asIdeal) (LocalizedModule n.asIdeal.primeCompl X) * Module.length R (S ⧸ n.asIdeal)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthRestrictScalarsEqSumInertiaDegOfSubset:186  GlobalTheory.length_restrictScalars_eq_finsum
+theorem length_restrictScalars_eq_finsum {X : Type*} [AddCommGroup X] [Module S X] (h : IsFiniteLength S X) [Module R X] [IsScalarTower R S X] : Module.length R X = ∑ᶠ n : MaximalSpectrum S, Module.length (Localization.AtPrime n.asIdeal) (LocalizedModule n.asIdeal.primeCompl X) * Module.length R (S ⧸ n.asIdeal)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthRestrictScalarsEqSumInertiaDegOfSubset:196  GlobalTheory.length_eq_sum_length_localizedModule
+theorem length_eq_sum_length_localizedModule {X : Type*} [AddCommGroup X] [Module S X] (h : IsFiniteLength S X) (T : Finset (MaximalSpectrum S)) (hT : ∀ n ∉ T, Module.length (Localization.AtPrime n.asIdeal) (LocalizedModule n.asIdeal.primeCompl X) = 0) : Module.length S X = ∑ n ∈ T, Module.length (Localization.AtPrime n.asIdeal) (LocalizedModule n.asIdeal.primeCompl X)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthRestrictScalarsEqSumInertiaDegOfSubset:208  GlobalTheory.length_quotient_eq_finrank
+theorem length_quotient_eq_finrank (p : Ideal R) (n : Ideal S) [p.IsMaximal] [n.LiesOver p] [Module.Finite (R ⧸ p) (S ⧸ n)] : Module.length R (S ⧸ n) = (Module.finrank (R ⧸ p) (S ⧸ n) : ℕ∞)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthRestrictScalarsEqSumInertiaDegOfSubset:215  GlobalTheory.length_quotient_eq_inertiaDeg
+theorem length_quotient_eq_inertiaDeg (p : Ideal R) (n : Ideal S) [p.IsMaximal] [n.IsMaximal] [n.LiesOver p] [Module.Finite (R ⧸ p) (S ⧸ n)] : Module.length R (S ⧸ n) = (n.inertiaDeg R : ℕ∞)
+
+### Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.LengthRestrictScalarsEqSumInertiaDegOfSubset:220  GlobalTheory.length_restrictScalars_eq_sum_inertiaDeg_of_subset
+theorem length_restrictScalars_eq_sum_inertiaDeg_of_subset [IsLocalRing R] {X : Type*} [AddCommGroup X] [Module S X] (h : IsFiniteLength S X) [Module R X] [IsScalarTower R S X] (T : Finset (MaximalSpectrum S)) (hT : ∀ n ∉ T, Module.length (Localization.AtPrime n.asIdeal) (LocalizedModule n.asIdeal.primeCompl X) = 0) (hover : ∀ n ∈ T, n.asIdeal.LiesOver (maximalIdeal R)) (hfin : ∀ n ∈ T, Module.Finite R (S ⧸ n.asIdeal)) : Module.length R X = ∑ n ∈ T, Module.length (Localization.AtPrime n.asIdeal) (LocalizedModule n.asIdeal.primeCompl X) * (n.asIdeal.inertiaDeg R : ℕ∞)
+

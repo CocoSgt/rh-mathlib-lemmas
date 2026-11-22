@@ -1,0 +1,1200 @@
+### GroundTheory.ArithmeticGeometry.AbelianVarieties.CompleteIntegralClosure:14  GroundTheory.Arith.Abelian.mem_ideal_smul_top_self_iff
+theorem mem_ideal_smul_top_self_iff (J : Ideal R) (a : R) : a ∈ (J • ⊤ : Submodule R R) ↔ a ∈ J
+
+### GroundTheory.ArithmeticGeometry.AbelianVarieties.CompleteIntegralClosure:18  GroundTheory.Arith.Abelian.mem_ideal_smul_top_iff_repr
+theorem mem_ideal_smul_top_iff_repr (b : Module.Basis ι R M) (J : Ideal R) (x : M) : x ∈ (J • ⊤ : Submodule R M) ↔ ∀ i, b.repr x i ∈ J
+
+### GroundTheory.ArithmeticGeometry.AbelianVarieties.CompleteIntegralClosure:33  GroundTheory.Arith.Abelian.isPrecomplete_of_basis
+theorem isPrecomplete_of_basis (I : Ideal R) [IsPrecomplete I R] (b : Module.Basis ι R M) : IsPrecomplete I M
+
+### GroundTheory.ArithmeticGeometry.AbelianVarieties.NormEDS:236  GroundTheory.Arith.Abelian.normEDS_somos
+theorem normEDS_somos (n : ℤ) : normEDS b c d (n + 2) * normEDS b c d (n - 2) = b ^ 2 * normEDS b c d (n + 1) * normEDS b c d (n - 1) - c * normEDS b c d n ^ 2
+
+### GroundTheory.ArithmeticGeometry.AbelianVarieties.NormEDS:245  GroundTheory.Arith.Abelian.normEDS_invariant
+theorem normEDS_invariant (n : ℤ) : c * (normEDS b c d (n + 2) * normEDS b c d (n - 1) ^ 2 + normEDS b c d (n - 2) * normEDS b c d (n + 1) ^ 2) = (b ^ 4 + d) * normEDS b c d (n - 1) * normEDS b c d n * normEDS b c d (n + 1) - b ^ 2 * c * normEDS b c d n ^ 3
+
+### GroundTheory.ArithmeticGeometry.IwasawaModules.SpanFinrankMaximalIdealLeTwo:21  GroundTheory.Arith.Iwasawa.padic_p_not_isUnit
+theorem padic_p_not_isUnit : ¬ IsUnit (p : ℤ_[p])
+
+### GroundTheory.ArithmeticGeometry.ModularCurves.WeierstrassCharts:33  GroundTheory.Arith.Modular.Weierstrass.natDegree_infPolynomial_lt
+theorem natDegree_infPolynomial_lt : (C (C W.a₂ * X) * Y ^ 2 + C (C W.a₄ * X ^ 2 - C W.a₁ * X) * Y + C (C W.a₆ * X ^ 3 - C W.a₃ * X ^ 2 - X) : R[X][Y]).degree < 3
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.ConsCompSuccAboveZero:56  GroundTheory.Arith.SchemeCoh.hom_finset_sum_apply
+lemma hom_finset_sum_apply {M N : AddCommGrpCat.{v}} {α : Type*} (s : Finset α) (f : α → (M ⟶ N)) (x : M) : (∑ a ∈ s, f a).hom x = ∑ a ∈ s, (f a).hom x
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.ConsCompSuccAboveZero:202  GroundTheory.Arith.SchemeCoh.cons_comp_succAbove_zero
+lemma cons_comp_succAbove_zero {n : ℕ} (c : ι) (i : Fin (n + 1) → ι) : (Fin.cons c i : Fin (n + 2) → ι) ∘ (0 : Fin (n + 2)).succAbove = i
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.ConsCompSuccAboveZero:207  GroundTheory.Arith.SchemeCoh.cons_comp_succAbove_succ
+lemma cons_comp_succAbove_succ {n : ℕ} (c : ι) (i : Fin (n + 1) → ι) (k : Fin (n + 1)) : (Fin.cons c i : Fin (n + 2) → ι) ∘ k.succ.succAbove = Fin.cons c (i ∘ k.succAbove)
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.ModulesTensor:116  GroundTheory.Arith.SchemeCoh.ModulesTensor.finset_inf_mem
+lemma finset_inf_mem {X : C} {ι : Type*} (T : Finset ι) (S : ι → Sieve X) (h : ∀ t ∈ T, S t ∈ J X) : T.inf S ∈ J X
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.ProjTwist:38  GroundTheory.Arith.SchemeCoh.ProjTwist.exists_pos_deg_nmem
+theorem exists_pos_deg_nmem (x : ProjectiveSpectrum 𝒜) : ∃ (f : A) (m : ℕ), f ∈ 𝒜 m ∧ 0 < m ∧ f ∉ x.asHomogeneousIdeal
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.ProjTwist:54  GroundTheory.Arith.SchemeCoh.ProjTwist.exists_den
+theorem exists_den (k : ℤ) (x : ProjectiveSpectrum 𝒜) : ∃ (i j : ℕ) (s : A), (j : ℤ) = i + k ∧ s ∈ 𝒜 i ∧ s ∉ x.asHomogeneousIdeal
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.ProjTwist:65  GroundTheory.Arith.SchemeCoh.ProjTwist.nmem_mul
+theorem nmem_mul {x : ProjectiveSpectrum 𝒜} {s s' : A} (h : s ∉ x.asHomogeneousIdeal) (h' : s' ∉ x.asHomogeneousIdeal) : s * s' ∉ x.asHomogeneousIdeal
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.ProperCohomology.FormalAlgebra:16  GroundTheory.Arith.SchemeCoh.pow_smul_le_of_smul_le
+lemma pow_smul_le_of_smul_le {K : ℕ → Submodule A H} (hK : ∀ n, I • K n ≤ K (n + 1)) (i j : ℕ) : I ^ i • K j ≤ K (j + i)
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.ProperCohomology.PullbackGamma:14  GroundTheory.Arith.SchemeCoh.isPushout_app_of_isPullback
+theorem isPushout_app_of_isPullback (H : IsPullback fst snd f g) [IsAffine Y] [IsAffine Z] {V : X.Opens} (hV : IsAffineOpen V) : IsPushout (f.appLE ⊤ V le_top) g.appTop (fst.app V) (snd.appLE ⊤ (fst ⁻¹ᵁ V) le_top)
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.ProperCohomology.RestrictIso:14  GroundTheory.Arith.SchemeCoh.isIso_morphismRestrict_of_le
+lemma isIso_morphismRestrict_of_le {U U' : Y.Opens} (h : U' ≤ U) [IsIso (f ∣_ U)] : IsIso (f ∣_ U')
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.ProperCohomology.RestrictIso:29  GroundTheory.Arith.SchemeCoh.bijective_app_of_isIso_morphismRestrict
+lemma bijective_app_of_isIso_morphismRestrict {U : Y.Opens} [IsIso (f ∣_ U)] {V : Y.Opens} (hV : V ≤ U) : Function.Bijective (f.app V)
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.ProperCohomology.RestrictIso:43  GroundTheory.Arith.SchemeCoh.injOn_of_isIso_morphismRestrict
+lemma injOn_of_isIso_morphismRestrict {U : Y.Opens} [IsIso (f ∣_ U)] : Set.InjOn f.base (f ⁻¹ᵁ U : Set X)
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.ProperCohomology.RestrictIso:53  GroundTheory.Arith.SchemeCoh.exists_preimage_of_isIso_morphismRestrict
+lemma exists_preimage_of_isIso_morphismRestrict {U : Y.Opens} [IsIso (f ∣_ U)] {y : Y} (hy : y ∈ U) : ∃ x : X, x ∈ f ⁻¹ᵁ U ∧ f.base x = y
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.ProperCohomology.SchemeImage:16  GroundTheory.Arith.SchemeCoh.SchemeImage.ker_morphismRestrict
+theorem ker_morphismRestrict : (f ∣_ W).ker = f.ker.comap W.ι
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.ProperCohomology.SchemeImage:22  GroundTheory.Arith.SchemeCoh.SchemeImage.exists_lift_image
+theorem exists_lift_imageι_morphismRestrict {C : Scheme.{u}} (c : C ⟶ W.toScheme) [IsClosedImmersion c] (g : (f ⁻¹ᵁ W).toScheme ⟶ C) (hg : g ≫ c = f ∣_ W) : ∃ k : (f.imageι ⁻¹ᵁ W).toScheme ⟶ C, k ≫ c = f.imageι ∣_ W
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.RegularLocalDomain:12  GroundTheory.Arith.SchemeCoh.spanFinrank_maximalIdeal_quotient_add_one_le
+theorem spanFinrank_maximalIdeal_quotient_add_one_le [IsLocalRing R] [IsNoetherianRing R] {x : R} (hx : x ∈ maximalIdeal R) (hx2 : x ∉ maximalIdeal R ^ 2) [IsLocalRing (R ⧸ span {x})] : (maximalIdeal (R ⧸ span {x})).spanFinrank + 1 ≤ (maximalIdeal R).spanFinrank
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.RegularLocalDomain:89  GroundTheory.Arith.SchemeCoh.isRegularLocalRing_quotient
+theorem isRegularLocalRing_quotient [IsRegularLocalRing R] {x : R} (hx : x ∈ maximalIdeal R) (hx2 : x ∉ maximalIdeal R ^ 2) [IsLocalRing (R ⧸ span {x})] : IsRegularLocalRing (R ⧸ span {x}) ∧ ringKrullDim (R ⧸ span {x}) + 1 = ringKrullDim R
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.RegularLocalDomain:113  GroundTheory.Arith.SchemeCoh.IsRegularLocalRing.isDomain
+theorem IsRegularLocalRing.isDomain [IsRegularLocalRing R] : IsDomain R
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.SheafH:126  GroundTheory.Arith.SchemeCoh.H'.equiv
+lemma H'.equiv₀_naturality {F G : Sheaf J AddCommGrpCat.{v}} (φ : F ⟶ G) (U : C) (x : F.H' 0 U) : H'.equiv₀ G U (((Sheaf.cohomologyPresheafFunctor J 0).map φ).app (op U) x) = φ.hom.app (op U) (H'.equiv₀ F U x)
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.SheafH:147  GroundTheory.Arith.SchemeCoh.H.eq_zero_of_injective
+lemma H.eq_zero_of_injective (F : Sheaf J AddCommGrpCat.{v}) [Injective F] {n : ℕ} (x : Sheaf.H F (n + 1)) : x = 0
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.SheafH:166  GroundTheory.Arith.SchemeCoh.H.
+lemma H.δ_apply (n₀ n₁ : ℕ) (h : n₀ + 1 = n₁) (x : Sheaf.H S.X₃ n₀) : H.δ hS n₀ n₁ h x = x.comp hS.extClass h
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.SheafH:177  GroundTheory.Arith.SchemeCoh.H.exact
+theorem H.exact₂ {n : ℕ} (y : Sheaf.H S.X₂ n) (hy : Sheaf.H.map S.g n y = 0) : ∃ x : Sheaf.H S.X₁ n, Sheaf.H.map S.f n x = y
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.SheafH:181  GroundTheory.Arith.SchemeCoh.H.exact
+theorem H.exact₃ {n₀ n₁ : ℕ} (h : n₀ + 1 = n₁) (y : Sheaf.H S.X₃ n₀) (hy : H.δ hS n₀ n₁ h y = 0) : ∃ x : Sheaf.H S.X₂ n₀, Sheaf.H.map S.g n₀ x = y
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.SheafH:185  GroundTheory.Arith.SchemeCoh.H.exact
+theorem H.exact₁ {n₀ n₁ : ℕ} (h : n₀ + 1 = n₁) (x : Sheaf.H S.X₁ n₁) (hx : Sheaf.H.map S.f n₁ x = 0) : ∃ y : Sheaf.H S.X₃ n₀, H.δ hS n₀ n₁ h y = x
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.SheafH:189  GroundTheory.Arith.SchemeCoh.H.map_g_map_f
+lemma H.map_g_map_f {n : ℕ} (x : Sheaf.H S.X₁ n) : Sheaf.H.map S.g n (Sheaf.H.map S.f n x) = 0
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.SheafH:193  GroundTheory.Arith.SchemeCoh.H.
+lemma H.δ_map_g {n₀ n₁ : ℕ} (h : n₀ + 1 = n₁) (x : Sheaf.H S.X₂ n₀) : H.δ hS n₀ n₁ h (Sheaf.H.map S.g n₀ x) = 0
+
+### GroundTheory.ArithmeticGeometry.SchemeCohomology.SheafH:198  GroundTheory.Arith.SchemeCoh.H.map_f_
+lemma H.map_f_δ {n₀ n₁ : ℕ} (h : n₀ + 1 = n₁) (x : Sheaf.H S.X₃ n₀) : Sheaf.H.map S.f n₁ (H.δ hS n₀ n₁ h x) = 0
+
+### GroundTheory.ArithmeticGeometry.ToricVarieties.ExistsDualNegOfNotMemHullFinset:12  GroundTheory.Arith.Toric.mem_hull_insert
+theorem mem_hull_insert {a x : V} {s : Set V} : x ∈ hull 𝕜 (insert a s) ↔ ∃ c : 𝕜, 0 ≤ c ∧ ∃ y ∈ hull 𝕜 s, x = c • a + y
+
+### GroundTheory.ArithmeticGeometry.ToricVarieties.ExistsDualNegOfNotMemHullFinset:21  GroundTheory.Arith.Toric.exists_of_mem_hull_image
+theorem exists_of_mem_hull_image (φ : V →ₗ[𝕜] W) {s : Set V} {y : W} (hy : y ∈ hull 𝕜 (φ '' s)) : ∃ z ∈ hull 𝕜 s, φ z = y
+
+### GroundTheory.ArithmeticGeometry.ToricVarieties.ExistsDualNegOfNotMemHullFinset:36  GroundTheory.Arith.Toric.nonneg_of_mem_hull
+theorem nonneg_of_mem_hull {f : Dual 𝕜 V} {s : Set V} (hs : ∀ y ∈ s, 0 ≤ f y) {x : V} (hx : x ∈ hull 𝕜 s) : 0 ≤ f x
+
+### GroundTheory.ArithmeticGeometry.ToricVarieties.ExistsDualNegOfNotMemHullFinset:42  GroundTheory.Arith.Toric.exists_dual_neg_of_not_mem_hull
+theorem exists_dual_neg_of_not_mem_hull {ι : Type*} (s : Finset ι) (v : ι → V) {x : V} (hx : x ∉ hull 𝕜 (v '' s)) : ∃ f : Dual 𝕜 V, (∀ i ∈ s, 0 ≤ f (v i)) ∧ f x < 0
+
+### GroundTheory.ArithmeticGeometry.ToricVarieties.ExistsDualNegOfNotMemHullFinset:83  GroundTheory.Arith.Toric.exists_dual_neg_of_not_mem_hull_finset
+theorem exists_dual_neg_of_not_mem_hull_finset (S : Finset V) {x : V} (hx : x ∉ hull 𝕜 (S : Set V)) : ∃ f : Dual 𝕜 V, (∀ y ∈ S, 0 ≤ f y) ∧ f x < 0
+
+### GroundTheory.ArithmeticGeometry.ToricVarieties.ExistsDualNegOfNotMemHullFinset:87  GroundTheory.Arith.Toric.exists_dual_neg_of_not_mem
+theorem exists_dual_neg_of_not_mem {C : PointedCone 𝕜 V} (hC : C.FG) {x : V} (hx : x ∉ C) : ∃ f : Dual 𝕜 V, (∀ y ∈ C, 0 ≤ f y) ∧ f x < 0
+
+### GroundTheory.ArithmeticGeometry.ToricVarieties.ExistsDualNegOfNotMemHullFinset:93  GroundTheory.Arith.Toric.mem_iff_forall_dual
+theorem mem_iff_forall_dual {C : PointedCone 𝕜 V} (hC : C.FG) {x : V} : x ∈ C ↔ ∀ f : Dual 𝕜 V, (∀ y ∈ C, 0 ≤ f y) → 0 ≤ f x
+
+### GroundTheory.ArithmeticGeometry.ToricVarieties.ExistsDualNegOfNotMemHullFinset:100  GroundTheory.Arith.Toric.fg_top
+theorem fg_top [FiniteDimensional 𝕜 V] : (⊤ : PointedCone 𝕜 V).FG
+
+### GroundTheory.ArithmeticGeometry.ToricVarieties.ExistsDualNegOfNotMemHullFinset:123  GroundTheory.Arith.Toric.hull_inf_halfspace
+theorem hull_inf_halfspace (S : Finset V) (g : Dual 𝕜 V) [DecidableEq V] : hull 𝕜 (S : Set V) ⊓ (positive 𝕜 𝕜).comap g = hull 𝕜 ((S.filter (fun s => 0 ≤ g s) ∪ ((S ×ˢ S).filter (fun st => 0 < g st.1 ∧ g st.2 < 0)).image (fun st => g st.1 • st.2 - g st.2 • st.1) : Finset V) : Set V)
+
+### GroundTheory.ArithmeticGeometry.ToricVarieties.ExistsDualNegOfNotMemHullFinset:184  GroundTheory.Arith.Toric.fg_inf_halfspace
+theorem fg_inf_halfspace {C : PointedCone 𝕜 V} (hC : C.FG) (g : Dual 𝕜 V) : (C ⊓ (positive 𝕜 𝕜).comap g).FG
+
+### GroundTheory.ArithmeticGeometry.ToricVarieties.ExistsDualNegOfNotMemHullFinset:193  GroundTheory.Arith.Toric.fg_dual_finset
+theorem fg_dual_finset [FiniteDimensional 𝕜 N] (p : M →ₗ[𝕜] N →ₗ[𝕜] 𝕜) (s : Finset M) : (dual p (s : Set M)).FG
+
+### GroundTheory.ArithmeticGeometry.ToricVarieties.ExistsDualNegOfNotMemHullFinset:202  GroundTheory.Arith.Toric.fg_dual
+theorem fg_dual [FiniteDimensional 𝕜 N] (p : M →ₗ[𝕜] N →ₗ[𝕜] 𝕜) {C : PointedCone 𝕜 M} (hC : C.FG) : (dual p (C : Set M)).FG
+
+### GroundTheory.ArithmeticGeometry.ToricVarieties.ExistsDualNegOfNotMemHullFinset:208  GroundTheory.Arith.Toric.dual_dual_flip_of_fg
+theorem dual_dual_flip_of_fg (p : M →ₗ[𝕜] N →ₗ[𝕜] 𝕜) (hp : Function.Surjective p) {C : PointedCone 𝕜 N} (hC : C.FG) : dual p (dual p.flip (C : Set N)) = C
+
+### GroundTheory.ArithmeticGeometry.ToricVarieties.ExistsDualNegOfNotMemHullFinset:219  GroundTheory.Arith.Toric.fg_iff_dualFG
+theorem fg_iff_dualFG [FiniteDimensional 𝕜 M] [FiniteDimensional 𝕜 N] (p : M →ₗ[𝕜] N →ₗ[𝕜] 𝕜) (hp : Function.Surjective p) {C : PointedCone 𝕜 N} : C.FG ↔ C.DualFG p
+
+### GroundTheory.ArithmeticGeometry.ToricVarieties.KrullDomain:10  GroundTheory.Arith.Toric.smul_mk_eq_zero_iff
+theorem smul_mk_eq_zero_iff {b r y : A} : r • (Ideal.Quotient.mk (Ideal.span {b}) y) = 0 ↔ b ∣ r * y
+
+### GroundTheory.ArithmeticGeometry.ToricVarieties.KrullDomain:15  GroundTheory.Arith.Toric.height_eq_one_of_isAssociatedPrime
+theorem height_eq_one_of_isAssociatedPrime {b : A} (hb : b ≠ 0) {P : Ideal A} (hP : IsAssociatedPrime P (A ⧸ Ideal.span {b})) : P.height = 1
+
+### GroundTheory.ArithmeticGeometry.ToricVarieties.KrullDomain:73  GroundTheory.Arith.Toric.mem_range_of_forall_height_one
+theorem mem_range_of_forall_height_one {K : Type*} [Field K] [Algebra A K] [IsFractionRing A K] (x : K) (h : ∀ p : Ideal A, p.IsPrime → p.height = 1 → ∃ a s : A, s ∉ p ∧ x * algebraMap A K s = algebraMap A K a) : x ∈ (algebraMap A K).range
+
+### GroundTheory.AutomorphicForms.ArchimedeanWhittaker.WronskianEqZeroOfModerate:7  GroundTheory.Automorphic.ArchWhittaker.exp_growth_false
+theorem exp_growth_false {A b K Y : ℝ} {M : ℕ} (hA : 0 < A) (hb : 0 < b) (h : ∀ y ≥ Y, A * Real.exp (b * y) ≤ K * y ^ M) : False
+
+### GroundTheory.AutomorphicForms.ArchimedeanWhittaker.WronskianEqZeroOfModerate:25  GroundTheory.Automorphic.ArchWhittaker.inner_mul_self
+theorem inner_mul_self (z q : ℂ) : inner ℝ z (q * z) = q.re * ‖z‖ ^ 2
+
+### GroundTheory.AutomorphicForms.ArchimedeanWhittaker.WronskianEqZeroOfModerate:36  GroundTheory.Automorphic.ArchWhittaker.monotoneOn_Ici_of_hasDerivAt
+theorem monotoneOn_Ici_of_hasDerivAt {u u' : ℝ → ℝ} {a : ℝ} (hu : ∀ y ≥ a, HasDerivAt u (u' y) y) (hpos : ∀ y ≥ a, 0 ≤ u' y) : MonotoneOn u (Ici a)
+
+### GroundTheory.AutomorphicForms.ArchimedeanWhittaker.WronskianEqZeroOfModerate:45  GroundTheory.Automorphic.ArchWhittaker.antitoneOn_Ici_of_hasDerivAt
+theorem antitoneOn_Ici_of_hasDerivAt {u u' : ℝ → ℝ} {a : ℝ} (hu : ∀ y ≥ a, HasDerivAt u (u' y) y) (hneg : ∀ y ≥ a, u' y ≤ 0) : AntitoneOn u (Ici a)
+
+### GroundTheory.AutomorphicForms.ArchimedeanWhittaker.WronskianEqZeroOfModerate:53  GroundTheory.Automorphic.ArchWhittaker.tendsto_zero_of_moderate
+theorem tendsto_zero_of_moderate {q f f' : ℝ → ℂ} {Y₀ c C : ℝ} {N : ℕ} (hc : 0 < c) (hq : ∀ y ≥ Y₀, c ^ 2 ≤ (q y).re) (hf : ∀ y ≥ Y₀, HasDerivAt f (f' y) y) (hf' : ∀ y ≥ Y₀, HasDerivAt f' (q y * f y) y) (hgr : ∀ y ≥ Y₀, ‖f y‖ ≤ C * y ^ N) : Tendsto f atTop (𝓝 0)
+
+### GroundTheory.AutomorphicForms.ArchimedeanWhittaker.WronskianEqZeroOfModerate:207  GroundTheory.Automorphic.ArchWhittaker.tendsto_deriv_zero
+theorem tendsto_deriv_zero {q f f' : ℝ → ℂ} {Y₀ M : ℝ} (hqM : ∀ y ≥ Y₀, ‖q y‖ ≤ M) (hf : ∀ y ≥ Y₀, HasDerivAt f (f' y) y) (hf' : ∀ y ≥ Y₀, HasDerivAt f' (q y * f y) y) (hlim : Tendsto f atTop (𝓝 0)) : Tendsto f' atTop (𝓝 0)
+
+### GroundTheory.AutomorphicForms.ArchimedeanWhittaker.WronskianEqZeroOfModerate:254  GroundTheory.Automorphic.ArchWhittaker.wronskian_eq_zero
+theorem wronskian_eq_zero {q f f' g g' : ℝ → ℂ} (hf : ∀ y > 0, HasDerivAt f (f' y) y) (hf' : ∀ y > 0, HasDerivAt f' (q y * f y) y) (hg : ∀ y > 0, HasDerivAt g (g' y) y) (hg' : ∀ y > 0, HasDerivAt g' (q y * g y) y) (hf0 : Tendsto f atTop (𝓝 0)) (hf0' : Tendsto f' atTop (𝓝 0)) (hg0 : Tendsto g atTop (𝓝 0)) (hg0' : Tendsto g' atTop (𝓝 0)) : ∀ y > 0, f y * g' y - f' y * g y = 0
+
+### GroundTheory.AutomorphicForms.ArchimedeanWhittaker.WronskianEqZeroOfModerate:283  GroundTheory.Automorphic.ArchWhittaker.eq_zero_of_ode
+theorem eq_zero_of_ode {q f f' : ℝ → ℂ} (hq : ContinuousOn q (Ioi 0)) (hf : ∀ y > 0, HasDerivAt f (f' y) y) (hf' : ∀ y > 0, HasDerivAt f' (q y * f y) y) (h1 : f 1 = 0) (h1' : f' 1 = 0) : ∀ y > 0, f y = 0
+
+### GroundTheory.AutomorphicForms.ArchimedeanWhittaker.WronskianEqZeroOfModerate:334  GroundTheory.Automorphic.ArchWhittaker.wronskian_eq_zero_of_moderate
+theorem wronskian_eq_zero_of_moderate {q f f' g g' : ℝ → ℂ} {c M Y₀ : ℝ} (hY₀ : 0 < Y₀) (hc : 0 < c) (hqre : ∀ y ≥ Y₀, c ^ 2 ≤ (q y).re) (hqM : ∀ y ≥ Y₀, ‖q y‖ ≤ M) (hf : ∀ y > 0, HasDerivAt f (f' y) y) (hf' : ∀ y > 0, HasDerivAt f' (q y * f y) y) (hg : ∀ y > 0, HasDerivAt g (g' y) y) (hg' : ∀ y > 0, HasDerivAt g' (q y * g y) y) (hfgr : ∃ (C : ℝ) (N : ℕ), ∀ y ≥ Y₀, ‖f y‖ ≤ C * y ^ N) (hggr : ∃ (C : ℝ) (N : ℕ), ∀ y ≥ Y₀, ‖g y‖ ≤ C * y ^ N) : f 1 * g' 1 - f' 1 * g 1 = 0
+
+### GroundTheory.AutomorphicForms.ArchimedeanWhittaker.WronskianEqZeroOfModerate:352  GroundTheory.Automorphic.ArchWhittaker.eq_zero_of_first_order
+theorem eq_zero_of_first_order {F : ℝ → ℂ} {m : ℤ} {b : ℝ} (hb : 0 < b) (hF : ∀ y > 0, HasDerivAt F ((((m : ℝ) / (2 * y) + b : ℝ) : ℂ) * F y) y) (hgr : ∃ (C : ℝ) (N : ℕ), ∀ y ≥ 1, ‖F y‖ ≤ C * y ^ N) : ∀ y > 0, F y = 0
+
+### GroundTheory.AutomorphicForms.CompactSelfAdjoint:13  GroundTheory.Automorphic.CompactSelfAdjoint.finite_setOf_mem_of_orthonormal
+theorem finite_setOf_mem_of_orthonormal {ι : Type*} {v : ι → E} (hv : Orthonormal 𝕜 v) (W : Submodule 𝕜 E) [FiniteDimensional 𝕜 W] : {i | v i ∈ W}.Finite
+
+### GroundTheory.AutomorphicForms.CompactSelfAdjoint:21  GroundTheory.Automorphic.CompactSelfAdjoint.isClosed_eigenspace
+theorem isClosed_eigenspace (T : E →L[𝕜] E) (μ : 𝕜) : IsClosed (eigenspace (T : E →ₗ[𝕜] E) μ : Set E)
+
+### GroundTheory.AutomorphicForms.CompactSelfAdjoint:34  GroundTheory.Automorphic.CompactSelfAdjoint.exists_hilbertBasis_subset_iUnion
+theorem exists_hilbertBasis_subset_iUnion {α : Type*} (W : α → Submodule 𝕜 E) (hW : OrthogonalFamily 𝕜 (fun a => W a) fun a => (W a).subtypeₗᵢ) (hc : ∀ a, IsClosed (W a : Set E)) (hbot : (⨆ a, W a)ᗮ = ⊥) : ∃ (s : Set E) (b : HilbertBasis s 𝕜 E), ⇑b = ((↑) : s → E) ∧ s ⊆ ⋃ a, (W a : Set E)
+
+### GroundTheory.AutomorphicForms.CompactSelfAdjoint:78  GroundTheory.Automorphic.CompactSelfAdjoint.zero_mem_spectrum
+theorem zero_mem_spectrum (hT : IsCompactOperator T) (hE : ¬ FiniteDimensional 𝕜 E) : (0 : 𝕜) ∈ spectrum 𝕜 T
+
+### GroundTheory.AutomorphicForms.CompactSelfAdjoint:93  GroundTheory.Automorphic.CompactSelfAdjoint.exists_real_of_hasEigenvalue
+theorem exists_real_of_hasEigenvalue (hT' : IsSelfAdjoint T) {μ : 𝕜} (hμ : HasEigenvalue (T : E →ₗ[𝕜] E) μ) : ∃ r : ℝ, μ = r
+
+### GroundTheory.AutomorphicForms.CompactSelfAdjoint:98  GroundTheory.Automorphic.CompactSelfAdjoint.finite_eigenvalues_norm_ge
+theorem finite_eigenvalues_norm_ge (hT : IsCompactOperator T) (hT' : IsSelfAdjoint T) {ε : ℝ} (hε : 0 < ε) : {μ : 𝕜 | HasEigenvalue (T : E →ₗ[𝕜] E) μ ∧ ε ≤ ‖μ‖}.Finite
+
+### GroundTheory.AutomorphicForms.CompactSelfAdjoint:139  GroundTheory.Automorphic.CompactSelfAdjoint.countable_eigenvalues
+theorem countable_eigenvalues (hT : IsCompactOperator T) (hT' : IsSelfAdjoint T) : {μ : 𝕜 | HasEigenvalue (T : E →ₗ[𝕜] E) μ}.Countable
+
+### GroundTheory.AutomorphicForms.CompactSelfAdjoint:151  GroundTheory.Automorphic.CompactSelfAdjoint.hasEigenvalue_of_mem_spectrum
+theorem hasEigenvalue_of_mem_spectrum (hT : IsCompactOperator T) {μ : 𝕜} (hμ : μ ∈ spectrum 𝕜 T) (h0 : μ ≠ 0) : HasEigenvalue (T : E →ₗ[𝕜] E) μ
+
+### GroundTheory.AutomorphicForms.CompactSelfAdjoint:155  GroundTheory.Automorphic.CompactSelfAdjoint.finite_spectrum_norm_ge
+theorem finite_spectrum_norm_ge (hT : IsCompactOperator T) (hT' : IsSelfAdjoint T) {ε : ℝ} (hε : 0 < ε) : {μ ∈ spectrum 𝕜 T | ε ≤ ‖μ‖}.Finite
+
+### GroundTheory.AutomorphicForms.CompactSelfAdjoint:160  GroundTheory.Automorphic.CompactSelfAdjoint.countable_spectrum
+theorem countable_spectrum (hT : IsCompactOperator T) (hT' : IsSelfAdjoint T) : (spectrum 𝕜 T).Countable
+
+### GroundTheory.AutomorphicForms.CompactSelfAdjoint:167  GroundTheory.Automorphic.CompactSelfAdjoint.spectrum_subset_range_ofReal
+theorem spectrum_subset_range_ofReal (hT : IsCompactOperator T) (hT' : IsSelfAdjoint T) : spectrum 𝕜 T ⊆ Set.range ((↑) : ℝ → 𝕜)
+
+### GroundTheory.AutomorphicForms.CompactSelfAdjoint:175  GroundTheory.Automorphic.CompactSelfAdjoint.eventually_notMem_spectrum
+theorem eventually_notMem_spectrum (hT : IsCompactOperator T) (hT' : IsSelfAdjoint T) {μ : 𝕜} (hμ : μ ≠ 0) : ∀ᶠ ν in 𝓝[≠] μ, ν ∉ spectrum 𝕜 T
+
+### GroundTheory.AutomorphicForms.CompactSelfAdjoint:198  GroundTheory.Automorphic.CompactSelfAdjoint.exists_hilbertBasis_eigenvectors
+theorem exists_hilbertBasis_eigenvectors {T : E →L[𝕜] E} (hT : IsCompactOperator T) (hT' : IsSelfAdjoint T) : ∃ (s : Set E) (b : HilbertBasis s 𝕜 E), ⇑b = ((↑) : s → E) ∧ ∀ v ∈ s, ∃ μ : ℝ, T v = (μ : 𝕜) • v
+
+### GroundTheory.AutomorphicForms.CompactSelfAdjoint:217  GroundTheory.Automorphic.CompactSelfAdjoint.exists_hilbertBasis_eigenvectors_hasSum
+theorem exists_hilbertBasis_eigenvectors_hasSum {T : E →L[𝕜] E} (hT : IsCompactOperator T) (hT' : IsSelfAdjoint T) : ∃ (s : Set E) (b : HilbertBasis s 𝕜 E) (l : s → ℝ), ⇑b = ((↑) : s → E) ∧ (∀ i, T (b i) = (l i : 𝕜) • b i) ∧ (∀ x, HasSum (fun i => ((l i : 𝕜) * ⟪b i, x⟫) • b i) (T x)) ∧ ∀ ε > 0, {i | ε ≤ |l i|}.Finite
+
+### GroundTheory.AutomorphicForms.CompactSelfAdjoint:245  GroundTheory.Automorphic.CompactSelfAdjoint.orthogonal_iSup_iInf_eigenspaces_eq_bot
+theorem orthogonal_iSup_iInf_eigenspaces_eq_bot {ι : Type*} (T : ι → E →L[𝕜] E) (hT : ∀ i, IsCompactOperator (T i)) (hS : ∀ i, (T i : E →ₗ[𝕜] E).IsSymmetric) (hC : ∀ i j, Commute (T i) (T j)) : (⨆ χ : ι → 𝕜, ⨅ i, eigenspace (T i : E →ₗ[𝕜] E) (χ i))ᗮ = ⊥
+
+### GroundTheory.AutomorphicForms.CompactSelfAdjoint:339  GroundTheory.Automorphic.CompactSelfAdjoint.exists_hilbertBasis_common_eigenvectors
+theorem exists_hilbertBasis_common_eigenvectors {ι : Type*} (T : ι → E →L[𝕜] E) (hT : ∀ i, IsCompactOperator (T i)) (hT' : ∀ i, IsSelfAdjoint (T i)) (hC : ∀ i j, Commute (T i) (T j)) : ∃ (s : Set E) (b : HilbertBasis s 𝕜 E), ⇑b = ((↑) : s → E) ∧ ∀ v ∈ s, ∀ i, ∃ μ : ℝ, T i v = (μ : 𝕜) • v
+
+### GroundTheory.AutomorphicForms.ContragredientTranspose.MatrixSimilarity:92  GroundTheory.Automorphic.ContragredientTranspose.mk_mul_mk
+theorem mk_mul_mk (f g : F[X]) : (Submodule.Quotient.mk f : F[X] ⧸ F[X] ∙ q) * Submodule.Quotient.mk g = Submodule.Quotient.mk (f * g)
+
+### GroundTheory.AutomorphicForms.ContragredientTranspose.MatrixSimilarity:97  GroundTheory.Automorphic.ContragredientTranspose.smul_eq_mk_mul
+theorem smul_eq_mk_mul (r : F[X]) (a : F[X] ⧸ F[X] ∙ q) : r • a = Submodule.Quotient.mk r * a
+
+### GroundTheory.AutomorphicForms.ContragredientTranspose.MatrixSimilarity:183  GroundTheory.Automorphic.ContragredientTranspose.continuous_charpoly_coeff_of_fintype
+theorem continuous_charpoly_coeff_of_fintype (k : ℕ) : Continuous fun A : Matrix m m F => A.charpoly.coeff k
+
+### GroundTheory.AutomorphicForms.ContragredientTranspose.MatrixSimilarity:200  GroundTheory.Automorphic.ContragredientTranspose.continuous_charpoly_coeff
+theorem continuous_charpoly_coeff {n : ℕ} (k : ℕ) : Continuous fun A : Matrix (Fin n) (Fin n) F => A.charpoly.coeff k
+
+### GroundTheory.AutomorphicForms.ContragredientTranspose.MatrixSimilarity:212  GroundTheory.Automorphic.ContragredientTranspose.charpoly_smul_eq_zero
+theorem charpoly_smul_eq_zero (A : Matrix (Fin n) (Fin n) F) (m : Module.AEval' (Matrix.toLin' A)) : A.charpoly • m = 0
+
+### GroundTheory.AutomorphicForms.ContragredientTranspose.MatrixSimilarity:220  GroundTheory.Automorphic.ContragredientTranspose.exists_cyclic_decomposition
+theorem exists_cyclic_decomposition (A : Matrix (Fin n) (Fin n) F) : ∃ (ι : Type u) (_ : Fintype ι) (q : ι → F[X]), (∀ i, q i ≠ 0) ∧ (∀ i, q i ∣ A.charpoly) ∧ Nonempty (Module.AEval' (Matrix.toLin' A) ≃ₗ[F[X]] DirectSum ι fun i => F[X] ⧸ F[X] ∙ q i)
+
+### GroundTheory.AutomorphicForms.ContragredientTranspose.MatrixSimilarity:308  GroundTheory.Automorphic.ContragredientTranspose.exists_isSymm_of_form
+theorem exists_isSymm_of_form (A : Matrix (Fin n) (Fin n) F) (B : (Fin n → F) → (Fin n → F) → F) (hBsymm : ∀ v w, B v w = B w v) (hBaddl : ∀ v v' w, B (v + v') w = B v w + B v' w) (hBsmull : ∀ (c : F) v w, B (c • v) w = c * B v w) (hBA : ∀ v w, B (A.mulVec v) w = B v (A.mulVec w)) (hBnd : ∀ w, (∀ v, B v w = 0) → w = 0) : ∃ S : GL (Fin n) F, (S : Matrix (Fin n) (Fin n) F).IsSymm ∧ (S : Matrix (Fin n) (Fin n) F) * A = Aᵀ * S
+
+### GroundTheory.AutomorphicForms.ContragredientTranspose.MatrixSimilarity:372  GroundTheory.Automorphic.ContragredientTranspose.exists_isSymm_mul_eq_transpose_mul
+theorem exists_isSymm_mul_eq_transpose_mul (A : Matrix (Fin n) (Fin n) F) : ∃ S : GL (Fin n) F, (S : Matrix (Fin n) (Fin n) F).IsSymm ∧ (S : Matrix (Fin n) (Fin n) F) * A = Aᵀ * S
+
+### GroundTheory.AutomorphicForms.ContragredientTranspose.MatrixSimilarity:412  GroundTheory.Automorphic.ContragredientTranspose.exists_conj_of_equiv
+theorem exists_conj_of_equiv {x y : GL (Fin n) F} (E : Module.AEval' (Matrix.toLin' (x : Matrix (Fin n) (Fin n) F)) ≃ₗ[F[X]] Module.AEval' (Matrix.toLin' (y : Matrix (Fin n) (Fin n) F))) : ∃ g : GL (Fin n) F, x = g * y * g⁻¹
+
+### GroundTheory.AutomorphicForms.ContragredientTranspose.MatrixSimilarity:459  GroundTheory.Automorphic.ContragredientTranspose.finite_monic_dvd
+theorem finite_monic_dvd {f : F[X]} (hf : f ≠ 0) : {g : F[X] | g.Monic ∧ g ∣ f}.Finite
+
+### GroundTheory.AutomorphicForms.ContragredientTranspose.MatrixSimilarity:474  GroundTheory.Automorphic.ContragredientTranspose.exists_countable_conj_charpoly
+theorem exists_countable_conj_charpoly (f : F[X]) : ∃ s : Set (GL (Fin n) F), s.Countable ∧ ∀ x : GL (Fin n) F, (x : Matrix (Fin n) (Fin n) F).charpoly = f → ∃ y ∈ s, ∃ g : GL (Fin n) F, x = g * y * g⁻¹
+
+### GroundTheory.AutomorphicForms.CuspidalProjection.Unfold:30  GroundTheory.Automorphic.CuspidalProjection.IsProperHom.map_zero
+theorem map_zero : u 0 = 1
+
+### GroundTheory.AutomorphicForms.CuspidalProjection.Unfold:35  GroundTheory.Automorphic.CuspidalProjection.IsProperHom.map_neg_mul
+theorem map_neg_mul (b : B) (z : G) : u (-b) * (u b * z) = z
+
+### GroundTheory.AutomorphicForms.CuspidalProjection.Unfold:38  GroundTheory.Automorphic.CuspidalProjection.IsProperHom.isCompact_setOf_mul_mem
+theorem isCompact_setOf_mul_mem {C : Set G} (hC : IsCompact C) (z : G) : IsCompact {b | u b * z ∈ C}
+
+### GroundTheory.AutomorphicForms.DefiniteClassNumber.Reduction:30  GroundTheory.Automorphic.eq_zero_of_forall_inner_eq_zero
+theorem eq_zero_of_forall_inner_eq_zero {s : Set X} (hs : span ℝ s = ⊤) {y : X} (hy : ∀ x ∈ s, ⟪y, x⟫ = 0) : y = 0
+
+### GroundTheory.AutomorphicForms.DixmierMalliavinLineKernel:123  GroundTheory.Automorphic.LineKernel.integral_eq_intervalIntegral
+theorem integral_eq_intervalIntegral {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {g : ℝ → E} {b : ℝ} (hb : 0 ≤ b) (hg : ∀ t ∉ Icc 0 b, g t = 0) : ∫ t, g t = ∫ t in (0 : ℝ)..b, g t
+
+### GroundTheory.AutomorphicForms.DixmierMalliavinLineKernel:438  GroundTheory.Automorphic.LineKernel.tendsto_pow_mul_exp_neg_mul
+theorem tendsto_pow_mul_exp_neg_mul {r : ℝ} (hr : 0 < r) (q : ℕ) : Tendsto (fun a : ℝ => (1 + a) ^ q * exp (-a * r)) atTop (𝓝 0)
+
+### GroundTheory.AutomorphicForms.DixmierMalliavinLineLimit:10  GroundTheory.Automorphic.WeakLimit.integral_fourier_mul_eq
+theorem integral_fourier_mul_eq {f g : ℝ → ℂ} (hf : Integrable f) (hg : Integrable g) : ∫ ξ, 𝓕 f ξ * g ξ = ∫ x, f x * 𝓕 g x
+
+### GroundTheory.AutomorphicForms.DixmierMalliavinLineLimit:15  GroundTheory.Automorphic.WeakLimit.integral_fourierInv_mul_eq
+theorem integral_fourierInv_mul_eq {f g : ℝ → ℂ} (hf : Integrable f) (hg : Integrable g) : ∫ ξ, 𝓕⁻ f ξ * g ξ = ∫ x, f x * 𝓕⁻ g x
+
+### GroundTheory.AutomorphicForms.DixmierMalliavinLineLimit:22  GroundTheory.Automorphic.WeakLimit.norm_fourier_le
+theorem norm_fourier_le (f : ℝ → ℂ) (ξ : ℝ) : ‖𝓕 f ξ‖ ≤ ∫ x, ‖f x‖
+
+### GroundTheory.AutomorphicForms.DixmierMalliavinLineLimit:25  GroundTheory.Automorphic.WeakLimit.continuous_fourier_of_integrable
+theorem continuous_fourier_of_integrable {f : ℝ → ℂ} (hf : Integrable f) : Continuous (𝓕 f)
+
+### GroundTheory.AutomorphicForms.DixmierMalliavinLineLimit:28  GroundTheory.Automorphic.WeakLimit.exists_smooth_near
+theorem exists_smooth_near (a b : ℝ) {ψ : ℝ → ℂ} (hψ : Continuous ψ) {η : ℝ} (hη : 0 < η) : ∃ ψ' : ℝ → ℂ, ContDiff ℝ ∞ ψ' ∧ HasCompactSupport ψ' ∧ ∀ t ∈ Icc a b, ‖ψ t - ψ' t‖ ≤ η
+
+### GroundTheory.AutomorphicForms.DixmierMalliavinLineLimit:61  GroundTheory.Automorphic.exists_smooth_weak_limit
+theorem exists_smooth_weak_limit {K : ℕ → ℝ → ℝ} {a b : ℝ} (hKi : ∀ N, Integrable (K N)) (hK0 : ∀ N t, 0 ≤ K N t) (hK1 : ∀ N, ∫ t, K N t ≤ 1) (hKs : ∀ N, Function.support (K N) ⊆ Icc a b) (hconv : ∀ ξ : ℝ, ∃ l : ℂ, Tendsto (fun N => 𝓕 (fun t => (K N t : ℂ)) ξ) atTop (𝓝 l)) (hdecay : ∀ m : ℕ, ∃ C N₀, ∀ N ≥ N₀, ∀ ξ : ℝ, ‖𝓕 (fun t => (K N t : ℂ)) ξ‖ ≤ C * (1 + |ξ|) ^ (-(m : ℝ))) : ∃ g : ℝ → ℂ, ContDiff ℝ ∞ g ∧ tsupport g ⊆ Icc a b ∧ ∀ ψ : ℝ → ℂ, Continuous ψ → Tendsto (fun N => ∫ t, ψ t * K N t) atTop (𝓝 (∫ t, ψ t * g t))
+
+### GroundTheory.AutomorphicForms.FinePartition:36  GroundTheory.Automorphic.MeasurablePartition.eq_empty_of_le
+theorem eq_empty_of_le {i : ℕ} (hi : p.n ≤ i) : p.E i = ∅
+
+### GroundTheory.AutomorphicForms.FinePartition:41  GroundTheory.Automorphic.MeasurablePartition.biUnion_eq
+theorem biUnion_eq : ⋃ i ∈ Finset.range p.n, p.E i = univ
+
+### GroundTheory.AutomorphicForms.FinePartition:164  GroundTheory.Automorphic.measurable_of_continuous_prod
+theorem measurable_of_continuous_prod {β : Type*} [PseudoMetricSpace β] [MeasurableSpace β] [BorelSpace β] {k : X × Y → β} (hk : Continuous k) : Measurable k
+
+### GroundTheory.AutomorphicForms.FiniteBruhat:73  GroundTheory.Automorphic.mul_one_add_vecMulVec_apply
+lemma mul_one_add_vecMulVec_apply (M : Matrix (Fin n) (Fin n) k) (j : Fin n) (v : Fin n → k) (r c : Fin n) : (M * (1 + vecMulVec (Pi.single j 1) v)) r c = M r c + M r j * v c
+
+### GroundTheory.AutomorphicForms.FiniteBruhat:78  GroundTheory.Automorphic.one_add_vecMulVec_mul_apply
+lemma one_add_vecMulVec_mul_apply (M : Matrix (Fin n) (Fin n) k) (i : Fin n) (u : Fin n → k) (r c : Fin n) : ((1 + vecMulVec u (Pi.single i 1)) * M) r c = M r c + u r * M i c
+
+### GroundTheory.AutomorphicForms.FiniteBruhat:83  GroundTheory.Automorphic.perm_eq_one_of_forall_le
+lemma perm_eq_one_of_forall_le (π : Equiv.Perm (Fin n)) (h : ∀ x, π x ≤ x) : π = 1
+
+### GroundTheory.AutomorphicForms.GL2.GJGlobalEntire:14  GroundTheory.Automorphic.GJGlobal.locallyIntegrableOn_indicator_Ici
+theorem locallyIntegrableOn_indicator_Ici (hJ : ContinuousOn J (Ioi 0)) : LocallyIntegrableOn ((Ici (1 : ℝ)).indicator J) (Ioi 0)
+
+### GroundTheory.AutomorphicForms.GL2.GJGlobalEntire:20  GroundTheory.Automorphic.GJGlobal.locallyIntegrableOn_indicator_Ioi
+theorem locallyIntegrableOn_indicator_Ioi (hJ : ContinuousOn J (Ioi 0)) : LocallyIntegrableOn ((Ioi (1 : ℝ)).indicator J) (Ioi 0)
+
+### GroundTheory.AutomorphicForms.GL2.GJGlobalEntire:26  GroundTheory.Automorphic.GJGlobal.isBigO_indicator_atTop
+theorem isBigO_indicator_atTop {A : Set ℝ} (hA : A ∈ atTop) {a : ℝ} (h : J =O[atTop] (· ^ (-a))) : A.indicator J =O[atTop] (· ^ (-a))
+
+### GroundTheory.AutomorphicForms.GL2.GJGlobalEntire:32  GroundTheory.Automorphic.GJGlobal.isBigO_indicator_nhdsGT
+theorem isBigO_indicator_nhdsGT {A : Set ℝ} (hA : A ⊆ Ici 1) (b : ℝ) : A.indicator J =O[𝓝[>] 0] (· ^ (-b))
+
+### GroundTheory.AutomorphicForms.GL2.GJGlobalEntire:38  GroundTheory.Automorphic.GJGlobal.differentiable_mellin_indicator
+theorem differentiable_mellin_indicator {A : Set ℝ} (hA : A ⊆ Ici 1) (hAt : A ∈ atTop) (hloc : LocallyIntegrableOn (A.indicator J) (Ioi 0)) (hd : ∀ a : ℝ, J =O[atTop] (· ^ (-a))) : Differentiable ℂ (mellin (A.indicator J))
+
+### GroundTheory.AutomorphicForms.GL2.GJGlobalEntire:45  GroundTheory.Automorphic.GJGlobal.mellinConvergent_indicator
+theorem mellinConvergent_indicator {A : Set ℝ} (hA : MeasurableSet A) {w : ℂ} (hc : MellinConvergent J w) : MellinConvergent (A.indicator J) w
+
+### GroundTheory.AutomorphicForms.GL2.GJGlobalEntire:55  GroundTheory.Automorphic.GJGlobal.mellin_eq_add_of_convergent
+theorem mellin_eq_add_of_convergent {w : ℂ} (hc : MellinConvergent J w) : mellin J w = mellin ((Ici (1 : ℝ)).indicator J) w + mellin ((Iio (1 : ℝ)).indicator J) w
+
+### GroundTheory.AutomorphicForms.GL2.GJGlobalEntire:68  GroundTheory.Automorphic.GJGlobal.mellin_indicator_Iio_eq
+theorem mellin_indicator_Iio_eq {κ : ℝ} (hsym : ∀ t : ℝ, 0 < t → J t = (t : ℂ) ^ (-(κ : ℂ)) * J' t⁻¹) (w : ℂ) : mellin ((Iio (1 : ℝ)).indicator J) w = mellin ((Ioi (1 : ℝ)).indicator J') (κ - w)
+
+### GroundTheory.AutomorphicForms.GL2.GJGlobalEntire:88  GroundTheory.Automorphic.GJGlobal.mellin_indicator_Ici_eq_Ioi
+theorem mellin_indicator_Ici_eq_Ioi (f : ℝ → ℂ) (w : ℂ) : mellin ((Ici (1 : ℝ)).indicator f) w = mellin ((Ioi (1 : ℝ)).indicator f) w
+
+### GroundTheory.AutomorphicForms.GL2.GJGlobalEntire:101  GroundTheory.Automorphic.GJGlobal.symm_of_symm
+theorem symm_of_symm {κ : ℝ} (hsym : ∀ t : ℝ, 0 < t → J t = (t : ℂ) ^ (-(κ : ℂ)) * J' t⁻¹) : ∀ t : ℝ, 0 < t → J' t = (t : ℂ) ^ (-(κ : ℂ)) * J t⁻¹
+
+### GroundTheory.AutomorphicForms.GL2.GJGlobalEntire:110  GroundTheory.Automorphic.GJGlobal.exists_entire_of_symm
+theorem exists_entire_of_symm {κ : ℝ} (hJ : ContinuousOn J (Ioi 0)) (hJ' : ContinuousOn J' (Ioi 0)) (hsym : ∀ t : ℝ, 0 < t → J t = (t : ℂ) ^ (-(κ : ℂ)) * J' t⁻¹) (hdJ : ∀ a : ℝ, J =O[atTop] (· ^ (-a))) (hdJ' : ∀ a : ℝ, J' =O[atTop] (· ^ (-a))) : ∃ Λ Λ' : ℂ → ℂ, Differentiable ℂ Λ ∧ Differentiable ℂ Λ' ∧ (∀ w, MellinConvergent J w → Λ w = mellin J w) ∧ (∀ w, MellinConvergent J' w → Λ' w = mellin J' w) ∧ ∀ w, Λ w = Λ' (κ - w)
+
+### GroundTheory.AutomorphicForms.GL2.GJGlobalRank:11  GroundTheory.Automorphic.GJGlobal.rank_eq_iff_isUnit_det
+theorem rank_eq_iff_isUnit_det (ξ : Matrix (Fin n) (Fin n) K) : ξ.rank = n ↔ IsUnit ξ.det
+
+### GroundTheory.AutomorphicForms.GL2.GJGlobalRank:25  GroundTheory.Automorphic.GJGlobal.rank_lt_of_det_eq_zero
+theorem rank_lt_of_det_eq_zero {ξ : Matrix (Fin n) (Fin n) K} (h : ξ.det = 0) : ξ.rank < n
+
+### GroundTheory.AutomorphicForms.GL2.GJGlobalRank:34  GroundTheory.Automorphic.GJGlobal.rank_eq_zero_iff
+theorem rank_eq_zero_iff {ξ : Matrix (Fin n) (Fin n) K} : ξ.rank = 0 ↔ ξ = 0
+
+### GroundTheory.AutomorphicForms.GL2.GJGlobalRank:53  GroundTheory.Automorphic.GJGlobal.tsum_eq_tsum_GL_add
+theorem tsum_eq_tsum_GL_add {f : Matrix (Fin n) (Fin n) K → E} (hf : Summable f) : ∑' ξ, f ξ = ∑' γ : GL (Fin n) K, f γ + ∑' ξ : {ξ : Matrix (Fin n) (Fin n) K // ξ.det = 0}, f ξ
+
+### GroundTheory.AutomorphicForms.GL2.GJGlobalRank:64  GroundTheory.Automorphic.GJGlobal.tsum_det_eq_zero_eq_sum_rank
+theorem tsum_det_eq_zero_eq_sum_rank {f : Matrix (Fin n) (Fin n) K → E} (hf : Summable f) : ∑' ξ : {ξ : Matrix (Fin n) (Fin n) K // ξ.det = 0}, f ξ = ∑ r : Fin n, ∑' ξ : {ξ : Matrix (Fin n) (Fin n) K // ξ.rank = r}, f ξ
+
+### GroundTheory.AutomorphicForms.GL2.GJGlobalUnfoldCount:12  GroundTheory.Automorphic.GJGlobal.Unfold.tsum_eq_tsum_quotient
+theorem tsum_eq_tsum_quotient {α : Type*} [Group α] (s : Subgroup α) (f : α → ℝ≥0∞) : ∑' a, f a = ∑' c : α ⧸ s, ∑' b : s, f (c.out * b)
+
+### GroundTheory.AutomorphicForms.GL2.GJGlobalUnfoldCount:245  GroundTheory.Automorphic.GJGlobal.Unfold.Hyp.enorm_indicator_real
+theorem enorm_indicator_real (x : G) : ‖((E.indicator (1 : G → ℝ) x : ℝ) : ℂ)‖ₑ = E.indicator (1 : G → ℝ≥0∞) x
+
+### GroundTheory.AutomorphicForms.GL2.GJGlobalUnfoldCount:251  GroundTheory.Automorphic.GJGlobal.Unfold.Hyp.enorm_toReal_coe
+theorem enorm_toReal_coe {w : ℝ≥0∞} (hw : w ≠ ∞) : ‖((w.toReal : ℝ) : ℂ)‖ₑ = w
+
+### GroundTheory.AutomorphicForms.GL2.GJLaurentIdeal:66  GroundTheory.Automorphic.GodementJacquet.eval_div_algebraMap
+theorem eval_div_algebraMap (P Q : ℂ[X]) {x : ℂ} (hx : Q.eval x ≠ 0) : (algebraMap ℂ[X] (RatFunc ℂ) P / algebraMap ℂ[X] (RatFunc ℂ) Q).eval (RingHom.id ℂ) x = P.eval x / Q.eval x
+
+### GroundTheory.AutomorphicForms.GL2.GJLaurentIdeal:89  GroundTheory.Automorphic.GodementJacquet.eq_of_eval_eq
+theorem eq_of_eval_eq {R₁ R₂ : RatFunc ℂ} {ε : ℝ} (hε : 0 < ε) (h : ∀ x : ℂ, x ≠ 0 → ‖x‖ < ε → R₁.eval (RingHom.id ℂ) x = R₂.eval (RingHom.id ℂ) x) : R₁ = R₂
+
+### GroundTheory.AutomorphicForms.GL2.GJLaurentIdeal:132  GroundTheory.Automorphic.GodementJacquet.X_pow_mul_mem
+theorem X_pow_mul_mem (hX : ∀ R ∈ I, RatFunc.X * R ∈ I) (k : ℕ) {R : RatFunc ℂ} (hR : R ∈ I) : RatFunc.X ^ k * R ∈ I
+
+### GroundTheory.AutomorphicForms.GL2.GJLaurentIdeal:140  GroundTheory.Automorphic.GodementJacquet.X_inv_pow_mul_mem
+theorem X_inv_pow_mul_mem (hXinv : ∀ R ∈ I, RatFunc.X⁻¹ * R ∈ I) (k : ℕ) {R : RatFunc ℂ} (hR : R ∈ I) : RatFunc.X⁻¹ ^ k * R ∈ I
+
+### GroundTheory.AutomorphicForms.GL2.GJLaurentIdeal:148  GroundTheory.Automorphic.GodementJacquet.algebraMap_mul_mem
+theorem algebraMap_mul_mem (hX : ∀ R ∈ I, RatFunc.X * R ∈ I) (P : ℂ[X]) {R : RatFunc ℂ} (hR : R ∈ I) : algebraMap ℂ[X] (RatFunc ℂ) P * R ∈ I
+
+### GroundTheory.AutomorphicForms.GL2Classical.Iwasawa:11  GroundTheory.Automorphic.GL2Classical.det_fin_two_kmat
+theorem det_fin_two_kmat (w : ℂ) : (!![w.re, -w.im; w.im, w.re] : Matrix (Fin 2) (Fin 2) ℝ).det = Complex.normSq w
+
+### GroundTheory.AutomorphicForms.GL2Classical.Iwasawa:75  GroundTheory.Automorphic.GL2Classical.re_smul_I
+theorem re_smul_I {h : GL (Fin 2) ℝ} (hpos : 0 < h.det.val) : (h • I).re = ((h : Matrix (Fin 2) (Fin 2) ℝ) 0 0 * h 1 0 + h 0 1 * h 1 1) / Complex.normSq (denom h (I : ℂ))
+
+### GroundTheory.AutomorphicForms.GL2Classical.Iwasawa:83  GroundTheory.Automorphic.GL2Classical.im_smul_I
+theorem im_smul_I {h : GL (Fin 2) ℝ} (hpos : 0 < h.det.val) : (h • I).im = h.det.val / Complex.normSq (denom h (I : ℂ))
+
+### GroundTheory.AutomorphicForms.GL2Classical.Periodic:13  GroundTheory.Automorphic.GL2Classical.integral_periodic_eq_of_im
+theorem integral_periodic_eq_of_im {G : ℂ → ℂ} (hG : DifferentiableOn ℂ G {w | 0 < w.im}) {T : ℝ} (hper : ∀ w : ℂ, 0 < w.im → G (w + T) = G w) (x₀ : ℝ) {y₁ y₂ : ℝ} (hy₁ : 0 < y₁) (hy₂ : 0 < y₂) : ∫ x in x₀..x₀ + T, G (x + y₁ * I) = ∫ x in x₀..x₀ + T, G (x + y₂ * I)
+
+### GroundTheory.AutomorphicForms.GL2Classical.Periodic:47  GroundTheory.Automorphic.GL2Classical.integral_vadd_eq_zero
+theorem integral_vadd_eq_zero {F : ℍ → ℂ} (hF : MDiff F) {T : ℝ} (hT : 0 < T) (hper : ∀ z : ℍ, F (T +ᵥ z) = F z) (hzero : IsZeroAtImInfty F) (z : ℍ) : ∫ t in (0 : ℝ)..T, F (t +ᵥ z) = 0
+
+### GroundTheory.AutomorphicForms.GL2Classical.UnitaryEigenSpan:50  GroundTheory.Automorphic.GL2Classical.card_orbit_pos
+theorem card_orbit_pos {K : Subgroup G} {v : E} (hv : (Set.range fun k : K => ρ k v).Finite) : 0 < hv.toFinset.card
+
+### GroundTheory.AutomorphicForms.GL2Classical.UnitaryEigenSpan:58  GroundTheory.Automorphic.GL2Classical.mem_of_stable_of_eigen
+theorem mem_of_stable_of_eigen (hT : T = Submodule.span ℂ (Set.range fun g : G => ρ g φ)) (hinj : ∀ v ∈ T, ι v = 0 → v = 0) (hunit : ∀ g : G, ∀ v ∈ T, ∀ w ∈ T, ⟪ι (ρ g v), ι (ρ g w)⟫_ℂ = ⟪ι v, ι w⟫_ℂ) (K : Subgroup G) (hφK : ∀ k : K, ρ k φ = φ) (horb : ∀ v ∈ T, (Set.range fun k : K => ρ k v).Finite) (hfd : FiniteDimensional ℂ ↥(T ⊓ Representation.invariants (ρ.comp K.subtype))) {J : Type*} (S : J → Finset G) (ev : J → ℂ) (hφS : ∀ j, ∑ g ∈ S j, ρ g φ = ev j • φ) (hP : ∀ z ∈ T, (∀ k : K, ρ k z = z) → (∀ j, ∑ g ∈ S j, ρ g z = ev j • z) → ∃ c : ℂ, z = c • φ) (Y : Submodule ℂ E) (hYT : Y ≤ T) (hY : ∀ g, ∀ y ∈ Y, ρ g y ∈ Y) (hY0 : Y ≠ ⊥) : φ ∈ Y
+
+### GroundTheory.AutomorphicForms.GL2Classical.WeightOperators:11  GroundTheory.Automorphic.GL2Classical.J_pow_apply
+theorem J_pow_apply (hJR : Jj * Rr - Rr * Jj = (2 * I) • Rr) {κ : ℂ} {t : E} (ht : Jj t = κ • t) (j : ℕ) : Jj ((Rr ^ j) t) = (κ + 2 * I * j) • (Rr ^ j) t
+
+### GroundTheory.AutomorphicForms.GL2Classical.WeightOperators:26  GroundTheory.Automorphic.GL2Classical.L_pow_succ_apply
+theorem L_pow_succ_apply (hJR : Jj * Rr - Rr * Jj = (2 * I) • Rr) (hLR : Ll * Rr - Rr * Ll = (4 * I) • Jj) {κ : ℂ} {t : E} (ht : Jj t = κ • t) (hL : Ll t = 0) (j : ℕ) : Ll ((Rr ^ (j + 1)) t) = (4 * I * (j + 1) * (κ + I * j)) • (Rr ^ j) t
+
+### GroundTheory.AutomorphicForms.GL2Classical.WeightOperators:49  GroundTheory.Automorphic.GL2Classical.L_pow_R_pow_apply
+theorem L_pow_R_pow_apply (hJR : Jj * Rr - Rr * Jj = (2 * I) • Rr) (hLR : Ll * Rr - Rr * Ll = (4 * I) • Jj) {κ : ℂ} {t : E} (ht : Jj t = κ • t) (hL : Ll t = 0) (j : ℕ) : (Ll ^ j) ((Rr ^ j) t) = (∏ m ∈ Finset.range j, (4 * I * (m + 1) * (κ + I * m))) • t
+
+### GroundTheory.AutomorphicForms.GL2Classical.WeightOperators:58  GroundTheory.Automorphic.GL2Classical.prod_ne_zero_of_pos
+theorem prod_ne_zero_of_pos {k : ℤ} (hk : 0 < k) (j : ℕ) : (∏ m ∈ Finset.range j, (4 * I * (m + 1) * (I * k + I * m))) ≠ 0
+
+### GroundTheory.AutomorphicForms.GL2Classical.WeightOperators:76  GroundTheory.Automorphic.GL2Classical.mem_of_sum_mem_of_eigen
+theorem mem_of_sum_mem_of_eigen {W : Submodule ℂ E} (hW : ∀ v ∈ W, Jj v ∈ W) {ι : Type*} [DecidableEq ι] (s : Finset ι) : ∀ (v : ι → E) (μ : ι → ℂ), (∀ i ∈ s, Jj (v i) = μ i • v i) → Set.InjOn μ s → ∑ i ∈ s, v i ∈ W → ∀ i ∈ s, v i ∈ W
+
+### GroundTheory.AutomorphicForms.GeometricLemmaAverage:16  GroundTheory.Automorphic.Parabolic.sum_quotient_out_of_le
+theorem sum_quotient_out_of_le {s t : Subgroup α} (h : s ≤ t) [Fintype (α ⧸ s)] [Fintype (α ⧸ t)] [Fintype (t ⧸ s.subgroupOf t)] (φ : α → W) (hφ : ∀ a, ∀ b ∈ t, φ (a * b) = φ a) : ∑ q : α ⧸ s, φ (Quotient.out q) = (s.relIndex t) • ∑ q : α ⧸ t, φ (Quotient.out q)
+
+### GroundTheory.AutomorphicForms.GeometricLemmaAverage:279  GroundTheory.Automorphic.Parabolic.relIndex_ne_zero_of_le_right
+theorem relIndex_ne_zero_of_le_right {H K K' : Subgroup G} (hKK' : K ≤ K') (h : H.relIndex K' ≠ 0) : H.relIndex K ≠ 0
+
+### GroundTheory.AutomorphicForms.GeometricLemmaAverage:344  GroundTheory.Automorphic.Parabolic.relIndex_ne_zero_of_isCompact_of_isOpen
+theorem relIndex_ne_zero_of_isCompact_of_isOpen {K L : Subgroup G} (hK : IsCompact (K : Set G)) (hL : IsOpen (L : Set G)) : L.relIndex K ≠ 0
+
+### GroundTheory.AutomorphicForms.GeometricLemmaOrbit:40  GroundTheory.Automorphic.Parabolic.isOpenMap_doubleCoset
+theorem isOpenMap_doubleCoset (hP : IsClosed (P : Set G)) (hQ : IsClosed (Q : Set G)) (x : G) (hC : IsLocallyClosed (doubleCoset x (P : Set G) Q)) : IsOpenMap (fun pq : P × Q => (⟨(pq.1 : G) * x * pq.2, mem_doubleCoset.2 ⟨pq.1, pq.1.2, pq.2, pq.2.2, rfl⟩⟩ : doubleCoset x (P : Set G) Q))
+
+### GroundTheory.AutomorphicForms.GeometricLemmaOrbit:75  GroundTheory.Automorphic.Parabolic.exists_nhds_inter_doubleCoset_subset
+theorem exists_nhds_inter_doubleCoset_subset (hP : IsClosed (P : Set G)) (hQ : IsClosed (Q : Set G)) {x : G} (hC : IsLocallyClosed (doubleCoset x (P : Set G) Q)) {y : G} (hy : y ∈ doubleCoset x (P : Set G) Q) {UP UQ : Set G} (hUP : UP ∈ 𝓝 (1 : G)) (hUQ : UQ ∈ 𝓝 (1 : G)) : ∃ V ∈ 𝓝 y, ∀ z ∈ V, z ∈ doubleCoset x (P : Set G) Q → ∃ p ∈ P, p ∈ UP ∧ ∃ q ∈ Q, q ∈ UQ ∧ z = p * y * q
+
+### GroundTheory.AutomorphicForms.GeometricLemmaOrbit:103  GroundTheory.Automorphic.Parabolic.exists_isCompact_subset_doubleCoset
+theorem exists_isCompact_subset_doubleCoset (hP : IsClosed (P : Set G)) (hQ : IsClosed (Q : Set G)) {x : G} (hC : IsLocallyClosed (doubleCoset x (P : Set G) Q)) {Kc : Set G} (hK : IsCompact Kc) (hKC : Kc ⊆ doubleCoset x (P : Set G) Q) : ∃ L : Set G, IsCompact L ∧ L ⊆ Q ∧ ∀ z ∈ Kc, ∃ p ∈ P, ∃ l ∈ L, z = p * x * l
+
+### GroundTheory.AutomorphicForms.HarishChandraCentre.Symmetric:37  GroundTheory.Automorphic.HarishChandra.aeval_mem_of_forall_mem
+theorem aeval_mem_of_forall_mem {A : Subalgebra ℂ (MvPolynomial (Fin n) ℂ)} (f : Fin n → MvPolynomial (Fin n) ℂ) (hf : ∀ i, f i ∈ A) (F : MvPolynomial (Fin n) ℂ) : aeval f F ∈ A
+
+### GroundTheory.AutomorphicForms.HarishChandraCentre.Symmetric:103  GroundTheory.Automorphic.HarishChandra.isHomogeneous_psum
+theorem isHomogeneous_psum (k : ℕ) : (psum (Fin n) ℂ k).IsHomogeneous k
+
+### GroundTheory.AutomorphicForms.HarishChandraCentre.Symmetric:109  GroundTheory.Automorphic.HarishChandra.symmetric_le_adjoin
+theorem symmetric_le_adjoin (q : Fin n → MvPolynomial (Fin n) ℂ) (hq : ∀ k, (q k).IsSymmetric) (hdeg : ∀ k, (q k - psum (Fin n) ℂ ((k : ℕ) + 1)).totalDegree < (k : ℕ) + 1) (d : ℕ) : ∀ p : MvPolynomial (Fin n) ℂ, p.IsSymmetric → p.totalDegree ≤ d → p ∈ Algebra.adjoin ℂ (Set.range q)
+
+### GroundTheory.AutomorphicForms.HarishChandraCentre.Symmetric:201  GroundTheory.Automorphic.HarishChandra.adjoin_eq_symmetricSubalgebra
+theorem adjoin_eq_symmetricSubalgebra (q : Fin n → MvPolynomial (Fin n) ℂ) (hq : ∀ k, (q k).IsSymmetric) (hdeg : ∀ k, (q k - psum (Fin n) ℂ ((k : ℕ) + 1)).totalDegree < (k : ℕ) + 1) : Algebra.adjoin ℂ (Set.range q) = symmetricSubalgebra (Fin n) ℂ
+
+### GroundTheory.AutomorphicForms.HilbertSchmidt:12  GroundTheory.Automorphic.ennreal_add_sq_le
+theorem ennreal_add_sq_le (a b : ℝ≥0∞) : (a + b) ^ 2 ≤ 2 * a ^ 2 + 2 * b ^ 2
+
+### GroundTheory.AutomorphicForms.HilbertSchmidt:24  GroundTheory.Automorphic.ennreal_mul_le_sq_add_sq
+theorem ennreal_mul_le_sq_add_sq (a b : ℝ≥0∞) : a * b ≤ a ^ 2 + b ^ 2
+
+### GroundTheory.AutomorphicForms.HilbertSchmidt:42  GroundTheory.Automorphic.enorm_inner_le
+theorem enorm_inner_le (x y : H) : ‖⟪x, y⟫_𝕜‖ₑ ≤ ‖x‖ₑ * ‖y‖ₑ
+
+### GroundTheory.AutomorphicForms.HilbertSchmidt:46  GroundTheory.Automorphic.enorm_inner_comm
+theorem enorm_inner_comm (x y : H) : ‖⟪x, y⟫_𝕜‖ₑ = ‖⟪y, x⟫_𝕜‖ₑ
+
+### GroundTheory.AutomorphicForms.HilbertSchmidt:49  GroundTheory.Automorphic.enorm_apply_le
+theorem enorm_apply_le (A : H →L[𝕜] K) (x : H) : ‖A x‖ₑ ≤ ‖A‖ₑ * ‖x‖ₑ
+
+### GroundTheory.AutomorphicForms.HilbertSchmidt:53  GroundTheory.Automorphic.enorm_sq_eq_tsum
+theorem enorm_sq_eq_tsum {ι : Type*} (b : HilbertBasis ι 𝕜 H) (x : H) : ‖x‖ₑ ^ 2 = ∑' i, ‖⟪b i, x⟫_𝕜‖ₑ ^ 2
+
+### GroundTheory.AutomorphicForms.HilbertSchmidt:66  GroundTheory.Automorphic.tsum_enorm_sq_eq_adjoint
+theorem tsum_enorm_sq_eq_adjoint {ι κ : Type*} (b : HilbertBasis ι 𝕜 H) (c : HilbertBasis κ 𝕜 K) (T : H →L[𝕜] K) : ∑' i, ‖T (b i)‖ₑ ^ 2 = ∑' j, ‖(T†) (c j)‖ₑ ^ 2
+
+### GroundTheory.AutomorphicForms.LocallyProfinite:15  GroundTheory.Automorphic.exists_isCompact_isOpen_subset
+theorem exists_isCompact_isOpen_subset {x : X} {U : Set X} (hU : U ∈ 𝓝 x) : ∃ V : Set X, IsCompact V ∧ IsOpen V ∧ x ∈ V ∧ V ⊆ U
+
+### GroundTheory.AutomorphicForms.LocallyProfinite:28  GroundTheory.Automorphic.exists_openSubgroup_isCompact_subset
+theorem exists_openSubgroup_isCompact_subset {U : Set G} (hU : U ∈ 𝓝 (1 : G)) : ∃ K : OpenSubgroup G, IsCompact (K : Set G) ∧ (K : Set G) ⊆ U
+
+### GroundTheory.AutomorphicForms.LocallyProfinite:54  GroundTheory.Automorphic.hasBasis_nhds_one_compactOpenSubgroup
+theorem hasBasis_nhds_one_compactOpenSubgroup : (𝓝 (1 : G)).HasBasis (fun K : OpenSubgroup G => IsCompact (K : Set G)) (fun K => (K : Set G))
+
+### GroundTheory.AutomorphicForms.LocallyProfinite:60  GroundTheory.Automorphic.hasBasis_nhds_compactOpenSubgroup
+theorem hasBasis_nhds_compactOpenSubgroup (g : G) : (𝓝 g).HasBasis (fun K : OpenSubgroup G => IsCompact (K : Set G)) (fun K => g • (K : Set G))
+
+### GroundTheory.AutomorphicForms.LocallyProfinite:68  GroundTheory.Automorphic.exists_compactOpenSubgroup
+theorem exists_compactOpenSubgroup : ∃ K : OpenSubgroup G, IsCompact (K : Set G)
+
+### GroundTheory.AutomorphicForms.LocallyProfinite:74  GroundTheory.Automorphic.isCompact_inf_left
+theorem isCompact_inf_left {K L : OpenSubgroup G} (hK : IsCompact (K : Set G)) : IsCompact ((K ⊓ L : OpenSubgroup G) : Set G)
+
+### GroundTheory.AutomorphicForms.LocallyProfinite:79  GroundTheory.Automorphic.exists_compactOpenSubgroup_normalized
+theorem exists_compactOpenSubgroup_normalized {K : Subgroup G} (hK : IsCompact (K : Set G)) {U : Set G} (hU : U ∈ 𝓝 (1 : G)) : ∃ N : OpenSubgroup G, IsCompact (N : Set G) ∧ (N : Set G) ⊆ U ∧ ∀ k ∈ K, ∀ n ∈ N, k * n * k⁻¹ ∈ N
+
+### GroundTheory.AutomorphicForms.PartialDifferential.AnalyticHypoSeries:15  GroundTheory.Automorphic.Sobolev.hasDerivAt_iteratedFDeriv_line
+theorem hasDerivAt_iteratedFDeriv_line {f : E → F} {s : Set E} (hs : IsOpen s) (hf : ContDiffOn ℝ ∞ f s) (x₀ y : E) (k : ℕ) {t : ℝ} (ht : x₀ + t • y ∈ s) : HasDerivAt (fun τ : ℝ ↦ iteratedFDeriv ℝ k f (x₀ + τ • y) (fun _ ↦ y)) (iteratedFDeriv ℝ (k + 1) f (x₀ + t • y) (fun _ ↦ y)) t
+
+### GroundTheory.AutomorphicForms.PartialDifferential.AnalyticHypoSeries:33  GroundTheory.Automorphic.Sobolev.iteratedDeriv_line_eq
+theorem iteratedDeriv_line_eq {f : E → F} {s : Set E} (hs : IsOpen s) (hf : ContDiffOn ℝ ∞ f s) (x₀ y : E) (k : ℕ) {t : ℝ} (ht : x₀ + t • y ∈ s) : iteratedDeriv k (fun τ : ℝ ↦ f (x₀ + τ • y)) t = iteratedFDeriv ℝ k f (x₀ + t • y) (fun _ ↦ y)
+
+### GroundTheory.AutomorphicForms.PartialDifferential.AnalyticHypoSeries:47  GroundTheory.Automorphic.Sobolev.analyticAt_of_norm_iteratedFDeriv_le
+theorem analyticAt_of_norm_iteratedFDeriv_le {f : E → F} {x₀ : E} {r C M : ℝ} (hr : 0 < r) (hf : ContDiffOn ℝ ∞ f (Metric.ball x₀ r)) (hb : ∀ y ∈ Metric.ball x₀ r, ∀ k : ℕ, ‖iteratedFDeriv ℝ k f y‖ ≤ C * M ^ k * k.factorial) : AnalyticAt ℝ f x₀
+
+### GroundTheory.AutomorphicForms.PartialDifferential.AnalyticHypoSeries:186  GroundTheory.Automorphic.Sobolev.norm_iteratedFDeriv_le_of_hasFPowerSeriesOnBall
+theorem norm_iteratedFDeriv_le_of_hasFPowerSeriesOnBall {f : E → F} {q : FormalMultilinearSeries ℝ E F} {y : E} {R : ℝ≥0∞} (h : HasFPowerSeriesOnBall f q y R) (k : ℕ) : ‖iteratedFDeriv ℝ k f y‖ ≤ k.factorial * ‖q k‖
+
+### GroundTheory.AutomorphicForms.PartialDifferential.AnalyticHypoSeries:203  GroundTheory.Automorphic.Sobolev.nnnorm_changeOrigin_le_of_bound
+theorem nnnorm_changeOrigin_le_of_bound (p : FormalMultilinearSeries ℝ E F) {ρ K : ℝ≥0} (hρ : 0 < ρ) (hK : ∀ n, ‖p n‖₊ ≤ K / ρ ^ n) {z : E} (hz : 4 * ‖z‖₊ ≤ ρ) (hzr : (‖z‖₊ : ℝ≥0∞) < p.radius) (k : ℕ) : ‖p.changeOrigin z k‖₊ ≤ 2 * (K * (2 / ρ) ^ k)
+
+### GroundTheory.AutomorphicForms.PartialDifferential.AnalyticHypoSeries:240  GroundTheory.Automorphic.Sobolev.exists_norm_iteratedFDeriv_le_of_analyticAt
+theorem exists_norm_iteratedFDeriv_le_of_analyticAt {f : E → F} {x₀ : E} (hf : AnalyticAt ℝ f x₀) : ∃ r > 0, ∃ C M : ℝ, 0 ≤ C ∧ 0 ≤ M ∧ ∀ y ∈ Metric.ball x₀ r, ∀ k : ℕ, ‖iteratedFDeriv ℝ k f y‖ ≤ C * M ^ k * k.factorial
+
+### GroundTheory.AutomorphicForms.PartialDifferential.Sobolev:16  GroundTheory.Automorphic.Sobolev.toTemperedDistribution_injective
+theorem toTemperedDistribution_injective : Function.Injective (fun f : Lp F 2 (volume : Measure E) ↦ (f : 𝓢'(E, F)))
+
+### GroundTheory.AutomorphicForms.PartialDifferential.Sobolev:45  GroundTheory.Automorphic.Sobolev.memSobolev_besselPotential_neg
+theorem memSobolev_besselPotential_neg (s : ℝ) (f : Lp F 2 (volume : Measure E)) : MemSobolev s 2 (besselPotential E F (-s) (f : 𝓢'(E, F)))
+
+### GroundTheory.AutomorphicForms.PartialDifferential.Sobolev:175  GroundTheory.Automorphic.Sobolev.memLp_smul_of_bounded
+theorem memLp_smul_of_bounded (hm : m.HasTemperateGrowth) (hC : ∀ x, ‖m x‖ ≤ C) (h : Lp F 2 (volume : Measure E)) : MemLp (fun x ↦ m x • h x) 2 (volume : Measure E)
+
+### GroundTheory.AutomorphicForms.PartialDifferential.Sobolev:242  GroundTheory.Automorphic.Sobolev.weight_pos
+theorem weight_pos (r : ℝ) (ξ : E) : 0 < (1 + ‖ξ‖ ^ 2) ^ (r / 2)
+
+### GroundTheory.AutomorphicForms.PartialDifferential.Sobolev:246  GroundTheory.Automorphic.Sobolev.bound_nonneg
+theorem bound_nonneg (hC : ∀ ξ, ‖m ξ‖ ≤ C * (1 + ‖ξ‖ ^ 2) ^ ((s - t) / 2)) : 0 ≤ C
+
+### GroundTheory.AutomorphicForms.PartialDifferential.Sobolev:336  GroundTheory.Automorphic.Sobolev.Lp_two_norm_sq_eq_integral
+theorem Lp_two_norm_sq_eq_integral (f : Lp F 2 (volume : Measure E)) : ‖f‖ ^ 2 = ∫ x, ‖f x‖ ^ 2
+
+### GroundTheory.AutomorphicForms.PartialDifferential.Sobolev:439  GroundTheory.Automorphic.Sobolev.ae_eq_of_integral_schwartz_smul_eq
+theorem ae_eq_of_integral_schwartz_smul_eq {g₁ g₂ : E → F} (h₁ : LocallyIntegrable g₁ (volume : Measure E)) (h₂ : LocallyIntegrable g₂ (volume : Measure E)) (h : ∀ φ : 𝓢(E, ℂ), HasCompactSupport φ → ∫ x, φ x • g₁ x = ∫ x, φ x • g₂ x) : g₁ =ᵐ[volume] g₂
+
+### GroundTheory.AutomorphicForms.PartialDifferential.Sobolev:460  GroundTheory.Automorphic.Sobolev.integral_fourier_smul_eq_of_integrable
+theorem integral_fourier_smul_eq_of_integrable (φ : 𝓢(E, ℂ)) {g : E → F} (hg : Integrable g (volume : Measure E)) : ∫ ξ, 𝓕 φ ξ • g ξ = ∫ x, φ x • 𝓕 g x
+
+### GroundTheory.AutomorphicForms.PartialDifferential.Sobolev:479  GroundTheory.Automorphic.Sobolev.SobolevSpace.one_bound
+theorem one_bound (h : t ≤ s) (ξ : E) : ‖(1 : ℂ)‖ ≤ 1 * (1 + ‖ξ‖ ^ 2) ^ ((s - t) / 2)
+
+### GroundTheory.AutomorphicForms.PartialDifferential.Sobolev:532  GroundTheory.Automorphic.Sobolev.SobolevSpace.lineDeriv_bound
+theorem lineDeriv_bound (v : E) (ξ : E) : ‖(2 * Real.pi * Complex.I) * ((inner ℝ ξ v : ℝ) : ℂ)‖ ≤ (2 * Real.pi * ‖v‖) * (1 + ‖ξ‖ ^ 2) ^ ((s - (s - 1)) / 2)
+
+### GroundTheory.AutomorphicForms.QuadraticConj:19  GroundTheory.Automorphic.trace_algebraMap_quadratic
+theorem trace_algebraMap_quadratic (c : F) : Algebra.trace F E (algebraMap F E c) = 2 * c
+
+### GroundTheory.AutomorphicForms.QuadraticConj:32  GroundTheory.Automorphic.linearIndependent_one_of_not_mem
+theorem linearIndependent_one_of_not_mem [Nontrivial E] {x : E} (hx : x ∉ Set.range (algebraMap F E)) : LinearIndependent F ![1, x]
+
+### GroundTheory.AutomorphicForms.QuadraticConj:50  GroundTheory.Automorphic.nontrivial_quadratic
+theorem nontrivial_quadratic (K A : Type*) [Field K] [CommRing A] [Algebra K A] [Algebra.IsQuadraticExtension K A] : Nontrivial A
+
+### GroundTheory.AutomorphicForms.RealGroupsHaar:20  GroundTheory.Automorphic.det_mulLeft_matrix
+theorem det_mulLeft_matrix (A : Matrix n n 𝕜) : LinearMap.det (LinearMap.mulLeft 𝕜 A) = A.det ^ Fintype.card n
+
+### GroundTheory.AutomorphicForms.RealGroupsHaar:33  GroundTheory.Automorphic.det_mulRight_matrix
+theorem det_mulRight_matrix (A : Matrix n n 𝕜) : LinearMap.det (LinearMap.mulRight 𝕜 A) = A.det ^ Fintype.card n
+
+### GroundTheory.AutomorphicForms.RealGroupsHaar:51  GroundTheory.Automorphic.map_withDensity_eq_of_scale
+theorem map_withDensity_eq_of_scale {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [MeasurableSpace E] [BorelSpace E] [FiniteDimensional ℝ E] (μ₀ : Measure E) {ρ : E → ℝ≥0∞} (hρ : Measurable ρ) (L : E →ₗ[ℝ] E) {c : ℝ≥0∞} (hc0 : c ≠ 0) (hcT : c ≠ ∞) (hmap : Measure.map L μ₀ = c • μ₀) (hρL : ∀ x, ρ (L x) = c * ρ x) : Measure.map L (μ₀.withDensity ρ) = μ₀.withDensity ρ
+
+### GroundTheory.AutomorphicForms.RealGroupsHaar:71  GroundTheory.Automorphic.image_val_preimage_mul_left
+theorem image_val_preimage_mul_left {M : Type*} [Monoid M] (g : Mˣ) (s : Set Mˣ) : Units.val '' ((fun h => g * h) ⁻¹' s) = (fun x : M => (g : M) * x) ⁻¹' (Units.val '' s)
+
+### GroundTheory.AutomorphicForms.RealGroupsHaar:80  GroundTheory.Automorphic.image_val_preimage_mul_right
+theorem image_val_preimage_mul_right {M : Type*} [Monoid M] (g : Mˣ) (s : Set Mˣ) : Units.val '' ((fun h => h * g) ⁻¹' s) = (fun x : M => x * (g : M)) ⁻¹' (Units.val '' s)
+
+### GroundTheory.AutomorphicForms.RealGroupsHaar:123  GroundTheory.Automorphic.map_mulLeft_haarReal
+theorem map_mulLeft_haarReal (μ₀ : Measure (Matrix n n ℝ)) [μ₀.IsAddHaarMeasure] (g : GL n ℝ) : Measure.map (LinearMap.mulLeft ℝ (g : Matrix n n ℝ)) μ₀ = ENNReal.ofReal ((‖(g : Matrix n n ℝ).det‖ ^ 1)⁻¹ ^ Fintype.card n) • μ₀
+
+### GroundTheory.AutomorphicForms.RealGroupsHaar:131  GroundTheory.Automorphic.map_mulRight_haarReal
+theorem map_mulRight_haarReal (μ₀ : Measure (Matrix n n ℝ)) [μ₀.IsAddHaarMeasure] (g : GL n ℝ) : Measure.map (LinearMap.mulRight ℝ (g : Matrix n n ℝ)) μ₀ = ENNReal.ofReal ((‖(g : Matrix n n ℝ).det‖ ^ 1)⁻¹ ^ Fintype.card n) • μ₀
+
+### GroundTheory.AutomorphicForms.RealGroupsHaar:142  GroundTheory.Automorphic.measurableEmbedding_val_GLReal
+theorem measurableEmbedding_val_GLReal : MeasurableEmbedding (Units.val : GL n ℝ → Matrix n n ℝ)
+
+### GroundTheory.AutomorphicForms.RealGroupsHaar:150  GroundTheory.Automorphic.haarScaleReal_ne_zero
+theorem haarScaleReal_ne_zero (g : GL n ℝ) : ENNReal.ofReal ((‖(g : Matrix n n ℝ).det‖ ^ 1)⁻¹ ^ Fintype.card n) ≠ 0
+
+### GroundTheory.AutomorphicForms.RealGroupsHaar:256  GroundTheory.Automorphic.det_restrictScalars_mulLeft
+theorem det_restrictScalars_mulLeft (A : Matrix n n ℂ) : LinearMap.det ((LinearMap.mulLeft ℂ A).restrictScalars ℝ) = (‖A.det‖ ^ 2) ^ Fintype.card n
+
+### GroundTheory.AutomorphicForms.RealGroupsHaar:261  GroundTheory.Automorphic.det_restrictScalars_mulRight
+theorem det_restrictScalars_mulRight (A : Matrix n n ℂ) : LinearMap.det ((LinearMap.mulRight ℂ A).restrictScalars ℝ) = (‖A.det‖ ^ 2) ^ Fintype.card n
+
+### GroundTheory.AutomorphicForms.RealGroupsHaar:266  GroundTheory.Automorphic.map_mulLeft_haarComplex
+theorem map_mulLeft_haarComplex (μ₀ : Measure (Matrix n n ℂ)) [μ₀.IsAddHaarMeasure] (g : GL n ℂ) : Measure.map ((LinearMap.mulLeft ℂ (g : Matrix n n ℂ)).restrictScalars ℝ) μ₀ = ENNReal.ofReal ((‖(g : Matrix n n ℂ).det‖ ^ 2)⁻¹ ^ Fintype.card n) • μ₀
+
+### GroundTheory.AutomorphicForms.RealGroupsHaar:274  GroundTheory.Automorphic.map_mulRight_haarComplex
+theorem map_mulRight_haarComplex (μ₀ : Measure (Matrix n n ℂ)) [μ₀.IsAddHaarMeasure] (g : GL n ℂ) : Measure.map ((LinearMap.mulRight ℂ (g : Matrix n n ℂ)).restrictScalars ℝ) μ₀ = ENNReal.ofReal ((‖(g : Matrix n n ℂ).det‖ ^ 2)⁻¹ ^ Fintype.card n) • μ₀
+
+### GroundTheory.AutomorphicForms.RealGroupsHaar:285  GroundTheory.Automorphic.measurableEmbedding_val_GLComplex
+theorem measurableEmbedding_val_GLComplex : MeasurableEmbedding (Units.val : GL n ℂ → Matrix n n ℂ)
+
+### GroundTheory.AutomorphicForms.RealGroupsHaar:293  GroundTheory.Automorphic.haarScaleComplex_ne_zero
+theorem haarScaleComplex_ne_zero (g : GL n ℂ) : ENNReal.ofReal ((‖(g : Matrix n n ℂ).det‖ ^ 2)⁻¹ ^ Fintype.card n) ≠ 0
+
+### GroundTheory.AutomorphicForms.RealGroupsLie:14  GroundTheory.Automorphic.contDiff_exp
+theorem contDiff_exp {n : WithTop ℕ∞} : ContDiff 𝕂 n (exp : 𝔸 → 𝔸)
+
+### GroundTheory.AutomorphicForms.RealGroupsLie:20  GroundTheory.Automorphic.exp_add_of_commute'
+theorem exp_add_of_commute' {x y : 𝔸} (h : Commute x y) : exp (x + y) = exp x * exp y
+
+### GroundTheory.AutomorphicForms.RealGroupsLie:33  GroundTheory.Automorphic.hasStrictFDerivAt_exp_zero_equiv
+theorem hasStrictFDerivAt_exp_zero_equiv : HasStrictFDerivAt (exp : 𝔸 → 𝔸) ((ContinuousLinearEquiv.refl 𝕂 𝔸 : 𝔸 →L[𝕂] 𝔸)) 0
+
+### GroundTheory.AutomorphicForms.RealGroupsLie:174  GroundTheory.Automorphic.lieGroup_GL
+theorem lieGroup_GL (𝕂 : Type*) [RCLike 𝕂] (n : ℕ) (k : WithTop ℕ∞) : LieGroup 𝓘(𝕂, Matrix (Fin n) (Fin n) 𝕂) k (GL (Fin n) 𝕂)
+
+### GroundTheory.AutomorphicForms.RealGroupsLie:177  GroundTheory.Automorphic.lieGroup_GL_complex_real
+theorem lieGroup_GL_complex_real (n : ℕ) (k : WithTop ℕ∞) : LieGroup 𝓘(ℝ, Matrix (Fin n) (Fin n) ℂ) k (GL (Fin n) ℂ)
+
+### GroundTheory.AutomorphicForms.RealGroupsLie:207  GroundTheory.Automorphic.continuous_val_val
+theorem continuous_val_val (G : Subgroup 𝔸ˣ) : Continuous (fun x : G => ((x : 𝔸ˣ) : 𝔸))
+
+### GroundTheory.AutomorphicForms.RealGroupsLie:311  GroundTheory.Automorphic.IsExpLieAlgebra.isManifold
+theorem isManifold (n : WithTop ℕ∞) : letI
+
+### GroundTheory.AutomorphicForms.RealGroupsLie:327  GroundTheory.Automorphic.IsExpLieAlgebra.contMDiff_val
+theorem contMDiff_val (n : WithTop ℕ∞) : letI
+
+### GroundTheory.AutomorphicForms.RealGroupsLie:338  GroundTheory.Automorphic.IsExpLieAlgebra.contMDiffAt_of_val
+theorem contMDiffAt_of_val {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {H : Type*} [TopologicalSpace H] {I : ModelWithCorners ℝ E H} {M : Type*} [TopologicalSpace M] [ChartedSpace H M] {n : WithTop ℕ∞} {f : M → G} {x : M} (hf : ContMDiffAt I 𝓘(ℝ, 𝔸) n (fun y => ((f y : 𝔸ˣ) : 𝔸)) x) : letI
+
+### GroundTheory.AutomorphicForms.RealGroupsLie:361  GroundTheory.Automorphic.IsExpLieAlgebra.lieGroup
+theorem lieGroup (n : WithTop ℕ∞) : letI
+
+### GroundTheory.AutomorphicForms.RealGroupsLie:474  GroundTheory.Automorphic.exp_mul_exp_neg
+theorem exp_mul_exp_neg (X : 𝔐) : exp X * exp (-X) = 1
+
+### GroundTheory.AutomorphicForms.RealGroupsLie:475  GroundTheory.Automorphic.exp_neg_mul_exp
+theorem exp_neg_mul_exp (X : 𝔐) : exp (-X) * exp X = 1
+
+### GroundTheory.AutomorphicForms.ReductionBlock:105  GroundTheory.Automorphic.Reduction.exists_lastRow_eq
+theorem exists_lastRow_eq {x : Fin (m + 1) → F} (hx : x ≠ 0) : ∃ γ : GL (Fin (m + 1)) F, Pi.single (Fin.last m) 1 ᵥ* (γ : Matrix (Fin (m + 1)) (Fin (m + 1)) F) = x
+
+### GroundTheory.AutomorphicForms.RestrictedHaarProduct:15  GroundTheory.Automorphic.RestrictedHaar.lintegral_fin_nat_prod_eq_prod
+theorem lintegral_fin_nat_prod_eq_prod {n : ℕ} {E : Fin n → Type*} {mE : ∀ i, MeasurableSpace (E i)} {μ : (i : Fin n) → Measure (E i)} [∀ i, SigmaFinite (μ i)] (f : (i : Fin n) → E i → ℝ≥0∞) (hf : ∀ i, Measurable (f i)) : ∫⁻ x : (i : Fin n) → E i, ∏ i, f i (x i) ∂(Measure.pi μ) = ∏ i, ∫⁻ x, f i x ∂(μ i)
+
+### GroundTheory.AutomorphicForms.RestrictedHaarProduct:37  GroundTheory.Automorphic.RestrictedHaar.lintegral_fintype_prod_eq_prod
+theorem lintegral_fintype_prod_eq_prod {κ : Type*} [Fintype κ] {E : κ → Type*} {mE : ∀ i, MeasurableSpace (E i)} {μ : (i : κ) → Measure (E i)} [∀ i, SigmaFinite (μ i)] (f : (i : κ) → E i → ℝ≥0∞) (hf : ∀ i, Measurable (f i)) : ∫⁻ x : (i : κ) → E i, ∏ i, f i (x i) ∂(Measure.pi μ) = ∏ i, ∫⁻ x, f i x ∂(μ i)
+
+### GroundTheory.AutomorphicForms.RestrictedHaarProduct:248  GroundTheory.Automorphic.RestrictedHaar.isCompact_setOf_forall_mem
+theorem isCompact_setOf_forall_mem (hCo : ∀ i, IsOpen (C i : Set (G i))) (hCc : ∀ i, IsCompact (C i : Set (G i))) : IsCompact {x : Πʳ i, [G i, (C i : Set (G i))] | ∀ i, x i ∈ C i}
+
+### GroundTheory.AutomorphicForms.RestrictedHaarProduct:255  GroundTheory.Automorphic.RestrictedHaar.measure_setOf_forall_mem_pos
+theorem measure_setOf_forall_mem_pos (hCo : ∀ i, IsOpen (C i : Set (G i))) (μ : Measure (Πʳ i, [G i, (C i : Set (G i))])) [μ.IsHaarMeasure] : 0 < μ {x : Πʳ i, [G i, (C i : Set (G i))] | ∀ i, x i ∈ C i}
+
+### GroundTheory.AutomorphicForms.RestrictedHaarProduct:265  GroundTheory.Automorphic.RestrictedHaar.measureReal_setOf_forall_mem_pos
+theorem measureReal_setOf_forall_mem_pos (hCo : ∀ i, IsOpen (C i : Set (G i))) (hCc : ∀ i, IsCompact (C i : Set (G i))) (μ : Measure (Πʳ i, [G i, (C i : Set (G i))])) [μ.IsHaarMeasure] : 0 < μ.real {x : Πʳ i, [G i, (C i : Set (G i))] | ∀ i, x i ∈ C i}
+
+### GroundTheory.AutomorphicForms.RestrictedHaarProduct:370  GroundTheory.Automorphic.RestrictedHaar.exists_finset_of_eventually
+theorem exists_finset_of_eventually {F : ∀ i, G i → ℂ} (hF1 : ∀ᶠ i in cofinite, ∀ c ∈ C i, F i c = 1) : ∃ T₀ : Finset ι, ∀ i ∉ T₀, ∀ c ∈ C i, F i c = 1
+
+### GroundTheory.AutomorphicForms.RestrictedHaarProduct:377  GroundTheory.Automorphic.RestrictedHaar.hasProd_integral
+theorem hasProd_integral [Countable ι] (hCo : ∀ i, IsOpen (C i : Set (G i))) (hCc : ∀ i, IsCompact (C i : Set (G i))) (μ : Measure (Πʳ i, [G i, (C i : Set (G i))])) [μ.IsHaarMeasure] (ν : ∀ i, Measure (G i)) [∀ i, (ν i).IsHaarMeasure] (hν : ∀ i, ν i (C i) = 1) (F : ∀ i, G i → ℂ) (hF : ∀ i, Measurable (F i)) (hF1 : ∀ᶠ i in cofinite, ∀ c ∈ C i, F i c = 1) (Φ : Πʳ i, [G i, (C i : Set (G i))] → ℂ) (hΦ : ∀ x, Φ x = ∏ᶠ i, F i (x i)) (hint : Integrable Φ μ) : HasProd (fun i ↦ ∫ y, F i y ∂ν i) ((μ.real {x : Πʳ i, [G i, (C i : Set (G i))] | ∀ i, x i ∈ C i})⁻¹ * ∫ x, Φ x ∂μ)
+
+### GroundTheory.AutomorphicForms.RestrictedHaarProduct:404  GroundTheory.Automorphic.RestrictedHaar.mul_prod_lintegral_le
+theorem mul_prod_lintegral_le (hCo : ∀ i, IsOpen (C i : Set (G i))) (hCc : ∀ i, IsCompact (C i : Set (G i))) (μ : Measure (Πʳ i, [G i, (C i : Set (G i))])) [μ.IsHaarMeasure] (ν : ∀ i, Measure (G i)) [∀ i, (ν i).IsHaarMeasure] (hν : ∀ i, ν i (C i) = 1) (F : ∀ i, G i → ℂ) (hF : ∀ i, Measurable (F i)) {T : Finset ι} (hT : ∀ i ∉ T, ∀ c ∈ C i, F i c = 1) (Φ : Πʳ i, [G i, (C i : Set (G i))] → ℂ) (hΦ : ∀ x, Φ x = ∏ᶠ i, F i (x i)) : μ {x : Πʳ i, [G i, (C i : Set (G i))] | ∀ i, x i ∈ C i} * ∏ i ∈ T, ∫⁻ y, ‖F i y‖ₑ ∂ν i ≤ ∫⁻ x, ‖Φ x‖ₑ ∂μ
+
+### GroundTheory.AutomorphicForms.RestrictedHaarProduct:416  GroundTheory.Automorphic.RestrictedHaar.one_le_lintegral
+theorem one_le_lintegral (ν : ∀ i, Measure (G i)) (hν : ∀ i, ν i (C i) = 1) (hCo : ∀ i, IsOpen (C i : Set (G i))) (F : ∀ i, G i → ℂ) {i : ι} (h : ∀ c ∈ C i, F i c = 1) : 1 ≤ ∫⁻ y, ‖F i y‖ₑ ∂ν i
+
+### GroundTheory.AutomorphicForms.RestrictedHaarProduct:423  GroundTheory.Automorphic.RestrictedHaar.integrable_factor
+theorem integrable_factor (hCo : ∀ i, IsOpen (C i : Set (G i))) (hCc : ∀ i, IsCompact (C i : Set (G i))) (μ : Measure (Πʳ i, [G i, (C i : Set (G i))])) [μ.IsHaarMeasure] (ν : ∀ i, Measure (G i)) [∀ i, (ν i).IsHaarMeasure] (hν : ∀ i, ν i (C i) = 1) (F : ∀ i, G i → ℂ) (hF : ∀ i, Measurable (F i)) (hF1 : ∀ᶠ i in cofinite, ∀ c ∈ C i, F i c = 1) (Φ : Πʳ i, [G i, (C i : Set (G i))] → ℂ) (hΦ : ∀ x, Φ x = ∏ᶠ i, F i (x i)) (hint : Integrable Φ μ) (hne : ∀ i, (¬ ∀ c ∈ C i, F i c = 1) → ∫⁻ y, ‖F i y‖ₑ ∂ν i ≠ 0) (i : ι) : Integrable (F i) (ν i)
+
+### GroundTheory.AutomorphicForms.StableConjCyclic:12  GroundTheory.Automorphic.exists_linearIndependent_pow_apply_of_isAlgClosed
+theorem exists_linearIndependent_pow_apply_of_isAlgClosed (f : Module.End K W) (hf : f.charpoly.Separable) : ∃ w : W, LinearIndependent K (fun k : Fin (finrank K W) => (f ^ (k : ℕ)) w)
+
+### GroundTheory.AutomorphicForms.StableConjCyclic:120  GroundTheory.Automorphic.exists_linearIndependent_pow_apply
+theorem exists_linearIndependent_pow_apply [Infinite E] (f : Module.End E V) (hf : f.charpoly.Separable) : ∃ v : V, LinearIndependent E (fun k : Fin (finrank E V) => (f ^ (k : ℕ)) v)
+
+### GroundTheory.AutomorphicForms.StableConjCyclic:184  GroundTheory.Automorphic.aeval_C_mul_X_pow_apply
+theorem aeval_C_mul_X_pow_apply (f : Module.End E V) (a : E) (k : ℕ) (x : V) : aeval f (C a * X ^ k) x = a • (f ^ k) x
+
+### GroundTheory.AutomorphicForms.StableConjCyclic:210  GroundTheory.Automorphic.aeval_apply_eq_sum_modByMonic
+theorem aeval_apply_eq_sum_modByMonic (f : Module.End E V) (v : V) (p : E[X]) : aeval f p v = ∑ k : Fin (finrank E V), (p %ₘ f.charpoly).coeff k • (f ^ (k : ℕ)) v
+
+### GroundTheory.AutomorphicForms.StableConjCyclic:248  GroundTheory.Automorphic.exists_conj_of_charpoly_eq
+theorem exists_conj_of_charpoly_eq [Infinite E] {f f' : Module.End E V} (hf : f.charpoly.Separable) (hch : f.charpoly = f'.charpoly) : ∃ e : V ≃ₗ[E] V, ∀ x, e (f x) = f' (e x)
+
+### GroundTheory.AutomorphicForms.StableConjCyclic:255  GroundTheory.Automorphic.commute_of_commute_of_separable
+theorem commute_of_commute_of_separable [Infinite E] {f g g' : Module.End E V} (hf : f.charpoly.Separable) (hg : Commute f g) (hg' : Commute f g') : Commute g g'
+
+### GroundTheory.AutomorphicForms.StrongApproximationSLElementary:53  GroundTheory.Automorphic.mul_transvection_apply
+theorem mul_transvection_apply (i j : n) (c : R) (M : Matrix n n R) (a b : n) : (M * transvection i j c) a b = if b = j then M a j + c * M a i else M a b
+
+### GroundTheory.AutomorphicForms.StrongApproximationSLElementary:60  GroundTheory.Automorphic.transvection_mul_eq_diagonal_update
+theorem transvection_mul_eq_diagonal_update (i j : n) (hij : i ≠ j) (u : Rˣ) : transvection i j (u : R) * transvection j i (-(↑u⁻¹ : R)) * transvection i j (u : R) * transvection i j (-1) * transvection j i 1 * transvection i j (-1) = diagonal (Function.update (Function.update (1 : n → R) i u) j (↑u⁻¹ : R))
+
+### GroundTheory.AutomorphicForms.TensorProductTheorem.MatrixCoeff:38  GroundTheory.Automorphic.RestrictedTensor.mem_span_orbit
+theorem mem_span_orbit {ρ : Representation ℂ G V} [ρ.IsIrreducible] {v : V} (hv : v ≠ 0) (x : V) : x ∈ Submodule.span ℂ (range fun g => ρ g v)
+
+### GroundTheory.AutomorphicForms.TensorProductTheorem.MatrixCoeff:45  GroundTheory.Automorphic.RestrictedTensor.eq_zero_of_forall_apply
+theorem eq_zero_of_forall_apply {ρ : Representation ℂ G V} [ρ.IsIrreducible] {v : V} (hv : v ≠ 0) {l : Module.Dual ℂ V} (h : ∀ g, l (ρ g v) = 0) : l = 0
+
+### GroundTheory.AutomorphicForms.TensorProductTheorem.MatrixCoeff:57  GroundTheory.Automorphic.RestrictedTensor.eq_zero_of_forall_apply_act
+theorem eq_zero_of_forall_apply_act {ρ : Representation ℂ G V} [ρ.IsIrreducible] {l : Module.Dual ℂ V} (hl : l ≠ 0) {x : V} (h : ∀ g, l (ρ g x) = 0) : x = 0
+
+### GroundTheory.AutomorphicForms.TensorProductTheorem.MatrixCoeff:90  GroundTheory.Automorphic.RestrictedTensor.nonempty_equiv_of_matrixCoeff_eq
+theorem nonempty_equiv_of_matrixCoeff_eq {ρ : Representation ℂ G V} {σ : Representation ℂ G W} [ρ.IsIrreducible] [σ.IsIrreducible] {v : V} {l : Module.Dual ℂ V} {w : W} {m : Module.Dual ℂ W} (h : ∀ g, l (ρ g v) = m (σ g w)) (hne : ∃ g, l (ρ g v) ≠ 0) : Nonempty (ρ.Equiv σ)
+
+### GroundTheory.AutomorphicForms.TensorProductTheorem.Operators:37  GroundTheory.Automorphic.RestrictedTensor.commute_of_mem_adjoin
+theorem commute_of_mem_adjoin {T : Set (End ℂ M)} {a : End ℂ M} (ha : ∀ t ∈ T, Commute a t) : ∀ b ∈ Algebra.adjoin ℂ T, Commute a b
+
+### GroundTheory.AutomorphicForms.TensorProductTheorem.PeterssonComplement:50  GroundTheory.Automorphic.PeterssonComplement.inner_aeval_map_left
+theorem inner_aeval_map_left {T : Module.End ℂ V} (hT : ∀ x y, inner ℂ (ι (T x)) (ι y) = inner ℂ (ι x) (ι (T y))) (p : ℝ[X]) (x y : V) : inner ℂ (ι (aeval T (p.map (algebraMap ℝ ℂ)) x)) (ι y) = inner ℂ (ι x) (ι (aeval T (p.map (algebraMap ℝ ℂ)) y))
+
+### GroundTheory.AutomorphicForms.TensorProductTheorem.PeterssonComplement:75  GroundTheory.Automorphic.PeterssonComplement.aeval_mem
+theorem aeval_mem {T : Module.End ℂ V} {Z : Submodule ℂ V} (hZ : ∀ z ∈ Z, T z ∈ Z) (q : ℂ[X]) : ∀ z ∈ Z, aeval T q z ∈ Z
+
+### GroundTheory.AutomorphicForms.TensorProductTheorem.PeterssonComplement:91  GroundTheory.Automorphic.PeterssonComplement.exists_apply_eq_zero_inner_eq
+theorem exists_apply_eq_zero_inner_eq (hι : Function.Injective ι) {T : Module.End ℂ V} (hT : ∀ x y, inner ℂ (ι (T x)) (ι y) = inner ℂ (ι x) (ι (T y))) (p : ℝ[X]) (Z : Submodule ℂ V) [FiniteDimensional ℂ Z] (hZ : ∀ z ∈ Z, T z ∈ Z) {x : V} (hx : x ∈ Z) : ∃ m ∈ Z, aeval T (p.map (algebraMap ℝ ℂ)) m = 0 ∧ ∀ w, aeval T (p.map (algebraMap ℝ ℂ)) w = 0 → inner ℂ (ι x) (ι w) = inner ℂ (ι m) (ι w)
+
+### GroundTheory.AutomorphicForms.TensorProductTheorem.PeterssonComplement:118  GroundTheory.Automorphic.PeterssonComplement.apply_aeval_comm
+theorem apply_aeval_comm (T : Module.End ℂ V) (q : ℂ[X]) (z : V) : T (aeval T q z) = aeval T q (T z)
+
+### GroundTheory.AutomorphicForms.UnitaryRepresentations.IsInvariantIffCommuteStarProjection:28  GroundTheory.Automorphic.UnitaryRep.coe_apply
+lemma coe_apply (g : G) : π g = (π.toHom g : H →L[ℂ] H)
+
+### GroundTheory.AutomorphicForms.UnitaryRepresentations.IsInvariantIffCommuteStarProjection:30  GroundTheory.Automorphic.UnitaryRep.continuous_orbit
+lemma continuous_orbit (v : H) : Continuous fun g => π g v
+
+### GroundTheory.AutomorphicForms.UnitaryRepresentations.IsInvariantIffCommuteStarProjection:32  GroundTheory.Automorphic.UnitaryRep.map_one
+@[simp] lemma map_one : π 1 = 1
+
+### GroundTheory.AutomorphicForms.UnitaryRepresentations.IsInvariantIffCommuteStarProjection:36  GroundTheory.Automorphic.UnitaryRep.map_mul
+@[simp] lemma map_mul (g h : G) : π (g * h) = π g * π h
+
+### GroundTheory.AutomorphicForms.UnitaryRepresentations.IsInvariantIffCommuteStarProjection:41  GroundTheory.Automorphic.UnitaryRep.map_mul_apply
+lemma map_mul_apply (g h : G) (v : H) : π (g * h) v = π g (π h v)
+
+### GroundTheory.AutomorphicForms.UnitaryRepresentations.IsInvariantIffCommuteStarProjection:44  GroundTheory.Automorphic.UnitaryRep.map_one_apply
+@[simp] lemma map_one_apply (v : H) : π 1 v = v
+
+### GroundTheory.AutomorphicForms.UnitaryRepresentations.IsInvariantIffCommuteStarProjection:46  GroundTheory.Automorphic.UnitaryRep.norm_map
+@[simp] lemma norm_map (g : G) (v : H) : ‖π g v‖ = ‖v‖
+
+### GroundTheory.AutomorphicForms.UnitaryRepresentations.IsInvariantIffCommuteStarProjection:48  GroundTheory.Automorphic.UnitaryRep.inner_map_map
+@[simp] lemma inner_map_map (g : G) (v w : H) : ⟪π g v, π g w⟫_ℂ = ⟪v, w⟫_ℂ
+
+### GroundTheory.AutomorphicForms.UnitaryRepresentations.IsInvariantIffCommuteStarProjection:51  GroundTheory.Automorphic.UnitaryRep.mem_unitary
+lemma mem_unitary (g : G) : π g ∈ unitary (H →L[ℂ] H)
+
+### GroundTheory.AutomorphicForms.UnitaryRepresentations.IsInvariantIffCommuteStarProjection:53  GroundTheory.Automorphic.UnitaryRep.star_map
+@[simp] lemma star_map (g : G) : star (π g) = π g⁻¹
+
+### GroundTheory.AutomorphicForms.UnitaryRepresentations.IsInvariantIffCommuteStarProjection:58  GroundTheory.Automorphic.UnitaryRep.adjoint_map
+@[simp] lemma adjoint_map (g : G) : adjoint (π g) = π g⁻¹
+
+### GroundTheory.AutomorphicForms.UnitaryRepresentations.IsInvariantIffCommuteStarProjection:61  GroundTheory.Automorphic.UnitaryRep.map_inv_apply_map
+@[simp] lemma map_inv_apply_map (g : G) (v : H) : π g⁻¹ (π g v) = v
+
+### GroundTheory.AutomorphicForms.UnitaryRepresentations.IsInvariantIffCommuteStarProjection:64  GroundTheory.Automorphic.UnitaryRep.map_apply_map_inv
+@[simp] lemma map_apply_map_inv (g : G) (v : H) : π g (π g⁻¹ v) = v
+
+### GroundTheory.AutomorphicForms.UnitaryRepresentations.IsInvariantIffCommuteStarProjection:67  GroundTheory.Automorphic.UnitaryRep.inner_map_left
+lemma inner_map_left (g : G) (v w : H) : ⟪π g v, w⟫_ℂ = ⟪v, π g⁻¹ w⟫_ℂ
+
+### GroundTheory.AutomorphicForms.UnitaryRepresentations.IsInvariantIffCommuteStarProjection:70  GroundTheory.Automorphic.UnitaryRep.inner_map_right
+lemma inner_map_right (g : G) (v w : H) : ⟪v, π g w⟫_ℂ = ⟪π g⁻¹ v, w⟫_ℂ
+
+### GroundTheory.AutomorphicForms.UnitaryRepresentations.IsInvariantIffCommuteStarProjection:73  GroundTheory.Automorphic.UnitaryRep.norm_map_le
+lemma norm_map_le (g : G) : ‖π g‖ ≤ 1
+
+### GroundTheory.AutomorphicForms.UnitaryRepresentations.IsInvariantIffCommuteStarProjection:76  GroundTheory.Automorphic.UnitaryRep.map_injective
+lemma map_injective (g : G) : Function.Injective (π g)
+
+### GroundTheory.AutomorphicForms.UnitaryRepresentations.IsInvariantIffCommuteStarProjection:89  GroundTheory.Automorphic.UnitaryRep.continuous_of_weak
+theorem continuous_of_weak (ρ : G →* unitary (H →L[ℂ] H)) (hρ : ∀ v w : H, Continuous fun g => ⟪(ρ g : H →L[ℂ] H) v, w⟫_ℂ) (v : H) : Continuous fun g => (ρ g : H →L[ℂ] H) v
+
+### GroundTheory.AutomorphicForms.UnitaryRepresentations.IsInvariantIffCommuteStarProjection:111  GroundTheory.Automorphic.UnitaryRep.continuous_of_continuousAt_one
+theorem continuous_of_continuousAt_one [IsTopologicalGroup G] (ρ : G →* unitary (H →L[ℂ] H)) (hρ : ∀ v : H, ContinuousAt (fun g => (ρ g : H →L[ℂ] H) v) 1) (v : H) : Continuous fun g => (ρ g : H →L[ℂ] H) v
+
+### GroundTheory.AutomorphicForms.UnitaryRepresentations.IsInvariantIffCommuteStarProjection:134  GroundTheory.Automorphic.UnitaryRep.continuous_action
+theorem continuous_action : Continuous fun p : G × H => π p.1 p.2
+
+### GroundTheory.AutomorphicForms.UnitaryRepresentations.IsInvariantIffCommuteStarProjection:155  GroundTheory.Automorphic.UnitaryRep.continuous_inner_orbit
+lemma continuous_inner_orbit (v w : H) : Continuous fun g => ⟪π g v, w⟫_ℂ
+
+### GroundTheory.AutomorphicForms.WhittakerRelevance:11  GroundTheory.Automorphic.Whittaker.val_eq_of_le_of_le
+theorem val_eq_of_le_of_le (hB : ∀ i j : Fin n, i < j → (w j).val = (w i).val + 1 → j.val = i.val + 1) : ∀ (g : ℕ) (z y : Fin n), (w y).val = (w z).val + g → z ≤ y → ∀ x : Fin n, z ≤ x → x ≤ y → (w x).val = (w z).val + (x.val - z.val)
+
+### GroundTheory.AutomorphicForms.WhittakerRelevance:56  GroundTheory.Automorphic.Whittaker.val_eq_of_le_right
+theorem val_eq_of_le_right (hB : ∀ i j : Fin n, i < j → (w j).val = (w i).val + 1 → j.val = i.val + 1) (b x : Fin n) (hbx : b ≤ x) (hx : x.val ≤ b.val + #(univ.filter fun y : Fin n => b < y ∧ w b < w y)) : (w x).val = (w b).val + (x.val - b.val)
+
+### GroundTheory.AutomorphicForms.WhittakerRelevance:83  GroundTheory.Automorphic.Whittaker.val_add_eq_of_le_left
+theorem val_add_eq_of_le_left (hB : ∀ i j : Fin n, i < j → (w j).val = (w i).val + 1 → j.val = i.val + 1) (b x : Fin n) (hxb : x ≤ b) (hx : b.val ≤ x.val + #(univ.filter fun y : Fin n => y < b ∧ w y < w b)) : (w x).val + (b.val - x.val) = (w b).val
+
+### GroundTheory.AutomorphicForms.WhittakerRelevance:114  GroundTheory.Automorphic.Whittaker.card_filter_lt_apply
+theorem card_filter_lt_apply (w : Equiv.Perm (Fin n)) (b : Fin n) : #(univ.filter fun x : Fin n => w x < w b) = (w b).val
+
+### GroundTheory.AutomorphicForms.WhittakerRelevance:121  GroundTheory.Automorphic.Whittaker.val_add_card_right
+theorem val_add_card_right (w : Equiv.Perm (Fin n)) (b : Fin n) : (w b).val + #(univ.filter fun y : Fin n => b < y ∧ w b < w y) = #(univ.filter fun y : Fin n => y < b ∧ w y < w b) + (n - 1 - b.val)
+
+### GroundTheory.AutomorphicForms.WhittakerRelevance:146  GroundTheory.Automorphic.Whittaker.relevant_involution
+theorem relevant_involution (hB : ∀ i j : Fin n, i < j → (w j).val = (w i).val + 1 → j.val = i.val + 1) (b : Fin n) : w (Fin.rev (w b)) = Fin.rev b
+
+### GroundTheory.AutomorphicForms.WhittakerRelevance:164  GroundTheory.Automorphic.Whittaker.apply_eq_of_run_right
+theorem apply_eq_of_run_right {α : Type*} (t : Fin n → α) (hB : ∀ i j : Fin n, i < j → (w j).val = (w i).val + 1 → j.val = i.val + 1) (ht : ∀ (i : Fin n) (h : i.val + 1 < n), w i < w ⟨i.val + 1, h⟩ → t (w i) = t (w ⟨i.val + 1, h⟩)) (b : Fin n) : ∀ k : ℕ, ∀ x : Fin n, x.val = b.val + k → k ≤ #(univ.filter fun y : Fin n => b < y ∧ w b < w y) → t (w x) = t (w b)
+
+### GroundTheory.AutomorphicForms.WhittakerRelevance:196  GroundTheory.Automorphic.Whittaker.apply_eq_of_run_left
+theorem apply_eq_of_run_left {α : Type*} (t : Fin n → α) (hB : ∀ i j : Fin n, i < j → (w j).val = (w i).val + 1 → j.val = i.val + 1) (ht : ∀ (i : Fin n) (h : i.val + 1 < n), w i < w ⟨i.val + 1, h⟩ → t (w i) = t (w ⟨i.val + 1, h⟩)) (b : Fin n) : ∀ k : ℕ, ∀ x : Fin n, x.val + k = b.val → k ≤ #(univ.filter fun y : Fin n => y < b ∧ w y < w b) → t (w x) = t (w b)
+
+### GroundTheory.AutomorphicForms.WhittakerRelevance:225  GroundTheory.Automorphic.Whittaker.relevant_torus
+theorem relevant_torus {α : Type*} (t : Fin n → α) (hB : ∀ i j : Fin n, i < j → (w j).val = (w i).val + 1 → j.val = i.val + 1) (ht : ∀ (i : Fin n) (h : i.val + 1 < n), w i < w ⟨i.val + 1, h⟩ → t (w i) = t (w ⟨i.val + 1, h⟩)) (b : Fin n) : t (w b) = t (Fin.rev b)
+
+### GroundTheory.Brauer.CrossedProduct:23  GroundTheory.Brauer.CrossedProduct.val_smul_units
+theorem val_smul_units (σ : L ≃ₐ[K] L) (x : Lˣ) : ((σ • x : Lˣ) : L) = σ x
+
+### GroundTheory.Brauer.MulDistribMulActionQuotientFixedPoints:57  GroundTheory.Brauer.isMulCocycle
+theorem isMulCocycle₂_of_isMulCoboundary₂ {f : G × G → M} (hf : IsMulCoboundary₂ f) : IsMulCocycle₂ f
+
+### GroundTheory.Brauer.MulDistribMulActionQuotientFixedPoints:72  GroundTheory.Brauer.map_one_fst_of_isMulCocycle
+theorem map_one_fst_of_isMulCocycle₂_of_eq_one {f : G × G → M} (hf : IsMulCocycle₂ f) (h1 : f (1, 1) = 1) (g : G) : f (1, g) = 1
+
+### GroundTheory.Brauer.MulDistribMulActionQuotientFixedPoints:76  GroundTheory.Brauer.map_one_snd_of_isMulCocycle
+theorem map_one_snd_of_isMulCocycle₂_of_eq_one {f : G × G → M} (hf : IsMulCocycle₂ f) (h1 : f (1, 1) = 1) (g : G) : f (g, 1) = 1
+
+### GroundTheory.Brauer.MulDistribMulActionQuotientFixedPoints:222  GroundTheory.Brauer.H2mul.smul_mem_fixedPoints_of_normal
+theorem smul_mem_fixedPoints_of_normal (g : G) {m : M} (hm : m ∈ FixedPoints.subgroup N M) : g • m ∈ FixedPoints.subgroup N M
+
+### GroundTheory.Brauer.MulDistribMulActionQuotientFixedPoints:260  GroundTheory.Brauer.H2mul.coe_mk_smul_fixedPoints
+theorem coe_mk_smul_fixedPoints (g : G) (m : FixedPoints.subgroup N M) : (((g : G ⧸ N) • m : FixedPoints.subgroup N M) : M) = g • (m : M)
+
+### GroundTheory.Brauer.TensorSimple:13  GroundTheory.Brauer.coeff_tmul_one_mul
+theorem coeff_tmul_one_mul (a : A) (x : A ⊗[K] B) (i : κ) : TensorProduct.equivFinsuppOfBasisRight 𝒞 ((a ⊗ₜ[K] (1 : B)) * x) i = a * TensorProduct.equivFinsuppOfBasisRight 𝒞 x i
+
+### GroundTheory.Brauer.TensorSimple:22  GroundTheory.Brauer.coeff_mul_tmul_one
+theorem coeff_mul_tmul_one (a : A) (x : A ⊗[K] B) (i : κ) : TensorProduct.equivFinsuppOfBasisRight 𝒞 (x * (a ⊗ₜ[K] (1 : B))) i = TensorProduct.equivFinsuppOfBasisRight 𝒞 x i * a
+
+### GroundTheory.Brauer.TensorSimple:31  GroundTheory.Brauer.support_coeff_tmul_one_mul
+theorem support_coeff_tmul_one_mul (a : A) (x : A ⊗[K] B) : (TensorProduct.equivFinsuppOfBasisRight 𝒞 ((a ⊗ₜ[K] (1 : B)) * x)).support ⊆ (TensorProduct.equivFinsuppOfBasisRight 𝒞 x).support
+
+### GroundTheory.Brauer.TensorSimple:40  GroundTheory.Brauer.support_coeff_mul_tmul_one
+theorem support_coeff_mul_tmul_one (a : A) (x : A ⊗[K] B) : (TensorProduct.equivFinsuppOfBasisRight 𝒞 (x * (a ⊗ₜ[K] (1 : B)))).support ⊆ (TensorProduct.equivFinsuppOfBasisRight 𝒞 x).support
+
+### GroundTheory.Brauer.TensorSimple:55  GroundTheory.Brauer.exists_eq_one_tmul_of_commute
+theorem exists_eq_one_tmul_of_commute [Algebra.IsCentral K A] (x : A ⊗[K] B) (h : ∀ a : A, (a ⊗ₜ[K] (1 : B)) * x = x * (a ⊗ₜ[K] (1 : B))) : ∃ b : B, x = (1 : A) ⊗ₜ[K] b
+
+### GroundTheory.Brauer.TensorSimple:76  GroundTheory.Brauer.center_tensorProduct_eq_map_includeRight
+theorem center_tensorProduct_eq_map_includeRight [Algebra.IsCentral K A] : Subalgebra.center K (A ⊗[K] B) = (Subalgebra.center K B).map includeRight
+
+### GroundTheory.Brauer.TensorSimple:95  GroundTheory.Brauer.center_tensorProduct_eq_map_includeLeft
+theorem center_tensorProduct_eq_map_includeLeft [Algebra.IsCentral K A] : Subalgebra.center K (B ⊗[K] A) = (Subalgebra.center K B).map includeLeft
+
+### GroundTheory.Brauer.TensorSimple:122  GroundTheory.Brauer.exists_one_tmul_mem_of_ne_bot
+theorem exists_one_tmul_mem_of_ne_bot [Algebra.IsCentral K A] [IsSimpleRing A] (I : TwoSidedIdeal (A ⊗[K] B)) (hI : I ≠ ⊥) : ∃ b : B, b ≠ 0 ∧ (1 : A) ⊗ₜ[K] b ∈ I
+
+### GroundTheory.FunctionField.PlaceDefs:21  GroundTheory.FunctionField.isTranscendenceBasis_singleton
+theorem isTranscendenceBasis_singleton {y : K} (hy : Transcendental k y) (hfin : FiniteDimensional (IntermediateField.adjoin k {y}) K) : IsTranscendenceBasis k ((↑) : ({y} : Set K) → K)
+
+### GroundTheory.FunctionField.PlaceDefs:77  Place.coe_algebraMap_apply
+theorem coe_algebraMap_apply (c : k) : ((algebraMap k v.ring c : v.ring) : K) = algebraMap k K c
+
+### GroundTheory.GlobalFields.Adele.IntegersLattice:8  GroundTheory.Global.discreteTopology_of_isOpen_of_forall_mem
+theorem discreteTopology_of_isOpen_of_forall_mem {G : Type*} [AddGroup G] [TopologicalSpace G] [IsTopologicalAddGroup G] (H : AddSubgroup G) (U : Set G) (hU : IsOpen U) (h0 : (0 : G) ∈ U) (hH : ∀ x ∈ H, x ∈ U → x = 0) : DiscreteTopology H
+
+### GroundTheory.GlobalFields.Adele.IntegersLattice:50  GroundTheory.Global.eq_zero_of_forall_infinitePlace_lt_one
+theorem eq_zero_of_forall_infinitePlace_lt_one (z : 𝓞 K) (h : ∀ w : InfinitePlace K, w z < 1) : z = 0
+
+### GroundTheory.GlobalFields.Adele.IntegersLattice:57  GroundTheory.Global.norm_algebraMap_apply
+theorem norm_algebraMap_apply (k : K) (w : InfinitePlace K) : ‖algebraMap K K∞ k w‖ = w k
+
+### GroundTheory.GlobalFields.Adele.WeakApprox:11  GroundTheory.Global.adicAbv_lt_one_iff_mem
+theorem adicAbv_lt_one_iff_mem (v : HeightOneSpectrum (𝓞 K)) (x : 𝓞 K) : NumberField.HeightOneSpectrum.adicAbv K v (algebraMap (𝓞 K) K x) < 1 ↔ x ∈ v.asIdeal
+
+### GroundTheory.GlobalFields.Adele.WeakApprox:16  GroundTheory.Global.adicAbv_isNontrivial
+theorem adicAbv_isNontrivial (v : HeightOneSpectrum (𝓞 K)) : (NumberField.HeightOneSpectrum.adicAbv K v).IsNontrivial
+
+### GroundTheory.GlobalFields.Adele.WeakApprox:22  GroundTheory.Global.not_isEquiv_adicAbv
+theorem not_isEquiv_adicAbv {v v' : HeightOneSpectrum (𝓞 K)} (h : v ≠ v') : ¬ (NumberField.HeightOneSpectrum.adicAbv K v).IsEquiv (NumberField.HeightOneSpectrum.adicAbv K v')
+
+### GroundTheory.GlobalFields.Adele.WeakApprox:32  GroundTheory.Global.not_isEquiv_adicAbv_infinitePlace
+theorem not_isEquiv_adicAbv_infinitePlace (v : HeightOneSpectrum (𝓞 K)) (w : InfinitePlace K) : ¬ (NumberField.HeightOneSpectrum.adicAbv K v).IsEquiv w.1
+
+### GroundTheory.GlobalFields.Adele.WeakApprox:67  GroundTheory.Global.isometry_algebraMap_adicCompletion
+theorem isometry_algebraMap_adicCompletion (v : HeightOneSpectrum (𝓞 K)) : Isometry ((algebraMap K (v.adicCompletion K)).comp (WithAbs.equiv (NumberField.HeightOneSpectrum.adicAbv K v)).toRingHom)
+
+### GroundTheory.GlobalFields.Adele.WeakApprox:74  GroundTheory.Global.denseRange_algebraMap_prod_pi
+theorem denseRange_algebraMap_prod_pi : DenseRange (fun x : K ↦ ((fun v : S ↦ algebraMap K (v.1.adicCompletion K) x), (fun w : T ↦ algebraMap K w.1.Completion x)))
+
+### GroundTheory.GlobalFields.AnalyticClassNumber.QuadraticHurwitzZero:10  GroundTheory.Global.Quadratic.hasDerivAt_add_cpow
+theorem hasDerivAt_add_cpow (n : ℕ) {t : ℝ} (ht : 0 < (n : ℝ) + t) (c : ℂ) : HasDerivAt (fun u : ℝ ↦ (((n : ℝ) + u : ℝ) : ℂ) ^ c) (c * (((n : ℝ) + t : ℝ) : ℂ) ^ (c - 1)) t
+
+### GroundTheory.GlobalFields.AnalyticClassNumber.QuadraticHurwitzZero:24  GroundTheory.Global.Quadratic.norm_taylor_two_le
+theorem norm_taylor_two_le (n : ℕ) (s : ℂ) {a b M : ℝ} (hpos : ∀ t ∈ uIcc a b, 0 < (n : ℝ) + t) (hM : ∀ t ∈ uIcc a b, ‖s * (s + 1) * (((n : ℝ) + t : ℝ) : ℂ) ^ (-s - 2)‖ ≤ M) : ‖(((n : ℝ) + b : ℝ) : ℂ) ^ (-s) - (((n : ℝ) + a : ℝ) : ℂ) ^ (-s) - (-s * (((n : ℝ) + a : ℝ) : ℂ) ^ (-s - 1)) * ((b - a : ℝ) : ℂ)‖ ≤ M * |b - a| ^ 2
+
+### GroundTheory.GlobalFields.AnalyticClassNumber.QuadraticHurwitzZero:69  GroundTheory.Global.Quadratic.rpow_le_of_exponent_mem
+theorem rpow_le_of_exponent_mem {b c e : ℝ} (hc : 0 < c) (hcb : c ≤ b) (he1 : -(9 / 2) ≤ e) (he2 : e ≤ -(3 / 2)) : b ^ e ≤ c ^ (-(3 / 2) : ℝ) + c ^ (-(9 / 2) : ℝ)
+
+### GroundTheory.GlobalFields.AnalyticClassNumber.QuadraticHurwitzZero:201  GroundTheory.Global.Quadratic.summable_hurwitzCombBound
+theorem summable_hurwitzCombBound {x₀ : ℝ} (hx₀ : 0 < x₀) : Summable (fun n : ℕ ↦ 18 * (((n : ℝ) + x₀) ^ (-(3 / 2) : ℝ) + ((n : ℝ) + x₀) ^ (-(9 / 2) : ℝ)))
+
+### GroundTheory.GlobalFields.AnalyticClassNumber.QuadraticHurwitzZero:238  GroundTheory.Global.Quadratic.hurwitzZeta_one_zero
+theorem hurwitzZeta_one_zero : hurwitzZeta ((1 : ℝ) : UnitAddCircle) 0 = -1 / 2
+
+### GroundTheory.GlobalFields.AnalyticClassNumber.QuadraticHurwitzZero:242  GroundTheory.Global.Quadratic.hurwitzZeta_half_zero
+theorem hurwitzZeta_half_zero : hurwitzZeta ((1 / 2 : ℝ) : UnitAddCircle) 0 = 0
+
+### GroundTheory.GlobalFields.AnalyticClassNumber.QuadraticHurwitzZero:263  GroundTheory.Global.Quadratic.hurwitzZeta_zero_eq
+theorem hurwitzZeta_zero_eq {x : ℝ} (hx0 : 0 < x) (hx1 : x < 1) : hurwitzZeta (x : UnitAddCircle) 0 = 1 / 2 - x
+
+### GroundTheory.GlobalFields.AnalyticClassNumber.QuadraticHurwitzZero:277  GroundTheory.Global.Quadratic.LFunction_zero_eq
+theorem LFunction_zero_eq {N : ℕ} [NeZero N] {Φ : ZMod N → ℂ} (h0 : Φ 0 = 0) (hsum : ∑ j, Φ j = 0) : ZMod.LFunction Φ 0 = -(1 / N) * ∑ j : ZMod N, Φ j * (j.val : ℂ)
+
+### GroundTheory.GlobalFields.AnalyticClassNumber.QuadraticHurwitzZero:301  GroundTheory.Global.Quadratic.LFunction_zero_eq_of_ne_one
+theorem LFunction_zero_eq_of_ne_one {N : ℕ} [NeZero N] {χ : DirichletCharacter ℂ N} (hχ : χ ≠ 1) : DirichletCharacter.LFunction χ 0 = -(1 / N) * ∑ a : ZMod N, χ a * (a.val : ℂ)
+
+### GroundTheory.GlobalFields.Artin.IsProjEigenspaceNegOneOfMulSelfEqOne:12  GroundTheory.Global.Artin.isProj_eigenspace_one_of_mul_self_eq_one
+theorem isProj_eigenspace_one_of_mul_self_eq_one {T : Module.End ℂ V} (hT : T * T = 1) : LinearMap.IsProj (Module.End.eigenspace T 1) ((2 : ℂ)⁻¹ • (1 + T)) where map_mem x
+
+### GroundTheory.GlobalFields.Artin.IsProjEigenspaceNegOneOfMulSelfEqOne:24  GroundTheory.Global.Artin.isProj_eigenspace_neg_one_of_mul_self_eq_one
+theorem isProj_eigenspace_neg_one_of_mul_self_eq_one {T : Module.End ℂ V} (hT : T * T = 1) : LinearMap.IsProj (Module.End.eigenspace T (-1)) ((2 : ℂ)⁻¹ • (1 - T)) where map_mem x
+
+### GroundTheory.GlobalFields.Artin.IsProjEigenspaceNegOneOfMulSelfEqOne:38  GroundTheory.Global.Artin.finrank_eigenspace_of_mul_self_eq_one
+theorem finrank_eigenspace_of_mul_self_eq_one [FiniteDimensional ℂ V] {T : Module.End ℂ V} (hT : T * T = 1) : ((finrank ℂ (Module.End.eigenspace T 1) : ℂ) + finrank ℂ (Module.End.eigenspace T (-1)) = finrank ℂ V) ∧ (LinearMap.trace ℂ V T = finrank ℂ (Module.End.eigenspace T 1) - finrank ℂ (Module.End.eigenspace T (-1)))
+
+### GroundTheory.GlobalFields.Artin.IsProjEigenspaceNegOneOfMulSelfEqOne:70  GroundTheory.Global.Artin.exists_isConj_of_isReal_comap
+theorem exists_isConj_of_isReal_comap [IsGalois K L] {w : InfinitePlace L} (hv : (w.comap (algebraMap K L)).IsReal) : ∃ σ : L ≃ₐ[K] L, ComplexEmbedding.IsConj w.embedding σ
+
+### GroundTheory.GlobalFields.Artin.IsProjEigenspaceNegOneOfMulSelfEqOne:140  GroundTheory.Global.Artin.character_prod
+theorem character_prod {W : Type*} [AddCommGroup W] [Module ℂ W] [FiniteDimensional ℂ W] (σ : Representation ℂ (L ≃ₐ[K] L) W) (g : L ≃ₐ[K] L) : (ρ.prod σ).character g = ρ.character g + σ.character g
+
+### GroundTheory.GlobalFields.Artin.LogCharpoly:42  GroundTheory.Global.coe_charpolyRev
+theorem coe_charpolyRev (M : Matrix n n R) : ((M.charpolyRev : R[X]) : PowerSeries R) = (1 - (PowerSeries.X : PowerSeries R) • M.map PowerSeries.C).det
+
+### GroundTheory.GlobalFields.Artin.LogCharpoly:51  GroundTheory.Global.coe_derivative_charpolyRev
+theorem coe_derivative_charpolyRev (M : Matrix n n R) : ((derivative M.charpolyRev : R[X]) : PowerSeries R) = -(M.charpolyRev : PowerSeries R) * PowerSeries.mk fun k => (M ^ (k + 1)).trace
+
+### GroundTheory.GlobalFields.Artin.LogCharpoly:96  GroundTheory.Global.mul_derivative_logOf
+theorem mul_derivative_logOf (f : PowerSeries k) (hf : PowerSeries.constantCoeff f = 1) : f * PowerSeries.derivative k (PowerSeries.logOf f) = PowerSeries.derivative k f
+
+### GroundTheory.GlobalFields.Artin.LogCharpoly:122  GroundTheory.Global.reverse_charpoly_eq_charpolyRev
+theorem reverse_charpoly_eq_charpolyRev {ι : Type*} [Fintype ι] [DecidableEq ι] (b : Module.Basis ι k W) (A : Module.End k W) : A.charpoly.reverse = (LinearMap.toMatrix b b A).charpolyRev
+
+### GroundTheory.GlobalFields.Artin.LogCharpoly:127  GroundTheory.Global.constantCoeff_reverse_charpoly
+theorem constantCoeff_reverse_charpoly (A : Module.End k W) : PowerSeries.constantCoeff (A.charpoly.reverse : PowerSeries k) = 1
+
+### GroundTheory.GlobalFields.Artin.LogCharpoly:132  GroundTheory.Global.coe_derivative_reverse_charpoly
+theorem coe_derivative_reverse_charpoly (A : Module.End k W) : ((derivative A.charpoly.reverse : k[X]) : PowerSeries k) = -(A.charpoly.reverse : PowerSeries k) * PowerSeries.mk fun m => LinearMap.trace k W (A ^ (m + 1))
+
+### GroundTheory.GlobalFields.Artin.LogCharpoly:143  GroundTheory.Global.logOf_inv_reverse_charpoly
+theorem logOf_inv_reverse_charpoly [CharZero k] (A : Module.End k W) : PowerSeries.logOf ((A.charpoly.reverse : PowerSeries k)⁻¹) = PowerSeries.mk fun m => if m = 0 then 0 else LinearMap.trace k W (A ^ m) / m
+
+### GroundTheory.GlobalFields.Artin.LogCharpoly:171  GroundTheory.Global.reverse_charpoly_eq_of_trace_pow_eq
+theorem reverse_charpoly_eq_of_trace_pow_eq [CharZero k] (A : Module.End k W) (B : Module.End k W') (h : ∀ m, 0 < m → LinearMap.trace k W (A ^ m) = LinearMap.trace k W' (B ^ m)) : A.charpoly.reverse = B.charpoly.reverse
+
+### GroundTheory.GlobalFields.ComplexMultiplication.AnalyticAlgebraicGerm:10  GroundTheory.Global.Elliptic.eventuallyEq_zero_codiscrete_iff
+theorem eventuallyEq_zero_codiscrete_iff {f : ℂ → ℂ} : f =ᶠ[codiscrete ℂ] 0 ↔ ∀ x, ∀ᶠ z in 𝓝[≠] x, f z = 0
+
+### GroundTheory.GlobalFields.ComplexMultiplication.AnalyticAlgebraicGerm:17  GroundTheory.Global.Elliptic.eventuallyEq_zero_codiscrete_of_nhdsNE
+theorem eventuallyEq_zero_codiscrete_of_nhdsNE {f : ℂ → ℂ} (hf : Meromorphic f) {x : ℂ} (h : ∀ᶠ z in 𝓝[≠] x, f z = 0) : f =ᶠ[codiscrete ℂ] 0
+
+### GroundTheory.GlobalFields.ComplexMultiplication.AnalyticAlgebraicGerm:27  GroundTheory.Global.Elliptic.eventually_ne_zero_codiscrete
+theorem eventually_ne_zero_codiscrete {f : ℂ → ℂ} (hf : Meromorphic f) (h : ¬ f =ᶠ[codiscrete ℂ] 0) : ∀ᶠ z in codiscrete ℂ, f z ≠ 0
+
+### GroundTheory.GlobalFields.ComplexMultiplication.AnalyticAlgebraicGerm:34  GroundTheory.Global.Elliptic.nonempty_of_mem_codiscrete
+theorem nonempty_of_mem_codiscrete {S : Set ℂ} (hS : S ∈ codiscrete ℂ) : S.Nonempty
+
+### GroundTheory.GlobalFields.ComplexMultiplication.AnalyticAlgebraicGerm:39  GroundTheory.Global.Elliptic.isOpen_of_mem_codiscrete
+theorem isOpen_of_mem_codiscrete {S : Set ℂ} (hS : S ∈ codiscrete ℂ) : IsOpen S
+
+### GroundTheory.GlobalFields.ComplexMultiplication.AnalyticAlgebraicGerm:42  GroundTheory.Global.Elliptic.eventually_analyticAt
+theorem eventually_analyticAt {f : ℂ → ℂ} (hf : Meromorphic f) : ∀ᶠ z in codiscrete ℂ, AnalyticAt ℂ f z
+
+### GroundTheory.GlobalFields.ComplexMultiplication.AnalyticAlgebraicGerm:46  GroundTheory.Global.Elliptic.deriv_eventuallyEq_codiscrete
+theorem deriv_eventuallyEq_codiscrete {f g : ℂ → ℂ} (h : f =ᶠ[codiscrete ℂ] g) : deriv f =ᶠ[codiscrete ℂ] deriv g
+
+### GroundTheory.GlobalFields.ComplexMultiplication.AnalyticAlgebraicGerm:182  GroundTheory.Global.Elliptic.comp_affine_eventuallyEq_zero
+theorem comp_affine_eventuallyEq_zero {f : ℂ → ℂ} (h : f =ᶠ[codiscrete ℂ] 0) {t : ℂ} (ht : t ≠ 0) (s : ℂ) : (fun z ↦ f (t * z + s)) =ᶠ[codiscrete ℂ] 0
+
+### GroundTheory.GlobalFields.ComplexMultiplication.AnalyticAlgebraicGerm:192  GroundTheory.Global.Elliptic.meromorphic_comp_affine
+theorem meromorphic_comp_affine {f : ℂ → ℂ} (hf : Meromorphic f) (t s : ℂ) : Meromorphic fun z ↦ f (t * z + s)
+
+### GroundTheory.GlobalFields.ComplexMultiplication.ExistsRingEquivExtendOfIsTranscendenceBasis:11  GroundTheory.Global.exists_ringEquiv_extend_of_isTranscendenceBasis
+theorem exists_ringEquiv_extend_of_isTranscendenceBasis {F₁ F₂ : Type*} [Field F₁] [Field F₂] [Algebra F₁ Ω] [Algebra F₂ Ω] (e : F₁ ≃+* F₂) {ι κ : Type*} {v₁ : ι → Ω} {v₂ : κ → Ω} (h₁ : IsTranscendenceBasis F₁ v₁) (h₂ : IsTranscendenceBasis F₂ v₂) (φ : ι ≃ κ) : ∃ σ : Ω ≃+* Ω, (∀ a : F₁, σ (algebraMap F₁ Ω a) = algebraMap F₂ Ω (e a)) ∧ ∀ i, σ (v₁ i) = v₂ (φ i)
+
+### GroundTheory.GlobalFields.ComplexMultiplication.ExistsRingEquivExtendOfIsTranscendenceBasis:34  GroundTheory.Global.exists_ringEquiv_extend_of_trdeg_eq
+theorem exists_ringEquiv_extend_of_trdeg_eq {F₁ F₂ : Type*} [Field F₁] [Field F₂] [Algebra F₁ Ω] [Algebra F₂ Ω] (e : F₁ ≃+* F₂) (h : Algebra.trdeg F₁ Ω = Algebra.trdeg F₂ Ω) : ∃ σ : Ω ≃+* Ω, ∀ a : F₁, σ (algebraMap F₁ Ω a) = algebraMap F₂ Ω (e a)
+
+### GroundTheory.GlobalFields.ComplexMultiplication.ExistsRingEquivExtendOfIsTranscendenceBasis:44  GroundTheory.Global.trdeg_eq_cardinalMk_of_countable
+theorem trdeg_eq_cardinalMk_of_countable (F : Type*) [Field F] [Algebra F Ω] [Countable F] (hΩ : ℵ₀ < #Ω) : Algebra.trdeg F Ω = #Ω
+
+### GroundTheory.GlobalFields.ComplexMultiplication.ExistsRingEquivExtendOfIsTranscendenceBasis:53  GroundTheory.Global.Complex.exists_ringEquiv_extend_of_trdeg_eq
+theorem Complex.exists_ringEquiv_extend_of_trdeg_eq (F₁ F₂ : Subfield ℂ) (e : F₁ ≃+* F₂) (h : Algebra.trdeg F₁ ℂ = Algebra.trdeg F₂ ℂ) : ∃ σ : ℂ ≃+* ℂ, ∀ a : F₁, σ a = e a
+
+### GroundTheory.GlobalFields.ComplexMultiplication.PrimeLocalization:30  GroundTheory.Global.finite_setOf_mem_asIdeal
+theorem finite_setOf_mem_asIdeal {b : 𝓞 L} (hb : b ≠ 0) : {v : HeightOneSpectrum (𝓞 L) | b ∈ v.asIdeal}.Finite
+
+### GroundTheory.GlobalFields.ComplexMultiplication.PrimeLocalization:45  GroundTheory.Global.isUnit_of_mem_of_inv_mem
+theorem isUnit_of_mem_of_inv_mem {R : Type*} [CommRing R] [Algebra R L] {S : Subalgebra R L} {x : L} (hx : x ≠ 0) (h : x ∈ S) (h' : x⁻¹ ∈ S) : IsUnit (⟨x, h⟩ : S)
+
+### GroundTheory.GlobalFields.ComplexMultiplication.RectangleIntegral:220  GroundTheory.Global.Elliptic.ofReal_add_mul_I_ne_zero
+lemma ofReal_add_mul_I_ne_zero {c : ℝ} (hc : c ≠ 0) (x : ℝ) : (x : ℂ) + c * I ≠ 0
+
+### GroundTheory.GlobalFields.ComplexMultiplication.Residue:45  GroundTheory.Global.Elliptic.swap_dslope_sub_mul
+lemma swap_dslope_sub_mul {p : ℂ} {g : ℂ → ℂ} (hg : DifferentiableAt ℂ g p) : Function.swap dslope p (fun z ↦ (z - p) * g z) = g
+
+### GroundTheory.GlobalFields.ComplexMultiplication.Residue:57  GroundTheory.Global.Elliptic.swap_dslope_const_mul
+lemma swap_dslope_const_mul (p a : ℂ) (g : ℂ → ℂ) : Function.swap dslope p (fun z ↦ a * g z) = fun z ↦ a * Function.swap dslope p g z
+
+### GroundTheory.GlobalFields.ComplexMultiplication.Residue:227  GroundTheory.Global.Elliptic.swap_dslope_comp_mul
+lemma swap_dslope_comp_mul {G : ℂ → ℂ} {c w₀ : ℂ} (hc : c ≠ 0) (hG : DifferentiableAt ℂ G (c * w₀)) : Function.swap dslope w₀ (fun w ↦ G (c * w)) = fun w ↦ c * Function.swap dslope (c * w₀) G (c * w)
+
+### GroundTheory.GlobalFields.ComplexMultiplication.VariableChangePoints:11  GroundTheory.Global.nonsingular_variableChange
+theorem nonsingular_variableChange (C : VariableChange F) (W : WeierstrassCurve F) {x y : F} (h : W.toAffine.Nonsingular x y) : (C • W).toAffine.Nonsingular (↑C.u⁻¹ ^ 2 * (x - C.r)) (↑C.u⁻¹ ^ 3 * (y - C.s * (x - C.r) - C.t))
+
+### GroundTheory.GlobalFields.CyclotomicCharacters.Frobenius:19  GroundTheory.Global.Cyclotomic.ne_bot_of_liesOver
+theorem ne_bot_of_liesOver : P ≠ ⊥
+
+### GroundTheory.GlobalFields.CyclotomicCharacters.Frobenius:26  GroundTheory.Global.Cyclotomic.finite_quotient
+theorem finite_quotient : Finite (𝓞 K ⧸ P)
+
+### GroundTheory.GlobalFields.CyclotomicCharacters.Frobenius:32  GroundTheory.Global.Cyclotomic.card_quotient_under
+theorem card_quotient_under : Nat.card (ℤ ⧸ P.under ℤ) = p
+
+### GroundTheory.GlobalFields.CyclotomicCharacters.Frobenius:38  GroundTheory.Global.Cyclotomic.natCast_notMem_of_not_dvd
+theorem natCast_notMem_of_not_dvd (hm : ¬ p ∣ m) : ((m : ℕ) : 𝓞 K) ∉ P
+
+### GroundTheory.GlobalFields.CyclotomicCharacters.Frobenius:45  GroundTheory.Global.Cyclotomic.eq_of_forall_pow_eq_one
+theorem eq_of_forall_pow_eq_one {σ τ : Gal(K/ℚ)} (h : ∀ x : K, x ^ m = 1 → σ x = τ x) : σ = τ
+
+### GroundTheory.GlobalFields.CyclotomicCharacters.Frobenius:57  GroundTheory.Global.Cyclotomic.IsArithFrobAt.apply_of_pow_eq_one
+theorem IsArithFrobAt.apply_of_pow_eq_one (hm : ¬ p ∣ m) {σ : Gal(K/ℚ)} (hσ : IsArithFrobAt ℤ σ P) {x : K} (hx : x ^ m = 1) : σ x = x ^ p
+
+### GroundTheory.GlobalFields.CyclotomicCharacters.Frobenius:71  GroundTheory.Global.Cyclotomic.isArithFrobAt_iff
+theorem isArithFrobAt_iff (hm : ¬ p ∣ m) (σ : Gal(K/ℚ)) : IsArithFrobAt ℤ σ P ↔ ∀ x : K, x ^ m = 1 → σ x = x ^ p
+
+### GroundTheory.GlobalFields.CyclotomicCharacters.Frobenius:81  GroundTheory.Global.Cyclotomic.existsUnique_isArithFrobAt
+theorem existsUnique_isArithFrobAt (hm : ¬ p ∣ m) : ∃! σ : Gal(K/ℚ), IsArithFrobAt ℤ σ P
+
+### GroundTheory.GlobalFields.HerbrandQuotients.RationalForm:7  GroundTheory.Global.exists_rat_intertwiner
+theorem exists_rat_intertwiner {ι J : Type*} [Fintype ι] [DecidableEq ι] (A A' : J → Matrix ι ι ℚ) (P : Matrix ι ι ℝ) (hP : P.det ≠ 0) (h : ∀ j, P * (A j).map (Rat.cast : ℚ → ℝ) = (A' j).map (Rat.cast : ℚ → ℝ) * P) : ∃ Q : Matrix ι ι ℚ, Q.det ≠ 0 ∧ ∀ j, Q * A j = A' j * Q
+
+### GroundTheory.GlobalFields.IdeleGroups.IndexProductFormula:9  GroundTheory.Global.norm_natCast_adicCompletion_eq_one
+theorem norm_natCast_adicCompletion_eq_one {v : HeightOneSpectrum (𝓞 K)} {n : ℕ} (hv : (n : 𝓞 K) ∉ v.asIdeal) : ‖(n : v.adicCompletion K)‖ = 1
+
+### GroundTheory.GlobalFields.IdeleGroups.IndexProductFormula:14  GroundTheory.Global.finprod_norm_natCast_adicCompletion_mul
+theorem finprod_norm_natCast_adicCompletion_mul {n : ℕ} (hn : n ≠ 0) : (∏ᶠ v : HeightOneSpectrum (𝓞 K), ‖(n : v.adicCompletion K)‖) * (n : ℝ) ^ Module.finrank ℚ K = 1
+
+### GroundTheory.GlobalFields.IdeleGroups.IndexProductFormula:26  GroundTheory.Global.prod_norm_natCast_adicCompletion_mul
+theorem prod_norm_natCast_adicCompletion_mul {n : ℕ} (hn : n ≠ 0) (S : Finset (HeightOneSpectrum (𝓞 K))) (hS : ∀ v, (n : 𝓞 K) ∈ v.asIdeal → v ∈ S) : (∏ v ∈ S, ‖(n : v.adicCompletion K)‖) * (n : ℝ) ^ Module.finrank ℚ K = 1
+
+### GroundTheory.GlobalFields.IdeleGroups.IndexProductFormula:35  GroundTheory.Global.prod_norm_natCast_infinitePlaceCompletion_pow_mult
+theorem prod_norm_natCast_infinitePlaceCompletion_pow_mult (n : ℕ) : ∏ w : InfinitePlace K, ‖(n : w.Completion)‖ ^ w.mult = (n : ℝ) ^ Module.finrank ℚ K
+
+### GroundTheory.GlobalFields.IdeleGroups.IndexProductFormula:45  GroundTheory.Global.prod_norm_natCast_mul_prod_infinitePlace
+theorem prod_norm_natCast_mul_prod_infinitePlace {n : ℕ} (hn : n ≠ 0) (S : Finset (HeightOneSpectrum (𝓞 K))) (hS : ∀ v, (n : 𝓞 K) ∈ v.asIdeal → v ∈ S) : (∏ v ∈ S, ‖(n : v.adicCompletion K)‖) * ∏ w : InfinitePlace K, ‖(n : w.Completion)‖ ^ w.mult = 1
+
+### GroundTheory.GlobalFields.KummerTheory.Unramified:11  GroundTheory.Global.Kummer.exists_mul_pow_integral_notMem
+theorem exists_mul_pow_integral_notMem (v : HeightOneSpectrum (𝓞 K)) {n : ℕ} (hn : n ≠ 0) (a : Kˣ) (hav : (n : ℤ) ∣ WithZero.log (v.valuation K (a : K))) : ∃ c : K, c ≠ 0 ∧ ∃ b : 𝓞 K, algebraMap (𝓞 K) K b = a * c ^ n ∧ b ∉ v.asIdeal
+
+### GroundTheory.GlobalFields.KummerTheory.Unramified:47  GroundTheory.Global.Kummer.isUnramifiedAt_of_pow_eq
+theorem isUnramifiedAt_of_pow_eq {n : ℕ} (a : Kˣ) {α : M} (hα : α ^ n = algebraMap K M a) (hgen : IntermediateField.adjoin K {α} = ⊤) (v : HeightOneSpectrum (𝓞 K)) (hnv : (n : 𝓞 K) ∉ v.asIdeal) (hav : (n : ℤ) ∣ WithZero.log (v.valuation K (a : K))) (P : Ideal (𝓞 M)) [P.IsPrime] [P.LiesOver v.asIdeal] : Algebra.IsUnramifiedAt (𝓞 K) P
+
+### GroundTheory.GlobalFields.KummerTheory.Unramified:112  GroundTheory.Global.Kummer.ramificationIdx_eq_one_of_pow_eq
+theorem ramificationIdx_eq_one_of_pow_eq {n : ℕ} (a : Kˣ) {α : M} (hα : α ^ n = algebraMap K M a) (hgen : IntermediateField.adjoin K {α} = ⊤) (v : HeightOneSpectrum (𝓞 K)) (hnv : (n : 𝓞 K) ∉ v.asIdeal) (hav : (n : ℤ) ∣ WithZero.log (v.valuation K (a : K))) (P : Ideal (𝓞 M)) [P.IsPrime] [P.LiesOver v.asIdeal] : P.ramificationIdx (𝓞 K) = 1
+
+### GroundTheory.GlobalFields.KummerTheory.Unramified:121  GroundTheory.Global.Kummer.isUnramifiedIn_of_pow_eq
+theorem isUnramifiedIn_of_pow_eq {n : ℕ} (a : Kˣ) {α : M} (hα : α ^ n = algebraMap K M a) (hgen : IntermediateField.adjoin K {α} = ⊤) (v : HeightOneSpectrum (𝓞 K)) (hnv : (n : 𝓞 K) ∉ v.asIdeal) (hav : (n : ℤ) ∣ WithZero.log (v.valuation K (a : K))) : Algebra.IsUnramifiedIn (𝓞 M) v.asIdeal
+
+### GroundTheory.GlobalFields.LocalAtPlace:12  GroundTheory.Global.algebraMap_mem_maximalIdeal_adicCompletionIntegers_iff
+theorem algebraMap_mem_maximalIdeal_adicCompletionIntegers_iff (r : R) : algebraMap R (v.adicCompletionIntegers K) r ∈ IsLocalRing.maximalIdeal (v.adicCompletionIntegers K) ↔ r ∈ v.asIdeal
+
+### GroundTheory.GlobalFields.LocalAtPlace:19  GroundTheory.Global.exists_algebraMap_sub_mem_maximalIdeal
+theorem exists_algebraMap_sub_mem_maximalIdeal (x : v.adicCompletionIntegers K) : ∃ r : R, x - algebraMap R (v.adicCompletionIntegers K) r ∈ IsLocalRing.maximalIdeal (v.adicCompletionIntegers K)
+
+### GroundTheory.GlobalFields.LocalAtPlace:92  GroundTheory.Global.natCard_residueField_adicCompletionIntegers
+theorem natCard_residueField_adicCompletionIntegers : Nat.card (IsLocalRing.ResidueField (v.adicCompletionIntegers K)) = Ideal.absNorm v.asIdeal
+
+### GroundTheory.GlobalFields.LocalAtPlace:104  GroundTheory.Global.isOpen_adicCompletionIntegers
+theorem isOpen_adicCompletionIntegers : IsOpen (v.adicCompletionIntegers K : Set (v.adicCompletion K))
+
+### GroundTheory.GlobalFields.LocalAtPlace:108  GroundTheory.Global.isClosed_adicCompletionIntegers
+theorem isClosed_adicCompletionIntegers : IsClosed (v.adicCompletionIntegers K : Set (v.adicCompletion K))
+
+### GroundTheory.GlobalFields.LocalAtPlace:112  GroundTheory.Global.isCompact_adicCompletionIntegers
+theorem isCompact_adicCompletionIntegers : IsCompact (v.adicCompletionIntegers K : Set (v.adicCompletion K))
+
+### GroundTheory.GlobalFields.SUnitsKernel:14  GroundTheory.Global.SUnit.forall_valuation_eq_one_iff
+theorem forall_valuation_eq_one_iff (x : Kˣ) : (∀ v : HeightOneSpectrum (𝓞 K), v.valuation K (x : K) = 1) ↔ x ∈ (Units.map (algebraMap (𝓞 K) K : 𝓞 K →* K)).range
+
+### GroundTheory.GlobalFields.SemilocalAlgebras.Approximation:13  GroundTheory.Global.SemiLocal.exists_sub_mem_pow_of_injective
+theorem exists_sub_mem_pow_of_injective {ι : Type*} [Fintype ι] [DecidableEq ι] (w : ι → HeightOneSpectrum (𝓞 L)) (hw : Function.Injective w) (i : ι) (n : ℕ) : ∃ a : 𝓞 L, ∀ j, a - (if j = i then 1 else 0) ∈ (w j).asIdeal ^ n
+
+### GroundTheory.GlobalFields.SemilocalAlgebras.Approximation:22  GroundTheory.Global.SemiLocal.norm_algebraMap_le_of_mem_pow
+theorem norm_algebraMap_le_of_mem_pow (w : HeightOneSpectrum (𝓞 L)) (a : 𝓞 L) (n : ℕ) (ha : a ∈ w.asIdeal ^ n) : ‖algebraMap (𝓞 L) (w.adicCompletion L) a‖ ≤ ((toNNReal (HeightOneSpectrum.absNorm_ne_zero w) (exp (-1 : ℤ)) : ℝ)) ^ n
+
+### GroundTheory.GlobalFields.SemilocalAlgebras.Approximation:34  GroundTheory.Global.SemiLocal.toNNReal_exp_neg_one_lt_one
+theorem toNNReal_exp_neg_one_lt_one (w : HeightOneSpectrum (𝓞 L)) : ((toNNReal (HeightOneSpectrum.absNorm_ne_zero w) (exp (-1 : ℤ)) : ℝ)) < 1
+
+### GroundTheory.GlobalFields.SemilocalAlgebras.Approximation:41  GroundTheory.Global.SemiLocal.denseRange_algebraMap_pi
+theorem denseRange_algebraMap_pi {ι : Type*} [Finite ι] (w : ι → HeightOneSpectrum (𝓞 L)) (hw : Function.Injective w) : DenseRange (fun x : L ↦ fun i ↦ algebraMap L ((w i).adicCompletion L) x)
+
+### GroundTheory.GlobalFields.SemilocalAlgebras.Infinite:12  GroundTheory.Global.Matrix.det_blockDiagonal'
+theorem det_blockDiagonal' {R ι : Type*} [CommRing R] [Fintype ι] [DecidableEq ι] {κ : ι → Type*} [∀ i, Fintype (κ i)] [∀ i, DecidableEq (κ i)] (M : ∀ i, Matrix (κ i) (κ i) R) : (Matrix.blockDiagonal' M).det = ∏ i, (M i).det
+
+### GroundTheory.GlobalFields.SemilocalAlgebras.Infinite:44  GroundTheory.Global.Algebra.leftMulMatrix_pi
+theorem leftMulMatrix_pi {κ : ι → Type*} [∀ i, Fintype (κ i)] [∀ i, DecidableEq (κ i)] (b : ∀ i, Module.Basis (κ i) R (A i)) (x : ∀ i, A i) : Algebra.leftMulMatrix (Pi.basis b) x = Matrix.blockDiagonal' fun i => Algebra.leftMulMatrix (b i) (x i)
+
+### GroundTheory.GlobalFields.SemilocalAlgebras.Infinite:55  GroundTheory.Global.Algebra.norm_pi
+theorem norm_pi (x : ∀ i, A i) : Algebra.norm R x = ∏ i, Algebra.norm R (x i)
+
+### GroundTheory.GlobalFields.SemilocalAlgebras.Infinite:61  GroundTheory.Global.Algebra.trace_pi
+theorem trace_pi (x : ∀ i, A i) : Algebra.trace R _ x = ∑ i, Algebra.trace R (A i) (x i)
+
+### GroundTheory.GlobalFields.SemilocalAlgebras.Infinite:74  GroundTheory.Global.InfinitePlace.norm_two_completion
+theorem norm_two_completion : ‖(2 : v.Completion)‖ = 2
+
+### GroundTheory.GlobalFields.SemilocalAlgebras.Infinite:104  GroundTheory.Global.InfinitePlace.finrank_completion_pos
+theorem finrank_completion_pos (w : InfinitePlace L) [w.LiesOver v] : 0 < Module.finrank v.Completion w.Completion
+
+### GroundTheory.GlobalFields.SemilocalAlgebras.Infinite:118  GroundTheory.Global.InfinitePlace.sum_finrank_completion
+theorem sum_finrank_completion : ∑ w : v.placesOver L, Module.finrank v.Completion (w : InfinitePlace L).Completion = Module.finrank K L
+
+### GroundTheory.GlobalFields.SemilocalAlgebras.Infinite:132  GroundTheory.Global.InfinitePlace.finrank_tensor
+theorem finrank_tensor : Module.finrank v.Completion (v.Completion ⊗[K] L) = Module.finrank K L
+
+### GroundTheory.GlobalFields.SemilocalAlgebras.Infinite:244  GroundTheory.Global.InfinitePlace.algebraMap_norm_eq_norm_tmul
+theorem algebraMap_norm_eq_norm_tmul (l : L) : algebraMap K v.Completion (Algebra.norm K l) = Algebra.norm v.Completion ((1 : v.Completion) ⊗ₜ[K] l)
+
+### GroundTheory.GlobalFields.SemilocalAlgebras.Infinite:249  GroundTheory.Global.InfinitePlace.algebraMap_trace_eq_trace_tmul
+theorem algebraMap_trace_eq_trace_tmul (l : L) : algebraMap K v.Completion (Algebra.trace K L l) = Algebra.trace v.Completion _ ((1 : v.Completion) ⊗ₜ[K] l)
+
+### GroundTheory.GlobalFields.SemilocalAlgebras.Infinite:273  GroundTheory.Global.InfinitePlace.algebraMap_norm_eq_prod
+theorem algebraMap_norm_eq_prod (l : L) : algebraMap K v.Completion (Algebra.norm K l) = ∏ w : v.placesOver L, Algebra.norm v.Completion (l : (w : InfinitePlace L).Completion)
+
+### GroundTheory.GlobalFields.SemilocalAlgebras.Infinite:281  GroundTheory.Global.InfinitePlace.algebraMap_trace_eq_sum
+theorem algebraMap_trace_eq_sum (l : L) : algebraMap K v.Completion (Algebra.trace K L l) = ∑ w : v.placesOver L, Algebra.trace v.Completion _ (l : (w : InfinitePlace L).Completion)
+
+### GroundTheory.GlobalFields.SemilocalAlgebras.Infinite:294  GroundTheory.Global.InfinitePlace.liesOver_iff_comap_eq
+theorem liesOver_iff_comap_eq (w : InfinitePlace L) : w.LiesOver v ↔ w.comap (algebraMap K L) = v
+
+### GroundTheory.GlobalFields.SemilocalAlgebras.Infinite:298  GroundTheory.Global.InfinitePlace.comap_smul_algebraMap
+theorem comap_smul_algebraMap (σ : Gal(L/K)) (w : InfinitePlace L) : (σ • w).comap (algebraMap K L) = w.comap (algebraMap K L)
+
+### GroundTheory.GlobalFields.SemilocalAlgebras.Infinite:312  GroundTheory.Global.InfinitePlace.coe_smul_placesOver
+theorem coe_smul_placesOver (σ : Gal(L/K)) (w : v.placesOver L) : ((σ • w : v.placesOver L) : InfinitePlace L) = σ • (w : InfinitePlace L)
+
+### GroundTheory.GlobalFields.SemilocalAlgebras.Infinite:315  GroundTheory.Global.InfinitePlace.exists_smul_eq_of_liesOver
+theorem exists_smul_eq_of_liesOver [IsGalois K L] (w w' : InfinitePlace L) [w.LiesOver v] [w'.LiesOver v] : ∃ σ : Gal(L/K), σ • w = w'
+
+### GroundTheory.GlobalFields.TateThesis.ArchChars:7  GroundTheory.Global.isCoveringMap_circleExp
+theorem isCoveringMap_circleExp : IsCoveringMap (Circle.exp : ℝ → Circle)
+
+### GroundTheory.GlobalFields.TateThesis.ArchChars:11  GroundTheory.Global.existsUnique_circleExp_of_continuous
+theorem existsUnique_circleExp_of_continuous (χ : ℝ → Circle) (hχ : Continuous χ) (hmul : ∀ s t, χ (s + t) = χ s * χ t) : ∃! τ : ℝ, ∀ t, χ t = Circle.exp (τ * t)
+
+### GroundTheory.GlobalFields.TateThesis.ArchChars:42  GroundTheory.Global.eq_of_forall_exp_mul_eq
+theorem eq_of_forall_exp_mul_eq {s s' : ℂ} (h : ∀ t : ℝ, Complex.exp (s * t) = Complex.exp (s' * t)) : s = s'
+
+### GroundTheory.GlobalFields.TateThesis.ArchChars:52  GroundTheory.Global.existsUnique_exp_of_continuous
+theorem existsUnique_exp_of_continuous (χ : ℝ → ℂˣ) (hχ : Continuous χ) (hmul : ∀ s t, χ (s + t) = χ s * χ t) : ∃! s : ℂ, ∀ t : ℝ, (χ t : ℂ) = Complex.exp (s * t)
+
+### GroundTheory.GlobalFields.TateThesis.DegreeOnePrimes:9  GroundTheory.Global.card_primesOver_le_finrank
+theorem card_primesOver_le_finrank {R S : Type*} [CommRing R] [IsDomain R] [CommRing S] [Algebra R S] [Module.Finite R S] [Module.Flat R S] (p : Ideal R) [p.IsPrime] [Finite (p.primesOver S)] : Nat.card (p.primesOver S) ≤ Module.finrank R S
+
+### GroundTheory.GlobalFields.TateThesis.DegreeOnePrimes:27  GroundTheory.Global.under_int_ne_bot
+theorem under_int_ne_bot (w : HeightOneSpectrum (𝓞 L)) : w.asIdeal.under ℤ ≠ ⊥
+
+### GroundTheory.GlobalFields.TateThesis.DegreeOnePrimes:108  GroundTheory.Global.one_le_absNorm
+theorem one_le_absNorm (w : HeightOneSpectrum (𝓞 L)) : 1 ≤ Ideal.absNorm w.asIdeal
+
+### GroundTheory.GlobalFields.TateThesis.DegreeOnePrimes:111  GroundTheory.Global.summable_absNorm_rpow_neg
+theorem summable_absNorm_rpow_neg {s : ℝ} (hs : 1 < s) : Summable fun w : HeightOneSpectrum (𝓞 L) => (Ideal.absNorm w.asIdeal : ℝ) ^ (-s)
+
+### GroundTheory.GlobalFields.TateThesis.DegreeOnePrimes:119  GroundTheory.Global.summable_absNorm_rpow_neg_of_not_prime
+theorem summable_absNorm_rpow_neg_of_not_prime {s : ℝ} (hs : 1 / 2 < s) : Summable fun w : {w : HeightOneSpectrum (𝓞 L) // ¬ (Ideal.absNorm w.asIdeal).Prime} => (Ideal.absNorm w.1.asIdeal : ℝ) ^ (-s)
+
+### GroundTheory.GlobalFields.TateThesis.DegreeOnePrimes:142  GroundTheory.Global.summable_absNorm_rpow_neg_subtype
+theorem summable_absNorm_rpow_neg_subtype (S : Set (HeightOneSpectrum (𝓞 L))) {s : ℝ} (hs : 1 < s) : Summable fun w : S => (Ideal.absNorm w.1.asIdeal : ℝ) ^ (-s)
+
+### GroundTheory.GlobalFields.TateThesis.DegreeOnePrimes:174  GroundTheory.Global.summable_indicator_not_prime
+theorem summable_indicator_not_prime {s : ℝ} (hs : 1 / 2 < s) : Summable ({w : HeightOneSpectrum (𝓞 L) | ¬ (Ideal.absNorm w.asIdeal).Prime}.indicator fun w => (Ideal.absNorm w.asIdeal : ℝ) ^ (-s))
+
+### GroundTheory.GlobalFields.TateThesis.Gaussian:10  GroundTheory.Global.mellin_exp_neg_mul_sq
+theorem mellin_exp_neg_mul_sq {b : ℝ} (hb : 0 < b) {a : ℂ} (ha : 0 < a.re) : mellin (fun t : ℝ ↦ ((Real.exp (-(b * t ^ 2)) : ℝ) : ℂ)) a = (1 / 2 : ℂ) * (b : ℂ) ^ (-(a / 2)) * Complex.Gamma (a / 2)
+
+### GroundTheory.GlobalFields.TateThesis.Gaussian:74  GroundTheory.Global.integral_comp_abs_complex
+theorem integral_comp_abs_complex (f : ℝ → ℂ) : ∫ x : ℝ, f |x| = 2 * ∫ y in Ioi (0 : ℝ), f y
+
+### GroundTheory.GlobalFields.TateThesis.Gaussian:81  GroundTheory.Global.mellin_exp_neg_pi_mul_sq
+theorem mellin_exp_neg_pi_mul_sq {s : ℂ} (hs : 0 < s.re) : mellin (fun t : ℝ ↦ ((Real.exp (-(π * t ^ 2)) : ℝ) : ℂ)) s = Gammaℝ s / 2
+
+### GroundTheory.GlobalFields.TateThesis.Gaussian:86  GroundTheory.Global.ofReal_cpow_div_self
+theorem ofReal_cpow_div_self {y : ℝ} (hy : 0 < y) (s : ℂ) : (y : ℂ) ^ s / (y : ℂ) = (y : ℂ) ^ (s - 1)
+
+### GroundTheory.GlobalFields.TateThesis.GaussianSchwartz:10  GroundTheory.Global.one_add_pow_mul_exp_neg_pi_mul_sq_le
+theorem one_add_pow_mul_exp_neg_pi_mul_sq_le {r : ℝ} (hr : 0 ≤ r) (N : ℕ) : (1 + r) ^ N * Real.exp (-π * r ^ 2) ≤ Real.exp (N ^ 2 / (4 * π))
+
+### GroundTheory.GlobalFields.TateThesis.GaussianSchwartz:32  GroundTheory.Global.norm_iteratedFDeriv_exp
+theorem norm_iteratedFDeriv_exp (i : ℕ) (y : ℝ) : ‖iteratedFDeriv ℝ i Real.exp y‖ = Real.exp y
+
+### GroundTheory.GlobalFields.TateThesis.LatticePoissonBasic:14  GroundTheory.Global.inner
+theorem innerₗ_nondegenerate : (innerₗ E : LinearMap.BilinForm ℝ E).Nondegenerate
+

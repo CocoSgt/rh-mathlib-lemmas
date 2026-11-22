@@ -1,0 +1,57 @@
+### PositivityTheory.AutomorphicForms.PublishedInputs.HilbertEisenstein.HasFDerivAtIntegralSchwartzBilin:16  UpperTheory.HilbertEisensteinWeightOne.EisensteinSmoothness.natCast_le_infty
+theorem natCast_le_infty (m : ℕ) : (m : WithTop ℕ∞) ≤ ∞
+
+### PositivityTheory.AutomorphicForms.PublishedInputs.HilbertEisenstein.HasFDerivAtIntegralSchwartzBilin:18  UpperTheory.HilbertEisensteinWeightOne.EisensteinSmoothness.natCast_lt_infty
+theorem natCast_lt_infty (m : ℕ) : (m : WithTop ℕ∞) < ∞
+
+### PositivityTheory.AutomorphicForms.PublishedInputs.HilbertEisenstein.HasFDerivAtIntegralSchwartzBilin:20  UpperTheory.HilbertEisensteinWeightOne.EisensteinSmoothness.infty_ne_zero
+theorem infty_ne_zero : (∞ : WithTop ℕ∞) ≠ 0
+
+### PositivityTheory.AutomorphicForms.PublishedInputs.HilbertEisenstein.HasFDerivAtIntegralSchwartzBilin:26  UpperTheory.HilbertEisensteinWeightOne.EisensteinSmoothness.contDiff_bil
+theorem contDiff_bil (Ψ : 𝓢(V, ℂ)) (B : V →L[ℝ] X →L[ℝ] V) (v : V) : ContDiff ℝ ∞ (fun x => Ψ (B v x))
+
+### PositivityTheory.AutomorphicForms.PublishedInputs.HilbertEisenstein.HasFDerivAtIntegralSchwartzBilin:34  UpperTheory.HilbertEisensteinWeightOne.EisensteinSmoothness.continuous_compCLM
+theorem continuous_compCLM (m : ℕ) : Continuous (fun fg : ContinuousMultilinearMap ℝ (fun _ : Fin m => V) ℂ × (Fin m → X →L[ℝ] V) => fg.1.compContinuousLinearMap fg.2)
+
+### PositivityTheory.AutomorphicForms.PublishedInputs.HilbertEisenstein.HasFDerivAtIntegralSchwartzBilin:50  UpperTheory.HilbertEisensteinWeightOne.EisensteinSmoothness.continuous_fderiv_bil_left
+theorem continuous_fderiv_bil_left (Ψ : 𝓢(V, ℂ)) (B : V →L[ℝ] X →L[ℝ] V) (x : X) : Continuous fun v => fderiv ℝ (fun x => Ψ (B v x)) x
+
+### PositivityTheory.AutomorphicForms.PublishedInputs.HilbertEisenstein.HasFDerivAtIntegralSchwartzBilin:105  UpperTheory.HilbertEisensteinWeightOne.EisensteinSmoothness.integrable_schwartz_bilin
+theorem integrable_schwartz_bilin {x : X} (hx : x ∈ U) : Integrable (fun a => κ a * Ψ (B (w a) x)) μ
+
+### PositivityTheory.AutomorphicForms.PublishedInputs.HilbertEisenstein.HasFDerivAtIntegralSchwartzBilin:119  UpperTheory.HilbertEisensteinWeightOne.EisensteinSmoothness.hasFDerivAt_integral_schwartz_bilin
+theorem hasFDerivAt_integral_schwartz_bilin {x : X} (hx : x ∈ U) : HasFDerivAt (fun x => ∫ a, κ a * Ψ (B (w a) x) ∂μ) (∫ a, κ a • fderiv ℝ (fun x => Ψ (B (w a) x)) x ∂μ) x
+
+### PositivityTheory.AutomorphicForms.PublishedInputs.HilbertEisenstein.HasFDerivAtIntegralSchwartzBilin:143  UpperTheory.HilbertEisensteinWeightOne.EisensteinSmoothness.contDiffOn_integral_schwartz_bilin
+theorem contDiffOn_integral_schwartz_bilin : ContDiffOn ℝ ∞ (fun x => ∫ a, κ a * Ψ (B (w a) x) ∂μ) U
+
+### PositivityTheory.AutomorphicForms.PublishedInputs.JacquetLanglands.TorusKernels.ComplexMinusRealLineMeasureCoordinates:27  UpperTheory.Esk.det_eq
+theorem det_eq (g : GL (Fin 2) ℝ) : g.val.det = g 0 0 * g 1 1 - g 0 1 * g 1 0
+
+### PositivityTheory.AutomorphicForms.PublishedInputs.JacquetLanglands.TorusKernels.HaarIcc:8  UpperTheory.Esk.UnipotentIntegrandLemmas.haar_Icc
+theorem haar_Icc (m : Measure ℝ) (hinv : ∀ c : ℝ, ∀ S : Set ℝ, MeasurableSet S → m ((fun x => c + x) ⁻¹' S) = m S) (a0 ℓ : ℝ) (hℓ : 0 < ℓ) (hfin : m (Set.Icc a0 (a0 + ℓ)) ≠ ⊤) : ∃ R : ℝ, ∀ a c : ℝ, a ≤ c → (m (Set.Icc a c)).toReal = R * (c - a)
+
+### PositivityTheory.AutomorphicForms.PublishedInputs.JacquetLanglands.TorusKernels.IntegralProdLog:8  UpperTheory.Esk.UnipotentIntegrandLemmas.integral_prod_log
+theorem integral_prod_log {I : Type} [Fintype I] [Nontrivial I] (φ : I → ℝ → ℂ) (h : ∀ v, Integrable (φ v) ∧ Integrable (fun x => (Real.log (1 + x ^ 2) : ℂ) * φ v x) ∧ ∫ x, φ v x = 0) (R C : ℝ) : ∫ x : I → ℝ, (∏ v, φ v (x v)) * ((R * (C + ∑ v, Real.log (1 + x v ^ 2)) : ℝ) : ℂ) = 0
+
+### PositivityTheory.AutomorphicForms.PublishedInputs.JacquetLanglands.TorusKernels.SigmaFiniteInverseAbsDensity:14  UpperTheory.Esk.UnipotentIntegrandLemmas.measurableSet_ne
+theorem measurableSet_ne : MeasurableSet {y : ℝ | y ≠ 0}
+
+### PositivityTheory.AutomorphicForms.PublishedInputs.JacquetLanglands.TorusKernels.SigmaFiniteInverseAbsDensity:20  UpperTheory.Esk.UnipotentIntegrandLemmas.map_withDensity_comp_of_measurableEmbedding  [private]
+private theorem map_withDensity_comp_of_measurableEmbedding {α β : Type*} [MeasurableSpace α] [MeasurableSpace β] {f : α → β} (hf : MeasurableEmbedding f) (μ : Measure α) (g : β → ENNReal) : Measure.map f (μ.withDensity fun x => g (f x)) = (Measure.map f μ).withDensity g
+
+### PositivityTheory.AutomorphicForms.PublishedInputs.JacquetLanglands.TorusKernels.SigmaFiniteInverseAbsDensity:38  UpperTheory.Esk.UnipotentIntegrandLemmas.map_mul_rho
+theorem map_mul_rho (t : ℝ) (ht : t ≠ 0) : Measure.map (t * ·) ((volume : Measure ℝ).withDensity fun y => ENNReal.ofReal (1 / |y|)) = (volume : Measure ℝ).withDensity fun y => ENNReal.ofReal (1 / |y|)
+
+### PositivityTheory.PublishedTheorems.UnitKilling.UnitAnnihilation.UnitAnnihilators.ExistsUnitKillsOfIdempotent:5  KrullIntersectionUnits.KrullIntersectionLemmas.exists_unit_kills_of_idempotent
+theorem exists_unit_kills_of_idempotent {A : Type} [CommRing A] (J : Ideal A) (S : Finset A) : (∀ x ∈ S, ∃ r ∈ J, r * x = x) → ∃ s : A, s - 1 ∈ J ∧ ∀ x ∈ S, s * x = 0
+
+### PositivityTheory.PublishedTheorems.UnitKilling.UnitAnnihilation.UnitAnnihilators.ExistsUnitKillsOfIdempotent:25  KrullIntersectionUnits.KrullIntersectionLemmas.exists_unit_finite_lift
+theorem exists_unit_finite_lift {A B : Type} [CommRing A] [CommRing B] (φ : A →+* B) (hf : φ.Finite) (J : Ideal A) (hsurj : ∀ b : B, ∃ a : A, b - φ a ∈ Ideal.map φ J) : ∃ s : A, s - 1 ∈ J ∧ ∀ b : B, ∃ a : A, φ s * b = φ a
+
+### PositivityTheory.PublishedTheorems.UnitKilling.UnitAnnihilation.UnitAnnihilators.ExistsUnitKillsOfIdempotent:57  KrullIntersectionUnits.KrullIntersectionLemmas.exists_mem_mul_eq_of_mem_pow
+theorem exists_mem_mul_eq_of_mem_pow {A : Type} [CommRing A] [IsNoetherianRing A] (J : Ideal A) (x : A) (hx : ∀ n : ℕ, x ∈ J ^ n) : ∃ r ∈ J, r * x = x
+
+### PositivityTheory.PublishedTheorems.UnitKilling.UnitAnnihilation.UnitAnnihilators.ExistsUnitKillsOfIdempotent:67  KrullIntersectionUnits.KrullIntersectionLemmas.GlobalTheory.CompanionTheory.Formal.IsoThick.exists_unit_kills
+theorem GlobalTheory.CompanionTheory.Formal.IsoThick.exists_unit_kills : ∀ {A B : Type} [inst : CommRing A] [inst_1 : CommRing B] [IsNoetherianRing A] (φ : A →+* B), φ.Finite → ∀ (J : Ideal A), (∀ (b : B), ∃ (a : A), b - DFunLike.coe φ a ∈ Ideal.map φ J) → (∀ (a : A), DFunLike.coe φ a = OfNat.ofNat (nat_lit 0) → ∀ (n : ℕ), a ∈ J ^ n) → ∃ (s : A), s - OfNat.ofNat (nat_lit 1) ∈ J ∧ (∀ (k : A), DFunLike.coe φ k = OfNat.ofNat (nat_lit 0) → s * k = OfNat.ofNat (nat_lit 0)) ∧ ∀ (b : B), ∃ (a : A), DFunLike.coe φ s * b = DFunLike.coe φ a
+

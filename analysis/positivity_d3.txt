@@ -1,0 +1,6 @@
+== PositivityTheory at depth 3: 449 files, 55130 lines
+PositivityTheory.AutomorphicForms.PublishedInputs  files=    445 lines=     54970  -> 
+PositivityTheory.PublishedTheorems.UnitKilling     files=      1 lines=       103  -> 
+PositivityTheory.Representations.BoundaryCones     files=      1 lines=        55  -> 
+PositivityTheory.PublishedTheorems.TowerLemmas     files=      1 lines=         1  -> 
+PositivityTheory.PublishedTheorems.WeilRepresentations files=      1 lines=         1  -> 

@@ -1,0 +1,13 @@
+== GroundTheory at depth 2: 8507 files, 1119138 lines
+GroundTheory.HeightsAndTheta                       files=   6410 lines=    641322  -> GroundTheory.ArithmeticGeometry:71, GroundTheory.GlobalFields:33, GroundTheory.AutomorphicForms:30, GroundTheory.PowerSubgroups:6, GroundTheory.LocalFields:2, GroundTheory.PAdicHodge:1
+GroundTheory.AutomorphicForms                      files=    542 lines=    150005  -> GroundTheory.GlobalFields:78, GroundTheory.LocalFields:18, GroundTheory.PowerSubgroups:4
+GroundTheory.ProfiniteCohomology                   files=    450 lines=     84902  -> GroundTheory.GlobalFields:68, GroundTheory.LocalFields:46, GroundTheory.TateCohomology:34, GroundTheory.ArithmeticGeometry:1, GroundTheory.Brauer:1
+GroundTheory.GlobalFields                          files=    384 lines=     72305  -> GroundTheory.LocalFields:40, GroundTheory.ArithmeticGeometry:31, GroundTheory.ProfiniteCohomology:8, GroundTheory.TateCohomology:7, GroundTheory.AutomorphicForms:1, GroundTheory.PowerSubgroups:1
+GroundTheory.PAdicHodge                            files=    226 lines=     64317  -> GroundTheory.LocalFields:22, GroundTheory.PowerSubgroups:5
+GroundTheory.ArithmeticGeometry                    files=    218 lines=     45046  -> GroundTheory.FunctionField:8, GroundTheory.ProfiniteCohomology:6, GroundTheory.LocalFields:3, GroundTheory.PowerSubgroups:1
+GroundTheory.LocalFields                           files=    159 lines=     40767  -> GroundTheory.GlobalFields:4, GroundTheory.ProfiniteCohomology:3, GroundTheory.PowerSubgroups:3, GroundTheory.TateCohomology:1
+GroundTheory.TateCohomology                        files=     56 lines=      8755  -> 
+GroundTheory.Brauer                                files=     20 lines=      4723  -> GroundTheory.ProfiniteCohomology:4
+GroundTheory.FunctionField                         files=     12 lines=      3849  -> 
+GroundTheory.IdeleRoots                            files=     10 lines=      1870  -> GroundTheory.GlobalFields:8, GroundTheory.AutomorphicForms:3
+GroundTheory.PowerSubgroups                        files=     20 lines=      1277  -> GroundTheory.HeightsAndTheta:2, GroundTheory.AutomorphicForms:2, GroundTheory.GlobalFields:1, GroundTheory.PAdicHodge:1

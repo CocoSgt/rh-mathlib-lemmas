@@ -1,0 +1,38 @@
+total files 175187  total lines 17374215
+
+top-level lib | files | lines | files importing Mathlib/others | files with NO internal imports (leaf files)
+BuildAid | 5 | 20 | 5 | 5
+CompanionTheory | 2027 | 194218 | 1523 | 35
+Development | 141928 | 12232663 | 118900 | 4265
+Formalism | 18254 | 3200748 | 6479 | 766
+GroundTheory | 8507 | 1119138 | 8486 | 448
+Lemmata | 167 | 9232 | 167 | 145
+PositivityTheory | 449 | 55130 | 105 | 6
+ReciprocityTheory | 3845 | 563016 | 609 | 256
+Supplements | 3 | 22 | 0 | 0
+Statements | 1 | 16 | 1 | 1
+Main | 1 | 12 | 0 | 0
+
+import edges between top-level libs (row imports column): count of import statements
+BuildAid -> Lean:10
+   (self-imports within BuildAid: 0)
+CompanionTheory -> Mathlib:1553, Development:1437, Formalism:762, ReciprocityTheory:154, GroundTheory:65, BuildAid:3
+   (self-imports within CompanionTheory: 5034)
+Development -> Mathlib:138749, Formalism:41859, ReciprocityTheory:38051, GroundTheory:7532, CompanionTheory:1875, PositivityTheory:1057, BuildAid:35, Batteries:3
+   (self-imports within Development: 577337)
+Formalism -> Mathlib:6527, ReciprocityTheory:348, Development:236, Lemmata:118, Lean:2, CompanionTheory:1, GroundTheory:1
+   (self-imports within Formalism: 44412)
+GroundTheory -> Mathlib:8486, ReciprocityTheory:1161, Development:57, Formalism:10, CompanionTheory:2
+   (self-imports within GroundTheory: 20797)
+Lemmata -> Formalism:634, Mathlib:167, ReciprocityTheory:7
+   (self-imports within Lemmata: 0)
+PositivityTheory -> Development:632, GroundTheory:111, Mathlib:105, Formalism:8, ReciprocityTheory:2
+   (self-imports within PositivityTheory: 773)
+ReciprocityTheory -> Mathlib:650, Formalism:266, Lemmata:50, Development:17, CompanionTheory:1
+   (self-imports within ReciprocityTheory: 8713)
+Supplements -> Development:6, Formalism:1
+   (self-imports within Supplements: 2)
+Statements -> Mathlib:1
+   (self-imports within Statements: 0)
+Main -> Statements:1, Supplements:1
+   (self-imports within Main: 0)

@@ -1,0 +1,76 @@
+scratch/src/ReciprocityTheory_GeometryOfNumbers_PluriharmonicAnalysis_LogDetSt.lean:24:15: warning: This simp argument is unused:
+  Matrix.updateCol_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Finset.ne_of_mem_erase hj]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+scratch/src/ReciprocityTheory_GeometryOfNumbers_PluriharmonicAnalysis_LogDetSt.lean:25:14: warning: This simp argument is unused:
+  Matrix.updateCol_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+scratch/src/ReciprocityTheory_GeometryOfNumbers_PluriharmonicAnalysis_LogDetSt.lean:44:17: warning: `HasDerivAt.fun_finset_prod` has been deprecated: Use `HasDerivAt.fun_finsetProd` instead
+scratch/src/ReciprocityTheory_GeometryOfNumbers_PluriharmonicAnalysis_LogDetSt.lean:45:10: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+scratch/src/ReciprocityTheory_GeometryOfNumbers_PluriharmonicAnalysis_LogDetSt.lean:48:10: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+scratch/src/ReciprocityTheory_GeometryOfNumbers_PluriharmonicAnalysis_LogDetSt.lean:54:6: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+scratch/src/ReciprocityTheory_GeometryOfNumbers_PluriharmonicAnalysis_LogDetSt.lean:55:6: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+scratch/src/ReciprocityTheory_GeometryOfNumbers_PluriharmonicAnalysis_LogDetSt.lean:45:10: warning: Unused tactic linter: `(
+  have hp := HasDerivAt.finset_prod (u := Finset.univ) (fun j _ => hG (σ j) j)
+  simp only [Finset.prod_apply] at hp
+  exact hp.const_mul _)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+scratch/src/ReciprocityTheory_GeometryOfNumbers_PluriharmonicAnalysis_LogDetSt.lean:48:10: warning: Unused tactic linter: `(
+  have hp := HasDerivAt.finset_prod (u := Finset.univ) (fun j _ => hG (σ j) j)
+  convert hp.const_mul (Equiv.Perm.sign σ : ℂ) using 2
+  funext s
+  simp [Finset.prod_apply])` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+scratch/src/ReciprocityTheory_GeometryOfNumbers_PluriharmonicAnalysis_LogDetSt.lean:54:6: warning: Unused tactic linter: `exact HasDerivAt.sum hσ` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+scratch/src/ReciprocityTheory_GeometryOfNumbers_PluriharmonicAnalysis_LogDetSt.lean:55:6: warning: Unused tactic linter: `simpa using HasDerivAt.sum hσ` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+scratch/src/ReciprocityTheory_GeometryOfNumbers_PluriharmonicAnalysis_LogDetSt.lean:103:8: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+scratch/src/ReciprocityTheory_GeometryOfNumbers_PluriharmonicAnalysis_LogDetSt.lean:104:8: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+scratch/src/ReciprocityTheory_GeometryOfNumbers_PluriharmonicAnalysis_LogDetSt.lean:103:8: warning: Unused tactic linter: `(simp; ring)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+scratch/src/ReciprocityTheory_GeometryOfNumbers_PluriharmonicAnalysis_LogDetSt.lean:104:8: warning: Unused tactic linter: `simp` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+       37.59 real         7.42 user         9.23 sys
+          5387501568  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              574719  page reclaims
+               66324  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                2702  voluntary context switches
+              153907  involuntary context switches
+          3107366469  instructions retired
+          1245601978  cycles elapsed
+           137158400  peak memory footprint

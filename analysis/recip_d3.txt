@@ -1,0 +1,499 @@
+== ReciprocityTheory at depth 3: 3845 files, 563016 lines
+ReciprocityTheory.ReductiveGroups.ArithmeticGeometry files=   1623 lines=    239112  -> ReciprocityTheory.L2DbarEstimates.PlurisubharmonicCharts:20, ReciprocityTheory.AnalyticForms.RegularLocalRings:15, ReciprocityTheory.AnalyticForms.PotentialTheory:15, ReciprocityTheory.SemistableReduction.TorusL2CauchyInequality:14, ReciprocityTheory.AnalyticForms.AnalyticCharts:11, ReciprocityTheory.DualLattices.VEqZeroOfPowEqOne:10
+ReciprocityTheory.ReductiveGroups.DiscreteSeries   files=   1021 lines=    154332  -> 
+ReciprocityTheory.ReductiveGroups.UnramifiedIntegrals files=    125 lines=     14061  -> ReciprocityTheory.ClassFieldTheory.LocalClassField:2, ReciprocityTheory.NeutralLocalFields.HilbertClassField:1
+ReciprocityTheory.AnalyticForms.RegularLocalRings  files=     76 lines=     12341  -> ReciprocityTheory.CommutativeAlgebra.PolynomialHeights:7, ReciprocityTheory.CommutativeAlgebra.MaximalIdealSquares:3, ReciprocityTheory.AnalyticForms.PotentialTheory:2, ReciprocityTheory.AnalyticForms.AnalyticCharts:1
+ReciprocityTheory.ClassFieldTheory.LocalClassField files=     85 lines=     11506  -> ReciprocityTheory.NeutralLocalFields.Duality:10, ReciprocityTheory.GroupCohomology.InfRes:3, ReciprocityTheory.GroupCohomology.FiniteLevel:2, ReciprocityTheory.GroupCohomology.ResNormalHolds:2, ReciprocityTheory.NeutralLocalFields.LocalFieldComparison:2, ReciprocityTheory.GroupCohomology.ImportsAlt:2
+ReciprocityTheory.AnalyticForms.PotentialTheory    files=     53 lines=      9865  -> ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions:23, ReciprocityTheory.AnalyticForms.AnalyticCharts:5, ReciprocityTheory.AnalyticForms.MaIntEmpty:4
+ReciprocityTheory.L2DbarEstimates.PlurisubharmonicCharts files=     61 lines=      9663  -> ReciprocityTheory.L2DbarEstimates.ChartDerivatives:17, ReciprocityTheory.L2DbarEstimates.LeviForms:12, ReciprocityTheory.L2DbarEstimates.JacobianInterpolationStatement:2, ReciprocityTheory.L2DbarEstimates.IsLocalHomeomorph:1, ReciprocityTheory.L2DbarEstimates.Imports:1, ReciprocityTheory.L2DbarEstimates.WeakHolomorphy:1
+ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions files=     34 lines=      8944  -> ReciprocityTheory.AnalyticForms.MaIntEmpty:9, ReciprocityTheory.AnalyticForms.AnalyticCharts:2
+ReciprocityTheory.L2DbarEstimates.Localization     files=     28 lines=      5884  -> ReciprocityTheory.L2DbarEstimates.ChartDerivatives:22, ReciprocityTheory.L2DbarEstimates.MinimalSolutions:1, ReciprocityTheory.L2DbarEstimates.IsLocalHomeomorph:1, ReciprocityTheory.L2DbarEstimates.JacobianInterpolationStatement:1, ReciprocityTheory.L2DbarEstimates.BasicIdentity:1, ReciprocityTheory.L2DbarEstimates.Mollifiers:1
+ReciprocityTheory.L2DbarEstimates.LeviForms        files=     38 lines=      5861  -> ReciprocityTheory.L2DbarEstimates.ChartDerivatives:18, ReciprocityTheory.L2DbarEstimates.SkodaWeights:1, ReciprocityTheory.L2DbarEstimates.IsLocalHomeomorph:1, ReciprocityTheory.L2DbarEstimates.JacobianInterpolationStatement:1, ReciprocityTheory.L2DbarEstimates.WeakHolomorphy:1, ReciprocityTheory.L2DbarEstimates.MinimalSolutions:1
+ReciprocityTheory.AnalyticForms.LeviForms          files=     22 lines=      4555  -> ReciprocityTheory.AnalyticForms.PotentialTheory:44, ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions:8
+ReciprocityTheory.L2DbarEstimates.WeakHolomorphy   files=     24 lines=      3058  -> 
+ReciprocityTheory.NeutralLocalFields.LocalFieldComparison files=     16 lines=      2809  -> ReciprocityTheory.Hypotheses.GalCohDefs:2, ReciprocityTheory.Hypotheses.GalCoh:1, ReciprocityTheory.NeutralLocalFields.Reciprocity:1
+ReciprocityTheory.GeometryOfNumbers.LatticeCovolumes files=     18 lines=      2387  -> 
+ReciprocityTheory.L2DbarEstimates.SkodaWeights     files=     12 lines=      2266  -> ReciprocityTheory.L2DbarEstimates.MinimalSolutions:2, ReciprocityTheory.L2DbarEstimates.LeviForms:1, ReciprocityTheory.L2DbarEstimates.JacobianInterpolationStatement:1, ReciprocityTheory.L2DbarEstimates.ChartDerivatives:1
+ReciprocityTheory.L2DbarEstimates.ChartDerivatives files=     11 lines=      1980  -> ReciprocityTheory.L2DbarEstimates.JacobianInterpolationStatement:1, ReciprocityTheory.L2DbarEstimates.IsLocalHomeomorph:1, ReciprocityTheory.L2DbarEstimates.WeakHolomorphy:1
+ReciprocityTheory.ReductiveGroups.SymplecticTraces files=     15 lines=      1622  -> ReciprocityTheory.ReductiveGroups.DiscreteSeries:10
+ReciprocityTheory.L2DbarEstimates.HormanderEstimate files=      9 lines=      1534  -> ReciprocityTheory.L2DbarEstimates.Localization:25, ReciprocityTheory.L2DbarEstimates.ChartDerivatives:4, ReciprocityTheory.L2DbarEstimates.WeakHolomorphy:3, ReciprocityTheory.L2DbarEstimates.MinimalSolutions:2, ReciprocityTheory.L2DbarEstimates.SkodaWeights:1, ReciprocityTheory.L2DbarEstimates.LeviForms:1
+ReciprocityTheory.NeutralLocalFields.Duality       files=      1 lines=      1523  -> ReciprocityTheory.NeutralLocalFields.Reciprocity:1
+ReciprocityTheory.CommutativeAlgebra.CohenMacaulay files=     11 lines=      1492  -> ReciprocityTheory.CommutativeAlgebra.ChainConnInDim:1
+ReciprocityTheory.GeometryOfNumbers.PluriharmonicAnalysis files=     11 lines=      1264  -> 
+ReciprocityTheory.GeometryOfNumbers.SphericalMonomials files=      6 lines=      1129  -> ReciprocityTheory.GeometryOfNumbers.PluriharmonicAnalysis:1
+ReciprocityTheory.L2DbarEstimates.BasicIdentity    files=     10 lines=      1091  -> ReciprocityTheory.L2DbarEstimates.ChartDerivatives:7, ReciprocityTheory.L2DbarEstimates.IsLocalHomeomorph:1
+ReciprocityTheory.AnalyticForms.AnalyticCharts     files=      6 lines=       928  -> ReciprocityTheory.AnalyticForms.MaIntEmpty:1
+ReciprocityTheory.L2DbarEstimates.SymmetricSections files=     11 lines=       626  -> ReciprocityTheory.L2DbarEstimates.IsLocalHomeomorph:1
+ReciprocityTheory.L2DbarEstimates.Mollifiers       files=      7 lines=       591  -> 
+ReciprocityTheory.CommutativeAlgebra.SaturatedChains files=      5 lines=       581  -> ReciprocityTheory.CommutativeAlgebra.ChainConnInDim:1, ReciprocityTheory.CommutativeAlgebra.CohenMacaulay:1
+ReciprocityTheory.L2DbarEstimates.NormFibrations   files=      7 lines=       539  -> ReciprocityTheory.L2DbarEstimates.JacobianInterpolationStatement:6, ReciprocityTheory.L2DbarEstimates.ChartDerivatives:4, ReciprocityTheory.L2DbarEstimates.LeviForms:3, ReciprocityTheory.L2DbarEstimates.WeakHolomorphy:3, ReciprocityTheory.L2DbarEstimates.SymmetricSections:2, ReciprocityTheory.L2DbarEstimates.HormanderEstimate:2
+ReciprocityTheory.ReductiveGroups.TraceFormulas    files=      7 lines=       493  -> ReciprocityTheory.Hypotheses.GalCohDefs:1
+ReciprocityTheory.DualLattices.DetPolyMulCayleyOmegaPow files=      1 lines=       482  -> ReciprocityTheory.DualLattices.FischerAdjointStatement:1
+ReciprocityTheory.DualLattices.MemDualLat          files=      1 lines=       467  -> ReciprocityTheory.DualLattices.SubgroupQuotientStatement:1, ReciprocityTheory.DualLattices.ExistsSmulMemOfMemSpan:1, ReciprocityTheory.DualLattices.MapTensorSpan:1
+ReciprocityTheory.GeometryOfNumbers.AsymptoticSequences files=      3 lines=       449  -> ReciprocityTheory.GeometryOfNumbers.SphericalMonomials:1
+ReciprocityTheory.DualLattices.SqIdeal             files=      1 lines=       434  -> ReciprocityTheory.DualLattices.PrimeHopfOrderStatement:1, ReciprocityTheory.DualLattices.ImportsAlt:1, ReciprocityTheory.DualLattices.VdetLeOfSpanLe:1, ReciprocityTheory.DualLattices.FourierMapSmulLambdaWeight:1
+ReciprocityTheory.GaloisValuations.Global          files=      1 lines=       417  -> ReciprocityTheory.GaloisValuations.GlobalA:1, ReciprocityTheory.GaloisValuations.GlobalB:1
+ReciprocityTheory.CommutativeAlgebra.PolynomialHeights files=      5 lines=       387  -> ReciprocityTheory.CommutativeAlgebra.ChainConnInDim:2, ReciprocityTheory.CommutativeAlgebra.SaturatedChains:2
+ReciprocityTheory.CommutativeAlgebra.MaximalIdealSquares files=      1 lines=       380  -> 
+ReciprocityTheory.L2DbarEstimates.MinimalSolutions files=      6 lines=       376  -> 
+ReciprocityTheory.DualLattices.AvgFZero            files=      1 lines=       373  -> ReciprocityTheory.DualLattices.ExistsReductionOfCoordinateCombination:1
+ReciprocityTheory.DualLattices.HeightFunctionalStatementOfPairingProperties files=      1 lines=       372  -> ReciprocityTheory.DualLattices.IsFibreSq:1, ReciprocityTheory.DualLattices.ToSigmaAddFstZeroFst:1, ReciprocityTheory.DualLattices.SeriesState:1
+ReciprocityTheory.DualLattices.ElementaryDivisorStatement files=      1 lines=       367  -> ReciprocityTheory.DualLattices.DotSingle:1, ReciprocityTheory.DualLattices.EmbeddingSeparatingGroupStatement:1, ReciprocityTheory.DualLattices.UnramifiedCokernelLengthOfLengthEigenLengthProduct:1, ReciprocityTheory.DualLattices.EigenLengthProductStatementHolds:1
+ReciprocityTheory.DualLattices.ValuationPairwiseDifferenceProductPowLeColengthS files=      1 lines=       362  -> ReciprocityTheory.DualLattices.ColengthSqBlockVandermonde:1
+ReciprocityTheory.DualLattices.InstAddCommMonoidFibreFst files=      1 lines=       355  -> ReciprocityTheory.DualLattices.SqZeroOfSpan:1
+ReciprocityTheory.DualLattices.TotalFibreMapTotalFibreNsmulSnd files=      1 lines=       353  -> ReciprocityTheory.DualLattices.NsmulTensorEqZero:1, ReciprocityTheory.DualLattices.SmKerSurj:1, ReciprocityTheory.DualLattices.TangentPairingStatement:1
+ReciprocityTheory.DualLattices.DotSingle           files=      1 lines=       346  -> ReciprocityTheory.DualLattices.BlockOneMulMulBlockOne:1, ReciprocityTheory.DualLattices.ProdDvdOfIso:1, ReciprocityTheory.DualLattices.ExistsSmulMemOfMemSpan:1
+ReciprocityTheory.DualLattices.UnramifiedCokernelLengthOfLengthEigenLengthProduct files=      1 lines=       340  -> ReciprocityTheory.DualLattices.EigenLengthFrobeniusStatement:1, ReciprocityTheory.DualLattices.FrobEqOfLe:1, ReciprocityTheory.DualLattices.StdJForm:1, ReciprocityTheory.DualLattices.UnramifiedCokernelLowerBoundOf:1
+ReciprocityTheory.ThetaQuasiPeriods.NormInvSmulMemSphere files=      1 lines=       340  -> ReciprocityTheory.ThetaQuasiPeriods.ThetaQuasiPeriodStatement:1
+ReciprocityTheory.DualLattices.SmithNormalFormStatement files=      1 lines=       334  -> ReciprocityTheory.DualLattices.EigenQuotientSmithStatement:1, ReciprocityTheory.DualLattices.StdJForm4:1, ReciprocityTheory.DualLattices.ExistsMatOfEquiv:1, ReciprocityTheory.DualLattices.BlockOneMulMulBlockOne:1, ReciprocityTheory.DualLattices.MatEquivApply:1
+ReciprocityTheory.DualLattices.PowMemCarrier       files=      1 lines=       331  -> ReciprocityTheory.DualLattices.ColengthCotangentBoundStatementOfClaim:1, ReciprocityTheory.DualLattices.PrimeHopfOrderOfAddEquiv:1, ReciprocityTheory.DualLattices.MemDualLat:1, ReciprocityTheory.DualLattices.ImportsBis:1, ReciprocityTheory.DualLattices.SqIdeal:1
+ReciprocityTheory.GroupCohomology.PartialProdCoe   files=      1 lines=       320  -> ReciprocityTheory.GroupCohomology.CupConnRightStatement:1, ReciprocityTheory.GroupCohomology.HomogExistsStatement:1
+ReciprocityTheory.DualLattices.ColengthSqMulLe     files=      1 lines=       318  -> ReciprocityTheory.DualLattices.SumLatInvMulVec:1
+ReciprocityTheory.DualLattices.BasechangeProjectorIdempotentAction files=      1 lines=       317  -> ReciprocityTheory.DualLattices.RestrictedHopfOrderApproximationStatement:1
+ReciprocityTheory.GaloisValuations.GlobalB         files=      1 lines=       314  -> ReciprocityTheory.GaloisValuations.GlobalA:1
+ReciprocityTheory.DualLattices.IsPairingValueAddRight files=      1 lines=       313  -> ReciprocityTheory.DualLattices.SeriesState:1, ReciprocityTheory.DualLattices.InstAddCommMonoidFibreFst:1, ReciprocityTheory.DualLattices.NsmulFstAddSnd:1
+ReciprocityTheory.NeutralLocalFields.Reciprocity   files=      1 lines=       313  -> 
+ReciprocityTheory.DualLattices.RidConvolutionDerivation files=      1 lines=       308  -> 
+ReciprocityTheory.DualLattices.NilSurjOfSqZero     files=      1 lines=       304  -> ReciprocityTheory.DualLattices.ModuliPointsState:1
+ReciprocityTheory.ClassFieldTheory.GlobalClassField files=      5 lines=       302  -> ReciprocityTheory.NeutralLocalFields.Reciprocity:2, ReciprocityTheory.ResidueCardinality.ArtinOntoB:1
+ReciprocityTheory.GroupCohomology.CupCorB          files=      1 lines=       301  -> ReciprocityTheory.GroupCohomology.CupCorA:1
+ReciprocityTheory.GaloisValuations.SeparatedDvrSecondCohomologyMem files=      1 lines=       300  -> 
+ReciprocityTheory.DualLattices.ValUntiltESubOne    files=      1 lines=       298  -> ReciprocityTheory.DualLattices.CyclicRecursionStatement:1
+ReciprocityTheory.GroupCohomology.PrismOpZeroEval  files=      1 lines=       297  -> ReciprocityTheory.GroupCohomology.CupConnRightStatement:1, ReciprocityTheory.GroupCohomology.HomogExistsStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1
+ReciprocityTheory.GroupCohomology.Shapiro          files=      1 lines=       295  -> ReciprocityTheory.GroupCohomology.CupConnRightStatement:1, ReciprocityTheory.GroupCohomology.HomogExistsStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1, ReciprocityTheory.GroupCohomology.HomogIso:1, ReciprocityTheory.GroupCohomology.PrismOpZeroEval:1
+ReciprocityTheory.SemistableReduction.RestBlockSubstIsMultiHomogeneous files=      1 lines=       294  -> ReciprocityTheory.SemistableReduction.AevalIsWeightedHomogeneous:1
+ReciprocityTheory.Chebotarev.AbsLogSubLogLeOfHalf  files=      1 lines=       291  -> ReciprocityTheory.Chebotarev.Support:1
+ReciprocityTheory.DualLattices.UnramifiedCokernelLowerBoundOf files=      1 lines=       284  -> ReciprocityTheory.DualLattices.UnramifiedCokernelLowerBoundStatement:1, ReciprocityTheory.DualLattices.MapSmulOneMulVec:1
+ReciprocityTheory.DualLattices.SumLambdaWeight     files=      1 lines=       283  -> ReciprocityTheory.DualLattices.TensorSpan:1, ReciprocityTheory.DualLattices.VIntCastLtOneOfDvd:1
+ReciprocityTheory.GroupCohomology.InfRes           files=      1 lines=       282  -> ReciprocityTheory.GroupCohomology.CupConnRightStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1, ReciprocityTheory.GroupCohomology.LowHolds:1, ReciprocityTheory.GroupCohomology.InnerHolds:1
+ReciprocityTheory.DualLattices.UpSmith             files=      1 lines=       276  -> ReciprocityTheory.DualLattices.CotangentSurjective:1
+ReciprocityTheory.GroupCohomology.ComapZeroCoboundariesEqBot files=      1 lines=       276  -> ReciprocityTheory.GroupCohomology.ContinuousContractNth:1
+ReciprocityTheory.DualLattices.DvdOfCoeffZero      files=      1 lines=       275  -> ReciprocityTheory.DualLattices.CyclicRecursionStatement:1
+ReciprocityTheory.GroupCohomology.FinGen           files=      1 lines=       275  -> ReciprocityTheory.GroupCohomology.CupConnRightStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1, ReciprocityTheory.GroupCohomology.ConnNatHolds:1, ReciprocityTheory.GroupCohomology.IsSuccSubset:1
+ReciprocityTheory.Hypotheses.GalCoh                files=      1 lines=       273  -> ReciprocityTheory.Hypotheses.GalCohDefs:1
+ReciprocityTheory.DualLattices.NsmulTensorEqZero   files=      1 lines=       272  -> ReciprocityTheory.DualLattices.InstAddCommMonoidFibreFst:1, ReciprocityTheory.DualLattices.NilSurjOfSqZero:1
+ReciprocityTheory.GroupCohomology.ShiftA           files=      1 lines=       272  -> ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1, ReciprocityTheory.GroupCohomology.ConnNatHolds:1, ReciprocityTheory.GroupCohomology.PairHomFCoeOfId:1, ReciprocityTheory.GroupCohomology.Shapiro:1
+ReciprocityTheory.DualLattices.RankEqRankOfPermAndZero files=      1 lines=       268  -> ReciprocityTheory.DualLattices.EmbeddingSeparatingGroupStatement:1, ReciprocityTheory.DualLattices.UnramifiedCokernelLengthOfLengthEigenLengthProduct:1, ReciprocityTheory.DualLattices.IsLocalOfIntegers:1, ReciprocityTheory.DualLattices.RankMapLeRank:1
+ReciprocityTheory.GroupCohomology.ConnNatHolds     files=      1 lines=       267  -> ReciprocityTheory.GroupCohomology.CupConnRightStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1
+ReciprocityTheory.SemistableReduction.SemiContractB files=      1 lines=       251  -> ReciprocityTheory.SemistableReduction.LatSemiSt:1, ReciprocityTheory.SemistableReduction.SemiContractA:1
+ReciprocityTheory.DualLattices.InvolutionPermApplyZero files=      1 lines=       244  -> ReciprocityTheory.DualLattices.MatEquivApply:1, ReciprocityTheory.DualLattices.CokernelLengthComparisonOf:1, ReciprocityTheory.DualLattices.StdJForm:1
+ReciprocityTheory.DualLattices.VIntCastLtOneOfDvd  files=      1 lines=       244  -> 
+ReciprocityTheory.DualLattices.SubMemSpan          files=      1 lines=       243  -> ReciprocityTheory.DualLattices.LinPairStatement:1, ReciprocityTheory.DualLattices.IsPairingValueAddRight:1
+ReciprocityTheory.DualLattices.UpBrChar            files=      1 lines=       241  -> ReciprocityTheory.DualLattices.DetIntegralNonneg:1
+ReciprocityTheory.GroupCohomology.IsSuccSubset     files=      1 lines=       240  -> ReciprocityTheory.GroupCohomology.CupConnRightStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1
+ReciprocityTheory.SemistableReduction.SemiDegE     files=      1 lines=       239  -> ReciprocityTheory.SemistableReduction.SemiDegSt:1
+ReciprocityTheory.DualLattices.ProdEraseUpdate     files=      1 lines=       238  -> 
+ReciprocityTheory.DualLattices.AinfTower           files=      1 lines=       238  -> ReciprocityTheory.DualLattices.AinfFacts:1, ReciprocityTheory.DualLattices.ThmAFull:1
+ReciprocityTheory.Chebotarev.TendstoLogOneDivSubOne files=      1 lines=       235  -> ReciprocityTheory.Chebotarev.CycStatement:1, ReciprocityTheory.Chebotarev.CasimirPowerSurjectiveSymmetric:1, ReciprocityTheory.Chebotarev.NoWind:1, ReciprocityTheory.Chebotarev.CycOrth:1, ReciprocityTheory.Chebotarev.CycTail:1, ReciprocityTheory.Chebotarev.ChebyshevLambdaSubPsiBounded:1
+ReciprocityTheory.SemistableReduction.ExistsDualDerivations files=      1 lines=       234  -> ReciprocityTheory.SemistableReduction.ComapInclusionIsLocalHom:1, ReciprocityTheory.SemistableReduction.AlgebraicIndependentOfDerivations:1
+ReciprocityTheory.GroupCohomology.TransgressionA   files=      1 lines=       232  -> ReciprocityTheory.GroupCohomology.CupConnRightStatement:1, ReciprocityTheory.GroupCohomology.Section:1
+ReciprocityTheory.GroupCohomology.ContractNthCastAddCastSucc files=      1 lines=       228  -> ReciprocityTheory.GroupCohomology.CupConnRightStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1
+ReciprocityTheory.DualLattices.ProdDvdOfIso        files=      1 lines=       226  -> ReciprocityTheory.DualLattices.IsLocalOfIntegers:1
+ReciprocityTheory.DualLattices.ExistsFamilyValuationDetEqOne files=      1 lines=       225  -> ReciprocityTheory.DualLattices.ValuationDetLeOneOfEntriesIntegral:1
+ReciprocityTheory.SemistableReduction.AeBlockSphereEvalNeZero files=      1 lines=       225  -> ReciprocityTheory.SemistableReduction.SphereLogIntegrableStatement:1
+ReciprocityTheory.ThetaSummability.TailSumEstimates files=      4 lines=       225  -> 
+ReciprocityTheory.GroupCohomology.TransgressionB   files=      1 lines=       222  -> ReciprocityTheory.GroupCohomology.CupConnRightStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1, ReciprocityTheory.GroupCohomology.InfRes:1, ReciprocityTheory.GroupCohomology.TransgressionA:1
+ReciprocityTheory.DualLattices.IsLocalOfIntegers   files=      1 lines=       219  -> ReciprocityTheory.DualLattices.CotangentSurjective:1
+ReciprocityTheory.ReducedBases.NormGsoCompSwapRightSqMul files=      1 lines=       218  -> ReciprocityTheory.ReducedBases.LatticeReduction:1
+ReciprocityTheory.DualLattices.FormalChartAtZero   files=      1 lines=       217  -> ReciprocityTheory.DualLattices.CotangentSurjective:1, ReciprocityTheory.DualLattices.HtLinStatement:1, ReciprocityTheory.DualLattices.StThmAFull:1
+ReciprocityTheory.DualLattices.MatEquivApply       files=      1 lines=       217  -> ReciprocityTheory.DualLattices.DualLenStatement:1, ReciprocityTheory.DualLattices.BlockOneMulMulBlockOne:1
+ReciprocityTheory.DualLattices.HasLenLeOfSurj      files=      1 lines=       216  -> ReciprocityTheory.DualLattices.LiftMonomialDeterminantStatement:1, ReciprocityTheory.DualLattices.PowMemCarrier:1, ReciprocityTheory.DualLattices.IsLocalOfIntegers:1, ReciprocityTheory.DualLattices.MemOfSumSingleEqZero:1, ReciprocityTheory.DualLattices.EigenLiftsFrobenius:1
+ReciprocityTheory.SemistableReduction.LatTest      files=      1 lines=       216  -> ReciprocityTheory.SemistableReduction.LatSemiSt:1
+ReciprocityTheory.SemistableReduction.ApproxBasisA files=      1 lines=       215  -> ReciprocityTheory.SemistableReduction.TorsionNonvanishStatement:1
+ReciprocityTheory.ReducedBases.LatticeReduction    files=      1 lines=       215  -> ReciprocityTheory.ReducedBases.GsInnerBOfLt:1, ReciprocityTheory.ReducedBases.ExistsBoundedBasis:1
+ReciprocityTheory.ReducedBases.SizeReduce          files=      1 lines=       215  -> ReciprocityTheory.ReducedBases.LatticeReduction:1
+ReciprocityTheory.SemistableReduction.SemiDegDA    files=      1 lines=       214  -> ReciprocityTheory.SemistableReduction.SemiDegSt:1
+ReciprocityTheory.GroupCohomology.RankLenA         files=      1 lines=       213  -> 
+ReciprocityTheory.SemistableReduction.ApproxBasisB files=      1 lines=       213  -> ReciprocityTheory.SemistableReduction.ApproxBasisA:1
+ReciprocityTheory.SemistableReduction.SjHolds      files=      1 lines=       212  -> ReciprocityTheory.SemistableReduction.MeasurePreservingSphereMap:1, ReciprocityTheory.SemistableReduction.LogNormEvalZeroLeCircleAverage:1
+ReciprocityTheory.GroupCohomology.CupConnRightStatement files=      1 lines=       210  -> ReciprocityTheory.GroupCohomology.ContinuousContractNth:1
+ReciprocityTheory.DualLattices.IsUnitDetOfSpanEq   files=      1 lines=       209  -> 
+ReciprocityTheory.DualLattices.MemDualLatMapFourier files=      1 lines=       207  -> ReciprocityTheory.DualLattices.ValuationFourierLeOne:1, ReciprocityTheory.DualLattices.CharTableIsUnit:1, ReciprocityTheory.DualLattices.TransposeMulSelf:1
+ReciprocityTheory.GaloisValuations.ContinuousConstSMulQuotient files=      1 lines=       207  -> ReciprocityTheory.GaloisValuations.SeparatedDvrSecondCohomologyMem:1
+ReciprocityTheory.GroupCohomology.PairHomFCoeOfId  files=      1 lines=       205  -> ReciprocityTheory.GroupCohomology.CupConnRightStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1
+ReciprocityTheory.DualLattices.SmKerSurj           files=      1 lines=       204  -> ReciprocityTheory.DualLattices.NilSurjOfSqZero:1
+ReciprocityTheory.DualLattices.IsFibreSq           files=      1 lines=       203  -> ReciprocityTheory.DualLattices.ModuliPointsState:1
+ReciprocityTheory.DualLattices.SgAlgebraMap        files=      1 lines=       202  -> ReciprocityTheory.DualLattices.EigPowEqOne:1, ReciprocityTheory.DualLattices.IsAdicCompleteOfBasis:1
+ReciprocityTheory.DualLattices.FischerSmulRight    files=      1 lines=       201  -> ReciprocityTheory.DualLattices.FischerAdjointStatement:1
+ReciprocityTheory.DualLattices.EmbeddingSeparatingGroup files=      1 lines=       201  -> ReciprocityTheory.DualLattices.EmbeddingSeparatingGroupStatement:1, ReciprocityTheory.DualLattices.EigPowEqOne:1, ReciprocityTheory.DualLattices.SgAlgebraMap:1
+ReciprocityTheory.SemistableReduction.SemiContractA files=      1 lines=       200  -> 
+ReciprocityTheory.GroupCohomology.ModelComparisonDegreeZeroBijective files=      1 lines=       198  -> ReciprocityTheory.GroupCohomology.MemZpowersQuot:1, ReciprocityTheory.GroupCohomology.FiniteLevel:1
+ReciprocityTheory.GroupCohomology.FiniteLevel      files=      1 lines=       197  -> ReciprocityTheory.GroupCohomology.CupConnRightStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1, ReciprocityTheory.GroupCohomology.ResNormalHolds:1, ReciprocityTheory.GroupCohomology.InfRes:1
+ReciprocityTheory.GroupCohomology.InfIsoA          files=      1 lines=       193  -> ReciprocityTheory.GroupCohomology.CardLenStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1, ReciprocityTheory.GroupCohomology.ConnNatHolds:1, ReciprocityTheory.GroupCohomology.PairHomFCoeOfId:1, ReciprocityTheory.GroupCohomology.InfRes:1, ReciprocityTheory.GroupCohomology.Shapiro:1
+ReciprocityTheory.Chebotarev.PrimeAsymp            files=      1 lines=       193  -> ReciprocityTheory.Chebotarev.CasimirPowerSurjectiveSymmetric:1, ReciprocityTheory.Chebotarev.EulerSum:1, ReciprocityTheory.Chebotarev.EulerLim:1
+ReciprocityTheory.DualLattices.MemOfSumSingleEqZero files=      1 lines=       192  -> ReciprocityTheory.DualLattices.ProdDvdOfIso:1
+ReciprocityTheory.ReductiveGroups.LatticeEmbeddings files=      2 lines=       192  -> 
+ReciprocityTheory.SemistableReduction.ShareBallB   files=      1 lines=       191  -> ReciprocityTheory.SemistableReduction.ShareBallA:1
+ReciprocityTheory.DualLattices.ValuationDetLeOneOfEntriesIntegral files=      1 lines=       190  -> ReciprocityTheory.DualLattices.TensorSpan:1, ReciprocityTheory.DualLattices.IsUnitDetOfSpanEq:1
+ReciprocityTheory.SemistableReduction.ComapInclusionIsLocalHom files=      1 lines=       190  -> 
+ReciprocityTheory.DualLattices.PrimeHopfOrderOfAddEquiv files=      1 lines=       189  -> ReciprocityTheory.DualLattices.PrimeHopfOrderStatement:1
+ReciprocityTheory.ReducedBases.TBInjective         files=      1 lines=       188  -> ReciprocityTheory.ReducedBases.GsInnerBOfLt:1, ReciprocityTheory.ReducedBases.LatDefs:1
+ReciprocityTheory.DualLattices.FourierMapSmulLambdaWeight files=      1 lines=       187  -> ReciprocityTheory.DualLattices.SumLambdaWeight:1
+ReciprocityTheory.Chebotarev.MeanZero              files=      1 lines=       187  -> ReciprocityTheory.Chebotarev.DiscreteTopologyLatOf:1, ReciprocityTheory.Chebotarev.NormCongr:1
+ReciprocityTheory.DualLattices.VDetEqOneOfIntegral files=      1 lines=       186  -> ReciprocityTheory.DualLattices.NearIdentityColengthStatement:1
+ReciprocityTheory.GroupCohomology.ContinuousContractNth files=      1 lines=       186  -> ReciprocityTheory.GaloisValuations.ContinuousConstSMulQuotient:1, ReciprocityTheory.GroupCohomology.IsTowerLim:1
+ReciprocityTheory.SemistableReduction.GaussValExists files=      1 lines=       185  -> ReciprocityTheory.SemistableReduction.ComapInclusionIsLocalHom:1
+ReciprocityTheory.DualLattices.WdetDegreeOfSmithRestrict files=      1 lines=       184  -> ReciprocityTheory.DualLattices.EigenQuotientSmithStatement:1, ReciprocityTheory.DualLattices.PowMemCarrier:1, ReciprocityTheory.DualLattices.SumValCoord:1, ReciprocityTheory.DualLattices.VDetEqOneOfIntegral:1
+ReciprocityTheory.DualLattices.DualLenStatement    files=      1 lines=       183  -> ReciprocityTheory.DualLattices.ExistsFromRowsMulVecIff:1, ReciprocityTheory.DualLattices.HasLenCokerDet:1
+ReciprocityTheory.DualLattices.EigenLiftsFrobenius files=      1 lines=       183  -> ReciprocityTheory.DualLattices.LiftMonomialDeterminantStatement:1, ReciprocityTheory.DualLattices.PowMemCarrier:1, ReciprocityTheory.DualLattices.HasLenCokerDet:1
+ReciprocityTheory.GroupCohomology.InfIsoB          files=      1 lines=       183  -> ReciprocityTheory.GroupCohomology.InfIsoA:1
+ReciprocityTheory.SemistableReduction.ApproxBasis  files=      1 lines=       183  -> ReciprocityTheory.SemistableReduction.ApproxBasisB:1
+ReciprocityTheory.GroupCohomology.SectionA         files=      1 lines=       182  -> ReciprocityTheory.GroupCohomology.CupConnRightStatement:1
+ReciprocityTheory.GroupCohomology.CupCorA          files=      1 lines=       180  -> ReciprocityTheory.GroupCohomology.ContinuousContractNth:1, ReciprocityTheory.GroupCohomology.HomogExistsStatement:1
+ReciprocityTheory.GroupCohomology.CupCor           files=      1 lines=       180  -> ReciprocityTheory.GroupCohomology.CupConnRightStatement:1, ReciprocityTheory.GroupCohomology.HomogExistsStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1, ReciprocityTheory.GroupCohomology.ContractNthCastAddCastSucc:1, ReciprocityTheory.GroupCohomology.HomogIso:1, ReciprocityTheory.GroupCohomology.PrismOpZeroEval:1
+ReciprocityTheory.DualLattices.BlockOneMulMulBlockOne files=      1 lines=       179  -> ReciprocityTheory.DualLattices.UpSmith:1
+ReciprocityTheory.SemistableReduction.BWPolyC      files=      1 lines=       179  -> ReciprocityTheory.SemistableReduction.TorsionNonvanishStatement:1, ReciprocityTheory.SemistableReduction.BWPolyA:1
+ReciprocityTheory.Chebotarev.SplitEA               files=      1 lines=       179  -> ReciprocityTheory.Chebotarev.SplitA:1, ReciprocityTheory.Chebotarev.SplitD:1
+ReciprocityTheory.DualLattices.ZmodTrichotomy      files=      1 lines=       178  -> ReciprocityTheory.DualLattices.MulIterateRootEqZero:1
+ReciprocityTheory.AdeleApproximation.AdeleIntA     files=      1 lines=       178  -> 
+ReciprocityTheory.SemistableReduction.SemiDegCB    files=      1 lines=       178  -> ReciprocityTheory.SemistableReduction.SemiDegCA:1
+ReciprocityTheory.BurnsideSurjectivity.Burnside    files=      1 lines=       178  -> 
+ReciprocityTheory.DualLattices.SmallLevelClassSet  files=      1 lines=       177  -> 
+ReciprocityTheory.SemistableReduction.SemiDegAA    files=      1 lines=       177  -> ReciprocityTheory.SemistableReduction.SemiDegSt:1
+ReciprocityTheory.DualLattices.LenIdBStatement     files=      1 lines=       176  -> ReciprocityTheory.DualLattices.LenIdStatement:1, ReciprocityTheory.DualLattices.MemOfSumSingleEqZero:1
+ReciprocityTheory.SemistableReduction.SphereTorusC files=      1 lines=       176  -> ReciprocityTheory.SemistableReduction.SphereLogIntegrableStatement:1
+ReciprocityTheory.SemistableReduction.ApproxGraphA files=      1 lines=       175  -> ReciprocityTheory.SemistableReduction.TorsionNonvanishStatement:1
+ReciprocityTheory.SemistableReduction.TorusLexA    files=      1 lines=       174  -> ReciprocityTheory.SemistableReduction.SphereLogIntegrableStatement:1
+ReciprocityTheory.DualLattices.EigPowEqOne         files=      1 lines=       173  -> ReciprocityTheory.DualLattices.IsUnitOfNotMem:1
+ReciprocityTheory.DualLattices.ATowerInh           files=      1 lines=       173  -> ReciprocityTheory.DualLattices.NsetExpInjectiveSurjective:1
+ReciprocityTheory.ThetaQuasiPeriods.Change         files=      1 lines=       173  -> ReciprocityTheory.ThetaQuasiPeriods.Transl:1
+ReciprocityTheory.GaloisValuations.GlobalA         files=      1 lines=       171  -> 
+ReciprocityTheory.DualLattices.EigenLengthProductStatementHolds files=      1 lines=       170  -> ReciprocityTheory.DualLattices.EigenLengthFrobeniusStatement:1, ReciprocityTheory.DualLattices.UpSmith:1, ReciprocityTheory.DualLattices.ProdDvdOfIso:1
+ReciprocityTheory.SemistableReduction.ApproxGraphB files=      1 lines=       170  -> ReciprocityTheory.SemistableReduction.ApproxGraphA:1
+ReciprocityTheory.SemistableReduction.NormOrdLengthResidue files=      1 lines=       169  -> 
+ReciprocityTheory.DualLattices.SqZeroOfSpan        files=      1 lines=       166  -> 
+ReciprocityTheory.DualLattices.IsAdicCompleteOfBasis files=      1 lines=       166  -> 
+ReciprocityTheory.SemistableReduction.SemiDegR     files=      1 lines=       166  -> ReciprocityTheory.SemistableReduction.SemiDegT:1
+ReciprocityTheory.GroupCohomology.MemCoboundariesOfCocycleProcyclic files=      1 lines=       165  -> ReciprocityTheory.GroupCohomology.ModelComparisonDegreeZeroBijective:1
+ReciprocityTheory.SemistableReduction.SemiDegCA    files=      1 lines=       164  -> 
+ReciprocityTheory.DualLattices.ProdPowUnitVectorVal files=      1 lines=       163  -> ReciprocityTheory.DualLattices.LiftMonomialDeterminantStatementHolds:1
+ReciprocityTheory.SemistableReduction.TorusLexC    files=      1 lines=       163  -> ReciprocityTheory.SemistableReduction.TorusLexB:1
+ReciprocityTheory.SemistableReduction.SJCoreB      files=      1 lines=       163  -> ReciprocityTheory.SemistableReduction.SphereLogIntegrableStatement:1, ReciprocityTheory.SemistableReduction.SJCoreA:1
+ReciprocityTheory.SemistableReduction.ExistsTorusPointOneLeNormSum files=      1 lines=       162  -> ReciprocityTheory.SemistableReduction.ComapInclusionIsLocalHom:1
+ReciprocityTheory.SemistableReduction.SJCoreA      files=      1 lines=       162  -> 
+ReciprocityTheory.SemistableReduction.IntCoresB    files=      1 lines=       162  -> ReciprocityTheory.SemistableReduction.IntCoresA:1
+ReciprocityTheory.Chebotarev.CyclotomicIrreducibleOfForallIsUnramifiedAt files=      1 lines=       162  -> 
+ReciprocityTheory.GroupCohomology.HomogIso         files=      1 lines=       161  -> ReciprocityTheory.GroupCohomology.CupConnRightStatement:1, ReciprocityTheory.GroupCohomology.HomogExistsStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1
+ReciprocityTheory.SemistableReduction.SemiDegC     files=      1 lines=       160  -> ReciprocityTheory.SemistableReduction.SemiDegSt:1, ReciprocityTheory.SemistableReduction.SemiDegCE:1
+ReciprocityTheory.SemistableReduction.SemiDegDB    files=      1 lines=       160  -> ReciprocityTheory.SemistableReduction.SemiDegSt:1
+ReciprocityTheory.Automorphisms.Unitary            files=      1 lines=       159  -> 
+ReciprocityTheory.DualLattices.SubMemOfCompat      files=      1 lines=       158  -> ReciprocityTheory.DualLattices.AinfTower:1, ReciprocityTheory.DualLattices.HtLinStatement:1
+ReciprocityTheory.DualLattices.LengthDegreeAbelianVariety files=      1 lines=       158  -> ReciprocityTheory.DualLattices.ColengthSqMulLeProd:1, ReciprocityTheory.DualLattices.CokernelsAgreeEquivariantly:1, ReciprocityTheory.DualLattices.LengthDegreeOfFrobenius:1, ReciprocityTheory.DualLattices.LengthDegreeOfWdetFrobenius:1
+ReciprocityTheory.SemistableReduction.TorsionNonvanishStatement files=      1 lines=       158  -> 
+ReciprocityTheory.SemistableReduction.SemiContractC files=      1 lines=       156  -> ReciprocityTheory.SemistableReduction.LatSemiSt:1
+ReciprocityTheory.DualLattices.FormMonomialUnitVector files=      1 lines=       155  -> ReciprocityTheory.DualLattices.ProdPowUnitVectorVal:1
+ReciprocityTheory.GroupCohomology.LowLES           files=      1 lines=       155  -> ReciprocityTheory.GroupCohomology.TransgressionStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1, ReciprocityTheory.GroupCohomology.LowHolds:1, ReciprocityTheory.GroupCohomology.LowNat:1, ReciprocityTheory.GroupCohomology.ConnNatHolds:1, ReciprocityTheory.GroupCohomology.PairHomFCoeOfId:1
+ReciprocityTheory.DualLattices.ValuationFourierLeOne files=      1 lines=       154  -> ReciprocityTheory.DualLattices.ValuationDetEqOfSpanEq:1
+ReciprocityTheory.DualLattices.ExistsSmulMemOfMemSpan files=      1 lines=       153  -> ReciprocityTheory.DualLattices.TensorSpan:1
+ReciprocityTheory.SemistableReduction.SemiDegBB    files=      1 lines=       153  -> ReciprocityTheory.SemistableReduction.SemiDegBA:1
+ReciprocityTheory.Chebotarev.SplitA                files=      1 lines=       153  -> ReciprocityTheory.Chebotarev.SplitDef:1
+ReciprocityTheory.Hypotheses.GalCohDefs            files=      1 lines=       152  -> ReciprocityTheory.GaloisValuations.ContinuousConstSMulQuotient:1, ReciprocityTheory.GaloisValuations.Global:1
+ReciprocityTheory.SemistableReduction.GaussAbsMulOfMonomialOrder files=      1 lines=       152  -> ReciprocityTheory.SemistableReduction.SphereLogIntegrableStatement:1
+ReciprocityTheory.ResidueCardinality.ArtinOntoB    files=      1 lines=       151  -> ReciprocityTheory.Automorphisms.InstMainA:1
+ReciprocityTheory.SemistableReduction.ApproxGraphC files=      1 lines=       150  -> ReciprocityTheory.SemistableReduction.ApproxGraphB:1
+ReciprocityTheory.SemistableReduction.SemiDegI     files=      1 lines=       150  -> ReciprocityTheory.SemistableReduction.SemiDegH:1
+ReciprocityTheory.DualLattices.MemAugIdeal         files=      1 lines=       149  -> ReciprocityTheory.DualLattices.CotangentSurjective:1
+ReciprocityTheory.SemistableReduction.SemiDegF     files=      1 lines=       149  -> ReciprocityTheory.SemistableReduction.SemiDegE:1
+ReciprocityTheory.DualLattices.VEqZeroOfPowEqOne   files=      1 lines=       148  -> 
+ReciprocityTheory.DualLattices.AinfFacts           files=      1 lines=       148  -> ReciprocityTheory.DualLattices.Imports:1, ReciprocityTheory.DualLattices.ATowerInh:1
+ReciprocityTheory.DualLattices.MemMapAugmentationIdealComapPullbackQuotient files=      1 lines=       147  -> ReciprocityTheory.DualLattices.ExistsFamilyValuationDetEqOne:1
+ReciprocityTheory.DualLattices.MapSmulOneMulVec    files=      1 lines=       147  -> ReciprocityTheory.DualLattices.SmallLevelClassSet:1
+ReciprocityTheory.SemistableReduction.SemiDegW     files=      1 lines=       147  -> ReciprocityTheory.SemistableReduction.SemiDegQ:1
+ReciprocityTheory.ReducedBases.GsInnerBOfLt        files=      1 lines=       147  -> 
+ReciprocityTheory.GroupCohomology.MemZpowersQuot   files=      1 lines=       146  -> 
+ReciprocityTheory.SemistableReduction.LagrangeIdealLiftsFact files=      1 lines=       146  -> ReciprocityTheory.SemistableReduction.AeBlockSphereEvalNeZero:1, ReciprocityTheory.SemistableReduction.GaussAbsMulOfMonomialOrder:1
+ReciprocityTheory.SemistableReduction.IntegralClosureRankAndResidueTrdegLe files=      1 lines=       146  -> ReciprocityTheory.SemistableReduction.ComapInclusionIsLocalHom:1
+ReciprocityTheory.SemistableReduction.SemiDegZA    files=      1 lines=       146  -> ReciprocityTheory.SemistableReduction.SemiDegZ:1
+ReciprocityTheory.Chebotarev.EulerSum              files=      1 lines=       145  -> ReciprocityTheory.Chebotarev.NZIdeal:1
+ReciprocityTheory.DualLattices.CyclicRecursion     files=      1 lines=       144  -> ReciprocityTheory.DualLattices.CyclicRecursionStatement:1
+ReciprocityTheory.SemistableReduction.SemiDegB     files=      1 lines=       144  -> ReciprocityTheory.SemistableReduction.SemiDegBB:1
+ReciprocityTheory.SemistableReduction.SphereLogIntegrableStatement files=      1 lines=       143  -> 
+ReciprocityTheory.DualLattices.MulIterateRootEqZero files=      1 lines=       142  -> ReciprocityTheory.DualLattices.CyclicRecursionStatement:1
+ReciprocityTheory.Chebotarev.LatSum                files=      1 lines=       142  -> 
+ReciprocityTheory.DualLattices.MonomialsSpanOfProdEq files=      1 lines=       141  -> ReciprocityTheory.DualLattices.EigenLiftsFrobeniusStatement:1, ReciprocityTheory.DualLattices.PowMemCarrier:1, ReciprocityTheory.DualLattices.SumValCoord:1, ReciprocityTheory.DualLattices.MemAugIdeal:1
+ReciprocityTheory.SemistableReduction.TorusMeanB   files=      1 lines=       141  -> ReciprocityTheory.SemistableReduction.SphereLogIntegrableStatement:1, ReciprocityTheory.SemistableReduction.TorusMeanA:1
+ReciprocityTheory.GroupCohomology.IsTowerLim       files=      1 lines=       139  -> 
+ReciprocityTheory.SemistableReduction.SemiDegAB    files=      1 lines=       139  -> ReciprocityTheory.SemistableReduction.SemiDegAA:1
+ReciprocityTheory.SemistableReduction.MeasurePreservingSphereMap files=      1 lines=       137  -> ReciprocityTheory.SemistableReduction.SphereLogIntegrableStatement:1
+ReciprocityTheory.L2DbarEstimates.JacobianInterpolationStatement files=      1 lines=       137  -> ReciprocityTheory.L2DbarEstimates.IsLocalHomeomorph:1
+ReciprocityTheory.DualLattices.HasColengthEqPowMulPow files=      1 lines=       136  -> ReciprocityTheory.DualLattices.MemSupOfRestrictToSubgroupMemSq:1
+ReciprocityTheory.Chebotarev.CrossFix              files=      1 lines=       136  -> 
+ReciprocityTheory.SemistableReduction.SemiDegG     files=      1 lines=       135  -> ReciprocityTheory.SemistableReduction.SemiDegF:1
+ReciprocityTheory.GroupCohomology.ResNormalHolds   files=      1 lines=       134  -> ReciprocityTheory.GroupCohomology.CupConnRightStatement:1, ReciprocityTheory.GroupCohomology.HomogExistsStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1, ReciprocityTheory.GroupCohomology.HomogIso:1, ReciprocityTheory.GroupCohomology.PrismOpZeroEval:1, ReciprocityTheory.GroupCohomology.InnerHolds:1
+ReciprocityTheory.GroupCohomology.Transgression    files=      1 lines=       134  -> ReciprocityTheory.GroupCohomology.TransgressionStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1, ReciprocityTheory.GroupCohomology.LowHolds:1, ReciprocityTheory.GroupCohomology.Section:1, ReciprocityTheory.GroupCohomology.InfRes:1, ReciprocityTheory.GroupCohomology.TransgressionB:1
+ReciprocityTheory.ThetaSummability.RealCoinvariants files=      3 lines=       134  -> 
+ReciprocityTheory.GroupCohomology.LocaliseA        files=      1 lines=       133  -> ReciprocityTheory.GroupCohomology.TransgressionStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1
+ReciprocityTheory.SemistableReduction.SJCoreD      files=      1 lines=       133  -> ReciprocityTheory.SemistableReduction.SJCoreC:1
+ReciprocityTheory.SemistableReduction.SemiDegCD    files=      1 lines=       133  -> ReciprocityTheory.SemistableReduction.SemiDegCC:1
+ReciprocityTheory.DualLattices.MemSupOfRestrictToSubgroupMemSq files=      1 lines=       132  -> ReciprocityTheory.DualLattices.MemMapAugmentationIdealComapPullbackQuotient:1
+ReciprocityTheory.DualLattices.QExpansionMonoWCoeffZero files=      1 lines=       132  -> ReciprocityTheory.DualLattices.Eisenstein4CoeffBound:1
+ReciprocityTheory.GroupCohomology.DEqZeroOfMemB    files=      1 lines=       131  -> ReciprocityTheory.GroupCohomology.CupConnRightStatement:1
+ReciprocityTheory.SemistableReduction.LogNormCoeffSubLeBlockSphereLogMean files=      1 lines=       131  -> ReciprocityTheory.SemistableReduction.RestBlockSubstIsMultiHomogeneous:1
+ReciprocityTheory.Automorphisms.SplitCoeAlgebraMap files=      1 lines=       131  -> ReciprocityTheory.Automorphisms.Unitary:1, ReciprocityTheory.Automorphisms.PlaceA:1
+ReciprocityTheory.DualLattices.IsHeightUnique      files=      1 lines=       130  -> ReciprocityTheory.DualLattices.HtLinStatement:1, ReciprocityTheory.DualLattices.HeightFunctionalStatementOfPairingProperties:1
+ReciprocityTheory.SemistableReduction.SphereTorusB files=      1 lines=       129  -> ReciprocityTheory.SemistableReduction.SphereTorusA:1
+ReciprocityTheory.SemistableReduction.ExistsIntSmulMemSpan files=      1 lines=       129  -> ReciprocityTheory.SemistableReduction.LatSemiSt:1
+ReciprocityTheory.GaloisValuations.GlobalE         files=      1 lines=       129  -> ReciprocityTheory.GaloisValuations.GlobalEA:1
+ReciprocityTheory.DualLattices.ExistsFromRowsMulVecIff files=      1 lines=       128  -> ReciprocityTheory.DualLattices.LenIdBStatement:1, ReciprocityTheory.DualLattices.UnramifiedCokernelLowerBoundOf:1
+ReciprocityTheory.SemistableReduction.SemiDegT     files=      1 lines=       128  -> ReciprocityTheory.SemistableReduction.SemiDegG:1
+ReciprocityTheory.Chebotarev.DiscreteTopologyLatOf files=      1 lines=       128  -> ReciprocityTheory.Chebotarev.Ucoord:1
+ReciprocityTheory.GaloisValuations.SymplecticRankFourModularity files=      1 lines=       128  -> 
+ReciprocityTheory.SemistableReduction.AevalIsWeightedHomogeneous files=      1 lines=       127  -> ReciprocityTheory.SemistableReduction.SphereLogIntegrableStatement:1
+ReciprocityTheory.Chebotarev.AbsProdSubProdLeSumAbsSub files=      1 lines=       125  -> 
+ReciprocityTheory.GaloisValuations.ArithOfA        files=      1 lines=       125  -> ReciprocityTheory.GaloisValuations.Global:1
+ReciprocityTheory.DualLattices.CharTableIsUnit     files=      1 lines=       124  -> ReciprocityTheory.DualLattices.TensorSpan:1
+ReciprocityTheory.L2DbarEstimates.IsLocalHomeomorph files=      1 lines=       124  -> 
+ReciprocityTheory.DualLattices.StdJForm4           files=      1 lines=       122  -> ReciprocityTheory.DualLattices.InvolutionPermApplyZero:1
+ReciprocityTheory.SemistableReduction.Unipotent    files=      1 lines=       122  -> ReciprocityTheory.SemistableReduction.UnipotentA:1, ReciprocityTheory.SemistableReduction.UnipotentB:1
+ReciprocityTheory.SemistableReduction.SemiDegCE    files=      1 lines=       121  -> ReciprocityTheory.SemistableReduction.SemiDegCD:1
+ReciprocityTheory.DualLattices.ExistsMatOfEquiv    files=      1 lines=       120  -> ReciprocityTheory.DualLattices.MemDualLat:1, ReciprocityTheory.DualLattices.MapTensorSpan:1
+ReciprocityTheory.GroupCohomology.RankLen          files=      1 lines=       120  -> ReciprocityTheory.GroupCohomology.TransgressionStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1, ReciprocityTheory.GroupCohomology.ConnNatHolds:1, ReciprocityTheory.GroupCohomology.FinGen:1, ReciprocityTheory.GroupCohomology.FiberFirstH0Injective:1, ReciprocityTheory.GroupCohomology.ProdHolds:1
+ReciprocityTheory.SemistableReduction.SemiDegCC    files=      1 lines=       120  -> ReciprocityTheory.SemistableReduction.TorsionNonvanishStatement:1, ReciprocityTheory.SemistableReduction.SemiDegCB:1
+ReciprocityTheory.SemistableReduction.SphereTorusA files=      1 lines=       120  -> ReciprocityTheory.SemistableReduction.SphereLogIntegrableStatement:1
+ReciprocityTheory.SemistableReduction.SemiDegN     files=      1 lines=       120  -> ReciprocityTheory.SemistableReduction.SemiDegM:1
+ReciprocityTheory.SemistableReduction.SJCoreC      files=      1 lines=       119  -> ReciprocityTheory.SemistableReduction.SJCoreB:1
+ReciprocityTheory.SemistableReduction.ExpTorusMeanLeL2OfLex files=      1 lines=       119  -> ReciprocityTheory.SemistableReduction.SphereLogIntegrableStatement:1
+ReciprocityTheory.ReducedBases.PrefixProdGeOne     files=      1 lines=       119  -> ReciprocityTheory.ReducedBases.TBInjective:1
+ReciprocityTheory.SemistableReduction.TorusMeanC   files=      1 lines=       118  -> ReciprocityTheory.SemistableReduction.TorusMeanB:1
+ReciprocityTheory.DualLattices.EqZeroOfIsoZero     files=      1 lines=       117  -> ReciprocityTheory.DualLattices.AvgFZero:1
+ReciprocityTheory.SemistableReduction.SemiDegBA    files=      1 lines=       117  -> ReciprocityTheory.SemistableReduction.SemiDegSt:1
+ReciprocityTheory.SemistableReduction.SemiDegZ     files=      1 lines=       117  -> ReciprocityTheory.SemistableReduction.SemiDegW:1
+ReciprocityTheory.EigenFrames.EigenPf              files=      1 lines=       117  -> ReciprocityTheory.EigenFrames.EigenSt:1
+ReciprocityTheory.SemistableReduction.UnipotentA   files=      1 lines=       116  -> 
+ReciprocityTheory.Chebotarev.IdealLat              files=      1 lines=       116  -> ReciprocityTheory.Chebotarev.UnitPart:1, ReciprocityTheory.Chebotarev.DiscreteTopologyLatOf:1
+ReciprocityTheory.SemistableReduction.GenericImageFinite files=      1 lines=       115  -> ReciprocityTheory.SemistableReduction.ComapInclusionIsLocalHom:1, ReciprocityTheory.SemistableReduction.ExistsDualDerivations:1
+ReciprocityTheory.DualLattices.SumValCoord         files=      1 lines=       114  -> ReciprocityTheory.DualLattices.MonomialDeterminantStatement:1, ReciprocityTheory.DualLattices.ProdEraseUpdate:1
+ReciprocityTheory.DualLattices.CyclicRecursionStatement files=      1 lines=       114  -> 
+ReciprocityTheory.SemistableReduction.SemiDegA     files=      1 lines=       114  -> ReciprocityTheory.SemistableReduction.SemiDegAB:1
+ReciprocityTheory.ThetaQuasiPeriods.Transl         files=      1 lines=       114  -> ReciprocityTheory.ThetaQuasiPeriods.ThetaQuasiPeriodStatement:1
+ReciprocityTheory.GroupCohomology.TransgressionStatement files=      1 lines=       113  -> ReciprocityTheory.GroupCohomology.CupConnRightStatement:1
+ReciprocityTheory.SemistableReduction.ShareBall    files=      1 lines=       113  -> ReciprocityTheory.SemistableReduction.ShareBallC:1
+ReciprocityTheory.AdicCompleteness.IsAdicCompleteComapConstantCoeff files=      1 lines=       111  -> 
+ReciprocityTheory.DualLattices.ColengthSqBlockVandermonde files=      1 lines=       110  -> ReciprocityTheory.DualLattices.DiscriminantColengthStatement:1
+ReciprocityTheory.Chebotarev.KHoldA                files=      1 lines=       110  -> ReciprocityTheory.Chebotarev.NormGsEmbZLe:1, ReciprocityTheory.Chebotarev.RpowNegFinrankSubOne:1, ReciprocityTheory.Chebotarev.IdealLat:1, ReciprocityTheory.Chebotarev.MeanZero:1, ReciprocityTheory.Chebotarev.LatSum:1
+ReciprocityTheory.DualLattices.SumInvMulTrace      files=      1 lines=       109  -> ReciprocityTheory.DualLattices.NearIdentityColengthStatement:1
+ReciprocityTheory.GroupCohomology.ContinuousRho    files=      1 lines=       109  -> ReciprocityTheory.GroupCohomology.CardLenStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1, ReciprocityTheory.GroupCohomology.ResNormalHolds:1, ReciprocityTheory.GroupCohomology.InnerHolds:1
+ReciprocityTheory.DualLattices.TangentPairingStatementOfHeightFunctional files=      1 lines=       108  -> ReciprocityTheory.DualLattices.TotalFibreMapTotalFibreNsmulSnd:1
+ReciprocityTheory.GroupCohomology.InfIso           files=      1 lines=       108  -> ReciprocityTheory.GroupCohomology.CardLenStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1, ReciprocityTheory.GroupCohomology.ConnNatHolds:1, ReciprocityTheory.GroupCohomology.PairHomFCoeOfId:1, ReciprocityTheory.GroupCohomology.ResNormalHolds:1, ReciprocityTheory.GroupCohomology.InfRes:1
+ReciprocityTheory.Chebotarev.Support               files=      1 lines=       108  -> ReciprocityTheory.Chebotarev.UnitPart:1
+ReciprocityTheory.SemistableReduction.AlgebraicIndependentOfDerivations files=      1 lines=       106  -> 
+ReciprocityTheory.SemistableReduction.SemiDegD     files=      1 lines=       106  -> ReciprocityTheory.SemistableReduction.SemiDegDA:1, ReciprocityTheory.SemistableReduction.SemiDegDB:1
+ReciprocityTheory.Chebotarev.CycTail               files=      1 lines=       106  -> ReciprocityTheory.Chebotarev.NZIdeal:1
+ReciprocityTheory.Automorphisms.PlaceA             files=      1 lines=       106  -> 
+ReciprocityTheory.DualLattices.ExistsPrimitiveRoot files=      1 lines=       105  -> ReciprocityTheory.DualLattices.CyclicRecursionStatement:1
+ReciprocityTheory.DualLattices.LiftMonomialDeterminantStatementHolds files=      1 lines=       105  -> ReciprocityTheory.DualLattices.LiftMonomialDeterminantStatement:1, ReciprocityTheory.DualLattices.ProdEraseUpdate:1, ReciprocityTheory.DualLattices.IsLocalOfIntegers:1
+ReciprocityTheory.SemistableReduction.GramOfLinearOrder files=      1 lines=       105  -> ReciprocityTheory.SemistableReduction.DetGramEqProdGramSchmidt:1, ReciprocityTheory.SemistableReduction.ExpTorusMeanLeL2OfLex:1
+ReciprocityTheory.DualLattices.RestrictHopfOrderLength files=      1 lines=       104  -> ReciprocityTheory.DualLattices.RestrictedHopfOrderApproximationStatement:1, ReciprocityTheory.DualLattices.MemAugIdeal:1, ReciprocityTheory.DualLattices.ExistsMatOfEquiv:1
+ReciprocityTheory.DualLattices.ExistsLimTensor     files=      1 lines=       104  -> ReciprocityTheory.DualLattices.NsmulKerZero:1
+ReciprocityTheory.DualLattices.IsUnitOfNotMem      files=      1 lines=       104  -> 
+ReciprocityTheory.GroupCohomology.Localise         files=      1 lines=       104  -> ReciprocityTheory.GroupCohomology.LocaliseA:1
+ReciprocityTheory.SemistableReduction.TorsionNonvanish files=      1 lines=       104  -> ReciprocityTheory.SemistableReduction.TorsionNonvanishStatement:1
+ReciprocityTheory.GroupCohomology.FiberFirstH0Injective files=      1 lines=       103  -> ReciprocityTheory.GroupCohomology.CupConnRightStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1, ReciprocityTheory.GroupCohomology.ConnNatHolds:1
+ReciprocityTheory.DualLattices.VdetLeOfSpanLe      files=      1 lines=       102  -> ReciprocityTheory.DualLattices.ValuationDetEqOfSpanEq:1, ReciprocityTheory.DualLattices.IsUnitDetOfSpanEq:1, ReciprocityTheory.DualLattices.VIntCastLtOneOfDvd:1
+ReciprocityTheory.DualLattices.DualPairInh         files=      1 lines=       102  -> ReciprocityTheory.DualLattices.ModuliPointsState:1, ReciprocityTheory.DualLattices.AinfFacts:1
+ReciprocityTheory.SemistableReduction.SemiDegQ     files=      1 lines=       102  -> ReciprocityTheory.SemistableReduction.SemiDegN:1
+ReciprocityTheory.SemistableReduction.GaussIndepOfLeTrdeg files=      1 lines=       101  -> 
+ReciprocityTheory.DualLattices.ValuationDetEqOfSpanEq files=      1 lines=        99  -> ReciprocityTheory.DualLattices.TensorSpan:1
+ReciprocityTheory.SemistableReduction.GaussValLeIffDivMem files=      1 lines=        99  -> ReciprocityTheory.SemistableReduction.GaussValExists:1
+ReciprocityTheory.SemistableReduction.SemiDegH     files=      1 lines=        99  -> ReciprocityTheory.SemistableReduction.SemiDegR:1
+ReciprocityTheory.SemistableReduction.LemmaH       files=      1 lines=        99  -> ReciprocityTheory.SemistableReduction.TorsionNonvanishStatement:1
+ReciprocityTheory.Chebotarev.CycOrth               files=      1 lines=        99  -> ReciprocityTheory.Chebotarev.NZIdeal:1
+ReciprocityTheory.SemistableReduction.ShareSt      files=      1 lines=        98  -> ReciprocityTheory.SemistableReduction.LatSemiSt:1, ReciprocityTheory.ReductiveGroups.ArithmeticGeometry:1
+ReciprocityTheory.SemistableReduction.TorusLexB    files=      1 lines=        98  -> ReciprocityTheory.SemistableReduction.SphereLogIntegrableStatement:1
+ReciprocityTheory.SemistableReduction.ShareBallC   files=      1 lines=        98  -> ReciprocityTheory.SemistableReduction.ShareBallB:1
+ReciprocityTheory.DualLattices.SumX                files=      1 lines=        97  -> ReciprocityTheory.DualLattices.ThetaQSurj:1
+ReciprocityTheory.Chebotarev.SplitC                files=      1 lines=        96  -> ReciprocityTheory.Chebotarev.SplitDef:1, ReciprocityTheory.Chebotarev.SplitF:1, ReciprocityTheory.Chebotarev.ChebyshevLambdaSubPsiBounded:1
+ReciprocityTheory.DualLattices.NsmulKerZero        files=      1 lines=        95  -> ReciprocityTheory.DualLattices.IsHeightUnique:1
+ReciprocityTheory.Chebotarev.NoWind                files=      1 lines=        95  -> 
+ReciprocityTheory.Chebotarev.SummableGfun          files=      1 lines=        94  -> ReciprocityTheory.Chebotarev.KHoldA:1, ReciprocityTheory.Chebotarev.CTrick:1, ReciprocityTheory.Chebotarev.PowerSeriesDiagonalLinear:1
+ReciprocityTheory.DualLattices.MapTensorSpan       files=      1 lines=        93  -> ReciprocityTheory.DualLattices.TensorSpan:1
+ReciprocityTheory.DualLattices.CotangentSurjective files=      1 lines=        93  -> ReciprocityTheory.DualLattices.TensorSpan:1, ReciprocityTheory.DualLattices.SmallLevelClassSet:1
+ReciprocityTheory.SemistableReduction.TorusMeanA   files=      1 lines=        93  -> 
+ReciprocityTheory.Chebotarev.UnitPart              files=      1 lines=        93  -> ReciprocityTheory.Chebotarev.Ucoord:1
+ReciprocityTheory.DualLattices.CharR               files=      1 lines=        92  -> ReciprocityTheory.DualLattices.ExistsLimTensor:1
+ReciprocityTheory.DualLattices.ThetaQSurj          files=      1 lines=        92  -> ReciprocityTheory.DualLattices.MulVecMemPP:1
+ReciprocityTheory.GroupCohomology.LengthKerEqCoker files=      1 lines=        92  -> ReciprocityTheory.GroupCohomology.CardLenStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1, ReciprocityTheory.GroupCohomology.LowHolds:1, ReciprocityTheory.GroupCohomology.PairHomFCoeOfId:1, ReciprocityTheory.GroupCohomology.ConnNatHolds:1, ReciprocityTheory.GroupCohomology.KilledHolds:1
+ReciprocityTheory.Chebotarev.SplitB                files=      1 lines=        92  -> ReciprocityTheory.Chebotarev.SplitA:1, ReciprocityTheory.Chebotarev.SplitF:1, ReciprocityTheory.Chebotarev.ChebyshevLambdaSubPsiBounded:1
+ReciprocityTheory.DualLattices.ColengthSqMulLeProd files=      1 lines=        91  -> ReciprocityTheory.DualLattices.DiscriminantColengthStatementHolds:1
+ReciprocityTheory.SemistableReduction.SphereTorus  files=      1 lines=        91  -> ReciprocityTheory.SemistableReduction.SphereTorusB:1, ReciprocityTheory.SemistableReduction.SphereTorusC:1
+ReciprocityTheory.DualLattices.ConstantCoeffRowSubst files=      1 lines=        89  -> ReciprocityTheory.DualLattices.FischerSmulRight:1
+ReciprocityTheory.DualLattices.TensorSpan          files=      1 lines=        89  -> 
+ReciprocityTheory.SemistableReduction.EmbMatMulVecInjective files=      1 lines=        89  -> ReciprocityTheory.SemistableReduction.LatSemiSt:1
+ReciprocityTheory.DualLattices.MulVecMemPP         files=      1 lines=        88  -> ReciprocityTheory.DualLattices.HasLenLeOfSurj:1
+ReciprocityTheory.DualLattices.OneAddPowOfSq       files=      1 lines=        88  -> ReciprocityTheory.DualLattices.NsetExpInjectiveSurjective:1
+ReciprocityTheory.SemistableReduction.UnipotentB   files=      1 lines=        88  -> ReciprocityTheory.SemistableReduction.LatSemiSt:1
+ReciprocityTheory.ThetaQuasiPeriods.ThetaQuasiPeriodStatement files=      1 lines=        88  -> ReciprocityTheory.ThetaQuasiPeriods.PeriodLattice:1
+ReciprocityTheory.DualLattices.StdJForm            files=      1 lines=        87  -> ReciprocityTheory.DualLattices.IsotypicAveragingStatement:1, ReciprocityTheory.DualLattices.ThmAUses:1
+ReciprocityTheory.SemistableReduction.TorusMeanD   files=      1 lines=        86  -> ReciprocityTheory.SemistableReduction.TorusMeanC:1
+ReciprocityTheory.Chebotarev.SplitF                files=      1 lines=        86  -> 
+ReciprocityTheory.DualLattices.RankMapLeRank       files=      1 lines=        85  -> 
+ReciprocityTheory.SemistableReduction.LatSemiSt    files=      1 lines=        85  -> ReciprocityTheory.SemistableReduction.TorsionNonvanishStatement:1
+ReciprocityTheory.SemistableReduction.BWPolyA      files=      1 lines=        82  -> 
+ReciprocityTheory.Chebotarev.NormGsEmbZLe          files=      1 lines=        82  -> ReciprocityTheory.Chebotarev.Support:1, ReciprocityTheory.Chebotarev.DiscreteTopologyLatOf:1
+ReciprocityTheory.SemistableReduction.DetGramEqProdGramSchmidt files=      1 lines=        81  -> 
+ReciprocityTheory.Chebotarev.RpowNegFinrankSubOne  files=      1 lines=        81  -> ReciprocityTheory.Chebotarev.AbsLogSubLogLeOfHalf:1
+ReciprocityTheory.DualLattices.CokernelLengthComparisonOf files=      1 lines=        80  -> ReciprocityTheory.DualLattices.CokernelLengthComparisonStatement:1, ReciprocityTheory.DualLattices.UnramifiedCokernelLowerBoundOf:1
+ReciprocityTheory.SemistableReduction.IntCoresA    files=      1 lines=        80  -> ReciprocityTheory.SemistableReduction.SphereLogIntegrableStatement:1
+ReciprocityTheory.SemistableReduction.CauchyInequalityOnTorus files=      1 lines=        80  -> ReciprocityTheory.SemistableReduction.ComapInclusionIsLocalHom:1, ReciprocityTheory.SemistableReduction.ExistsTorusPointOneLeNormSum:1
+ReciprocityTheory.Chebotarev.EulerFin              files=      1 lines=        80  -> ReciprocityTheory.Chebotarev.EulerFac:1
+ReciprocityTheory.DualLattices.ImportsAlt          files=      1 lines=        79  -> ReciprocityTheory.DualLattices.DualHopfOrderStatement:1, ReciprocityTheory.DualLattices.MemDualLatMapFourier:1
+ReciprocityTheory.SemistableReduction.BWPolyB      files=      1 lines=        79  -> ReciprocityTheory.SemistableReduction.BWPolyA:1
+ReciprocityTheory.Chebotarev.SplitD                files=      1 lines=        79  -> ReciprocityTheory.Chebotarev.SplitDef:1
+ReciprocityTheory.CommutativeAlgebra.PowerSeriesPresentations files=      1 lines=        77  -> ReciprocityTheory.CommutativeAlgebra.ChainConnInDim:1
+ReciprocityTheory.SemistableReduction.SemiDegSt    files=      1 lines=        77  -> ReciprocityTheory.SemistableReduction.LatSemiSt:1
+ReciprocityTheory.BasicDefinitions.ExistsUnique    files=      1 lines=        77  -> 
+ReciprocityTheory.DualLattices.ExistsUnitMinor     files=      1 lines=        76  -> ReciprocityTheory.DualLattices.ColengthSqBlockVandermonde:1
+ReciprocityTheory.DualLattices.LinPairStatement    files=      1 lines=        76  -> ReciprocityTheory.DualLattices.ModuliPointsState:1
+ReciprocityTheory.DualLattices.FischerAdjointStatement files=      1 lines=        76  -> 
+ReciprocityTheory.SemistableReduction.SemiDegM     files=      1 lines=        76  -> ReciprocityTheory.SemistableReduction.SemiDegI:1
+ReciprocityTheory.SemistableReduction.ShareBallA   files=      1 lines=        76  -> ReciprocityTheory.SemistableReduction.ShareSt:1, ReciprocityTheory.SemistableReduction.Unipotent:1
+ReciprocityTheory.Chebotarev.CrossFrobE            files=      1 lines=        75  -> 
+ReciprocityTheory.GaloisValuations.GlobalEA        files=      1 lines=        75  -> ReciprocityTheory.GaloisValuations.Global:1, ReciprocityTheory.Hypotheses.Descent:1
+ReciprocityTheory.DualLattices.ColengthCotangentBoundStatementOfClaim files=      1 lines=        74  -> ReciprocityTheory.DualLattices.ColengthCotangentBoundStatement:1, ReciprocityTheory.DualLattices.PrimeHopfOrderStatement:1, ReciprocityTheory.DualLattices.IsLocalOfIntegers:1
+ReciprocityTheory.DualLattices.HasSumNormalizedDeriv files=      1 lines=        72  -> 
+ReciprocityTheory.DualLattices.StThmA              files=      1 lines=        72  -> ReciprocityTheory.DualLattices.TangentPairingStatement:1
+ReciprocityTheory.DualLattices.FrobeniusBlock      files=      1 lines=        72  -> ReciprocityTheory.DualLattices.FormMonomialUnitVector:1, ReciprocityTheory.DualLattices.FrobEqOfLe:1
+ReciprocityTheory.SemistableReduction.BWPoly       files=      1 lines=        71  -> ReciprocityTheory.SemistableReduction.TorsionNonvanishStatement:1, ReciprocityTheory.L2DbarEstimates.JacobianInterpolationStatement:1, ReciprocityTheory.SemistableReduction.BWPolyB:1, ReciprocityTheory.SemistableReduction.BWPolyC:1
+ReciprocityTheory.DualLattices.EigenLiftsFrobeniusStatement files=      1 lines=        70  -> ReciprocityTheory.DualLattices.EigenLengthFrobeniusStatement:1
+ReciprocityTheory.ReductiveGroups.Lattices         files=      1 lines=        70  -> 
+ReciprocityTheory.SemistableReduction.OnePolyGrowth files=      1 lines=        69  -> ReciprocityTheory.SemistableReduction.TorsionNonvanishStatement:1
+ReciprocityTheory.SemistableReduction.BalancedSchwarz files=      1 lines=        69  -> ReciprocityTheory.SemistableReduction.TorsionNonvanishStatement:1
+ReciprocityTheory.DualLattices.LiftMonomialDeterminantStatement files=      1 lines=        68  -> ReciprocityTheory.DualLattices.EigenLiftsFrobeniusStatement:1
+ReciprocityTheory.SemistableReduction.SemiContract files=      1 lines=        68  -> ReciprocityTheory.SemistableReduction.SemiContractB:1, ReciprocityTheory.SemistableReduction.SemiContractC:1
+ReciprocityTheory.SemistableReduction.GaussExtensionAndResidueTrdegEq files=      1 lines=        68  -> ReciprocityTheory.SemistableReduction.ComapInclusionIsLocalHom:1, ReciprocityTheory.SemistableReduction.GaussValExists:1, ReciprocityTheory.SemistableReduction.GaussValLeIffDivMem:1, ReciprocityTheory.SemistableReduction.GaussIndepOfLeTrdeg:1
+ReciprocityTheory.DualLattices.WedgeNeZeroOfLinearIndependent files=      1 lines=        67  -> ReciprocityTheory.DualLattices.SmallLevelClassSet:1
+ReciprocityTheory.Chebotarev.PrimeCont             files=      1 lines=        66  -> ReciprocityTheory.Chebotarev.CasimirPowerSurjectiveSymmetric:1, ReciprocityTheory.Chebotarev.EulerSum:1
+ReciprocityTheory.Chebotarev.EulerLim              files=      1 lines=        66  -> ReciprocityTheory.Chebotarev.EulerFin:1
+ReciprocityTheory.SemistableReduction.IntCores     files=      1 lines=        65  -> ReciprocityTheory.SemistableReduction.IntCoresB:1
+ReciprocityTheory.Automorphisms.InstMainA          files=      1 lines=        65  -> 
+ReciprocityTheory.ReducedBases.ExistsRedOf         files=      1 lines=        65  -> ReciprocityTheory.ReducedBases.SizeReduce:1, ReciprocityTheory.ReducedBases.NormGsoCompSwapRightSqMul:1
+ReciprocityTheory.CommutativeAlgebra.WeakRegularity files=      2 lines=        64  -> ReciprocityTheory.CommutativeAlgebra.CohenMacaulay:1, ReciprocityTheory.CommutativeAlgebra.ChainConnInDim:1
+ReciprocityTheory.GroupCohomology.Section          files=      1 lines=        64  -> ReciprocityTheory.GroupCohomology.CupConnRightStatement:1, ReciprocityTheory.GroupCohomology.SectionA:1
+ReciprocityTheory.Chebotarev.NormCongr             files=      1 lines=        64  -> 
+ReciprocityTheory.Chebotarev.EulerFac              files=      1 lines=        64  -> ReciprocityTheory.Chebotarev.NZIdeal:1
+ReciprocityTheory.DualLattices.TowerZeroSurjective files=      1 lines=        63  -> ReciprocityTheory.DualLattices.FormalChartAtZero:1
+ReciprocityTheory.DualLattices.HtdOf               files=      1 lines=        63  -> ReciprocityTheory.DualLattices.EvLatStatement:1, ReciprocityTheory.DualLattices.EvHopfStatement:1, ReciprocityTheory.DualLattices.EvActStatement:1, ReciprocityTheory.DualLattices.EvHtStatement:1, ReciprocityTheory.DualLattices.PSerFrobStatement:1, ReciprocityTheory.DualLattices.WFrobStatement:1
+ReciprocityTheory.DualLattices.ExistsReductionOfCoordinateCombination files=      1 lines=        62  -> ReciprocityTheory.DualLattices.EmbeddingSeparatingGroupStatement:1, ReciprocityTheory.DualLattices.UnramifiedCokernelLengthOfLengthEigenLengthProduct:1
+ReciprocityTheory.DualLattices.SumLatInvMulVec     files=      1 lines=        62  -> ReciprocityTheory.DualLattices.ExistsUnitMinor:1
+ReciprocityTheory.DualLattices.FischerSelfNeZero   files=      1 lines=        62  -> ReciprocityTheory.DualLattices.WtGtRowSubstXSub:1
+ReciprocityTheory.DualLattices.IdemGen             files=      1 lines=        60  -> ReciprocityTheory.DualLattices.UnramifiedCokernelLowerBoundOf:1
+ReciprocityTheory.GroupCohomology.CardLenStatement files=      1 lines=        60  -> ReciprocityTheory.GroupCohomology.TransgressionStatement:1
+ReciprocityTheory.SemistableReduction.NormValuationEqFactorization files=      1 lines=        60  -> ReciprocityTheory.SemistableReduction.ComapInclusionIsLocalHom:1, ReciprocityTheory.SemistableReduction.NormOrdLengthResidue:1
+ReciprocityTheory.GroupCohomology.LowNat           files=      1 lines=        59  -> ReciprocityTheory.GroupCohomology.TransgressionStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1, ReciprocityTheory.GroupCohomology.LowHolds:1, ReciprocityTheory.GroupCohomology.ContractNthCastAddCastSucc:1
+ReciprocityTheory.ReductiveGroups.PlaceCounting    files=      1 lines=        59  -> 
+ReciprocityTheory.BasicDefinitions.AdRep           files=      1 lines=        59  -> ReciprocityTheory.BasicDefinitions.ExistsUnique:1
+ReciprocityTheory.Chebotarev.PrimeSum              files=      1 lines=        58  -> ReciprocityTheory.Chebotarev.CasimirPowerSurjectiveSymmetric:1, ReciprocityTheory.Chebotarev.EulerSum:1
+ReciprocityTheory.Chebotarev.CTrick                files=      1 lines=        58  -> ReciprocityTheory.Chebotarev.Ucoord:1, ReciprocityTheory.Chebotarev.ChebyshevLambdaSubPsiBounded:1
+ReciprocityTheory.DualLattices.NsetExpInjectiveSurjective files=      1 lines=        57  -> ReciprocityTheory.DualLattices.StThmA:1
+ReciprocityTheory.SemistableReduction.SJCore       files=      1 lines=        57  -> ReciprocityTheory.SemistableReduction.SJCoreD:1
+ReciprocityTheory.DualLattices.UnramifiedCokernelLengthStatement files=      1 lines=        56  -> ReciprocityTheory.DualLattices.CotangentSurjective:1
+ReciprocityTheory.ThetaQuasiPeriods.PeriodLattice  files=      1 lines=        56  -> 
+ReciprocityTheory.DualLattices.ModuliPointsState   files=      1 lines=        55  -> ReciprocityTheory.DualLattices.SeriesState:1
+ReciprocityTheory.DualLattices.TransposeMulSelf    files=      1 lines=        55  -> ReciprocityTheory.DualLattices.NearIdentityColengthStatement:1
+ReciprocityTheory.DualLattices.WtGtRowSubstXSub    files=      1 lines=        54  -> ReciprocityTheory.DualLattices.ConstantCoeffRowSubst:1
+ReciprocityTheory.DualLattices.HasLenCokerDet      files=      1 lines=        54  -> ReciprocityTheory.DualLattices.LenIdBStatement:1, ReciprocityTheory.DualLattices.UpSmith:1
+ReciprocityTheory.Chebotarev.ChebyshevLambdaSubPsiBounded files=      1 lines=        54  -> ReciprocityTheory.Chebotarev.CasimirPowerSurjectiveSymmetric:1, ReciprocityTheory.Chebotarev.EulerSum:1, ReciprocityTheory.Chebotarev.EulerLim:1, ReciprocityTheory.Chebotarev.PrimeSum:1, ReciprocityTheory.Chebotarev.PrimeCont:1, ReciprocityTheory.Chebotarev.PrimeAsymp:1
+ReciprocityTheory.Chebotarev.CrossLift             files=      1 lines=        53  -> 
+ReciprocityTheory.DualLattices.HtLinStatement      files=      1 lines=        52  -> ReciprocityTheory.DualLattices.NsetExpInjectiveSurjective:1
+ReciprocityTheory.GroupCohomology.HomogExistsStatement files=      1 lines=        52  -> ReciprocityTheory.GroupCohomology.ContinuousContractNth:1
+ReciprocityTheory.SemistableReduction.DetSubtypeCompAssociatedProd files=      1 lines=        52  -> ReciprocityTheory.SemistableReduction.ComapInclusionIsLocalHom:1
+ReciprocityTheory.DualLattices.ThmAFull            files=      1 lines=        51  -> ReciprocityTheory.DualLattices.OneAddPowOfSq:1, ReciprocityTheory.DualLattices.StThmAFull:1, ReciprocityTheory.DualLattices.MapSmulOneMulVec:1
+ReciprocityTheory.Hypotheses.Descent               files=      1 lines=        51  -> ReciprocityTheory.GaloisValuations.SymplecticRankFourModularity:1
+ReciprocityTheory.SemistableReduction.LogNormEvalZeroLeCircleAverage files=      1 lines=        51  -> 
+ReciprocityTheory.DualLattices.StThmAFull          files=      1 lines=        50  -> ReciprocityTheory.DualLattices.NsetExpInjectiveSurjective:1, ReciprocityTheory.DualLattices.SmallLevelClassSet:1
+ReciprocityTheory.DualLattices.EmbeddingSeparatingGroupStatement files=      1 lines=        50  -> ReciprocityTheory.DualLattices.EigenLiftsFrobeniusStatement:1
+ReciprocityTheory.DualLattices.LenEx               files=      1 lines=        50  -> ReciprocityTheory.DualLattices.UnramifiedCokernelLowerBoundOf:1, ReciprocityTheory.DualLattices.UpSmith:1, ReciprocityTheory.DualLattices.ExistsSmulMemOfMemSpan:1
+ReciprocityTheory.DualLattices.ThmAUses            files=      1 lines=        50  -> ReciprocityTheory.DualLattices.StThmAFull:1, ReciprocityTheory.DualLattices.VDetEqOneOfIntegral:1
+ReciprocityTheory.DualLattices.NearIdentityColengthStatement files=      1 lines=        50  -> 
+ReciprocityTheory.Chebotarev.ExistsUnitOrderOfEq   files=      1 lines=        50  -> ReciprocityTheory.Chebotarev.CycStatement:1, ReciprocityTheory.Chebotarev.CrossGal:1, ReciprocityTheory.Chebotarev.CrossLift:1, ReciprocityTheory.Chebotarev.CrossFix:1, ReciprocityTheory.Chebotarev.CrossFrobE:1, ReciprocityTheory.Chebotarev.CrossRes:1
+ReciprocityTheory.DualLattices.DiscriminantColengthStatement files=      1 lines=        49  -> ReciprocityTheory.DualLattices.CotangentSurjective:1, ReciprocityTheory.DualLattices.VDetEqOneOfIntegral:1
+ReciprocityTheory.SemistableReduction.TorusMean    files=      1 lines=        49  -> ReciprocityTheory.SemistableReduction.SphereLogIntegrableStatement:1, ReciprocityTheory.SemistableReduction.TorusMeanD:1
+ReciprocityTheory.DualLattices.RestrictedHopfOrderApproximationStatement files=      1 lines=        48  -> ReciprocityTheory.DualLattices.CokernelLengthComparisonOf:1
+ReciprocityTheory.AnalyticForms.MaIntEmpty         files=      1 lines=        47  -> 
+ReciprocityTheory.SemistableReduction.LatAll       files=      1 lines=        47  -> ReciprocityTheory.SemistableReduction.LemmaH:1, ReciprocityTheory.SemistableReduction.BalancedSchwarz:1, ReciprocityTheory.SemistableReduction.TorsionNonvanish:1, ReciprocityTheory.SemistableReduction.ApproxGraph:1, ReciprocityTheory.SemistableReduction.ApproxBasis:1, ReciprocityTheory.SemistableReduction.Unipotent:1
+ReciprocityTheory.Chebotarev.Ucoord                files=      1 lines=        47  -> ReciprocityTheory.Chebotarev.AbsProdSubProdLeSumAbsSub:1, ReciprocityTheory.Chebotarev.NZIdeal:1
+ReciprocityTheory.DualLattices.SurjectiveAinfTowerZero files=      1 lines=        45  -> ReciprocityTheory.DualLattices.SubMemOfCompat:1
+ReciprocityTheory.SemistableReduction.FinrankRestrictTotalDegree files=      1 lines=        45  -> ReciprocityTheory.SemistableReduction.ComapInclusionIsLocalHom:1
+ReciprocityTheory.GroupCohomology.KilledHolds      files=      1 lines=        44  -> ReciprocityTheory.GroupCohomology.CardLenStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1, ReciprocityTheory.GroupCohomology.ConnNatHolds:1, ReciprocityTheory.GroupCohomology.PairHomFCoeOfId:1, ReciprocityTheory.GroupCohomology.Shapiro:1, ReciprocityTheory.GroupCohomology.ShiftA:1
+ReciprocityTheory.Chebotarev.CasimirPowerSurjectiveSymmetric files=      1 lines=        44  -> ReciprocityTheory.Chebotarev.NZIdeal:1
+ReciprocityTheory.DualLattices.FrobeniusOfGroupDivisorsRank files=      1 lines=        43  -> ReciprocityTheory.DualLattices.UnramifiedCokernelLengthOfLengthEigenLengthProduct:1, ReciprocityTheory.DualLattices.EqZeroOfIsoZero:1, ReciprocityTheory.DualLattices.MatEquivApply:1, ReciprocityTheory.DualLattices.EigenLengthProductStatementHolds:1, ReciprocityTheory.DualLattices.LenEx:1, ReciprocityTheory.DualLattices.MonomialsSpanOfProdEq:1
+ReciprocityTheory.DualLattices.EigenLengthFrobeniusStatement files=      1 lines=        43  -> ReciprocityTheory.DualLattices.LenIdStatement:1
+ReciprocityTheory.GroupCohomology.ReverseA         files=      1 lines=        42  -> 
+ReciprocityTheory.SemistableReduction.ShareDetA    files=      1 lines=        42  -> ReciprocityTheory.L2DbarEstimates.IsLocalHomeomorph:1, ReciprocityTheory.AnalyticForms.AnalyticCharts:1
+ReciprocityTheory.Chebotarev.PowerSeriesDiagonalLinear files=      1 lines=        41  -> ReciprocityTheory.Chebotarev.SplitB:1, ReciprocityTheory.Chebotarev.SplitC:1, ReciprocityTheory.Chebotarev.SplitE:1
+ReciprocityTheory.SemistableReduction.RankEqualityHolds files=      1 lines=        40  -> ReciprocityTheory.SemistableReduction.ComapInclusionIsLocalHom:1
+ReciprocityTheory.DualLattices.CokernelLengthComparisonStatement files=      1 lines=        39  -> ReciprocityTheory.DualLattices.CotangentSurjective:1
+ReciprocityTheory.DualLattices.UnramifiedCokernelLowerBoundStatement files=      1 lines=        38  -> ReciprocityTheory.DualLattices.CokernelLengthComparisonStatement:1, ReciprocityTheory.DualLattices.UnramifiedCokernelLengthStatement:1
+ReciprocityTheory.DualLattices.NsmulFstAddSnd      files=      1 lines=        38  -> ReciprocityTheory.DualLattices.InstAddCommMonoidFibreFst:1
+ReciprocityTheory.SemistableReduction.TorusL2CauchyInequality files=      1 lines=        37  -> ReciprocityTheory.SemistableReduction.SJCore:1, ReciprocityTheory.SemistableReduction.SjHolds:1, ReciprocityTheory.SemistableReduction.LagrangeIdealLiftsFact:1, ReciprocityTheory.SemistableReduction.HeightLowerBound:1, ReciprocityTheory.SemistableReduction.IntCores:1, ReciprocityTheory.SemistableReduction.TorusMean:1
+ReciprocityTheory.DualLattices.LenIdStatement      files=      1 lines=        36  -> ReciprocityTheory.DualLattices.UnramifiedCokernelLengthStatement:1
+ReciprocityTheory.GroupCohomology.EqZeroOfLe       files=      1 lines=        36  -> 
+ReciprocityTheory.NeutralLocalFields.GrunwaldWang  files=      1 lines=        35  -> 
+ReciprocityTheory.GroupCohomology.InnerHolds       files=      1 lines=        35  -> ReciprocityTheory.GroupCohomology.CupConnRightStatement:1, ReciprocityTheory.GroupCohomology.HomogExistsStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1, ReciprocityTheory.GroupCohomology.HomogIso:1, ReciprocityTheory.GroupCohomology.PrismOpZeroEval:1
+ReciprocityTheory.DualLattices.TangentPairingStatement files=      1 lines=        34  -> ReciprocityTheory.DualLattices.ModuliPointsState:1
+ReciprocityTheory.GeneralLinearIntegers.AlgebraMapIntMemOint files=      1 lines=        34  -> 
+ReciprocityTheory.DualLattices.CokernelsAgreeEquivariantly files=      1 lines=        33  -> ReciprocityTheory.DualLattices.BadStatement:1, ReciprocityTheory.DualLattices.CotangentSurjective:1
+ReciprocityTheory.CommutativeAlgebra.ChainConnInDim files=      1 lines=        33  -> 
+ReciprocityTheory.DualLattices.DetIntegralNonneg   files=      1 lines=        32  -> ReciprocityTheory.DualLattices.FrobeniusOfGroupDivisorsRank:1, ReciprocityTheory.DualLattices.KilledGen:1, ReciprocityTheory.DualLattices.IdemGen:1
+ReciprocityTheory.ReductiveGroups.ExtensionEmbeddings files=      1 lines=        32  -> 
+ReciprocityTheory.SemistableReduction.HeightLowerBound files=      1 lines=        32  -> ReciprocityTheory.SemistableReduction.LogNormCoeffSubLeBlockSphereLogMean:1
+ReciprocityTheory.Chebotarev.NZIdeal               files=      1 lines=        32  -> 
+ReciprocityTheory.Chebotarev.CrossGal              files=      1 lines=        32  -> 
+ReciprocityTheory.NeutralLocalFields.HilbertClassField files=      1 lines=        31  -> 
+ReciprocityTheory.GroupCohomology.HCompApply       files=      1 lines=        31  -> ReciprocityTheory.GroupCohomology.CupConnRightStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1, ReciprocityTheory.GroupCohomology.FiberFirstH0Injective:1, ReciprocityTheory.GroupCohomology.ProdHolds:1, ReciprocityTheory.GroupCohomology.EqZeroOfLe:1
+ReciprocityTheory.DualLattices.EigenQuotientSmithStatement files=      1 lines=        30  -> ReciprocityTheory.DualLattices.RestrictedHopfOrderApproximationStatement:1
+ReciprocityTheory.DualLattices.LengthDegreeOfWdetFrobenius files=      1 lines=        29  -> ReciprocityTheory.DualLattices.KilledGen:1, ReciprocityTheory.DualLattices.IdemGen:1, ReciprocityTheory.DualLattices.LenEx:1, ReciprocityTheory.DualLattices.CokernelLengthComparisonOf:1
+ReciprocityTheory.GroupCohomology.ChiRkA           files=      1 lines=        29  -> 
+ReciprocityTheory.SemistableReduction.AlgAll       files=      1 lines=        29  -> ReciprocityTheory.SemistableReduction.FinrankRestrictTotalDegree:1, ReciprocityTheory.SemistableReduction.RankEqualityHolds:1, ReciprocityTheory.SemistableReduction.CauchyInequalityOnTorus:1, ReciprocityTheory.SemistableReduction.GenericImageFinite:1, ReciprocityTheory.SemistableReduction.IntegralClosureRankAndResidueTrdegLe:1, ReciprocityTheory.SemistableReduction.GaussExtensionAndResidueTrdegEq:1
+ReciprocityTheory.DualLattices.Eisenstein4CoeffBound files=      1 lines=        28  -> 
+ReciprocityTheory.DualLattices.PSerFrobStatement   files=      1 lines=        27  -> ReciprocityTheory.DualLattices.TowerZeroSurjective:1
+ReciprocityTheory.GeometryOfNumbers.MatrixArithmetic files=      1 lines=        27  -> 
+ReciprocityTheory.DualLattices.SubgroupFreenessStatement files=      1 lines=        26  -> ReciprocityTheory.DualLattices.TensorSpan:1
+ReciprocityTheory.DualLattices.IsotypicAveragingStatement files=      1 lines=        26  -> ReciprocityTheory.DualLattices.CotangentSurjective:1
+ReciprocityTheory.DualLattices.PrimeHopfOrderStatement files=      1 lines=        26  -> ReciprocityTheory.DualLattices.CotangentSurjective:1
+ReciprocityTheory.ReducedBases.LatDefs             files=      1 lines=        26  -> 
+ReciprocityTheory.DualLattices.EvCotStatement      files=      1 lines=        25  -> ReciprocityTheory.DualLattices.TowerZeroSurjective:1
+ReciprocityTheory.DualLattices.SeriesState         files=      1 lines=        25  -> ReciprocityTheory.DualLattices.SqZeroOfSpan:1
+ReciprocityTheory.SemistableReduction.DegAddHolds  files=      1 lines=        25  -> ReciprocityTheory.SemistableReduction.ExistsIntSmulMemSpan:1, ReciprocityTheory.SemistableReduction.EmbMatMulVecInjective:1
+ReciprocityTheory.DualLattices.BadStatement        files=      1 lines=        24  -> 
+ReciprocityTheory.DualLattices.Imports             files=      1 lines=        24  -> ReciprocityTheory.DualLattices.DvdOfCoeffZero:1, ReciprocityTheory.DualLattices.ValUntiltESubOne:1, ReciprocityTheory.DualLattices.MulIterateRootEqZero:1, ReciprocityTheory.DualLattices.ZmodTrichotomy:1, ReciprocityTheory.DualLattices.ExistsPrimitiveRoot:1
+ReciprocityTheory.DualLattices.WFrobStatement      files=      1 lines=        24  -> ReciprocityTheory.DualLattices.TowerZeroSurjective:1
+ReciprocityTheory.DualLattices.ToSigmaAddFstZeroFst files=      1 lines=        24  -> ReciprocityTheory.DualLattices.ModuliPointsState:1
+ReciprocityTheory.Chebotarev.CrossRes              files=      1 lines=        24  -> 
+ReciprocityTheory.ReducedBases.ExistsBoundedBasis  files=      1 lines=        24  -> ReciprocityTheory.ReducedBases.LatDefs:1
+ReciprocityTheory.DualLattices.FrobEqOfLe          files=      1 lines=        23  -> 
+ReciprocityTheory.DualLattices.MonomialDeterminantStatement files=      1 lines=        22  -> ReciprocityTheory.DualLattices.CotangentSurjective:1
+ReciprocityTheory.DualLattices.EvHtStatement       files=      1 lines=        22  -> ReciprocityTheory.DualLattices.TowerZeroSurjective:1
+ReciprocityTheory.DualLattices.EvLatStatement      files=      1 lines=        22  -> ReciprocityTheory.DualLattices.TowerZeroSurjective:1
+ReciprocityTheory.DualLattices.EvBtStatement       files=      1 lines=        22  -> ReciprocityTheory.DualLattices.TowerZeroSurjective:1
+ReciprocityTheory.GroupCohomology.CofinA           files=      1 lines=        22  -> 
+ReciprocityTheory.ClassFieldTheory.PadicCompatibleSequences files=      1 lines=        22  -> 
+ReciprocityTheory.DualLattices.DualHopfOrderStatement files=      1 lines=        21  -> ReciprocityTheory.DualLattices.TensorSpan:1
+ReciprocityTheory.DualLattices.EvHopfStatement     files=      1 lines=        21  -> ReciprocityTheory.DualLattices.TowerZeroSurjective:1
+ReciprocityTheory.DualLattices.EvenTwoEvaluationSign files=      1 lines=        21  -> ReciprocityTheory.DualLattices.TowerZeroSurjective:1
+ReciprocityTheory.DualLattices.ColengthCotangentBoundStatement files=      1 lines=        20  -> ReciprocityTheory.DualLattices.CotangentSurjective:1
+ReciprocityTheory.DualLattices.EvActStatement      files=      1 lines=        20  -> ReciprocityTheory.DualLattices.TowerZeroSurjective:1
+ReciprocityTheory.Chebotarev.SplitE                files=      1 lines=        20  -> ReciprocityTheory.Chebotarev.SplitA:1, ReciprocityTheory.Chebotarev.SplitD:1, ReciprocityTheory.Chebotarev.SplitEA:1
+ReciprocityTheory.DualLattices.SubgroupQuotientStatement files=      1 lines=        19  -> ReciprocityTheory.DualLattices.TensorSpan:1
+ReciprocityTheory.GroupCohomology.ProdHolds        files=      1 lines=        19  -> ReciprocityTheory.GroupCohomology.CupConnRightStatement:1
+ReciprocityTheory.EigenFrames.EigenSt              files=      1 lines=        19  -> 
+ReciprocityTheory.DualLattices.LengthDegreeOfFrobenius files=      1 lines=        17  -> ReciprocityTheory.DualLattices.InvolutionPermApplyZero:1, ReciprocityTheory.DualLattices.WdetDegreeOfSmithRestrict:1, ReciprocityTheory.DualLattices.RestrictHopfOrderLength:1, ReciprocityTheory.DualLattices.BasechangeProjectorIdempotentAction:1, ReciprocityTheory.DualLattices.SmithNormalFormStatement:1, ReciprocityTheory.DualLattices.LengthDegreeOfWdetFrobenius:1
+ReciprocityTheory.Chebotarev.CycStatement          files=      1 lines=        17  -> 
+ReciprocityTheory.DualLattices.ThmAAll             files=      1 lines=        16  -> ReciprocityTheory.DualLattices.IsPairingValueAddRight:1, ReciprocityTheory.DualLattices.HeightFunctionalStatementOfPairingProperties:1, ReciprocityTheory.DualLattices.TangentPairingStatementOfHeightFunctional:1, ReciprocityTheory.DualLattices.ThmAFull:1, ReciprocityTheory.DualLattices.AinfTower:1
+ReciprocityTheory.Chebotarev.SplitDef              files=      1 lines=        16  -> ReciprocityTheory.Chebotarev.NZIdeal:1
+ReciprocityTheory.GroupCohomology.LowHolds         files=      1 lines=        15  -> ReciprocityTheory.GroupCohomology.CupConnRightStatement:1, ReciprocityTheory.GroupCohomology.DEqZeroOfMemB:1, ReciprocityTheory.GroupCohomology.ComapZeroCoboundariesEqBot:1
+ReciprocityTheory.DualLattices.KilledGen           files=      1 lines=        14  -> ReciprocityTheory.DualLattices.UnramifiedCokernelLowerBoundOf:1, ReciprocityTheory.DualLattices.IsLocalOfIntegers:1
+ReciprocityTheory.DualLattices.DiscriminantColengthStatementHolds files=      1 lines=        13  -> ReciprocityTheory.DualLattices.ColengthSqBlockVandermonde:1, ReciprocityTheory.DualLattices.ValuationPairwiseDifferenceProductPowLeColengthS:1, ReciprocityTheory.DualLattices.ColengthSqMulLe:1
+ReciprocityTheory.DualLattices.ImportsBis          files=      1 lines=        13  -> ReciprocityTheory.DualLattices.SubgroupFreenessStatement:1, ReciprocityTheory.DualLattices.HasColengthEqPowMulPow:1
+ReciprocityTheory.GroupCohomology.ImportsAlt       files=      1 lines=        13  -> ReciprocityTheory.GroupCohomology.ReverseA:1, ReciprocityTheory.GroupCohomology.FiveTerm:1, ReciprocityTheory.GroupCohomology.CupCor:1, ReciprocityTheory.GroupCohomology.HCompApply:1, ReciprocityTheory.GroupCohomology.LowLES:1, ReciprocityTheory.GroupCohomology.ChiRkA:1
+ReciprocityTheory.GroupCohomology.IsLowExists      files=      1 lines=        13  -> ReciprocityTheory.GroupCohomology.TransgressionStatement:1, ReciprocityTheory.GroupCohomology.LowHolds:1
+ReciprocityTheory.SemistableReduction.SemiAll      files=      1 lines=        13  -> ReciprocityTheory.SemistableReduction.SemiDeg:1, ReciprocityTheory.SemistableReduction.SemiContract:1, ReciprocityTheory.SemistableReduction.LatAll:1
+ReciprocityTheory.SemistableReduction.SemiDeg      files=      1 lines=        13  -> ReciprocityTheory.SemistableReduction.SemiDegZA:1, ReciprocityTheory.SemistableReduction.SemiDegA:1, ReciprocityTheory.SemistableReduction.SemiDegB:1, ReciprocityTheory.SemistableReduction.SemiDegC:1, ReciprocityTheory.SemistableReduction.SemiDegD:1
+ReciprocityTheory.GroupCohomology.FiveTerm         files=      1 lines=        12  -> ReciprocityTheory.GroupCohomology.Transgression:1
+ReciprocityTheory.SemistableReduction.ApproxGraph  files=      1 lines=        12  -> ReciprocityTheory.SemistableReduction.ApproxGraphC:1
+ReciprocityTheory.SemistableReduction.TorusLex     files=      1 lines=        11  -> ReciprocityTheory.SemistableReduction.SphereLogIntegrableStatement:1, ReciprocityTheory.SemistableReduction.TorusLexA:1, ReciprocityTheory.SemistableReduction.TorusLexC:1
+ReciprocityTheory.DualLattices.U10                 files=      1 lines=         8  -> ReciprocityTheory.DualLattices.LengthDegreeOfFrobenius:1, ReciprocityTheory.DualLattices.FrobeniusOfGroupDivisorsRank:1
+ReciprocityTheory.Chebotarev.StatementHolds        files=      1 lines=         8  -> ReciprocityTheory.Chebotarev.ExistsUnitOrderOfEq:1, ReciprocityTheory.Chebotarev.TendstoLogOneDivSubOne:1
+ReciprocityTheory.L2DbarEstimates.Imports          files=      1 lines=         4  -> ReciprocityTheory.L2DbarEstimates.NormFibrations:4
+ReciprocityTheory.ReductiveGroups.Models           files=      2 lines=         2  -> 
+ReciprocityTheory.ReductiveGroups.LocalHeights     files=      1 lines=         1  -> 

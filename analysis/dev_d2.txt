@@ -1,0 +1,8 @@
+== Development at depth 2: 141928 files, 12232663 lines
+Development.AbelianVarietyTheory                   files=  99187 lines=   8142960  -> Development.AutomorphicArithmetic:745, Development.WeilBound:48, Development.AutomorphicSpectrum:30, Development.DiscreteGroups:2
+Development.AutomorphicArithmetic                  files=  18431 lines=   1776375  -> Development.AbelianVarietyTheory:11808, Development.WeilBound:1444, Development.EtaleCohomology:694, Development.AutomorphicSpectrum:422, Development.DiscreteGroups:231, Development.ResolutionOfSingularities:23
+Development.AutomorphicSpectrum                    files=  15147 lines=   1195844  -> Development.AbelianVarietyTheory:7077, Development.WeilBound:6148, Development.AutomorphicArithmetic:135
+Development.WeilBound                              files=   7051 lines=    848547  -> Development.AutomorphicSpectrum:6184, Development.AbelianVarietyTheory:5158, Development.AutomorphicArithmetic:78, Development.ResolutionOfSingularities:39
+Development.ResolutionOfSingularities              files=    499 lines=    140709  -> Development.AutomorphicArithmetic:1
+Development.EtaleCohomology                        files=   1398 lines=    104525  -> Development.AbelianVarietyTheory:280, Development.AutomorphicArithmetic:18, Development.WeilBound:1
+Development.DiscreteGroups                         files=    215 lines=     23703  -> Development.AbelianVarietyTheory:115, Development.WeilBound:45, Development.AutomorphicSpectrum:6, Development.AutomorphicArithmetic:1

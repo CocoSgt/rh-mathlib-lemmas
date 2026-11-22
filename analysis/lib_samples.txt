@@ -1,0 +1,344 @@
+== Development.AbelianVarietyTheory (438599 named decls)
+   pairsDegOfType_holds | exists_finset_detecting_of_finiteDimensional | eq_plGw_or_isConjPl | lam_teich | intertwine_aeval_apply | levChi_flag'
+== Formalism.LocalToGlobal (70102 named decls)
+   localized_localized | tsum_eq | cc_matCoord | tsact_rowAct_X | Kc_cont | linN_coeff
+== Development.AutomorphicSpectrum (67512 named decls)
+   span_fk_pow | fderiv_comp_clm | exists_pair | balance | indep_mul_genUp | shintani_formula_GL2_long_weyl_dual
+== Development.WeilBound (53145 named decls)
+   iF_zero | root_eq | hN_conj | abfac_prod | diagPow | upper_block_rank_one_update
+== Formalism.SharpRestriction (52102 named decls)
+   c_nrm_X | ToyNormPrimeProp | theta_le_msup | stab_iff | goodSub_of_dual | sum_inv_card_stabilizer
+== Development.AutomorphicArithmetic (46921 named decls)
+   sum_log_bad_le | hecke_eigenvalue_basic_properties | hostOfFieldOf | clozelConjC | artinEl | galois_steinberg_local
+== GroundTheory.HeightsAndTheta (36767 named decls)
+   frame_gen | addBlockDeg | inclHom | eval_two | segre_torusSmul | exists_blockForm
+== Formalism.HermitianCurvature (35108 named decls)
+   minor_leviElement_mul_low | h_es_es | isPoly_t21 | jc_ae_FM | parOK_zero | line_nonvanishing_holds
+== Formalism.PeriodIntegrals (30902 named decls)
+   termA_le | mcF_diag | DetIdPG | lift_succ_pow | dualLatV_holds | integrable_of_isOmT
+== ReciprocityTheory.ReductiveGroups (24128 named decls)
+   occB_pairing_ne | verma_weight | RigPullIsGenSt | lintegral_pmat_le | eta_eq_one | nfac_nonneg
+== GroundTheory.AutomorphicForms (10507 named decls)
+   det_toReal_epsilon | measurable_indicator | flat_right_inv | volume_cube | exists_ellQ_mul_ne_zero | smoothKZ
+== Development.EtaleCohomology (9746 named decls)
+   fm_injective | ratio_chain | LZIdemSumApprox_of | rst_fst | LCSplit_of | projective_coordinate_sections_agree_on_overlap
+== CompanionTheory.SpectralGeometry (5791 named decls)
+   contDiff_ex | blockGL | cre_ann_apply | mul_entry_le' | theta_count_compact_finite | mem_JJ_of
+== GroundTheory.ProfiniteCohomology (5674 named decls)
+   brauerInvZOfIsSepClosure_cohomologyMap_uliftInt_base | cochainsComplex_d_d_apply | shapiro_placeProj_inl | isZero_H1_open | gsRealDecompGroup_le_stabilizer | finite_cohomology_of_forall_trivial
+== GroundTheory.GlobalFields (5500 named decls)
+   mapsTo_invariants | unitSection | forall_coe_mem_localInvDifferent_iff | exists_frobElem_isArithFrobAt | vcPoint_eq_variableChangePoint | derivWeierstrassP_add
+== GroundTheory.PAdicHodge (5015 named decls)
+   coeffB_toB | algebraMap_tilt_eq | ptEval_awayToExt | norm_untiltField_add_le | finite_image_inertiaGal_of_invariant_padic | weight_lt_of_highIndex_lt
+== Development.ResolutionOfSingularities (4653 named decls)
+   filterNeTop | algebra_etale | GoingUpInvariant | detachedCoprodInr_inr_totalTransition_assoc | principalizationOfEmbedding_ideal_zero_eq_vanishingIdeal | strictTransformOffCenter
+== PositivityTheory.AutomorphicForms (4467 named decls)
+   max_mem | UniformizerProp | orbit_tsum_smul | infId_fst | ScalarOnInertiaProp | archS_apply
+== Formalism.ThetaLogCoordinates (4046 named decls)
+   qs_card_D | small_of_exp | pol_le_iso | subst_scale_zLin | qn_full' | qh_smul_mem
+== Formalism.GL3MeanSquares (3693 named decls)
+   finrank_cmF | apply_mem_smul | GramExpansion | rpow_pos_exponent_bound | good_term | mul_left
+== GroundTheory.ArithmeticGeometry (3379 named decls)
+   exists_independent_torsion_prime | res_smul | hmt_mem | ker_phiTHom | divisorSectionsOne | classGroup_mk_eq_one_iff
+== GroundTheory.LocalFields (3046 named decls)
+   isTameSubextension_iff | finrank_eq_of_adjoin_eq_top | rootEval_eq_rootEval_iff | val_add_multiplicative | sub_one_le_of_lt | valuation_intCast_eq_one_iff
+== Formalism.LocalRingCardinality (3040 named decls)
+   genB_span | toyZeroSpaceRefl | splitAt_nonempty | z_anis_gen | basis_of_basis | labelCharacter_idempotent_one
+== CompanionTheory.AutomorphicTheory (2762 named decls)
+   StableAverageExists | be_equivariant | dual_tensor_capelli_intertwine | mulBy_one | V_of_not | io_entry_mem
+== Formalism.PieriBlockIdeals (2521 named decls)
+   lrfc_tau | raisingRemainder_eq_first_add_tail | SimpleReflPairing | d_n_last_independent | RankOneModel | WEFromLattice
+== Formalism.FlagUnipotentLattices (2384 named decls)
+   tupleJac | CostBound | TraceLower | DualCapV | torsionBoundAsm | NearPowBound
+== Formalism.SizeWindowBrackets (2239 named decls)
+   unitary_dimension | ModelPow | log_four_le_three_halves | log_two_nonneg | AskExpansion | Inputs6cTo6b
+== ReciprocityTheory.AnalyticForms (2185 named decls)
+   zeroExt_props | hessC_congr_eventuallyEq | coord_of_mem | avg_lim | projLine_isPlurisubharmonic | projLine_chart_target
+== ReciprocityTheory.L2DbarEstimates (1705 named decls)
+   measurePreserving_rotAbout | hasCompactSupport_db | tl_ev_le_one | leviV_ofReal_sum | extCh_nonneg | fn_diffG
+== Formalism.WachLatticeTwists (1545 named decls)
+   StatAbsIrrExt | RealDisplayAllWA | rank_one_factor | StatFreeExt | mcomps_zero | withInv
+== CompanionTheory.HarishChandraModules (1448 named decls)
+   emb_bij | exp_symm | isData_rank_two_one | differentiableAt | cong_Lf | exists_approx
+== Development.DiscreteGroups (1355 named decls)
+   isCuspidal_of_inflates | KirBump | val_mul_le | corner_torusPow | good_colU | lint_unfold
+== Formalism.AdmissibleDesigns (1331 named decls)
+   trL_apply | fd_fildR | iLM_smul | bound_compact | l_mem_max | finiteClassesLocalModel
+== Formalism.MahlerMeasure (1234 named decls)
+   WeylLat | weight_wv | gaussR_lin | CoarseSlack | grid_average | pow_Dp_mul
+== ReciprocityTheory.DualLattices (1204 named decls)
+   PrimaryComponentScale | span_p_eq | unipFixed | Tmap_Tsw | EigenQuotientSmithStatement | IsLogVal
+== CompanionTheory.RealGroups (1192 named decls)
+   PhiCont | psi_apply | units_map_val | hasSignature_of_posDef | StartOf | RightEq
+== Formalism.PadicSubsetSums (1121 named decls)
+   div_fourth_sub_one_le | SumSimpleLength | GramZeroAnisotropic | brauer_nesbitt | primeToPart | BCCyclicVector
+== ReciprocityTheory.ClassFieldTheory (1039 named decls)
+   exists_eval_QZ | isClosedEmbedding_resGK | sum_defect | norm_Kn | resPair | normGrp
+== Formalism.PolynomialDimension (1027 named decls)
+   SegSize | fockGaussLatticeComparison_holds | tie_onto | digitClassCount | segment_ratio_le_prime | HypSegOfHypI
+== Formalism.DistinguishedUnitIdeals (1016 named decls)
+   lam_ne_zero | PhiBasis | PhiBasisOf | levelCond_dvd | filt_eq_of_no_jump | exponent_window_subset_long
+== Formalism.SatakeDualWeyl (991 named decls)
+   satake_idx_card | spherical_wd | glint_conj_integral | SatakeTj | IsBiInv | rho_eq_of_eq
+== Formalism.RealPlaceAnalysis (986 named decls)
+   Kset_star | of_leftMulReal_apply | signature_mul_cartan_involution | typesSplit_of | poincare_filtration_succ | modularCharacter_mul
+== ReciprocityTheory.SemistableReduction (834 named decls)
+   embCols | eval_mul_of_isMultiHomogeneous | integral_polar | det_gramC_comb | gauss_unit | bwp_finite_det_line
+== Formalism.QuotientMetricDivisors (828 named decls)
+   matLat_eq_map | scaleFrame | ShiftMu | det_ne_zero | eq_of_fnl | shift_smulLat_lattice
+== GroundTheory.TateCohomology (744 named decls)
+   conjRep | splittingCocycle | tateCupR | partialProd_comp | tateAcyclic_coind_bot | natCard_eq_ker_mul_range
+== Formalism.GaussJetBounds (718 named decls)
+   bnx_exO | mfact_mul_dvd | subst_thetaOne | thmBGauss | minorProd_mem_opInt | pderiv_aeval_linP
+== ReciprocityTheory.GroupCohomology (635 named decls)
+   admissibility_holds | ChiStatement | cls_add | admissible_chain_inf | truncHom | fibIncl
+== Formalism.EllipticTorsion (627 named decls)
+   biHyp_of | constantCoeff_logOnePlus | integral_of_mem | chord_add | formal_group_points_param | map_lineCoeffLinear
+== Formalism.GradedWeylDivisibility (571 named decls)
+   hwrow_sum_single_castLE | lclosedeq_B | lhwline_rowOp | transposeWord | rowTot_single | nd_iter_Eul_l
+== Formalism.FormalDegreeBessel (533 named decls)
+   holomorphic_harish_chandra_holds | conjCoord_contDiff | ioLeft_foldr_left | coord_contDiff | bigCellMinors | FdegPerm
+== Formalism.BranchSandwichDivisors (517 named decls)
+   bmG_zero | GoodDualDed | BranchSandwichDiii | LevelInclType | finrank_pos' | eq_bot_of_rkK
+== Formalism.HarderNarasimhan (446 named decls)
+   hnStep_of | satBasic_zl_bot | place_part_orthogonal | piSum_forall_insert_neg | dualLat_span | transport
+== Formalism.SubspaceCounting (426 named decls)
+   phi_true | length_quot_eq_add | cell_disjoint | tile_disjoint | gaussBinom | inv_iter
+== Formalism.FrobeniusOrbits (408 named decls)
+   hostGalois | bK_sq_int | hostConductor | exists_galE_eq | zeta_not_mem | hostPrincipal
+== GroundTheory.Brauer (406 named decls)
+   homologyMap_H2 | inv_mem_of_finiteDimensional | mulLeftRight_bijective | coeff_mul | apply_endomorphism | mulCoeff_smul_right
+== ReciprocityTheory.NeutralLocalFields (402 named decls)
+   natSha2d | tdualMap_apply | decompGroup | smul_apply | norm_natCast_padicAlgCl | res_mem_ine_iff
+== Formalism.HermitianLattices (387 named decls)
+   exampleZ_mem_one | DualOrthSum | locDual_dualAt_loc | dualOrthSum | genusCovolBound_mem_zmap | locDual_loc_dual_le
+== Formalism.CharacterColumnKernels (384 named decls)
+   StatDeltaValLe | ontoLattice | relMap_apply' | collectAlt | liftHom | finPres
+== CompanionTheory.ThickeningEstimates (381 named decls)
+   cT_zero | sigRA_sigRA | isUnit_ph | inv_mem_minPar | UU_zero | CoefSum
+== Formalism.UnipotentAdelicQuotients (321 named decls)
+   ClassNumberFinite | MomentsSmooth | om_continuous_eps | contDiff_mul_of_tsupport | Statement | RootUnique
+== GroundTheory.FunctionField (291 named decls)
+   heightOneSpectrumEquiv | mul_mem_principal | liesOver_of_le | exists_zpow_of_mem_adjoin | algebraMap_mem_range_closure_adjoin | valuation_aeval_le_one'
+== Formalism.MirabolicMackeyTheory (289 named decls)
+   threeFormsSum | mem_localization_iff_mem_span | ThetaLog4 | idxRules_span_map | onExport | LeadExact
+== Formalism.LandauZeroFreeBounds (288 named decls)
+   lfunction_tendsto_one_atTop | three_le_modulus_of_ne_one | rpow_neg_eq_inv_pow | log_le_div_log_two_mul | re_ge_of_mem_closedBall | norm_sum_le_of_card_le_one
+== ReciprocityTheory.GeometryOfNumbers (278 named decls)
+   ds_form_smul_left | pgtlCx_re | smallVec | le_monoNormSq | ds_gram_comb | pgds_cont_polar_symm
+== ReciprocityTheory.Chebotarev (269 named decls)
+   two_le_nrm | SmoothMapSeminormBound | splitE_mem_H | norm_psum_le | Tent_nonneg | prm_eq_of_dvd
+== Formalism.DoubleCosetMeasures (267 named decls)
+   measure_piece | intRightInv | mul_inv_one_up | revF_inj | cls_leftRel | revF_lt_of_blk_lt
+== Formalism.IncomingBounds (255 named decls)
+   contentShift | flowVal_zero | mfact_ne | expWeight_of | lemmaMNumerics | LogCoeffVal
+== Formalism.TameInertiaTowers (252 named decls)
+   layer_finrank_ge | algAdjoin_eq_top | odd_coe_smul | galMap_eq_JJ_iff | pGroupGen | mod_four_reduction_five
+== Formalism.FormalGroupWitt (235 named decls)
+   hasOrd_one_of_cc | integralMv_sub | low_subst | eq_zero_of_pow_eq_one | norm_sub_le_of | low_mono
+== Formalism.LogVandermondeBounds (226 named decls)
+   mulSingle_mul_apply_self | UnitaryDeterminantPhase | primePowerSubgroupTrivial | VandPlace_holds | PrimeOrderFinrank | up_num_le
+== Formalism.CyclotomicNorms (221 named decls)
+   varIdeal | exists_diag | FewFactors | low_degree_power_series | on_diag | low_coeff_dvd
+== Formalism.FilteredPoleLength (219 named decls)
+   GNeumannPositive | lengthBaseChangeLocal | GMarkovIneq | LengthBaseChangeLocal | coeff_top_det | GStdLat
+== Formalism.TorsionNormIteration (214 named decls)
+   PowCongr_valid | funEqMv_add | integral_one | seq_sub | norm_le_of_mem_span' | funEqInv
+== Formalism.RankGapBounds (206 named decls)
+   TheoremA_loc_of_LemmaA | LocStep | SquareRank | LeastResFacts | RestZero | umean_mul
+== Formalism.WeaklyAdmissibleFiltrations (204 named decls)
+   finiteCocycles | pcResTop | Lattice | quotientCocycles | InertiaThrough | pc_dpcrisStable
+== Formalism.FrobeniusBaseCase (201 named decls)
+   Psi_fixPt | coeff_frob_of_not_dvd | hasWt_pow_sub_frob | geomSlopeIdentity_statement | base_case_k_one_holds | frob_sum_X
+== Formalism.CoboundaryTransfers (190 named decls)
+   lift_gamma_invariant_lattice | lift_wach | mem_coboundaries_of_isOneCoboundary | qInv_of_mem | GammaOnto | cochainsSubmodules_holds
+== GroundTheory.IdeleRoots (181 named decls)
+   exists_torusPow_lamS_eq | idemAt_snd_self | GenTheOf | finPart_mul_incA_mem_iff | SSAdjOf | isCosetRep_reps
+== Formalism.ThetaSupremumBounds (171 named decls)
+   stepDiProd6 | SupTailIntegral | DominanceMono | DivIneqFine6 | cbHyp_matrix | MsqBound
+== ReciprocityTheory.GaloisValuations (161 named decls)
+   valuation_natCast_le_one | cupProductH0H2 | inv_mul_mem_Ine_of_isFrob | primeBelow | restrictCocycles1 | isClosed_Dec
+== Formalism.TruncatedSeriesCounting (157 named decls)
+   ExponentBoundOfRankAndKappaBounds | S1_mem_OmF | truncation_signature_bound | CutsExist | TruncRem1 | kappa_window_bound
+== Formalism.WachModuleLifts (148 named decls)
+   GammaOnto | polyBase | LemmaCSharpInv | one_le_p_real | coeff_Zp_pow_self | norm_coeff_phiPoly_pow
+== ReciprocityTheory.CommutativeAlgebra (146 named decls)
+   length_le_height_of_isWeaklyRegular | height_eq_add_of_isCM_localization | LinkageStatement | puncturedSpec | height_maximal_mvPolynomial_field | DimStatement
+== Formalism.ZetaNonvanishing (141 named decls)
+   mellinElem_part3 | dist_re | rint_of_abs | a_mxS_eq_zero | mertens_upper | zetaLandau
+== Formalism.FrobeniusContraction (139 named decls)
+   SgBoundN | PsCoprime | Gam_sub_eq | ord_add | smul_eq_single | IncLocal
+== Formalism.NormUnitaryBounds (136 named decls)
+   blockDeg_add | NormOneFactorization | NormOneSum | comp_sum_components | mem_block | shear_eval
+== Formalism.ZeroFreeRegion (135 named decls)
+   rectangle_double_pole | Dz_differentiableOn | RectShiftOf | abs_zetaPrimeSumError_le_of_large | ZetaInvBound | norm_perronIntegrand_le_left
+== Formalism.HyperbolicPlaceProducts (127 named decls)
+   prod_infinitePlace_le_of_integral | polarise | SesqDet | card_range_nsmul_mul_card_le | submoduleIndexCountO | unipotent_upper_entries
+== Formalism.MeanHeightDescent (120 named decls)
+   muMin_line | covolume_assembly_weighted | covol_ideal_smul | rkK_span_singleton | norm_herm_idem_le | DepthGap
+== Formalism.CMTypeGalois (118 named decls)
+   TriEnumeration | key_dual | sigma_alpha | mq_alpha_ne_zero | alpha_sq | OddCharSum
+== Formalism.YangianSpanCharacter (116 named decls)
+   conj_commutator_of_scaled_relation | isLaxFamilyConstantModel | planeWaveIntertwining | B_TvJTsReal | flipTwoThree | FlipCommute
+== Formalism.DegreeFormula (114 named decls)
+   degFl_add | DegFlMul | SlashMul | degreeHomogeneousEqZero | hodgeSq | permExp
+== Formalism.LogSumExpBounds (114 named decls)
+   liftFun | rank_block_holds | midEquiv | descEquiv | psi_nonneg | vk_single
+== Formalism.GaloisIrreducibility (111 named decls)
+   bord_zero_zero | OrbitSubSum | LPartBound | bord_zero_succ | orbs_parts | restrict_roots_to_subfield
+== Formalism.LagrangeIdealLifts (110 named decls)
+   uc_lift_qinv | gammaGradedStep_holds | lift_LagrangeIdealInt | lagrangian_ideal_integral_holds | aeval_pres | hom_aeval
+== Formalism.TranslateCocycles (105 named decls)
+   netPatternGroup | hCBalanceInputs | ValueIdentity | netUnitMean | hCSizesB | NetPairMean
+== Formalism.JumpKernelCokernel (101 named decls)
+   power_binomial_bound | jump_shift_holds | log_two_le | one_le_log | thickness_second_bound | PowBinom
+== Formalism.LogFactorialIndices (97 named decls)
+   length_quotient_tower_add | CancellationBound | LatBasis | qlen_ne_top_of_pow | ProdNormRelDiv | IdxScale
+== Formalism.LatticeSlopes (92 named decls)
+   saturProps | deg_eq_deg_add_deg_quot | det_gram_basis_eq | degree_quotient | det_gram_eq_normDet_sq | MuMaxLeMin
+== Formalism.LFunctionBounds (90 named decls)
+   integral_rpow_eq | natCast_add_one_eq | norm_cpow_sub_le | allChars | rectRes_hasDerivAt_vert | LPartialSum
+== Formalism.BehrendSets (88 named decls)
+   WindowTwo | sub_one_le_of_pow_eq_one | tops_bad | CountIdentity | ExpectCard | ThickSet
+== Formalism.ThickAverageLoss (88 named decls)
+   trivH_chC | quadraticCharacter_second_basis | Balance | zmod_two_one_add_one | IsThickAt | sum_character_shift_eq
+== Formalism.LatticeTheta (85 named decls)
+   dualLattice_dual_span_eq | torusProj_surjective | thetaShift | SchwartzDecay | coeff_integrand_periodic | thetaPos_of
+== Formalism.GaussValuationBounds (84 named decls)
+   nok_gauss | nok_rel_base | cval_gaussV_prod | cval_gaussV_C_pow | pow_mem_span_pair_pow | GaussEis
+== Formalism.FormalGroupLog (81 named decls)
+   FrobLiftPadic | IsFunEqTypeMv | agree_iff | FunEqGroup | FunEqCongr | FunEqPadic
+== Formalism.SuccessiveMinima (79 named decls)
+   minkCore_of | fundamentalDomain_eq | MinkCore | gNorm_bdd_of_conv | existsAdaptedBasis | lintegral_scale
+== Formalism.MonomialMeanResidues (79 named decls)
+   QuotLower | finrank_ringOfIntegers_eq | baseChangeLattice_span_image | exists_nat_ne_zero_smul_mem_span_ringOfIntegers | exists_nat_mul_mem_span_finset | HSClaim
+== Formalism.ThetaLiftIndependence (75 named decls)
+   finrank_eq | OrbLiftIndep | orbitSum | conjEquiv | FFRamCancel | reps_inv
+== ReciprocityTheory.ThetaQuasiPeriods (71 named decls)
+   ThetaDomain | eC_eq_of_int | shiftVec_add_char | shiftVec_add_int | thetaSummable_holds | quad_transpose
+== Formalism.MoebiusJetDuality (71 named decls)
+   moebiusJetDuality | ajetCoeff | IntSubstIff | EvLinear | AJetPolyV | partialPowV
+== Formalism.ResultantValuation (69 named decls)
+   shuffle_natAdd | ComplementCount | AdjugateRankOne | finrank_smul | emultiplicity_eq_valuation | perm_sign_eq_inversion_sign
+== Formalism.PairingDivisors (66 named decls)
+   PairingDiv | sum_valuation_nat | intValuation_eq_exp | TotalSizeBound | NlEstimate | CharSumVal
+== Formalism.SobolevGaussianKernels (65 named decls)
+   frameGram | EichNew | sn_last | eichler_inverse_holds | EichIsom | FrameSplit
+== Formalism.FockGram (63 named decls)
+   fock_eq_sum_of_subset | GramChange | FockStd | pderiv_lin | bil_add_left | fock_smul_left
+== GroundTheory.PowerSubgroups (61 named decls)
+   normOneGL | exists_maxMinor_ne_zero_of_linearIndependent_alt | scalarSection | exists_smul_mem_of_span_eq_top | mem_span_singleton_pow_smul_top_iff | secondCountableTopology
+== Formalism.WindowSums (61 named decls)
+   zv_not_dvd_of_dvd_sub_one | RelayExists | FactorialValuationBoundOfNat | valuation_zpow_sub_one | zv_not_dvd_cast | zv_prime
+== ReciprocityTheory.ReducedBases (60 named decls)
+   hlow_of | norm_sq_comb | nu_split | swap_gs_j | sum_smul_b | inner_gs_span
+== ReciprocityTheory.ThetaSummability (59 named decls)
+   gap_tailSum | integrableOn_exp_logCone | lowerBox | tailSum_gap | preimage_tailSum_logCone | tailSum_eq_toLin'
+== Formalism.LatticeRigidity (59 named decls)
+   HeightMin | packing_count_geometric_mean | smoothedSumBound | absNorm_le_norm | blk_mul_blk | RecursionUnrestrictedFalse
+== Formalism.GelfandTransference (59 named decls)
+   tr_succMin_nonneg | tr_dual | epow_succ_right | ChainExponent | ProductBound | equivFns
+== Formalism.EisensteinCokernelLengths (58 named decls)
+   sum_comp_le_factorial | sum_comp_le_window | rel_mem_of_ge | lenBound2 | LenBound2 | linearFactorPowMemSpan
+== Formalism.GrowthSums (58 named decls)
+   coarseUnit_succ | four_mul_add_two_le_three_mul_five_pow | OrderBound | blockFactorialQuotientProd | segmentBound | excessGain
+== ReciprocityTheory.Hypotheses (57 named decls)
+   perpCond | smul_apply | LocalEulerChar | charRep | UnramifiedOrthogonalityResAt | LocalFinitenessAt
+== Formalism.GaloisCohomology (54 named decls)
+   inertiaK | SelAllLeInf | LDataExists | DevTorsion | devTorsion | TateLocalDualityH2Hypothesis
+== Formalism.SelfDualUnimodular (53 named decls)
+   gl_of_isom | coef_ker | unimod_of_selfDual | loc_iff_of_isom | nat_denom | h_decomp
+== Formalism.ArtinHasse (51 named decls)
+   coeff_Fm | ArtinHasseIntegral | prodpow_hom | artinHasse | Eh_injective | Fm_symm
+== Formalism.DirichletDensity (50 named decls)
+   quadDiscr | sqf_neg | mqDiscr | MQDiscr | log_div_rpow_nonneg | apld_nonprime_nonneg
+== Formalism.TowerValuationBounds (48 named decls)
+   two_adic_valuation_half | TowerProductRatioFormula | height_bound_alt | grid_bound | PrimeLogBudget | prime_sum_bound
+== Formalism.SmithDeterminants (46 named decls)
+   LengthQuotientBound | LatticeChainBoundNonneg | FinalOf | nonempty_smith_normal_form | RangePowGenerators | TruncDet
+== Formalism.DropLevelBounds (44 named decls)
+   ThetaConst | UBIntegral | ubint_rowPart | ThetaBound | RankCount | ThetaShift
+== ReciprocityTheory.Automorphisms (43 named decls)
+   adic_valued_algebraMap | card_quot | conjT_one | conjAL_conjAL | complexConj_invol | val_le_exp_neg_one_of_lt_one
+== Formalism.JacobiWeightFamilies (39 named decls)
+   WeightedSieveImpliesRH | MertensP | APCharSumPV | Bonferroni | JacPrim | sieveErr
+== Formalism.LogFactorialBounds (38 named decls)
+   LocalFactorTameDv | sum_primesLE_log_div_le | PhLowerBound | PrimeSetLogSum | log_factorial_le | LogFactorialSandwich
+== Formalism.AlgebraicWeights (29 named decls)
+   isoHecke | InertDatum | heckeFun | heckeEnd | partHecke | heckeEndI
+== Formalism.WeightedDeltaMeans (26 named decls)
+   MeanOfSlopes | ShTotPower | psumTop | TestVectors | NefAtBaseHeight | EvalOnPower
+== Formalism.CorankShare (26 named decls)
+   sum_adj_eq | layer_cake_formula | LayerCake | ind_int | re_inner_Q | hilbert_schmidt_eq_basis_sum
+== Formalism.HalfLinks (25 named decls)
+   HalfWindow | oddChar | RiemannHypothesisOfHalfLinks | HalfLinksCore | HalfCore | HalfToZeta
+== Formalism.LatticeLocalGlobal (24 named decls)
+   LatticeLocalGlobal | OneMapIntegral | DetIntegral | GramChange | OneMapIntegralBig | DualGram
+== Formalism.AdicCompletionExports (23 named decls)
+   StatJoint | NonnegativeDivisorCountBoundFamily | NonnegativeDivisorCountBoundAt | StatCompositeExport | TieLift | isCycG_cycZ
+== ReciprocityTheory.BasicDefinitions (21 named decls)
+   Pattern | MazurFin | IsResidual | IsUniversal
+== Formalism.DivisorInequality (21 named decls)
+   ramified_places_weighted_sum_le_one | DivIneqTopAnchorU | HeightS | DivIneqObjU | places_ell_weighted_sum_le_one | BaseLevelBoundsWithCovolume
+== Formalism.GaussIdealIdentity (17 named decls)
+   gaussIdeal_isPrime | ProjDual | length_residue | MasterIdentity | maximalIdeal_eq | gaussLocalizationIsDVR_holds
+== Formalism.ConjugateSelfDual (17 named decls)
+   CuspSpectrum | IsNormEigenform | Inertia | IsComplexConj | IsPlaceOver | FrobMatch
+== Formalism.TwistFamilyExistence (16 named decls)
+   IsTwistFamily | WeightMoments | TwistFamilyExists | WeightPrimeCor | TParams | PrimeShare
+== Formalism.JacquetSubsetSums (14 named decls)
+   IwahoriNewton | SimpleCharIndep | RankExport | ConeCharIndep | JacquetSubsetSum | GoodImpliesH
+== Formalism.ZetaRealNonvanish (13 named decls)
+   LSeriesLamF | MellinElem | CharFacts | ZetaRealNonvanish | LandauLemma | LogDerivZeroFree
+== Formalism.ProductFormula (13 named decls)
+   ProductFormula | OCCMEstimate | DetGain | OCCMToZeta | ZetaQuarterPowerCorollary | GoodAway
+== Formalism.AlphaUniqueness (13 named decls)
+   DetSign | IsUQuad | AlphaUnique | AlphaRefine | SquareClassUnitaryProduct | GaussAbs
+== ReciprocityTheory.AdeleApproximation (10 named decls)
+   local_approx | isInt_R | val_le_one_of_mem | isInt_mul | isInt_add | exists_approx
+== Formalism.Statement (10 named decls)
+   quadraticCharThree | LandauStepEps | quadraticCharFour | quadraticCharacterMod7 | LandauStep
+== Formalism.StatementOC (9 named decls)
+   OCStepUpper | RiemannHypothesisOfLowerBounds | OCAvgUpper
+== Formalism.StatementU (9 named decls)
+   ZetaLandauEps | ZetaLandauBar | ZetaLandau | ZetaLandauBarEps | RiemannSumApprox | SampleAverageApprox
+== Formalism.WideWeightTheorem (9 named decls)
+   AvgCondition | WeightedSieveImpliesRHThreeParameter | WeightCorEx | ChebyshevWeightedAverageOverJacobiFamily | WeightThm3Wide | WeightCor'
+== Formalism.StatementCM (8 named decls)
+   IsCMType | TwoTypes | ForcedSumIdentity | HalfTypes | WeightedVonMangoldtSumInClasses | ForcedSumCM
+== Formalism.ZetaNonvanishingChebyshevWeights (7 named decls)
+   chebNode | ZetaLandauChebEps | chebyshevWeightedAverage | ZetaLandauCheb | ChebyshevWeightApproximation | ZetaNonvanishingChebyshevWeights
+== ReciprocityTheory.AdicCompleteness (6 named decls)
+   isAdicComplete_ps | isPrecomplete_comap_constantCoeff | isAdicComplete_comap_constantCoeff | mem_pow_comap_constantCoeff_iff | isHausdorff_comap_constantCoeff | map_C_sup_span_X
+== Formalism.DefsOC (6 named decls)
+   LSeriesTwistRe | OrderLogDeriv | MellinSgen | LandauEq | LogDerivResidue
+== Main (5 named decls)
+   LFunction_eq_zero_re | riemannHypothesis | riemannZeta_eq_zero_re | LFunction_ne_zero_of_half_lt_re | LFunction_eq_zero_re_of_isPrimitive
+== ReciprocityTheory.GeneralLinearIntegers (5 named decls)
+   algebraMap_int_mem_Oint | isOpen_Oint | isCompact_integers | isOpen_integers
+== ReciprocityTheory.EigenFrames (5 named decls)
+   EigenFrameDual | norm_le_one_of_monic | eig_norm_det_le_one | eigenFrameDual | eig_norm_intCast
+== Formalism.StatementFL (5 named decls)
+   famComb | FamilyLandauCW3 | FamilyLandauC
+== Statements (4 named decls)
+   PrimitiveDirichletLZerosOnLine | RiemannZetaZerosOnLine | DirichletLZerosOnLine | DirichletLNonvanishingRightOfHalf
+== Supplements.Kernels (4 named decls)
+   claimAll | critAll | rhOfAll
+== PositivityTheory.PublishedTheorems (4 named decls)
+   exists_unit_kills_of_idempotent | exists_unit_finite_lift | exists_unit_kills | exists_mem_mul_eq_of_mem_pow
+== Formalism.PrimeAboveExistence (4 named decls)
+   val_le_one | ltIdeal | exists_over_above_iff | mem_ltIdeal
+== Formalism.GammaFactorNonvanishing (4 named decls)
+   rh_of_right | gammaFactor_ne_zero | critLine | rh_of_every
+== Formalism.ZetaNonvanishingGeneralWeights (3 named decls)
+   ZetaNonvanishingGeneralWeights | ZetaNonvanishingSpreadWeights | spreadWeightedAverage
+== Lemmata.MultivariateIntegrals (2 named decls)
+   IntegralMv
+== PositivityTheory.Representations (1 named decls)
+   isOpen_cone_of_hbFacts
+== ReciprocityTheory.BurnsideSurjectivity (1 named decls)
+   burnside_surj_of_irred
+== ReciprocityTheory.ResidueCardinality (1 named decls)
+   card_residue
+== Lemmata.B1962s (1 named decls)
+   FreeLat

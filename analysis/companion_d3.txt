@@ -1,0 +1,46 @@
+== CompanionTheory at depth 3: 2027 files, 194218 lines
+CompanionTheory.SpectralGeometry.LocalGlobalProofs files=   1250 lines=    104890  -> CompanionTheory.SpectralGeometry.CountingDefinitions:550, CompanionTheory.RealGroups.DiscreteSeries:127, CompanionTheory.RealGroups.UnitaryAdmissibility:96, CompanionTheory.HarishChandraModules.BesselParameterIntegrals:90, CompanionTheory.HarishChandraModules.LowKTypeMultiplicity:70, CompanionTheory.AutomorphicTheory.TemperedLocalSpectra:67
+CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors files=     58 lines=     10969  -> CompanionTheory.HarishChandraModules.BesselParameterIntegrals:4, CompanionTheory.AutomorphicTheory.ZuckermanCommutation:3, CompanionTheory.AutomorphicTheory.SchurLimitBounds:2, CompanionTheory.AutomorphicTheory.HarishChandraMultiplicity:2
+CompanionTheory.AutomorphicTheory.PieriRules       files=    171 lines=     10679  -> CompanionTheory.AutomorphicTheory.RankOneEstimates:2, CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors:2, CompanionTheory.HarishChandraModules.BesselParameterIntegrals:1, CompanionTheory.HarishChandraModules.LowKTypeMultiplicity:1
+CompanionTheory.AutomorphicTheory.BesselWaveGrids  files=     44 lines=      7654  -> CompanionTheory.AutomorphicTheory.PieriRules:59, CompanionTheory.AutomorphicTheory.SchurLimitBounds:7, CompanionTheory.AutomorphicTheory.ZuckermanCommutation:2, CompanionTheory.HarishChandraModules.NonemptyRepresentations:2, CompanionTheory.AutomorphicTheory.CompactTopologicalForms:1, CompanionTheory.SpectralGeometry.LocalGlobalProofs:1
+CompanionTheory.RealGroups.DiscreteSeries          files=     75 lines=      6254  -> CompanionTheory.SpectralGeometry.LocalGlobalProofs:84, CompanionTheory.HarishChandraModules.LowKTypeMultiplicity:2, CompanionTheory.AutomorphicTheory.TemperedLocalSpectra:1, CompanionTheory.RealGroups.FormalDegrees:1, CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors:1
+CompanionTheory.HarishChandraModules.BesselParameterIntegrals files=     44 lines=      5707  -> CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors:2, CompanionTheory.AutomorphicTheory.RankOneEstimates:1, CompanionTheory.SpectralGeometry.LocalGlobalProofs:1
+CompanionTheory.AutomorphicTheory.ProductFormulaTheory files=     53 lines=      5178  -> CompanionTheory.SpectralGeometry.LocalGlobalProofs:65, CompanionTheory.AutomorphicTheory.TemperedLocalSpectra:31, CompanionTheory.RealGroups.GeneralUnitaryRepresentations:1
+CompanionTheory.RealGroups.GeneralUnitaryRepresentations files=     37 lines=      5144  -> CompanionTheory.SpectralGeometry.LocalGlobalProofs:38, CompanionTheory.AutomorphicTheory.TemperedLocalSpectra:18, CompanionTheory.AutomorphicTheory.SegmentRepresentations:6
+CompanionTheory.AutomorphicTheory.LocalBesselUniqueness files=     31 lines=      3793  -> CompanionTheory.HarishChandraModules.BesselParameterIntegrals:3, CompanionTheory.AutomorphicTheory.BesselOrbitBounds:2, CompanionTheory.AutomorphicTheory.RankOneTori:1, CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors:1
+CompanionTheory.ThickeningEstimates.LieGroupReduction files=     19 lines=      3557  -> CompanionTheory.ThickeningEstimates.SiegelDomainEstimates:2, CompanionTheory.ThickeningEstimates.InnerProductFactorization:1
+CompanionTheory.HarishChandraModules.LowKTypeMultiplicity files=     22 lines=      3500  -> CompanionTheory.SpectralGeometry.LocalGlobalProofs:39, CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors:1
+CompanionTheory.AutomorphicTheory.ThetaDilations   files=     17 lines=      2597  -> CompanionTheory.SpectralGeometry.LocalGlobalProofs:67, CompanionTheory.SpectralGeometry.CountingDefinitions:3
+CompanionTheory.AutomorphicTheory.JacobiDiagonalBounds files=     10 lines=      2214  -> CompanionTheory.AutomorphicTheory.NumberFieldModels:2, CompanionTheory.AutomorphicTheory.DiscreteGroupWaves:1
+CompanionTheory.AutomorphicTheory.ZuckermanCommutation files=     16 lines=      1878  -> CompanionTheory.SpectralGeometry.LocalGlobalProofs:17, CompanionTheory.AutomorphicTheory.SchurLimitBounds:6, CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors:3, CompanionTheory.HarishChandraModules.BesselParameterIntegrals:3, CompanionTheory.AutomorphicTheory.PieriRules:2, CompanionTheory.HarishChandraModules.LowKTypeMultiplicity:1
+CompanionTheory.RealGroups.BaseChange              files=     18 lines=      1849  -> 
+CompanionTheory.AutomorphicTheory.SchurLimitBounds files=     10 lines=      1817  -> CompanionTheory.AutomorphicTheory.ZuckermanCommutation:2, CompanionTheory.AutomorphicTheory.KFiniteVectors:1
+CompanionTheory.RealGroups.FormalDegrees           files=     18 lines=      1520  -> CompanionTheory.RealGroups.DiscreteSeries:2
+CompanionTheory.AutomorphicTheory.HeckeStandardModules files=      7 lines=      1239  -> 
+CompanionTheory.AutomorphicTheory.UniformLocalFormulas files=     11 lines=      1237  -> CompanionTheory.AutomorphicTheory.LocalBesselUniqueness:3, CompanionTheory.AutomorphicTheory.BesselWaveGrids:1
+CompanionTheory.AutomorphicTheory.DiscreteGroupWaves files=      6 lines=      1231  -> 
+CompanionTheory.AutomorphicTheory.RankOneTori      files=      7 lines=      1177  -> CompanionTheory.AutomorphicTheory.RankOneEstimates:2, CompanionTheory.HarishChandraModules.BesselParameterIntegrals:2, CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors:1
+CompanionTheory.RealGroups.UnitaryAdmissibility    files=      7 lines=      1030  -> CompanionTheory.SpectralGeometry.LocalGlobalProofs:35, CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors:2
+CompanionTheory.AutomorphicTheory.BesselOrbitBounds files=      6 lines=       889  -> CompanionTheory.SpectralGeometry.LocalGlobalProofs:20, CompanionTheory.HarishChandraModules.BesselParameterIntegrals:2, CompanionTheory.AutomorphicTheory.RankOneEstimates:1, CompanionTheory.AutomorphicTheory.PieriRules:1, CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors:1
+CompanionTheory.AutomorphicTheory.PadicCyclotomicFields files=     12 lines=       851  -> 
+CompanionTheory.AutomorphicTheory.CompactTopologicalForms files=      4 lines=       745  -> CompanionTheory.AutomorphicTheory.DiscreteGroupWaves:2, CompanionTheory.AutomorphicTheory.LocalBesselUniqueness:2, CompanionTheory.AutomorphicTheory.JacobiDiagonalBounds:1
+CompanionTheory.HarishChandraModules.NonemptyRepresentations files=      6 lines=       698  -> 
+CompanionTheory.AutomorphicTheory.MirabolicRestriction files=      5 lines=       669  -> 
+CompanionTheory.AutomorphicTheory.NumberFieldModels files=      5 lines=       649  -> CompanionTheory.AutomorphicTheory.JacobiDiagonalBounds:2
+CompanionTheory.AutomorphicTheory.SegmentRepresentations files=      7 lines=       617  -> CompanionTheory.SpectralGeometry.LocalGlobalProofs:1
+CompanionTheory.SpectralGeometry.CountingDefinitions files=      4 lines=       547  -> 
+CompanionTheory.AutomorphicTheory.PlaceSeparation  files=      3 lines=       503  -> 
+CompanionTheory.AutomorphicTheory.PadicUnitaryWeights files=      6 lines=       494  -> CompanionTheory.SpectralGeometry.LocalGlobalProofs:2, CompanionTheory.ThickeningEstimates.LieGroupReduction:1
+CompanionTheory.AutomorphicTheory.UnitriangularMeasure files=      2 lines=       475  -> 
+CompanionTheory.ThickeningEstimates.InnerProductFactorization files=      1 lines=       321  -> 
+CompanionTheory.AutomorphicTheory.TemperedLocalSpectra files=     12 lines=       306  -> CompanionTheory.HarishChandraModules.LowKTypeMultiplicity:1
+CompanionTheory.ThickeningEstimates.SiegelDomainEstimates files=      2 lines=       266  -> 
+CompanionTheory.AutomorphicTheory.RankOneEstimates files=      2 lines=       235  -> CompanionTheory.AutomorphicTheory.PieriRules:4, CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors:1, CompanionTheory.AutomorphicTheory.KFiniteVectors:1
+CompanionTheory.AutomorphicTheory.SiegelUnitTheory files=      3 lines=       187  -> CompanionTheory.SpectralGeometry.LocalGlobalProofs:20, CompanionTheory.SpectralGeometry.CountingDefinitions:1
+CompanionTheory.AutomorphicTheory.SiegelWeilFiniteness files=      3 lines=       183  -> 
+CompanionTheory.AutomorphicTheory.KFiniteVectors   files=      1 lines=       162  -> CompanionTheory.AutomorphicTheory.SchurLimitBounds:1
+CompanionTheory.AutomorphicTheory.BesselSmoothness files=      1 lines=       136  -> 
+CompanionTheory.AutomorphicTheory.KrullDimension   files=      1 lines=       108  -> 
+CompanionTheory.AutomorphicTheory.HarishChandraMultiplicity files=      1 lines=        54  -> CompanionTheory.HarishChandraModules.KFiniteAnalyticVectors:1
+CompanionTheory.EightfoldTheory.VariationTheory    files=      8 lines=         8  -> 
+CompanionTheory.EightfoldTheory.ZeroLevelTheory    files=      1 lines=         1  -> 

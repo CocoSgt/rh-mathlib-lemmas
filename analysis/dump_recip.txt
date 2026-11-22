@@ -1,0 +1,1200 @@
+### ReciprocityTheory.AdeleApproximation.AdeleIntA:21  ReciprocityTheory.UG.AdeleIntA.val_R
+theorem val_R (v : HeightOneSpectrum R) (r : R) : Valued.v (algebraMap K (v.adicCompletion K) (algebraMap R K r)) = v.intValuation r
+
+### ReciprocityTheory.AdeleApproximation.AdeleIntA:34  ReciprocityTheory.UG.AdeleIntA.val_le_one_of_mem
+theorem val_le_one_of_mem {v : HeightOneSpectrum R} {x : v.adicCompletion K} (h : x ∈ v.adicCompletionIntegers K) : Valued.v x ≤ 1
+
+### ReciprocityTheory.AdeleApproximation.AdeleIntA:37  ReciprocityTheory.UG.AdeleIntA.local_approx
+theorem local_approx (v : HeightOneSpectrum R) (x : v.adicCompletion K) (hx : Valued.v x ≤ 1) (m : R) (hm : m ≠ 0) : ∃ a : R, Valued.v (x - algebraMap K (v.adicCompletion K) (algebraMap R K a)) < v.intValuation m
+
+### ReciprocityTheory.AdeleApproximation.AdeleIntA:71  ReciprocityTheory.UG.AdeleIntA.exists_approx
+theorem exists_approx (y : FiniteAdeleRing R K) (hy : ∀ v : HeightOneSpectrum R, y v ∈ v.adicCompletionIntegers K) (m : R) (hm : m ≠ 0) : ∃ a : R, ∀ v : HeightOneSpectrum R, Valued.v (y v - algebraMap K (v.adicCompletion K) (algebraMap R K a)) ≤ v.intValuation m
+
+### ReciprocityTheory.AdicCompleteness.IsAdicCompleteComapConstantCoeff:15  ReciprocityTheory.P1.map_C_sup_span_X
+theorem map_C_sup_span_X : I.map (C : A →+* A⟦X⟧) ⊔ Ideal.span {X} = I.comap (constantCoeff (R := A))
+
+### ReciprocityTheory.AdicCompleteness.IsAdicCompleteComapConstantCoeff:29  ReciprocityTheory.P1.mem_pow_comap_constantCoeff_iff
+theorem mem_pow_comap_constantCoeff_iff (n : ℕ) (f : A⟦X⟧) : f ∈ I.comap (constantCoeff (R := A)) ^ n ↔ ∀ i, coeff i f ∈ I ^ (n - i)
+
+### ReciprocityTheory.AdicCompleteness.IsAdicCompleteComapConstantCoeff:67  ReciprocityTheory.P1.isHausdorff_comap_constantCoeff
+theorem isHausdorff_comap_constantCoeff [IsHausdorff I A] : IsHausdorff (I.comap (constantCoeff (R := A))) A⟦X⟧ where haus' f hf
+
+### ReciprocityTheory.AdicCompleteness.IsAdicCompleteComapConstantCoeff:77  ReciprocityTheory.P1.isPrecomplete_comap_constantCoeff
+theorem isPrecomplete_comap_constantCoeff [IsPrecomplete I A] : IsPrecomplete (I.comap (constantCoeff (R := A))) A⟦X⟧ where prec' F hF
+
+### ReciprocityTheory.AdicCompleteness.IsAdicCompleteComapConstantCoeff:96  ReciprocityTheory.P1.isAdicComplete_comap_constantCoeff
+theorem isAdicComplete_comap_constantCoeff [IsAdicComplete I A] : IsAdicComplete (I.comap (constantCoeff (R := A))) A⟦X⟧
+
+### ReciprocityTheory.AdicCompleteness.IsAdicCompleteComapConstantCoeff:102  ReciprocityTheory.P1.isAdicComplete_ps
+theorem isAdicComplete_ps {R : Type u} [CommRing R] [IsLocalRing R] [IsNoetherianRing R] [IsAdicComplete (maximalIdeal R) R] : IsAdicComplete (maximalIdeal R⟦X⟧) R⟦X⟧
+
+### ReciprocityTheory.AnalyticForms.AnalyticCharts.ExistsAnalyticGraphChartMvPolynomial:7  ReciprocityTheory.AnForm.exists_perm_coord_complement
+theorem exists_perm_coord_complement {e c : ℕ} (A : (Fin (e + c) → ℂ) →ₗ[ℂ] (Fin c → ℂ)) (hA : Surjective A) : ∃ σ : Equiv.Perm (Fin (e + c)), ∀ v, (∀ i : Fin e, v (σ (Fin.castAdd c i)) = 0) → A v = 0 → v = 0
+
+### ReciprocityTheory.AnalyticForms.AnalyticCharts.ExistsAnalyticGraphChartMvPolynomial:65  ReciprocityTheory.AnForm.exists_analytic_graph_chart
+theorem exists_analytic_graph_chart {e c : ℕ} (f : (Fin (e + c) → ℂ) → (Fin c → ℂ)) (p : Fin (e + c) → ℂ) (hp : f p = 0) (hf : AnalyticAt ℂ f p) (hsurj : Function.Surjective (fderiv ℂ f p)) : ∃ (σ : Equiv.Perm (Fin (e + c))) (U : Set (Fin (e + c) → ℂ)) (V : Set (Fin e → ℂ)) (g : (Fin e → ℂ) → (Fin (e + c) → ℂ)), IsOpen U ∧ p ∈ U ∧ IsOpen V ∧ AnalyticOnNhd ℂ g V ∧ Set.BijOn g V {x | x ∈ U ∧ f x = 0} ∧ ∀ w ∈ V, (fun i => g w (σ (Fin.castAdd c i))) = w
+
+### ReciprocityTheory.AnalyticForms.AnalyticCharts.ExistsAnalyticGraphChartMvPolynomial:140  ReciprocityTheory.AnForm.hasFDerivAt_mvPolynomial_eval
+theorem hasFDerivAt_mvPolynomial_eval {n : ℕ} (Q : MvPolynomial (Fin n) ℂ) (x : Fin n → ℂ) : HasFDerivAt (fun y => MvPolynomial.eval y Q) (∑ j, MvPolynomial.eval x (MvPolynomial.pderiv j Q) • ContinuousLinearMap.proj (R := ℂ) (φ := fun _ : Fin n => ℂ) j) x
+
+### ReciprocityTheory.AnalyticForms.AnalyticCharts.ExistsAnalyticGraphChartMvPolynomial:180  ReciprocityTheory.AnForm.exists_analytic_graph_chart_mvPolynomial
+theorem exists_analytic_graph_chart_mvPolynomial {e c : ℕ} (P : Fin c → MvPolynomial (Fin (e + c)) ℂ) (p : Fin (e + c) → ℂ) (hp : ∀ i, MvPolynomial.eval p (P i) = 0) (hjac : Function.Surjective (fun v : Fin (e + c) → ℂ => fun i => ∑ j, MvPolynomial.eval p (MvPolynomial.pderiv j (P i)) * v j)) : ∃ (σ : Equiv.Perm (Fin (e + c))) (U : Set (Fin (e + c) → ℂ)) (V : Set (Fin e → ℂ)) (g : (Fin e → ℂ) → (Fin (e + c) → ℂ)), IsOpen U ∧ p ∈ U ∧ IsOpen V ∧ AnalyticOnNhd ℂ g V ∧ Set.BijOn g V {x | x ∈ U ∧ ∀ i, MvPolynomial.eval x (P i) = 0} ∧ ∀ w ∈ V, (fun i => g w (σ (Fin.castAdd c i))) = w
+
+### ReciprocityTheory.AnalyticForms.AnalyticCharts.NullZero:121  ReciprocityTheory.AnForm.volume_zero_set_of_analyticOnNhd
+theorem volume_zero_set_of_analyticOnNhd {D : ℕ} {U : Set (Fin D → ℂ)} (hU : IsOpen U) (hc : IsPreconnected U) {f : (Fin D → ℂ) → ℂ} (hf : AnalyticOnNhd ℂ f U) (hne : ∃ z ∈ U, f z ≠ 0) : volume {z | z ∈ U ∧ f z = 0} = 0
+
+### ReciprocityTheory.AnalyticForms.AnalyticCharts.NullZero:139  ReciprocityTheory.AnForm.volume_eq_zero_of_locally_in_analytic_zero_set
+theorem volume_eq_zero_of_locally_in_analytic_zero_set {D : ℕ} (S : Set (Fin D → ℂ)) (h : ∀ z ∈ S, ∃ W : Set (Fin D → ℂ), IsOpen W ∧ z ∈ W ∧ IsPreconnected W ∧ ∃ f : (Fin D → ℂ) → ℂ, AnalyticOnNhd ℂ f W ∧ (∃ w ∈ W, f w ≠ 0) ∧ ∀ w ∈ S ∩ W, f w = 0) : volume S = 0
+
+### ReciprocityTheory.AnalyticForms.AnalyticCharts.OsgoodA:11  ReciprocityTheory.AnForm.Osgood.differentiable_cons_right
+theorem differentiable_cons_right {n : ℕ} (x : ℂ) : Differentiable ℂ (fun y : Fin n → ℂ => (Fin.cons x y : Fin (n + 1) → ℂ))
+
+### ReciprocityTheory.AnalyticForms.AnalyticCharts.OsgoodA:20  ReciprocityTheory.AnForm.Osgood.differentiable_cons_left
+theorem differentiable_cons_left {n : ℕ} (y : Fin n → ℂ) : Differentiable ℂ (fun x : ℂ => (Fin.cons x y : Fin (n + 1) → ℂ))
+
+### ReciprocityTheory.AnalyticForms.AnalyticCharts.OsgoodA:29  ReciprocityTheory.AnForm.Osgood.mem_closedBall_pi_iff
+theorem mem_closedBall_pi_iff {n : ℕ} {c z : Fin n → ℂ} {r : ℝ} (hr : 0 ≤ r) : z ∈ closedBall c r ↔ ∀ i, z i ∈ closedBall (c i) r
+
+### ReciprocityTheory.AnalyticForms.AnalyticCharts.OsgoodA:33  ReciprocityTheory.AnForm.Osgood.mem_ball_pi_iff
+theorem mem_ball_pi_iff {n : ℕ} {c z : Fin n → ℂ} {r : ℝ} (hr : 0 < r) : z ∈ ball c r ↔ ∀ i, z i ∈ ball (c i) r
+
+### ReciprocityTheory.AnalyticForms.AnalyticCharts.OsgoodA:37  ReciprocityTheory.AnForm.Osgood.norm_torusMap_sub
+theorem norm_torusMap_sub {n : ℕ} (c : Fin n → ℂ) {r : ℝ} (hr : 0 ≤ r) (θ : Fin n → ℝ) (i : Fin n) : ‖torusMap c (fun _ => r) θ i - c i‖ = r
+
+### ReciprocityTheory.AnalyticForms.AnalyticCharts.OsgoodA:48  ReciprocityTheory.AnForm.Osgood.torusMap_mem_closedBall
+theorem torusMap_mem_closedBall {n : ℕ} (c : Fin n → ℂ) {r : ℝ} (hr : 0 ≤ r) (θ : Fin n → ℝ) : torusMap c (fun _ => r) θ ∈ closedBall c r
+
+### ReciprocityTheory.AnalyticForms.AnalyticCharts.OsgoodA:54  ReciprocityTheory.AnForm.Osgood.torusMap_sub_ne
+theorem torusMap_sub_ne {n : ℕ} {c z : Fin n → ℂ} {r : ℝ} (hr : 0 < r) (hz : z ∈ ball c r) (θ : Fin n → ℝ) (i : Fin n) : torusMap c (fun _ => r) θ i - z i ≠ 0
+
+### ReciprocityTheory.AnalyticForms.AnalyticCharts.OsgoodA:64  ReciprocityTheory.AnForm.Osgood.continuous_torusMap
+theorem continuous_torusMap {n : ℕ} (c : Fin n → ℂ) (r : ℝ) : Continuous (torusMap c (fun _ => r))
+
+### ReciprocityTheory.AnalyticForms.AnalyticCharts.OsgoodA:70  ReciprocityTheory.AnForm.Osgood.continuous_comp_torusMap
+theorem continuous_comp_torusMap {n : ℕ} {f : (Fin n → ℂ) → ℂ} {c : Fin n → ℂ} {r : ℝ} (hr : 0 ≤ r) (hf : ∀ ζ ∈ closedBall c r, DifferentiableAt ℂ f ζ) : Continuous fun θ => f (torusMap c (fun _ => r) θ)
+
+### ReciprocityTheory.AnalyticForms.AnalyticCharts.OsgoodA:77  ReciprocityTheory.AnForm.Osgood.torusIntegrable_kernel
+theorem torusIntegrable_kernel {n : ℕ} {f : (Fin n → ℂ) → ℂ} {c z : Fin n → ℂ} {r : ℝ} (hr : 0 < r) (hf : ∀ ζ ∈ closedBall c r, DifferentiableAt ℂ f ζ) (hz : z ∈ ball c r) : TorusIntegrable (fun ζ => (∏ i, (ζ i - z i)⁻¹) * f ζ) c (fun _ => r)
+
+### ReciprocityTheory.AnalyticForms.AnalyticCharts.OsgoodA:92  ReciprocityTheory.AnForm.Osgood.cauchy_polydisc
+theorem cauchy_polydisc : ∀ (n : ℕ) (f : (Fin n → ℂ) → ℂ) (c : Fin n → ℂ) (r : ℝ), 0 < r → (∀ ζ ∈ closedBall c r, DifferentiableAt ℂ f ζ) → ∀ z ∈ ball c r, (∯ ζ in T(c, fun _ => r), (∏ i, (ζ i - z i)⁻¹) * f ζ) = (2 * π * I) ^ n * f z | 0, f, c, r, _, _, z, _ => by rw [torusIntegral_dim0] simp [Subsingleton.elim z c] | n + 1, f, c, r, hr, hf, z, hz => by rw [torusIntegral_succ (torusIntegrable_kernel hr hf hz)] have hz0 : z 0 ∈ ball (c 0) r
+
+### ReciprocityTheory.AnalyticForms.AnalyticCharts.Partition:8  ReciprocityTheory.AnForm.exists_chart_partition
+theorem exists_chart_partition {X : Type*} [TopologicalSpace X] [T2Space X] [CompactSpace X] {D m : ℕ} (e : Fin m → OpenPartialHomeomorph X (Fin D → ℂ)) (hcov : ∀ x, ∃ i, x ∈ (e i).source) (htr : ∀ i j, ContDiffOn ℝ ∞ (e j ∘ (e i).symm) ((e i).target ∩ (e i).symm ⁻¹' (e j).source)) : ∃ χ : Fin m → X → ℝ, (∀ i x, 0 ≤ χ i x) ∧ (∀ x, ∑ i, χ i x = 1) ∧ (∀ i, tsupport (χ i) ⊆ (e i).source) ∧ (∀ i j, ContDiffOn ℝ ∞ (χ i ∘ (e j).symm) (e j).target)
+
+### ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshLap:11  ReciprocityTheory.AnForm.A.PshLap.hasDerivAt_circleMap_radius
+lemma hasDerivAt_circleMap_radius (r θ : ℝ) : HasDerivAt (fun s : ℝ => circleMap 0 s θ) (circleMap 0 1 θ) r
+
+### ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshLap:16  ReciprocityTheory.AnForm.A.PshLap.hasDerivAt_comp_radius
+lemma hasDerivAt_comp_radius {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] {φ : ℂ → F} {φ' : ℂ →L[ℝ] F} (r θ : ℝ) (h : HasFDerivAt φ φ' (circleMap 0 r θ)) : HasDerivAt (fun s : ℝ => φ (circleMap 0 s θ)) (φ' (circleMap 0 1 θ)) r
+
+### ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshLap:21  ReciprocityTheory.AnForm.A.PshLap.circleMap_eq_smul
+lemma circleMap_eq_smul (r θ : ℝ) : circleMap 0 r θ = r • circleMap 0 1 θ
+
+### ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshLap:24  ReciprocityTheory.AnForm.A.PshLap.clm_circleMap
+lemma clm_circleMap (L : ℂ →L[ℝ] ℝ) (r θ : ℝ) : L (circleMap 0 r θ) = r * L (circleMap 0 1 θ)
+
+### ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshLap:28  ReciprocityTheory.AnForm.A.PshLap.circleMap_mem_closedBall
+lemma circleMap_mem_closedBall {r R θ : ℝ} (h0 : 0 ≤ r) (h : r ≤ R) : circleMap 0 r θ ∈ closedBall (0:ℂ) R
+
+### ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshLap:32  ReciprocityTheory.AnForm.A.PshLap.radial_ftc
+lemma radial_ftc (hg : ∀ x ∈ V, HasFDerivAt g (G x) x) (hGc : ContinuousOn G V) {R : ℝ} (hR0 : 0 ≤ R) (hR : closedBall (0:ℂ) R ⊆ V) (θ : ℝ) : g (circleMap 0 R θ) - g 0 = ∫ r in (0:ℝ)..R, G (circleMap 0 r θ) (circleMap 0 1 θ)
+
+### ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshLap:46  ReciprocityTheory.AnForm.A.PshLap.eq_integral_radial_second
+lemma eq_integral_radial_second (hGd : ∀ x ∈ V, HasFDerivAt G (H x) x) (hGc : ContinuousOn G V) (hHc : ContinuousOn H V) {R : ℝ} (hR0 : 0 ≤ R) (hR : closedBall (0:ℂ) R ⊆ V) (θ : ℝ) : G (circleMap 0 R θ) (circleMap 0 R θ) = ∫ s in (0:ℝ)..R, (s * H (circleMap 0 s θ) (circleMap 0 1 θ) (circleMap 0 1 θ) + G (circleMap 0 s θ) (circleMap 0 1 θ))
+
+### ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshLap:73  ReciprocityTheory.AnForm.A.PshLap.angular_period
+lemma angular_period (hGd : ∀ x ∈ V, HasFDerivAt G (H x) x) (hGc : ContinuousOn G V) (hHc : ContinuousOn H V) {s : ℝ} (hs : closedBall (0:ℂ) |s| ⊆ V) : ∫ θ in (0:ℝ)..2*π, G (circleMap 0 s θ) (circleMap 0 1 θ) = s * ∫ θ in (0:ℝ)..2*π, H (circleMap 0 s θ) (circleMap 0 1 θ * Complex.I) (circleMap 0 1 θ * Complex.I)
+
+### ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshLap:122  ReciprocityTheory.AnForm.A.PshLap.swap_cont
+lemma swap_cont {F : ℝ → ℝ → ℝ} {a b c d : ℝ} (hab : a ≤ b) (hcd : c ≤ d) (hF : ContinuousOn (Function.uncurry F) (Icc a b ×ˢ Icc c d)) : ∫ x in a..b, ∫ y in c..d, F x y = ∫ y in c..d, ∫ x in a..b, F x y
+
+### ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshLap:133  ReciprocityTheory.AnForm.A.PshLap.intervalIntegrable_param
+lemma intervalIntegrable_param {F : ℝ → ℝ → ℝ} {a b c d : ℝ} (hab : a ≤ b) (hcd : c ≤ d) (hF : ContinuousOn (Function.uncurry F) (Icc a b ×ˢ Icc c d)) : IntervalIntegrable (fun x => ∫ y in c..d, F x y) volume a b
+
+### ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshLap:147  ReciprocityTheory.AnForm.A.PshLap.continuous_circleMap_uncurry
+lemma continuous_circleMap_uncurry : Continuous (fun p : ℝ × ℝ => circleMap 0 p.1 p.2)
+
+### ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshLap:150  ReciprocityTheory.AnForm.A.PshLap.rot_id
+lemma rot_id (B : ℂ →L[ℝ] ℂ →L[ℝ] ℝ) (θ : ℝ) : B (circleMap 0 1 θ) (circleMap 0 1 θ) + B (circleMap 0 1 θ * Complex.I) (circleMap 0 1 θ * Complex.I) = B 1 1 + B Complex.I Complex.I
+
+### ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshLap:173  ReciprocityTheory.AnForm.A.PshLap.mapsTo_rect
+lemma mapsTo_rect {R a : ℝ} (hR : closedBall (0:ℂ) R ⊆ V) : MapsTo (fun p : ℝ × ℝ => circleMap 0 p.1 p.2) (Icc 0 R ×ˢ Icc 0 a) V
+
+### ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshLap:177  ReciprocityTheory.AnForm.A.PshLap.contOn_G
+lemma contOn_G (hGc : ContinuousOn G V) {R a : ℝ} (hR : closedBall (0:ℂ) R ⊆ V) : ContinuousOn (Function.uncurry fun r θ => G (circleMap 0 r θ) (circleMap 0 1 θ)) (Icc 0 R ×ˢ Icc 0 a)
+
+### ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshLap:261  ReciprocityTheory.AnForm.A.PshLap.contOn_H
+lemma contOn_H (hHc : ContinuousOn H V) {R a : ℝ} (hR : closedBall (0:ℂ) R ⊆ V) : ContinuousOn (Function.uncurry fun s θ => H (circleMap 0 s θ) (circleMap 0 1 θ) (circleMap 0 1 θ) + H (circleMap 0 s θ) (circleMap 0 1 θ * Complex.I) (circleMap 0 1 θ * Complex.I)) (Icc 0 R ×ˢ Icc 0 a)
+
+### ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshLap:273  ReciprocityTheory.AnForm.A.PshLap.le_circleAverage_of_lap_nonneg
+theorem le_circleAverage_of_lap_nonneg (hg : ∀ x ∈ V, HasFDerivAt g (G x) x) (hGd : ∀ x ∈ V, HasFDerivAt G (H x) x) (hHc : ContinuousOn H V) {R : ℝ} (hR0 : 0 ≤ R) (hR : closedBall (0:ℂ) R ⊆ V) (hpos : ∀ x ∈ closedBall (0:ℂ) R, ∀ θ : ℝ, 0 ≤ H x (circleMap 0 1 θ) (circleMap 0 1 θ) + H x (circleMap 0 1 θ * Complex.I) (circleMap 0 1 θ * Complex.I)) : g 0 ≤ Real.circleAverage g 0 R
+
+### ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshLap:294  ReciprocityTheory.AnForm.A.PshLap.circleAverage_sub_le
+theorem circleAverage_sub_le (hg : ∀ x ∈ V, HasFDerivAt g (G x) x) (hGd : ∀ x ∈ V, HasFDerivAt G (H x) x) (hHc : ContinuousOn H V) {R : ℝ} (hR0 : 0 ≤ R) (hR : closedBall (0:ℂ) R ⊆ V) (K : ℝ) (hK : ∀ x ∈ closedBall (0:ℂ) R, ∀ θ : ℝ, H x (circleMap 0 1 θ) (circleMap 0 1 θ) + H x (circleMap 0 1 θ * Complex.I) (circleMap 0 1 θ * Complex.I) ≤ K) : Real.circleAverage g 0 R - g 0 ≤ K * R ^ 2 / 4
+
+### ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshLap:344  ReciprocityTheory.AnForm.A.PshLap.lap_nonneg_of_sub_mean
+theorem lap_nonneg_of_sub_mean (hg : ∀ x ∈ V, HasFDerivAt g (G x) x) (hGd : ∀ x ∈ V, HasFDerivAt G (H x) x) (hHc : ContinuousOn H V) {R : ℝ} (hR0 : 0 < R) (hR : closedBall (0:ℂ) R ⊆ V) (hsub : ∀ r ∈ Ioc (0:ℝ) R, g 0 ≤ Real.circleAverage g 0 r) : 0 ≤ H 0 1 1 + H 0 Complex.I Complex.I
+
+### ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshPoisson:28  ReciprocityTheory.AnForm.A.poissonKernel_zero_continuousOn
+lemma poissonKernel_zero_continuousOn {r : ℝ} (hr : 0 < r) {w : ℂ} (hw : w ∈ ball (0 : ℂ) r) : ContinuousOn (poissonKernel 0 w) (sphere 0 r)
+
+### ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshPoisson:40  ReciprocityTheory.AnForm.A.poissonKernel_zero_nonneg
+lemma poissonKernel_zero_nonneg {r : ℝ} {w z : ℂ} (hw : w ∈ ball (0 : ℂ) r) (hz : z ∈ sphere (0 : ℂ) r) : 0 ≤ poissonKernel 0 w z
+
+### ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshPoisson:50  ReciprocityTheory.AnForm.A.poissonKernel_zero_le
+lemma poissonKernel_zero_le {r δ : ℝ} {w z : ℂ} (hw : w ∈ ball (0 : ℂ) r) (hz : z ∈ sphere (0 : ℂ) r) (hδ : 0 < δ) (hzw : δ ≤ ‖z - w‖) : poissonKernel 0 w z ≤ (r ^ 2 - ‖w‖ ^ 2) / δ ^ 2
+
+### ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshPoisson:65  ReciprocityTheory.AnForm.A.circleAverage_poissonKernel_zero
+lemma circleAverage_poissonKernel_zero {r : ℝ} {w : ℂ} (hw : w ∈ ball (0 : ℂ) r) : Real.circleAverage (poissonKernel 0 w) 0 r = 1
+
+### ReciprocityTheory.AnalyticForms.PlurisubharmonicFunctions.PshPoisson:378  ReciprocityTheory.AnForm.A.poisson_ext
+theorem poisson_ext {g : ℂ → ℝ} {r : ℝ} (hr : 0 < r) (hg : ContinuousOn g (Metric.sphere 0 r)) : ∃ Φ : ℂ → ℝ, ContinuousOn Φ (Metric.closedBall 0 r) ∧ (∀ ζ ∈ Metric.sphere 0 r, Φ ζ = g ζ) ∧ Φ 0 = Real.circleAverage g 0 r ∧ ∀ a s, 0 < s → Metric.closedBall a s ⊆ Metric.ball 0 r → Real.circleAverage Φ a s = Φ a
+
+### ReciprocityTheory.AnalyticForms.RegularLocalRings.BaseChangeCA:13  ReciprocityTheory.AnForm.R.BaseChangeC.fracTensor_exists_den
+theorem fracTensor_exists_den (z : F ⊗[ℚ] C) : ∃ s ∈ nonZeroDivisors (MvPolynomial ι ℚ), ∃ w : MvPolynomial ι ℚ ⊗[ℚ] C, (algebraMap (MvPolynomial ι ℚ) F s ⊗ₜ[ℚ] (1 : C)) * z = Algebra.TensorProduct.map (IsScalarTower.toAlgHom ℚ (MvPolynomial ι ℚ) F) (AlgHom.id ℚ C) w
+
+### ReciprocityTheory.AnalyticForms.RegularLocalRings.BaseChangeCA:43  ReciprocityTheory.AnForm.R.BaseChangeC.isDomain_tensor_of_isFractionRing
+theorem isDomain_tensor_of_isFractionRing : IsDomain (F ⊗[ℚ] C)
+
+### ReciprocityTheory.AnalyticForms.RegularLocalRings.BaseChangeCA:91  ReciprocityTheory.AnForm.R.BaseChangeC.isReduced_tensor_domain
+theorem isReduced_tensor_domain (F K D : Type) [Field F] [Field K] [Algebra F K] [Algebra.FormallyUnramified F K] [Algebra.EssFiniteType F K] [CommRing D] [IsDomain D] [Algebra F D] : IsReduced (K ⊗[F] D)
+
+### ReciprocityTheory.AnalyticForms.RegularLocalRings.BaseChangeCA:105  ReciprocityTheory.AnForm.R.BaseChangeC.isReduced_tensor_of_essFiniteType
+theorem isReduced_tensor_of_essFiniteType (K : Type) [Field K] [Algebra ℚ K] [Algebra.EssFiniteType ℚ K] (C : Type) [Field C] [Algebra ℚ C] : IsReduced (K ⊗[ℚ] C)
+
+### ReciprocityTheory.AnalyticForms.RegularLocalRings.FromSpecResidueFieldAppTopIso:27  ReciprocityTheory.AnForm.R.fromSpecResidueField_appTop_iso
+theorem fromSpecResidueField_appTop_iso (x : S) : (S.fromSpecResidueField x).appTop ≫ (Scheme.ΓSpecIso _).hom = S.evaluation ⊤ x trivial
+
+### ReciprocityTheory.AnalyticForms.RegularLocalRings.FromSpecResidueFieldAppTopIso:74  ReciprocityTheory.AnForm.R.evaluation_res
+theorem evaluation_res {U V : S.Opens} (h : V ≤ U) (f : Γ(S, U)) (x : S) (hx : x ∈ V) : S.evaluation V x hx (S.presheaf.map (homOfLE h).op f) = S.evaluation U x (h hx) f
+
+### ReciprocityTheory.AnalyticForms.RegularLocalRings.FromSpecResidueFieldAppTopIso:87  ReciprocityTheory.AnForm.R.isClosed_image_of_closed
+theorem isClosed_image_of_closed {T : Scheme.{0}} (t : T ⟶ Spec (CommRingCat.of ℂ)) (g : S ⟶ T) (hg : g ≫ t = s) [LocallyOfFiniteType s] [LocallyOfFiniteType t] (x : S) (hc : IsClosed ({x} : Set S)) : IsClosed ({g.base x} : Set T)
+
+### ReciprocityTheory.Automorphisms.InstMainA:11  ReciprocityTheory.Aut.mem_maxIdeal_iff
+theorem mem_maxIdeal_iff (x : v.adicCompletionIntegers F) : x ∈ maximalIdeal (v.adicCompletionIntegers F) ↔ Valued.v (x : v.adicCompletion F) < 1
+
+### ReciprocityTheory.Automorphisms.InstMainA:22  ReciprocityTheory.Aut.val_le_exp_neg_one_of_lt_one
+theorem val_le_exp_neg_one_of_lt_one {x : v.adicCompletion F} (h : Valued.v x < 1) : Valued.v x ≤ WithZero.exp (-1 : ℤ)
+
+### ReciprocityTheory.Automorphisms.InstMainA:39  ReciprocityTheory.Aut.maxIdeal_eq_span
+theorem maxIdeal_eq_span {π : v.adicCompletionIntegers F} (hπ : Valued.v (π : v.adicCompletion F) = WithZero.exp (-1 : ℤ)) : maximalIdeal (v.adicCompletionIntegers F) = Ideal.span {π}
+
+### ReciprocityTheory.Automorphisms.PlaceA:14  ReciprocityTheory.Aut.adic_valued_algebraMap
+theorem adic_valued_algebraMap (k : K) : Valued.v (algebraMap K (v.adicCompletion K) k) = v.valuation K k
+
+### ReciprocityTheory.Automorphisms.PlaceA:18  ReciprocityTheory.Aut.adic_algebraMap_R
+theorem adic_algebraMap_R (a : R) : algebraMap R (v.adicCompletion K) a = algebraMap K (v.adicCompletion K) (algebraMap R K a)
+
+### ReciprocityTheory.Automorphisms.PlaceA:21  ReciprocityTheory.Aut.adic_exists_approx
+theorem adic_exists_approx (y : v.adicCompletion K) (hy : Valued.v y ≤ 1) : ∃ a : R, Valued.v (y - algebraMap R (v.adicCompletion K) a) < 1
+
+### ReciprocityTheory.Automorphisms.PlaceA:95  ReciprocityTheory.Aut.adic_le_one_of_poly
+theorem adic_le_one_of_poly {x : v.adicCompletion K} (p : Polynomial ℤ) (hm : p.Monic) (hp : p.eval₂ (Int.castRingHom _) x = 0) : Valued.v x ≤ 1
+
+### ReciprocityTheory.Automorphisms.Unitary:68  ReciprocityTheory.Aut.complexConj_invol
+theorem complexConj_invol (x : L) : (IsCMField.complexConj L : L →+* L) ((IsCMField.complexConj L : L →+* L) x) = x
+
+### ReciprocityTheory.BurnsideSurjectivity.Burnside:170  ReciprocityTheory.GC.burnside_surj_of_irred
+theorem burnside_surj_of_irred {k A V : Type*} [Field k] [IsAlgClosed k] [Ring A] [Algebra k A] [AddCommGroup V] [Module k V] [FiniteDimensional k V] (ρ : A →ₐ[k] Module.End k V) [Nontrivial V] (hirr : ∀ W : Submodule k V, (∀ a : A, ∀ w ∈ W, ρ a w ∈ W) → W = ⊥ ∨ W = ⊤) : Function.Surjective ρ
+
+### ReciprocityTheory.Chebotarev.AbsProdSubProdLeSumAbsSub:59  ReciprocityTheory.Cheb.abs_prod_sub_prod_le_sum_abs_sub
+theorem abs_prod_sub_prod_le_sum_abs_sub {κ : Type*} (s : Finset κ) (a b : κ → ℝ) (ha : ∀ i ∈ s, |a i| ≤ 1) (hb : ∀ i ∈ s, |b i| ≤ 1) : |∏ i ∈ s, a i - ∏ i ∈ s, b i| ≤ ∑ i ∈ s, |a i - b i|
+
+### ReciprocityTheory.Chebotarev.CrossFix:10  ReciprocityTheory.Cheb.eq_one_of_restrict_eq_one
+theorem eq_one_of_restrict_eq_one {l : ℕ} [Fact l.Prime] [IsCyclotomicExtension {l} K M] {ζ : M} (hζ : IsPrimitiveRoot ζ l) (h : Gal(M/ℚ)) (hK : AlgEquiv.restrictNormal h K = 1) (h1 : h ζ = ζ) : h = 1
+
+### ReciprocityTheory.Chebotarev.CrossFix:26  ReciprocityTheory.Cheb.pow_apply_zeta_of_apply_eq_pow
+theorem pow_apply_zeta_of_apply_eq_pow {ζ : M} (g : Gal(M/ℚ)) (t : ℕ) (hg : g ζ = ζ ^ t) (m : ℕ) : (g ^ m) ζ = ζ ^ (t ^ m)
+
+### ReciprocityTheory.Chebotarev.CrossFix:32  ReciprocityTheory.Cheb.zeta_pow_eq_pow_iff_natCast
+theorem zeta_pow_eq_pow_iff_natCast {l : ℕ} [NeZero l] {ζ : M} (hζ : IsPrimitiveRoot ζ l) (a b : ℕ) : ζ ^ a = ζ ^ b ↔ (a : ZMod l) = b
+
+### ReciprocityTheory.Chebotarev.CrossFix:38  ReciprocityTheory.Cheb.pow_apply_zeta_eq_units_pow
+theorem pow_apply_zeta_eq_units_pow {l : ℕ} [NeZero l] {ζ : M} (hζ : IsPrimitiveRoot ζ l) (τ : (ZMod l)ˣ) (g : Gal(M/ℚ)) (hgζ : g ζ = ζ ^ (τ : ZMod l).val) (m : ℕ) : (g ^ m) ζ = ζ ^ (((τ ^ m : (ZMod l)ˣ) : ZMod l).val)
+
+### ReciprocityTheory.Chebotarev.CrossFix:44  ReciprocityTheory.Cheb.restrictNormal_pow_of_gal
+theorem restrictNormal_pow_of_gal (g : Gal(M/ℚ)) (m : ℕ) : AlgEquiv.restrictNormal (g ^ m) K = (AlgEquiv.restrictNormal g K) ^ m
+
+### ReciprocityTheory.Chebotarev.CrossFix:48  ReciprocityTheory.Cheb.eq_of_apply_eq_pow
+theorem eq_of_apply_eq_pow {l : ℕ} [Fact l.Prime] [IsCyclotomicExtension {l} K M] {ζ : M} (hζ : IsPrimitiveRoot ζ l) (σ : Gal(K/ℚ)) (hσ : orderOf σ ∣ l - 1) (τ : (ZMod l)ˣ) (hτ : orderOf τ = l - 1) (g : Gal(M/ℚ)) (hg : AlgEquiv.restrictNormal g K = σ) (hgζ : g ζ = ζ ^ (τ : ZMod l).val) (φ : M ≃ₐ[IntermediateField.fixedField (Subgroup.zpowers g)] M) (n : ℕ) (hφ : φ ζ = ζ ^ n) (hn : (n : ZMod l) = τ) : φ.restrictScalars ℚ = g
+
+### ReciprocityTheory.Chebotarev.CrossFix:81  ReciprocityTheory.Cheb.irreducible_cyclotomic_fixedField
+theorem irreducible_cyclotomic_fixedField {l : ℕ} [Fact l.Prime] [IsCyclotomicExtension {l} K M] {ζ : M} (hζ : IsPrimitiveRoot ζ l) (σ : Gal(K/ℚ)) (hσ : orderOf σ ∣ l - 1) (τ : (ZMod l)ˣ) (hτ : orderOf τ = l - 1) (g : Gal(M/ℚ)) (hg : AlgEquiv.restrictNormal g K = σ) (hgζ : g ζ = ζ ^ (τ : ZMod l).val) : Irreducible (cyclotomic l (IntermediateField.fixedField (Subgroup.zpowers g)))
+
+### ReciprocityTheory.Chebotarev.CrossFrobE:7  ReciprocityTheory.Cheb.exists_frob_above
+theorem exists_frob_above {M : Type} [Field M] [NumberField M] (E : IntermediateField ℚ M) [IsGalois E M] (l : ℕ) [Fact l.Prime] {ζ : M} (hζ : IsPrimitiveRoot ζ l) (q : Ideal (𝓞 E)) (hq : q.IsPrime) (hqp : (Ideal.absNorm q).Prime) (hql : Ideal.absNorm q ≠ l) : ∃ (P : Ideal (𝓞 M)) (_ : P.IsPrime) (φ : M ≃ₐ[E] M), P.LiesOver (Ideal.span {((Ideal.absNorm q : ℕ) : ℤ)}) ∧ φ ζ = ζ ^ Ideal.absNorm q ∧ IsArithFrobAt ℤ (φ.restrictScalars ℚ) P
+
+### ReciprocityTheory.Chebotarev.CrossGal:7  ReciprocityTheory.Cheb.cxgal_exists_sf
+theorem cxgal_exists_sf (K : Type) [Field K] [NumberField K] [IsGalois ℚ K] : ∃ p : ℚ[X], p ≠ 0 ∧ IsSplittingField ℚ K p
+
+### ReciprocityTheory.Chebotarev.CrossGal:21  ReciprocityTheory.Cheb.isGalois_cyclotomicField
+theorem isGalois_cyclotomicField (K : Type) [Field K] [NumberField K] [IsGalois ℚ K] (l : ℕ) [NeZero l] : IsGalois ℚ (CyclotomicField l K)
+
+### ReciprocityTheory.Chebotarev.CrossLift:7  ReciprocityTheory.Cheb.exists_lift_pow
+theorem exists_lift_pow {K M : Type} [Field K] [NumberField K] [Field M] [NumberField M] [Algebra K M] [IsGalois ℚ K] [IsGalois ℚ M] (l : ℕ) [Fact l.Prime] [IsCyclotomicExtension {l} K M] (hirr : Irreducible (cyclotomic l K)) {ζ : M} (hζ : IsPrimitiveRoot ζ l) (σ : Gal(K/ℚ)) (τ : (ZMod l)ˣ) : ∃ g : Gal(M/ℚ), AlgEquiv.restrictNormal g K = σ ∧ g ζ = ζ ^ (τ : ZMod l).val
+
+### ReciprocityTheory.Chebotarev.CrossRes:7  ReciprocityTheory.Cheb.isArithFrobAt_restrictNormal
+theorem isArithFrobAt_restrictNormal {K M : Type} [Field K] [NumberField K] [IsGalois ℚ K] [Field M] [NumberField M] [Algebra K M] (g : Gal(M/ℚ)) (p : ℕ) (P : Ideal (𝓞 M)) (hP : P.IsPrime) (hPp : P.LiesOver (Ideal.span {(p : ℤ)})) (h : IsArithFrobAt ℤ g P) : (P.under (𝓞 K)).IsPrime ∧ (P.under (𝓞 K)).LiesOver (Ideal.span {(p : ℤ)}) ∧ IsArithFrobAt ℤ (AlgEquiv.restrictNormal g K) (P.under (𝓞 K))
+
+### ReciprocityTheory.Chebotarev.CyclotomicIrreducibleOfForallIsUnramifiedAt:32  ReciprocityTheory.Cheb.exists_forall_isUnramifiedAt
+theorem exists_forall_isUnramifiedAt (K : Type*) [Field K] [NumberField K] : ∃ N : ℕ, ∀ p : ℕ, p.Prime → N < p → ∀ (P : Ideal (𝓞 K)) [P.IsPrime], (p : 𝓞 K) ∈ P → Algebra.IsUnramifiedAt ℤ P
+
+### ReciprocityTheory.Chebotarev.CyclotomicIrreducibleOfForallIsUnramifiedAt:40  ReciprocityTheory.Cheb.natCast_notMem_sq_of_isUnramifiedAt
+theorem natCast_notMem_sq_of_isUnramifiedAt {K : Type*} [Field K] [NumberField K] {l : ℕ} (hl : l.Prime) (P : Ideal (𝓞 K)) [P.IsPrime] [Algebra.IsUnramifiedAt ℤ P] : (l : 𝓞 K) ∉ P ^ 2
+
+### ReciprocityTheory.Chebotarev.CyclotomicIrreducibleOfForallIsUnramifiedAt:79  ReciprocityTheory.Cheb.cyclotomic_irreducible_of_isUnramifiedAt
+theorem cyclotomic_irreducible_of_isUnramifiedAt {K : Type*} [Field K] [NumberField K] {l : ℕ} (hl : l.Prime) (P : Ideal (𝓞 K)) [P.IsPrime] (hlP : (l : 𝓞 K) ∈ P) [Algebra.IsUnramifiedAt ℤ P] : Irreducible (cyclotomic l K)
+
+### ReciprocityTheory.Chebotarev.CyclotomicIrreducibleOfForallIsUnramifiedAt:126  ReciprocityTheory.Cheb.natCast_mem_of_liesOver
+theorem natCast_mem_of_liesOver {K : Type*} [Field K] [NumberField K] {p : ℕ} (P : Ideal (𝓞 K)) [P.LiesOver (Ideal.span {(p : ℤ)})] : (p : 𝓞 K) ∈ P
+
+### ReciprocityTheory.Chebotarev.CyclotomicIrreducibleOfForallIsUnramifiedAt:133  ReciprocityTheory.Cheb.exists_forall_isUnramifiedAt_of_liesOver
+theorem exists_forall_isUnramifiedAt_of_liesOver (K : Type*) [Field K] [NumberField K] : ∃ N : ℕ, ∀ p : ℕ, p.Prime → N < p → ∀ (P : Ideal (𝓞 K)) [P.IsPrime] [P.LiesOver (Ideal.span {(p : ℤ)})], Algebra.IsUnramifiedAt ℤ P
+
+### ReciprocityTheory.Chebotarev.CyclotomicIrreducibleOfForallIsUnramifiedAt:139  ReciprocityTheory.Cheb.cyclotomic_irreducible_of_forall_isUnramifiedAt
+theorem cyclotomic_irreducible_of_forall_isUnramifiedAt {K : Type*} [Field K] [NumberField K] {l : ℕ} (hl : l.Prime) (h : ∀ (P : Ideal (𝓞 K)) [P.IsPrime], (l : 𝓞 K) ∈ P → Algebra.IsUnramifiedAt ℤ P) : Irreducible (cyclotomic l K)
+
+### ReciprocityTheory.Chebotarev.CyclotomicIrreducibleOfForallIsUnramifiedAt:156  ReciprocityTheory.Cheb.exists_forall_cyclotomic_irreducible
+theorem exists_forall_cyclotomic_irreducible (K : Type*) [Field K] [NumberField K] : ∃ N : ℕ, ∀ l : ℕ, l.Prime → N < l → Irreducible (cyclotomic l K)
+
+### ReciprocityTheory.Chebotarev.LatSum:28  ReciprocityTheory.Cheb.tsum_latSum_eq
+theorem tsum_latSum_eq (Λ₀ Λ' : Submodule ℤ V) (hle : Λ' ≤ Λ₀) (reps : Finset V) (hmem : ∀ β ∈ reps, β ∈ Λ₀) (hcover : ∀ α ∈ Λ₀, ∃ l ∈ Λ', ∃ β ∈ reps, α = l + β) (huniq : ∀ β₁ ∈ reps, ∀ β₂ ∈ reps, β₁ - β₂ ∈ Λ' → β₁ = β₂) (c' : V → ℂ) (hper : ∀ l ∈ Λ', ∀ β ∈ reps, c' (l + β) = c' β) (hmean : ∑ β ∈ reps, c' β = 0) (g : V → ℂ) (hg : Summable fun α : Λ₀ => g α) : ∑' α : Λ₀, c' α * g α = ∑' l : Λ', ∑ β ∈ reps, c' β * (g (l + β) - g l)
+
+### ReciprocityTheory.Chebotarev.LatSum:60  ReciprocityTheory.Cheb.exists_continuousOn_latticeSum
+theorem exists_continuousOn_latticeSum (Λ₀ Λ' : Submodule ℤ V) [DiscreteTopology Λ₀] (hle : Λ' ≤ Λ₀) (reps : Finset V) (hmem : ∀ β ∈ reps, β ∈ Λ₀) (hcover : ∀ α ∈ Λ₀, ∃ l ∈ Λ', ∃ β ∈ reps, α = l + β) (huniq : ∀ β₁ ∈ reps, ∀ β₂ ∈ reps, β₁ - β₂ ∈ Λ' → β₁ = β₂) (c' : V → ℂ) (hper : ∀ l ∈ Λ', ∀ β ∈ reps, c' (l + β) = c' β) (hmean : ∑ β ∈ reps, c' β = 0) (G : ℝ → V → ℂ) (r : ℝ) (hr : r < -(Module.finrank ℤ Λ₀ : ℝ)) (hdiff : ∃ R₀ C : ℝ, ∀ s ∈ Icc (1 : ℝ) 2, ∀ β ∈ reps, ∀ x ∈ Λ', R₀ ≤ ‖x‖ → ‖G s (x + β) - G s x‖ ≤ C * ‖x‖ ^ r) (K : ℝ) (hbound : ∀ s ∈ Icc (1 : ℝ) 2, ∀ x ∈ Λ₀, ‖G s x‖ ≤ K) (hsum : ∀ s ∈ Ioc (1 : ℝ) 2, Summable fun α : Λ₀ => G s α) (hcont : ∀ x ∈ Λ₀, ContinuousOn (fun s => G s x) (Icc 1 2)) : ∃ F : ℝ → ℂ, ContinuousOn F (Icc 1 2) ∧ ∀ s ∈ Ioc (1 : ℝ) 2, F s = ∑' α : Λ₀, c' α * G s α
+
+### ReciprocityTheory.Chebotarev.NoWind:7  ReciprocityTheory.Cheb.isDiscrete_exp_fiber
+theorem isDiscrete_exp_fiber (c : ℂ) : IsDiscrete {w : ℂ | Complex.exp w = c}
+
+### ReciprocityTheory.Chebotarev.NoWind:31  ReciprocityTheory.Cheb.bounded_of_tendsto_exp
+theorem bounded_of_tendsto_exp {abelian₂ : ℝ → ℂ} {L1 : ℂ} (hcont : ContinuousOn abelian₂ (Ioc 1 2)) (hL1 : L1 ≠ 0) (hlim : Tendsto (fun s => Complex.exp (abelian₂ s)) (𝓝[>] 1) (𝓝 L1)) : ∃ C, ∀ s ∈ Ioc (1 : ℝ) 2, ‖abelian₂ s‖ ≤ C
+
+### ReciprocityTheory.Chebotarev.NoWind:89  ReciprocityTheory.Cheb.bdd_of_exp_tendsto
+theorem bdd_of_exp_tendsto (f : ℝ → ℂ) (hf : ContinuousOn f (Set.Ioi 1)) (L1 : ℂ) (hL : L1 ≠ 0) (h : Tendsto (fun s => Complex.exp (f s)) (𝓝[>] 1) (𝓝 L1)) : ∃ C : ℝ, ∀ᶠ s in 𝓝[>] (1 : ℝ), ‖f s‖ ≤ C
+
+### ReciprocityTheory.Chebotarev.NormCongr:7  ReciprocityTheory.Cheb.norm_modEq_of_sub_mem_span
+theorem norm_modEq_of_sub_mem_span {S : Type*} [CommRing S] [Module.Free ℤ S] [Module.Finite ℤ S] (m : ℤ) {α α' : S} (h : α - α' ∈ Ideal.span {(m : S)}) : Algebra.norm ℤ α ≡ Algebra.norm ℤ α' [ZMOD m]
+
+### ReciprocityTheory.Chebotarev.NormCongr:35  ReciprocityTheory.Cheb.absNorm_dvd_algebraNorm
+theorem absNorm_dvd_algebraNorm {S : Type*} [CommRing S] [IsDedekindDomain S] [Module.Free ℤ S] [Module.Finite ℤ S] {b : Ideal S} {α : S} (h : α ∈ b) : (Ideal.absNorm b : ℤ) ∣ Algebra.norm ℤ α
+
+### ReciprocityTheory.Chebotarev.NormCongr:40  ReciprocityTheory.Cheb.norm_div_absNorm_modEq
+theorem norm_div_absNorm_modEq {S : Type*} [CommRing S] [IsDedekindDomain S] [Module.Free ℤ S] [Module.Finite ℤ S] (l : ℤ) {b : Ideal S} {α α' : S} (hα : α ∈ b) (hα' : α' ∈ b) (h : α - α' ∈ Ideal.span {((l * (Ideal.absNorm b : ℤ) : ℤ) : S)}) : Algebra.norm ℤ α / (Ideal.absNorm b : ℤ) ≡ Algebra.norm ℤ α' / (Ideal.absNorm b : ℤ) [ZMOD l]
+
+### ReciprocityTheory.Chebotarev.SplitF:7  ReciprocityTheory.Cheb.fibre_sum_le
+theorem fibre_sum_le {α β : Type*} (π : α → β) (f : α → ℝ) (h : β → ℝ) (n : ℕ) (hf0 : ∀ a, 0 ≤ f a) (hfh : ∀ a, f a ≤ h (π a)) (hh0 : ∀ b, 0 ≤ h b) (hh : Summable h) (hfib : ∀ b, {a | π a = b}.Finite ∧ {a | π a = b}.ncard ≤ n) : Summable f ∧ ∑' a, f a ≤ n * ∑' b, h b
+
+### ReciprocityTheory.Chebotarev.SplitF:35  ReciprocityTheory.Cheb.fibre_sum_ge
+theorem fibre_sum_ge {α β : Type*} (π : α → β) (f : α → ℝ) (g : β → ℝ) (k : ℕ) (hf0 : ∀ a, 0 ≤ f a) (hf : Summable f) (hg0 : ∀ b, 0 ≤ g b) (hg : Summable g) (S : Set β) (hS : S.Finite) (hfib : ∀ b ∉ S, k ≤ {a | π a = b ∧ f a = g b}.ncard) : (k : ℝ) * ∑' b, g b ≤ ∑' a, f a + k * ∑' b, S.indicator g b
+
+### ReciprocityTheory.ClassFieldTheory.LocalClassField.HerbrandA:179  ReciprocityTheory.DiscreteGroups.LocalClassField.Herbrand.card_eq_ker_mul_range
+theorem card_eq_ker_mul_range (φ : X →+ Y) : Nat.card X = Nat.card φ.ker * Nat.card φ.range
+
+### ReciprocityTheory.ClassFieldTheory.LocalClassField.HerbrandA:183  ReciprocityTheory.DiscreteGroups.LocalClassField.Herbrand.finite_of_exact
+theorem finite_of_exact (φ : X →+ Y) (ψ : Y →+ Z) (hex : ψ.ker = φ.range) [Finite X] [Finite Z] : Finite Y
+
+### ReciprocityTheory.ClassFieldTheory.LocalClassField.HerbrandA:190  ReciprocityTheory.DiscreteGroups.LocalClassField.Herbrand.card_six
+theorem card_six {X₁ X₂ X₃ X₄ X₅ X₆ : Type*} [AddCommGroup X₁] [AddCommGroup X₂] [AddCommGroup X₃] [AddCommGroup X₄] [AddCommGroup X₅] [AddCommGroup X₆] (f₁ : X₁ →+ X₂) (f₂ : X₂ →+ X₃) (f₃ : X₃ →+ X₄) (f₄ : X₄ →+ X₅) (f₅ : X₅ →+ X₆) (f₆ : X₆ →+ X₁) (h₁ : f₂.ker = f₁.range) (h₂ : f₃.ker = f₂.range) (h₃ : f₄.ker = f₃.range) (h₄ : f₅.ker = f₄.range) (h₅ : f₆.ker = f₅.range) (h₆ : f₁.ker = f₆.range) : Nat.card X₁ * Nat.card X₃ * Nat.card X₅ = Nat.card X₂ * Nat.card X₄ * Nat.card X₆
+
+### ReciprocityTheory.ClassFieldTheory.LocalClassField.UnitsHerbrandA:61  ReciprocityTheory.DiscreteGroups.LocalClassField.UnitsFilt.Filt.le_zero
+theorem le_zero (n : ℕ) : I n ≤ I 0
+
+### ReciprocityTheory.ClassFieldTheory.LocalClassField.UnitsHerbrandA:66  ReciprocityTheory.DiscreteGroups.LocalClassField.UnitsFilt.Filt.mul_unit
+theorem mul_unit {n : ℕ} {x u : R} (hx : x ∈ I n) (hu : u - 1 ∈ I 0) : x * u ∈ I n
+
+### ReciprocityTheory.ClassFieldTheory.LocalClassField.UnitsHerbrandA:71  ReciprocityTheory.DiscreteGroups.LocalClassField.UnitsFilt.Filt.one_add_ne_zero
+theorem one_add_ne_zero {x : R} (hx : x ∈ I 0) : 1 + x ≠ 0
+
+### ReciprocityTheory.ClassFieldTheory.LocalClassField.UnitsHerbrandA:118  ReciprocityTheory.DiscreteGroups.LocalClassField.UnitsFilt.Filt.prod_one_add
+theorem prod_one_add {ι : Type*} {n : ℕ} (s : Finset ι) (y : ι → R) (hy : ∀ j ∈ s, y j ∈ I n) : ∏ j ∈ s, (1 + y j) - 1 - ∑ j ∈ s, y j ∈ I (n + 1)
+
+### ReciprocityTheory.ClassFieldTheory.PadicCompatibleSequences.ExistsPadicIntOfCompatibleSeq:9  ReciprocityTheory.DiscreteGroups.PeuVal.exists_compatible_seq
+theorem exists_compatible_seq {Y : ℕ → Type*} (T : ∀ r, Set (Y r)) (φ : ∀ r, Y (r + 1) → Y r) (hne : ∀ r, (T r).Nonempty) (hfin : ∀ r, (T r).Finite) (hφ : ∀ r, ∀ f ∈ T (r + 1), φ r f ∈ T r) : ∃ f : ∀ r, Y r, (∀ r, f r ∈ T r) ∧ ∀ r, φ r (f (r + 1)) = f r
+
+### ReciprocityTheory.CommutativeAlgebra.CohenMacaulay.RegGensA:11  ReciprocityTheory.CA.RegA.IsRegularLocalRing.spanFinrank_span_finset_le
+theorem spanFinrank_span_finset_le {R : Type*} [CommRing R] (s : Finset R) : Submodule.spanFinrank (Ideal.span (s : Set R)) ≤ s.card
+
+### ReciprocityTheory.CommutativeAlgebra.CohenMacaulay.RegGensA:21  ReciprocityTheory.CA.RegA.IsRegularLocalRing.exists_repr_ne_zero
+theorem exists_repr_ne_zero {K V ι : Type*} [Field K] [AddCommGroup V] [Module K V] (b : Module.Basis ι K V) {v : V} (hv : v ≠ 0) : ∃ j, b.repr v j ≠ 0
+
+### ReciprocityTheory.CommutativeAlgebra.CohenMacaulay.RegGensA:32  ReciprocityTheory.CA.RegA.IsRegularLocalRing.span_insert_image_erase_eq_top
+theorem span_insert_image_erase_eq_top {K V : Type*} [Field K] [AddCommGroup V] [Module K V] {N : ℕ} (b : Module.Basis (Fin N) K V) (v : V) {j : Fin N} (hj : b.repr v j ≠ 0) : Submodule.span K (insert v (⇑b '' ↑(Finset.univ.erase j))) = ⊤
+
+### ReciprocityTheory.CommutativeAlgebra.CohenMacaulay.RegGensA:58  ReciprocityTheory.CA.RegA.IsRegularLocalRing.isLocalRing_quotient_span_singleton
+theorem isLocalRing_quotient_span_singleton {R : Type*} [CommRing R] [IsLocalRing R] {x : R} (hx : x ∈ maximalIdeal R) : IsLocalRing (R ⧸ Ideal.span ({x} : Set R))
+
+### ReciprocityTheory.CommutativeAlgebra.CohenMacaulay.RegGensA:75  ReciprocityTheory.CA.RegA.IsRegularLocalRing.spanFinrank_maximalIdeal_quotient_succ_le
+theorem spanFinrank_maximalIdeal_quotient_succ_le (R : Type*) [CommRing R] [IsLocalRing R] [IsNoetherianRing R] {x : R} (hx : x ∈ maximalIdeal R) (hx2 : x ∉ maximalIdeal R ^ 2) [IsLocalRing (R ⧸ Ideal.span ({x} : Set R))] : Submodule.spanFinrank (maximalIdeal (R ⧸ Ideal.span ({x} : Set R))) + 1 ≤ Module.finrank (ResidueField R) (CotangentSpace R)
+
+### ReciprocityTheory.CommutativeAlgebra.CohenMacaulay.RegGensA:157  ReciprocityTheory.CA.RegA.IsRegularLocalRing.eq_natCast_and_add_one_eq_of_le
+theorem eq_natCast_and_add_one_eq_of_le {a : WithBot ℕ∞} {d n : ℕ} (h1 : ((n : ℕ) : WithBot ℕ∞) ≤ a + 1) (h2 : a ≤ ((d : ℕ) : WithBot ℕ∞)) (h3 : d + 1 ≤ n) : a = ((d : ℕ) : WithBot ℕ∞) ∧ a + 1 = ((n : ℕ) : WithBot ℕ∞)
+
+### ReciprocityTheory.CommutativeAlgebra.CohenMacaulay.RegGensA:182  ReciprocityTheory.CA.RegA.IsRegularLocalRing.spanFinrank_quotient_eq_and_ringKrullDim_add_one
+theorem spanFinrank_quotient_eq_and_ringKrullDim_add_one (R : Type*) [CommRing R] [IsRegularLocalRing R] {x : R} (hx : x ∈ maximalIdeal R) (hx2 : x ∉ maximalIdeal R ^ 2) [IsLocalRing (R ⧸ Ideal.span ({x} : Set R))] : ((Submodule.spanFinrank (maximalIdeal (R ⧸ Ideal.span ({x} : Set R))) : ℕ) : WithBot ℕ∞) = ringKrullDim (R ⧸ Ideal.span ({x} : Set R)) ∧ ringKrullDim (R ⧸ Ideal.span ({x} : Set R)) + 1 = ringKrullDim R
+
+### ReciprocityTheory.CommutativeAlgebra.CohenMacaulay.RegGensA:217  ReciprocityTheory.CA.RegA.IsRegularLocalRing.isPrime_of_mem_minimalPrimes
+theorem isPrime_of_mem_minimalPrimes {R : Type*} [CommRing R] {p : Ideal R} (hp : p ∈ minimalPrimes R) : p.IsPrime
+
+### ReciprocityTheory.CommutativeAlgebra.CohenMacaulay.RegGensA:220  ReciprocityTheory.CA.RegA.IsRegularLocalRing.le_of_le_of_mem_minimalPrimes
+theorem le_of_le_of_mem_minimalPrimes {R : Type*} [CommRing R] {p q : Ideal R} (hp : p ∈ minimalPrimes R) (hq : q.IsPrime) (hle : q ≤ p) : p ≤ q
+
+### ReciprocityTheory.CommutativeAlgebra.CohenMacaulay.RegGensA:224  ReciprocityTheory.CA.RegA.IsRegularLocalRing.isDomain_of_maximalIdeal_eq_bot
+theorem isDomain_of_maximalIdeal_eq_bot (R : Type*) [CommRing R] [IsLocalRing R] (h : maximalIdeal R = ⊥) : IsDomain R
+
+### ReciprocityTheory.CommutativeAlgebra.CohenMacaulay.RegGensA:231  ReciprocityTheory.CA.RegA.IsRegularLocalRing.maximalIdeal_eq_bot_of_le_sq
+theorem maximalIdeal_eq_bot_of_le_sq (R : Type*) [CommRing R] [IsLocalRing R] [IsNoetherianRing R] (h : maximalIdeal R ≤ maximalIdeal R ^ 2) : maximalIdeal R = ⊥
+
+### ReciprocityTheory.CommutativeAlgebra.CohenMacaulay.RegGensA:239  ReciprocityTheory.CA.RegA.IsRegularLocalRing.exists_mem_maximalIdeal_notMem_sq_notMem_minimalPrimes
+theorem exists_mem_maximalIdeal_notMem_sq_notMem_minimalPrimes (R : Type*) [CommRing R] [IsLocalRing R] [IsNoetherianRing R] (hsq : ¬ maximalIdeal R ≤ maximalIdeal R ^ 2) (hmin : ¬ ∃ p ∈ minimalPrimes R, maximalIdeal R ≤ p) : ∃ x, x ∈ maximalIdeal R ∧ x ∉ maximalIdeal R ^ 2 ∧ ∀ p ∈ minimalPrimes R, x ∉ p
+
+### ReciprocityTheory.CommutativeAlgebra.CohenMacaulay.RegGensA:276  ReciprocityTheory.CA.RegA.IsRegularLocalRing.quotient_span_singleton
+theorem quotient_span_singleton {R : Type*} [CommRing R] [IsRegularLocalRing R] {x : R} (hx : x ∈ IsLocalRing.maximalIdeal R) (hx2 : x ∉ IsLocalRing.maximalIdeal R ^ 2) : IsRegularLocalRing (R ⧸ Ideal.span ({x} : Set R))
+
+### ReciprocityTheory.CommutativeAlgebra.CohenMacaulay.RegGensA:284  ReciprocityTheory.CA.RegA.IsRegularLocalRing.ringKrullDim_quotient_span_singleton_add_one
+theorem ringKrullDim_quotient_span_singleton_add_one {R : Type*} [CommRing R] [IsRegularLocalRing R] {x : R} (hx : x ∈ IsLocalRing.maximalIdeal R) (hx2 : x ∉ IsLocalRing.maximalIdeal R ^ 2) : ringKrullDim (R ⧸ Ideal.span ({x} : Set R)) + 1 = ringKrullDim R
+
+### ReciprocityTheory.CommutativeAlgebra.CohenMacaulay.RegGensA:291  ReciprocityTheory.CA.RegA.IsRegularLocalRing.isDomain_of_forall_spanFinrank_lt
+theorem isDomain_of_forall_spanFinrank_lt (R : Type u) [CommRing R] [IsRegularLocalRing R] (IH : ∀ (S : Type u) [CommRing S] [IsRegularLocalRing S], Submodule.spanFinrank (maximalIdeal S) < Submodule.spanFinrank (maximalIdeal R) → IsDomain S) : IsDomain R
+
+### ReciprocityTheory.CommutativeAlgebra.CohenMacaulay.RegGensA:362  ReciprocityTheory.CA.RegA.IsRegularLocalRing.isDomain_of_spanFinrank_le
+theorem isDomain_of_spanFinrank_le : ∀ (n : ℕ) (R : Type u) [CommRing R] [IsRegularLocalRing R], Submodule.spanFinrank (maximalIdeal R) ≤ n → IsDomain R
+
+### ReciprocityTheory.CommutativeAlgebra.CohenMacaulay.RegGensA:378  ReciprocityTheory.CA.RegA.IsRegularLocalRing.isDomain
+theorem isDomain (R : Type*) [CommRing R] [IsRegularLocalRing R] : IsDomain R
+
+### ReciprocityTheory.CommutativeAlgebra.MaximalIdealSquares.RingKrullDimQuotientSpanSingletonAddOne:11  ReciprocityTheory.CA.AB.RegA.IsRegularLocalRing.spanFinrank_span_finset_le
+theorem spanFinrank_span_finset_le {R : Type*} [CommRing R] (s : Finset R) : Submodule.spanFinrank (Ideal.span (s : Set R)) ≤ s.card
+
+### ReciprocityTheory.CommutativeAlgebra.MaximalIdealSquares.RingKrullDimQuotientSpanSingletonAddOne:17  ReciprocityTheory.CA.AB.RegA.IsRegularLocalRing.exists_repr_ne_zero
+theorem exists_repr_ne_zero {K V ι : Type*} [Field K] [AddCommGroup V] [Module K V] (b : Module.Basis ι K V) {v : V} (hv : v ≠ 0) : ∃ j, b.repr v j ≠ 0
+
+### ReciprocityTheory.CommutativeAlgebra.MaximalIdealSquares.RingKrullDimQuotientSpanSingletonAddOne:23  ReciprocityTheory.CA.AB.RegA.IsRegularLocalRing.span_insert_image_erase_eq_top
+theorem span_insert_image_erase_eq_top {K V : Type*} [Field K] [AddCommGroup V] [Module K V] {N : ℕ} (b : Module.Basis (Fin N) K V) (v : V) {j : Fin N} (hj : b.repr v j ≠ 0) : Submodule.span K (insert v (⇑b '' ↑(Finset.univ.erase j))) = ⊤
+
+### ReciprocityTheory.CommutativeAlgebra.MaximalIdealSquares.RingKrullDimQuotientSpanSingletonAddOne:48  ReciprocityTheory.CA.AB.RegA.IsRegularLocalRing.isLocalRing_quotient_span_singleton
+theorem isLocalRing_quotient_span_singleton {R : Type*} [CommRing R] [IsLocalRing R] {x : R} (hx : x ∈ maximalIdeal R) : IsLocalRing (R ⧸ Ideal.span ({x} : Set R))
+
+### ReciprocityTheory.CommutativeAlgebra.MaximalIdealSquares.RingKrullDimQuotientSpanSingletonAddOne:60  ReciprocityTheory.CA.AB.RegA.IsRegularLocalRing.spanFinrank_maximalIdeal_quotient_succ_le
+theorem spanFinrank_maximalIdeal_quotient_succ_le (R : Type*) [CommRing R] [IsLocalRing R] [IsNoetherianRing R] {x : R} (hx : x ∈ maximalIdeal R) (hx2 : x ∉ maximalIdeal R ^ 2) [IsLocalRing (R ⧸ Ideal.span ({x} : Set R))] : Submodule.spanFinrank (maximalIdeal (R ⧸ Ideal.span ({x} : Set R))) + 1 ≤ Module.finrank (ResidueField R) (CotangentSpace R)
+
+### ReciprocityTheory.CommutativeAlgebra.MaximalIdealSquares.RingKrullDimQuotientSpanSingletonAddOne:112  ReciprocityTheory.CA.AB.RegA.IsRegularLocalRing.eq_natCast_and_add_one_eq_of_le
+theorem eq_natCast_and_add_one_eq_of_le {a : WithBot ℕ∞} {d n : ℕ} (h1 : ((n : ℕ) : WithBot ℕ∞) ≤ a + 1) (h2 : a ≤ ((d : ℕ) : WithBot ℕ∞)) (h3 : d + 1 ≤ n) : a = ((d : ℕ) : WithBot ℕ∞) ∧ a + 1 = ((n : ℕ) : WithBot ℕ∞)
+
+### ReciprocityTheory.CommutativeAlgebra.MaximalIdealSquares.RingKrullDimQuotientSpanSingletonAddOne:143  ReciprocityTheory.CA.AB.RegA.IsRegularLocalRing.spanFinrank_quotient_eq_and_ringKrullDim_add_one
+theorem spanFinrank_quotient_eq_and_ringKrullDim_add_one (R : Type*) [CommRing R] [IsRegularLocalRing R] {x : R} (hx : x ∈ maximalIdeal R) (hx2 : x ∉ maximalIdeal R ^ 2) [IsLocalRing (R ⧸ Ideal.span ({x} : Set R))] : ((Submodule.spanFinrank (maximalIdeal (R ⧸ Ideal.span ({x} : Set R))) : ℕ) : WithBot ℕ∞) = ringKrullDim (R ⧸ Ideal.span ({x} : Set R)) ∧ ringKrullDim (R ⧸ Ideal.span ({x} : Set R)) + 1 = ringKrullDim R
+
+### ReciprocityTheory.CommutativeAlgebra.MaximalIdealSquares.RingKrullDimQuotientSpanSingletonAddOne:182  ReciprocityTheory.CA.AB.RegA.IsRegularLocalRing.isPrime_of_mem_minimalPrimes
+theorem isPrime_of_mem_minimalPrimes {R : Type*} [CommRing R] {p : Ideal R} (hp : p ∈ minimalPrimes R) : p.IsPrime
+
+### ReciprocityTheory.CommutativeAlgebra.MaximalIdealSquares.RingKrullDimQuotientSpanSingletonAddOne:188  ReciprocityTheory.CA.AB.RegA.IsRegularLocalRing.le_of_le_of_mem_minimalPrimes
+theorem le_of_le_of_mem_minimalPrimes {R : Type*} [CommRing R] {p q : Ideal R} (hp : p ∈ minimalPrimes R) (hq : q.IsPrime) (hle : q ≤ p) : p ≤ q
+
+### ReciprocityTheory.CommutativeAlgebra.MaximalIdealSquares.RingKrullDimQuotientSpanSingletonAddOne:203  ReciprocityTheory.CA.AB.RegA.IsRegularLocalRing.isDomain_of_maximalIdeal_eq_bot
+theorem isDomain_of_maximalIdeal_eq_bot (R : Type*) [CommRing R] [IsLocalRing R] (h : maximalIdeal R = ⊥) : IsDomain R
+
+### ReciprocityTheory.CommutativeAlgebra.MaximalIdealSquares.RingKrullDimQuotientSpanSingletonAddOne:210  ReciprocityTheory.CA.AB.RegA.IsRegularLocalRing.maximalIdeal_eq_bot_of_le_sq
+theorem maximalIdeal_eq_bot_of_le_sq (R : Type*) [CommRing R] [IsLocalRing R] [IsNoetherianRing R] (h : maximalIdeal R ≤ maximalIdeal R ^ 2) : maximalIdeal R = ⊥
+
+### ReciprocityTheory.CommutativeAlgebra.MaximalIdealSquares.RingKrullDimQuotientSpanSingletonAddOne:222  ReciprocityTheory.CA.AB.RegA.IsRegularLocalRing.exists_mem_maximalIdeal_notMem_sq_notMem_minimalPrimes
+theorem exists_mem_maximalIdeal_notMem_sq_notMem_minimalPrimes (R : Type*) [CommRing R] [IsLocalRing R] [IsNoetherianRing R] (hsq : ¬ maximalIdeal R ≤ maximalIdeal R ^ 2) (hmin : ¬ ∃ p ∈ minimalPrimes R, maximalIdeal R ≤ p) : ∃ x, x ∈ maximalIdeal R ∧ x ∉ maximalIdeal R ^ 2 ∧ ∀ p ∈ minimalPrimes R, x ∉ p
+
+### ReciprocityTheory.CommutativeAlgebra.MaximalIdealSquares.RingKrullDimQuotientSpanSingletonAddOne:251  ReciprocityTheory.CA.AB.RegA.IsRegularLocalRing.quotient_span_singleton
+theorem quotient_span_singleton {R : Type*} [CommRing R] [IsRegularLocalRing R] {x : R} (hx : x ∈ IsLocalRing.maximalIdeal R) (hx2 : x ∉ IsLocalRing.maximalIdeal R ^ 2) : IsRegularLocalRing (R ⧸ Ideal.span ({x} : Set R))
+
+### ReciprocityTheory.CommutativeAlgebra.MaximalIdealSquares.RingKrullDimQuotientSpanSingletonAddOne:263  ReciprocityTheory.CA.AB.RegA.IsRegularLocalRing.ringKrullDim_quotient_span_singleton_add_one
+theorem ringKrullDim_quotient_span_singleton_add_one {R : Type*} [CommRing R] [IsRegularLocalRing R] {x : R} (hx : x ∈ IsLocalRing.maximalIdeal R) (hx2 : x ∉ IsLocalRing.maximalIdeal R ^ 2) : ringKrullDim (R ⧸ Ideal.span ({x} : Set R)) + 1 = ringKrullDim R
+
+### ReciprocityTheory.CommutativeAlgebra.MaximalIdealSquares.RingKrullDimQuotientSpanSingletonAddOne:280  ReciprocityTheory.CA.AB.RegA.IsRegularLocalRing.isDomain_of_forall_spanFinrank_lt
+theorem isDomain_of_forall_spanFinrank_lt (R : Type u) [CommRing R] [IsRegularLocalRing R] (IH : ∀ (S : Type u) [CommRing S] [IsRegularLocalRing S], Submodule.spanFinrank (maximalIdeal S) < Submodule.spanFinrank (maximalIdeal R) → IsDomain S) : IsDomain R
+
+### ReciprocityTheory.CommutativeAlgebra.MaximalIdealSquares.RingKrullDimQuotientSpanSingletonAddOne:359  ReciprocityTheory.CA.AB.RegA.IsRegularLocalRing.isDomain_of_spanFinrank_le
+theorem isDomain_of_spanFinrank_le : ∀ (n : ℕ) (R : Type u) [CommRing R] [IsRegularLocalRing R], Submodule.spanFinrank (maximalIdeal R) ≤ n → IsDomain R
+
+### ReciprocityTheory.CommutativeAlgebra.MaximalIdealSquares.RingKrullDimQuotientSpanSingletonAddOne:371  ReciprocityTheory.CA.AB.RegA.IsRegularLocalRing.isDomain
+theorem isDomain (R : Type*) [CommRing R] [IsRegularLocalRing R] : IsDomain R
+
+### ReciprocityTheory.DualLattices.FrobEqOfLe:9  ReciprocityTheory.PGsh.Up.Det2.v_det_scaled
+theorem v_det_scaled {C : Type} [Field C] (v : Valuation C NNReal) {ι : Type} [Fintype ι] [DecidableEq ι] (c : Matrix ι ι C) (y z : ι → C) : v (Matrix.of fun j k => c j k * (y j / z k)).det = v c.det * (∏ j, v (y j)) / ∏ k, v (z k)
+
+### ReciprocityTheory.DualLattices.HasSumNormalizedDeriv:11  ReciprocityTheory.PGsh.qParam_one_pow_eq_cexp
+lemma qParam_one_pow_eq_cexp (z : ℂ) (m : ℕ) : 𝕢 1 z ^ m = cexp (2 * π * I * m * z)
+
+### ReciprocityTheory.DualLattices.HasSumNormalizedDeriv:18  ReciprocityTheory.PGsh.hasSum_normalizedDeriv
+theorem hasSum_normalizedDeriv {F : ℍ → ℂ} {c : ℕ → ℂ} (hF : ∀ τ : ℍ, HasSum (fun m ↦ c m • 𝕢 1 τ ^ m) (F τ)) (τ : ℍ) : HasSum (fun m : ℕ ↦ ((m : ℂ) * c m) • 𝕢 1 τ ^ m) (Derivative.normalizedDerivOfComplex F τ)
+
+### ReciprocityTheory.DualLattices.IsAdicCompleteOfBasis:11  ReciprocityTheory.PGsh.Up.FrobeniusGroupField.smul_top_self
+theorem smul_top_self (k : ℕ) : ((maximalIdeal ℤ_[p]) ^ k • ⊤ : Submodule ℤ_[p] ℤ_[p]) = (maximalIdeal ℤ_[p]) ^ k
+
+### ReciprocityTheory.DualLattices.IsAdicCompleteOfBasis:15  ReciprocityTheory.PGsh.Up.FrobeniusGroupField.mem_pow_smul_top_iff
+theorem mem_pow_smul_top_iff {M : Type} [AddCommGroup M] [Module ℤ_[p] M] {ι : Type} [Fintype ι] (b : Module.Basis ι ℤ_[p] M) (k : ℕ) (x : M) : x ∈ ((maximalIdeal ℤ_[p]) ^ k • ⊤ : Submodule ℤ_[p] M) ↔ ∀ i, b.repr x i ∈ (maximalIdeal ℤ_[p]) ^ k
+
+### ReciprocityTheory.DualLattices.IsAdicCompleteOfBasis:31  ReciprocityTheory.PGsh.Up.FrobeniusGroupField.isPrecomplete_of_basis
+theorem isPrecomplete_of_basis {M : Type} [AddCommGroup M] [Module ℤ_[p] M] {ι : Type} [Fintype ι] (b : Module.Basis ι ℤ_[p] M) : IsPrecomplete (maximalIdeal ℤ_[p]) M
+
+### ReciprocityTheory.DualLattices.IsAdicCompleteOfBasis:57  ReciprocityTheory.PGsh.Up.FrobeniusGroupField.span_p_eq
+theorem span_p_eq (S : Type) [CommRing S] [Algebra ℤ_[p] S] : (maximalIdeal ℤ_[p]).map (algebraMap ℤ_[p] S) = Ideal.span {(p : S)}
+
+### ReciprocityTheory.DualLattices.IsAdicCompleteOfBasis:61  ReciprocityTheory.PGsh.Up.FrobeniusGroupField.isAdicComplete_of_basis
+theorem isAdicComplete_of_basis (S : Type) [CommRing S] [Algebra ℤ_[p] S] {ι : Type} [Fintype ι] (b : Module.Basis ι ℤ_[p] S) : IsAdicComplete (Ideal.span {(p : S)}) S
+
+### ReciprocityTheory.DualLattices.IsAdicCompleteOfBasis:70  ReciprocityTheory.PGsh.Up.FrobeniusGroupField.hensel
+theorem hensel (f : ℤ_[p][X]) (hf : f.Monic) {m : ℕ} (hm0 : 0 < m) (hmp : ¬ p ∣ m) (Q0 : ℤ_[p][X]) (h0 : ∃ K : ℤ_[p][X], AdjoinRoot.mk f (Q0 ^ m - 1) = (p : AdjoinRoot f) * AdjoinRoot.mk f K) : ∃ Q K : ℤ_[p][X], f ∣ Q ^ m - 1 ∧ AdjoinRoot.mk f (Q - Q0) = (p : AdjoinRoot f) * AdjoinRoot.mk f K
+
+### ReciprocityTheory.DualLattices.IsAdicCompleteOfBasis:118  ReciprocityTheory.PGsh.Up.FrobeniusGroupField.finite_quot
+theorem finite_quot (f : ℤ_[p][X]) (hf : f.Monic) : Finite (AdjoinRoot f ⧸ Ideal.span {(p : AdjoinRoot f)})
+
+### ReciprocityTheory.DualLattices.IsAdicCompleteOfBasis:144  ReciprocityTheory.PGsh.Up.FrobeniusGroupField.exists_pow_idem
+theorem exists_pow_idem {S : Type} [Monoid S] [Finite S] (x : S) : ∃ M : ℕ, 0 < M ∧ x ^ (2 * M) = x ^ M
+
+### ReciprocityTheory.DualLattices.IsUnitDetOfSpanEq:11  ReciprocityTheory.PGsh.L2.det_map_algebraMap
+theorem det_map_algebraMap {X : Type} [Fintype X] [DecidableEq X] (M : Matrix X X R) : (M.map (algebraMap R C)).det = algebraMap R C M.det
+
+### ReciprocityTheory.DualLattices.IsUnitDetOfSpanEq:16  ReciprocityTheory.PGsh.L2.eq_one_of_le_one_of_mul_eq_one
+theorem eq_one_of_le_one_of_mul_eq_one {a b : NNReal} (ha : a ≤ 1) (hb : b ≤ 1) (h : a * b = 1) : a = 1
+
+### ReciprocityTheory.DualLattices.IsUnitDetOfSpanEq:37  ReciprocityTheory.PGsh.L2.valuation_det_eq_of_span_eq_alt
+theorem valuation_det_eq_of_span_eq_alt (hv : v.Integers R) {X : Type} [Fintype X] [DecidableEq X] {P Q : Matrix X X C} (hP : IsUnit P.det) (h : Submodule.span R (Set.range fun j x => P x j) = Submodule.span R (Set.range fun j x => Q x j)) : v Q.det = v P.det
+
+### ReciprocityTheory.DualLattices.IsUnitDetOfSpanEq:59  ReciprocityTheory.PGsh.L2.exists_matrix_span_eq
+theorem exists_matrix_span_eq (hv : v.Integers R) {X : Type} [Fintype X] [DecidableEq X] (M : Submodule R (X → C)) (hfg : M.FG) (hsp : Submodule.span C (M : Set (X → C)) = ⊤) : ∃ β : Matrix X X C, IsUnit β.det ∧ M = Submodule.span R (Set.range fun j x => β x j)
+
+### ReciprocityTheory.DualLattices.IsUnitDetOfSpanEq:152  ReciprocityTheory.PGsh.L2.inv_mem_of_valuation_eq_one
+theorem inv_mem_of_valuation_eq_one (hv : v.Integers R) {X : Type} [Fintype X] [DecidableEq X] (A : Submodule R (X → C)) (P : Matrix X X C) (hP : IsUnit P.det) (hA : A = Submodule.span R (Set.range fun j x => P x j)) (one : (1 : X → C) ∈ A) (mul : ∀ f g, f ∈ A → g ∈ A → f * g ∈ A) (u : X → C) (hu : u ∈ A) (hunit : ∀ x, v (u x) = 1) : u⁻¹ ∈ A
+
+### ReciprocityTheory.DualLattices.IsUnitDetOfSpanEq:200  ReciprocityTheory.PGsh.L2.isUnit_det_of_span_eq
+theorem isUnit_det_of_span_eq (hv : v.Integers R) {X : Type} [Fintype X] [DecidableEq X] {P Q : Matrix X X C} (hP : IsUnit P.det) (h : Submodule.span R (Set.range fun j x => P x j) = Submodule.span R (Set.range fun j x => Q x j)) : IsUnit Q.det
+
+### ReciprocityTheory.DualLattices.IsUnitOfNotMem:39  ReciprocityTheory.PGsh.Up.FrobeniusGroupField.isDomain
+theorem isDomain (hv : v.Integers R) : IsDomain R
+
+### ReciprocityTheory.DualLattices.ProdEraseUpdate:51  ReciprocityTheory.PGsh.Up.sum_erase_update
+theorem sum_erase_update (α : ι → ZMod p) (l : ι) (a : ZMod p) : ∑ j ∈ univ.erase l, (Function.update α l a j).val = ∑ j ∈ univ.erase l, (α j).val
+
+### ReciprocityTheory.DualLattices.RankMapLeRank:11  ReciprocityTheory.PGsh.Up.RankA.col_mem_range
+lemma col_mem_range {m n : Type} [Fintype n] [DecidableEq n] (A : Matrix m n S) (y : n) : (fun x => A x y) ∈ LinearMap.range A.mulVecLin
+
+### ReciprocityTheory.DualLattices.RankMapLeRank:15  ReciprocityTheory.PGsh.Up.RankA.factor_of_basis
+lemma factor_of_basis {m n ι : Type} [Fintype ι] (A : Matrix m n S) (M : Submodule S (m → S)) (b : Module.Basis ι S M) (hA : ∀ y, (fun x => A x y) ∈ M) : A = (Matrix.of fun x l => (b l : m → S) x) * Matrix.of fun l y => b.repr ⟨fun x => A x y, hA y⟩ l
+
+### ReciprocityTheory.DualLattices.RankMapLeRank:28  ReciprocityTheory.PGsh.Up.RankA.rank_map_le
+lemma rank_map_le [StrongRankCondition S] {K : Type} [Field K] (f : S →+* K) {m n : Type} [Fintype m] [Fintype n] [DecidableEq n] (A : Matrix m n S) [Module.Free S (LinearMap.range A.mulVecLin)] [Module.Finite S (LinearMap.range A.mulVecLin)] : (A.map f).rank ≤ Module.finrank S (LinearMap.range A.mulVecLin)
+
+### ReciprocityTheory.DualLattices.RankMapLeRank:40  ReciprocityTheory.PGsh.Up.RankA.sum_finrank
+lemma sum_finrank {ι m : Type} [Fintype ι] [DecidableEq ι] [Fintype m] [DecidableEq m] [StrongRankCondition S] (e : m → Matrix ι ι S) (horth : ∀ i j, e i * e j = if i = j then e i else 0) (hsum : ∑ i, e i = 1) [∀ i, Module.Free S (LinearMap.range (e i).mulVecLin)] [∀ i, Module.Finite S (LinearMap.range (e i).mulVecLin)] : ∑ i, Module.finrank S (LinearMap.range (e i).mulVecLin) = Fintype.card ι
+
+### ReciprocityTheory.DualLattices.RankMapLeRank:71  ReciprocityTheory.PGsh.Up.RankA.free_range_idem
+lemma free_range_idem [IsLocalRing S] {ι : Type} [Fintype ι] [DecidableEq ι] (e : Matrix ι ι S) (he : e * e = e) : Module.Free S (LinearMap.range e.mulVecLin) ∧ Module.Finite S (LinearMap.range e.mulVecLin)
+
+### ReciprocityTheory.DualLattices.RidConvolutionDerivation:83  ReciprocityTheory.PGsh.map_aeval_of_leibniz
+lemma map_aeval_of_leibniz {d : ℕ} (D : A →ₗ[R] A) (hD : ∀ f g, D (f * g) = f * D g + g * D f) (x : Fin d → A) (P : MvPolynomial (Fin d) R) : D (aeval x P) = ∑ j, aeval x (pderiv j P) * D (x j)
+
+### ReciprocityTheory.DualLattices.RidConvolutionDerivation:181  ReciprocityTheory.PGsh.mem_span_pow_of_coeff
+lemma mem_span_pow_of_coeff {P : MvPolynomial (Fin d) R} (h : ∀ β : Fin d →₀ ℕ, (∀ j, β j < p) → coeff β P = 0) : P ∈ Ideal.span (Set.range fun j : Fin d => (X j : MvPolynomial (Fin d) R) ^ p)
+
+### ReciprocityTheory.DualLattices.RidConvolutionDerivation:203  ReciprocityTheory.PGsh.aeval_eq_zero_of_mem_span
+lemma aeval_eq_zero_of_mem_span (x : Fin d → A) (hxp : ∀ j, x j ^ p = 0) {P : MvPolynomial (Fin d) R} (hP : P ∈ Ideal.span (Set.range fun j : Fin d => (X j : MvPolynomial (Fin d) R) ^ p)) : aeval x P = 0
+
+### ReciprocityTheory.DualLattices.RidConvolutionDerivation:214  ReciprocityTheory.PGsh.coeff_eq_zero_of_stable
+theorem coeff_eq_zero_of_stable (ε : A →ₐ[R] R) (x : Fin d → A) (hx : ∀ i, ε (x i) = 0) (D : Fin d → A →ₗ[R] A) (hD : ∀ i f g, D i (f * g) = f * D i g + g * D i f) (hDx : ∀ i j, ε (D i (x j)) = if i = j then 1 else 0) (hsurj : Function.Surjective (aeval (R := R) x)) (hp0 : (p : R) = 0) (hunit : ∀ n, 0 < n → n < p → IsUnit (n : R)) (K : Set A) (hK : ∀ a ∈ K, ε a = 0) (hKD : ∀ i, ∀ a ∈ K, D i a ∈ K) (P : MvPolynomial (Fin d) R) (hP : aeval x P ∈ K) : ∀ β : Fin d →₀ ℕ, (∀ j, β j < p) → coeff β P = 0
+
+### ReciprocityTheory.DualLattices.VEqZeroOfPowEqOne:19  ReciprocityTheory.PGsh.v_eq_zero_of_pow_eq_one
+theorem v_eq_zero_of_pow_eq_one {v : AddValuation C (WithTop ℝ)} {z : C} {N : ℕ} (hN : N ≠ 0) (hz : z ^ N = 1) : v z = 0
+
+### ReciprocityTheory.DualLattices.VIntCastLtOneOfDvd:12  ReciprocityTheory.PGsh.Up.U3.v_natCast_le_one
+theorem v_natCast_le_one (hv : v.Integers R) (n : ℕ) : v (n : C) ≤ 1
+
+### ReciprocityTheory.DualLattices.VIntCastLtOneOfDvd:16  ReciprocityTheory.PGsh.Up.U3.v_intCast_le_one
+theorem v_intCast_le_one (hv : v.Integers R) (n : ℤ) : v (n : C) ≤ 1
+
+### ReciprocityTheory.DualLattices.VIntCastLtOneOfDvd:20  ReciprocityTheory.PGsh.Up.U3.v_intCast_lt_one_of_dvd
+theorem v_intCast_lt_one_of_dvd (hv : v.Integers R) (hpv : v (p : C) < 1) {n : ℤ} (h : (p : ℤ) ∣ n) : v (n : C) < 1
+
+### ReciprocityTheory.DualLattices.VIntCastLtOneOfDvd:29  ReciprocityTheory.PGsh.Up.U3.v_intCast_eq_one
+theorem v_intCast_eq_one (hv : v.Integers R) (hpv : v (p : C) < 1) {n : ℤ} (h : ¬ (p : ℤ) ∣ n) : v (n : C) = 1
+
+### ReciprocityTheory.DualLattices.VIntCastLtOneOfDvd:54  ReciprocityTheory.PGsh.Up.U3.v_le_one_of_pow_eq
+theorem v_le_one_of_pow_eq {r : C} (hr : r ^ p = r) : v r ≤ 1
+
+### ReciprocityTheory.DualLattices.VIntCastLtOneOfDvd:62  ReciprocityTheory.PGsh.Up.U3.v_pow_sub_le
+theorem v_pow_sub_le {r s : C} (hr : v r ≤ 1) (hs : v s ≤ 1) (i : ℕ) : v (r ^ i - s ^ i) ≤ v (r - s)
+
+### ReciprocityTheory.DualLattices.VIntCastLtOneOfDvd:73  ReciprocityTheory.PGsh.Up.U3.teich_unique
+theorem teich_unique (hv : v.Integers R) (hpv : v (p : C) < 1) {r s : C} (hr : r ^ p = r) (hs : s ^ p = s) (h : v (r - s) < 1) : r = s
+
+### ReciprocityTheory.DualLattices.VIntCastLtOneOfDvd:112  ReciprocityTheory.PGsh.Up.U3.exists_teich
+theorem exists_teich [IsAlgClosed C] (hv : v.Integers R) (hpv : v (p : C) < 1) (n : ℕ) : ∃ r : C, r ^ p = r ∧ v (r - n) < 1
+
+### ReciprocityTheory.DualLattices.VIntCastLtOneOfDvd:156  ReciprocityTheory.PGsh.Up.U3.exists_teichChar
+theorem exists_teichChar [IsAlgClosed C] (hv : v.Integers R) (hpv : v (p : C) < 1) : ∃ ω : ZMod p → C, (∀ a, ω a ^ p = ω a) ∧ (∀ a, v (ω a - (a.val : C)) < 1) ∧ ω 0 = 0 ∧ ω 1 = 1 ∧ (∀ a b, ω (a * b) = ω a * ω b) ∧ (∀ a b, a ≠ b → v (ω a - ω b) = 1)
+
+### ReciprocityTheory.DualLattices.VIntCastLtOneOfDvd:212  ReciprocityTheory.PGsh.Up.U3.exists_primRoot
+theorem exists_primRoot [IsAlgClosed C] [CharZero C] : ∃ ζ : C, IsPrimitiveRoot ζ p
+
+### ReciprocityTheory.DualLattices.VIntCastLtOneOfDvd:221  ReciprocityTheory.PGsh.Up.U3.val_sub_one_le
+theorem val_sub_one_le {α β : C} (hα : IsPrimitiveRoot α p) (hβ : IsPrimitiveRoot β p) : v (α - 1) ≤ v (β - 1)
+
+### ReciprocityTheory.DualLattices.VIntCastLtOneOfDvd:230  ReciprocityTheory.PGsh.Up.U3.val_prim_root
+theorem val_prim_root {z : C} (hz : IsPrimitiveRoot z p) : v (z - 1) ^ (p - 1) = v (p : C)
+
+### ReciprocityTheory.GaloisValuations.GlobalA:13  ReciprocityTheory.Gal.isOpen_setOf_apply
+theorem isOpen_setOf_apply (x : Ω) (P : Ω → Prop) : IsOpen {τ : Ω ≃ₐ[F] Ω | P (τ x)}
+
+### ReciprocityTheory.GaloisValuations.GlobalA:39  ReciprocityTheory.Gal.isClosed_setOf_apply
+theorem isClosed_setOf_apply (x : Ω) (P : Ω → Prop) : IsClosed {τ : Ω ≃ₐ[F] Ω | P (τ x)}
+
+### ReciprocityTheory.GaloisValuations.GlobalA:49  ReciprocityTheory.Gal.eq_one_of_pow_eq_one
+theorem eq_one_of_pow_eq_one (A : ValuationSubring Ω) {N : ℕ} (hN : ¬ A.valuation (N : Ω) < 1) {ξ : Ω} (hξ : ξ ^ N = 1) (h : A.valuation (ξ - 1) < 1) : ξ = 1
+
+### ReciprocityTheory.GaloisValuations.GlobalA:73  ReciprocityTheory.Gal.valuation_eq_one_of_pow_eq_one
+theorem valuation_eq_one_of_pow_eq_one (A : ValuationSubring Ω) {N : ℕ} (hN0 : N ≠ 0) {b : Ω} (hb : b ^ N = 1) : A.valuation b = 1
+
+### ReciprocityTheory.GaloisValuations.GlobalA:91  ReciprocityTheory.Gal.eq_of_pow_eq_one
+theorem eq_of_pow_eq_one (A : ValuationSubring Ω) {N : ℕ} (hN : ¬ A.valuation (N : Ω) < 1) {a b : Ω} (ha : a ^ N = 1) (hb : b ^ N = 1) (h : A.valuation (a - b) < 1) : a = b
+
+### ReciprocityTheory.GaloisValuations.GlobalA:114  ReciprocityTheory.Gal.exists_valuationSubring_over
+theorem exists_valuationSubring_over (v : HeightOneSpectrum (𝓞 F)) : ∃ A : ValuationSubring Ω, ∀ x : 𝓞 F, A.valuation (algebraMap F Ω (x : F)) < 1 ↔ x ∈ v.asIdeal
+
+### ReciprocityTheory.GeometryOfNumbers.AsymptoticSequences.SimplexSumSt:9  ReciprocityTheory.GeometryOfNumbersTheory.SimplexSum.pow_succ_lower
+theorem pow_succ_lower (x : ℝ) (hx : 0 ≤ x) (k : ℕ) : x ^ (k + 1) + (k + 1) * x ^ k ≤ (x + 1) ^ (k + 1)
+
+### ReciprocityTheory.GeometryOfNumbers.AsymptoticSequences.SimplexSumSt:22  ReciprocityTheory.GeometryOfNumbersTheory.SimplexSum.pow_succ_upper
+theorem pow_succ_upper (x : ℝ) (hx : 0 ≤ x) (k : ℕ) : (x + 1) ^ (k + 1) ≤ x ^ (k + 1) + (k + 1) * (x + 1) ^ k
+
+### ReciprocityTheory.GeometryOfNumbers.AsymptoticSequences.SimplexSumSt:33  ReciprocityTheory.GeometryOfNumbersTheory.SimplexSum.sum_bounds
+theorem sum_bounds (k n : ℕ) : (n : ℝ) ^ (k + 1) ≤ (k + 1) * ∑ a ∈ range (n + 1), (a : ℝ) ^ k ∧ (k + 1) * ∑ a ∈ range (n + 1), (a : ℝ) ^ k ≤ (n : ℝ) ^ (k + 1) + (k + 1) * (n : ℝ) ^ k
+
+### ReciprocityTheory.GeometryOfNumbers.LatticeCovolumes.CountZSt:11  ReciprocityTheory.GeometryOfNumbersTheory.finite_inter_lattice
+theorem finite_inter_lattice (L : Submodule ℤ E) [DiscreteTopology L] [IsZLattice ℝ L] (S : Set E) (hb : Bornology.IsBounded S) : (S ∩ (L : Set E)).Finite
+
+### ReciprocityTheory.GeometryOfNumbers.LatticeCovolumes.CountZSt:18  ReciprocityTheory.GeometryOfNumbersTheory.fiber_count_le_ncard_inter_lattice
+theorem fiber_count_le_ncard_inter_lattice (L : Submodule ℤ E) [DiscreteTopology L] [IsZLattice ℝ L] (S : Set E) (hconv : Convex ℝ S) (hsymm : ∀ x ∈ S, -x ∈ S) (hb : Bornology.IsBounded S) (x : E) : ∑' g : L, ((g +ᵥ ((2⁻¹ : ℝ) • S)).indicator 1 x : ENNReal) ≤ ((S ∩ (L : Set E)).ncard : ENNReal)
+
+### ReciprocityTheory.GeometryOfNumbers.LatticeCovolumes.CountZSt:63  ReciprocityTheory.GeometryOfNumbersTheory.measure_div_le_ncard_inter_lattice
+theorem measure_div_le_ncard_inter_lattice (μ : Measure E) [μ.IsAddHaarMeasure] (L : Submodule ℤ E) [DiscreteTopology L] [IsZLattice ℝ L] (S : Set E) (hconv : Convex ℝ S) (hsymm : ∀ x ∈ S, -x ∈ S) (hb : Bornology.IsBounded S) (hm : MeasurableSet S) : (μ S).toReal / (2 ^ finrank ℝ E * ZLattice.covolume L μ) ≤ ((S ∩ (L : Set E)).ncard : ℝ)
+
+### ReciprocityTheory.GeometryOfNumbers.LatticeCovolumes.EllipsoidStA:14  ReciprocityTheory.GeometryOfNumbersTheory.SquareNormBall.norm_sq_convex_comb
+lemma norm_sq_convex_comb {a b : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b) (hab : a + b = 1) (z w : E) : ‖a • z + b • w‖ ^ 2 ≤ a * ‖z‖ ^ 2 + b * ‖w‖ ^ 2
+
+### ReciprocityTheory.GeometryOfNumbers.LatticeCovolumes.GramSt:12  ReciprocityTheory.GeometryOfNumbersTheory.gramSt_det_one_add_eq
+theorem gramSt_det_one_add_eq {Q : Matrix ι ι ℂ} (hQ : Q.PosSemidef) : (1 + Q).det = ((∏ i, (1 + hQ.1.eigenvalues i) : ℝ) : ℂ)
+
+### ReciprocityTheory.GeometryOfNumbers.LatticeCovolumes.GramSt:30  ReciprocityTheory.GeometryOfNumbersTheory.gramSt_det_re_le_of_sub
+theorem gramSt_det_re_le_of_sub {G H : Matrix ι ι ℂ} (hG : G.PosDef) (hGH : (H - G).PosSemidef) : G.det.re ≤ H.det.re
+
+### ReciprocityTheory.GeometryOfNumbers.LatticeCovolumes.GramSt:68  ReciprocityTheory.GeometryOfNumbersTheory.gramSt_fischer
+theorem gramSt_fischer {A : Matrix m m ℂ} {B : Matrix m k ℂ} {C : Matrix k m ℂ} {D : Matrix k k ℂ} (h : (fromBlocks A B C D).PosDef) : (fromBlocks A B C D).det.re ≤ A.det.re * D.det.re
+
+### ReciprocityTheory.GeometryOfNumbers.LatticeCovolumes.GramSt:104  ReciprocityTheory.GeometryOfNumbersTheory.gramSt_fin_blocks
+theorem gramSt_fin_blocks {a b : ℕ} {M : Matrix (Fin (a + b)) (Fin (a + b)) ℂ} (hM : M.PosDef) : M.det.re ≤ (M.submatrix (Fin.castAdd b) (Fin.castAdd b)).det.re * (M.submatrix (Fin.natAdd a) (Fin.natAdd a)).det.re
+
+### ReciprocityTheory.GeometryOfNumbers.LatticeCovolumes.GramSt:119  ReciprocityTheory.GeometryOfNumbersTheory.gramSt_hadamard
+theorem gramSt_hadamard {k : ℕ} {D : Matrix (Fin k) (Fin k) ℂ} (hD : D.PosDef) : D.det.re ≤ ∏ j : Fin k, (D j j).re
+
+### ReciprocityTheory.GeometryOfNumbers.LatticeCovolumes.GramSt:134  ReciprocityTheory.GeometryOfNumbersTheory.posDef_det_re_pos
+theorem posDef_det_re_pos {n : ℕ} {G : Matrix (Fin n) (Fin n) ℂ} (hG : G.PosDef) : 0 < G.det.re ∧ G.det.im = 0
+
+### ReciprocityTheory.GeometryOfNumbers.LatticeCovolumes.GramSt:139  ReciprocityTheory.GeometryOfNumbersTheory.det_re_le_of_sub_posSemidef
+theorem det_re_le_of_sub_posSemidef {n : ℕ} {G H : Matrix (Fin n) (Fin n) ℂ} (hG : G.PosDef) (hGH : (H - G).PosSemidef) : G.det.re ≤ H.det.re
+
+### ReciprocityTheory.GeometryOfNumbers.LatticeCovolumes.GramSt:143  ReciprocityTheory.GeometryOfNumbersTheory.det_re_le_mul_prod_diag
+theorem det_re_le_mul_prod_diag {a b : ℕ} {M : Matrix (Fin (a + b)) (Fin (a + b)) ℂ} (hM : M.PosDef) : M.det.re ≤ (M.submatrix (Fin.castAdd b) (Fin.castAdd b)).det.re * ∏ j : Fin b, (M (Fin.natAdd a j) (Fin.natAdd a j)).re
+
+### ReciprocityTheory.GeometryOfNumbers.LatticeCovolumes.HadZStA:41  ReciprocityTheory.GeometryOfNumbersTheory.LinearIndependentExtension.exists_append_li
+theorem exists_append_li {a r : ℕ} (u0 : Fin a → (Fin r → ℚ)) (hu0 : LinearIndependent ℚ u0) (w : Fin r → (Fin r → ℚ)) (hw : LinearIndependent ℚ w) : ∃ m, ∃ f : Fin m → Fin r, a + m = r ∧ LinearIndependent ℚ (Fin.append u0 (w ∘ f))
+
+### ReciprocityTheory.GeometryOfNumbers.MatrixArithmetic.WeakMatSt:5  ReciprocityTheory.GeometryOfNumbersTheory.wma_sum_log_le
+theorem wma_sum_log_le {ι : Type} [Fintype ι] [Nonempty ι] (t : ι → ℝ) (ht : ∀ σ, 0 ≤ t σ) : ∑ σ, Real.log (1 + t σ) ≤ Fintype.card ι * Real.log (1 + (∑ σ, t σ) / Fintype.card ι)
+
+### ReciprocityTheory.GeometryOfNumbers.PluriharmonicAnalysis.DiscSt:11  ReciprocityTheory.GeometryOfNumbersTheory.pgds_cont_polar_symm
+theorem pgds_cont_polar_symm : Continuous (fun p : ℝ × ℝ => Complex.polarCoord.symm p)
+
+### ReciprocityTheory.GeometryOfNumbers.PluriharmonicAnalysis.DiscSt:17  ReciprocityTheory.GeometryOfNumbersTheory.pgds_integral_ball_polar
+theorem pgds_integral_ball_polar {r : ℝ} (F : ℂ → ℝ) (hF : ContinuousOn F (Metric.closedBall 0 r)) : IntegrableOn (fun p : ℝ × ℝ => p.1 * F (Complex.polarCoord.symm p)) (Ioo 0 r ×ˢ Ioo (-Real.pi) Real.pi) ∧ ∫ z in Metric.ball (0 : ℂ) r, F z = ∫ s in Ioo 0 r, ∫ θ in Ioo (-Real.pi) Real.pi, s * F (Complex.polarCoord.symm (s, θ))
+
+### ReciprocityTheory.GeometryOfNumbers.PluriharmonicAnalysis.DiscSt:116  ReciprocityTheory.GeometryOfNumbersTheory.pgds_circle
+theorem pgds_circle {R s : ℝ} (hs : 0 < s) (hsR : s < R) (g : ℂ → ℂ) (hg : DifferentiableOn ℂ g (Metric.ball 0 R)) : 2 * Real.pi * ‖g 0‖ ^ 2 ≤ ∫ θ in Ioo (-Real.pi) Real.pi, ‖g (Complex.polarCoord.symm (s, θ))‖ ^ 2
+
+### ReciprocityTheory.GeometryOfNumbers.PluriharmonicAnalysis.DiscSt:145  ReciprocityTheory.GeometryOfNumbersTheory.disc_mean_le
+theorem disc_mean_le {R r : ℝ} (hr : 0 < r) (hrR : r < R) (g : ℂ → ℂ) (hg : DifferentiableOn ℂ g (Metric.ball 0 R)) (w : ℝ → ℝ) (hwc : Continuous w) (hw : ∀ s, 0 ≤ w s) : ‖g 0‖ ^ 2 * ∫ z in Metric.ball (0 : ℂ) r, w ‖z‖ ≤ ∫ z in Metric.ball (0 : ℂ) r, ‖g z‖ ^ 2 * w ‖z‖
+
+### ReciprocityTheory.GeometryOfNumbers.PluriharmonicAnalysis.LogDetSt:8  ReciprocityTheory.GeometryOfNumbersTheory.trace_adjugate_mul_eq_sum_perm
+theorem trace_adjugate_mul_eq_sum_perm {r : ℕ} (A B : Matrix (Fin r) (Fin r) ℂ) : (A.adjugate * B).trace = ∑ σ : Equiv.Perm (Fin r), (Equiv.Perm.sign σ : ℂ) * ∑ i, (∏ j ∈ Finset.univ.erase i, A (σ j) j) • B (σ i) i
+
+### ReciprocityTheory.GeometryOfNumbers.PluriharmonicAnalysis.LogDetSt:31  ReciprocityTheory.GeometryOfNumbersTheory.hasDerivAt_det
+theorem hasDerivAt_det {r : ℕ} (G : ℝ → Matrix (Fin r) (Fin r) ℂ) (G' : Matrix (Fin r) (Fin r) ℂ) (t : ℝ) (hG : ∀ i j, HasDerivAt (fun s => G s i j) (G' i j) t) : HasDerivAt (fun s => (G s).det) ((G t).adjugate * G').trace t
+
+### ReciprocityTheory.GeometryOfNumbers.PluriharmonicAnalysis.LogDetSt:57  ReciprocityTheory.GeometryOfNumbersTheory.hasDerivAt_log_det
+theorem hasDerivAt_log_det {r : ℕ} (G : ℝ → Matrix (Fin r) (Fin r) ℂ) (G' : Matrix (Fin r) (Fin r) ℂ) (t : ℝ) (hG : ∀ i j, HasDerivAt (fun s => G s i j) (G' i j) t) (hpos : (G t).PosDef) : HasDerivAt (fun s => Real.log (G s).det.re) ((G t)⁻¹ * G').trace.re t
+
+### ReciprocityTheory.GeometryOfNumbers.PluriharmonicAnalysis.LogDetSt:140  ReciprocityTheory.GeometryOfNumbersTheory.integral_bernstein
+theorem integral_bernstein (D i : ℕ) (hi : i ≤ D) : ∫ t in (0 : ℝ)..1, (D.choose i : ℝ) * t ^ i * (1 - t) ^ (D - i) = 1 / (D + 1 : ℝ)
+
+### ReciprocityTheory.GeometryOfNumbers.PluriharmonicAnalysis.MorseGenStA:7  ReciprocityTheory.GeometryOfNumbersTheory.morseGen_ident
+theorem morseGen_ident (fz qz : ℂ) (φz φ0 νz ν0 : ℝ) (n : ℕ) : ‖fz * cexp (-(n : ℂ) * qz / 2)‖ ^ 2 * Real.exp (-((n : ℝ) * (φz - φ0 - qz.re))) * (νz / ν0) = ‖fz‖ ^ 2 * Real.exp (-((n : ℝ) * φz)) * νz * (Real.exp ((n : ℝ) * φ0) / ν0)
+
+### ReciprocityTheory.GeometryOfNumbers.PluriharmonicAnalysis.MorseGenStA:23  ReciprocityTheory.GeometryOfNumbersTheory.morseGen_sq_le_sum
+theorem morseGen_sq_le_sum {D : ℕ} (z : Fin D → ℂ) : ‖z‖ ^ 2 ≤ ∑ j, ‖z j‖ ^ 2
+
+### ReciprocityTheory.GeometryOfNumbers.PluriharmonicAnalysis.MorseGenStA:33  ReciprocityTheory.GeometryOfNumbersTheory.morseGen_levi_le
+theorem morseGen_levi_le {D : ℕ} (B : (Fin D → ℂ) →L[ℝ] (Fin D → ℂ) →L[ℝ] ℝ) (z : Fin D → ℂ) : (B z z + B (I • z) (I • z)) / 4 ≤ ‖B‖ / 2 * ‖z‖ ^ 2
+
+### ReciprocityTheory.GeometryOfNumbers.PluriharmonicAnalysis.TaylorLeviSt:10  ReciprocityTheory.GeometryOfNumbersTheory.pgtl_smul_decomp
+lemma pgtl_smul_decomp (c : ℂ) (z : Fin D → ℂ) : c • z = c.re • z + c.im • (I • z)
+
+### ReciprocityTheory.GeometryOfNumbers.PluriharmonicAnalysis.TaylorLeviSt:16  ReciprocityTheory.GeometryOfNumbersTheory.pgtl_clin
+lemma pgtl_clin {F : Type*} [AddCommGroup F] [Module ℂ F] (f : (Fin D → ℂ) → F) (hadd : ∀ x y, f (x + y) = f x + f y) (hr : ∀ (r : ℝ) x, f (r • x) = (r : ℂ) • f x) (hI : ∀ x, f (I • x) = I • f x) (c : ℂ) (x : Fin D → ℂ) : f (c • x) = c • f x
+
+### ReciprocityTheory.GeometryOfNumbers.PluriharmonicAnalysis.TaylorLeviSt:99  ReciprocityTheory.GeometryOfNumbersTheory.pgtl_taylor
+lemma pgtl_taylor {D : ℕ} {ρ₀ K₃ : ℝ} (φ : (Fin D → ℂ) → ℝ) (hφ : ContDiffOn ℝ 3 φ (Metric.ball 0 ρ₀)) (hK₃ : ∀ z ∈ Metric.ball (0 : Fin D → ℂ) ρ₀, ‖iteratedFDeriv ℝ 3 φ z‖ ≤ K₃) (z : Fin D → ℂ) (hz : z ∈ Metric.ball (0 : Fin D → ℂ) ρ₀) : |φ z - φ 0 - fderiv ℝ φ 0 z - fderiv ℝ (fderiv ℝ φ) 0 z z / 2| ≤ K₃ * ‖z‖ ^ 3
+
+### ReciprocityTheory.GeometryOfNumbers.PluriharmonicAnalysis.TaylorLeviSt:177  ReciprocityTheory.GeometryOfNumbersTheory.exists_pluriharmonic_part
+theorem exists_pluriharmonic_part {D : ℕ} {ρ₀ K₃ : ℝ} (φ : (Fin D → ℂ) → ℝ) (hφ : ContDiffOn ℝ 3 φ (Metric.ball 0 ρ₀)) (hK₃ : ∀ z ∈ Metric.ball (0 : Fin D → ℂ) ρ₀, ‖iteratedFDeriv ℝ 3 φ z‖ ≤ K₃) : ∃ q : (Fin D → ℂ) → ℂ, Differentiable ℂ q ∧ q 0 = 0 ∧ ∀ z ∈ Metric.ball (0 : Fin D → ℂ) ρ₀, |φ z - φ 0 - (q z).re - (fderiv ℝ (fderiv ℝ φ) 0 z z + fderiv ℝ (fderiv ℝ φ) 0 (I • z) (I • z)) / 4| ≤ K₃ * ‖z‖ ^ 3
+
+### ReciprocityTheory.GroupCohomology.MemZpowersQuot:12  ReciprocityTheory.Coh.ProcyclicCohomology.comm_of_dense
+theorem comm_of_dense [T2Space G] {s : G} (hs : Dense (Subgroup.zpowers s : Set G)) (a b : G) : a * b = b * a
+
+### ReciprocityTheory.GroupCohomology.MemZpowersQuot:27  ReciprocityTheory.Coh.ProcyclicCohomology.normal_of_comm
+theorem normal_of_comm (hc : ∀ a b : G, a * b = b * a) (W : Subgroup G) : W.Normal
+
+### ReciprocityTheory.GroupCohomology.MemZpowersQuot:30  ReciprocityTheory.Coh.ProcyclicCohomology.finite_quot
+theorem finite_quot [CompactSpace G] (hc : ∀ a b : G, a * b = b * a) {W : Subgroup G} (hW : IsOpen (W : Set G)) : Finite (G ⧸ W)
+
+### ReciprocityTheory.GroupCohomology.MemZpowersQuot:34  ReciprocityTheory.Coh.ProcyclicCohomology.index_pos
+theorem index_pos [CompactSpace G] (hc : ∀ a b : G, a * b = b * a) {W : Subgroup G} (hW : IsOpen (W : Set G)) : 0 < W.index
+
+### ReciprocityTheory.GroupCohomology.MemZpowersQuot:41  ReciprocityTheory.Coh.ProcyclicCohomology.mem_zpowers_quot
+theorem mem_zpowers_quot (hs : Dense (Subgroup.zpowers s : Set G)) {W : Subgroup G} [W.Normal] (hW : IsOpen (W : Set G)) (x : G ⧸ W) : x ∈ Subgroup.zpowers (QuotientGroup.mk' W s)
+
+### ReciprocityTheory.GroupCohomology.MemZpowersQuot:52  ReciprocityTheory.Coh.ProcyclicCohomology.zpow_mem_iff
+theorem zpow_mem_iff [CompactSpace G] (hc : ∀ a b : G, a * b = b * a) (hs : Dense (Subgroup.zpowers s : Set G)) {W : Subgroup G} (hW : IsOpen (W : Set G)) (z : ℤ) : s ^ z ∈ W ↔ (W.index : ℤ) ∣ z
+
+### ReciprocityTheory.GroupCohomology.MemZpowersQuot:63  ReciprocityTheory.Coh.ProcyclicCohomology.exists_pow
+theorem exists_pow [CompactSpace G] (hc : ∀ a b : G, a * b = b * a) (hs : Dense (Subgroup.zpowers s : Set G)) {W : Subgroup G} (hW : IsOpen (W : Set G)) (g : G) : ∃ j : ℕ, g⁻¹ * s ^ j ∈ W
+
+### ReciprocityTheory.GroupCohomology.MemZpowersQuot:89  ReciprocityTheory.Coh.ProcyclicCohomology.per_mul
+theorem per_mul (hper : ∀ j, T (j + n) = T j) (a t : ℕ) : T (a + n * t) = T a
+
+### ReciprocityTheory.GroupCohomology.MemZpowersQuot:94  ReciprocityTheory.Coh.ProcyclicCohomology.per_of_dvd
+theorem per_of_dvd (hper : ∀ j, T (j + n) = T j) (a b : ℕ) (h : (n : ℤ) ∣ (b : ℤ) - a) : T a = T b
+
+### ReciprocityTheory.GroupCohomology.RankLenA:20  ReciprocityTheory.Coh.TorsionRankLength.smul_top_eq_range
+theorem smul_top_eq_range (r : R) : (r • ⊤ : Submodule R M) = LinearMap.range (r • LinearMap.id : M →ₗ[R] M)
+
+### ReciprocityTheory.GroupCohomology.RankLenA:26  ReciprocityTheory.Coh.TorsionRankLength.len_sub_add_quot
+theorem len_sub_add_quot (N : Submodule R M) : Module.length R M = Module.length R N + Module.length R (M ⧸ N)
+
+### ReciprocityTheory.GroupCohomology.RankLenA:54  ReciprocityTheory.Coh.TorsionRankLength.len_quot_pow
+theorem len_quot_pow {t : R} (ht : Irreducible t) (k : ℕ) : Module.length R (R ⧸ Ideal.span {t ^ k}) = k
+
+### ReciprocityTheory.GroupCohomology.RankLenA:121  ReciprocityTheory.Coh.TorsionRankLength.torsion_finLen
+theorem torsion_finLen : IsFiniteLength R (torsion R H)
+
+### ReciprocityTheory.GroupCohomology.RankLenA:131  ReciprocityTheory.Coh.TorsionRankLength.finrank_torsion_eq_zero
+theorem finrank_torsion_eq_zero : Module.finrank R (torsion R H) = 0
+
+### ReciprocityTheory.GroupCohomology.RankLenA:137  ReciprocityTheory.Coh.TorsionRankLength.len_quot_split
+theorem len_quot_split (r : R) : Module.length R (QuotSMulTop r H) = Module.length R (QuotSMulTop r (torsion R H)) + Module.finrank R H * Module.length R (R ⧸ Ideal.span {r})
+
+### ReciprocityTheory.L2DbarEstimates.BasicIdentity.HalfSumNormSubSq:7  ReciprocityTheory.L2DbarEstimates.E.norm_sq_le_split
+theorem norm_sq_le_split (A B : ℂ) (ep : ℝ) (hep : 0 < ep) : ‖A‖ ^ 2 ≤ (1 + ep) * ‖A + B‖ ^ 2 + (1 + 1 / ep) * ‖B‖ ^ 2
+
+### ReciprocityTheory.L2DbarEstimates.BasicIdentity.HalfSumNormSubSq:26  ReciprocityTheory.L2DbarEstimates.E.norm_sum_mul_sq_le
+theorem norm_sum_mul_sq_le {n : ℕ} (a c : Fin n → ℂ) : ‖∑ j, a j * c j‖ ^ 2 ≤ (∑ j, ‖c j‖ ^ 2) * ∑ j, ‖a j‖ ^ 2
+
+### ReciprocityTheory.L2DbarEstimates.BasicIdentity.HalfSumNormSubSq:36  ReciprocityTheory.L2DbarEstimates.E.norm_sum_sq_eq
+theorem norm_sum_sq_eq {n : ℕ} (a : Fin n → ℂ) : ‖∑ j, a j‖ ^ 2 = (∑ j, ∑ k, a j * conj (a k)).re
+
+### ReciprocityTheory.L2DbarEstimates.BasicIdentity.HalfSumNormSubSq:42  ReciprocityTheory.L2DbarEstimates.E.half_sum_norm_sub_sq
+theorem half_sum_norm_sub_sq {n : ℕ} (a : Fin n → Fin n → ℂ) : (∑ j, ∑ k, ‖a j k - a k j‖ ^ 2) / 2 = ∑ j, ∑ k, ‖a k j‖ ^ 2 - (∑ j, ∑ k, a k j * conj (a j k)).re
+
+### ReciprocityTheory.L2DbarEstimates.PlurisubharmonicCharts.UniLatA:8  ReciprocityTheory.L2DbarEstimates.Y.uniLat_det_one_add
+theorem uniLat_det_one_add {ι : Type*} [Fintype ι] [DecidableEq ι] {Q : Matrix ι ι ℝ} (hQ : Q.PosSemidef) : (1 + Q).det = ∏ i, (1 + hQ.1.eigenvalues i)
+
+### ReciprocityTheory.L2DbarEstimates.PlurisubharmonicCharts.UniLatA:25  ReciprocityTheory.L2DbarEstimates.Y.uniLat_det_le_of_sub
+theorem uniLat_det_le_of_sub {ι : Type*} [Fintype ι] [DecidableEq ι] {G H : Matrix ι ι ℝ} (hG : G.PosDef) (hGH : (H - G).PosSemidef) : G.det ≤ H.det
+
+### ReciprocityTheory.L2DbarEstimates.SkodaWeights.Matrix:115  ReciprocityTheory.L2DbarEstimates.normSq_sum_mul_le
+theorem normSq_sum_mul_le {ι : Type*} (s : Finset ι) (a b : ι → ℂ) : Complex.normSq (∑ q ∈ s, a q * b q) ≤ (∑ q ∈ s, Complex.normSq (a q)) * ∑ q ∈ s, Complex.normSq (b q)
+
+### ReciprocityTheory.L2DbarEstimates.SkodaWeights.Matrix:124  ReciprocityTheory.L2DbarEstimates.trace_mul_transpose
+theorem trace_mul_transpose {n : ℕ} (A V : Matrix (Fin p) (Fin n) ℂ) : trace (A * Vᵀ) = ∑ i, ∑ k, A i k * V i k
+
+### ReciprocityTheory.NeutralLocalFields.LocalFieldComparison.HilbertClassFieldA:12  ReciprocityTheory.Neutral.Bridge.HCF.map_mem_nzd
+theorem map_mem_nzd (g : R ≃+* R') (I : (Ideal R)⁰) : (I : Ideal R).map g ∈ (Ideal R')⁰
+
+### ReciprocityTheory.NeutralLocalFields.LocalFieldComparison.HilbertClassFieldA:17  ReciprocityTheory.Neutral.Bridge.HCF.classGroup_mulEquiv_mk0
+theorem classGroup_mulEquiv_mk0 (g : R ≃+* R') (I : (Ideal R)⁰) : ClassGroup.mulEquiv g (ClassGroup.mk0 I) = ClassGroup.mk0 ⟨(I : Ideal R).map g, map_mem_nzd g I⟩
+
+### ReciprocityTheory.NeutralLocalFields.LocalFieldComparison.HilbertClassFieldA:42  ReciprocityTheory.Neutral.Bridge.HCF.classGroup_hom_ext
+theorem classGroup_hom_ext {G : Type*} [Monoid G] (f₁ f₂ : ClassGroup R →* G) (h : ∀ v : HeightOneSpectrum R, f₁ (ClassGroup.mk0 ⟨v.asIdeal, mem_nonZeroDivisors_of_ne_zero v.ne_bot⟩) = f₂ (ClassGroup.mk0 ⟨v.asIdeal, mem_nonZeroDivisors_of_ne_zero v.ne_bot⟩)) : f₁ = f₂
+
+### ReciprocityTheory.NeutralLocalFields.LocalFieldComparison.HilbertClassFieldA:75  ReciprocityTheory.Neutral.Bridge.HCF.mem_inertia_map_iff
+theorem mem_inertia_map_iff (A : ValuationSubring L) (g : L ≃ₐ[K] L) : g ∈ (A.inertiaSubgroup K).map (A.decompositionSubgroup K).subtype ↔ g • A = A ∧ ∀ x ∈ A, g x - x ∈ A.nonunits
+
+### ReciprocityTheory.NeutralLocalFields.LocalFieldComparison.TendstoPrimeIdealZetaSumUniv:16  ReciprocityTheory.Neutral.Bridge.DedekindZetaReal.zetaReal_tendsto_sum_card_div
+theorem zetaReal_tendsto_sum_card_div : ∃ c : ℝ, Tendsto (fun n : ℕ ↦ (∑ k ∈ Finset.Icc 1 n, (Nat.card {I : Ideal (𝓞 K) // Ideal.absNorm I = k} : ℝ)) / n) atTop (𝓝 c)
+
+### ReciprocityTheory.NeutralLocalFields.LocalFieldComparison.TendstoPrimeIdealZetaSumUniv:31  ReciprocityTheory.Neutral.Bridge.DedekindZetaReal.zetaReal_term_eq
+theorem zetaReal_term_eq {s : ℝ} (hs : 0 < s) (n : ℕ) : LSeries.term (fun n ↦ (Nat.card {I : Ideal (𝓞 K) // Ideal.absNorm I = n} : ℂ)) (s : ℂ) n = (((Nat.card {I : Ideal (𝓞 K) // Ideal.absNorm I = n} : ℝ) * (n : ℝ) ^ (-s) : ℝ) : ℂ)
+
+### ReciprocityTheory.NeutralLocalFields.LocalFieldComparison.TendstoPrimeIdealZetaSumUniv:40  ReciprocityTheory.Neutral.Bridge.DedekindZetaReal.summable_zetaReal
+theorem summable_zetaReal {s : ℝ} (hs : 1 < s) : Summable fun n : ℕ => (Nat.card {I : Ideal (𝓞 K) // Ideal.absNorm I = n} : ℝ) * (n : ℝ) ^ (-s)
+
+### ReciprocityTheory.NeutralLocalFields.LocalFieldComparison.TendstoPrimeIdealZetaSumUniv:104  ReciprocityTheory.Neutral.Bridge.DedekindZetaReal.sum_le_prod_geom
+theorem sum_le_prod_geom {s : ℝ} (hs : 0 < s) (T : Finset (Ideal (𝓞 K))) : ∃ P : Finset (HeightOneSpectrum (𝓞 K)), ∃ B : ℕ, ∑ I ∈ T, (Ideal.absNorm I : ℝ) ^ (-s) ≤ ∏ v ∈ P, ∑ k ∈ Finset.range (B + 1), ((Ideal.absNorm v.asIdeal : ℝ) ^ (-s)) ^ k
+
+### ReciprocityTheory.NeutralLocalFields.LocalFieldComparison.TendstoPrimeIdealZetaSumUniv:170  ReciprocityTheory.Neutral.Bridge.summable_absNorm_rpow
+theorem summable_absNorm_rpow {s : ℝ} (hs : 1 < s) : Summable fun 𝔭 : HeightOneSpectrum (𝓞 K) => (Ideal.absNorm 𝔭.asIdeal : ℝ) ^ (-s)
+
+### ReciprocityTheory.NeutralLocalFields.LocalFieldComparison.TendstoPrimeIdealZetaSumUniv:180  ReciprocityTheory.Neutral.Bridge.DedekindZetaReal.two_le_absNorm
+theorem two_le_absNorm (v : HeightOneSpectrum (𝓞 K)) : (2 : ℝ) ≤ Ideal.absNorm v.asIdeal
+
+### ReciprocityTheory.NeutralLocalFields.LocalFieldComparison.TendstoPrimeIdealZetaSumUniv:190  ReciprocityTheory.Neutral.Bridge.DedekindZetaReal.geom_le_exp
+theorem geom_le_exp {x : ℝ} (h0 : 0 ≤ x) (h1 : x ≤ 1 / 2) (B : ℕ) : ∑ k ∈ Finset.range (B + 1), x ^ k ≤ Real.exp (2 * x)
+
+### ReciprocityTheory.NeutralLocalFields.LocalFieldComparison.TendstoPrimeIdealZetaSumUniv:199  ReciprocityTheory.Neutral.Bridge.DedekindZetaReal.sum_le_exp
+theorem sum_le_exp {s : ℝ} (hs : 1 < s) (T : Finset (Ideal (𝓞 K))) : ∑ I ∈ T, (Ideal.absNorm I : ℝ) ^ (-s) ≤ Real.exp (2 * ∑' 𝔭 : HeightOneSpectrum (𝓞 K), (Ideal.absNorm 𝔭.asIdeal : ℝ) ^ (-s))
+
+### ReciprocityTheory.NeutralLocalFields.LocalFieldComparison.TendstoPrimeIdealZetaSumUniv:221  ReciprocityTheory.Neutral.Bridge.DedekindZetaReal.sum_card_eq
+theorem sum_card_eq {s : ℝ} (u : Finset ℕ) : ∑ n ∈ u, (Nat.card {I : Ideal (𝓞 K) // Ideal.absNorm I = n} : ℝ) * (n : ℝ) ^ (-s) = ∑ I ∈ u.biUnion (fun n ↦ (Ideal.finite_setOfPred_absNorm_eq (S := 𝓞 K) n).toFinset), (Ideal.absNorm I : ℝ) ^ (-s)
+
+### ReciprocityTheory.NeutralLocalFields.LocalFieldComparison.TendstoPrimeIdealZetaSumUniv:248  ReciprocityTheory.Neutral.Bridge.tendsto_primeIdealZetaSum_univ
+theorem tendsto_primeIdealZetaSum_univ : Tendsto (fun s : ℝ => NumberField.Set.primeIdealZetaSum (Set.univ : Set (HeightOneSpectrum (𝓞 K))) s) (𝓝[>] 1) atTop
+
+### ReciprocityTheory.NeutralLocalFields.Reciprocity:199  Neutral.B1.valued_algebraMap_eq_one
+theorem valued_algebraMap_eq_one (v : HeightOneSpectrum (𝓞 K)) (y : 𝓞 K) (hy : y ∉ v.asIdeal) : Valued.v (algebraMap K (v.adicCompletion K) (y : K)) = 1
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.AdeleApproximation.AdeleIntA:21  ReciprocityTheory.ChartRestriction.G.Lib.AdeleIntA.int_R
+theorem int_R (v : HeightOneSpectrum R) (r : R) : algebraMap K (v.adicCompletion K) (algebraMap R K r) ∈ v.adicCompletionIntegers K
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.AdeleApproximation.AdeleIntA:29  ReciprocityTheory.ChartRestriction.G.Lib.AdeleIntA.val_R
+theorem val_R (v : HeightOneSpectrum R) (r : R) : Valued.v (algebraMap K (v.adicCompletion K) (algebraMap R K r)) = v.intValuation r
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.AdeleApproximation.AdeleIntA:32  ReciprocityTheory.ChartRestriction.G.Lib.AdeleIntA.exists_near
+theorem exists_near (v : HeightOneSpectrum R) (y : v.adicCompletion K) : ∃ k : K, y - algebraMap K (v.adicCompletion K) k ∈ v.adicCompletionIntegers K
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.AdeleApproximation.AdeleIntA:43  ReciprocityTheory.ChartRestriction.G.Lib.AdeleIntA.exists_den_local
+theorem exists_den_local (v : HeightOneSpectrum R) (y : v.adicCompletion K) : ∃ s : R, s ≠ 0 ∧ algebraMap K (v.adicCompletion K) (algebraMap R K s) * y ∈ v.adicCompletionIntegers K
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.AdeleApproximation.AdeleIntA:92  ReciprocityTheory.ChartRestriction.G.Lib.AdeleIntA.exists_approx_local
+theorem exists_approx_local (v : HeightOneSpectrum R) (c : v.adicCompletion K) (hc : c ∈ v.adicCompletionIntegers K) (r : R) (hr : r ≠ 0) : ∃ a : R, Valued.v (c - algebraMap K _ (algebraMap R K a)) ≤ v.intValuation r
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ArakelovGeometry.LengthLocQuotEqZero:9  ReciprocityTheory.ChartRestriction.G.ArakelovGeometry.length_loc_add
+theorem length_loc_add {M₀ M₁ M₂ : Type*} [AddCommGroup M₀] [AddCommGroup M₁] [AddCommGroup M₂] [Module R M₀] [Module R M₁] [Module R M₂] (g : M₀ →ₗ[R] M₁) (h : M₁ →ₗ[R] M₂) (hg : Function.Injective g) (hh : Function.Surjective h) (ex : Function.Exact g h) (P : Ideal R) [P.IsPrime] : Module.length (Localization.AtPrime P) (LocalizedModule P.primeCompl M₁) = Module.length (Localization.AtPrime P) (LocalizedModule P.primeCompl M₀) + Module.length (Localization.AtPrime P) (LocalizedModule P.primeCompl M₂)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ArakelovGeometry.LengthLocQuotEqZero:19  ReciprocityTheory.ChartRestriction.G.ArakelovGeometry.length_loc_step
+theorem length_loc_step (I q : Ideal R) (f : R) (hq : ∀ g, g ∈ q ↔ g * f ∈ I) (P : Ideal R) [P.IsPrime] : Module.length (Localization.AtPrime P) (LocalizedModule P.primeCompl (R ⧸ I)) = Module.length (Localization.AtPrime P) (LocalizedModule P.primeCompl (R ⧸ q)) + Module.length (Localization.AtPrime P) (LocalizedModule P.primeCompl (R ⧸ (I ⊔ Ideal.span {f})))
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ArakelovGeometry.LengthLocQuotEqZero:65  ReciprocityTheory.ChartRestriction.G.ArakelovGeometry.length_loc_quot_eq_zero
+theorem length_loc_quot_eq_zero (q P : Ideal R) [P.IsPrime] (h : ¬ q ≤ P) : Module.length (Localization.AtPrime P) (LocalizedModule P.primeCompl (R ⧸ q)) = 0
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ArakelovGeometry.LengthLocQuotEqZero:80  ReciprocityTheory.ChartRestriction.G.ArakelovGeometry.length_loc_quot_self
+theorem length_loc_quot_self (P : Ideal R) [P.IsPrime] : Module.length (Localization.AtPrime P) (LocalizedModule P.primeCompl (R ⧸ P)) = 1
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ArakelovGeometry.LengthLocQuotEqZero:115  ReciprocityTheory.ChartRestriction.G.ArakelovGeometry.length_loc_top
+theorem length_loc_top (P : Ideal R) [P.IsPrime] : Module.length (Localization.AtPrime P) (LocalizedModule P.primeCompl (R ⧸ (⊤ : Ideal R))) = 0
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ArakelovGeometry.LengthLocQuotEqZero:121  ReciprocityTheory.ChartRestriction.G.ArakelovGeometry.length_loc_chain
+theorem length_loc_chain (P : Ideal R) [P.IsPrime] : ∀ (N : ℕ) (F : Fin (N + 1) → Ideal R) (f : Fin N → R) (q : Fin N → Ideal R), F (Fin.last N) = ⊤ → (∀ j : Fin N, F j.succ = F j.castSucc ⊔ Ideal.span {f j} ∧ (q j).IsPrime ∧ ∀ g, g ∈ q j ↔ g * f j ∈ F j.castSucc) → (∀ j, q j ≤ P → q j = P) → Module.length (Localization.AtPrime P) (LocalizedModule P.primeCompl (R ⧸ F 0)) = ((∑ j : Fin N, if q j = P then 1 else 0 : ℕ) : ℕ∞) | 0, F, f, q, hlast, _, _ => by rw [show F 0 = F (Fin.last 0) from rfl, hlast, length_loc_top] simp | N + 1, F, f, q, hlast, hj, hmin => by have ih
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ArakelovVolumes.UpperBounds.MeasInvStatementPfA:9  ReciprocityTheory.ChartRestriction.G.AR.Up.MI.det_of_key
+theorem det_of_key {m α : Type*} [Fintype m] [DecidableEq m] [LinearOrder α] {R : Type*} [CommRing R] (M : Matrix m m R) (κ : m → α) (hκ : Function.Injective κ) (h : ∀ i j, κ i < κ j → M i j = 0) : M.det = ∏ i, M i i
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ArakelovVolumes.UpperBounds.OntoStatementPfG:10  ReciprocityTheory.ChartRestriction.G.AR.Up.OntoG.amgm
+theorem amgm {k x y : ℝ} (hk : 0 < k) : x * y ≤ (x ^ 2 / k + k * y ^ 2) / 2
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ArakelovVolumes.UpperBounds.OntoStatementPfG:17  ReciprocityTheory.ChartRestriction.G.AR.Up.OntoG.I_zero
+theorem I_zero {α : Type*} [MeasurableSpace α] {μ : Measure α} {k : α → ℝ} {g u : α → ℂ} {w : α → ℝ≥0∞} {q : ℝ} (hk : ∀ᵐ a ∂μ, 0 < k a) (hw : ∀ᵐ a ∂μ, w a < ⊤) (hq1 : q < 1) (hq0 : 0 ≤ q) (hkm : AEMeasurable k μ) (hgm : AEMeasurable g μ) (hum : AEMeasurable u μ) (hwm : AEMeasurable w μ) (hI : ∫⁻ a, ENNReal.ofReal (k a * ‖g a‖ ^ 2) * w a ∂μ < ⊤) (hJ : ∫⁻ a, ENNReal.ofReal (‖u a‖ ^ 2 / k a) * w a ∂μ ≤ ENNReal.ofReal q * ∫⁻ a, ENNReal.ofReal (k a * ‖g a‖ ^ 2) * w a ∂μ) (h0 : ∫ a, ((k a : ℂ) * g a - u a) * conj (g a) * ((w a).toReal : ℂ) ∂μ = 0) : ∫⁻ a, ENNReal.ofReal (k a * ‖g a‖ ^ 2) * w a ∂μ = 0
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ArakelovVolumes.UpperBounds.SCoordStatementPfA:12  ReciprocityTheory.ChartRestriction.G.AR.Up.SCoA.hasFDerivAt_mv
+theorem hasFDerivAt_mv (q : MvPolynomial ι K) {h : V → ι → ℂ} {z0 : V} {Dh : ι → V →L[ℂ] ℂ} (hh : ∀ i, HasFDerivAt (fun z => h z i) (Dh i) z0) : HasFDerivAt (fun z => eval₂ σ (h z) q) (∑ i, eval₂ σ (h z0) (pderiv i q) • Dh i) z0
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ArakelovVolumes.UpperBounds.SCoordStatementPfA:77  ReciprocityTheory.ChartRestriction.G.AR.Up.SCoA.exists_rel
+theorem exists_rel {K Ω : Type*} [Field K] [CharZero K] [Field Ω] [Algebra K Ω] {y : ι → Ω} (hy : AlgebraicIndependent K y) {a : Ω} (ha : IsAlgebraic (Algebra.adjoin K (Set.range y)) a) : ∃ P : Polynomial (MvPolynomial ι K), P.eval₂ (aeval y).toRingHom a = 0 ∧ (Polynomial.derivative P).eval₂ (aeval y).toRingHom a ≠ 0
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ArakelovVolumes.UpperBounds.SCoordStatementPfB:11  ReciprocityTheory.ChartRestriction.G.AR.Up.SCoB.isAlgebraic_map
+theorem isAlgebraic_map {ιB : Type} {y : ιB → Ω} (hy : AlgebraicIndependent K y) [Algebra K ℂ] (φK : Ω →ₐ[K] ℂ) {a : Ω} (ha : IsAlgebraic (Algebra.adjoin K (Set.range y)) a) : IsAlgebraic (Algebra.adjoin K (Set.range (φK ∘ y))) (φK a)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ArakelovVolumes.UpperBounds.SCoordStatementPfB:26  ReciprocityTheory.ChartRestriction.G.AR.Up.SCoB.gen_indep
+theorem gen_indep {ιB R : Type} [Fintype ιB] [Fintype R] {N : ℕ} (σ : K →+* ℂ) (φ : Ω →+* ℂ) (hφ : φ.comp (algebraMap K Ω) = σ) {y : ιB → Ω} (hy : IsTranscendenceBasis K y) (j0 : Fin (N + 1)) (u : Fin (N + 1) → Ω) (hu0 : u j0 = 1) (t : R → Fin (N + 1) → ℂ) (ht : ∀ Q : MvPolynomial (R × Fin (N + 1)) K, Q ≠ 0 → eval₂ σ (fun p => t p.1 p.2) Q ≠ 0) (hrel : ∀ i, ∑ j, t i j * φ (u j) = 0) (hcard : Fintype.card ιB ≤ Fintype.card R) : ∀ p : MvPolynomial (R × {j // j ≠ j0}) Ω, p ≠ 0 → eval₂ φ (fun q => t q.1 q.2) p ≠ 0
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ArakelovVolumes.UpperBounds.SCoordStatementPfF:7  ReciprocityTheory.ChartRestriction.G.AR.Up.SCoG.finale
+theorem finale {n N : ℕ} (Dv : Fin (N + 1) → (EuclideanSpace ℂ (Fin n) →L[ℂ] ℂ)) (t : Fin (n + 1) × Fin (N + 1) → ℂ) (M : Matrix (Fin n) (Fin n) ℂ) (w : Fin n → (EuclideanSpace ℂ (Fin n) →L[ℂ] ℂ)) (hM : M.det ≠ 0) (key : ∀ ξ, (∀ k, w k ξ = 0) → ξ = 0) (hrow : ∀ i, ∑ j, t (i.succ, j) • Dv j = ∑ k, M i k • w k) (den : ℂ) (hden : den ≠ 0) : (((EuclideanSpace.equiv (Fin n) ℂ).symm : (Fin n → ℂ) →L[ℂ] EuclideanSpace ℂ (Fin n)).comp (ContinuousLinearMap.pi fun i => den⁻¹ • ∑ j, t (i.succ, j) • Dv j)).det ≠ 0
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ArakelovVolumes.UpperBounds.SCoordStatementPfF:37  ReciprocityTheory.ChartRestriction.G.AR.Up.SCoG.target
+theorem target {Fr : Type*} [NormedAddCommGroup Fr] [NormedSpace ℂ Fr] {n N : ℕ} (W : Fin (N + 1) → Fr → ℂ) (c : EuclideanSpace ℂ (Fin n) → Fr) (j0 : Fin (N + 1)) (hev : ∀ᶠ z in 𝓝 (0 : EuclideanSpace ℂ (Fin n)), W j0 (c z) ≠ 0) (Dv : Fin (N + 1) → (EuclideanSpace ℂ (Fin n) →L[ℂ] ℂ)) (hDv : ∀ j, HasFDerivAt (fun z => W j (c z) / W j0 (c z)) (Dv j) 0) (t : Fin (n + 1) × Fin (N + 1) → ℂ) (hx0 : W j0 (c 0) ≠ 0) (hs : ∀ i : Fin n, ∑ j, t (i.succ, j) * W j (c 0) = 0) (hw : ∑ j, t (0, j) * W j (c 0) ≠ 0) : HasFDerivAt (fun z : EuclideanSpace ℂ (Fin n) => (WithLp.toLp 2 fun i => (∑ j, t (i.succ, j) * W j (c z)) / (∑ j, t (0, j) * W j (c z)) : EuclideanSpace ℂ (Fin n))) (((EuclideanSpace.equiv (Fin n) ℂ).symm : (Fin n → ℂ) →L[ℂ] EuclideanSpace ℂ (Fin n)).comp (ContinuousLinearMap.pi fun i => ((∑ j, t (0, j) * W j (c 0)) / W j0 (c 0))⁻¹ • ∑ j, t (i.succ, j) • Dv j)) 0
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.InterBridgeG:18  ReciprocityTheory.ChartRestriction.G.Geo.abs_det_restrictScalars
+theorem abs_det_restrictScalars (f : (Fin e → ℂ) →L[ℂ] (Fin e → ℂ)) : |(f.restrictScalars ℝ).det| = ‖LinearMap.det (f : (Fin e → ℂ) →ₗ[ℂ] (Fin e → ℂ))‖ ^ 2
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.InterBridgeG:75  ReciprocityTheory.ChartRestriction.G.Geo.exists_inj_cover
+theorem exists_inj_cover {O : Set (Fin e → ℂ)} {Q : (Fin e → ℂ) → (Fin e → ℂ)} (hQ : ∀ u ∈ O, AnalyticAt ℂ Q u ∧ LinearMap.det (fderiv ℂ Q u : (Fin e → ℂ) →ₗ[ℂ] (Fin e → ℂ)) ≠ 0) (hO : IsOpen O) : ∃ W : ℕ → Set (Fin e → ℂ), (∀ n, IsOpen (W n)) ∧ (∀ n, W n ⊆ O) ∧ (∀ n, InjOn Q (W n)) ∧ ⋃ n, W n = O
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.InterBridgeG:117  ReciprocityTheory.ChartRestriction.G.Geo.integrable_tsum_of_summable
+theorem integrable_tsum_of_summable {α : Type*} [MeasurableSpace α] {μ : Measure α} {F : ℕ → α → ℝ} (hF : ∀ n, Integrable (F n) μ) (hs : Summable fun n => ∫ y, ‖F n y‖ ∂μ) : Integrable (fun y => ∑' n, F n y) μ
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.InterBridgeG:141  ReciprocityTheory.ChartRestriction.G.Geo.tsum_finsum_disjointed
+theorem tsum_finsum_disjointed {α : Type*} {D : ℕ → Set α} (hd : Pairwise (Disjoint on D)) {O : Set α} (hU : ⋃ n, D n = O) {G : Set α} (hG : (O ∩ G).Finite) (f : α → ℝ) : ∑' n, ∑ᶠ u ∈ D n ∩ G, f u = ∑ᶠ u ∈ O ∩ G, f u
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.InterBridgeK:11  ReciprocityTheory.ChartRestriction.G.Geo.eventually_surjective_clm
+theorem eventually_surjective_clm {F : Type*} [NormedAddCommGroup F] [NormedSpace ℂ F] [FiniteDimensional ℂ F] {Y : Type*} [TopologicalSpace Y] {A : Y → (Fin e → ℂ) →L[ℂ] F} {y0 : Y} (hA : ContinuousAt A y0) (h0 : Function.Surjective (A y0)) : ∀ᶠ y in 𝓝 y0, Function.Surjective (A y)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.InterBridgeK:31  ReciprocityTheory.ChartRestriction.G.Geo.exists_infinite_fibre
+theorem exists_infinite_fibre {W : Set (Fin e → ℂ)} (hW : IsOpen W) (hne : W.Nonempty) {Q : (Fin e → ℂ) → (Fin e → ℂ)} (hQ : AnalyticOnNhd ℂ Q W) (hdet : ∀ u ∈ W, LinearMap.det (fderiv ℂ Q u : (Fin e → ℂ) →ₗ[ℂ] (Fin e → ℂ)) = 0) : ∃ y, (W ∩ Q ⁻¹' {y}).Infinite
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.InterDivSuppAA:9  ReciprocityTheory.ChartRestriction.G.Geo.DimF.isPrime_map_mk
+theorem isPrime_map_mk {q M : Ideal A} [M.IsPrime] (h : q ≤ M) : (M.map (Ideal.Quotient.mk q)).IsPrime
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.InterDivSuppAA:13  ReciprocityTheory.ChartRestriction.G.Geo.DimF.comap_map_mk
+theorem comap_map_mk {q M : Ideal A} (h : q ≤ M) : (M.map (Ideal.Quotient.mk q)).comap (Ideal.Quotient.mk q) = M
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.InterDivSuppAA:17  ReciprocityTheory.ChartRestriction.G.Geo.DimF.finiteHeight_of_dim_lt_top
+theorem finiteHeight_of_dim_lt_top {B : Type*} [CommRing B] (I : Ideal B) (hI : I ≠ ⊤) (h : ringKrullDim B < ⊤) : I.FiniteHeight
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.InterDivSuppAA:25  ReciprocityTheory.ChartRestriction.G.Geo.DimF.height_add_height_map_le
+theorem height_add_height_map_le [IsNoetherianRing A] [FiniteRingKrullDim A] {q M : Ideal A} [q.IsPrime] [M.IsPrime] (h : q ≤ M) : q.height + (M.map (Ideal.Quotient.mk q)).height ≤ M.height
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.InterDivSuppAA:55  ReciprocityTheory.ChartRestriction.G.Geo.DimF.height_map_le_height_map
+theorem height_map_le_height_map {I q M : Ideal A} [q.IsPrime] [M.IsPrime] (hIq : I ≤ q) (hqM : q ≤ M) (H : ∀ P : Ideal A, P.IsPrime → I ≤ P → P ≤ M → q ≤ P) : (M.map (Ideal.Quotient.mk I)).height ≤ (M.map (Ideal.Quotient.mk q)).height
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.InterDivSuppAA:91  ReciprocityTheory.ChartRestriction.G.Geo.DimF.le_natSub_of_add_le
+theorem le_natSub_of_add_le {k n : ℕ} {x : ℕ∞} (h : (k : ℕ∞) + x ≤ n) : x ≤ ((n - k : ℕ) : ℕ∞)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.InterDivSuppAA:98  ReciprocityTheory.ChartRestriction.G.Geo.DimF.dim_quot_add_height
+theorem dim_quot_add_height [IsNoetherianRing A] [IsJacobsonRing A] [FiniteRingKrullDim A] (hA : ∀ M N : Ideal A, M.IsMaximal → N.IsMaximal → M.height = N.height) (q : Ideal A) [q.IsPrime] : ringKrullDim (A ⧸ q) + (q.height : WithBot ℕ∞) = ringKrullDim A
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.InterGoodA:7  ReciprocityTheory.ChartRestriction.G.Geo.exists_ltSeries_lift
+theorem exists_ltSeries_lift {R S : Type*} [CommRing R] [CommRing S] [Algebra R S] [Algebra.IsIntegral R S] (hinj : Function.Injective (algebraMap R S)) : ∀ (n : ℕ) (p : LTSeries (PrimeSpectrum R)), p.length = n → ∃ q : LTSeries (PrimeSpectrum S), q.length = n ∧ q.last.asIdeal.comap (algebraMap R S) = p.last.asIdeal
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.InterGoodA:42  ReciprocityTheory.ChartRestriction.G.Geo.le_ringKrullDim_of_isIntegral
+theorem le_ringKrullDim_of_isIntegral {R S : Type*} [CommRing R] [CommRing S] (f : R →+* S) (hf : f.IsIntegral) (hinj : Function.Injective f) (n : ℕ) (h : (n : WithBot ℕ∞) ≤ ringKrullDim R) : (n : WithBot ℕ∞) ≤ ringKrullDim S
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.InterGoodA:51  ReciprocityTheory.ChartRestriction.G.Geo.int_isJacobsonRing
+theorem int_isJacobsonRing : IsJacobsonRing ℤ
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.InterGoodA:65  ReciprocityTheory.ChartRestriction.G.Geo.exists_gt_of_comap_int_eq_bot
+theorem exists_gt_of_comap_int_eq_bot {σ A : Type*} [Finite σ] [CommRing A] (g : MvPolynomial σ ℤ →+* A) (hg : Function.Surjective g) (p : Ideal A) (hp : p.IsPrime) (hb : p.comap (g.comp MvPolynomial.C) = ⊥) : ∃ q : Ideal A, q.IsPrime ∧ p < q
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.InterGoodA:99  ReciprocityTheory.ChartRestriction.G.Geo.succ_le_ringKrullDim_of_isLocalization
+theorem succ_le_ringKrullDim_of_isLocalization {A B : Type*} [CommRing A] [CommRing B] [Algebra A B] (M : Submonoid A) [IsLocalization M B] (hext : ∀ p : Ideal A, p.IsPrime → Disjoint (M : Set A) p → ∃ q : Ideal A, q.IsPrime ∧ p < q) (n : ℕ) (h : (n : WithBot ℕ∞) ≤ ringKrullDim B) : ((n + 1 : ℕ) : WithBot ℕ∞) ≤ ringKrullDim A
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.ToroidalCompactification.AnChart:9  ReciprocityTheory.ChartRestriction.G.Geo.Tor.hasFDerivAt_eval
+theorem hasFDerivAt_eval {I : Type} [Fintype I] [DecidableEq I] (p : MvPolynomial I ℂ) (x : I → ℂ) : HasFDerivAt (fun x => eval x p) (∑ i, eval x (pderiv i p) • ContinuousLinearMap.proj (R := ℂ) (φ := fun _ : I => ℂ) i) x
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.ToroidalCompactification.AnChart:21  ReciprocityTheory.ChartRestriction.G.Geo.Tor.anChart_alg
+theorem anChart_alg {k A : Type} [Field k] [CommRing A] [Algebra k A] (D : ℕ) [h : Algebra.IsStandardSmoothOfRelativeDimension D k A] (σ : k →+* ℂ) (ψ₀ : A →+* ℂ) (h₀ : ψ₀.comp (algebraMap k A) = σ) : ∃ (N : ℕ) (g : Fin N → A) (f : Fin D → A) (B : Set (Fin D → ℂ)) (ε : ℝ) (Ψ : (Fin D → ℂ) → (A →+* ℂ)), 0 < ε ∧ IsOpen B ∧ (∀ b ∈ B, (Ψ b).comp (algebraMap k A) = σ ∧ ∀ i, Ψ b (f i) = b i) ∧ (∀ a, DifferentiableOn ℂ (fun b => Ψ b a) B) ∧ ∀ ψ : A →+* ℂ, ψ.comp (algebraMap k A) = σ → (∀ j, ‖ψ (g j) - ψ₀ (g j)‖ < ε) → (fun i => ψ (f i)) ∈ B ∧ Ψ (fun i => ψ (f i)) = ψ
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.ToroidalCompactification.RankLin:13  ReciprocityTheory.ChartRestriction.G.Chart.exists_finset_iInf_le
+theorem exists_finset_iInf_le {M : Type} [AddCommGroup M] [Module k M] [FiniteDimensional k M] {O : Type} (K : O → Submodule k M) : ∃ F : Finset O, ∀ b, (⨅ a ∈ F, K a) ≤ K b
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.ToroidalCompactification.RankLin:28  ReciprocityTheory.ChartRestriction.G.Chart.card_le_finrank_of_li
+theorem card_le_finrank_of_li {ι' ι : Type} [Fintype ι'] [Fintype ι] (v : ι → ι' → V) (hv : LinearIndependent V v) (W : Submodule k (ι' → k)) (hW : ∀ i, (algebraMap V k ∘ v i) ∈ W) : Fintype.card ι ≤ finrank k W
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.ToroidalCompactification.RankLin:36  ReciprocityTheory.ChartRestriction.G.Chart.exists_li_of_submodule
+theorem exists_li_of_submodule {ι' : Type} [Fintype ι'] [DecidableEq ι'] (N : Submodule V (ι' → V)) : ∃ v : Fin (finrank V N) → ι' → V, LinearIndependent V v ∧ ∀ i, v i ∈ N
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.ToroidalCompactification.RankLin:62  ReciprocityTheory.ChartRestriction.G.Chart.finrank_eig_bc
+theorem finrank_eig_bc {n : ℕ} {O : Type} (L : O → (Fin n → V) →ₗ[V] (Fin n → V)) (Lk : O → (Fin n → k) →ₗ[k] (Fin n → k)) (hL : ∀ a c, Lk a (algebraMap V k ∘ c) = algebraMap V k ∘ L a c) (χ : O → V) : finrank V (⨅ a, LinearMap.ker (L a - χ a • LinearMap.id) : Submodule V (Fin n → V)) = finrank k (⨅ a, LinearMap.ker (Lk a - algebraMap V k (χ a) • LinearMap.id) : Submodule k (Fin n → k))
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.DiscreteValuationRings.ExistsCeil:7  ReciprocityTheory.ChartRestriction.G.DVR.UUA.reps_X
+theorem reps_X {X : Type} [AddCommGroup X] [Module.Free ℤ X] [Module.Finite ℤ X] (k : ℕ) (hk : 1 ≤ k) : ∃ rep : (Fin (Module.finrank ℤ X) → Fin k) → X, (∀ χ : X, ∃ a μ, rep a + k • μ = χ) ∧ (∀ a a' (μ μ' : X), rep a + k • μ = rep a' + k • μ' → a = a') ∧ (∀ x y : X, k • x = k • y → x = y)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.DiscreteValuationRings.ThetaGenFlat:9  ReciprocityTheory.ChartRestriction.G.DVR.TG.pushout_quot
+theorem pushout_quot {R A B P : CommRingCat.{0}} {a : R ⟶ A} {b : R ⟶ B} {c : A ⟶ P} {d : B ⟶ P} (h : IsPushout a b c d) (hb : Function.Surjective b) : Function.Surjective c ∧ ∀ x, c x = 0 → x ∈ (RingHom.ker b.hom).map a.hom
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.DiscreteValuationRings.ThetaGenFlat:143  ReciprocityTheory.ChartRestriction.G.DVR.TG.appLE_of_eq
+lemma appLE_of_eq {X Y : Scheme.{0}} {f g : X ⟶ Y} (h : f = g) {U : Y.Opens} {W : X.Opens} (e : W ≤ f ⁻¹ᵁ U) : f.appLE U W e = g.appLE U W (h ▸ e)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.DiscreteValuationRings.ThetaGenFlat:149  ReciprocityTheory.ChartRestriction.G.DVR.TG.app_injective_of_flat_surj
+theorem app_injective_of_flat_surj {Y Z : Scheme.{0}} (q : Y ⟶ Z) [Flat q] [Surjective q] (V : Z.Opens) : Function.Injective (q.app V)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ExtensionDescent.ChartPullbacks.BaseChangeKernels.Affine:17  ReciprocityTheory.ChartRestriction.G.Out.GtBCPf.isPullback_resLE
+theorem isPullback_resLE (sq : IsPullback g q' q b) (V : B.Opens) (V' : B'.Opens) (hle : V' ≤ b ⁻¹ᵁ V) (hleG : q' ⁻¹ᵁ V' ≤ g ⁻¹ᵁ (q ⁻¹ᵁ V)) : IsPullback (g.resLE (q ⁻¹ᵁ V) (q' ⁻¹ᵁ V') hleG) (q'.resLE V' (q' ⁻¹ᵁ V') le_rfl) (q.resLE V (q ⁻¹ᵁ V) le_rfl) (b.resLE V V' hle)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ExtensionDescent.ChartPullbacks.BaseChangeKernels.Affine:33  ReciprocityTheory.ChartRestriction.G.Out.GtBCPf.isPushout_appLE
+theorem isPushout_appLE (sq : IsPullback g q' q b) (hq : IsAffineHom q) {V : B.Opens} (hV : IsAffineOpen V) {V' : B'.Opens} (hV' : IsAffineOpen V') (hle : V' ≤ b ⁻¹ᵁ V) (hleG : q' ⁻¹ᵁ V' ≤ g ⁻¹ᵁ (q ⁻¹ᵁ V)) : IsPushout (q.app V) (b.appLE V V' hle) (g.appLE (q ⁻¹ᵁ V) (q' ⁻¹ᵁ V') hleG) (q'.app V')
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ExtensionDescent.ChartPullbacks.BaseChangeKernels.Affine:53  ReciprocityTheory.ChartRestriction.G.Out.GtBCPf.bijective_liftNC_of_isPushout
+theorem bijective_liftNC_of_isPushout (hP : IsPushout qa ba ga qa') (φ : Multiplicative X →* A) (φ' : Multiplicative X →* A') (hφ' : ∀ x, φ' x = ga (φ x)) (hφ : Function.Bijective (AddMonoidAlgebra.liftNCRingHom qa.hom φ (fun _ _ => Commute.all _ _))) : Function.Bijective (AddMonoidAlgebra.liftNCRingHom qa'.hom φ' (fun _ _ => Commute.all _ _))
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ExtensionDescent.ChartPullbacks.BaseChangeKernels.Affine:127  ReciprocityTheory.ChartRestriction.G.Out.GtBCPf.coord_affineBC
+theorem coord_affineBC {G B G' B' : Scheme.{u}} {g : G' ⟶ G} {q' : G' ⟶ B'} {q : G ⟶ B} {b : B' ⟶ B} (sq : IsPullback g q' q b) (hq : IsAffineHom q) {X : Type u} [AddCommMonoid X] {V : B.Opens} (hV : IsAffineOpen V) {V' : B'.Opens} (hV' : IsAffineOpen V') (hle : V' ≤ b ⁻¹ᵁ V) (hleG : q' ⁻¹ᵁ V' ≤ g ⁻¹ᵁ (q ⁻¹ᵁ V)) (φ : Multiplicative X →* Γ(G, q ⁻¹ᵁ V)) (φ' : Multiplicative X →* Γ(G', q' ⁻¹ᵁ V')) (hφ' : ∀ x, φ' x = g.appLE (q ⁻¹ᵁ V) (q' ⁻¹ᵁ V') hleG (φ x)) (hφ : Function.Bijective (AddMonoidAlgebra.liftNCRingHom (q.app V).hom φ (fun _ _ => Commute.all _ _))) : Function.Bijective (AddMonoidAlgebra.liftNCRingHom (q'.app V').hom φ' (fun _ _ => Commute.all _ _))
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ExtensionDescent.ChartPullbacks.BaseChangeKernels.SurjOfCover:20  ReciprocityTheory.ChartRestriction.G.Out.GtBCPf.GluingInclusion.app_res
+lemma app_res {V₁ V₂ : B.Opens} (h : V₁ ≤ V₂) (c : Γ(B, V₂)) : (G.presheaf.map (homOfLE (q.preimage_mono h)).op).hom ((q.app V₂).hom c) = (q.app V₁).hom ((B.presheaf.map (homOfLE h).op).hom c)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ExtensionDescent.ChartPullbacks.BaseChangeKernels.SurjOfCover:28  ReciprocityTheory.ChartRestriction.G.Out.GtBCPf.GluingInclusion.res_res
+lemma res_res {Y : Scheme.{0}} {U₁ U₂ U₃ : Y.Opens} (h₁ : U₁ ≤ U₂) (h₂ : U₂ ≤ U₃) (s : Γ(Y, U₃)) : (Y.presheaf.map (homOfLE h₁).op).hom ((Y.presheaf.map (homOfLE h₂).op).hom s) = (Y.presheaf.map (homOfLE (h₁.trans h₂)).op).hom s
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ExtensionDescent.ChartPullbacks.BaseChangeKernels.SurjOfCover:139  ReciprocityTheory.ChartRestriction.G.Out.GtBCPf.coord_glue
+theorem coord_glue {G B : Scheme.{0}} (q : G ⟶ B) {X : Type} [AddCommMonoid X] {W : B.Opens} (φ : ∀ V : B.Opens, V ≤ W → (Multiplicative X →* Γ(G, q ⁻¹ᵁ V))) (hnat : ∀ (V₁ V₂ : B.Opens) (h₁ : V₁ ≤ W) (h₂ : V₂ ≤ W) (h : V₁ ≤ V₂) (x : Multiplicative X), φ V₁ h₁ x = (G.presheaf.map (homOfLE (q.preimage_mono h)).op).hom (φ V₂ h₂ x)) (hgood : ∀ x ∈ W, ∃ V₀ : B.Opens, ∃ hV₀ : V₀ ≤ W, x ∈ V₀ ∧ ∀ (V₁ : B.Opens) (h₁ : V₁ ≤ V₀), IsAffineOpen V₁ → Function.Bijective (AddMonoidAlgebra.liftNCRingHom (q.app V₁).hom (φ V₁ (h₁.trans hV₀)) (fun _ _ => Commute.all _ _))) (V : B.Opens) (hV : IsAffineOpen V) (h : V ≤ W) : Function.Bijective (AddMonoidAlgebra.liftNCRingHom (q.app V).hom (φ V h) (fun _ _ => Commute.all _ _))
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ExtensionDescent.ChartPullbacks.UniformBaseChange.MemRangeOfForallHeightOne:31  ReciprocityTheory.ChartRestriction.G.Out.KrullAlg.exists_assoc
+lemma exists_assoc [IsNoetherianRing A] {ι : Type*} (x : ι → K) (hx : ∃ i, x i ∉ (algebraMap A K).range) : ∃ (d : A) (P : Ideal A), P.IsPrime ∧ (∀ r, r ∈ P ↔ ∀ i, algebraMap A K r * (algebraMap A K d * x i) ∈ (algebraMap A K).range) ∧ ∃ i, algebraMap A K d * x i ∉ (algebraMap A K).range
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ExtensionDescent.ChartPullbacks.UniformBaseChange.MemRangeOfForallHeightOne:62  ReciprocityTheory.ChartRestriction.G.Out.KrullAlg.exists_clear
+theorem exists_clear [IsNoetherianRing A] [IsIntegrallyClosed A] {ι : Type*} [Finite ι] (x : ι → K) (hx : ∃ i, x i ∉ (algebraMap A K).range) : ∃ P : Ideal A, P.IsPrime ∧ P.height = 1 ∧ ∃ b ∈ P, (∀ i, algebraMap A K b * x i ∈ (algebraMap A K).range) ∧ ∃ i, ∃ u ∉ P, algebraMap A K u = algebraMap A K b * x i
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ExtensionDescent.ChartPullbacks.UniformBaseChange.MemRangeOfForallHeightOne:119  ReciprocityTheory.ChartRestriction.G.Out.KrullAlg.exists_height_one_not_mem
+theorem exists_height_one_not_mem [IsNoetherianRing A] [IsIntegrallyClosed A] (x : K) (hx : x ∉ (algebraMap A K).range) : ∃ P : Ideal A, P.IsPrime ∧ P.height = 1 ∧ ∀ s ∉ P, algebraMap A K s * x ∉ (algebraMap A K).range
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ExtensionDescent.ChartPullbacks.UniformBaseChange.MemRangeOfForallHeightOne:137  ReciprocityTheory.ChartRestriction.G.Out.KrullAlg.mem_range_of_forall_height_one
+theorem mem_range_of_forall_height_one [IsNoetherianRing A] [IsIntegrallyClosed A] (x : K) (h : ∀ P : Ideal A, P.IsPrime → P.height = 1 → ∃ s ∉ P, algebraMap A K s * x ∈ (algebraMap A K).range) : x ∈ (algebraMap A K).range
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ExtensionDescent.ChartPullbacks.UniformBaseChange.MemRangeOfForallHeightOne:148  ReciprocityTheory.ChartRestriction.G.Out.KrullAlg.finite_height_one
+theorem finite_height_one [IsNoetherianRing A] {a : A} (ha : a ≠ 0) : {P : Ideal A | P.IsPrime ∧ P.height = 1 ∧ a ∈ P}.Finite
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ExtensionDescent.ChartPullbacks.UniversalCharts.LePreimageOfNil:194  chart_smooth
+theorem chart_smooth [Smooth G.hom] : Algebra.Smooth R₀ Γ(G.left, C.U)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ExtensionDescent.ChartPullbacks.UniversalCharts.SpanXLeKerAevalZero:30  ReciprocityTheory.ChartRestriction.G.Chart.span_X_le_ker_aeval_zero
+theorem span_X_le_ker_aeval_zero (κ : Type) : Ideal.span (Set.range (MvPolynomial.X : κ → MvPolynomial κ R)) ≤ RingHom.ker (MvPolynomial.aeval (R := R) (fun _ : κ => (0 : R)))
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ExtensionDescent.ChartPullbacks.UniversalCharts.SpanXLeKerAevalZero:75  ReciprocityTheory.ChartRestriction.G.Chart.sub_const_mem_span_X
+theorem sub_const_mem_span_X {κ : Type} (p : MvPolynomial κ R) : p - MvPolynomial.C (MvPolynomial.aeval (fun _ : κ => (0 : R)) p) ∈ Ideal.span (Set.range (MvPolynomial.X : κ → MvPolynomial κ R))
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.FirstCohomology.JetApproximation:9  ReciprocityTheory.ChartRestriction.G.H1.JetApproximation.pow_le_pow_of_le
+theorem pow_le_pow_of_le {V W : Submodule F R} (h : V ≤ W) : ∀ n : ℕ, V ^ n ≤ W ^ n | 0 => le_rfl | n + 1 => by rw [pow_succ, pow_succ] exact mul_le_mul' (pow_le_pow_of_le h n) h theorem one_le_pow {V : Submodule F R} (h1 : 1 ≤ V) : ∀ n : ℕ, 1 ≤ V ^ n | 0 => by rw [pow_zero] | n + 1 => by rw [pow_succ] calc (1 : Submodule F R) = 1 * 1
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.FirstCohomology.JetApproximation:15  ReciprocityTheory.ChartRestriction.G.H1.JetApproximation.one_le_pow
+theorem one_le_pow {V : Submodule F R} (h1 : 1 ≤ V) : ∀ n : ℕ, 1 ≤ V ^ n | 0 => by rw [pow_zero] | n + 1 => by rw [pow_succ] calc (1 : Submodule F R) = 1 * 1
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.FirstCohomology.JetApproximation:22  ReciprocityTheory.ChartRestriction.G.H1.JetApproximation.pow_mono
+theorem pow_mono {V : Submodule F R} (h1 : 1 ≤ V) {a b : ℕ} (hab : a ≤ b) : V ^ a ≤ V ^ b
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.FirstCohomology.JetApproximation:28  ReciprocityTheory.ChartRestriction.G.H1.JetApproximation.pow_le_ideal_pow
+theorem pow_le_ideal_pow {W : Submodule F R} {m : Ideal R} (h : W ≤ m.restrictScalars F) : ∀ k : ℕ, W ^ k ≤ (m ^ k).restrictScalars F | 0 => by intro x _ simp [Ideal.one_eq_top] | k + 1 => by rw [pow_succ] refine Submodule.mul_le.2 fun a ha b hb => ?_ rw [Submodule.restrictScalars_mem, pow_succ] exact Ideal.mul_mem_mul (pow_le_ideal_pow h k ha) (h hb) theorem pow_le_sup {V : Submodule F R} (h1 : 1 ≤ V) {m : Ideal R} (hres : ∀ f : R, ∃ c : F, f - algebraMap F R c ∈ m) (D : ℕ) (n : ℕ) : V ^ n ≤ V ^ D ⊔ (m ^ (D + 1)).restrictScalars F
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.FirstCohomology.JetApproximation:39  ReciprocityTheory.ChartRestriction.G.H1.JetApproximation.pow_le_sup
+theorem pow_le_sup {V : Submodule F R} (h1 : 1 ≤ V) {m : Ideal R} (hres : ∀ f : R, ∃ c : F, f - algebraMap F R c ∈ m) (D : ℕ) (n : ℕ) : V ^ n ≤ V ^ D ⊔ (m ^ (D + 1)).restrictScalars F
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.FirstCohomology.JetApproximation:69  ReciprocityTheory.ChartRestriction.G.H1.JetApproximation.inv_approx
+theorem inv_approx {V : Submodule F R} (h1 : 1 ≤ V) {m : Ideal R} (hm : ∀ x ∈ m, ¬ IsUnit x) (hres : ∀ f : R, ∃ c : F, f - algebraMap F R c ∈ m) (D n : ℕ) (u : Rˣ) (hu : (u : R) ∈ V ^ n) : ∃ w ∈ V ^ (n * D), ((u⁻¹ : Rˣ) : R) - w ∈ m ^ (D + 1)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.FirstCohomology.JetApproximation:107  ReciprocityTheory.ChartRestriction.G.H1.JetApproximation.jets
+theorem jets {V : Submodule F R} (h1 : 1 ≤ V) {m : Ideal R} (hm : ∀ x ∈ m, ¬ IsUnit x) (hres : ∀ f : R, ∃ c : F, f - algebraMap F R c ∈ m) (hfrac : ∀ f : R, ∃ (n : ℕ) (G G' : R), G ∈ V ^ n ∧ G' ∈ V ^ n ∧ IsUnit G' ∧ f * G' = G) (D : ℕ) (f : R) : ∃ v ∈ V ^ D, f - v ∈ m ^ (D + 1)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.FundamentalDomains.FundamentalDomainTranslate:10  ReciprocityTheory.ChartRestriction.G.FD.FundamentalDomainTranslate.fd_translate
+theorem fd_translate (L : AddSubgroup (ι → ℝ)) [Countable L] (D : Set (ι → ℝ)) (hD : IsAddFundamentalDomain L D volume) (f : (ι → ℝ) → ℂ) (hf : ∀ p ∈ L, ∀ s, f (p + s) = f s) (v : ι → ℝ) : ∫ s in D, f (v + s) = ∫ s in D, f s
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.FundamentalDomains.FundamentalDomainTranslate:22  ReciprocityTheory.ChartRestriction.G.FD.FundamentalDomainTranslate.orth
+theorem orth (L : AddSubgroup (ι → ℝ)) [Countable L] (D : Set (ι → ℝ)) (hD : IsAddFundamentalDomain L D volume) (μ : ι → ℝ) (hμ : ∀ p ∈ L, ∃ k : ℤ, 2 * ∑ i, μ i * p i = k) : ∫ s in D, cexp (4 * Real.pi * I * ∑ i, (μ i : ℂ) * s i) = if μ = 0 then ((volume D).toReal : ℂ) else 0
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.FundamentalDomains.OnbPerp:8  ReciprocityTheory.ChartRestriction.G.FD.OrthonormalPerpBasis.onb_perp
+theorem onb_perp (n : ℕ) (hn : 1 ≤ n) (α : Fin n → ℂ) (hα : α ≠ 0) : ∃ g : Fin (n - 1) → Fin n → ℂ, (∀ k l, ∑ a, g k a * conj (g l a) = if k = l then 1 else 0) ∧ (∀ k, ∑ a, g k a * conj (α a) = 0) ∧ (∀ γ : Fin n → ℂ, ∑ a, γ a * conj (α a) = 0 → γ ∈ Submodule.span ℂ (Set.range g))
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.FundamentalDomains.PeriodicSchwarzLemma:8  ReciprocityTheory.ChartRestriction.G.FD.PeriodicSchwarzLemma.periodic_schwarz
+theorem periodic_schwarz {g : ℂ → ℂ} {M T t B : ℝ} (hM : 0 < M) (ht : 0 < t) (htT : t < T) (hper : Periodic g M) (hdiff : ∀ z : ℂ, -T < z.im → DifferentiableAt ℂ g z) (hzero : Tendsto g (comap im atTop) (𝓝 0)) (hB : ∀ z : ℂ, z.im = -t → ‖g z‖ ≤ B) : ‖g 0‖ ≤ Real.exp (-2 * π * t / M) * B
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.FundamentalDomains.TelescopingWeightedSums:6  ReciprocityTheory.ChartRestriction.G.FD.TelescopingWeightedSums.sum_tele
+theorem sum_tele (f : ℕ → ℝ) {p n : ℕ} (hp : p ≤ n) : ∑ i ∈ Ico p n, (f (i + 1) - f i) = f n - f p
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.FundamentalDomains.TelescopingWeightedSums:33  ReciprocityTheory.ChartRestriction.G.FD.TelescopingWeightedSums.wsum_bound
+theorem wsum_bound {n p : ℕ} (hp : p ≤ n) (ρ : ℕ → ℝ) (hρ : ∀ i ≤ n, 0 < ρ i) (h0 : ρ 0 = 1) (hn : ρ n = 1) (hmono : ((∀ i, i < p → ρ i ≤ ρ (i + 1)) ∧ ∀ i, p ≤ i → i < n → ρ (i + 1) ≤ ρ i) ∨ ((∀ i, i < p → ρ (i + 1) ≤ ρ i) ∧ ∀ i, p ≤ i → i < n → ρ i ≤ ρ (i + 1))) (a : ℕ → ℝ) (lo hi : ℝ) (ha : ∀ i < n, lo ≤ a i ∧ a i ≤ hi) : |∑ i ∈ range n, a i * (Real.log (ρ (i + 1)) - Real.log (ρ i))| ≤ (hi - lo) * |Real.log (ρ p)|
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.AvPrimeDimOne:7  ReciprocityTheory.ChartRestriction.G.T0.av_no_two_chain
+theorem av_no_two_chain {S : Type*} [CommRing S] [IsDomain S] {A B : Ideal S} [A.IsPrime] [B.IsPrime] (h1 : ⊥ < A) (h2 : A < B) (hB : B.height ≤ 1) : False
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.AvPrimeDimOne:25  ReciprocityTheory.ChartRestriction.G.T0.av_key
+theorem av_key {S : Type*} [CommRing S] [IsDomain S] [IsNoetherianRing S] [IsLocalRing S] (g : S) (hg : g ≠ 0) (H : ∀ Q : Ideal S, Q.IsPrime → Q ≠ ⊥ → g ∈ Q) (Q : Ideal S) (hQ : Q.IsPrime) (hQ0 : Q ≠ ⊥) : Q.IsMaximal
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.AvPrimeDimOne:95  ReciprocityTheory.ChartRestriction.G.T0.av_prime_dim_one
+theorem av_prime_dim_one {R : Type*} [CommRing R] [IsDomain R] [IsNoetherianRing R] [IsLocalRing R] (hdim : 1 ≤ ringKrullDim R) (h : R) (hh : h ≠ 0) : ∃ p : Ideal R, p.IsPrime ∧ ringKrullDim (R ⧸ p) = 1 ∧ h ∉ p
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.BinomRatio:12  ReciprocityTheory.ChartRestriction.G.T0.sub_mul_choose_le_mul_choose
+theorem sub_mul_choose_le_mul_choose (T D : ℕ) (hT : D * (2 * D + 7) ≤ T) : ∀ k ≤ D, ((T : ℝ) - k * (2 * D + 7)) * (((T + 2 * D + 6).choose k : ℕ) : ℝ) ≤ (T : ℝ) * (((T - 1).choose k : ℕ) : ℝ)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.FlatLength:104  ReciprocityTheory.ChartRestriction.G.T0.length_baseChange_eq
+theorem length_baseChange_eq {R S : Type*} [CommRing R] [IsLocalRing R] [CommRing S] [IsLocalRing S] [Algebra R S] [Module.Flat R S] [IsLocalHom (algebraMap R S)] (hm : Ideal.map (algebraMap R S) (IsLocalRing.maximalIdeal R) = IsLocalRing.maximalIdeal S) (Q : Type*) [AddCommGroup Q] [Module R Q] : Module.length S (S ⊗[R] Q) = Module.length R Q
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.GaussHeights.GaussGenericHeight.GaussGenericStatements.GaussGenericLemmas.TranslationDomainMaps.MapDomainMemOfDvd:62  BlockPoly.eq_mul_C_of_dvd
+theorem eq_mul_C_of_dvd {g h : MvPolynomial σ K} (hd : g ∣ h) (hdeg : h.totalDegree = g.totalDegree) (hh : h ≠ 0) : ∃ a : K, h = C a * g
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.Hadamard:8  ReciprocityTheory.ChartRestriction.G.T0.psd_det_re_le_one_of_diag
+theorem psd_det_re_le_one_of_diag (N : ℕ) (H : Matrix (Fin N) (Fin N) ℂ) (hH : H.PosSemidef) (hd : ∀ c, H c c = 1) : H.det.re ≤ 1
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.Hadamard:30  ReciprocityTheory.ChartRestriction.G.T0.psd_det_re_le_prod_diag
+theorem psd_det_re_le_prod_diag (N : ℕ) (G : Matrix (Fin N) (Fin N) ℂ) (hG : G.PosSemidef) : G.det.re ≤ ∏ c, (G c c).re
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.Hadamard:88  ReciprocityTheory.ChartRestriction.G.T0.hadamard_det_le
+theorem hadamard_det_le {n : ℕ} (A : Matrix (Fin n) (Fin n) ℂ) : ‖A.det‖ ≤ ∏ i, Real.sqrt (∑ j, ‖A i j‖ ^ 2)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.Hartogs:5  ReciprocityTheory.ChartRestriction.G.T0.ufd_mem_of_forall_prime
+theorem ufd_mem_of_forall_prime {R : Type*} [CommRing R] [IsDomain R] [UniqueFactorizationMonoid R] (x : FractionRing R) (h : ∀ p : R, Prime p → ∃ a b : R, ¬ p ∣ b ∧ x * algebraMap R (FractionRing R) b = algebraMap R (FractionRing R) a) : ∃ a : R, x = algebraMap R (FractionRing R) a
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.HtArith:7  ReciprocityTheory.ChartRestriction.G.T0.heights_arith
+theorem heights_arith (D δ L lr lw1 hN sF laW nuS c g0 i DF PP0' PN tableLineDegreeFive tableLineDegreeTwo PI4 Prw G Pet aL ade aG1 aF aG2 HMM HL Hde HF SI SN Ssum δlogδ : ℝ) (hD : 3 ≤ D) (hδ : 0 ≤ δ) (hL : 1 ≤ L) (hc0 : 0 ≤ c) (hc1 : c ≤ 1) (hcg : c * g0 ≤ 1 / 2) (hg0 : 0 ≤ g0) (hi : 1 ≤ i) (hP : 1 ≤ PP0' ∧ 1 ≤ PN ∧ 1 ≤ tableLineDegreeFive ∧ 1 ≤ tableLineDegreeTwo ∧ 1 ≤ PI4 ∧ 1 ≤ Prw ∧ 1 ≤ G ∧ 1 ≤ Pet) (hlr0 : 0 ≤ lr) (hlr : lr ≤ Prw * L) (hlw1 : lw1 ≤ Prw * L) (hhN : hN / 2 ≤ Prw * L) (hDF : DF ≤ L) (hlaW : laW ≤ G * L) (hnu : nuS ≤ PN * L) (hUP : sF ≤ (D + 2) * δ * (PP0' * L + max 0 laW + lw1)) (hb1 : HMM = sF + δ * hN / 2) (haL : aL ≤ 4 / 3 * δ) (hade0 : 0 ≤ ade) (hade : ade ≤ aL) (haG10 : 0 ≤ aG1) (haG1 : aG1 ≤ aL) (haF0 : 0 ≤ aF) (haF : aF ≤ (D + 4) * aL) (haG20 : 0 ≤ aG2) (haG2 : aG2 ≤ (D + 4) * aL) (h7a : HL ≤ HMM + δ * (nuS + tableLineDegreeFive * DF + c * tableLineDegreeTwo) + D * c * g0 * ade * lr + c * g0 * Hde) (h7b : Hde ≤ HL + (δ * PI4 * D * L + D * aG1 * lr)) (h7c : HF ≤ (D + 4) * HL + δ * PI4 * D * L + D * aG2 * lr) (hdi : 2 * SI ≤ δlogδ + 2 * Ssum + 2 * D * aF * lr + 2 * HF) (hdn : SN / i ≤ g0 * (Hde + D * ade * lr) + δ * Pet) : let PH
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.LinearIndependentC:11  ReciprocityTheory.ChartRestriction.G.T0.PolynomialCoordinateBasis.coeff_smul_C
+lemma coeff_smul_C (q : MvPolynomial σ L) (e : E) (m : σ →₀ ℕ) : coeff m (q • C e : MvPolynomial σ E) = algebraMap L E (coeff m q) * e
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.LinearIndependentC:36  ReciprocityTheory.ChartRestriction.G.T0.PolynomialCoordinateBasis.linearIndependent_C
+lemma linearIndependent_C : LinearIndependent (MvPolynomial σ L) (fun i => (C (b i) : MvPolynomial σ E))
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.PTNonempty:34  ReciprocityTheory.ChartRestriction.G.T0.exists_embedding_over
+theorem exists_embedding_over {K Ω : Type} [Field K] [NumberField K] [Field Ω] [Algebra K Ω] (hfg : (⊤ : IntermediateField K Ω).FG) (sg : K →+* ℂ) : ∃ P : Ω →+* ℂ, P.comp (algebraMap K Ω) = sg
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.RegKrull:64  ReciprocityTheory.ChartRestriction.G.T0.mem_of_mem_heightOne_localizations
+theorem mem_of_mem_heightOne_localizations {R K : Type*} [CommRing R] [IsDomain R] [IsNoetherianRing R] [IsIntegrallyClosed R] [Field K] [Algebra R K] [IsFractionRing R K] (x : K) (hx : ∀ p : Ideal R, p.IsPrime → p.height = 1 → ∃ a s : R, s ∉ p ∧ x * algebraMap R K s = algebraMap R K a) : ∃ r : R, algebraMap R K r = x
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.SpanTopOfComplete:5  ReciprocityTheory.ChartRestriction.G.T0.SpanTopOfComplete.span_eq_top_of_complete
+theorem span_eq_top_of_complete {O N : Type*} [CommRing O] [AddCommGroup N] [Module O N] (ϖ : O) [IsPrecomplete (Ideal.span {ϖ}) O] (hsep : ∀ x : N, (∀ k : ℕ, ∃ y : N, x = ϖ ^ k • y) → x = 0) {n : ℕ} (S : Fin n → N) (hS : ∀ x : N, ∃ c : Fin n → O, ∃ y : N, x = ∑ i, c i • S i + ϖ • y) : Submodule.span O (Set.range S) = ⊤
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.TransferenceA:7  ReciprocityTheory.ChartRestriction.G.T0.gtA_countable
+theorem gtA_countable {n : ℕ} (B : Basis (Fin n) ℝ (Fin n → ℝ)) : Countable (span ℤ (Set.range B)).toAddSubgroup
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.TransferenceA:18  ReciprocityTheory.ChartRestriction.G.T0.gtA_mink_pi_lt
+theorem gtA_mink_pi_lt {n : ℕ} (B : Basis (Fin n) ℝ (Fin n → ℝ)) {t : ℝ} (ht : 0 < t) (h : |(Matrix.of B).det| < t ^ n) : ∃ x ∈ span ℤ (Set.range B), x ≠ 0 ∧ ‖x‖ < t
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.TransferenceA:36  ReciprocityTheory.ChartRestriction.G.T0.gtA_mink_pi_le
+theorem gtA_mink_pi_le {n : ℕ} (hn : 0 < n) (B : Basis (Fin n) ℝ (Fin n → ℝ)) {t : ℝ} (ht : 0 < t) (h : |(Matrix.of B).det| ≤ t ^ n) : ∃ x ∈ span ℤ (Set.range B), x ≠ 0 ∧ ‖x‖ ≤ t
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.TransferenceA:56  ReciprocityTheory.ChartRestriction.G.T0.gtA_norm_le_sqrt_mul
+theorem gtA_norm_le_sqrt_mul (n : ℕ) (x : EuclideanSpace ℝ (Fin n)) : ‖x‖ ≤ Real.sqrt n * ‖EuclideanSpace.equiv (Fin n) ℝ x‖
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.TransferenceA:69  ReciprocityTheory.ChartRestriction.G.T0.gtB_inner_eq
+theorem gtB_inner_eq (n : ℕ) (x y : EuclideanSpace ℝ (Fin n)) : inner ℝ x y = ∑ k, EuclideanSpace.equiv (Fin n) ℝ x k * EuclideanSpace.equiv (Fin n) ℝ y k
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.TransferenceA:75  ReciprocityTheory.ChartRestriction.G.T0.gtB_nondeg
+theorem gtB_nondeg (n : ℕ) : (innerₗ (EuclideanSpace ℝ (Fin n))).Nondegenerate
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.TransferenceA:87  ReciprocityTheory.ChartRestriction.G.T0.gtB_dual_short
+theorem gtB_dual_short {n : ℕ} (hn : 0 < n) (b : Basis (Fin n) ℝ (EuclideanSpace ℝ (Fin n))) (lam : ℝ) (hlam : 0 < lam) (hmin : ∀ x ∈ span ℤ (Set.range b), x ≠ 0 → lam ≤ ‖x‖) : ∃ y : EuclideanSpace ℝ (Fin n), y ≠ 0 ∧ (∀ j, ∃ m : ℤ, inner ℝ y (b j) = m) ∧ ‖y‖ ≤ n / lam
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.TransferenceB:7  ReciprocityTheory.ChartRestriction.G.T0.gtC_prim
+theorem gtC_prim {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] {n : ℕ} (b : Basis (Fin n) ℝ E) (y1 : E) (hy1 : y1 ≠ 0) (hint : ∀ j, ∃ m : ℤ, inner ℝ y1 (b j) = m) : ∃ y0 : E, ∃ xu ∈ span ℤ (Set.range b), y0 ≠ 0 ∧ (∀ j, ∃ m : ℤ, inner ℝ y0 (b j) = m) ∧ ‖y0‖ ≤ ‖y1‖ ∧ inner ℝ y0 xu = 1
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.TransferenceB:63  ReciprocityTheory.ChartRestriction.G.T0.gtD_lat
+theorem gtD_lat {m : ℕ} (b : Basis (Fin (m + 1)) ℝ (EuclideanSpace ℝ (Fin (m + 1)))) (y0 xu : EuclideanSpace ℝ (Fin (m + 1))) (hy0 : y0 ≠ 0) (hxu : xu ∈ span ℤ (Set.range b)) (h1 : inner ℝ y0 xu = 1) (hint : ∀ j, ∃ k : ℤ, inner ℝ y0 (b j) = k) : ∃ bW : Basis (Fin m) ℝ (ℝ ∙ y0)ᗮ, (∀ x ∈ span ℤ (Set.range bW), ((x : (ℝ ∙ y0)ᗮ) : EuclideanSpace ℝ (Fin (m + 1))) ∈ span ℤ (Set.range b)) ∧ (∀ v ∈ span ℤ (Set.range b), ∃ p ∈ span ℤ (Set.range bW), (p : EuclideanSpace ℝ (Fin (m + 1))) = v - inner ℝ y0 v • xu)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.ValUFD:10  ReciprocityTheory.ChartRestriction.G.T0.ValUFD.heightOne_principal
+theorem heightOne_principal (p : Ideal R) [p.IsPrime] (hp : p.height = 1) : ∃ g : R, Prime g ∧ p = Ideal.span {g}
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.ValUFD:19  ReciprocityTheory.ChartRestriction.G.T0.ValUFD.height_span_prime
+theorem height_span_prime {q : R} (hq : Prime q) : (Ideal.span {q}).height = 1
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.ValUFD:37  ReciprocityTheory.ChartRestriction.G.T0.ValUFD.loc_dvr
+theorem loc_dvr (p : Ideal R) [p.IsPrime] (hp : p.height = 1) (g : R) (hg : p = Ideal.span {g}) : IsDiscreteValuationRing (Localization.AtPrime p) ∧ Irreducible (algebraMap R (Localization.AtPrime p) g)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.ValUFD:70  ReciprocityTheory.ChartRestriction.G.T0.ValUFD.isUnit_mvPolynomial
+theorem isUnit_mvPolynomial {σ K : Type*} [Field K] (κ : MvPolynomial σ K) (h : IsUnit κ) : ∃ k : K, k ≠ 0 ∧ κ = MvPolynomial.C k
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.ValUFD:79  ReciprocityTheory.ChartRestriction.G.T0.ValUFD.gen_prime
+theorem gen_prime (hgen : ∀ p : Ideal R, p.IsPrime → p.height = 1 → p = Ideal.span {gen p}) {p : Ideal R} (hp : p ∈ {p : Ideal R | p.IsPrime ∧ p.height = 1}) : Prime (gen p)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.ValUFD:89  ReciprocityTheory.ChartRestriction.G.T0.ValUFD.gen_dvd_iff
+theorem gen_dvd_iff (hgen : ∀ p : Ideal R, p.IsPrime → p.height = 1 → p = Ideal.span {gen p}) {p : Ideal R} (hp : p ∈ {p : Ideal R | p.IsPrime ∧ p.height = 1}) {q : R} (hq : Prime q) : gen p ∣ q ↔ p = Ideal.span {q}
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.ValUFD:102  ReciprocityTheory.ChartRestriction.G.T0.ValUFD.mult_prime
+theorem mult_prime (hgen : ∀ p : Ideal R, p.IsPrime → p.height = 1 → p = Ideal.span {gen p}) {p : Ideal R} (hp : p ∈ {p : Ideal R | p.IsPrime ∧ p.height = 1}) {q : R} (hq : Prime q) : multiplicity (gen p) q = if p = Ideal.span {q} then 1 else 0
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.ValUFD:111  ReciprocityTheory.ChartRestriction.G.T0.ValUFD.factor_int
+theorem factor_int (hgen : ∀ p : Ideal R, p.IsPrime → p.height = 1 → p = Ideal.span {gen p}) (r : R) (hr : r ≠ 0) : ({p : Ideal R | p.IsPrime ∧ p.height = 1} ∩ {p | multiplicity (gen p) r ≠ 0}).Finite ∧ ∃ κ : R, IsUnit κ ∧ algebraMap R F r = algebraMap R F κ * ∏ᶠ (p : Ideal R) (_ : p ∈ {p : Ideal R | p.IsPrime ∧ p.height = 1}), algebraMap R F (gen p) ^ (multiplicity (gen p) r : ℤ)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.ValUFD:184  ReciprocityTheory.ChartRestriction.G.T0.ValUFD.factor_of_local
+theorem factor_of_local (gen : Ideal R → R) (hgen : ∀ p : Ideal R, p.IsPrime → p.height = 1 → p = Ideal.span {gen p}) (z : F) (hz : z ≠ 0) (n : Ideal R → ℤ) (hn : ∀ p : Ideal R, p.IsPrime → p.height = 1 → ∃ a s : R, a ∉ p ∧ s ∉ p ∧ z * algebraMap R F s = algebraMap R F (gen p) ^ n p * algebraMap R F a) : {p : Ideal R | p.IsPrime ∧ p.height = 1 ∧ n p ≠ 0}.Finite ∧ ∃ κ : R, IsUnit κ ∧ z = algebraMap R F κ * ∏ᶠ (p : Ideal R) (_ : p ∈ {p : Ideal R | p.IsPrime ∧ p.height = 1}), algebraMap R F (gen p) ^ n p
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.WeakApprox:11  ReciprocityTheory.ChartRestriction.G.T0.wa_exists_coe
+theorem wa_exists_coe (w : AddValuation F (WithTop ℤ)) (hw : ∀ a : F, a ≠ 0 → w a ≠ ⊤) {a : F} (ha : a ≠ 0) : ∃ m : ℤ, w a = m
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.WeakApprox:16  ReciprocityTheory.ChartRestriction.G.T0.wa_ne_zero_of_coe
+theorem wa_ne_zero_of_coe (w : AddValuation F (WithTop ℤ)) {a : F} {m : ℤ} (h : w a = m) : a ≠ 0
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.WeakApprox:22  ReciprocityTheory.ChartRestriction.G.T0.wa_pow
+theorem wa_pow (w : AddValuation F (WithTop ℤ)) {a : F} {m : ℤ} (h : w a = m) (n : ℕ) : w (a ^ n) = ((n * m : ℤ) : WithTop ℤ)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.WeakApprox:34  ReciprocityTheory.ChartRestriction.G.T0.wa_mul
+theorem wa_mul (w : AddValuation F (WithTop ℤ)) {a b : F} {m n : ℤ} (ha : w a = m) (hb : w b = n) : w (a * b) = ((m + n : ℤ) : WithTop ℤ)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.WeakApprox:38  ReciprocityTheory.ChartRestriction.G.T0.wa_inv
+theorem wa_inv (w : AddValuation F (WithTop ℤ)) {a : F} {m : ℤ} (ha : w a = m) : w a⁻¹ = ((-m : ℤ) : WithTop ℤ)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.WeakApprox:52  ReciprocityTheory.ChartRestriction.G.T0.wa_div
+theorem wa_div (w : AddValuation F (WithTop ℤ)) {a b : F} {m n : ℤ} (ha : w a = m) (hb : w b = n) : w (a / b) = ((m - n : ℤ) : WithTop ℤ)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.WeakApprox:56  ReciprocityTheory.ChartRestriction.G.T0.wa_zpow
+theorem wa_zpow (w : AddValuation F (WithTop ℤ)) {a : F} {m : ℤ} (h : w a = m) (z : ℤ) : w (a ^ z) = ((z * m : ℤ) : WithTop ℤ)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.WeakApprox:64  ReciprocityTheory.ChartRestriction.G.T0.wa_prod
+theorem wa_prod {ι : Type*} (w : AddValuation F (WithTop ℤ)) (S : Finset ι) (f : ι → F) (e : ι → ℤ) (h : ∀ i ∈ S, w (f i) = e i) : w (∏ i ∈ S, f i) = ((∑ i ∈ S, e i : ℤ) : WithTop ℤ)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.WeakApprox:89  ReciprocityTheory.ChartRestriction.G.T0.wa_eq_of_le
+theorem wa_eq_of_le (v w : AddValuation F (WithTop ℤ)) (hv : ∀ a : F, a ≠ 0 → v a ≠ ⊤) (hw : ∀ a : F, a ≠ 0 → w a ≠ ⊤) (hv1 : ∃ π : F, v π = 1) (hw1 : ∃ ρ : F, w ρ = 1) (h : ∀ a, 0 < v a → 0 ≤ w a) : v = w
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.WeakApprox:144  ReciprocityTheory.ChartRestriction.G.T0.wa_pair
+theorem wa_pair (v w : AddValuation F (WithTop ℤ)) (hv : ∀ a : F, a ≠ 0 → v a ≠ ⊤) (hw : ∀ a : F, a ≠ 0 → w a ≠ ⊤) (hv1 : ∃ π : F, v π = 1) (hw1 : ∃ ρ : F, w ρ = 1) (hne : v ≠ w) : ∃ s, 0 < v s ∧ w s < 0
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.WeakApprox:181  ReciprocityTheory.ChartRestriction.G.T0.wa_sep
+theorem wa_sep {ι : Type*} [DecidableEq ι] (v : ι → AddValuation F (WithTop ℤ)) (hfin : ∀ i (a : F), a ≠ 0 → v i a ≠ ⊤) (hone : ∀ i, ∃ π : F, v i π = 1) (hdist : Pairwise fun i j => v i ≠ v j) (i : ι) (T : Finset ι) (hi : i ∉ T) : ∃ s : F, s ≠ 0 ∧ 0 < v i s ∧ ∀ j ∈ T, v j s < 0
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.HeightTheory.WeakApprox:292  ReciprocityTheory.ChartRestriction.G.T0.weak_approx_orders
+theorem weak_approx_orders {F : Type*} [Field F] {k : ℕ} (v : Fin k → AddValuation F (WithTop ℤ)) (hfin : ∀ i (a : F), a ≠ 0 → v i a ≠ ⊤) (hone : ∀ i, ∃ π : F, v i π = 1) (hdist : Pairwise fun i j => v i ≠ v j) (n : Fin k → ℤ) : ∃ g : F, ∀ i, v i g = n i
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.PlaceDivisors.FiniteLocalLifts.IsLocalHomAlgebraMap:11  ReciprocityTheory.ChartRestriction.G.Pdiv.FiniteLocalHoms.isLocalHom_of_section
+theorem isLocalHom_of_section (χ : R →ₐ[O] O) : IsLocalHom (χ : R →+* O)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.PlaceDivisors.FiniteLocalLifts.IsLocalHomAlgebraMap:27  ReciprocityTheory.ChartRestriction.G.Pdiv.FiniteLocalHoms.isLocalHom_algebraMap
+theorem isLocalHom_algebraMap [Module.Finite O R] : IsLocalHom (algebraMap O R)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.PlaceDivisors.FiniteLocalLifts.IsLocalHomAlgebraMap:40  ReciprocityTheory.ChartRestriction.G.Pdiv.FiniteLocalHoms.isLocalHom_of_finite
+theorem isLocalHom_of_finite [Module.Finite O R] {S : Type} [CommRing S] [IsLocalRing S] [Algebra O S] (hS : IsLocalHom (algebraMap O S)) (χ : R →ₐ[O] S) : IsLocalHom (χ : R →+* S)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.PlaceDivisors.FiniteLocalLifts.SmLift:11  ReciprocityTheory.ChartRestriction.G.Pdiv.FiniteLocalHoms.exists_lift_nil
+theorem exists_lift_nil [Algebra.FormallySmooth R A] [Algebra.FinitePresentation R A] (ρ : W →ₐ[R] K) (hsurj : Function.Surjective ρ) (hnil : ∀ a ∈ RingHom.ker ρ, IsNilpotent a) (φ : A →ₐ[R] K) : ∃ ψ : A →ₐ[R] W, ρ.comp ψ = φ
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.PlaceDivisors.LinearFormDegree.InvFun:11  ReciprocityTheory.ChartRestriction.G.LF.InvFun.pow_sub_pow_order
+theorem pow_sub_pow_order (x y : MvPowerSeries σ R) (k : ℕ∞) (hxy : k ≤ (x - y).order) (hx : 1 ≤ x.order) (hy : 1 ≤ y.order) (n : ℕ) : k + n ≤ (x ^ n - y ^ n).order + 1
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.PlaceDivisors.LinearFormDegree.InvFun:36  ReciprocityTheory.ChartRestriction.G.LF.InvFun.prod_sub_prod_order
+theorem prod_sub_prod_order {ι : Type} (x y : ι → MvPowerSeries σ R) (n : ι → ℕ) (k : ℕ∞) (hxy : ∀ i, k ≤ (x i - y i).order) (hx : ∀ i, 1 ≤ (x i).order) (hy : ∀ i, 1 ≤ (y i).order) (s : Finset ι) : ((∑ i ∈ s, n i : ℕ) : ℕ∞) ≤ (∏ i ∈ s, x i ^ n i).order ∧ ((∑ i ∈ s, n i : ℕ) : ℕ∞) ≤ (∏ i ∈ s, y i ^ n i).order ∧ k + (∑ i ∈ s, n i : ℕ) ≤ (∏ i ∈ s, x i ^ n i - ∏ i ∈ s, y i ^ n i).order + 1
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.PlaceDivisors.LinearFormDegree.InvFun:73  ReciprocityTheory.ChartRestriction.G.LF.InvFun.subst_sub_subst_order
+theorem subst_sub_subst_order [Finite σ] (a b : σ → MvPowerSeries σ R) (ha : ∀ i, constantCoeff (a i) = 0) (hb : ∀ i, constantCoeff (b i) = 0) (k : ℕ) (hab : ∀ i, (k : ℕ∞) ≤ (a i - b i).order) (N : MvPowerSeries σ R) (hN : 2 ≤ N.order) : ((k + 1 : ℕ) : ℕ∞) ≤ (subst a N - subst b N).order
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.PlaceDivisors.LinearFormDegree.InvFun:107  ReciprocityTheory.ChartRestriction.G.LF.InvFun.eq_single_of_degree_eq_one
+theorem eq_single_of_degree_eq_one {e : σ →₀ ℕ} (h : e.degree = 1) : ∃ j, e = Finsupp.single j 1
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.PlaceDivisors.LinearFormDegree.InvFun:306  ReciprocityTheory.ChartRestriction.G.LF.InvFun.exists_rightInv
+theorem exists_rightInv (φ : σ → MvPowerSeries σ R) (h0 : ∀ i, constantCoeff (φ i) = 0) (L : Matrix σ σ R) (h1 : ∀ i j, coeff (Finsupp.single j 1) (φ i) = L i j) (hu : IsUnit L.det) : ∃ ψ : σ → MvPowerSeries σ R, (∀ i, constantCoeff (ψ i) = 0) ∧ (∀ i j, coeff (Finsupp.single j 1) (ψ i) = L⁻¹ i j) ∧ ∀ i, subst ψ (φ i) = X i
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.PlaceDivisors.LinearFormDegree.InvFun:314  ReciprocityTheory.ChartRestriction.G.LF.InvFun.exists_inv
+theorem exists_inv (φ : σ → MvPowerSeries σ R) (h0 : ∀ i, constantCoeff (φ i) = 0) (L : Matrix σ σ R) (h1 : ∀ i j, coeff (Finsupp.single j 1) (φ i) = L i j) (hu : IsUnit L.det) : ∃ ψ : σ → MvPowerSeries σ R, (∀ i, constantCoeff (ψ i) = 0) ∧ (∀ i, subst ψ (φ i) = X i) ∧ ∀ i, subst φ (ψ i) = X i
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.PullbackSections.HolomorphicFamilies.ModelGamA:70  ReciprocityTheory.ChartRestriction.G.PullbackSections.MG.coeffs_of_small
+theorem coeffs_of_small (a b c : ℂ) (δ : ℝ) (hδ : 0 < δ) (h : ∀ s : ℂ, ‖s‖ < δ → a + s * b - s ^ 2 * c = 0) : a = 0 ∧ b = 0 ∧ c = 0
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.PullbackSections.LieBridgeB:16  ReciprocityTheory.ChartRestriction.G.PullbackSections.pow_eig
+theorem pow_eig (f : Module.End S M) {x : S} {m : M} (hm : f m = x • m) (n : ℕ) : (f ^ n) m = x ^ n • m
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.PullbackSections.LieBridgeB:21  ReciprocityTheory.ChartRestriction.G.PullbackSections.aeval_eig
+theorem aeval_eig (f : Module.End S M) {x : S} {m : M} (hm : f m = x • m) (P : ℤ[X]) : aeval f P m = aeval x P • m
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.PullbackSections.LieBridgeB:27  ReciprocityTheory.ChartRestriction.G.PullbackSections.aevalS_eig
+theorem aevalS_eig (f : Module.End S M) {x : S} {m : M} (hm : f m = x • m) (P : S[X]) : aeval f P m = aeval x P • m
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.PullbackSections.LieBridgeC:9  ReciprocityTheory.ChartRestriction.G.PullbackSections.exists_sepElt
+theorem exists_sepElt {E : Type} [Field E] [NumberField E] {F : Type} [Field F] (j : F →+* ℂ) (χ : (E →+* ℂ) → (𝓞 E →+* F)) (hχ : ∀ τ a, j (χ τ a) = τ (a : E)) : ∃ α : 𝓞 E, Function.Injective (fun τ => χ τ α) ∧ (∃ f : ℤ[X], aeval α f = 0 ∧ f.map (Int.castRingHom F) = ∏ τ, (X - C (χ τ α))) ∧ ∀ a : 𝓞 E, ∃ (N : ℤ) (g : ℤ[X]), N ≠ 0 ∧ (N : 𝓞 E) * a = aeval α g
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.SquareIntegrability.ColTorusB:7  ReciprocityTheory.ChartRestriction.G.I2.ct_expo_num
+theorem ct_expo_num (q c : ℕ) (hq : 1 ≤ q) {U y M1 r : ℝ} (hU : 0 ≤ U) (hy : 0 ≤ y) (hM : M1 ≤ q / 2) (hr0 : 0 ≤ r) (hr : r * (2 * π * U + 5 * Real.sqrt (q * (c + 1))) ≤ c) (ht : 28 * (c : ℝ) ≤ q * y ^ 2) : q * π * r ^ 2 / 2 + 2 * π * r * (U + q * y) - π * (q - M1) * y ^ 2 ≤ 1.07 * c - 1.33 * (q * y ^ 2)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.SquareIntegrability.ColTorusB:49  ReciprocityTheory.ChartRestriction.G.I2.ct_base_num
+theorem ct_base_num (q c : ℕ) (hq : 1 ≤ q) {t0 : ℝ} (hC5 : 4 * (c : ℝ) * (7 + Real.log (q * c)) ≤ t0) : (6.5 * Real.exp 1.07 * Real.sqrt (q * (c + 1))) ^ c ≤ Real.exp (0.14 * t0)
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.SquareIntegrability.ColTorusB:84  ReciprocityTheory.ChartRestriction.G.I2.ct_B_num
+theorem ct_B_num (gA gB dK dst : ℕ) {t0 Bsq : ℝ} (hBsq0 : 0 ≤ Bsq) (hBsq : Bsq ≤ 12 * (5.12 : ℝ) ^ gB) (hgB : gB ≤ gA) (hdK : dK ≤ dst) (hC6 : (gA : ℝ) * Real.log 2 ≤ t0) : Real.sqrt Bsq * (2 * 3 ^ dK) * Real.exp (-(0.19 * t0)) ≤ 7 * 2 ^ gA * (4.3 : ℝ) ^ dst
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.SquareIntegrability.ColTorusB:115  ReciprocityTheory.ChartRestriction.G.I2.jet_product_le
+theorem jet_product_le (q c dK gA dst : ℕ) (hq : 1 ≤ q) {n U t0 Bsq : ℝ} (hn : 1 ≤ n) (hU0 : 0 ≤ U) (hU : 2 * π * U ≤ 1.5 * n) (hC5 : 4 * (c : ℝ) * (7 + Real.log (q * c)) ≤ t0) (hB : Real.sqrt Bsq * (2 * 3 ^ dK) * Real.exp (-(0.19 * t0)) ≤ 7 * 2 ^ gA * (4.3 : ℝ) ^ dst) : (2 * π * U + 5 * Real.sqrt (q * (c + 1))) ^ c * (Real.sqrt Bsq * Real.exp (1.07 * c) * (2 * 3 ^ dK * Real.exp (-(1.33 * t0)))) ≤ 7 * 2 ^ gA * (4.3 : ℝ) ^ dst * Real.exp (-t0) * n ^ c
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.SquareIntegrability.ContinuousRl:103  ReciprocityTheory.ChartRestriction.G.I2.DimB.torus_unique
+theorem torus_unique (D : C(UnitAddTorus (Fin k), ℂ)) (h : ∀ n, UnitAddTorus.mFourierCoeff D n = 0) : D = 0
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.SquareIntegrability.ContinuousRl:113  ReciprocityTheory.ChartRestriction.G.I2.DimB.shift_sum
+theorem shift_sum {G β ι : Type*} [AddCommMonoid G] (Φ : G → β) (a : ι → G) (h : ∀ l v, Φ (v + a l) = Φ v) (S : Finset ι) (v : G) : Φ (v + ∑ l ∈ S, a l) = Φ v
+
+### ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.SquareIntegrability.ContinuousRl:120  ReciprocityTheory.ChartRestriction.G.I2.DimB.shift_int
+theorem shift_int {G β : Type*} [AddCommGroup G] (Φ : G → β) (e : G) (h : ∀ v, Φ (v + e) = Φ v) (c : ℤ) (v : G) : Φ (v + c • e) = Φ v
+
