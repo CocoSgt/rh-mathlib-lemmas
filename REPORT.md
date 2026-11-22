@@ -11,7 +11,7 @@
 - **候选表**：§2 列了 52 条（含主线 glue 4 条），逐条到固定版 Mathlib 源码里搜过同名/同义声明（搜索脚本与结果在 `analysis/mathlib_check.py`、`analysis/mathlib_checks.txt`）；另有 15 条 Mathlib 已有、不必并入的记在 §2.3。52 条里 23 条（标 ★）已做进试点。
 - **试点**：`extracted/` 是一个独立 Lake 项目（pin 同一版 Mathlib），13 个文件、89 条公开定理，全部 `lake build -K jobs=4` 通过，`#print axioms` 只依赖 `propext, Classical.choice, Quot.sound`（§3）。原文件在摘出前都先原样编译过一遍（每条引理的内部依赖锥 = 0，§2 表中"依赖"列）。
 - **最重要的发现**：(1) 几块可以"整体并入"的通用文件：紧自伴算子谱定理（368 行）、正则局部环是整环（388 行）、半正定矩阵行列式不等式（Hadamard/Fischer/Minkowski，153 行）、代数 Farkas 引理 / Weyl–Minkowski（235 行）——这些在 Mathlib 里都缺；(2) 真正阻碍复用的是 import 列表"聚合式"写法：一个文件往往 import 上百个模块但证明只用其中几个，所以**依赖锥必须靠单独编译来量，不能看 import 列表**（§1.4）。
-- **GitHub（步骤 5，§3.5）**：全部交付物在 https://github.com/CocoSgt/rh-mathlib-lemmas ；mathlib4 fork 在 https://github.com/CocoSgt/mathlib4 ；第一批 3 个 PR 已开：[#46339](https://github.com/leanprover-community/mathlib4/pull/46339)（PosDef 行列式不等式）、[#46340](https://github.com/leanprover-community/mathlib4/pull/46340)（Jacobi 公式）、[#46341](https://github.com/leanprover-community/mathlib4/pull/46341)（Cauchy–Binet），CI 状态见 PROGRESS.md。
+- **GitHub（步骤 5，§3.5）**：全部交付物在 https://github.com/CocoSgt/rh-mathlib-lemmas ；mathlib4 fork 在 https://github.com/CocoSgt/mathlib4 ；第一批 3 个 PR 已开且 CI 全绿：[#46339](https://github.com/leanprover-community/mathlib4/pull/46339)（PosDef 行列式不等式）、[#46340](https://github.com/leanprover-community/mathlib4/pull/46340)（Jacobi 公式）、[#46341](https://github.com/leanprover-community/mathlib4/pull/46341)（Cauchy–Binet）。
 
 ---
 
@@ -361,9 +361,9 @@ Lake 项目 `rhlemmas`，lean-toolchain `v4.33.1`，Mathlib pin 与 `source/lake
 
 | PR | 内容 | CI |
 |---|---|---|
-| [#46339](https://github.com/leanprover-community/mathlib4/pull/46339) | `feat(Analysis/Matrix/Order): add Minkowski, Fischer and Hadamard determinant inequalities` | 见 PROGRESS.md 最后一行 |
-| [#46340](https://github.com/leanprover-community/mathlib4/pull/46340) | `feat(Analysis/Matrix/Deriv): add Jacobi's formula for the derivative of the determinant` | 同上 |
-| [#46341](https://github.com/leanprover-community/mathlib4/pull/46341) | `feat(LinearAlgebra/Matrix/Determinant): add the Cauchy–Binet formula as a sum over functions` | 同上 |
+| [#46339](https://github.com/leanprover-community/mathlib4/pull/46339) | `feat(Analysis/Matrix/Order): add Minkowski, Fischer and Hadamard determinant inequalities` | ✅ 全绿（Build / Lint style / Test and lint / Post-CI 全过，14 pass、3 skipped；22:04 CST） |
+| [#46340](https://github.com/leanprover-community/mathlib4/pull/46340) | `feat(Analysis/Matrix/Deriv): add Jacobi's formula for the derivative of the determinant` | ✅ 全绿（同上；22:04 CST） |
+| [#46341](https://github.com/leanprover-community/mathlib4/pull/46341) | `feat(LinearAlgebra/Matrix/Determinant): add the Cauchy–Binet formula as a sum over functions` | ✅ 全绿（同上；`Determinant/Basic.lean` 下游多，Build 多跑了约 8 分钟；22:12 CST） |
 
 - 没有放进第一批但已经整理好、可以直接移植的：Bernstein 基积分、`det_mulLeft/mulRight`（矩阵空间上左/右乘的行列式）、`Equiv.Perm.eq_one_of_forall_le`、tent 函数单位分解、紧自伴谱定理、正则局部环是整环、Farkas / Weyl–Minkowski（后三个较大，需要拆分并与 master 的新进展比对）。
 
