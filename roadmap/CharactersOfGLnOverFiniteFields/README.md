@@ -85,35 +85,50 @@ classification by prime labels. The numbers of the statements are those of `Sugg
   off `0` (1.2). It exists and is not unique. Replacing `θ` by `θ ∘ (·^q)` replaces the index `k` of
   every root-power-sum below by `kq`, and no statement of the roadmap depends on the choice.
 - **Regular characters.** `IsRegular F n θ`, for `θ : Kˣ →* ℂˣ`: `θ^{q^i} ≠ θ^{q^j}` whenever
-  `i ≠ j` in `range n`. Through a Teichmüller character `θ₀` and an `F`-embedding
+  `i ≠ j` in `range n`; the Frobenius conjugate `θ^{q^i}` is spelled `θ.comp (powMonoidHom (q ^ i))`
+  (`u ↦ θ (u ^ q ^ i)`), the spelling of Tau Ceti's `GL₂` files, and equals the pointwise power
+  `θ ^ (q ^ i)` because `θ (u ^ m) = θ u ^ m`. Through a Teichmüller character `θ₀` and an `F`-embedding
   `ι : K → AlgebraicClosure F`, every character of `Kˣ` is `u ↦ θ₀ (ι u)^k` for one residue `k`
   modulo `qⁿ - 1`, and it is regular exactly when `k q^i ≢ k [MOD qⁿ - 1]` for `0 < i < n`.
 - **Root-power-sums.** `rootPowerSum θ k P = ∑_{P(α) = 0} θ(α)^k`, the roots taken in the
   algebraic closure with multiplicity. A function `s : F[X] → ℂ` is *additive* when
   `s (P * Q) = s P + s Q` for monic `P, Q`.
-- **Characters.** A character of a group `G` is a function `G → ℂ`. `IsIrreducibleCharacter n χ`
-  says that `χ` is the character of a simple object of `FDRep ℂ (GL (Fin n) F)`; in Tau Ceti this is
-  membership in `TauCeti.irreducibleCharacters ℂ G`. A *virtual character* is an element of
-  `TauCeti.virtualCharacters ℂ G`, a difference of two characters. The pairing `glPairing n φ ψ` is
-  `(Nat.card G)⁻¹ ∑ g, φ g * conj (ψ g)`. On class functions it is `TauCeti.ClassFunction.characterPairing`
-  (`|G|⁻¹ ∑ g, φ g * ψ g⁻¹`), because `ψ g⁻¹ = conj (ψ g)` for virtual characters
-  (`TauCeti.conj_apply_of_mem_virtualCharacters`); it is bilinear, symmetric and nondegenerate, and
-  `⟨χ, χ'⟩` is `1` when `χ = χ'` is irreducible and `0` on two distinct irreducible characters.
-- **Cuspidal characters.** `unipotentRadical F n a` is the set `Uₐ` of invertible matrices that
-  agree with the identity matrix in their first `a` columns; it has `q^{a(n-a)}` elements and is the
-  unipotent radical of the standard parabolic subgroup `parabolic F n a` of block upper triangular
-  matrices with block sizes `a`, `n - a`. `IsCuspidalCharacter n χ`: `χ` is irreducible and
-  `∑_{u ∈ Uₐ} χ u = 0` for every `0 < a < n`. An invertible matrix is *elliptic* when its
+- **Characters.** A character of `GLₙ(F)` is a Tau Ceti class function, an element of
+  `TauCeti.ClassFunction ℂ (GL (Fin n) F)`, read as a function `g ↦ χ g` through `χ.1`; every
+  function on `GLₙ(F)` of Layers 3–8 is a class function. `χ` is an *irreducible character* when
+  `χ.1 ∈ TauCeti.irreducibleCharacters ℂ (GL (Fin n) F)`, the characters of the simple objects of
+  `FDRep ℂ (GL (Fin n) F)`, and a *virtual character* when
+  `χ.1 ∈ TauCeti.virtualCharacters ℂ (GL (Fin n) F)`, a difference of two characters. The pairing of
+  two class functions is Tau Ceti's `TauCeti.ClassFunction.characterPairing`,
+  `⟨φ, ψ⟩ = |G|⁻¹ ∑ g, φ g * ψ g⁻¹`: bilinear, symmetric, nondegenerate
+  (`TauCeti.ClassFunction.characterPairing_nondegenerate`), `1` on an irreducible character with
+  itself and `0` on two distinct irreducible characters
+  (`TauCeti.ClassFunction.characterPairing_ofFDRep_orthonormal`). On virtual characters
+  `ψ g⁻¹ = conj (ψ g)` (`TauCeti.conj_apply_of_mem_virtualCharacters`), so there
+  `⟨φ, ψ⟩ = |G|⁻¹ ∑ g, φ g * conj (ψ g)`. None of this is redefined here.
+- **Cuspidal characters.** `unipotentRadical F n a` is the subgroup `Uₐ` of `GLₙ(F)` of invertible
+  matrices that agree with the identity matrix in their first `a` columns; it has `q^{a(n-a)}`
+  elements and is the unipotent radical of the standard parabolic subgroup `parabolic F n a`, the
+  subgroup `Pₐ` of block upper triangular matrices with block sizes `a`, `n - a` (defined through
+  Mathlib's `Matrix.BlockTriangular`; `mem_parabolic_iff` is its meaning in matrix entries).
+  `IsCuspidalCharacter n χ`, for a class function `χ`: `χ` is irreducible and `∑_{u ∈ Uₐ} χ u = 0`
+  for every `0 < a < n`. An invertible matrix is *elliptic* when its
   characteristic polynomial is irreducible, and *primary* when its characteristic polynomial is a
   power of an irreducible polynomial.
-- **Harish–Chandra induction and Jacquet restriction.** For `a + b = n` and functions `α`, `β` on
-  `GL (Fin a) F`, `GL (Fin b) F`, `harishChandraInduct n a b h α β x` is the induced class function
-  `|Pₐ|⁻¹ ∑_{y, y⁻¹ x y ∈ Pₐ} α (A) * β (B)`, where `A`, `B` are the diagonal blocks of `y⁻¹ x y`.
-  Its adjoint under the pairing is the Jacquet restriction
-  `jacquetRestrict n a b h χ m = |Uₐ|⁻¹ ∑_{u ∈ Uₐ} χ (m * u)`, for a block-diagonal matrix `m` with
-  diagonal blocks `m.1, m.2` (Frobenius reciprocity, 7.3). A *list* `L` of degree-tagged functions
-  has the iterated induction `hcL L n` along the standard parabolic subgroup of the block sizes of
-  the list; it is `0` unless the degrees sum to `n`.
+- **Harish–Chandra induction and Jacquet restriction.** For `a + b = n` and class functions `α`,
+  `β` of `GL_a(F)`, `GL_b(F)`, `harishChandraInduct n a b h α β` is the induced class function of
+  `GLₙ(F)`, Tau Ceti's `Subgroup.indClassFunction` from `Pₐ` of the inflation to `Pₐ` of `α` and
+  `β`: the class function `|Pₐ|⁻¹ ∑_{y, y⁻¹ x y ∈ Pₐ} α (A) * β (B)`, where `A`, `B` are the
+  diagonal blocks of `y⁻¹ x y` (`leviInflate` is the inflation, `levi` the projection onto the
+  blocks). Its adjoint under the pairing is the Jacquet restriction `jacquetRestrict n a b h χ`, the
+  class function of `GLₐ(F) × GL_b(F)` with `m ↦ |Uₐ|⁻¹ ∑_{u ∈ Uₐ} χ (m * u)`, `m` read as the
+  block-diagonal matrix with diagonal blocks `m.1, m.2` (Frobenius reciprocity, 7.3). A *list* `L`
+  of degree-tagged class functions has the iterated induction `hcL L n` along the standard parabolic
+  subgroup of the block sizes of the list: `hcL [] 0 = 1`, `hcL [] n = 0` for `n ≠ 0`, and
+  `hcL (p :: L) n` is `0` unless the degrees sum to `n`.
+- **Decidability.** The statements are made for a finite field `F` with a `DecidableEq F` instance,
+  so that every finite sum over a group or a subspace reads the same `Fintype` instances; any two
+  such instances give the same sums (`Fintype.subsingleton`).
 - **Finite sums.** Every sum of the roadmap is finite: over a finite group or subgroup, the
   endomorphisms or subspaces of a finite vector space, or the divisors of `n`.
 
@@ -129,7 +144,10 @@ Let `N_q(n)` be the number of monic irreducible polynomials of degree `n` over `
   `qⁿ - qⁿ⁻¹`. For `n ≥ 2`, a monic irreducible of degree `n` has nonzero constant term.
 - Each monic irreducible of degree `n` has `n` distinct roots in `AlgebraicClosure F`, forming
   one orbit of `α ↦ α^q`; `α ↦ minpoly F α` is `n`-to-`1` from the elements of degree `n` onto the
-  monic irreducibles of degree `n`.
+  monic irreducibles of degree `n`. This is in Tau Ceti:
+  `TauCeti.FiniteField.orbit_eq_rootSet_minpoly`, `TauCeti.FiniteField.natCard_orbit_eq_natDegree_minpoly`
+  and `TauCeti.FiniteField.mem_orbit_iff_minpoly_eq` (Exact supplier contracts); it is consumed,
+  not re-proved.
 
 Route. Every monic polynomial is the product of the monic irreducibles in
 `UniqueFactorizationMonoid.normalizedFactors`; counting multisets of total degree `n`,
@@ -146,7 +164,9 @@ Frobenius.
   degree `n` exactly `qⁿ⁻¹` have zero constant term.
 
 *Needs:* Mathlib `UniqueFactorizationMonoid.normalizedFactors` and unique factorization,
-`ArithmeticFunction.moebius`, `Nat.divisors`, `Polynomial.roots`, `minpoly`.
+`ArithmeticFunction.moebius`, `Nat.divisors`, `Polynomial.roots`, `minpoly`; Tau Ceti's
+`TauCeti.exists_monic_irreducible_natDegree_eq` (a monic irreducible of every degree) and its
+Frobenius-orbit lemmas (Exact supplier contracts).
 
 ### 1.2 Teichmüller characters
 
@@ -200,13 +220,16 @@ count is `N_q(n)` by 1.1.
 
 Route. The roots of a product; the only root of `(X - 1)^j`; the roots of a minimal polynomial form
 one Frobenius orbit (1.1); the last point is the orthogonality of the characters of a finite cyclic
-group of order `qⁿ - 1`, since `θ` is injective on it.
+group of order `qⁿ - 1`, since `θ` is injective on it. The last point is `rootPowerSum_orthogonality`
+in `Suggested.lean`, summed over the units `Kˣ` of an extension `K` of degree `n` through an
+`F`-embedding of `K` into the algebraic closure.
 
 **Checks.** `rootPowerSum θ k (X - a) = θ(a)^k`; `rootPowerSum θ 0 P = P.natDegree` for monic `P`
 with nonzero constant term; `rootPowerSum θ k P` depends only on `P` and `k` modulo `q^{P.natDegree} - 1`.
 
 *Needs:* 1.1–1.3; Mathlib `Polynomial.roots`, `IsPrimitiveRoot`; Tau Ceti's character orthogonality
-for finite abelian groups.
+for finite commutative groups, `CommGroup.sum_inv_mul_monoidHom_apply_eq_ite`
+(`TauCeti/GroupTheory/FiniteAbelian/CharacterOrthogonality.lean`).
 
 ### Examples
 
@@ -216,7 +239,9 @@ for finite abelian groups.
 
 ### Dependencies
 
-Mathlib, and Tau Ceti's character orthogonality for finite abelian groups. No other layer.
+Mathlib; Tau Ceti's existence of monic irreducibles, its Frobenius-orbit lemmas for the roots of a
+minimal polynomial, and its character orthogonality for finite commutative groups (Exact supplier
+contracts). No other layer.
 
 ## Layer 2: endomorphisms of a finite vector space and their characteristic polynomials
 
@@ -240,13 +265,17 @@ characteristic polynomial `f^m` *and* minimal polynomial `f^m` form one orbit, o
 
 Route. A matrix with characteristic polynomial `f` makes `V` a vector space over the field
 `F[X]/(f)`, with `q^d` elements, and its centralizer in `GL(V)` is that field's multiplicative
-group, of order `q^d - 1` (`Module.AEval'`). A matrix with minimal polynomial `f^m` is cyclic, and
+group, of order `q^d - 1` (`Module.AEval`). A matrix with minimal polynomial `f^m` is cyclic, and
 its centralizer is the group of units of `F[X]/(f^m)`, of order `q^{d(m-1)}(q^d - 1)`.
 
 **Checks.** `GL₂(𝔽₂)` has order `6`, and its class of elements with characteristic polynomial
-`X² + X + 1` has `6/3 = 2` elements, the two elements of order `3`.
+`X² + X + 1` has `6/3 = 2` elements, the two elements of order `3`. For `n = 2` the sizes are those
+of Tau Ceti's table of class sizes of `GL₂(F)`
+(`TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/ClassSize.lean`): the elliptic classes have
+`q (q - 1)` elements (`TauCeti.ncard_carrier_mk_of_forall_mul_self_ne`) and the order is
+`TauCeti.natCard_GL_fin_two`.
 
-*Needs:* 1.1; Mathlib `LinearMap.charpoly`, `Matrix.card_GL_field`, `Module.AEval'`, `Quotient` of
+*Needs:* 1.1; Mathlib `LinearMap.charpoly`, `Matrix.card_GL_field`, `Module.AEval`, `Quotient` of
 `F[X]`.
 
 ### 2.3 Subspaces
@@ -286,7 +315,27 @@ given degree and compare with the number of endomorphisms.
 **Checks.** `μ(f) = 1/(q - 1)` for `f = X - a` of degree `1`, since the endomorphism is `a` itself
 and `|GL (Fin 1) F| = q - 1`; `μ` is not multiplicative.
 
-*Needs:* 2.1–2.3; Mathlib `Module.AEval'`, `Polynomial` divisibility.
+*Needs:* 2.1–2.3; Mathlib `Module.AEval`, `Polynomial` divisibility.
+
+### 2.5 The non-split torus
+
+For an extension `K` of `F` of degree `n`, the *non-split torus* is the image in `GLₙ(F)` of the
+injective homomorphism `nsTorus K : Kˣ →* GL (Fin n) F` that sends `u` to the matrix, in Mathlib's
+basis `Module.finBasis F K` of `K` (reindexed to `Fin n`), of the `F`-linear map `x ↦ u x` of
+multiplication by `u` on `K`. Any two bases give conjugate embeddings.
+
+Prove: `nsTorus K` is injective; the elements of its image that do not come from `Fˣ` are exactly
+the elliptic matrices whose characteristic polynomial splits over `K`, and the one with
+characteristic polynomial `P` is conjugate to `nsTorus K z` for each root `z ∈ Kˣ` of `P`; for `n = 2`
+and a quadratic extension it is conjugate to Tau Ceti's `TauCeti.GL2NonSplitTorusHom F K`.
+
+Route. Multiplication by `u` is `F`-linear and invertible; the characteristic polynomial of
+multiplication by `u` is `minpoly F u` when `K = F[u]`, which holds for `u` of degree `n` (the
+module `Module.AEval F K u` is cyclic of rank the degree of `u`); two bases differ by an
+invertible matrix.
+
+**Checks.** `nsTorus K` restricted to `Fˣ` is `a ↦ a • 1`. `GL₂(𝔽₃)`: the image is a cyclic group of
+order `8`, and `TauCeti.GL2NonSplitTorus.natCard_eq` gives the order.
 
 ### Examples
 
@@ -295,47 +344,61 @@ and `|GL (Fin 1) F| = q - 1`; `μ` is not multiplicative.
 
 ### Dependencies
 
-Layer 1; Mathlib only otherwise.
+Layer 1; Mathlib only otherwise. The case `n = 2` of 2.2 and 2.5 is in Tau Ceti
+(`TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/{NonSplitTorus,NormalForm,ClassSize,Centralizer}.lean`).
 
 ## Layer 3: class functions on `GLₙ(F)`, constant terms, and cuspidal characters
 
 ### 3.1 The pairing
 
-`glPairing n` is the pairing of the Conventions. On class functions it is
-`TauCeti.ClassFunction.characterPairing`, nondegenerate because `Nat.card (GL (Fin n) F) ≠ 0` in
-`ℂ`; `⟨χ, χ'⟩` is `1` if `χ = χ'` is irreducible and `0` on two distinct irreducible characters
-(Mathlib `FDRep.char_orthonormal`).
+The pairing is Tau Ceti's `TauCeti.ClassFunction.characterPairing` (Conventions), consumed and not
+redefined. It is nondegenerate because `Nat.card (GL (Fin n) F) ≠ 0` in `ℂ`
+(`TauCeti.ClassFunction.characterPairing_nondegenerate`); `⟨χ, χ'⟩` is `1` if `χ = χ'` is
+irreducible and `0` on two distinct irreducible characters
+(`TauCeti.ClassFunction.characterPairing_ofFDRep_orthonormal`).
 
 ### 3.2 Characters
 
-`IsIrreducibleCharacter n χ` is membership in `TauCeti.irreducibleCharacters ℂ (GL (Fin n) F)`.
-A virtual character of norm `1` is an irreducible character or the negative of one
+An irreducible character of `GLₙ(F)` is a class function `χ` with
+`χ.1 ∈ TauCeti.irreducibleCharacters ℂ (GL (Fin n) F)`; a virtual character is a class function
+whose underlying function lies in `TauCeti.virtualCharacters ℂ (GL (Fin n) F)`. A virtual character
+of norm `1` is an irreducible character or the negative of one
 (`TauCeti.exists_eq_irreducibleCharacter_or_neg`), and it is an irreducible character when
-moreover it is a nonnegative combination of characters
+moreover its value at `1` is a natural number
 (`TauCeti.mem_irreducibleCharacters_of_characterPairing_self_eq_one`).
 
 ### 3.3 Parabolic subgroups, their unipotent radicals, and the Levi subgroups
 
 `parabolic F n a` is the subgroup `Pₐ` of block upper triangular matrices with block sizes `a`,
-`n - a`; `unipotentRadical F n a` is its unipotent radical `Uₐ`; `toGL n M` is the matrix `M` read
-in `GL (Fin n) F` (the value `1` occurs only for a non-invertible `M`); `blockDiag n a b h m` is the
-block-diagonal matrix with diagonal blocks `m.1`, `m.2`, for `a + b = n`. Prove: `Uₐ` is normal in
+`n - a` (Mathlib's `Matrix.BlockTriangular` for the block index that is `0` on the first `a`
+indices and `1` on the last `n - a`; `mem_parabolic_iff` spells it entrywise);
+`unipotentRadical F n a` is its unipotent radical `Uₐ`, contained in `Pₐ`
+(`unipotentRadical_le_parabolic`); `toGL n M` is the matrix `M` read in `GL (Fin n) F` (the value
+`1` occurs only for a non-invertible `M`); `blockDiag n a b h m` is the block-diagonal matrix with
+diagonal blocks `m.1`, `m.2`, for `a + b = n`. Prove: `Uₐ` is normal in
 `Pₐ` and `Pₐ` is the semidirect product of `Uₐ` with the subgroup `Lₐ` of block-diagonal matrices;
 `|Uₐ| = q^{a(n-a)}`; `blockDiag` is a unit, and `m ↦ toGL n (blockDiag n a b h m)` is an injective
 homomorphism `GL (Fin a) F × GL (Fin b) F →* GL (Fin n) F` with image `Lₐ`; the characteristic
 polynomial of the product of a block-diagonal matrix and an element of `Uₐ` is the product of the
 characteristic polynomials of its blocks.
 
-Route. Matrix computation; the last point by the block-triangular determinant formula.
+Route. Matrix computation; the last point by the block-triangular determinant formula (Mathlib
+`Matrix.twoBlockTriangular_det`).
+
+**Checks.** `parabolic F 2 1` is Tau Ceti's Borel subgroup `TauCeti.GL2Borel F`; for `n ≥ 1`,
+`parabolic F n 1` is its line stabilizer `TauCeti.lineStabilizer F 0` and `parabolic F n (n - 1)`
+its hyperplane stabilizer `TauCeti.hyperplaneStabilizer F` at the last index
+(`TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/{Borel,LineHyperplane}.lean`); `parabolic F n 0`
+and `parabolic F n n` are the whole group.
 
 ### 3.4 Cuspidal characters
 
-`IsCuspidalCharacter n χ` (Conventions): `χ` is irreducible and `∑_{u ∈ Uₐ} χ u = 0` for every
-`0 < a < n`.
+`IsCuspidalCharacter n χ` (Conventions), for a class function `χ`: `χ` is irreducible and
+`∑_{u ∈ Uₐ} χ u = 0` for every `0 < a < n`.
 
 ### 3.5 Constant terms
 
-Prove `cuspidal_iff_constant_terms`: for a function `χ` on `GL (Fin n) F`, `χ` is a cuspidal
+Prove `cuspidal_iff_constant_terms`: for a class function `χ` of `GL (Fin n) F`, `χ` is a cuspidal
 character if and only if it is irreducible and `∑_{u ∈ Uₐ} χ (m * u) = 0` for every `0 < a < n`
 and every block-diagonal matrix `m` with blocks of sizes `a`, `n - a`.
 
@@ -399,7 +462,9 @@ Route. Induction on the dimension, by the recursion of 4.1.
 ### 4.3 Class function
 
 Prove `psi_conj`: `psi s V (e.conj g) = psi s V g` for every `e : V ≃ₗ[F] V`. So `psi s V`
-restricted to the invertible endomorphisms is a class function on `GL(V)`. It is *not* a function of
+restricted to the invertible endomorphisms is a class function on `GL(V)`; for `V = Fin n → F` this
+is `psi_classFunction`, and `psiClassFunction s n : TauCeti.ClassFunction ℂ (GL (Fin n) F)` is the
+class function `g ↦ psi s (Fin n → F) (mulVecLin g)` it produces. It is *not* a function of
 the characteristic polynomial alone: for `s = natDegree` and `n = 2` it is `1 - q` at the identity and
 `1` at a Jordan block, which have the same characteristic polynomial.
 
@@ -463,7 +528,7 @@ characteristic polynomial, `1 - q` at the identity, `1` at a Jordan block and `0
 two distinct eigenvalues; its sum over `U₁` is `(1 - q) + (q - 1) * 1 = 0`.
 
 *Needs for the layer:* Layers 1 and 2; Mathlib `LinearMap.charpoly`, `LinearEquiv.charpoly_conj`,
-`Submodule.finrank_lt`, `Module.AEval'`.
+`Submodule.finrank_lt`, `Module.AEval`.
 
 ### Examples
 
@@ -480,12 +545,14 @@ Layers 1 and 2; Mathlib only otherwise.
 
 ### 5.1 Virtual characters
 
-Prove `rootPowerSum_virtualCharacter`: for a Teichmüller character `θ` and all `n, k`, the function
-`g ↦ rootPowerSum θ k (charpoly g)` on `GL (Fin n) F` is a virtual character.
+Prove `rootPowerSum_virtualCharacter`: for a Teichmüller character `θ` and all `n, k`, the class
+function `rootPowerSumClassFunction θ n k`, `g ↦ rootPowerSum θ k (charpoly g)`, of `GL (Fin n) F`
+is a virtual character: its underlying function lies in `TauCeti.virtualCharacters ℂ (GL (Fin n) F)`.
 
-Route, by induction on `n`. The class function induced from the non-split torus `T ≅ Kˣ`, `K` of
-degree `n`, with its character `θ ∘ ι` powered to `k`, agrees with `rootPowerSum θ k ∘ charpoly` on
-the elliptic classes and vanishes elsewhere (2.2 and 1.4). Off the elliptic set, `rootPowerSum θ k`
+Route, by induction on `n`. The class function induced (Tau Ceti's `Subgroup.indClassFunction`)
+from the non-split torus `T ≅ Kˣ` (2.5), `K` of degree `n`, by its character `θ ∘ ι` powered to
+`k`, agrees with `rootPowerSum θ k ∘ charpoly` on the elliptic classes and vanishes elsewhere
+(2.2 and 1.4). Off the elliptic set, `rootPowerSum θ k`
 of a polynomial is the sum of its values on the irreducible factors (1.4), so the difference is
 supported on the classes that meet a proper Levi subgroup, and there it is a sum of class functions
 induced from the Levi subgroups, each the function of 5.1 for a smaller `GLₘ(F)`.
@@ -493,9 +560,11 @@ induced from the Levi subgroups, each the function of 5.1 for a smaller `GLₘ(F
 ### 5.2 The pairing formula
 
 Prove `pairing_psi_rootPowerSum`: for a Teichmüller character `θ`, `n ≥ 1` and residues `k, l`,
-`⟨ψₖ, Ψ_l⟩ = |GL (Fin n) F| * #{i < n : k q^i ≡ l [MOD qⁿ - 1]}`, where `Ψ_l` is
-`rootPowerSum θ l ∘ charpoly` and `ψₖ` the function `g ↦ psi (rootPowerSum θ k) (Fin n → F) (mulVecLin g)`
-of `GL (Fin n) F`.
+`⟨ψₖ, Ψ_l⟩ = #{i < n : k q^i ≡ l [MOD qⁿ - 1]}`, where `Ψ_l` is `rootPowerSumClassFunction θ n l`
+and `ψₖ` is `psiClassFunction (rootPowerSum θ k) n`, the class function
+`g ↦ psi (rootPowerSum θ k) (Fin n → F) (mulVecLin g)` of `GL (Fin n) F`; the pairing is Tau Ceti's
+`characterPairing`, normalized by `|GL (Fin n) F|`, and with the plain sum over the group instead
+of the pairing the value is `|GL (Fin n) F|` times that number.
 
 Route. `ψₖ` is primitive (4.7) and equal to `rootPowerSum θ k (charpoly g)` on the elliptic
 elements (4.4 and 4.3); by 4.7 its pairing against `Ψ_l` equals that of the function
@@ -503,21 +572,22 @@ elements (4.4 and 4.3); by 4.7 its pairing against `Ψ_l` equals that of the fun
 monic polynomial `P = charpoly g`, using 2.2 for the size of a fibre and 1.1 to pass to a sum over
 the elements `α` with `α^{qⁿ - 1} = 1`; the orthogonality of 1.4 evaluates it.
 
-**Checks.** `l = k`, `k` regular: `|GL (Fin n) F|`. `l = 0`:
-`#{i < n : qⁿ - 1 ∣ k q^i}` times `|GL (Fin n) F|`, which is `0` for `k` regular and `n > 1`.
+**Checks.** `l = k`, `k` regular: `1`, which is 6.1. `l = 0`: `#{i < n : qⁿ - 1 ∣ k q^i}`, which
+is `0` for `k` regular and `n > 1`. `n = 1`: `ψₖ(g) = g^k` on `Fˣ` and the pairing is `1` if
+`k ≡ l [MOD q - 1]` and `0` otherwise.
 
 ### 5.3 The Möbius transform of a root-power-sum is a virtual character
 
-Prove `psi_rootPowerSum_virtualCharacter`: for a Teichmüller character `θ` and all `n, k`, the
-function `g ↦ psi (rootPowerSum θ k) (Fin n → F) (mulVecLin g)` on `GL (Fin n) F` is a virtual
-character.
+Prove `psi_rootPowerSum_virtualCharacter`: for a Teichmüller character `θ` and all `n, k`,
+`psiClassFunction (rootPowerSum θ k) n` is a virtual character of `GL (Fin n) F`.
 
 Route, by induction on `n`. Expand the recursion of 4.1 over the chains of invariant subspaces:
 on the invertible endomorphisms, `psi s` is an alternating sum over the complete flags of invariant
 subspaces of class functions induced from the Levi subgroups of the flags (the class function
-induced from a subgroup in the sense of character theory, Tau Ceti's
-`TauCeti/RepresentationTheory/Induction/ClassFunction.lean`), each the product of the functions of
-5.1 on the graded pieces of the flag. An induced character is a character, and the functions on the
+induced from a subgroup, Tau Ceti's `Subgroup.indClassFunction` of
+`TauCeti/RepresentationTheory/Induction/ClassFunction.lean`; induction preserves virtual
+characters, `Subgroup.indClassFun_mem_virtualCharacters`), each the product of the functions of 5.1
+on the graded pieces of the flag. An induced character is a character, and the functions on the
 graded pieces are virtual characters by 5.1 and the induction hypothesis.
 
 ### Examples
@@ -531,19 +601,19 @@ Layers 1–4; Tau Ceti's induced class functions. Nothing from Layers 6–8.
 
 ## Layer 6: cuspidal characters from regular characters
 
-Fix `n ≥ 1` and a Teichmüller character `θ`, and let `χₖ` be the function
-`g ↦ (-1)^{n-1} * psi (rootPowerSum θ k) (Fin n → F) (mulVecLin g)` on `GL (Fin n) F`.
+Fix `n ≥ 1` and a Teichmüller character `θ`, and let `χₖ` be the class function
+`chiK θ n k = (-1)^{n-1} • psiClassFunction (rootPowerSum θ k) n` of `GL (Fin n) F`.
 
 ### 6.1 Self-pairing
 
 Prove `self_pairing_psi_rootPowerSum`: if `k q^i ≢ k [MOD qⁿ - 1]` for `0 < i < n`, then
-`⟨χₖ, χₖ⟩ = 1`.
+`⟨χₖ, χₖ⟩ = 1` (Tau Ceti's `TauCeti.ClassFunction.characterPairing`).
 
 Route. 5.2 with `l = k`; the sign squares to `1`.
 
 ### 6.2 Irreducible and cuspidal
 
-Prove `cuspidal_of_self_pairing`: under the hypothesis of 6.1, `χₖ` is a cuspidal character.
+Prove `cuspidal_of_self_pairing`: under the hypothesis of 6.1, `chiK θ n k` is a cuspidal character.
 
 Route. `χₖ` is a virtual character (5.3, up to the sign). It is irreducible or the negative of an
 irreducible character (3.2 and 6.1); its value at `1` is
@@ -571,8 +641,27 @@ Route. If `θ' = θ^{q^i}`, the two values at an elliptic `g` are equal by 1.4, 
 characters are equal by the separation on the elliptic elements (3.7). Conversely, if `χ = χ'`, then
 `⟨χ, Ψ_{k'}⟩ = ⟨χ', Ψ_{k'}⟩` is `|GL (Fin n) F|` by 6.1 and 5.2, so `#{i < n : k q^i ≡ k'} > 0`.
 
+### 6.5 Check: the case `n = 2` is Tau Ceti's cuspidal character
+
+Prove `gl2Cuspidal_character`: for a quadratic extension `K` of `F` (`[Algebra.IsQuadraticExtension F K]`)
+and a character `θ` of `Kˣ` with `θ.comp (powMonoidHom (Fintype.card F)) ≠ θ`, the class function of
+Tau Ceti's `TauCeti.GL2Cuspidal θ _` (the character of an irreducible representation of degree
+`q - 1`, built in Tau Ceti as a difference of two induced characters) is a cuspidal character in
+the sense of this roadmap, and its value at the elliptic matrix `TauCeti.GL2NonSplitTorusHom F K u`,
+`u ∈ Kˣ ∖ Fˣ`, is `- ∑_{i < 2} θ (u ^ q ^ i)`, the value that 6.3 attaches to `θ`.
+
+Route. `U₁` is the identity together with the Jordan blocks `jordanGL 1 t`, `t ≠ 0`; the values of
+`TauCeti.GL2CuspidalVirtualCharacter` at the identity and at a Jordan block with eigenvalue `1` are
+`(q - 1) θ(1)` and `-θ(1)` (`TauCeti.GL2CuspidalVirtualCharacter_apply_one` and
+`TauCeti.GL2CuspidalVirtualCharacter_apply_jordanGL`), so they sum to `0` over `U₁`, and `1` is the
+only `a` with `0 < a < 2`. The irreducibility is
+`TauCeti.GL2CuspidalVirtualCharacter_mem_irreducibleCharacters` (through `TauCeti.simple_GL2Cuspidal`
+and `TauCeti.character_GL2Cuspidal`), and the elliptic value is
+`TauCeti.GL2CuspidalVirtualCharacter_apply_gl2NonSplitTorusHom`.
+
 *Needs for the layer:* Layers 3–5; Tau Ceti's norm-one test
-(`TauCeti.mem_irreducibleCharacters_of_characterPairing_self_eq_one`) is what 6.2 uses.
+(`TauCeti.mem_irreducibleCharacters_of_characterPairing_self_eq_one`) is what 6.2 uses, and its `GL₂`
+table is the Check above.
 
 ### Examples
 
@@ -591,30 +680,43 @@ Layers 3–5. Nothing from Layer 7.
 
 - (a) `levi n a b h x`: the two diagonal blocks of `x`, for block sizes `a`, `b` with `a + b = n`,
   each read in its general linear group through `toGL`.
-- (b) `harishChandraInduct n a b h α β`: the induced class function of the Conventions.
+- (b) `leviInflate n a b h α β`: the class function on `Pₐ`
+  (`TauCeti.ClassFunction ℂ (parabolic F n a)`) given by `p ↦ α (Aₚ) * β (Bₚ)`, for class functions
+  `α`, `β` of `GL (Fin a) F`, `GL (Fin b) F`, where `Aₚ`, `Bₚ` are the diagonal blocks of `p`
+  (`leviInflate_mem_classFunction` is what makes it a class function); and
+  `harishChandraInduct n a b h α β`: the induced class function of the Conventions, which is Tau
+  Ceti's `Subgroup.indClassFunction (parabolic F n a) (leviInflate n a b h α β)`.
 - (c) `hcL L n`: the induction along a list, by recursion on the list: `hcL [] 0 = 1`, `hcL [] n = 0`
   for `n ≠ 0`, and `hcL (p :: L) n` is `harishChandraInduct n p.1 (sum of the degrees of L) _ p.2
   (hcL L (sum of the degrees of L))` when the degrees sum to `n`, and `0` otherwise.
 
-The API to prove: `harishChandraInduct n a b h α β` is a class function of its last argument and
-linear in `(α, β)`; it is the character of an induced representation when `α, β` are characters; and
+The API to prove: `harishChandraInduct n a b h α β` is linear in `(α, β)` (it is a class function
+by construction); it is the character of an induced representation when `α, β` are characters; and
 the *transitivity*: for lists `L₁, L₂` of total degrees `a`, `b`,
 `hcL (L₁ ++ L₂) (a + b) = harishChandraInduct (a + b) a b rfl (hcL L₁ a) (hcL L₂ b)`, so that `hcL`
 depends on the list only through the multiset of its entries.
 
 ### 7.2 The Jacquet restriction
 
-`jacquetRestrict n a b h χ m = |Uₐ|⁻¹ ∑_{u ∈ Uₐ} χ (toGL n (blockDiag n a b h m) * u)`, the average of
-`χ` over the coset of the unipotent radical through the image in `GL (Fin n) F` of the element `m`
-of the Levi subgroup `Lₐ` (3.3): the constant term of 3.5, as a function on `Lₐ`.
+`jacquetRestrict n a b h χ`, for a class function `χ` of `GL (Fin n) F`, is the class function of
+`GL (Fin a) F × GL (Fin b) F` given by
+`jacquetRestrict n a b h χ m = |Uₐ|⁻¹ ∑_{u ∈ Uₐ} χ (toGL n (blockDiag n a b h m) * u)`, the average
+of `χ` over the coset of the unipotent radical through the image in `GL (Fin n) F` of the element
+`m` of the Levi subgroup `Lₐ` (3.3): the constant term of 3.5, as a class function on `Lₐ`
+(`jacquetRestrict_mem_classFunction` is the class-function property).
 
 ### 7.3 Frobenius reciprocity
 
-Prove `jacquet_frobenius`: for every function `χ` on `GL (Fin n) F` and all `α, β`,
-`⟨χ, harishChandraInduct n a b h α β⟩ = |Lₐ|⁻¹ ∑_{m ∈ Lₐ} jacquetRestrict n a b h χ m * conj (α m.1 * β m.2)`.
+Prove `jacquet_frobenius`: for every class function `χ` of `GL (Fin n) F` and all class functions
+`α`, `β` of `GL (Fin a) F`, `GL (Fin b) F`,
+`⟨χ, harishChandraInduct n a b h α β⟩ = |Lₐ|⁻¹ ∑_{m ∈ Lₐ} jacquetRestrict n a b h χ m * (α m.1 * β m.2)⁻¹`.
 
-Route. Expand the pairing and substitute `y⁻¹ x y` for `x`; as `χ` is constant on conjugacy classes
-the sum over `y` collapses, and `Pₐ = Lₐ ⋉ Uₐ` (3.3).
+Route. Frobenius reciprocity for class functions is in Tau Ceti (`TauCeti.characterPairing_ind`):
+the left side is the pairing over `Pₐ` of the restriction of `χ` with the inflation of `α` and `β`.
+Decompose `Pₐ = Lₐ ⋉ Uₐ` (3.3): the inverse of an element with Levi part `m` and unipotent part `u`
+has Levi part `m⁻¹`, so the pairing over `Pₐ` is `|Pₐ|⁻¹ ∑_{m ∈ Lₐ} ∑_{u ∈ Uₐ} χ (m u) (α m.1 * β m.2)⁻¹`,
+and `|Pₐ| = |Lₐ| |Uₐ|` gives the right side. For characters `α`, `β` the inverse
+`(α m.1 * β m.2)⁻¹` is the complex conjugate (`TauCeti.conj_apply_of_mem_virtualCharacters`).
 
 ### 7.4 Induction of characters is a character
 
@@ -629,12 +731,18 @@ Prove `pairing_hcL`: for lists `L, L'` of cuspidal characters, each of total deg
 `⟨hcL L n, hcL L' n⟩ = 0` if `L` and `L'` are not the same multiset, and `= 1` if `L` has no
 repeated entry and `L` and `L'` are the same multiset.
 
-Route. The Mackey formula for the restriction of an induced class function to a subgroup, applied to
-the two parabolic subgroups, indexes the double cosets by the permutations of the blocks, and leaves
-the bijections between the two multisets of degree-tagged cuspidal characters that respect the
-degrees; a cuspidal character paired with a different cuspidal character of the same degree is `0`,
-and the self-pairing of a cuspidal character is `1`. In general the pairing is the number of such
-bijections, which takes the two values stated.
+Route. The Mackey formula for the restriction of an induced class function to a subgroup is in Tau
+Ceti (`Subgroup.indClassFun_mackey`). By the transitivity of 7.1 and the projection formula
+`Subgroup.indClassFun_comp_subtype_mul`, each of the two inductions is, up to a positive integer
+factor, the induction from the Borel subgroup of a class function on the Borel subgroup (the
+restriction to the Borel subgroup of the inflation to the parabolic subgroup); the Mackey formula
+for two inductions from the Borel subgroup sums over the double cosets of the Borel subgroup,
+which the Bruhat decomposition of `GLₙ(F)` indexes by the permutations of the blocks (Tau Ceti's
+`TauCeti.exists_mem_doubleCoset_permutationGL`), and leaves the bijections between the two
+multisets of degree-tagged cuspidal characters that respect the degrees: on the diagonal torus the
+two class functions are the products of the restrictions of their entries, and two cuspidal
+characters of the same degree pair to `1` when equal and to `0` otherwise. In general the pairing
+is the number of such bijections, which takes the two values stated.
 
 ### 7.6 Existence of the cuspidal support
 
@@ -654,11 +762,14 @@ the transitivity of 7.1, `⟨χ, hcL (L₁ ++ L₂) n⟩ > 0`.
 
 ### 7.7 The Whittaker functional and the generic constituents
 
-- (a) `upperUnitriangular n`: the set `U` of upper unitriangular matrices, the unipotent radical of
-  the standard Borel subgroup, of order `q^{n(n-1)/2}`.
+- (a) The group `U` of upper unitriangular matrices is Tau Ceti's subgroup
+  `TauCeti.upperUnitriangularGroup (Fin n) F`, the unipotent radical of the standard Borel subgroup
+  `TauCeti.upperTriangularGroup (Fin n) F`; it is consumed, not redefined. Prove its order
+  `|U| = q^{n(n-1)/2}`.
 - (b) `superdiagonalSum hn M`: the sum of the entries `M i (i + 1)`, `i < n - 1`, of a matrix.
 - (c) `whittakerFunctional ψ hn f = ∑_{u ∈ U} ψ (superdiagonalSum hn u) * f u`, for an additive
-  character `ψ : AddChar F ℂ`. An irreducible character is *generic* for `ψ` when this is not `0`.
+  character `ψ : AddChar F ℂ` and a class function `f`. An irreducible character is *generic* for
+  `ψ` when this is not `0`.
 - (d) Prove `exists_generic_constituent`: for `ψ ≠ 1` and a list `L` of cuspidal characters of total
   degree `n ≥ 1`, there is an irreducible character `ρ` of `GL (Fin n) F` that is generic for `ψ`
   and has `⟨ρ, hcL L n⟩ ≠ 0`.
@@ -687,7 +798,7 @@ one target with 7.7 (d).
 ### 7.9 The counting lemma
 
 Prove `card_cuspidal_multisets_le`: every `S : Finset (Multiset …)` of multisets of cuspidal
-characters, each of total degree `n`, has at most `qⁿ - qⁿ⁻¹` elements.
+class functions, each of total degree `n`, has at most `qⁿ - qⁿ⁻¹` elements.
 
 Route. By 7.5 and 7.7 (d), distinct multisets have generic constituents that are distinct (a common
 constituent would pair the two inductions), and by 7.8 there are at most `qⁿ - qⁿ⁻¹` generic
@@ -733,7 +844,8 @@ character; the latter is the generic one of 7.7 (d): `∑_{u ∈ U} ψ (u₁₂)
 
 ### Dependencies
 
-Layers 3–6; Tau Ceti's Mackey theory and induced class functions (Exact supplier contracts).
+Layers 3–6; Tau Ceti's induced class functions, Frobenius reciprocity, Mackey decomposition and
+Bruhat decomposition (Exact supplier contracts).
 
 ## Layer 8: uniqueness of the cuspidal support, and labels
 
@@ -787,42 +899,59 @@ Layers 1 and 6–7.
 
 ### Owned here
 
-- the counts of Layer 1, the Teichmüller characters, the regular characters of `Kˣ` and their
-  Frobenius orbits, the root-power-sums and their orthogonality;
-- masses, the sizes of the elliptic classes and of the classes with given characteristic and
-  minimal polynomial, the count of subspaces, cyclic vectors and the density recursion (Layer 2);
-- the vocabulary for `GLₙ(F)`: `glPairing`, `IsIrreducibleCharacter`, `unipotentRadical`,
-  `IsCuspidalCharacter`, `parabolic`, `levi`, `toGL`, `harishChandraInduct`, `hcL`, `blockDiag`,
-  `jacquetRestrict`, with their API (Layers 3 and 7);
-- Green's Möbius transform `psi` and its properties (Layer 4);
-- the virtual characters `rootPowerSum θ k ∘ charpoly` and the pairing formula (Layer 5);
-- the cuspidal character of a regular character, its injectivity up to Frobenius conjugacy,
-  Green's theorem and the count of cuspidal characters (Layers 6 and 7);
+- the counts of Layer 1, the Teichmüller characters, the regular characters of `Kˣ` (`IsRegular`)
+  and their Frobenius orbits, the root-power-sums (`rootPowerSum`), their additivity and their
+  orthogonality;
+- masses (`mass`), the sizes of the elliptic classes and of the classes with given characteristic
+  and minimal polynomial, the count of subspaces, the non-split torus (`nsTorus`), cyclic vectors and
+  the density recursion (Layer 2);
+- the vocabulary for `GLₙ(F)`: the standard parabolic subgroups `parabolic` and their unipotent
+  radicals `unipotentRadical` (subgroups of `GL (Fin n) F`), `toGL`, `blockDiag`,
+  `IsCuspidalCharacter`, `levi`, `leviInflate`, `harishChandraInduct`, `hcL`, `jacquetRestrict`,
+  `superdiagonalSum`, `whittakerFunctional`, with their API (Layers 3 and 7);
+- Green's Möbius transform `psi`, the class function `psiClassFunction` it gives on `GL (Fin n) F`,
+  and their properties (Layer 4);
+- the class functions `rootPowerSumClassFunction θ n k` of Layer 5 and the pairing formula;
+- the class functions `chiK θ n k` of Layer 6, the cuspidal character of a regular character, its
+  injectivity up to Frobenius conjugacy, Green's theorem and the count of cuspidal characters
+  (Layers 6 and 7);
 - the existence and uniqueness of the cuspidal support of an irreducible character, and the
   parametrization of the cuspidal characters by prime labels (7.6, 8.1 and 8.2).
 
 ### Consumed, not redefined
 
-- class functions, their bilinear pairing, virtual characters, the enumeration of the irreducible
-  characters and the norm-one test: [RepresentationTheory.CharacterTheory](../RepresentationTheory/CharacterTheory/README.md)
-  Layers 0–3, as Tau Ceti realizes them (`TauCeti.ClassFunction`, `TauCeti.ClassFunction.characterPairing`,
-  `TauCeti.virtualCharacters`, `TauCeti.irreducibleCharacters`, `TauCeti.irreducibleCharacter`);
-- the table of `GL₂(𝔽_q)`: the same roadmap's Layer 9, as realized in
-  `TauCeti/RepresentationTheory/CharacterTable/GL2/`, which is a Check for `n = 2` (the Examples of
-  Layer 3) and the instance `n = 2` of 7.10 and 8.2;
-- Mackey theory, Frobenius reciprocity and induced class functions:
-  [RepresentationTheory.InductionRestriction](../RepresentationTheory/InductionRestriction/README.md),
-  as realized in `TauCeti/RepresentationTheory/Induction/`, consumed in 7.3 and 7.5;
-- the conjugacy classes of `GL₂(𝔽_q)`: Tau Ceti's
-  `TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/ConjugacyClasses.lean`, the case `n = 2` of the
-  classification of matrices by their elementary divisors used in 2.2 and 2.4.
+- class functions `TauCeti.ClassFunction`, their pairing `TauCeti.ClassFunction.characterPairing`,
+  virtual characters `TauCeti.virtualCharacters`, the irreducible characters
+  `TauCeti.irreducibleCharacters` and the norm-one test:
+  [RepresentationTheory.CharacterTheory](../RepresentationTheory/CharacterTheory/README.md)
+  Layers 0–3, as realized in `TauCeti/RepresentationTheory/CharacterTable/`. Characters of
+  `GLₙ(F)` are stated as class functions and irreducibility as membership in
+  `TauCeti.irreducibleCharacters`; the pairing is never written out again;
+- the induced class function `Subgroup.indClassFun` and its bundled form
+  `Subgroup.indClassFunction`, Frobenius reciprocity `TauCeti.characterPairing_ind`, the Mackey
+  decomposition `Subgroup.indClassFun_mackey` and the preservation of virtual characters under
+  induction: [RepresentationTheory.InductionRestriction](../RepresentationTheory/InductionRestriction/README.md),
+  as realized in `TauCeti/RepresentationTheory/Induction/` (consumed in 5.1, 5.3, 7.1, 7.3 and 7.5;
+  Harish–Chandra induction *is* `Subgroup.indClassFunction` from a standard parabolic subgroup);
+- the upper unitriangular subgroup `TauCeti.upperUnitriangularGroup` and the upper triangular
+  subgroup `TauCeti.upperTriangularGroup` (7.7);
+- the existence of a monic irreducible of every degree and the Frobenius orbit of the roots of a
+  minimal polynomial (1.1), `TauCeti/FieldTheory/Finite/`; character orthogonality for finite
+  commutative groups (1.4), `TauCeti/GroupTheory/FiniteAbelian/CharacterOrthogonality.lean`;
+- the Bruhat decomposition of `GLₙ(F)`, `TauCeti.exists_mem_doubleCoset_permutationGL` (7.5);
+- the conjugacy classes, centralizers and class sizes of `GL₂(𝔽_q)` and its non-split torus,
+  `TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/`: the case `n = 2` of 2.2 and 2.5 and the
+  Checks of 3.3;
+- the table of `GL₂(𝔽_q)`: Layer 9 of
+  [RepresentationTheory.CharacterTheory](../RepresentationTheory/CharacterTheory/README.md), as
+  realized in `TauCeti/RepresentationTheory/CharacterTable/GL2/`; it is the Check 6.5 for `n = 2`.
 
 ### Not owned here
 
 - **The table of `GL₂(𝔽_q)`**: Layer 9 of
   [RepresentationTheory.CharacterTheory](../RepresentationTheory/CharacterTheory/README.md) owns
   it; that the cuspidal characters of 6.3 at `n = 2` are Tau Ceti's `TauCeti.GL2Cuspidal`, up to
-  `θ ↦ θ^q`, is a Check of this roadmap, not a target.
+  `θ ↦ θ^q`, is the Check 6.5 of this roadmap, not a target.
 - **Zelevinsky's classification of the irreducible characters of `GLₙ(F)` by multisegments**: 7.6
   and 8.1 give the cuspidal support, not the segment data, and 7.5 gives the pairing of two
   inductions, not the constitution of one; the generic constituent and its uniqueness are not
@@ -843,52 +972,98 @@ Layers 1 and 6–7.
 
 ### From Mathlib
 
-- `Mathlib/LinearAlgebra/Matrix/GeneralLinearGroup/Card.lean`: `Matrix.card_GL_field`
-  (`Nat.card (GL (Fin n) 𝔽) = ∏ i, (q ^ n - q ^ i)`) and the notation `GL`.
-- `Mathlib/LinearAlgebra/Matrix/Charpoly/Basic.lean`: `Matrix.charpoly`;
+- `Mathlib/LinearAlgebra/Matrix/GeneralLinearGroup/Defs.lean`: `Matrix.GeneralLinearGroup` and the
+  notation `GL`; `Mathlib/LinearAlgebra/Matrix/GeneralLinearGroup/Card.lean`: `Matrix.card_GL_field`.
+- `Mathlib/LinearAlgebra/Matrix/Charpoly/Basic.lean`: `Matrix.charpoly`, `Matrix.charpoly_units_conj`;
   `Mathlib/LinearAlgebra/Charpoly/Basic.lean`: `LinearMap.charpoly`;
   `Mathlib/LinearAlgebra/Charpoly/ToMatrix.lean`: `Matrix.mulVecLin`, `charpoly_mulVecLin`,
   `LinearEquiv.charpoly_conj`.
+- `Mathlib/LinearAlgebra/Matrix/Block.lean`: `Matrix.BlockTriangular`, `Matrix.blockTriangular_one`,
+  `Matrix.blockTriangular_inv_of_blockTriangular` (the parabolic subgroups, 3.3) and
+  `Matrix.twoBlockTriangular_det`.
 - `Mathlib/Algebra/Polynomial/Roots.lean`: `Polynomial.roots`;
   `Mathlib/FieldTheory/AlgebraicClosure.lean`: `AlgebraicClosure`;
-  `Mathlib/RingTheory/Polynomial/Basic.lean` (and `Content.lean`): `Polynomial.aeval`,
+  `Mathlib/RingTheory/Polynomial/Basic.lean` and `Content.lean`: `Polynomial.aeval`,
   `Polynomial.map`.
 - `Mathlib/FieldTheory/Finite/Basic.lean`: the cyclicity of `Gal(L/K)` for finite fields;
   `Mathlib/FieldTheory/Finite/GaloisField.lean`: `GaloisField`.
-- `Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean`: `Submodule.finrank_lt`.
-- `Mathlib/RepresentationTheory/Character.lean`: `Representation.character`,
-  `FDRep.char_orthonormal`; `Mathlib/RepresentationTheory/FDRep.lean`: `FDRep`,
-  `FDRep.character`; `Mathlib/CategoryTheory/Simple.lean`: `CategoryTheory.Simple`.
+- `Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean`: `Submodule.finrank_lt`;
+  `Mathlib/Algebra/Polynomial/Module/AEval.lean`: `Module.AEval` (the `F[X]`-module under an
+  endomorphism, 2.2 and 2.4).
 - `Mathlib/NumberTheory/ArithmeticFunction/Moebius.lean`: `ArithmeticFunction.moebius`.
-- `Mathlib/RingTheory/UniqueFactorizationDomain/Defs.lean`:
+- `Mathlib/RingTheory/UniqueFactorizationDomain/NormalizedFactors.lean`:
   `UniqueFactorizationMonoid.normalizedFactors`.
-- `ConjClasses`, `Module.AEval'`, `Matrix.of`, `finCongr`: their defining modules.
+- `Mathlib/Algebra/Group/Hom/Basic.lean`: `powMonoidHom` (the Frobenius twist of a character);
+  `Mathlib/LinearAlgebra/Dimension/StrongRankCondition.lean`: `Algebra.IsQuadraticExtension`
+  (the Check 6.5); `Mathlib/NumberTheory/LegendreSymbol/AddCharacter.lean`: `AddChar` (7.7).
+- `ConjClasses`, `Matrix.of`, `finCongr`: their defining modules.
 
 ### From Tau Ceti
 
 - `TauCeti/RepresentationTheory/CharacterTable/ClassFunction.lean`: `TauCeti.ClassFunction`,
-  `TauCeti.ClassFunction.ofCharacter`, `TauCeti.ClassFunction.equivConjClasses`.
+  `TauCeti.ClassFunction.mem_iff`, `TauCeti.ClassFunction.ofCharacter`,
+  `TauCeti.ClassFunction.ofFDRep`, `TauCeti.ClassFunction.comap`,
+  `TauCeti.ClassFunction.ofConjClasses`, `TauCeti.ClassFunction.equivConjClasses`.
 - `TauCeti/RepresentationTheory/CharacterTable/Pairing.lean`:
-  `TauCeti.ClassFunction.characterPairing` (`LinearMap.BilinForm k (ClassFunction k G)`),
-  `TauCeti.ClassFunction.characterPairing_apply` (`= |G|⁻¹ ∑ g, f₁ g * f₂ g⁻¹`).
-- `TauCeti/RepresentationTheory/CharacterTable/VirtualCharacter.lean`:
-  `TauCeti.virtualCharacters`, `TauCeti.character_mem_virtualCharacters`,
-  `TauCeti.conj_apply_of_mem_virtualCharacters`,
+  `TauCeti.ClassFunction.characterPairing` (`LinearMap.BilinForm k (ClassFunction k G)`) and
+  `TauCeti.ClassFunction.characterPairing_apply` (`|G|⁻¹ ∑ g, f₁ g * f₂ g⁻¹`),
+  `TauCeti.ClassFunction.characterPairing_symm`, `TauCeti.ClassFunction.characterPairing_nondegenerate`,
+  `TauCeti.ClassFunction.characterPairing_ofFDRep_orthonormal`, `TauCeti.ClassFunction.characterPairing_ofFDRep_self`,
+  `TauCeti.ClassFunction.characterPairing_ofFDRep_eq_zero`.
+- `TauCeti/RepresentationTheory/CharacterTable/VirtualCharacter.lean`: `TauCeti.virtualCharacters`,
+  `TauCeti.character_mem_virtualCharacters`,
+  `TauCeti.mem_virtualCharacters_iff_exists_eq_character_sub_character`,
+  `TauCeti.virtualCharacters_le_classFunction`, `TauCeti.conj_apply_of_mem_virtualCharacters`,
   `TauCeti.exists_eq_irreducibleCharacter_or_neg`,
   `TauCeti.mem_irreducibleCharacters_of_characterPairing_self_eq_one`,
   `TauCeti.exists_simple_character_eq_of_characterPairing_self_eq_one`.
 - `TauCeti/RepresentationTheory/CharacterTable/Table.lean`: `TauCeti.irreducibleCharacters`,
+  `TauCeti.mem_irreducibleCharacters_iff`, `TauCeti.character_mem_irreducibleCharacters`,
   `TauCeti.irreducibleCharacter`.
-- `TauCeti/RepresentationTheory/CharacterTable/GL2/Cuspidal/Basic.lean` and `Irreducible.lean`:
-  `TauCeti.GL2CuspidalVirtualCharacter`, `TauCeti.GL2CuspidalVirtualCharacter_apply_jordanGL`,
-  `TauCeti.GL2Cuspidal`, `TauCeti.finrank_GL2Cuspidal`, `TauCeti.simple_GL2Cuspidal`.
-- `TauCeti/RepresentationTheory/Induction/ClassFunction.lean` and the `Mackey/` directory:
-  induced class functions and the Mackey formula (the exact declarations are named by the
-  InductionRestriction roadmap's own supplier contract; this roadmap consumes them as that roadmap
-  states them).
-- `TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/ConjugacyClasses.lean`: the classes of `GL₂`.
-- `TauCeti/GroupTheory/FiniteAbelian/CharacterOrthogonality.lean`: character orthogonality for
-  finite abelian groups (1.4).
+- `TauCeti/RepresentationTheory/Induction/ClassFunction.lean`: `Subgroup.indClassFun`,
+  `Subgroup.indClassFunction`, `Subgroup.indClassFun_apply`,
+  `Subgroup.indClassFun_eq_natCard_inv_mul_sum`;
+  `TauCeti/RepresentationTheory/Induction/VirtualCharacter.lean`:
+  `Subgroup.indClassFun_mem_virtualCharacters`;
+  `TauCeti/RepresentationTheory/Induction/FrobeniusReciprocity.lean`:
+  `TauCeti.frobenius_reciprocity_classFunction`, `TauCeti.characterPairing_ind`;
+  `TauCeti/RepresentationTheory/Induction/Mackey/Basic.lean`: `TauCeti.mackeySubgroup`,
+  `TauCeti.mackeyClassFun`, `Subgroup.indClassFun_mackey`,
+  `Subgroup.comap_subtype_indClassFunction_mackey`.
+- `TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/UpperUnitriangular/Basic.lean`:
+  `TauCeti.upperUnitriangularGroup`, `TauCeti.UpperUnitriangularGroup.mem_iff`;
+  `TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/UpperTriangular/Basic.lean`:
+  `TauCeti.upperTriangularGroup`; `TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/Borel.lean`:
+  `TauCeti.GL2Borel`; `TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/LineHyperplane.lean`:
+  `TauCeti.lineStabilizer`, `TauCeti.hyperplaneStabilizer`, `TauCeti.mem_lineStabilizer_iff`,
+  `TauCeti.mem_hyperplaneStabilizer_iff`; `TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/Diagonal/Bruhat.lean`:
+  `TauCeti.exists_mem_doubleCoset_permutationGL`.
+- `TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/NonSplitTorus.lean`:
+  `TauCeti.GL2NonSplitTorusHom`, `TauCeti.GL2NonSplitTorus`;
+  `TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/NormalForm.lean`:
+  `TauCeti.exists_isConj_normalForm`; `TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/ConjugacyClasses.lean`:
+  `TauCeti.card_conjClasses_GL2`; `TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/Centralizer.lean`:
+  `TauCeti.natCard_centralizer_diagGL`, `TauCeti.natCard_centralizer_jordanGL`;
+  `TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/ClassSize.lean`:
+  `TauCeti.ncard_carrier_mk_of_forall_mul_self_ne`;
+  `TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/Card.lean`: `TauCeti.natCard_GL_fin_two`.
+- `TauCeti/RepresentationTheory/CharacterTable/GL2/Cuspidal/Basic.lean`:
+  `TauCeti.GL2CuspidalVirtualCharacter` and its values
+  (`TauCeti.GL2CuspidalVirtualCharacter_apply_scalar`, `TauCeti.GL2CuspidalVirtualCharacter_apply_diagGL`,
+  `TauCeti.GL2CuspidalVirtualCharacter_apply_jordanGL`,
+  `TauCeti.GL2CuspidalVirtualCharacter_apply_gl2NonSplitTorusHom`,
+  `TauCeti.GL2CuspidalVirtualCharacter_apply_one`);
+  `TauCeti/RepresentationTheory/CharacterTable/GL2/Cuspidal/Irreducible.lean`:
+  `TauCeti.GL2CuspidalVirtualCharacter_mem_irreducibleCharacters`, `TauCeti.GL2Cuspidal`,
+  `TauCeti.character_GL2Cuspidal`, `TauCeti.finrank_GL2Cuspidal`, `TauCeti.simple_GL2Cuspidal`.
+- `TauCeti/FieldTheory/Finite/Irreducible.lean`: `TauCeti.exists_monic_irreducible_natDegree_eq`;
+  `TauCeti/FieldTheory/Finite/MinpolyOrbit.lean`: `TauCeti.FiniteField.orbit_eq_rootSet_minpoly`,
+  `TauCeti.FiniteField.natCard_orbit_eq_natDegree_minpoly`,
+  `TauCeti.FiniteField.mem_orbit_iff_minpoly_eq`; `TauCeti/FieldTheory/Finite/FrobeniusFixed.lean`:
+  `TauCeti.FiniteField.pow_card_eq_self_iff_mem_range_algebraMap`,
+  `TauCeti.FiniteField.units_powMonoidHom_comp_powMonoidHom`.
+- `TauCeti/GroupTheory/FiniteAbelian/CharacterOrthogonality.lean`:
+  `CommGroup.sum_inv_mul_monoidHom_apply_eq_ite`, `CommGroup.sum_monoidHom_apply_eq_ite`.
 
 ### From TauCetiRoadmap.RepresentationTheory.CharacterTheory
 
@@ -999,7 +1174,13 @@ for `Development/AbelianVarietyTheory/Proofs/CharacterTheory/` and `InertiaEigen
 
 In the source, the existence of the cuspidal support (7.6) is proved through *generic*
 constituents (a Whittaker functional nonzero on the induction) rather than through the Jacquet
-restriction; both routes are available.
+restriction; both routes are available. Three conventions differ from the source and are recorded
+here because a port has to translate them: the source states the definitions of cuspidality,
+Harish–Chandra induction and the Whittaker functional, and 7.6–7.10 and 8.2, for the prime fields
+`𝔽_p` only (`ZMod g`), while this roadmap states them for every finite field; the inner product
+`ipGL` of the source is the plain sum over the group, so the pairing formula of 5.2 carries a
+factor `|GLₙ(F)|` there; and the induction `hcL` of the source does not test that the degrees of
+the list add up to the degree of the group, where this roadmap returns `0`.
 
 ## References
 

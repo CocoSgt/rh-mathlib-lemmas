@@ -1,8 +1,10 @@
-# ROADMAP-REVIEW — 对路线图草稿 `roadmap/CharactersOfGLnOverFiniteFields/` 的自审（TASK.md 第 7 步 e）
+# ROADMAP-REVIEW — 对路线图草稿 `roadmap/CharactersOfGLnOverFiniteFields/` 的自审（TASK.md 第 7 步 e；§7 是第 8 步的增补）
 
 > 这是**作者的自审**（GLM 5.4 通过 DeepSeek Harness），不是另一位贡献者的审稿。按 `TauCetiRoadmap/CONTRIBUTING.md`「Reviewing a roadmap」的四个方面各审一遍，再对照 `TauCetiRoadmap/README.md`「Writing a roadmap」的清单逐条核对；每条写清查了什么、没查什么。拿不准的数学列在 §6「待人工确认」。自审过程中**改掉了三处我自己写错的陈述**，记在 §1.3，请重点看。
 
 ## 0. 审的对象
+
+> §0–§6 审的是第 7 步的稿子（只 import Mathlib、在 mathlib4 master 上 `lake env lean`）。第 8 步把它改成用 Tau Ceti 自己的声明、在 TauCetiRoadmap 的环境里编译，改动与新增的自审写在 §7；§0–§6 里的编译数字（v4.37.0-rc1、31 条 sorry）是第 7 步时的状态。
 
 - `roadmap/CharactersOfGLnOverFiniteFields/README.md`（1023 行）、`Suggested.lean`（461 行）、`metadata.toml`（`topic = "math.RT"`）。
 - 编译：`source .run/env.sh && cd mathlib4 && lake env lean <绝对路径>/Suggested.lean`，mathlib4 在分支 `posdef-det-inequalities`（Lean v4.37.0-rc1，未切分支、未改文件）：**exit 0，0 个 error，31 条 `declaration uses 'sorry'` 警告**（31 条定理的证明都是 `sorry`；全部 `def` 都有真实定义体，包括 `psi` 的良基递归）。日志 `.run/step7-roadmap/lean-final.log`（前面的迭代在 `lean1.log` … `lean9.log`）。
@@ -85,3 +87,69 @@
 6. **Downstream consumers 里对 `SmoothRepresentationsOfLocalGroups`(+PartII) 的描述**（"只在秩一里碰到深度零"）来自 grep，没有通读。
 7. **Provenance 表**用的是源码的**文件名**（每文件一条声明），没有写定理名，因为源码的定理名大小写混用（`GlobalTheory.T.exists_teichmullerMap_algebraicClosure_finiteField`、`…T.frobeniusTorusCharacterOrthogonality`），怕抄错；需要时按文件名去找。
 8. `Suggested.lean` 的 `IsRegular`、`unipotentRadical`、`parabolic` 把 `F` 写成显式参数（否则实例推断卡住），与 Tau Ceti 的写法可能不一致；`hcL` 的定义里对次数不加总为 `n` 的 list 返回 `0`（junk 值），README 的 Conventions 写明了。
+
+## 7. 第 8 步改了什么（按 Tau Ceti 自己的环境改一轮）
+
+### 7.1 换掉的自定义声明 → Tau Ceti 声明
+
+名字都在 `tauceti-build/TauCetiRoadmap/.lake/packages/TauCeti/`（TauCeti `2fd255d99`）的源码里 grep 核实过（索引在 `.run/step8-tauceti/decls.txt`，脚本 `chk.sh`），文件路径以 `TauCeti/` 开头。
+
+| 第 7 步稿里自己写的 | 现在 | Tau Ceti 里的声明（文件） |
+|---|---|---|
+| `glPairing n φ ψ = |G|⁻¹ ∑ φ * conj ψ`（任意函数上的配对） | `TauCeti.ClassFunction.characterPairing φ ψ` | `TauCeti/RepresentationTheory/CharacterTable/Pairing.lean`：`characterPairing`、`characterPairing_apply`（`|G|⁻¹ ∑ g, f₁ g * f₂ g⁻¹`）、`characterPairing_symm`、`characterPairing_nondegenerate`、`characterPairing_ofFDRep_orthonormal`、`characterPairing_ofFDRep_self`、`characterPairing_ofFDRep_eq_zero` |
+| `IsIrreducibleCharacter n χ`（`∃ V : FDRep, Simple V ∧ …`） | `χ.1 ∈ TauCeti.irreducibleCharacters ℂ (GL (Fin n) F)` | `CharacterTable/Table.lean`：`irreducibleCharacters`、`mem_irreducibleCharacters_iff`、`character_mem_irreducibleCharacters`、`irreducibleCharacter` |
+| 虚拟特征标 `∃ V W : FDRep ℂ G, ∀ x, f x = V.character x - W.character x` | `f ∈ TauCeti.virtualCharacters ℂ G` | `CharacterTable/VirtualCharacter.lean`：`virtualCharacters`、`mem_virtualCharacters_iff_exists_eq_character_sub_character`（与原来的写法等价）、`virtualCharacters_le_classFunction`、`conj_apply_of_mem_virtualCharacters`、`exists_eq_irreducibleCharacter_or_neg`、`mem_irreducibleCharacters_of_characterPairing_self_eq_one`、`exists_simple_character_eq_of_characterPairing_self_eq_one` |
+| `upperUnitriangular n : Finset (GL (Fin n) F)` | `TauCeti.upperUnitriangularGroup (Fin n) F`（子群，求和写成 `∑ u : TauCeti.upperUnitriangularGroup (Fin n) F`） | `LinearAlgebra/Matrix/GeneralLinearGroup/UpperUnitriangular/Basic.lean` |
+| Harish–Chandra 诱导：`|Pₐ|⁻¹ ∑_{y, y⁻¹xy ∈ Pₐ} α (A) * β (B)`（自己写的余弦和） | `Subgroup.indClassFunction (parabolic F n a) (leviInflate n a b h α β)` | `RepresentationTheory/Induction/ClassFunction.lean`：`Subgroup.indClassFun`、`indClassFunction`、`indClassFun_apply`、`indClassFun_eq_natCard_inv_mul_sum`（对类函数就是原来那个公式）；`Induction/VirtualCharacter.lean`：`indClassFun_mem_virtualCharacters`；`Induction/FrobeniusReciprocity.lean`：`characterPairing_ind`、`frobenius_reciprocity_classFunction`（7.3 的 route 用）；`Induction/Mackey/Basic.lean`：`mackeySubgroup`、`mackeyClassFun`、`indClassFun_mackey`（7.5 的 route 用） |
+| GL₂ 尖特征标（第 7 步只在 README 里提了名字） | 新增 Check `gl2Cuspidal_character`，直接引用 `TauCeti.ClassFunction.ofFDRep (TauCeti.GL2Cuspidal θ hθ)` 与 `TauCeti.GL2NonSplitTorusHom F K u` | `CharacterTable/GL2/Cuspidal/Irreducible.lean`：`GL2Cuspidal`、`character_GL2Cuspidal`、`finrank_GL2Cuspidal`、`simple_GL2Cuspidal`、`GL2CuspidalVirtualCharacter_mem_irreducibleCharacters`；`Cuspidal/Basic.lean`：`GL2CuspidalVirtualCharacter` 及四个取值；`GeneralLinearGroup/NonSplitTorus.lean`：`GL2NonSplitTorusHom` |
+| Mathlib 侧的佐证（`Module.AEval'`） | `Module.AEval`（pin 的 Mathlib `1b1ccf4b` 里已没有 `AEVal'`） | `Mathlib/Algebra/Polynomial/Module/AEval.lean` |
+
+只进 README、不进 `Suggested.lean` 签名但写进 supplier contract 的 Tau Ceti 声明：`TauCeti.FiniteField.orbit_eq_rootSet_minpoly`、`natCard_orbit_eq_natDegree_minpoly`、`mem_orbit_iff_minpoly_eq`、`exists_monic_irreducible_natDegree_eq`（1.1）；`CommGroup.sum_inv_mul_monoidHom_apply_eq_ite`（1.4）；`TauCeti.upperTriangularGroup`、`GL2Borel`、`lineStabilizer`、`hyperplaneStabilizer`、`exists_mem_doubleCoset_permutationGL`（3.3 的 Checks、7.5）；`GL2NonSplitTorus.natCard_eq`、`natCard_GL_fin_two`、`ncard_carrier_mk_of_forall_mul_self_ne`、`natCard_centralizer_diagGL`、`natCard_centralizer_jordanGL`、`exists_isConj_normalForm`、`card_conjClasses_GL2`（2.2、2.5 的 `n = 2`）。
+
+### 7.2 仍然自己定义的部分，和原因
+
+| 定义 | 为什么不换成 Tau Ceti 的 |
+|---|---|
+| `parabolic F n a`、`unipotentRadical F n a`（一般分块 `a`, `n - a`） | Tau Ceti 只有上三角子群 `upperTriangularGroup`、`GL2Borel`，以及两条极大抛物 `lineStabilizer`、`hyperplaneStabilizer`（分块 `(1, n - 1)`、`(n - 1, 1)`）。现在定义成 `Subgroup (GL (Fin n) F)`，`parabolic` 用 Mathlib 的 `Matrix.BlockTriangular`（证明与 Tau Ceti 自己定义 `upperTriangularGroup` 的写法相同），`mem_parabolic_iff` 给出矩阵元素的写法，`unipotentRadical_le_parabolic` 有真实证明；与 Tau Ceti 那三个子群的一致性写成 3.3 的 Checks |
+| `toGL`、`blockDiag`、`levi`、`leviInflate`、`hcL`、`jacquetRestrict`、`superdiagonalSum`、`whittakerFunctional` | Tau Ceti 里没有一般的 Levi 投影、列表上的迭代 Harish–Chandra 诱导、Jacquet 限制、Whittaker 泛函（GL₂ 的诱导是 `GL2EllipticInduction` 等具体表示，不是一般定义）。诱导这一步本身已经换成 `Subgroup.indClassFunction`，自己定义的只有从抛物子群到 Levi 的提升和沿列表的迭代 |
+| `IsCuspidalCharacter`、`IsRegular` | Tau Ceti 没有这两个谓词（`GL2CuspidalVirtualCharacter` 是具体的构造，不是"尖"的定义）。不可约性这一半已经是 `irreducibleCharacters` 的成员资格 |
+| `psi`、`mass`、`rootPowerSum`、`rootPowerSumClassFunction`、`psiClassFunction`、`chiK` | Green 的构造本身，Tau Ceti 与 Mathlib 都没有 |
+
+`rootPowerSumClassFunction`、`psiClassFunction`、`leviInflate`、`jacquetRestrict` 是把本路线图的函数打包成 `TauCeti.ClassFunction` 的包装：打包要的类函数性单独写成定理（`psi_classFunction`、`leviInflate_mem_classFunction`、`jacquetRestrict_mem_classFunction`，都是 sorry；`rootPowerSumClassFunction` 的类函数性用 Mathlib 的 `Matrix.charpoly_units_conj` 当场证出）。
+
+### 7.3 连带改动
+
+- **载体**：`GLₙ(F)` 上的函数一律改成 `TauCeti.ClassFunction ℂ (GL (Fin n) F)`（Tau Ceti 的配对、诱导、`GL2Cuspidal` 都定义在这个载体上，`TauCeti.ClassFunction` 在 module 系统下不暴露定义，别的模块只能经 `TauCeti.ClassFunction.mem_iff` 造元素）。列表元素类型相应变成 `Σ d : ℕ, TauCeti.ClassFunction ℂ (GL (Fin d) F)`。
+- **`IsRegular` 与 7.10 (ii)**：Frobenius 共轭写成 `θ.comp (powMonoidHom (q ^ i))`（Tau Ceti GL₂ 文件的写法，`powMonoidHom` 是 Mathlib 的），与原来的逐点幂 `θ ^ (q ^ i)` 相等（`θ (u ^ m) = θ u ^ m`）。
+- **`[DecidableEq F]`**：加到变量行，使各处的 `Fintype (GL (Fin n) F)` 实例一致（Tau Ceti 的配对定理也带 `[DecidableEq F]`）。
+- **新增**：1.4 的 `rootPowerSum_orthogonality`（在 `Kˣ` 上，经一个 `F`-嵌入；源码 `frobeniusTorus_character_orthogonality` 是在代数闭包的 `qⁿ - 1` 次单位根上求有限和）；README 新增 2.5 非分裂环面 `nsTorus`（5.1 的 route 原先说"从非分裂环面诱导的类函数"，但这个对象没有被定义，是 No gaps 上的一个洞）；6.5 Check `gl2Cuspidal_character`。
+- **`hcL` 的 junk 值**保持原稿的约定（次数不加总为 `n` 时为 `0`），与源码不同，写在 Provenance 里。
+
+### 7.4 核对源码时改正的错误（都是第 7 步稿子里的）
+
+1. **5.2 多了一个因子**。原稿写 `⟨ψₖ, Ψ_l⟩ = |GL (Fin n) F| * #{i < n : k q^i ≡ l}`，取自源码 `ipGL_psi_rootSum`；但源码的 `ipGL φ φ' = ∑ᶠ g, φ g * star (φ' g)` 是**未归一化**的群上求和，而配对是 `|G|⁻¹ ∑`（源码自己的 `ip` 也是归一化的）。归一化之后是 `#{i < n : …}`，没有 `|GL|`。原稿因此还与 6.1（`⟨χₖ, χₖ⟩ = 1`）自相矛盾；用 `q = 3, n = 2, k = l = 1` 手算了一遍：`∑_g |Ψ₁(g)|² = 96 = 2·48`，`∑_g ψ₁(g) conj(Ψ₁(g)) = 48`，与改后的公式一致。README 5.2 的 Checks 同步改了（`l = k, k` 正则：`1`）。
+2. **7.3 的假设不足**。原稿对任意函数 `χ, α, β` 陈述 `⟨χ, Ind(α ⊗ β)⟩ = |Lₐ|⁻¹ ∑_m jacquet(χ)(m) * conj (α m.1 * β m.2)`，这是错的：`Subgroup.indClassFun` 对非类函数依赖代表元的选取，求和坍缩那一步要 `χ` 是类函数，`conj` 那一步要 `α, β` 是虚拟特征标。现在 `χ, α, β` 都是类函数，右边写成 `(α m.1 * β m.2)⁻¹`，README 注明对特征标它就是复共轭。7.1 的 API 里"是最后一个变量的类函数"也相应改成"按构造就是类函数"。
+3. `Module.AEval'` 在 pin 的 Mathlib 里不存在，改成 `Module.AEval`。
+4. README 7.5 的 route 原先说"把双陪集按块的置换分类"却没有任何地方说出这是 Bruhat 分解；现在引 Tau Ceti 的 `exists_mem_doubleCoset_permutationGL`，并说明两个诱导经投射公式都化成从 Borel 子群的诱导。
+
+另记一笔（不是错误）：源码的 cuspidality、HC 诱导、Whittaker 泛函和 7.6–7.10、8.2 都只对素域 `ZMod g` 陈述，路线图对一切有限域陈述；写在 Provenance 里。
+
+### 7.5 编译（第 8 步 b）
+
+在 `tauceti-build/TauCetiRoadmap`（工具链 `leanprover/lean4:v4.36.0-rc2`，TauCeti `2fd255d9`，Mathlib `1b1ccf4b`）里，`source ../../.run/env.sh` 后带 `.run/build-tauceti.sh` 同样的 `LAKE_CONFIG`、`LAKE_CACHE_DIR`，`lake build TauCetiRoadmap.CharactersOfGLnOverFiniteFields.Suggested`：**exit 0，Build completed successfully (18510 jobs)，0 error，36 条警告，全部是 `declaration uses 'sorry'`**（日志 `.run/step8-tauceti/build2.log`）。38 条定理里 36 条 sorry（`mem_parabolic_iff`、`unipotentRadical_le_parabolic` 有真实证明），19 个 `def` 都有真实定义体（打包类函数的 `psiClassFunction`、`leviInflate`、`jacquetRestrict` 三个 def 调用本文件里 sorry 的类函数性定理；`rootPowerSumClassFunction` 的类函数性是当场证的）。第 7 步时的 "consider adding `module`" 警告因为加了 `module` 头而消失；没有其它警告（deprecated 名字 `if_pos`/`if_neg`/`if_true` 在试编译时出现过，已换成 `ite_eq_left`/`ite_eq_right`/`ite_true`）。`python3 .github/scripts/check_roadmap_topics.py`：`Roadmap topics valid (532 roadmaps)`。没有改副本里别的路线图、lakefile、manifest、根 `TauCetiRoadmap.lean`。
+
+### 7.6 查了什么、没查什么
+
+**查了。** 上面每个 Tau Ceti 声明名都在源码里 grep 到定义处（或 `#check` 过）；用到的 Mathlib 名字（`Matrix.BlockTriangular`、`blockTriangular_inv_of_blockTriangular`、`charpoly_units_conj`、`twoBlockTriangular_det`、`powMonoidHom`、`Module.AEval`、`Algebra.IsQuadraticExtension`、`normalizedFactors` 的路径）在 pin 的 Mathlib 里 grep 过；5.2、4.5、4.6、1.4、7.6–7.9 的定量陈述逐条对过源码的 Statement 文件（`EndomorphismMassMobiusInverseMonicEq`、`InvariantSubspaceMobiusInverseOneProdIco`、`FrobeniusTorusCharacterOrthogonality`、`NcardGenericIrreducibleCharactersGLnLe`、`CardCuspidalMultisetsTotalDegreeLe`、`ExistsGenericConstituentHarishChandraCuspidal`、`ExistsCuspidalListHarishChandraPairingNeZero`、`RootPowerSumCharpolyMemVirtualCharactersGL`、`GreenRegularCharacters`），只发现 5.2 的归一化问题；`parabolic`/`unipotentRadical` 的子群结构证明和 `mem_parabolic_iff` 是编译器验证的；`GL2Cuspidal` 的假设形（`θ.comp (powMonoidHom (Fintype.card F)) ≠ θ`）照抄。
+
+**没查。** 3.3 的三个 Checks（`parabolic F 2 1 = TauCeti.GL2Borel F`、`parabolic F n 1 = TauCeti.lineStabilizer F 0`、`parabolic F n (n - 1) = TauCeti.hyperplaneStabilizer F` 末指标）与 2.5 的 Check（`GL2NonSplitTorus.natCard_eq`）是按两边的定义读出来认为相等的，没有在 Lean 里证；`Subgroup.indClassFunction` 对类函数等于原来那个 `|Pₐ|⁻¹ ∑_y` 公式依据的是 `indClassFun_eq_natCard_inv_mul_sum` 的陈述，没有自己重新推导；7.5 里"两个诱导经投射公式化成从 Borel 子群的诱导"与"每个匹配的置换贡献 1"只是口头论证，标量因子如何抵消没有算清（见 §7.7 第 4 条）；`rootPowerSum_orthogonality` 与源码的 `{α | α ^ (qⁿ - 1) = 1}` 版本等价（`ι (Kˣ)` 恰是这些单位根）没有证；README 全文没有重新通读，只看了改过的段落。
+
+### 7.7 第 8 步新增的待人工确认
+
+1. **目录位置**：草稿在 `TauCetiRoadmap/CharactersOfGLnOverFiniteFields/`（顶层路线图，`metadata.toml` = `math.RT`），而相邻的表示论路线图都是 `TauCetiRoadmap/RepresentationTheory/` 这个路线图下的子路线图（子路线图不带 `metadata.toml`）。放哪里由 De Song 定；移动的话要改 README 里的相对链接。
+2. **对一切有限域陈述**：7.6–7.10、8.2 在源码里只对 `ZMod g`（`g` 素数）证明。路线图把它们写成任意有限域 `F`，数学上没有疑问（证明不依赖域是素域），但这是对源稿的推广，请确认接受。
+3. **3.3、2.5 的 Checks** 没有编译验证（见上"没查"）。
+4. **7.5 的 route** 里的标量：`Ind_B^G (Res_B ψ) = [P : B] · Ind_P^G ψ`，两个诱导化到 Borel 子群后 Mackey 公式给出的 `∑_w ⟨φ, φ'^w⟩_B` 与"匹配置换的个数"之间的因子关系我没有算清楚；结论（不同多重集给 `0`、无重复的同一多重集给 `1`）是标准事实，但 route 的叙述可能需要熟悉 Mackey 公式的人改写。
+5. **`[DecidableEq F]`**：这是沿用 Tau Ceti 配对定理的习惯，不是数学内容；如果审稿人不喜欢可以去掉（语句换成 `classical` 推出的实例）。
+6. **`hcL` 的 junk 值**（次数不加总为 `n` 时返回 `0`）与源码不同，见 Provenance。
+

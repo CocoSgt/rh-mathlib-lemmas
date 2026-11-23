@@ -30,3 +30,6 @@ analysis/mainline_graph.files.txt
 
 # Read-only reference clones of Tau Ceti (roadmap step)
 tauceti-ref/
+
+# Local copy of TauCetiRoadmap for building our roadmap draft the way Tau Ceti CI does
+tauceti-build/

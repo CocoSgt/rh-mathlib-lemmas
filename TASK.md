@@ -49,10 +49,19 @@
    - **a. 调研**（写 `ROADMAP-SURVEY.md`）：用普通数学语言说清主线每一层是什么数学（Row0b、RecTExists、VWin、Green、`HypsAlt … DefiniteSideCondition`、ZeroFreeAll……），证明的整体策略是什么、哪一步是新的；每一层里哪些是教科书级的基础材料、哪些是这份证明独有的新路线；哪些 Tau Ceti 已有的路线图或库文件已经覆盖了（写清是哪个文件、哪个目标），哪些 Mathlib 已有
    - **b. 选范围**：定一份路线图的范围，理由写进 SURVEY。标准照 Tau Ceti 的规矩：最低一层能落到 Mathlib 或 Tau Ceti 已有的材料上（No gaps）；和已有路线图不重叠，要用的就写成 supplier 依赖；Build the library；范围明确，不写 optional/deferred/later；可复用。整条主线太大时，可以写成一组路线图里的第一份，其余用一节明确标成 roadmap-for-a-roadmap
    - **c. 起草**：放在 `roadmap/<AreaName>/`，英文，格式完全照 Laying out the README：`# Roadmap: …` 标题、`**Summary.**` 开头的概述、`## Conventions`、按搭建顺序的 `## Layer k: …`、`## Scope and ownership`、`## Exact supplier contracts`（每个 supplier 一个 `### From …`）、`## References`；Alpöge 证明的逐文件对照放在明显次要的 provenance 一节。另加 `metadata.toml`（arXiv 主类）和 `Suggested.lean`（开头写标准说明，诚实用 `sorry`，只 import Mathlib；必须 import Tau Ceti 模块的接口就写在 markdown 里，不编译）。用的定义名先去 `mathlib4/` 和 `tauceti-ref/TauCeti/` 里查有没有现成的，有就用 Mathlib 的叫法。路线图写的是数学本身，不照抄原代码的结构和命名
-   - **d. 编译 `Suggested.lean`**：用 `mathlib4/` 这份 master 克隆（Lean v4.37.0-rc1，和 Tau Ceti 现在的工具链一致）：`source .run/env.sh && cd mathlib4 && lake env lean <文件的绝对路径>`，只允许出现 `declaration uses 'sorry'` 警告。**硬盘只剩约 16 GB**：不要另外拉 Mathlib 或 Tau Ceti 的缓存，不要 `lake build` TauCetiRoadmap 或 TauCeti，一次只跑一个 lean 进程
+   - **d. 编译 `Suggested.lean`**：用 `mathlib4/` 这份 master 克隆（Lean v4.37.0-rc1，和 Tau Ceti 现在的工具链一致）：`source .run/env.sh && cd mathlib4 && lake env lean <文件的绝对路径>`，只允许出现 `declaration uses 'sorry'` 警告。（11-23 起硬盘已扩容，这条限制由第 8 步取代）
    - **e. 自审**（写 `ROADMAP-REVIEW.md`）：按 CONTRIBUTING.md 里审路线图的四个方面（包含什么、怎么做、Tau Ceti 格式、逐条细查）各审一遍，再对照 Writing a roadmap 的清单逐条核对；每条写清查了什么、没查什么。数学判断拿不准的列进「待人工确认」
    - **f. 给 De Song 的草稿**（写 `ROADMAP-PR.md`，三段，都是草稿，由他本人改写后发）：① 路线图 PR 的说明（含 AI 使用说明：GLM 5.4 通过 DeepSeek Harness 做了哪些事）；② 一条 Zulip 帖子，在 Tau Ceti 频道说明想把 Alpöge 证明的主线整理成路线图、原发布没有许可证、想先和作者及社区商量；③ 一封给 Levent Alpöge 的英文短信，请他同意把他的工作作为路线图的引用来源、并问许可证
    - 完成后在 PROGRESS.md 记一行，`git commit` 到本仓库，**先不 push**，等 De Song 审过再说
+
+8. **路线图按 Tau Ceti 自己的环境改一轮**（仍然只在本地改，不 push，Tau Ceti 上什么都不发）
+   - 背景：硬盘已扩到约 240 GB，第 7 步 d 里“只 import Mathlib、不 lake build TauCetiRoadmap”的限制取消。`tauceti-build/TauCetiRoadmap/` 是 TauCetiRoadmap 的本地副本，已按它 CI 的方式拉好缓存（工具链 v4.36.0-rc2，TauCeti 2fd255d9，Mathlib 1b1ccf4b），我们的草稿已复制在 `TauCetiRoadmap/CharactersOfGLnOverFiniteFields/`，现状 `lake build` 通过、31 条 sorry 警告。TauCeti 源码在 `tauceti-build/TauCetiRoadmap/.lake/packages/TauCeti/`
+   - **a. `Suggested.lean` 改用 Tau Ceti 的声明**：TauCetiRoadmap 的 lakefile 要求目标签名直接用 Tau Ceti 已有的声明，不要用 Mathlib 重新写一遍。相邻路线图都是 `module` 开头、`import Mathlib` 再 `import TauCeti.…`。先读 `TauCeti/RepresentationTheory/CharacterTable/`（ClassFunction、Pairing、VirtualCharacter、Table、GL2/…）和相关的 Chevalley/有限群文件，凡是我们自己写的类函数、配对、不可约特征标、GL₂ 尖特征标等，Tau Ceti 有现成的就换成它的，名字逐个在源码里 grep 核实；确实没有的才在本文件定义，并在 README 的 Scope and ownership 里写成 Owned。README 的 `Exact supplier contracts` 里 `### From Tau Ceti` 一节同步改成真实的声明名和文件路径
+   - **b. 编译**：在 `tauceti-build/TauCetiRoadmap` 里用 `source ../../.run/env.sh` 后，带上 `.run/build-tauceti.sh` 里同样的 `LAKE_CONFIG`、`LAKE_CACHE_DIR`，跑 `lake build TauCetiRoadmap.CharactersOfGLnOverFiniteFields.Suggested`，只允许 `declaration uses 'sorry'` 警告。再跑 `python3 .github/scripts/check_roadmap_topics.py`。不要改这个副本里别的路线图，不要改 lakefile、manifest、根文件 `TauCetiRoadmap.lean`
+   - **c. 同步回本仓库**：改好的三个文件复制回 `roadmap/CharactersOfGLnOverFiniteFields/`
+   - **d. 改 `ROADMAP-PR.md`**：① 里的编译说明改成实际编译环境（TauCetiRoadmap 当前 manifest：Lean v4.36.0-rc2、TauCeti 2fd255d9、Mathlib 1b1ccf4b）。③ 给 Alpöge 的信：删掉“Nothing of your code has been redistributed so far”，如实写现状：GitHub 上 `CocoSgt/riemann-hypothesis-lean` 有一份他发布的原样镜像，`CocoSgt/rh-mathlib-lemmas` 里有从中抽出的代码（`extracted/`，13 个文件）和 `skeleton/` 里照录的命题，三个 Mathlib PR 用了其中的矩阵引理；问他是否同意、要不要撤下或加许可。删掉“I'm De Song, a mathematician working with AI tools on formalization”和“a small group of us”，自我介绍处留 `[De Song：一句自我介绍]` 占位。②（Zulip）里有同类说法的也照此改
+   - **e. 自审补一节**：`ROADMAP-REVIEW.md` 加一节“第 8 步改了什么”，列出换掉的自定义声明 → Tau Ceti 声明对照表，以及仍然自己定义的部分和原因
+   - 完成后在 PROGRESS.md 记一行，把这一步的改动和之前没提交的 `ROADMAP-SURVEY.md`、`.gitignore` 一起 `git commit`，**先不 push**。`tauceti-build/` 已在 .gitignore 里，不提交
 
 ## 交付
 
