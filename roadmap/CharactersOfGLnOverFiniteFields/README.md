@@ -98,7 +98,7 @@ classification by prime labels. The numbers of the statements are those of `Sugg
   `(Nat.card G)⁻¹ ∑ g, φ g * conj (ψ g)`. On class functions it is `TauCeti.ClassFunction.characterPairing`
   (`|G|⁻¹ ∑ g, φ g * ψ g⁻¹`), because `ψ g⁻¹ = conj (ψ g)` for virtual characters
   (`TauCeti.conj_apply_of_mem_virtualCharacters`); it is bilinear, symmetric and nondegenerate, and
-  `⟨χ, χ'⟩` is `1` or `0` on distinct irreducible characters.
+  `⟨χ, χ'⟩` is `1` when `χ = χ'` is irreducible and `0` on two distinct irreducible characters.
 - **Cuspidal characters.** `unipotentRadical F n a` is the set `Uₐ` of invertible matrices that
   agree with the identity matrix in their first `a` columns; it has `q^{a(n-a)}` elements and is the
   unipotent radical of the standard parabolic subgroup `parabolic F n a` of block upper triangular
