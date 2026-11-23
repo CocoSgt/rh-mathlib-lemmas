@@ -920,7 +920,11 @@ consume; none of these dependencies is a target here.
   transfer to depth-zero supercuspidal representations of `GLₙ(E)` and to elliptic Weil–Deligne
   representations. Suppliers: `SmoothRepresentationsOfLocalGroups` (Bernstein decomposition,
   Bushnell–Kutzko types; the local Langlands correspondence of `GLₙ` is a supplied convention
-  there, §SR.5.2), `ArithmeticGaloisRepresentations` (Weil–Deligne representations, Layer 2).
+  there, §SR.5.2), `ArithmeticGaloisRepresentations` (Weil–Deligne representations, Layer 2). In the
+  source this is the *type law* of its local reciprocity map: the Weil–Deligne parameter of the
+  depth-zero supercuspidal representation inflated from a cuspidal character `τ` of `GLₙ(𝔽_g)` has
+  trivial monodromy and Frobenius polynomial `∏_{j < n} (X - θ(z^{g^j}))`, where `θ` is the regular
+  character attached to `τ` by 8.2 and `z` a root of its prime label.
 - **R3. Galois representations attached to automorphic representations by theta lifts.** The
   statement `Row0b` of the source: to a regular algebraic polarized cuspidal automorphic
   representation of a unitary group over a CM field is attached an ℓ-adic Galois representation with
