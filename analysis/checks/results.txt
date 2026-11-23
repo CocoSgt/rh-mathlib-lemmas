@@ -1,0 +1,209 @@
+# Brute-force checks of CharactersOfGLnOverFiniteFields — results (2026-11-23)
+# Script: analysis/checks/check_green_gl.py.  Every case ran under 'timeout 900', in the background, one at a time.
+# 'earlier' = the first full run (2026-11-23 ~18:00, machine load 25-35); the others = the script as committed.
+# The check set is the same in both; since then only speed fixes (the double-coset enumeration, and a quadratic loop
+# inside one check), and GL_2(F_8) gives the same 202223 checks in both runs.
+
+### gl2_2-earlier: 110 checks passed, 0 failed  (gl2_2: 110/110 checks passed)
+   ok    7.11 [GL_1(F_2)] #distinct chi_k (regular k) = #monic irreducibles of degree n with nonzero constant term  1 vs 1
+   ok    5.2 [GL_2(F_2)] <psi_1, Psi_1> = #{i < n : k q^i ≡ l}   value=1-2.22045e-16j target=1+0j
+   ok    6.1 [GL_2(F_2)] <chi_1, chi_1> = 1 (k regular)   value=1-2.22045e-16j target=1+0j
+   ok    7.11 [GL_2(F_2)] #distinct chi_k (regular k) = #monic irreducibles of degree n with nonzero constant term  1 vs 1
+   ok    7.3 [GL_2(F_2)] <χ, Ind (α ⊗ β)> = |L|⁻¹ ∑_m J χ (m) α (m₁⁻¹) β (m₂⁻¹), a=1   value=1.14954+0.875305j target=1.14954+0.875305j
+   ok    7.3 [GL_2(F_2)] the form with (α m₁ * β m₂)⁻¹ (complex inverse) is different, a=1  -0.1294+0.0644j vs 1.1495+0.8753j
+   ok    7.5 [GL_2(F_2)] Mackey, no scalar: <Ind_P f, Ind_Q h> = Σ_t <h^t, f>_(P∩tQt⁻¹), P=(1,1), Q=(1,1)  2 double cosets (2 with nonzero pairing), |P∩tQt⁻¹| = [1, 2] value=-1.49947-1.23223j target=-1.49947-1.23223j
+   ok    7.5 [GL_2(F_2)] <hcL L, hcL L'> = number of degree-preserving bijections of the multisets, over all pairs of 3 cuspidal lists  0 failures
+   ok    7.1 [GL_2(F_2)] hcL L n = Ind_(P_λ) (α₁ ⊗ … ⊗ α_r), λ = composition of the degrees of L (3 lists)  
+   ok    7.5 [GL_2(F_2)] Mackey term by term: every double coset contributes 0 or 1, and the contributing ones are the matching bijections (5 pairs)  0 failures
+   ok    7.6 [GL_2(F_2)] the GL₂ table (linear, Steinberg twists, principal series, cuspidal) has q² - 1 rows  3 vs 3
+   ok    7.6 [GL_2(F_2)] … one row per conjugacy class  
+   ok    7.6 [GL_2(F_2)] the GL₂ character table is orthonormal  
+   ok    7.6 [GL_2(F_2)] every irreducible character of GL₂ pairs nontrivially with hcL of a list of cuspidal characters  
+   (GL_1(F_2): 0.0s)
+   (GL_2(F_2): 0.0s)
+### gl2_3-earlier: 493 checks passed, 0 failed  (gl2_3: 493/493 checks passed)
+   ok    5.2 [GL_1(F_3)] <psi_1, Psi_1> = #{i < n : k q^i ≡ l}   value=1-4.44089e-16j target=1+0j
+   ok    6.1 [GL_1(F_3)] <chi_1, chi_1> = 1 (k regular)   value=1-4.44089e-16j target=1+0j
+   ok    7.11 [GL_1(F_3)] #distinct chi_k (regular k) = #monic irreducibles of degree n with nonzero constant term  2 vs 2
+   ok    5.2 [GL_2(F_3)] <psi_1, Psi_1> = #{i < n : k q^i ≡ l}   value=1-6.14568e-16j target=1+0j
+   ok    6.1 [GL_2(F_3)] <chi_1, chi_1> = 1 (k regular)   value=1-6.14568e-16j target=1+0j
+   ok    7.11 [GL_2(F_3)] #distinct chi_k (regular k) = #monic irreducibles of degree n with nonzero constant term  3 vs 3
+   ok    7.3 [GL_2(F_3)] <χ, Ind (α ⊗ β)> = |L|⁻¹ ∑_m J χ (m) α (m₁⁻¹) β (m₂⁻¹), a=1   value=0.183445+0.289783j target=0.183445+0.289783j
+   ok    7.3 [GL_2(F_3)] the form with (α m₁ * β m₂)⁻¹ (complex inverse) is different, a=1  0.1856+0.2320j vs 0.1834+0.2898j
+   ok    7.5 [GL_2(F_3)] Mackey, no scalar: <Ind_P f, Ind_Q h> = Σ_t <h^t, f>_(P∩tQt⁻¹), P=(1,1), Q=(1,1)  2 double cosets (2 with nonzero pairing), |P∩tQt⁻¹| = [4, 12] value=-0.101974-0.483865j target=-0.101974-0.483865j
+   ok    7.5 [GL_2(F_3)] <hcL L, hcL L'> = number of degree-preserving bijections of the multisets, over all pairs of 9 cuspidal lists  0 failures
+   ok    7.1 [GL_2(F_3)] hcL L n = Ind_(P_λ) (α₁ ⊗ … ⊗ α_r), λ = composition of the degrees of L (9 lists)  
+   ok    7.5 [GL_2(F_3)] Mackey term by term: every double coset contributes 0 or 1, and the contributing ones are the matching bijections (21 pairs)  0 failures
+   ok    7.6 [GL_2(F_3)] the GL₂ table (linear, Steinberg twists, principal series, cuspidal) has q² - 1 rows  8 vs 8
+   ok    7.6 [GL_2(F_3)] … one row per conjugacy class  
+   ok    7.6 [GL_2(F_3)] the GL₂ character table is orthonormal  
+   ok    7.6 [GL_2(F_3)] every irreducible character of GL₂ pairs nontrivially with hcL of a list of cuspidal characters  
+   (GL_1(F_3): 0.0s)
+   (GL_2(F_3): 0.1s)
+### gl2_4-earlier: 2597 checks passed, 0 failed  (gl2_4: 2597/2597 checks passed)
+   ok    5.2 [GL_1(F_4)] <psi_1, Psi_1> = #{i < n : k q^i ≡ l}   value=1-7.40149e-17j target=1+0j
+   ok    6.1 [GL_1(F_4)] <chi_1, chi_1> = 1 (k regular)   value=1-7.40149e-17j target=1+0j
+   ok    7.11 [GL_1(F_4)] #distinct chi_k (regular k) = #monic irreducibles of degree n with nonzero constant term  3 vs 3
+   ok    5.2 [GL_2(F_4)] <psi_1, Psi_1> = #{i < n : k q^i ≡ l}   value=1-2.28109e-16j target=1+0j
+   ok    6.1 [GL_2(F_4)] <chi_1, chi_1> = 1 (k regular)   value=1-2.26671e-16j target=1+0j
+   ok    7.11 [GL_2(F_4)] #distinct chi_k (regular k) = #monic irreducibles of degree n with nonzero constant term  6 vs 6
+   ok    7.3 [GL_2(F_4)] <χ, Ind (α ⊗ β)> = |L|⁻¹ ∑_m J χ (m) α (m₁⁻¹) β (m₂⁻¹), a=1   value=0.199954+0.455633j target=0.199954+0.455633j
+   ok    7.3 [GL_2(F_4)] the form with (α m₁ * β m₂)⁻¹ (complex inverse) is different, a=1  -0.3743-0.2658j vs 0.2000+0.4556j
+   ok    7.5 [GL_2(F_4)] Mackey, no scalar: <Ind_P f, Ind_Q h> = Σ_t <h^t, f>_(P∩tQt⁻¹), P=(1,1), Q=(1,1)  2 double cosets (2 with nonzero pairing), |P∩tQt⁻¹| = [9, 36] value=-0.217435+0.154551j target=-0.217435+0.154551j
+   ok    7.5 [GL_2(F_4)] <hcL L, hcL L'> = number of degree-preserving bijections of the multisets, over all pairs of 18 cuspidal lists  0 failures
+   ok    7.1 [GL_2(F_4)] hcL L n = Ind_(P_λ) (α₁ ⊗ … ⊗ α_r), λ = composition of the degrees of L (18 lists)  
+   ok    7.5 [GL_2(F_4)] Mackey term by term: every double coset contributes 0 or 1, and the contributing ones are the matching bijections (30 pairs)  0 failures
+   ok    7.6 [GL_2(F_4)] the GL₂ table (linear, Steinberg twists, principal series, cuspidal) has q² - 1 rows  15 vs 15
+   ok    7.6 [GL_2(F_4)] … one row per conjugacy class  
+   ok    7.6 [GL_2(F_4)] the GL₂ character table is orthonormal  
+   ok    7.6 [GL_2(F_4)] every irreducible character of GL₂ pairs nontrivially with hcL of a list of cuspidal characters  
+   (GL_1(F_4): 0.0s)
+   (GL_2(F_4): 1.2s)
+### gl2_5-earlier: 10478 checks passed, 0 failed  (gl2_5: 10478/10478 checks passed)
+   ok    5.2 [GL_1(F_5)] <psi_1, Psi_1> = #{i < n : k q^i ≡ l}   value=1-8.88178e-16j target=1+0j
+   ok    6.1 [GL_1(F_5)] <chi_1, chi_1> = 1 (k regular)   value=1-8.88178e-16j target=1+0j
+   ok    7.11 [GL_1(F_5)] #distinct chi_k (regular k) = #monic irreducibles of degree n with nonzero constant term  4 vs 4
+   ok    5.2 [GL_2(F_5)] <psi_1, Psi_1> = #{i < n : k q^i ≡ l}   value=1-1.07322e-15j target=1+0j
+   ok    6.1 [GL_2(F_5)] <chi_1, chi_1> = 1 (k regular)   value=1-1.07322e-15j target=1+0j
+   ok    7.11 [GL_2(F_5)] #distinct chi_k (regular k) = #monic irreducibles of degree n with nonzero constant term  10 vs 10
+   ok    7.3 [GL_2(F_5)] <χ, Ind (α ⊗ β)> = |L|⁻¹ ∑_m J χ (m) α (m₁⁻¹) β (m₂⁻¹), a=1   value=0.541993-0.597958j target=0.541993-0.597958j
+   ok    7.3 [GL_2(F_5)] the form with (α m₁ * β m₂)⁻¹ (complex inverse) is different, a=1  -0.0041-0.2684j vs 0.5420-0.5980j
+   ok    7.5 [GL_2(F_5)] Mackey, no scalar: <Ind_P f, Ind_Q h> = Σ_t <h^t, f>_(P∩tQt⁻¹), P=(1,1), Q=(1,1)  2 double cosets (2 with nonzero pairing), |P∩tQt⁻¹| = [16, 80] value=0.0127541+0.550969j target=0.0127541+0.550969j
+   ok    7.5 [GL_2(F_5)] <hcL L, hcL L'> = number of degree-preserving bijections of the multisets, over all pairs of 30 cuspidal lists  0 failures
+   ok    7.1 [GL_2(F_5)] hcL L n = Ind_(P_λ) (α₁ ⊗ … ⊗ α_r), λ = composition of the degrees of L (30 lists)  
+   ok    7.5 [GL_2(F_5)] Mackey term by term: every double coset contributes 0 or 1, and the contributing ones are the matching bijections (42 pairs)  0 failures
+   ok    7.6 [GL_2(F_5)] the GL₂ table (linear, Steinberg twists, principal series, cuspidal) has q² - 1 rows  24 vs 24
+   ok    7.6 [GL_2(F_5)] … one row per conjugacy class  
+   ok    7.6 [GL_2(F_5)] the GL₂ character table is orthonormal  
+   ok    7.6 [GL_2(F_5)] every irreducible character of GL₂ pairs nontrivially with hcL of a list of cuspidal characters  
+   (GL_1(F_5): 0.0s)
+   (GL_2(F_5): 11.9s)
+### gl2_7-earlier: 87515 checks passed, 0 failed  (gl2_7: 87515/87515 checks passed)
+   ok    5.2 [GL_1(F_7)] <psi_1, Psi_1> = #{i < n : k q^i ≡ l}   value=1-9.25186e-17j target=1+0j
+   ok    6.1 [GL_1(F_7)] <chi_1, chi_1> = 1 (k regular)   value=1-9.25186e-17j target=1+0j
+   ok    7.11 [GL_1(F_7)] #distinct chi_k (regular k) = #monic irreducibles of degree n with nonzero constant term  6 vs 6
+   ok    5.2 [GL_2(F_7)] <psi_1, Psi_1> = #{i < n : k q^i ≡ l}   value=1-2.15551e-16j target=1+0j
+   ok    6.1 [GL_2(F_7)] <chi_1, chi_1> = 1 (k regular)   value=1-2.12281e-16j target=1+0j
+   ok    7.11 [GL_2(F_7)] #distinct chi_k (regular k) = #monic irreducibles of degree n with nonzero constant term  21 vs 21
+   ok    7.3 [GL_2(F_7)] <χ, Ind (α ⊗ β)> = |L|⁻¹ ∑_m J χ (m) α (m₁⁻¹) β (m₂⁻¹), a=1   value=-0.340056-0.126662j target=-0.340056-0.126662j
+   ok    7.3 [GL_2(F_7)] the form with (α m₁ * β m₂)⁻¹ (complex inverse) is different, a=1  -0.1573-0.1429j vs -0.3401-0.1267j
+   ok    7.5 [GL_2(F_7)] Mackey, no scalar: <Ind_P f, Ind_Q h> = Σ_t <h^t, f>_(P∩tQt⁻¹), P=(1,1), Q=(1,1)  2 double cosets (2 with nonzero pairing), |P∩tQt⁻¹| = [36, 252] value=0.203838-0.776771j target=0.203838-0.776771j
+   ok    7.5 [GL_2(F_7)] <hcL L, hcL L'> = number of degree-preserving bijections of the multisets, over all pairs of 63 cuspidal lists  0 failures
+   ok    7.1 [GL_2(F_7)] hcL L n = Ind_(P_λ) (α₁ ⊗ … ⊗ α_r), λ = composition of the degrees of L (63 lists)  
+   ok    7.5 [GL_2(F_7)] Mackey term by term: every double coset contributes 0 or 1, and the contributing ones are the matching bijections (75 pairs)  0 failures
+   ok    7.6 [GL_2(F_7)] the GL₂ table (linear, Steinberg twists, principal series, cuspidal) has q² - 1 rows  48 vs 48
+   ok    7.6 [GL_2(F_7)] … one row per conjugacy class  
+   ok    7.6 [GL_2(F_7)] the GL₂ character table is orthonormal  
+   ok    7.6 [GL_2(F_7)] every irreducible character of GL₂ pairs nontrivially with hcL of a list of cuspidal characters  
+   (GL_1(F_7): 0.0s)
+   (GL_2(F_7): 337.6s)
+### gl2_8: 202223 checks passed, 0 failed  (gl2_8: 202223/202223 checks passed)
+   ok    5.2 [GL_1(F_8)] <psi_1, Psi_1> = #{i < n : k q^i ≡ l}   value=1-1.74464e-16j target=1+0j
+   ok    6.1 [GL_1(F_8)] <chi_1, chi_1> = 1 (k regular)   value=1-1.74464e-16j target=1+0j
+   ok    7.11 [GL_1(F_8)] #distinct chi_k (regular k) = #monic irreducibles of degree n with nonzero constant term  7 vs 7
+   ok    5.2 [GL_2(F_8)] <psi_1, Psi_1> = #{i < n : k q^i ≡ l}   value=1-2.11299e-16j target=1+0j
+   ok    6.1 [GL_2(F_8)] <chi_1, chi_1> = 1 (k regular)   value=1-2.15031e-16j target=1+0j
+   ok    7.11 [GL_2(F_8)] #distinct chi_k (regular k) = #monic irreducibles of degree n with nonzero constant term  28 vs 28
+   ok    7.3 [GL_2(F_8)] <χ, Ind (α ⊗ β)> = |L|⁻¹ ∑_m J χ (m) α (m₁⁻¹) β (m₂⁻¹), a=1   value=-0.198352+0.505298j target=-0.198352+0.505298j
+   ok    7.3 [GL_2(F_8)] the form with (α m₁ * β m₂)⁻¹ (complex inverse) is different, a=1  0.1520-0.0630j vs -0.1984+0.5053j
+   ok    7.5 [GL_2(F_8)] Mackey, no scalar: <Ind_P f, Ind_Q h> = Σ_t <h^t, f>_(P∩tQt⁻¹), P=(1,1), Q=(1,1)  2 double cosets (2 with nonzero pairing), |P∩tQt⁻¹| = [49, 392] value=0.140615-0.342183j target=0.140615-0.342183j
+   ok    7.5 [GL_2(F_8)] <hcL L, hcL L'> = number of degree-preserving bijections of the multisets, over all pairs of 84 cuspidal lists  0 failures
+   ok    7.1 [GL_2(F_8)] hcL L n = Ind_(P_λ) (α₁ ⊗ … ⊗ α_r), λ = composition of the degrees of L (84 lists)  
+   ok    7.5 [GL_2(F_8)] Mackey term by term: every double coset contributes 0 or 1, and the contributing ones are the matching bijections (96 pairs)  0 failures
+   ok    7.6 [GL_2(F_8)] the GL₂ table (linear, Steinberg twists, principal series, cuspidal) has q² - 1 rows  63 vs 63
+   ok    7.6 [GL_2(F_8)] … one row per conjugacy class  
+   ok    7.6 [GL_2(F_8)] the GL₂ character table is orthonormal  
+   ok    7.6 [GL_2(F_8)] every irreducible character of GL₂ pairs nontrivially with hcL of a list of cuspidal characters  
+   (GL_1(F_8): 0.0s)
+   (GL_2(F_8): 36.3s)
+### gl2_9: 421972 checks passed, 0 failed  (gl2_9: 421972/421972 checks passed)
+   ok    5.2 [GL_1(F_9)] <psi_1, Psi_1> = #{i < n : k q^i ≡ l}   value=1+1.38778e-16j target=1+0j
+   ok    6.1 [GL_1(F_9)] <chi_1, chi_1> = 1 (k regular)   value=1+1.38778e-16j target=1+0j
+   ok    7.11 [GL_1(F_9)] #distinct chi_k (regular k) = #monic irreducibles of degree n with nonzero constant term  8 vs 8
+   ok    5.2 [GL_2(F_9)] <psi_1, Psi_1> = #{i < n : k q^i ≡ l}   value=1+2.11092e-16j target=1+0j
+   ok    6.1 [GL_2(F_9)] <chi_1, chi_1> = 1 (k regular)   value=1+2.13081e-16j target=1+0j
+   ok    7.11 [GL_2(F_9)] #distinct chi_k (regular k) = #monic irreducibles of degree n with nonzero constant term  36 vs 36
+   ok    7.3 [GL_2(F_9)] <χ, Ind (α ⊗ β)> = |L|⁻¹ ∑_m J χ (m) α (m₁⁻¹) β (m₂⁻¹), a=1   value=-0.000872401+0.00112664j target=-0.000872401+0.00112664j
+   ok    7.3 [GL_2(F_9)] the form with (α m₁ * β m₂)⁻¹ (complex inverse) is different, a=1  -0.0229-0.0570j vs -0.0009+0.0011j
+   ok    7.5 [GL_2(F_9)] Mackey, no scalar: <Ind_P f, Ind_Q h> = Σ_t <h^t, f>_(P∩tQt⁻¹), P=(1,1), Q=(1,1)  2 double cosets (2 with nonzero pairing), |P∩tQt⁻¹| = [64, 576] value=0.203099-0.222471j target=0.203099-0.222471j
+   ok    7.5 [GL_2(F_9)] <hcL L, hcL L'> = number of degree-preserving bijections of the multisets, over all pairs of 108 cuspidal lists  0 failures
+   ok    7.1 [GL_2(F_9)] hcL L n = Ind_(P_λ) (α₁ ⊗ … ⊗ α_r), λ = composition of the degrees of L (108 lists)  
+   ok    7.5 [GL_2(F_9)] Mackey term by term: every double coset contributes 0 or 1, and the contributing ones are the matching bijections (120 pairs)  0 failures
+   ok    7.6 [GL_2(F_9)] the GL₂ table (linear, Steinberg twists, principal series, cuspidal) has q² - 1 rows  80 vs 80
+   ok    7.6 [GL_2(F_9)] … one row per conjugacy class  
+   ok    7.6 [GL_2(F_9)] the GL₂ character table is orthonormal  
+   ok    7.6 [GL_2(F_9)] every irreducible character of GL₂ pairs nontrivially with hcL of a list of cuspidal characters  
+   (GL_1(F_9): 0.0s)
+   (GL_2(F_9): 88.6s)
+### gl3_2: 274 checks passed, 0 failed  (gl3_2: 274/274 checks passed)
+   ok    7.11 [GL_1(F_2)] #distinct chi_k (regular k) = #monic irreducibles of degree n with nonzero constant term  1 vs 1
+   ok    5.2 [GL_2(F_2)] <psi_1, Psi_1> = #{i < n : k q^i ≡ l}   value=1-2.22045e-16j target=1+0j
+   ok    6.1 [GL_2(F_2)] <chi_1, chi_1> = 1 (k regular)   value=1-2.22045e-16j target=1+0j
+   ok    7.11 [GL_2(F_2)] #distinct chi_k (regular k) = #monic irreducibles of degree n with nonzero constant term  1 vs 1
+   ok    7.3 [GL_2(F_2)] <χ, Ind (α ⊗ β)> = |L|⁻¹ ∑_m J χ (m) α (m₁⁻¹) β (m₂⁻¹), a=1   value=1.14954+0.875305j target=1.14954+0.875305j
+   ok    7.3 [GL_2(F_2)] the form with (α m₁ * β m₂)⁻¹ (complex inverse) is different, a=1  -0.1294+0.0644j vs 1.1495+0.8753j
+   ok    7.5 [GL_2(F_2)] Mackey, no scalar: <Ind_P f, Ind_Q h> = Σ_t <h^t, f>_(P∩tQt⁻¹), P=(1,1), Q=(1,1)  2 double cosets (2 with nonzero pairing), |P∩tQt⁻¹| = [1, 2] value=-1.49947-1.23223j target=-1.49947-1.23223j
+   ok    7.5 [GL_2(F_2)] <hcL L, hcL L'> = number of degree-preserving bijections of the multisets, over all pairs of 3 cuspidal lists  0 failures
+   ok    7.1 [GL_2(F_2)] hcL L n = Ind_(P_λ) (α₁ ⊗ … ⊗ α_r), λ = composition of the degrees of L (3 lists)  
+   ok    7.5 [GL_2(F_2)] Mackey term by term: every double coset contributes 0 or 1, and the contributing ones are the matching bijections (5 pairs)  0 failures
+   ok    7.6 [GL_2(F_2)] the GL₂ table (linear, Steinberg twists, principal series, cuspidal) has q² - 1 rows  3 vs 3
+   ok    7.6 [GL_2(F_2)] … one row per conjugacy class  
+   ok    7.6 [GL_2(F_2)] the GL₂ character table is orthonormal  
+   ok    7.6 [GL_2(F_2)] every irreducible character of GL₂ pairs nontrivially with hcL of a list of cuspidal characters  
+   ok    5.2 [GL_3(F_2)] <psi_1, Psi_1> = #{i < n : k q^i ≡ l}   value=1-4.12369e-16j target=1+0j
+   ok    6.1 [GL_3(F_2)] <chi_1, chi_1> = 1 (k regular)   value=1-4.12369e-16j target=1+0j
+   ok    7.11 [GL_3(F_2)] #distinct chi_k (regular k) = #monic irreducibles of degree n with nonzero constant term  2 vs 2
+   ok    7.3 [GL_3(F_2)] <χ, Ind (α ⊗ β)> = |L|⁻¹ ∑_m J χ (m) α (m₁⁻¹) β (m₂⁻¹), a=1   value=-2.31793-0.589567j target=-2.31793-0.589567j
+   ok    7.3 [GL_3(F_2)] the form with (α m₁ * β m₂)⁻¹ (complex inverse) is different, a=1  0.4508+0.5075j vs -2.3179-0.5896j
+   ok    7.3 [GL_3(F_2)] <χ, Ind (α ⊗ β)> = |L|⁻¹ ∑_m J χ (m) α (m₁⁻¹) β (m₂⁻¹), a=2   value=-0.251815-1.78216j target=-0.251815-1.78216j
+   ok    7.3 [GL_3(F_2)] the form with (α m₁ * β m₂)⁻¹ (complex inverse) is different, a=2  0.1331-0.2383j vs -0.2518-1.7822j
+   ok    7.5 [GL_3(F_2)] Mackey, no scalar: <Ind_P f, Ind_Q h> = Σ_t <h^t, f>_(P∩tQt⁻¹), P=(1,2), Q=(1,2)  2 double cosets (2 with nonzero pairing), |P∩tQt⁻¹| = [4, 24] value=0.632442+0.0190196j target=0.632442+0.0190196j
+   ok    7.5 [GL_3(F_2)] Mackey, no scalar: <Ind_P f, Ind_Q h> = Σ_t <h^t, f>_(P∩tQt⁻¹), P=(1,2), Q=(2,1)  2 double cosets (2 with nonzero pairing), |P∩tQt⁻¹| = [6, 8] value=-0.988217-1.63646j target=-0.988217-1.63646j
+   ok    7.5 [GL_3(F_2)] Mackey, no scalar: <Ind_P f, Ind_Q h> = Σ_t <h^t, f>_(P∩tQt⁻¹), P=(2,1), Q=(1,2)  2 double cosets (2 with nonzero pairing), |P∩tQt⁻¹| = [6, 8] value=-0.490725+0.60148j target=-0.490725+0.60148j
+   ok    7.5 [GL_3(F_2)] Mackey, no scalar: <Ind_P f, Ind_Q h> = Σ_t <h^t, f>_(P∩tQt⁻¹), P=(2,1), Q=(2,1)  2 double cosets (2 with nonzero pairing), |P∩tQt⁻¹| = [4, 24] value=0.33223+1.99725j target=0.33223+1.99725j
+   ok    7.5 [GL_3(F_2)] <hcL L, hcL L'> = number of degree-preserving bijections of the multisets, over all pairs of 9 cuspidal lists  0 failures
+   ok    7.1 [GL_3(F_2)] hcL L n = Ind_(P_λ) (α₁ ⊗ … ⊗ α_r), λ = composition of the degrees of L (9 lists)  
+   ok    7.5 [GL_3(F_2)] Mackey term by term: every double coset contributes 0 or 1, and the contributing ones are the matching bijections (21 pairs)  0 failures
+   (GL_1(F_2): 0.0s)
+   (GL_2(F_2): 0.0s)
+   (GL_3(F_2): 0.2s)
+
+# GL_3(F_3): the requested cheap item only (double-coset counts), then — once the machine was quiet again — the full set.
+### gl3_3-dc: 20 checks passed, 0 failed  (gl3_3: 20/20 checks passed)
+   (GL_1(F_3): 0.0s)
+   (GL_2(F_3): 0.0s)
+   (GL_3(F_3): 0.5s)
+### gl3_3: 1441 checks passed, 0 failed  (gl3_3: 1441/1441 checks passed)
+   ok    5.2 [GL_1(F_3)] <psi_1, Psi_1> = #{i < n : k q^i ≡ l}   value=1-1.22465e-16j target=1+0j
+   ok    6.1 [GL_1(F_3)] <chi_1, chi_1> = 1 (k regular)   value=1-1.22465e-16j target=1+0j
+   ok    7.11 [GL_1(F_3)] #distinct chi_k (regular k) = #monic irreducibles of degree n with nonzero constant term  2 vs 2
+   ok    5.2 [GL_2(F_3)] <psi_1, Psi_1> = #{i < n : k q^i ≡ l}   value=1-9.64036e-16j target=1+0j
+   ok    6.1 [GL_2(F_3)] <chi_1, chi_1> = 1 (k regular)   value=1-9.64036e-16j target=1+0j
+   ok    7.11 [GL_2(F_3)] #distinct chi_k (regular k) = #monic irreducibles of degree n with nonzero constant term  3 vs 3
+   ok    7.3 [GL_2(F_3)] <χ, Ind (α ⊗ β)> = |L|⁻¹ ∑_m J χ (m) α (m₁⁻¹) β (m₂⁻¹), a=1   value=0.183445+0.289783j target=0.183445+0.289783j
+   ok    7.3 [GL_2(F_3)] the form with (α m₁ * β m₂)⁻¹ (complex inverse) is different, a=1  0.1856+0.2320j vs 0.1834+0.2898j
+   ok    7.5 [GL_2(F_3)] Mackey, no scalar: <Ind_P f, Ind_Q h> = Σ_t <h^t, f>_(P∩tQt⁻¹), P=(1,1), Q=(1,1)  2 double cosets (2 with nonzero pairing), |P∩tQt⁻¹| = [4, 12] value=-0.101974-0.483865j target=-0.101974-0.483865j
+   ok    7.5 [GL_2(F_3)] <hcL L, hcL L'> = number of degree-preserving bijections of the multisets, over all pairs of 9 cuspidal lists  0 failures
+   ok    7.1 [GL_2(F_3)] hcL L n = Ind_(P_λ) (α₁ ⊗ … ⊗ α_r), λ = composition of the degrees of L (9 lists)  
+   ok    7.5 [GL_2(F_3)] Mackey term by term: every double coset contributes 0 or 1, and the contributing ones are the matching bijections (21 pairs)  0 failures
+   ok    7.6 [GL_2(F_3)] the GL₂ table (linear, Steinberg twists, principal series, cuspidal) has q² - 1 rows  8 vs 8
+   ok    7.6 [GL_2(F_3)] … one row per conjugacy class  
+   ok    7.6 [GL_2(F_3)] the GL₂ character table is orthonormal  
+   ok    7.6 [GL_2(F_3)] every irreducible character of GL₂ pairs nontrivially with hcL of a list of cuspidal characters  
+   ok    5.2 [GL_3(F_3)] <psi_1, Psi_1> = #{i < n : k q^i ≡ l}   value=1-5.41945e-16j target=1+0j
+   ok    6.1 [GL_3(F_3)] <chi_1, chi_1> = 1 (k regular)   value=1-5.32132e-16j target=1+0j
+   ok    7.11 [GL_3(F_3)] #distinct chi_k (regular k) = #monic irreducibles of degree n with nonzero constant term  8 vs 8
+   ok    7.3 [GL_3(F_3)] <χ, Ind (α ⊗ β)> = |L|⁻¹ ∑_m J χ (m) α (m₁⁻¹) β (m₂⁻¹), a=1   value=0.145559+0.568712j target=0.145559+0.568712j
+   ok    7.3 [GL_3(F_3)] the form with (α m₁ * β m₂)⁻¹ (complex inverse) is different, a=1  0.2055-0.1472j vs 0.1456+0.5687j
+   ok    7.3 [GL_3(F_3)] <χ, Ind (α ⊗ β)> = |L|⁻¹ ∑_m J χ (m) α (m₁⁻¹) β (m₂⁻¹), a=2   value=-1.32703-0.036614j target=-1.32703-0.036614j
+   ok    7.3 [GL_3(F_3)] the form with (α m₁ * β m₂)⁻¹ (complex inverse) is different, a=2  0.2006+0.0919j vs -1.3270-0.0366j
+   ok    7.5 [GL_3(F_3)] Mackey, no scalar: <Ind_P f, Ind_Q h> = Σ_t <h^t, f>_(P∩tQt⁻¹), P=(1,2), Q=(1,2)  2 double cosets (2 with nonzero pairing), |P∩tQt⁻¹| = [72, 864] value=-0.219695-0.543106j target=-0.219695-0.543106j
+   ok    7.5 [GL_3(F_3)] Mackey, no scalar: <Ind_P f, Ind_Q h> = Σ_t <h^t, f>_(P∩tQt⁻¹), P=(1,2), Q=(2,1)  2 double cosets (2 with nonzero pairing), |P∩tQt⁻¹| = [96, 216] value=-0.390415+0.63304j target=-0.390415+0.63304j
+   ok    7.5 [GL_3(F_3)] Mackey, no scalar: <Ind_P f, Ind_Q h> = Σ_t <h^t, f>_(P∩tQt⁻¹), P=(2,1), Q=(1,2)  2 double cosets (2 with nonzero pairing), |P∩tQt⁻¹| = [96, 216] value=-0.568497-0.255131j target=-0.568497-0.255131j
+   ok    7.5 [GL_3(F_3)] Mackey, no scalar: <Ind_P f, Ind_Q h> = Σ_t <h^t, f>_(P∩tQt⁻¹), P=(2,1), Q=(2,1)  2 double cosets (2 with nonzero pairing), |P∩tQt⁻¹| = [72, 864] value=-0.293173+0.658972j target=-0.293173+0.658972j
+   ok    7.5 [GL_3(F_3)] <hcL L, hcL L'> = number of degree-preserving bijections of the multisets, over all pairs of 40 cuspidal lists  0 failures
+   ok    7.1 [GL_3(F_3)] hcL L n = Ind_(P_λ) (α₁ ⊗ … ⊗ α_r), λ = composition of the degrees of L (40 lists)  
+   ok    7.5 [GL_3(F_3)] Mackey term by term: every double coset contributes 0 or 1, and the contributing ones are the matching bijections (52 pairs)  0 failures
+   (GL_1(F_3): 0.0s)
+   (GL_2(F_3): 0.0s)
+   (GL_3(F_3): 42.3s)

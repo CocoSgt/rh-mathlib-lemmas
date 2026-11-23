@@ -147,11 +147,11 @@
 ### 7.7 第 8 步新增的待人工确认
 
 1. **目录位置（已定：挪到 `RepresentationTheory` 下，见 §7.8）。** 原稿在 `TauCetiRoadmap/CharactersOfGLnOverFiniteFields/`（顶层路线图，`metadata.toml` = `math.RT`），而相邻的表示论路线图都是 `TauCetiRoadmap/RepresentationTheory/` 这个路线图下的子路线图。De Song 定了做成子路线图，已照办：现在的位置是 `TauCetiRoadmap/RepresentationTheory/CharactersOfGLnOverFiniteFields/`（本仓库 `roadmap/RepresentationTheory/CharactersOfGLnOverFiniteFields/`），不带 `metadata.toml`。
-2. **对一切有限域陈述**：7.6–7.10、8.2 在源码里只对 `ZMod g`（`g` 素数）证明。路线图把它们写成任意有限域 `F`，数学上没有疑问（证明不依赖域是素域），但这是对源稿的推广，请确认接受。
-3. **3.3、2.5 的 Checks** 没有编译验证（见上"没查"）。
-4. **7.5 的 route** 里的标量：`Ind_B^G (Res_B ψ) = [P : B] · Ind_P^G ψ`，两个诱导化到 Borel 子群后 Mackey 公式给出的 `∑_w ⟨φ, φ'^w⟩_B` 与"匹配置换的个数"之间的因子关系我没有算清楚；结论（不同多重集给 `0`、无重复的同一多重集给 `1`）是标准事实，但 route 的叙述可能需要熟悉 Mackey 公式的人改写。
-5. **`[DecidableEq F]`**：这是沿用 Tau Ceti 配对定理的习惯，不是数学内容；如果审稿人不喜欢可以去掉（语句换成 `classical` 推出的实例）。
-6. **`hcL` 的 junk 值**（次数不加总为 `n` 时返回 `0`）与源码不同，见 Provenance。
+2. **对一切有限域陈述（已定：保持对一切有限域 `F_q` 陈述）。** Green 的分类对所有 `q` 成立，Tau Ceti 要的是通用的库。逐条查了 7.6–7.11、8.2 的 route（§7.9.1 的表）：没有一步用到 "`q` 是素数"；只在 7.7 补了一句非平凡加法特征标的出处，Provenance 改成"源码只证了素域情形"。
+3. **3.3、2.5 的 Checks（已定：能在 Lean 里证的证掉，证不了的留 sorry 并用 Python 暴力算核对）。** 见 §7.9.3：Lean 里证掉 5 条（3.3 的三条、2.5 的两条），新加 2 条 sorry 目标（`card_unipotentRadical`、`nsTorus_conj_gl2NonSplitTorusHom`）。核对时发现两处陈述错误并改掉：`unipotentRadical` 的定义少了"后 `n - a` 行"这一半（原来描述的是旗点的稳定子群，不是幂幺根），7.3 的右边必须读作在逆元处的值而不是值的倒数。
+4. **7.5 的 route 里的标量（已定：没有标量因子）。** 见 §7.9.2：Mackey 公式就是 `⟨Ind_P f, Ind_Q h⟩ = ∑_t ⟨h^t, f⟩_{P ∩ tQt⁻¹}`，对任意类函数成立；尖数据的每一项是 0 或 1。原来担心的因子来自一条错误的路线（把两边都化到 Borel 子群再限制到环面——尖特征标在环面上的限制并不正交，GL₂ 的尖特征标 `χ` 有 `⟨χ|_T, χ|_T⟩_T = q - 1`），这条路线已从 README 删掉，route 按算出来的结果重写。
+5. **`[DecidableEq F]`**：这次的决定清单没有涉及，保持原样。
+6. **`hcL` 的 junk 值**：同上，保持原样（Provenance 里写明与源码不同）。
 
 ### 7.8 后续：挪到 `RepresentationTheory` 下（De Song 定的）
 
@@ -169,4 +169,79 @@
 - `python3 .github/scripts/check_roadmap_topics.py`：`Roadmap topics valid (531 roadmaps)`，exit 0（少的一个是不再作为顶层路线图的这一条）。
 
 没查的：父 README 两段里的说法是按本路线图 README 写的，其中 "touches that block in rank one only" 沿用 §6 第 6 条没有通读过的那个判断；父 README 里其它条目提到的节号没有核对。`.run/build-tauceti.sh`（De Song 的脚本）里的目标名还是旧的 `TauCetiRoadmap.CharactersOfGLnOverFiniteFields.Suggested`，我没有改它，用的是 `.run/step8-tauceti/build.sh`。
+
+### 7.9 第二轮回执：按 De Song 对 §7.7 第 2–4 条的决定做的
+
+#### 7.9.1 任意有限域：逐条查 7.6–7.11、8.2 的 route
+
+| 节 | route 用到的东西 | 有没有依赖 "`q` 是素数" | 改动 |
+|---|---|---|---|
+| 7.6 | 对 `n` 归纳；3.5 的常项；`Lₐ = GL_a × GL_b` 的不可约特征标是外张量积；7.3；7.1 的分期 | 没有（直积的不可约表示、Jacquet 限制是特征标，对任何域都对） | 无 |
+| 7.7 (d) | "尖特征标是 generic 的"（对每个 `ψ ≠ 1`）；几何引理；7.4 | 没有；但 `ψ ≠ 1` 要有非平凡加法特征标存在 | 7.7 加一句：Mathlib 的 `AddChar.FiniteField.primitiveChar_to_Complex F` 对一切有限域非平凡（Tau Ceti 的 `TauCeti.primitiveChar_to_Complex_ne_one`） |
+| 7.8 | 7.5、7.6；"无重复的尖特征标多重集 ≤ 素标签的多重集"，即首一多项式 `qⁿ − qⁿ⁻¹` 个（1.1） | 没有 | 无 |
+| 7.9 | 7.5、7.7 (d)、7.8 | 没有 | 无 |
+| 7.10 | 6.3、6.4（任意 `K`/`F`）；7.9；1.1 的唯一分解 | 没有 | 无 |
+| 7.11 | `Kˣ` 循环、阶 `qⁿ − 1`；1.3 数 Frobenius 轨道 | 没有 | 无 |
+| 8.2 | 1.2、1.3、6.4、7.10 | 没有 | 无 |
+
+Provenance 里相应改成"源码只证了素域情形（`ZMod g`），路线图对一切有限域陈述并证明，没有一条 route 用到 `q` 是素数"。
+
+#### 7.9.2 Mackey 公式：以 `Suggested.lean` 的归一化为准的准确形式
+
+记号按 `Suggested.lean`：诱导是 Tau Ceti 的 `Subgroup.indClassFun`（左陪集代表的和，不除以子群阶），配对是 `characterPairing`（`|G|⁻¹ ∑ φ (g) ψ (g⁻¹)`），Jacquet 限制是 `|Uₐ|⁻¹ ∑_{u ∈ Uₐ} χ (m u)`。
+
+1. **诱导分期没有标量。** 对列表 `L = [(d₁, α₁), …, (d_r, α_r)]`，`hcL L n` 等于从 `L` 的次数构成的分块抛物子群 `P_λ` 诱导 `α₁ ⊗ … ⊗ α_r`（对角块上逐块取值）得到的类函数，`Subgroup.indClassFunction P_λ (α₁ ⊗ … ⊗ α_r)`：投射公式 `Subgroup.indClassFun_comp_subtype_mul` 加传递性 `Subgroup.indClassFun_indClassFun_subgroupOf`（都在 Tau Ceti 里）。README 7.1 的 API 现在这样写。
+2. **Mackey，没有标量。** 对 `P_λ`、`P_μ` 上的任意类函数 `f`、`h`：
+   `⟨Ind_{P_λ} f, Ind_{P_μ} h⟩_G = ∑_{t ∈ P_λ \ G / P_μ} ⟨h^t, f⟩_{R_t}`，`R_t = P_λ ∩ t P_μ t⁻¹`，`h^t (y) = h (t⁻¹ y t)`，右边的配对是子群 `R_t` 上的 Tau Ceti 配对（按 `|R_t|` 归一化）。这就是 `Subgroup.indClassFun_mackey` 加 Frobenius 互反，没有别的因子。
+3. **双陪集。** `P_λ \ G / P_μ` 由非负整数矩阵 `(d_{ij})`（行和 `λ`、列和 `μ`）索引；Borel 的情形就是 Bruhat 分解（Tau Ceti 的 `TauCeti.exists_mem_doubleCoset_permutationGL`）。
+4. **尖数据的每一项。** `f`、`h` 是从尖特征标提升的时候，每一项是 0 或 1；为 1 的项恰好是保次数且 `α_i = β_{σ(i)}` 的双射 `σ`。所以配对是这种双射的个数（7.5 的陈述）。非置换矩阵的项在 `R_t` 的 Levi 部分 `∏ GL_{d_{ij}}` 上算，某个尖特征标被拿去和一个从真抛物子群诱导出来的类函数配对，等于 0（3.5、4.7）；置换矩阵的项是 `∏_i ⟨α_i, β_{σ(i)}⟩`。`λ = μ = (1, …, 1)` 时 `R_t` 就是对角环面，这一项逐字是 `∏_i |Fˣ|⁻¹ ∑_{x ∈ Fˣ} α_i (x) β_{σ(i)} (x)⁻¹`。
+
+原来担心"化到 Borel 子群后会不会多出 `[P : B]` 一类的因子"，根源是最初想走的那条路线（两边都化到 Borel 再限制到环面）本身是错的：尖特征标限制到环面后不正交（GL₂(F_q) 的尖特征标 `χ` 满足 `⟨χ|_T, χ|_T⟩_T = q - 1`，不是 1）。正确的路线直接用分块抛物子群，如上。README 7.5 的 route 已按这个重写。
+
+Python 核对（`analysis/checks/check_green_gl.py`，§7.9.4）：对 `P_(a,b)`、`P_(c,d)` 的各种组合和随机类函数 `f`、`h` 逐点核对第 2 条（误差 < 1e⁶）；对尖数据的全部列表对核对第 4 条（每一项 0/1、非零项的个数 = 双射的个数、总和 = 配对），以及第 1 条和第 3 条（双陪集个数 = 整数矩阵个数）。
+
+#### 7.9.3 Checks：Lean 里证掉的、留 sorry 的、改掉的陈述
+
+证掉（不再有 sorry）：
+
+- 3.3：`parabolic_two_one`（`parabolic F 2 1 = TauCeti.GL2Borel F`）、`parabolic_one`（`parabolic F (m + 1) 1 = TauCeti.lineStabilizer F 0`）、`parabolic_last`（`parabolic F (m + 1) m = TauCeti.hyperplaneStabilizer F (Fin.last m)`）。
+- 2.5：`nsTorus_injective`、`nsTorus_map_algebraMap`（`nsTorus` 现在定义成 Tau Ceti 的 `TauCeti.unitsLeftMulMatrix (Module.finBasisOfFinrankEq F K hK)`，这两条就是 Tau Ceti 的 `unitsLeftMulMatrix_injective`、`unitsLeftMulMatrix_map_algebraMap`）。
+
+新加的 sorry 目标（原来只在 markdown 里）：
+
+- `card_unipotentRadical`：`|Uₐ| = q ^ (a * (n - a))`。证明是把 `Uₐ` 等同于右上块的 `a × (n - a)` 矩阵，要处理 `Fin` 的指标换算，没有来得及写。
+- `nsTorus_conj_gl2NonSplitTorusHom`：二次扩张时 `nsTorus` 与 Tau Ceti 的 `GL2NonSplitTorusHom` 共轭。要在 Lean 里写换基矩阵，但 `TauCeti.nonSplitTorusBasis`、`TauCeti.GL2NonSplitTorusHom` 没有 `@[expose]`，module 系统下不能展开（`rfl` 已经试过，不行），Mathlib 里也没找到现成的"线性映射在两个基下的矩阵互相共轭"的引理，所以留 sorry。
+
+核对时发现并改掉的两处（都是第 7、8 步稿子里的）：
+
+1. **`unipotentRadical` 的定义少了半个条件。** 原来写的是"在前 `a` 列上与单位阵相同"：这是旗点 `(e₁, …, eₐ)` 的逐点稳定子群（阶 `q^{a(n-a)} |GL_{n-a}|`），不是幂幺根——GL₂ 里 `a = 1` 时它有 `q (q - 1)` 个元素，而 README 说 `|U₁| = q`。暴力算第一次跑就在 `|Uₐ| = q^(a(n-a))` 上失败。现在的定义是"在前 `a` 列和后 `n - a` 行上都与单位阵相同"（单位阵之外只有右上 `a × (n - a)` 块可以非零），`Subgroup` 的三条证明都是真的，`unipotentRadical_le_parabolic` 仍然成立。连带核对：改正后 3.4/6.2（`χ_k` 在每个 `Uₐ` 上的和为 0）、7.3 都通过。改之前这两条在那个错的集合上也通过（对尖特征标来说两种集合上的和都是 0），所以光看那两条发现不了。
+2. **7.3 的右边要读成在逆元处的值。** 第 8 步写的 `(α m.1 * β m.2)⁻¹`（值的倒数）对任意类函数是错的，对特征标也不对（二维平凡特征标在 `1` 处取 2，倒数是 1/2，而在逆元 `1` 处的值还是 2）；正确的是 `α (m.1⁻¹) * β (m.2⁻¹)`。Python 核对：正确形式与左边相等，倒数形式不相等（跑过的全部情形）。README 7.3 原来还把"值的倒数"说成"对特征标就是复共轭"，也是错的，一并改掉。
+
+#### 7.9.4 Python 暴力算：范围与结果
+
+脚本 `analysis/checks/check_green_gl.py`（文件头有说明）：按 `Suggested.lean` 的定义逐字实现 `F_q ⊂ F_{q^L}`、`GL (Fin n) F`、抛物子群、幂幺根、`psi` 的 Möbius 递推、`rootPowerSum`（Teichmüller 特征标 = 固定生成元 ↦ 本原单位根）、左陪集和的诱导、Jacquet 限制、Tau Ceti 的配对；每条 check 打一行 `ok` / `FAIL`。按 De Song 的要求缩小了范围：全套只跑 GL₂ 在 F₂–F₉ 上和 GL₃ 在 F₂ 上，GL₃(F₃) 只跑双陪集个数一项；每条命令 `timeout 900`（macOS 没有 `timeout`，用 `.run/step8-tauceti/timeout.sh` 即 perl 的 alarm 代替），放后台、输出写文件。
+
+| 情形 | 检查数 | 结果 |
+|---|---|---|
+| GL₂(F₂) | 110 | 全过 |
+| GL₂(F₃) | 493 | 全过 |
+| GL₂(F₄) | 2597 | 全过 |
+| GL₂(F₅) | 10478 | 全过 |
+| GL₂(F₇) | 87515 | 全过 |
+| GL₂(F₈) | 202223 | 全过（与第一次完整跑的检查数相同） |
+| GL₂(F₉) | 421972 | 全过（89 s） |
+| GL₃(F₂) | 274 | 全过 |
+| GL₃(F₃) | 只跑双陪集个数一项：20 条（GL₃(F₃) 的全部 16 个分块组合，加上同一域里 GL₂(F₃) 的 4 个），2 s；之后全套：1441 | 全过（Borel 对 Borel 是 6 个，即置换矩阵）；全套：全过（44 s） |
+
+两遍的检查集合相同（.run/step8-tauceti/py-all.log 是机器还忙时的第一遍，py2/*.log、py3/*.log 是按新范围补跑的）；其间只改了两处速度：双陪集的枚举（原来每个新代表要 `|P||Q|` 次乘法，GL₂(F₉)、GL₃(F₃) 上跑不完；改成先给右陪集编号、每个新代表只标 `|Q|` 个，新旧算法在 GL₂(F₂)、GL₂(F₃)、GL₃(F₂) 的全部分块组合上与蛮力定义逐个对过），以及"诱导分期"那条检查自己的一个平方循环。修好后的脚本在 GL₂(F₈) 上给出与第一遍完全相同的 202223 条、全过（第一次按新范围重跑时机器还在 load 25–35，被 900 s 限额截断在 201054 条、0 失败；负载降下来后 36 s 跑完）。
+
+GL₃(F₃)：按 De Song 缩小后的范围只需双陪集个数一项（全过（Borel 对 Borel 是 6 个，即置换矩阵））。跑完之后机器负载降到 3 以下，顺手把全套又跑了一遍，在 900 s 限额内 44 s 跑完：1441 条全过（含 5.2、6.1、7.3、无标量 Mackey、诱导分期、逐项 Mackey、40 个尖列表两两配对）。在这之前机器忙时（隔壁在用 ffmpeg，load 30–47）第一遍脚本也在 GL₃(F₃) 上完整跑完过一次：1417 条全过（.run/step8-tauceti/py-gl3_3.log，那次还没有双陪集个数、分期、逐项三项检查）。
+
+核对覆盖的 Check（按 README 的节）：1.1（`N_q(n)`，`n ≤ 3`）、2.2（不可约特征多项式与单个 Jordan 块的类）、2.3（子空间数）、2.5（非分裂环面：`F_qˣ` 映到数量矩阵、`F_qˣ` 外的元素是椭圆的且特征多项式 = 极小多项式、换基共轭、`e(u)` 与 `e(u^q)` 共轭）、3.3（`|Uₐ|`、`Uₐ ⊆ Pₐ` 正规、`|Pₐ|`、`P₁` = 线稳定子群、`P_{n-1}` = 超平面稳定子群）、3.4/3.6/6.2、4.4、4.5、4.6、5.2（含"带 `|G|` 因子的旧式子不对"）、6.1、6.3 的次数、6.5（GL₂ 四类值）、7.1（分期、与反转的列表相同）、7.3（含"倒数形式不对"）、7.5（无标量 Mackey；双陪集个数；尖列表两两配对 = 双射数；逐项 0/1）、7.6（GL₂ 全特征标表正交、每行与某个尖列表的 `hcL` 配对非零）、7.11（`χ_k` 的个数 = 首一不可约多项式的个数）。没有核对：4.7 的三条 primitivity（没有实现）、7.7 (d) / 7.8（没有实现 Whittaker 泛函与 generic 成分）、`nsTorus_conj_gl2NonSplitTorusHom` 里与 Tau Ceti 那个具体基的关系（Lean 里那个基不能计算；暴力算核对的是"任意两组基共轭"）。
+
+#### 7.9.5 编译
+
+`lake build TauCetiRoadmap.RepresentationTheory.CharactersOfGLnOverFiniteFields.Suggested`（同样的 `LAKE_CONFIG`、`LAKE_CACHE_DIR`）：**exit 0，Build completed successfully (18530 jobs)，0 error，38 条警告全部是 `declaration uses 'sorry'`，没有别的警告**（实际编译的日志 `.run/step8-tauceti/build3.log`，最终又 build 一次是 Replay：`build-round2.log`）。45 条定理里 38 条 sorry，7 条有证明（第 8 步已有的 `mem_parabolic_iff`、`unipotentRadical_le_parabolic`，这轮新证的 5 条）；20 个 def 都有真实定义体。`python3 .github/scripts/check_roadmap_topics.py`：`Roadmap topics valid (531 roadmaps)`，exit 0。
+
+各情形的逐条输出在 `.run/step8-tauceti/py-all.log`、`.run/step8-tauceti/py2/*.log`、`.run/step8-tauceti/py3/*.log`（不入库）；`analysis/checks/results.txt` 存汇总。
 

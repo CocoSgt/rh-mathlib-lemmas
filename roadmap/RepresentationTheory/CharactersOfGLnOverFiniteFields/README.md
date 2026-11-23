@@ -107,8 +107,9 @@ classification by prime labels. The numbers of the statements are those of `Sugg
   `ψ g⁻¹ = conj (ψ g)` (`TauCeti.conj_apply_of_mem_virtualCharacters`), so there
   `⟨φ, ψ⟩ = |G|⁻¹ ∑ g, φ g * conj (ψ g)`. None of this is redefined here.
 - **Cuspidal characters.** `unipotentRadical F n a` is the subgroup `Uₐ` of `GLₙ(F)` of invertible
-  matrices that agree with the identity matrix in their first `a` columns; it has `q^{a(n-a)}`
-  elements and is the unipotent radical of the standard parabolic subgroup `parabolic F n a`, the
+  matrices that agree with the identity matrix outside their upper-right `a × (n - a)` block (in
+  their first `a` columns and in their last `n - a` rows); it has `q^{a(n-a)}` elements and is the
+  unipotent radical of the standard parabolic subgroup `parabolic F n a`, the
   subgroup `Pₐ` of block upper triangular matrices with block sizes `a`, `n - a` (defined through
   Mathlib's `Matrix.BlockTriangular`; `mem_parabolic_iff` is its meaning in matrix entries).
   `IsCuspidalCharacter n χ`, for a class function `χ`: `χ` is irreducible and `∑_{u ∈ Uₐ} χ u = 0`
@@ -319,23 +320,30 @@ and `|GL (Fin 1) F| = q - 1`; `μ` is not multiplicative.
 
 ### 2.5 The non-split torus
 
-For an extension `K` of `F` of degree `n`, the *non-split torus* is the image in `GLₙ(F)` of the
-injective homomorphism `nsTorus K : Kˣ →* GL (Fin n) F` that sends `u` to the matrix, in Mathlib's
-basis `Module.finBasis F K` of `K` (reindexed to `Fin n`), of the `F`-linear map `x ↦ u x` of
-multiplication by `u` on `K`. Any two bases give conjugate embeddings.
+For an extension `K` of `F` of degree `n`, the *non-split torus* is the image in `GLₙ(F)` of
+`nsTorus K n hK : Kˣ →* GL (Fin n) F`: a unit `u` acts on the `F`-vector space `K` by left
+multiplication, read in Mathlib's basis `Module.finBasisOfFinrankEq F K hK`. The embedding is Tau
+Ceti's `TauCeti.unitsLeftMulMatrix` consumed as it is (Exact supplier contracts), so `nsTorus` only
+fixes the basis and the index type; any two bases give conjugate embeddings. Injectivity and the
+fact that `Fˣ` lands in the scalar matrices are Tau Ceti's (`TauCeti.unitsLeftMulMatrix_injective`,
+`TauCeti.unitsLeftMulMatrix_map_algebraMap`) and are proved in `Suggested.lean`.
 
-Prove: `nsTorus K` is injective; the elements of its image that do not come from `Fˣ` are exactly
-the elliptic matrices whose characteristic polynomial splits over `K`, and the one with
-characteristic polynomial `P` is conjugate to `nsTorus K z` for each root `z ∈ Kˣ` of `P`; for `n = 2`
-and a quadratic extension it is conjugate to Tau Ceti's `TauCeti.GL2NonSplitTorusHom F K`.
+Prove: the elements of the image that do not come from `Fˣ` are exactly the elliptic matrices whose
+characteristic polynomial splits over `K`, and the one with characteristic polynomial `P` is
+conjugate to `nsTorus K n hK z` for each root `z ∈ Kˣ` of `P`; for `n = 2` and a quadratic extension
+the embedding is conjugate to Tau Ceti's `TauCeti.GL2NonSplitTorusHom F K`
+(`nsTorus_conj_gl2NonSplitTorusHom`), the same construction in Tau Ceti's basis
+`TauCeti.nonSplitTorusBasis F K`.
 
 Route. Multiplication by `u` is `F`-linear and invertible; the characteristic polynomial of
 multiplication by `u` is `minpoly F u` when `K = F[u]`, which holds for `u` of degree `n` (the
 module `Module.AEval F K u` is cyclic of rank the degree of `u`); two bases differ by an
-invertible matrix.
+invertible matrix, and the matrix of a linear map in a basis `b'` is `Q⁻¹ M Q` with `Q` the change
+of basis.
 
-**Checks.** `nsTorus K` restricted to `Fˣ` is `a ↦ a • 1`. `GL₂(𝔽₃)`: the image is a cyclic group of
-order `8`, and `TauCeti.GL2NonSplitTorus.natCard_eq` gives the order.
+**Checks.** `nsTorus K n hK` restricted to `Fˣ` is `a ↦ a • 1` (`nsTorus_map_algebraMap`). `GL₂(𝔽₃)`,
+`K = 𝔽₉`: the image is a cyclic group of order `8` (`TauCeti.GL2NonSplitTorus.natCard_eq`), and the
+eight elements off `Fˣ` are the elliptic matrices.
 
 ### Examples
 
@@ -345,7 +353,9 @@ order `8`, and `TauCeti.GL2NonSplitTorus.natCard_eq` gives the order.
 ### Dependencies
 
 Layer 1; Mathlib only otherwise. The case `n = 2` of 2.2 and 2.5 is in Tau Ceti
-(`TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/{NonSplitTorus,NormalForm,ClassSize,Centralizer}.lean`).
+(`TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/{NonSplitTorus,NormalForm,ClassSize,Centralizer}.lean`),
+and the embedding of 2.5 is Tau Ceti's `TauCeti.unitsLeftMulMatrix`
+(`TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/LeftMulMatrix.lean`).
 
 ## Layer 3: class functions on `GLₙ(F)`, constant terms, and cuspidal characters
 
@@ -372,12 +382,12 @@ moreover its value at `1` is a natural number
 `parabolic F n a` is the subgroup `Pₐ` of block upper triangular matrices with block sizes `a`,
 `n - a` (Mathlib's `Matrix.BlockTriangular` for the block index that is `0` on the first `a`
 indices and `1` on the last `n - a`; `mem_parabolic_iff` spells it entrywise);
-`unipotentRadical F n a` is its unipotent radical `Uₐ`, contained in `Pₐ`
-(`unipotentRadical_le_parabolic`); `toGL n M` is the matrix `M` read in `GL (Fin n) F` (the value
+`unipotentRadical F n a` is its unipotent radical `Uₐ`, the matrices that agree with the identity
+outside the upper-right block, contained in `Pₐ` (`unipotentRadical_le_parabolic`); `toGL n M` is the matrix `M` read in `GL (Fin n) F` (the value
 `1` occurs only for a non-invertible `M`); `blockDiag n a b h m` is the block-diagonal matrix with
 diagonal blocks `m.1`, `m.2`, for `a + b = n`. Prove: `Uₐ` is normal in
 `Pₐ` and `Pₐ` is the semidirect product of `Uₐ` with the subgroup `Lₐ` of block-diagonal matrices;
-`|Uₐ| = q^{a(n-a)}`; `blockDiag` is a unit, and `m ↦ toGL n (blockDiag n a b h m)` is an injective
+`|Uₐ| = q^{a(n-a)}` (`card_unipotentRadical`); `blockDiag` is a unit, and `m ↦ toGL n (blockDiag n a b h m)` is an injective
 homomorphism `GL (Fin a) F × GL (Fin b) F →* GL (Fin n) F` with image `Lₐ`; the characteristic
 polynomial of the product of a block-diagonal matrix and an element of `Uₐ` is the product of the
 characteristic polynomials of its blocks.
@@ -385,11 +395,12 @@ characteristic polynomials of its blocks.
 Route. Matrix computation; the last point by the block-triangular determinant formula (Mathlib
 `Matrix.twoBlockTriangular_det`).
 
-**Checks.** `parabolic F 2 1` is Tau Ceti's Borel subgroup `TauCeti.GL2Borel F`; for `n ≥ 1`,
-`parabolic F n 1` is its line stabilizer `TauCeti.lineStabilizer F 0` and `parabolic F n (n - 1)`
-its hyperplane stabilizer `TauCeti.hyperplaneStabilizer F` at the last index
-(`TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/{Borel,LineHyperplane}.lean`); `parabolic F n 0`
-and `parabolic F n n` are the whole group.
+**Checks.** `parabolic F 2 1` is Tau Ceti's Borel subgroup `TauCeti.GL2Borel F` (`parabolic_two_one`);
+for `m ≥ 0`, `parabolic F (m + 1) 1` is its line stabilizer `TauCeti.lineStabilizer F 0`
+(`parabolic_one`) and `parabolic F (m + 1) m` its hyperplane stabilizer `TauCeti.hyperplaneStabilizer F`
+at the last index (`parabolic_last`), see
+`TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/{Borel,LineHyperplane}.lean`. These three are proved
+in `Suggested.lean`; `parabolic F n 0` and `parabolic F n n` are the whole group.
 
 ### 3.4 Cuspidal characters
 
@@ -692,9 +703,15 @@ Layers 3–5. Nothing from Layer 7.
 
 The API to prove: `harishChandraInduct n a b h α β` is linear in `(α, β)` (it is a class function
 by construction); it is the character of an induced representation when `α, β` are characters; and
-the *transitivity*: for lists `L₁, L₂` of total degrees `a`, `b`,
-`hcL (L₁ ++ L₂) (a + b) = harishChandraInduct (a + b) a b rfl (hcL L₁ a) (hcL L₂ b)`, so that `hcL`
-depends on the list only through the multiset of its entries.
+the *induction in stages*: for a list `L = [(d₁, α₁), …, (d_r, α_r)]` of total degree `n`,
+`hcL L n` is the induced class function of `α₁ ⊗ … ⊗ α_r` from the parabolic subgroup `P_λ` of the
+composition `λ = (d₁, …, d_r)` of `n` (the tensor product read on the diagonal blocks),
+`Subgroup.indClassFunction P_λ (α₁ ⊗ … ⊗ α_r)`, by the transitivity
+`Subgroup.indClassFun_indClassFun_subgroupOf` and the projection formula
+`Subgroup.indClassFun_comp_subtype_mul`; in particular `hcL (L₁ ++ L₂) (a + b) = harishChandraInduct (a + b)
+a b rfl (hcL L₁ a) (hcL L₂ b)` for lists of total degrees `a`, `b`, and `hcL` depends on the list only
+through the multiset of its entries. No scalar factor appears: with the coset-sum normalisation of
+`Subgroup.indClassFun`, induction in stages is an equality of class functions.
 
 ### 7.2 The Jacquet restriction
 
@@ -709,14 +726,18 @@ of `χ` over the coset of the unipotent radical through the image in `GL (Fin n)
 
 Prove `jacquet_frobenius`: for every class function `χ` of `GL (Fin n) F` and all class functions
 `α`, `β` of `GL (Fin a) F`, `GL (Fin b) F`,
-`⟨χ, harishChandraInduct n a b h α β⟩ = |Lₐ|⁻¹ ∑_{m ∈ Lₐ} jacquetRestrict n a b h χ m * (α m.1 * β m.2)⁻¹`.
+`⟨χ, harishChandraInduct n a b h α β⟩ = |Lₐ|⁻¹ ∑_{m ∈ Lₐ} jacquetRestrict n a b h χ m * (α m.1⁻¹ * β m.2⁻¹)`,
+where `m.1⁻¹` and `m.2⁻¹` are the inverses in `GL (Fin a) F` and `GL (Fin b) F`: the values of `α`
+and `β` at the inverse elements, not the reciprocals of their values.
 
 Route. Frobenius reciprocity for class functions is in Tau Ceti (`TauCeti.characterPairing_ind`):
-the left side is the pairing over `Pₐ` of the restriction of `χ` with the inflation of `α` and `β`.
-Decompose `Pₐ = Lₐ ⋉ Uₐ` (3.3): the inverse of an element with Levi part `m` and unipotent part `u`
-has Levi part `m⁻¹`, so the pairing over `Pₐ` is `|Pₐ|⁻¹ ∑_{m ∈ Lₐ} ∑_{u ∈ Uₐ} χ (m u) (α m.1 * β m.2)⁻¹`,
-and `|Pₐ| = |Lₐ| |Uₐ|` gives the right side. For characters `α`, `β` the inverse
-`(α m.1 * β m.2)⁻¹` is the complex conjugate (`TauCeti.conj_apply_of_mem_virtualCharacters`).
+the left side is the pairing over `Pₐ` of the restriction of `χ` with the inflation of `α` and `β`,
+in which the second function is read at the inverse (`characterPairing_apply`). Decompose
+`Pₐ = Lₐ ⋉ Uₐ` (3.3): the inverse of an element with Levi part `m` and unipotent part `u` has Levi
+part `m⁻¹`, so the pairing over `Pₐ` is `|Pₐ|⁻¹ ∑_{m ∈ Lₐ} ∑_{u ∈ Uₐ} χ (m u) α (m.1⁻¹) β (m.2⁻¹)`,
+and `|Pₐ| = |Lₐ| |Uₐ|` gives the right side. For characters `α`, `β` the value at the inverse is
+the complex conjugate (`TauCeti.conj_apply_of_mem_virtualCharacters`); with the reciprocal
+`(α m.1 * β m.2)⁻¹` instead, the identity is false already for the trivial characters.
 
 ### 7.4 Induction of characters is a character
 
@@ -731,18 +752,31 @@ Prove `pairing_hcL`: for lists `L, L'` of cuspidal characters, each of total deg
 `⟨hcL L n, hcL L' n⟩ = 0` if `L` and `L'` are not the same multiset, and `= 1` if `L` has no
 repeated entry and `L` and `L'` are the same multiset.
 
-Route. The Mackey formula for the restriction of an induced class function to a subgroup is in Tau
-Ceti (`Subgroup.indClassFun_mackey`). By the transitivity of 7.1 and the projection formula
-`Subgroup.indClassFun_comp_subtype_mul`, each of the two inductions is, up to a positive integer
-factor, the induction from the Borel subgroup of a class function on the Borel subgroup (the
-restriction to the Borel subgroup of the inflation to the parabolic subgroup); the Mackey formula
-for two inductions from the Borel subgroup sums over the double cosets of the Borel subgroup,
-which the Bruhat decomposition of `GLₙ(F)` indexes by the permutations of the blocks (Tau Ceti's
-`TauCeti.exists_mem_doubleCoset_permutationGL`), and leaves the bijections between the two
-multisets of degree-tagged cuspidal characters that respect the degrees: on the diagonal torus the
-two class functions are the products of the restrictions of their entries, and two cuspidal
-characters of the same degree pair to `1` when equal and to `0` otherwise. In general the pairing
-is the number of such bijections, which takes the two values stated.
+Route. By the induction in stages of 7.1, `hcL L n` is the class function induced from the
+parabolic subgroup `P_λ` of the composition `λ = (d₁, …, d_r)` of the degrees of `L` by the tensor
+product `α₁ ⊗ … ⊗ α_r` of its entries, read on the diagonal blocks, and likewise `hcL L' n` from
+`P_μ` by `β₁ ⊗ … ⊗ β_s`. The Mackey formula for class functions (`Subgroup.indClassFun_mackey`)
+and Frobenius reciprocity give, with no scalar factor,
+
+  `⟨Ind_{P_λ} f, Ind_{P_μ} h⟩_G = ∑_{t ∈ P_λ \ G / P_μ} ⟨h^t, f⟩_{R_t}`,  `R_t = P_λ ∩ t P_μ t⁻¹`,
+  `h^t (y) = h (t⁻¹ y t)`,
+
+where each term is the pairing of the subgroup `R_t` (normalised by `|R_t|`). The double cosets
+`P_λ \ G / P_μ` are indexed by the nonnegative integer matrices `(d_{ij})` with row sums `λ` and
+column sums `μ`; for the Borel subgroup this is the Bruhat decomposition of `GLₙ(F)` (Tau Ceti's
+`TauCeti.exists_mem_doubleCoset_permutationGL`), the permutation matrices. For `f` and `h`
+inflated from cuspidal characters the term at `(d_{ij})` is computed on the Levi part of `R_t`,
+whose blocks are the groups `GL_{d_{ij}} (F)`: it is `0` unless `(d_{ij})` is a permutation matrix
+`σ`, because a cuspidal character pairs to `0` with every class function induced from a proper
+parabolic subgroup (3.5 and 4.7), and for a permutation matrix it is `∏_i ⟨α_i, β_{σ(i)}⟩ =
+∏_i [α_i = β_{σ(i)}]`, as for `λ = μ = (1, …, 1)`, where `R_t` is the diagonal torus and the term
+is `∏_i (|Fˣ|⁻¹ ∑_{x ∈ Fˣ} α_i (x) β_{σ(i)} (x)⁻¹)`. So the pairing is the number of
+degree-preserving bijections `σ` with `α_i = β_{σ(i)}` for all `i`, which gives the two values
+stated.
+
+**Checks.** `GL₂(F)` with `L = [χ₁, χ₂]`, `L' = [χ₁, χ₂]`: `1` when `χ₁ ≠ χ₂`, `2` for `L = L' =
+[χ, χ]` (two bijections), `0` for `[χ₁, χ₂]` against `[χ₃, χ₄]` with `{χ₁, χ₂} ≠ {χ₃, χ₄}`. For
+`P_λ = P_μ` = the Borel subgroup of `GL₃(F)`: `6` double cosets, one per permutation.
 
 ### 7.6 Existence of the cuspidal support
 
@@ -773,6 +807,10 @@ the transitivity of 7.1, `⟨χ, hcL (L₁ ++ L₂) n⟩ > 0`.
 - (d) Prove `exists_generic_constituent`: for `ψ ≠ 1` and a list `L` of cuspidal characters of total
   degree `n ≥ 1`, there is an irreducible character `ρ` of `GL (Fin n) F` that is generic for `ψ`
   and has `⟨ρ, hcL L n⟩ ≠ 0`.
+
+Every finite field has a nontrivial additive character, Mathlib's
+`AddChar.FiniteField.primitiveChar_to_Complex F` (`TauCeti.primitiveChar_to_Complex_ne_one`), so
+`ψ ≠ 1` is never an empty hypothesis.
 
 Route. A cuspidal character is generic (`wh ψ ρ ≠ 0` for every `ψ ≠ 1`), and the Whittaker functional
 of `hcL L n` is not `0`: the Jacquet module of an induced representation along the Borel subgroup has
@@ -935,6 +973,8 @@ Layers 1 and 6–7.
   Harish–Chandra induction *is* `Subgroup.indClassFunction` from a standard parabolic subgroup);
 - the upper unitriangular subgroup `TauCeti.upperUnitriangularGroup` and the upper triangular
   subgroup `TauCeti.upperTriangularGroup` (7.7);
+- the embedding of the non-split torus `TauCeti.unitsLeftMulMatrix` (2.5), with its injectivity and
+  its values on `Fˣ`;
 - the existence of a monic irreducible of every degree and the Frobenius orbit of the roots of a
   minimal polynomial (1.1), `TauCeti/FieldTheory/Finite/`; character orthogonality for finite
   commutative groups (1.4), `TauCeti/GroupTheory/FiniteAbelian/CharacterOrthogonality.lean`;
@@ -1037,7 +1077,12 @@ Layers 1 and 6–7.
   `TauCeti.GL2Borel`; `TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/LineHyperplane.lean`:
   `TauCeti.lineStabilizer`, `TauCeti.hyperplaneStabilizer`, `TauCeti.mem_lineStabilizer_iff`,
   `TauCeti.mem_hyperplaneStabilizer_iff`; `TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/Diagonal/Bruhat.lean`:
-  `TauCeti.exists_mem_doubleCoset_permutationGL`.
+  `TauCeti.exists_mem_doubleCoset_permutationGL`;
+  `TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/LeftMulMatrix.lean`:
+  `TauCeti.unitsLeftMulMatrix`, `TauCeti.unitsLeftMulMatrix_injective`,
+  `TauCeti.unitsLeftMulMatrix_map_algebraMap`.
+- `TauCeti/NumberTheory/LegendreSymbol/Complex.lean`: `TauCeti.primitiveChar_to_Complex_ne_one`
+  (Mathlib's `AddChar.FiniteField.primitiveChar_to_Complex` is nontrivial, 7.7).
 - `TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/NonSplitTorus.lean`:
   `TauCeti.GL2NonSplitTorusHom`, `TauCeti.GL2NonSplitTorus`;
   `TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/NormalForm.lean`:
@@ -1174,10 +1219,11 @@ for `Development/AbelianVarietyTheory/Proofs/CharacterTheory/` and `InertiaEigen
 
 In the source, the existence of the cuspidal support (7.6) is proved through *generic*
 constituents (a Whittaker functional nonzero on the induction) rather than through the Jacquet
-restriction; both routes are available. Three conventions differ from the source and are recorded
-here because a port has to translate them: the source states the definitions of cuspidality,
-Harish–Chandra induction and the Whittaker functional, and 7.6–7.10 and 8.2, for the prime fields
-`𝔽_p` only (`ZMod g`), while this roadmap states them for every finite field; the inner product
+restriction; both routes are available. Three points differ from the source and are recorded
+here because a port has to translate them: the source proves cuspidality, Harish–Chandra induction,
+the Whittaker functional, and 7.6–7.10 and 8.2, for the prime fields `𝔽_p` only (`ZMod g`), while
+this roadmap states and proves them for every finite field (none of the routes uses that `q` be
+prime); the inner product
 `ipGL` of the source is the plain sum over the group, so the pairing formula of 5.2 carries a
 factor `|GLₙ(F)|` there; and the induction `hcL` of the source does not test that the degrees of
 the list add up to the degree of the group, where this roadmap returns `0`.

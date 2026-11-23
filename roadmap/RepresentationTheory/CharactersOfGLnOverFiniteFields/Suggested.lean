@@ -6,6 +6,9 @@ public import TauCeti.RepresentationTheory.CharacterTable.VirtualCharacter
 public import TauCeti.RepresentationTheory.Induction.ClassFunction
 public import TauCeti.RepresentationTheory.CharacterTable.GL2.Cuspidal.Irreducible
 public import TauCeti.LinearAlgebra.Matrix.GeneralLinearGroup.UpperUnitriangular.Basic
+public import TauCeti.LinearAlgebra.Matrix.GeneralLinearGroup.UpperTriangular.Basic
+public import TauCeti.LinearAlgebra.Matrix.GeneralLinearGroup.LineHyperplane
+public import TauCeti.LinearAlgebra.Matrix.GeneralLinearGroup.LeftMulMatrix
 
 /-!
 # Cuspidal characters of general linear groups over finite fields: target signatures
@@ -126,6 +129,38 @@ theorem card_submodules (n a : ℕ) :
         ∏ i ∈ Finset.range a, ((Nat.card F : ℕ) ^ n - (Nat.card F : ℕ) ^ i) := by
   sorry
 
+/-- 2.5 The non-split torus of `GL (Fin n) F`, for an extension `K` of `F` of degree `n`: a unit
+`u ∈ Kˣ` acts on the `F`-vector space `K` by left multiplication, read in Mathlib's basis
+`Module.finBasisOfFinrankEq F K hK` of `K`. The embedding is Tau Ceti's
+`TauCeti.unitsLeftMulMatrix`, consumed as it is. -/
+def nsTorus (K : Type) [Field K] [Algebra F K] [Module.Finite F K] (n : ℕ)
+    (hK : Module.finrank F K = n) : Kˣ →* GL (Fin n) F :=
+  TauCeti.unitsLeftMulMatrix (Module.finBasisOfFinrankEq F K hK)
+
+omit [DecidableEq F] in
+/-- 2.5 The non-split torus is embedded injectively (`TauCeti.unitsLeftMulMatrix_injective`). -/
+theorem nsTorus_injective (K : Type) [Field K] [Algebra F K] [Module.Finite F K] (n : ℕ)
+    (hK : Module.finrank F K = n) : Function.Injective (nsTorus K n hK) :=
+  TauCeti.unitsLeftMulMatrix_injective _
+
+omit [DecidableEq F] in
+/-- 2.5 *Check.* The non-split torus contains the centre: on `Fˣ` the embedding is `a ↦ a • 1`
+(`TauCeti.unitsLeftMulMatrix_map_algebraMap`). -/
+theorem nsTorus_map_algebraMap (K : Type) [Field K] [Algebra F K] [Module.Finite F K] (n : ℕ)
+    (hK : Module.finrank F K = n) (a : Fˣ) :
+    nsTorus K n hK (Units.map (algebraMap F K) a) = Matrix.GeneralLinearGroup.scalar (Fin n) a :=
+  TauCeti.unitsLeftMulMatrix_map_algebraMap _ a
+
+/-- 2.5 *Check.* For a quadratic extension, the non-split torus is conjugate to Tau Ceti's
+`TauCeti.GL2NonSplitTorusHom F K`: both embeddings are `TauCeti.unitsLeftMulMatrix` in a basis of
+`K` over `F` (Mathlib's basis here, Tau Ceti's `TauCeti.nonSplitTorusBasis F K` there), and a
+change of basis conjugates the matrix of left multiplication. -/
+theorem nsTorus_conj_gl2NonSplitTorusHom (K : Type) [Field K] [Algebra F K] [Module.Finite F K]
+    [Algebra.IsQuadraticExtension F K] (hK : Module.finrank F K = 2) :
+    ∃ P : GL (Fin 2) F, ∀ x : Kˣ,
+      TauCeti.GL2NonSplitTorusHom F K x = P⁻¹ * nsTorus K 2 hK x * P := by
+  sorry
+
 /-! ## Layer 3: class functions on `GL (Fin n) F`, the parabolic subgroups, and cuspidal characters -/
 
 /-- 3.3a The matrix `M` read inside `GL (Fin n) F`; the junk value `1` occurs only when `M` is
@@ -180,9 +215,10 @@ theorem mem_parabolic_iff (n a : ℕ) {x : GL (Fin n) F} :
       · omega
 
 /-- 3.3 The unipotent radical of the standard parabolic subgroup with blocks `a`, `n - a`: the
-invertible matrices that agree with the identity in their first `a` columns. -/
+invertible matrices that agree with the identity outside the upper-right `a × (n - a)` block, i.e.
+in their first `a` columns and in their last `n - a` rows. -/
 def unipotentRadical (F : Type) [Field F] [Fintype F] (n a : ℕ) : Subgroup (GL (Fin n) F) where
-  carrier := {u | ∀ i j : Fin n, (j : ℕ) < a →
+  carrier := {u | ∀ i j : Fin n, ((j : ℕ) < a ∨ a ≤ (i : ℕ)) →
     (u : Matrix (Fin n) (Fin n) F) i j = if i = j then 1 else 0}
   one_mem' := by
     intro i j _
@@ -190,25 +226,43 @@ def unipotentRadical (F : Type) [Field F] [Fintype F] (n a : ℕ) : Subgroup (GL
     exact Matrix.one_apply
   mul_mem' := by
     intro u v hu hv i j hj
-    simp only [Units.val_mul, Matrix.mul_apply, hv _ j hj, mul_ite, mul_one, mul_zero,
-      Finset.sum_ite_eq', Finset.mem_univ, ite_true]
-    exact hu i j hj
+    rcases hj with hj | hj
+    · simp only [Units.val_mul, Matrix.mul_apply, hv _ j (Or.inl hj), mul_ite, mul_one, mul_zero,
+        Finset.sum_ite_eq', Finset.mem_univ, ite_true]
+      exact hu i j (Or.inl hj)
+    · simp only [Units.val_mul, Matrix.mul_apply, hu i _ (Or.inr hj), ite_mul, one_mul, zero_mul,
+        Finset.sum_ite_eq, Finset.mem_univ, ite_true]
+      exact hv i j (Or.inr hj)
   inv_mem' := by
     intro u hu i j hj
-    have h := congrArg (fun g : GL (Fin n) F => ((g : Matrix (Fin n) (Fin n) F)) i j)
-      (inv_mul_cancel u)
-    simp only [Units.val_mul, Units.val_one, Matrix.one_apply, Matrix.mul_apply, hu _ j hj, mul_ite,
-      mul_one, mul_zero, Finset.sum_ite_eq', Finset.mem_univ, ite_true] at h
-    exact h
+    rcases hj with hj | hj
+    · have h := congrArg (fun g : GL (Fin n) F => ((g : Matrix (Fin n) (Fin n) F)) i j)
+        (inv_mul_cancel u)
+      simp only [Units.val_mul, Units.val_one, Matrix.one_apply, Matrix.mul_apply,
+        hu _ j (Or.inl hj), mul_ite, mul_one, mul_zero, Finset.sum_ite_eq', Finset.mem_univ,
+        ite_true] at h
+      exact h
+    · have h := congrArg (fun g : GL (Fin n) F => ((g : Matrix (Fin n) (Fin n) F)) i j)
+        (mul_inv_cancel u)
+      simp only [Units.val_mul, Units.val_one, Matrix.one_apply, Matrix.mul_apply,
+        hu i _ (Or.inr hj), ite_mul, one_mul, zero_mul, Finset.sum_ite_eq, Finset.mem_univ,
+        ite_true] at h
+      exact h
+
+/-- 3.3 The order of the unipotent radical: `|Uₐ| = q ^ (a * (n - a))`, one free entry for each
+position of the upper-right block. -/
+theorem card_unipotentRadical (n a : ℕ) :
+    Nat.card (unipotentRadical F n a) = Nat.card F ^ (a * (n - a)) := by
+  sorry
 
 /-- 3.3 The unipotent radical `Uₐ` is contained in the parabolic subgroup `Pₐ`. -/
 theorem unipotentRadical_le_parabolic (n a : ℕ) : unipotentRadical F n a ≤ parabolic F n a := by
   intro u hu
-  have hu' : ∀ i j : Fin n, (j : ℕ) < a →
+  have hu' : ∀ i j : Fin n, ((j : ℕ) < a ∨ a ≤ (i : ℕ)) →
       ((u : GL (Fin n) F) : Matrix (Fin n) (Fin n) F) i j = if i = j then 1 else 0 := hu
   rw [mem_parabolic_iff]
   intro i j hj hia
-  rw [hu' i j hj]
+  rw [hu' i j (Or.inl hj)]
   have hne : ¬ (i = j) := by
     intro h
     have := congrArg Fin.val h
@@ -217,6 +271,67 @@ theorem unipotentRadical_le_parabolic (n a : ℕ) : unipotentRadical F n a ≤ p
   split
   · exact absurd ‹i = j› hne
   · rfl
+
+/-- 3.3 *Check.* The parabolic subgroup `parabolic F 2 1` is Tau Ceti's Borel subgroup
+`TauCeti.GL2Borel F`, the group of upper triangular matrices. -/
+theorem parabolic_two_one : parabolic F 2 1 = TauCeti.GL2Borel F := by
+  ext x
+  rw [mem_parabolic_iff, TauCeti.UpperTriangularGroup.mem_iff, Matrix.IsUpperTriangular,
+    Matrix.BlockTriangular]
+  constructor
+  · intro h i j hij
+    have hlt : (j : ℕ) < (i : ℕ) := by simpa using Fin.lt_def.mp hij
+    exact h i j (by omega) (by omega)
+  · intro h i j hij hia
+    have hlt : (j : ℕ) < (i : ℕ) := by omega
+    exact h (Fin.lt_def.mpr (by simpa using hlt))
+
+/-- 3.3 *Check.* For `m ≥ 0`, the parabolic subgroup `parabolic F (m + 1) 1` is Tau Ceti's line
+stabilizer `TauCeti.lineStabilizer F 0`, the stabilizer of the first coordinate line. -/
+theorem parabolic_one (m : ℕ) : parabolic F (m + 1) 1 = TauCeti.lineStabilizer F 0 := by
+  ext x
+  rw [mem_parabolic_iff, TauCeti.mem_lineStabilizer_iff]
+  constructor
+  · intro h j hj
+    have hjv : (j : ℕ) ≠ 0 := by
+      intro hv
+      exact hj (Fin.ext hv)
+    have hj1 : 1 ≤ (j : ℕ) := by omega
+    exact h j 0 (by simp) hj1
+  · intro h i j hj hia
+    have hi : i ≠ 0 := by
+      intro h0
+      subst h0
+      simp at hia
+    have hj0 : j = 0 := by
+      have hjlt := j.isLt
+      exact Fin.ext (by rw [Fin.val_zero]; omega)
+    subst hj0
+    exact h i hi
+
+/-- 3.3 *Check.* For `m ≥ 0`, the parabolic subgroup `parabolic F (m + 1) m` is Tau Ceti's
+hyperplane stabilizer `TauCeti.hyperplaneStabilizer F (Fin.last m)`. -/
+theorem parabolic_last (m : ℕ) :
+    parabolic F (m + 1) m = TauCeti.hyperplaneStabilizer F (Fin.last m) := by
+  ext x
+  rw [mem_parabolic_iff, TauCeti.mem_hyperplaneStabilizer_iff]
+  constructor
+  · intro h j hj
+    have hjm : (j : ℕ) < m := by
+      by_contra hc
+      have hle : m ≤ (j : ℕ) := by omega
+      have hjlt := j.isLt
+      exact hj (Fin.ext (by rw [Fin.val_last]; omega))
+    exact h (Fin.last m) j hjm (by simp)
+  · intro h i j hj hia
+    have hi : i = Fin.last m := by
+      have hilt := i.isLt
+      exact Fin.ext (by rw [Fin.val_last]; omega)
+    subst hi
+    exact h j (by
+      intro he
+      subst he
+      simp at hj)
 
 /-- 3.3b The block-diagonal matrix with diagonal blocks `m.1` and `m.2`, for block sizes `a`, `b`
 with `a + b = n`; it is the matrix of an element of the Levi subgroup `Lₐ`. -/
@@ -480,13 +595,15 @@ def jacquetRestrict (n a b : ℕ) (h : a + b = n) (χ : TauCeti.ClassFunction �
       ∑ u : unipotentRadical F n a, χ.1 (toGL n (blockDiag n a b h m) * u),
     jacquetRestrict_mem_classFunction n a b h χ⟩
 
-/-- 7.3 Frobenius reciprocity for the Jacquet restriction against Harish–Chandra induction. -/
+/-- 7.3 Frobenius reciprocity for the Jacquet restriction against Harish–Chandra induction. The
+right side pairs the Jacquet restriction with `α` and `β` read at the inverse: for characters
+`α m.1⁻¹ = conj (α m.1)`. -/
 theorem jacquet_frobenius (n a b : ℕ) (h : a + b = n) (χ : TauCeti.ClassFunction ℂ (GL (Fin n) F))
     (α : TauCeti.ClassFunction ℂ (GL (Fin a) F)) (β : TauCeti.ClassFunction ℂ (GL (Fin b) F)) :
     TauCeti.ClassFunction.characterPairing χ (harishChandraInduct n a b h α β) =
       ((Nat.card (GL (Fin a) F) * Nat.card (GL (Fin b) F) : ℕ) : ℂ)⁻¹ *
         ∑ m : GL (Fin a) F × GL (Fin b) F,
-          (jacquetRestrict n a b h χ).1 m * (α.1 m.1 * β.1 m.2)⁻¹ := by
+          (jacquetRestrict n a b h χ).1 m * (α.1 m.1⁻¹ * β.1 m.2⁻¹) := by
   sorry
 
 /-- 7.4 The Harish–Chandra induction of a list of irreducible characters is the character of a
