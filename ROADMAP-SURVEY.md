@@ -2,14 +2,14 @@
 
 > **功劳与署名**：证明的全部数学属于 **Levent Alpöge（与 Claude 合作）**，2026-11-20 发布于 <https://alpo.ge/>，原样镜像见 `source/`（<https://github.com/CocoSgt/riemann-hypothesis-lean>）。本文只做阅读、转述与选范围，没有新的数学。调研与起草由 **GLM 5.4 通过 DeepSeek Harness** 完成（其中 5 个子代理各写了一份笔记，见 §1.2）。原发布没有 license 文件（REPORT.md §5.6）。
 >
-> 本文用中文；路线图正文（`roadmap/CharactersOfGLnOverFiniteFields/README.md`）用英文。标「确定」的是逐行读过陈述的；标「很可能」「猜测」的请按 §6 处理。
+> 本文用中文；路线图正文（`roadmap/RepresentationTheory/CharactersOfGLnOverFiniteFields/README.md`）用英文。标「确定」的是逐行读过陈述的；标「很可能」「猜测」的请按 §6 处理。
 
 ## 0. 结论
 
 1. **主线五层**（SKELETON.md §1，逐行核对过）：L1 Galois 表示（`Row0b`、`RecTExists`）→ L2 自守窗口 `VWin` + `Green` + 解析假设 `HypsAlt … DefiniteSideCondition` 非空 → L3 `ZeroFreeAll`（每个**本原** Dirichlet L 函数在 Re s > 1/2 无零点）→ L4 `EveryCharacter`（**所有** Dirichlet L 函数）→ L5 `RiemannHypothesis`（Mathlib 的定义）。L2 → L3 那一环在源码里是 `zero_free_all_of_green_v_win`（`ThirdPlaceSeries/TopPlug.lean:12`）= `imprimitive` 之后接 `zeroFreeAll_of_topG`：由 Green 得到「形状」定理 `TopG`，由 `VWin` 供给每个本原特征的主机（`supplyChi`），再用 Dirichlet L 函数的磨光显式公式 + Landau 定理得到零点自由。
 2. **哪些是新的**（§3）：L3 以上的衔接、显式公式与 Landau、Green 分类、LLC、Siegel–Weil、倍乘法等都是教科书或已发表定理；**新的是把 `Green + VWin + Hyps` 变成 `ZeroFreeAll` 的整条解析链**（θ 提升链、定号行列式、bootstrap、Iwasawa 塔上"用扭曲消去"的弱化 Vandiver、周期与体积计算），它占证明的绝大部分，而且其陈述要几千个自定义定义。
 3. **Tau Ceti 覆盖**（§4）：顶层衔接已被 `QuasiRiemannHypothesis`（§1.1、§5.5、§11.1）和 `ZerosOfLFunctions`（Layer 9）覆盖；L1 的结论有上同调路线的路线图 `AutomorphicGaloisRepresentationsPartII`（库里未实现）；L2 的各种文献输入在 `MetaplecticAutomorphicForms`、`GanGrossPrasadUnitaryGroups`、`IntegralIwasawaTheory`、`ArakelovGeometryAndAbelianHeights` 等里有目标，但几乎都没有实现；解析核心（`Hyps`、`TopG`、`supplyChi`）没有对应目标。**`Green`（Green 1955 对 GL_n(𝔽_q) 尖特征标的分类）在 Tau Ceti 没有目标**，库里只有 GL₂(𝔽_q) 的特征标表。
-4. **选定的范围**（§5）：第一份路线图做 **GL_n(𝔽_q) 的类函数与 Green 的尖特征标分类**（`roadmap/CharactersOfGLnOverFiniteFields/`）。它是主线上唯一同时满足「陈述与证明只依赖 Mathlib」「Tau Ceti 没有」「可复用」的一块；其余各层写成明确标注的 roadmap-for-a-roadmap。
+4. **选定的范围**（§5）：第一份路线图做 **GL_n(𝔽_q) 的类函数与 Green 的尖特征标分类**（`roadmap/RepresentationTheory/CharactersOfGLnOverFiniteFields/`）。它是主线上唯一同时满足「陈述与证明只依赖 Mathlib」「Tau Ceti 没有」「可复用」的一块；其余各层写成明确标注的 roadmap-for-a-roadmap。
 
 ## 1. 读了什么
 

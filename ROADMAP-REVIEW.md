@@ -1,4 +1,4 @@
-# ROADMAP-REVIEW — 对路线图草稿 `roadmap/CharactersOfGLnOverFiniteFields/` 的自审（TASK.md 第 7 步 e；§7 是第 8 步的增补）
+# ROADMAP-REVIEW — 对路线图草稿 `roadmap/RepresentationTheory/CharactersOfGLnOverFiniteFields/` 的自审（TASK.md 第 7 步 e；§7 是第 8 步的增补，§7.8 是挪到 `RepresentationTheory` 下的后续）
 
 > 这是**作者的自审**（GLM 5.4 通过 DeepSeek Harness），不是另一位贡献者的审稿。按 `TauCetiRoadmap/CONTRIBUTING.md`「Reviewing a roadmap」的四个方面各审一遍，再对照 `TauCetiRoadmap/README.md`「Writing a roadmap」的清单逐条核对；每条写清查了什么、没查什么。拿不准的数学列在 §6「待人工确认」。自审过程中**改掉了三处我自己写错的陈述**，记在 §1.3，请重点看。
 
@@ -146,10 +146,27 @@
 
 ### 7.7 第 8 步新增的待人工确认
 
-1. **目录位置**：草稿在 `TauCetiRoadmap/CharactersOfGLnOverFiniteFields/`（顶层路线图，`metadata.toml` = `math.RT`），而相邻的表示论路线图都是 `TauCetiRoadmap/RepresentationTheory/` 这个路线图下的子路线图（子路线图不带 `metadata.toml`）。放哪里由 De Song 定；移动的话要改 README 里的相对链接。
+1. **目录位置（已定：挪到 `RepresentationTheory` 下，见 §7.8）。** 原稿在 `TauCetiRoadmap/CharactersOfGLnOverFiniteFields/`（顶层路线图，`metadata.toml` = `math.RT`），而相邻的表示论路线图都是 `TauCetiRoadmap/RepresentationTheory/` 这个路线图下的子路线图。De Song 定了做成子路线图，已照办：现在的位置是 `TauCetiRoadmap/RepresentationTheory/CharactersOfGLnOverFiniteFields/`（本仓库 `roadmap/RepresentationTheory/CharactersOfGLnOverFiniteFields/`），不带 `metadata.toml`。
 2. **对一切有限域陈述**：7.6–7.10、8.2 在源码里只对 `ZMod g`（`g` 素数）证明。路线图把它们写成任意有限域 `F`，数学上没有疑问（证明不依赖域是素域），但这是对源稿的推广，请确认接受。
 3. **3.3、2.5 的 Checks** 没有编译验证（见上"没查"）。
 4. **7.5 的 route** 里的标量：`Ind_B^G (Res_B ψ) = [P : B] · Ind_P^G ψ`，两个诱导化到 Borel 子群后 Mackey 公式给出的 `∑_w ⟨φ, φ'^w⟩_B` 与"匹配置换的个数"之间的因子关系我没有算清楚；结论（不同多重集给 `0`、无重复的同一多重集给 `1`）是标准事实，但 route 的叙述可能需要熟悉 Mackey 公式的人改写。
 5. **`[DecidableEq F]`**：这是沿用 Tau Ceti 配对定理的习惯，不是数学内容；如果审稿人不喜欢可以去掉（语句换成 `classical` 推出的实例）。
 6. **`hcL` 的 junk 值**（次数不加总为 `n` 时返回 `0`）与源码不同，见 Provenance。
+
+### 7.8 后续：挪到 `RepresentationTheory` 下（De Song 定的）
+
+做了什么：
+
+- 在 `tauceti-build/TauCetiRoadmap` 里把目录移到 `TauCetiRoadmap/RepresentationTheory/CharactersOfGLnOverFiniteFields/`，删掉 `metadata.toml`（`.github/scripts/check_roadmap_topics.py` 的规矩：子路线图沿用父路线图的 topic，自己带 `metadata.toml` 反而报错）；目录里只剩 `README.md`、`Suggested.lean`，与 `RepresentationTheory/SchurWeyl/` 等一致。
+- `Suggested.lean`：模块名随目录变成 `TauCetiRoadmap.RepresentationTheory.CharactersOfGLnOverFiniteFields.Suggested`，namespace 改成 `TauCetiRoadmap.RepresentationTheory.CharactersOfGLnOverFiniteFields`（与 `RepresentationTheory/CharacterTheory/Suggested.lean` 等的写法相同）；`module` 头保留（同目录下 ArtinAlgebras、LieHighestWeight 等也带）。其余内容一字未改。
+- README 里指向别的路线图的相对链接改成新位置下的路径：`../RepresentationTheory/CharacterTheory/README.md` → `../CharacterTheory/README.md`（5 处），`../RepresentationTheory/InductionRestriction/README.md` → `../InductionRestriction/README.md`（1 处），`../SmoothRepresentationsOfLocalGroups{,PartII}/README.md` → `../../SmoothRepresentationsOfLocalGroups{,PartII}/README.md`（3 + 1 处）。逐个确认目标文件在副本里存在。
+- 父路线图 `TauCetiRoadmap/RepresentationTheory/README.md` 加两段（`git diff` 只有 15 行新增、0 行删除）："The roadmaps" 列表里在 InductionRestriction 之后加一条；"How they depend on one another" 里在 "Induction/restriction and Schur-Weyl feed character theory." 之后加一条（吃 CharacterTheory 与 InductionRestriction，供深度零那一块，本族不往下做）。两段原文存在本仓库的 `roadmap/RepresentationTheory/README-index-entry.md`，已核对与副本里加进去的逐行相同。顶层 `TauCetiRoadmap/README.md`、`TauCetiRoadmap.lean`、`RepresentationTheory/{Suggested.lean,STATUS.md,PROGRESS.md}` 里本来就没有写过这条路线图，没有动。
+- 本仓库：`git mv roadmap/CharactersOfGLnOverFiniteFields roadmap/RepresentationTheory/CharactersOfGLnOverFiniteFields`，删 `metadata.toml`，同步 `README.md`、`Suggested.lean`（与副本 `diff -rq` 无差异）。`ROADMAP-PR.md` 里的路径、模块名、"只动自己目录"的说法都改了（现在是新目录 + 父 README 的两段）；PR 说明里原来一个按 README 位置写的相对链接改成按仓库根目录写的。
+
+结果：
+
+- `lake build TauCetiRoadmap.RepresentationTheory.CharactersOfGLnOverFiniteFields.Suggested`（同样的 `LAKE_CONFIG`、`LAKE_CACHE_DIR`）：**exit 0，Build completed successfully (18510 jobs)，0 error，36 条警告全部是 `declaration uses 'sorry'`**（日志 `.run/step8-tauceti/build-rt.log`；源文件只是 namespace 变了，36 条与 7.5 相同）。
+- `python3 .github/scripts/check_roadmap_topics.py`：`Roadmap topics valid (531 roadmaps)`，exit 0（少的一个是不再作为顶层路线图的这一条）。
+
+没查的：父 README 两段里的说法是按本路线图 README 写的，其中 "touches that block in rank one only" 沿用 §6 第 6 条没有通读过的那个判断；父 README 里其它条目提到的节号没有核对。`.run/build-tauceti.sh`（De Song 的脚本）里的目标名还是旧的 `TauCetiRoadmap.CharactersOfGLnOverFiniteFields.Suggested`，我没有改它，用的是 `.run/step8-tauceti/build.sh`。
 

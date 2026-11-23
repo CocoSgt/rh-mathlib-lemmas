@@ -44,7 +44,7 @@ open Polynomial
 
 open scoped Classical
 
-namespace TauCetiRoadmap.CharactersOfGLnOverFiniteFields
+namespace TauCetiRoadmap.RepresentationTheory.CharactersOfGLnOverFiniteFields
 
 variable {F : Type} [Field F] [Fintype F] [DecidableEq F]
 
@@ -624,4 +624,4 @@ theorem green_prime_labels (n : ℕ) (hn : 0 < n) (θ : AlgebraicClosure F →* 
         ∃ P : F[X], P.Monic ∧ Irreducible P ∧ P.natDegree = n ∧ P.coeff 0 ≠ 0 ∧ χ = τ P := by
   sorry
 
-end TauCetiRoadmap.CharactersOfGLnOverFiniteFields
+end TauCetiRoadmap.RepresentationTheory.CharactersOfGLnOverFiniteFields

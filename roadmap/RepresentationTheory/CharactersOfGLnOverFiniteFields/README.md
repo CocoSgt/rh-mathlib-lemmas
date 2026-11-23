@@ -47,11 +47,11 @@ characters of total degree `n`, and comparing this with the multisets assembled 
 characters already constructed closes the classification.
 
 The roadmap builds on the character theory of finite groups of
-[RepresentationTheory.CharacterTheory](../RepresentationTheory/CharacterTheory/README.md):
+[RepresentationTheory.CharacterTheory](../CharacterTheory/README.md):
 class functions, their bilinear pairing, virtual characters and the norm-one test. Its table of
 `GL₂(𝔽_q)` is the case `n = 2` here and supplies a Check. The roadmap feeds the depth-zero block
 of the representation theory of `GLₙ` over a local field with residue field `F`, whose cuspidal
-representations of `GLₙ(F)` it describes; [SmoothRepresentationsOfLocalGroups](../SmoothRepresentationsOfLocalGroups/README.md)
+representations of `GLₙ(F)` it describes; [SmoothRepresentationsOfLocalGroups](../../SmoothRepresentationsOfLocalGroups/README.md)
 touches that block only in rank one. It is also the finite-field input to the series of roadmaps
 outlined under *Roadmap for a roadmap* below.
 
@@ -887,9 +887,9 @@ Layers 1 and 6–7.
 - **Depth-zero supercuspidal representations.** Over a local field `E` with residue field `F`, a
   cuspidal representation of `GLₙ(F)` inflates to `GLₙ(O_E)` and induces compactly to a
   depth-zero supercuspidal representation of `GLₙ(E)`; this roadmap supplies the characters on the
-  finite-field side. [SmoothRepresentationsOfLocalGroups](../SmoothRepresentationsOfLocalGroups/README.md)
+  finite-field side. [SmoothRepresentationsOfLocalGroups](../../SmoothRepresentationsOfLocalGroups/README.md)
   treats Bushnell–Kutzko types in depth zero for `n = 2` (around lines 3493–3542) and
-  [SmoothRepresentationsOfLocalGroupsPartII](../SmoothRepresentationsOfLocalGroupsPartII/README.md)
+  [SmoothRepresentationsOfLocalGroupsPartII](../../SmoothRepresentationsOfLocalGroupsPartII/README.md)
   §4.8 takes the depth-zero supercuspidals of `PGL₂(ℚ_p)` as an example; neither states the
   construction for general `n`, and it is not a target here.
 - **The planned series** (Roadmap for a roadmap): R2 uses the prime labels of 8.2.
@@ -923,14 +923,14 @@ Layers 1 and 6–7.
 - class functions `TauCeti.ClassFunction`, their pairing `TauCeti.ClassFunction.characterPairing`,
   virtual characters `TauCeti.virtualCharacters`, the irreducible characters
   `TauCeti.irreducibleCharacters` and the norm-one test:
-  [RepresentationTheory.CharacterTheory](../RepresentationTheory/CharacterTheory/README.md)
+  [RepresentationTheory.CharacterTheory](../CharacterTheory/README.md)
   Layers 0–3, as realized in `TauCeti/RepresentationTheory/CharacterTable/`. Characters of
   `GLₙ(F)` are stated as class functions and irreducibility as membership in
   `TauCeti.irreducibleCharacters`; the pairing is never written out again;
 - the induced class function `Subgroup.indClassFun` and its bundled form
   `Subgroup.indClassFunction`, Frobenius reciprocity `TauCeti.characterPairing_ind`, the Mackey
   decomposition `Subgroup.indClassFun_mackey` and the preservation of virtual characters under
-  induction: [RepresentationTheory.InductionRestriction](../RepresentationTheory/InductionRestriction/README.md),
+  induction: [RepresentationTheory.InductionRestriction](../InductionRestriction/README.md),
   as realized in `TauCeti/RepresentationTheory/Induction/` (consumed in 5.1, 5.3, 7.1, 7.3 and 7.5;
   Harish–Chandra induction *is* `Subgroup.indClassFunction` from a standard parabolic subgroup);
 - the upper unitriangular subgroup `TauCeti.upperUnitriangularGroup` and the upper triangular
@@ -943,13 +943,13 @@ Layers 1 and 6–7.
   `TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/`: the case `n = 2` of 2.2 and 2.5 and the
   Checks of 3.3;
 - the table of `GL₂(𝔽_q)`: Layer 9 of
-  [RepresentationTheory.CharacterTheory](../RepresentationTheory/CharacterTheory/README.md), as
+  [RepresentationTheory.CharacterTheory](../CharacterTheory/README.md), as
   realized in `TauCeti/RepresentationTheory/CharacterTable/GL2/`; it is the Check 6.5 for `n = 2`.
 
 ### Not owned here
 
 - **The table of `GL₂(𝔽_q)`**: Layer 9 of
-  [RepresentationTheory.CharacterTheory](../RepresentationTheory/CharacterTheory/README.md) owns
+  [RepresentationTheory.CharacterTheory](../CharacterTheory/README.md) owns
   it; that the cuspidal characters of 6.3 at `n = 2` are Tau Ceti's `TauCeti.GL2Cuspidal`, up to
   `θ ↦ θ^q`, is the Check 6.5 of this roadmap, not a target.
 - **Zelevinsky's classification of the irreducible characters of `GLₙ(F)` by multisegments**: 7.6
@@ -957,12 +957,12 @@ Layers 1 and 6–7.
   inductions, not the constitution of one; the generic constituent and its uniqueness are not
   pursued.
 - **Deligne–Lusztig theory, character sheaves, Hall–Littlewood polynomials**: not planned; see the
-  statement in [RepresentationTheory.CharacterTheory](../RepresentationTheory/CharacterTheory/README.md)
+  statement in [RepresentationTheory.CharacterTheory](../CharacterTheory/README.md)
   that the Deligne–Lusztig theory of which the cuspidal series of `GL₂` is a special case is not
   planned there either.
 - **Smooth representation theory of `GLₙ` over a local field**: Bernstein–Zelevinsky derivatives and
   the segment classification belong to
-  [SmoothRepresentationsOfLocalGroups](../SmoothRepresentationsOfLocalGroups/README.md); the
+  [SmoothRepresentationsOfLocalGroups](../../SmoothRepresentationsOfLocalGroups/README.md); the
   depth-zero construction is a consumer, not a target.
 - **Finite groups of Lie type other than `GLₙ`**: the cuspidal characters of the other classical
   groups and of the exceptional groups, and their tables, are outside; the only finite groups of
