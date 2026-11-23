@@ -1,16 +1,15 @@
-# ROADMAP-PR — 给 De Song 的三段草稿（TASK.md 第 7 步 f）
+# ROADMAP-PR — 给 De Song 的两段草稿（TASK.md 第 7 步 f）
 
-> 三段都是**草稿**，由 De Song 本人改写后再发。按 Tau Ceti 的规矩（`TauCetiRoadmap/CONTRIBUTING.md`）：路线图 PR 的说明里要写明用了哪个模型；Nobody should post a roadmap or a review comment they have not read carefully themselves。下文凡是写"De Song 做了什么"的地方，都是**留给他确认或改写**的，我没有替他读过。
+> 两段都是**草稿**，由 De Song 本人改写后再发。按 Tau Ceti 的规矩（`TauCetiRoadmap/CONTRIBUTING.md`）：路线图 PR 的说明里要写明用了哪个模型；Nobody should post a roadmap or a review comment they have not read carefully themselves。下文凡是写"De Song 做了什么"的地方，都是**留给他确认或改写**的，我没有替他读过。
 >
-> 三段都用英文（PR、Zulip 帖、邮件的受众都读英文）。2026-11-23 由 GLM 5.4 通过 DeepSeek Harness 起草；同日按 TASK.md 第 8 步改过一轮（① 的编译说明换成 TauCetiRoadmap 的实际环境；②③ 里关于"代码有没有被再分发"的说法改成实情；③ 的自我介绍按 De Song 的定稿写成 "My name is De Song."，不加别的身份、经历）。
+> 两段都用英文（PR、Zulip 帖的受众都读英文）。2026-11-23 由 GLM 5.4 通过 DeepSeek Harness 起草；同日按 TASK.md 第 8 步改过一轮（① 的编译说明换成 TauCetiRoadmap 的实际环境；② 里关于"代码有没有被再分发"的说法改成实情）。给 Alpöge 的信由 De Song 另行处理，不在本仓库。
 
 ## 用法
 
 | 段 | 发到哪里 | 发之前要做的 |
 |---|---|---|
 | ① | `TauCetiProject/TauCetiRoadmap` 的 PR：动两处。新目录 `TauCetiRoadmap/RepresentationTheory/CharactersOfGLnOverFiniteFields/`（`README.md`、`Suggested.lean`；它是 `RepresentationTheory` 的子路线图，沿用父路线图的 topic，不带 `metadata.toml`）；父路线图的 `TauCetiRoadmap/RepresentationTheory/README.md` 里加两段（"The roadmaps" 一条、"How they depend on one another" 一条，文字在 `roadmap/RepresentationTheory/README-index-entry.md`），这是唯一动到的别人的文件，别的行不改。**不要**手工改根 `README.md` 的路线图列表、两个 issue 模板和根 `TauCetiRoadmap.lean`（它们由 bot 生成）；PR 开好后在自己的 PR 下评论一行 `awaiting-review` | 通读 `README.md` 与 `ROADMAP-REVIEW.md` §6、§7；在 TauCetiRoadmap 的一个副本里按它 CI 的方式重新 `lake build TauCetiRoadmap.RepresentationTheory.CharactersOfGLnOverFiniteFields.Suggested`（环境见 ①）并跑 `python3 .github/scripts/check_roadmap_topics.py`；把 ① 里"Human review"一段改成实际做过的事；核对父 README 里加的两段与 `README-index-entry.md` 逐字相同 |
-| ② | Lean Zulip，Tau Ceti 频道（`#Tau Ceti`），建议在 "Getting started: roadmaps" 话题或新开一个话题 | 先发 ③ 的邮件，或者至少决定好是否先联系 Alpöge；Zulip 帖子里不要替他表态 |
-| ③ | 给 Levent Alpöge 的邮件（alpo.ge 上的联系方式） | 用 De Song 自己的名义与邮箱；附件可带 `ROADMAP-SURVEY.md` 的英文摘要（现在是中文，需要翻译或删去） |
+| ② | Lean Zulip，Tau Ceti 频道（`#Tau Ceti`），建议在 "Getting started: roadmaps" 话题或新开一个话题 | De Song 另行告知 Alpöge；Zulip 帖子里不要替他表态 |
 
 ---
 
@@ -56,9 +55,9 @@ Drafts (roadmap, survey, self-review) are available; the PR description will say
 
 ---
 
-## 三段都没写的（留给 De Song 决定）
+## 两段都没写的（留给 De Song 决定）
 
-- ②③ 里写了两个仓库的名字（`CocoSgt/riemann-hypothesis-lean`、`CocoSgt/rh-mathlib-lemmas`），没有给链接，也没有列三个 Mathlib PR 的编号（#46339、#46340、#46341）；是否给由你定。③ 里"thirteen small files"、"verbatim mirror"、"nothing in it was changed"是按仓库现状写的，发之前请核对。
+- ② 里写了两个仓库的名字（`CocoSgt/riemann-hypothesis-lean`、`CocoSgt/rh-mathlib-lemmas`），没有给链接，也没有列三个 Mathlib PR 的编号（#46339、#46340、#46341）；是否给由你定。
 - 目录位置（已定）：De Song 定了做成 `RepresentationTheory` 下的子路线图。草稿在 `TauCetiRoadmap/RepresentationTheory/CharactersOfGLnOverFiniteFields/`（只有 `README.md`、`Suggested.lean`，不带 `metadata.toml`，沿用父路线图的 topic `math.RT`）；模块名 `TauCetiRoadmap.RepresentationTheory.CharactersOfGLnOverFiniteFields`，namespace `TauCetiRoadmap.RepresentationTheory.CharactersOfGLnOverFiniteFields`；要加进父 `RepresentationTheory/README.md` 的两段在 `roadmap/RepresentationTheory/README-index-entry.md`。
 - 没有替 De Song 承诺任何时间表或"我会亲自维护这个系列"。
 - ② 里的"working with the GLM model"与 ① 的 AI 说明一致；如果你在发之前改用了别的模型，两处都要改。
