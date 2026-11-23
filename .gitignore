@@ -27,3 +27,6 @@ STORY.md
 
 # 8 MB raw per-file list of the static graph; the .gz is committed instead
 analysis/mainline_graph.files.txt
+
+# Read-only reference clones of Tau Ceti (roadmap step)
+tauceti-ref/

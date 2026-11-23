@@ -42,6 +42,18 @@
    - **挑一层真抽出来**：选依赖锥最小、最低的一层，把它的证明连同依赖锥抽进 `skeleton/` 编译通过（一次编译一个文件，单进程约 6 GB，最多两个并行）。抽不动就在 SKELETON.md 写清卡在哪、要多少文件
    - 交付 `SKELETON.md`（主线每层说明、依赖锥大小、哪些已能单独引用、哪些还不能及原因）；`skeleton/` 推到 `CocoSgt/rh-mathlib-lemmas`。这一步不往 Mathlib 开 PR
 
+7. **起草一份 Tau Ceti 路线图**（只起草，不在 Tau Ceti 的任何仓库开 PR、issue、评论、intention 或 claim）
+   - 背景：Mathlib 审稿人 vihdzp 在 #46341 建议，用 LLM 拆出来的引理更适合先落到 Tau Ceti。Tau Ceti 是 Lean FRO 和 Mathlib Initiative 孵化的 AI 数学库：人写路线图，AI 写代码，AI 按 rubric 对抗式审稿。新数学必须挂在某份路线图的目标上，路线图是人负责的（可以用 AI 起草，要在 PR 说明里写明用了哪个模型），所以这一步你起草，De Song 审改后由他本人提交
+   - 已查到：三个 Mathlib PR 的内容 Tau Ceti 已经有了（`TauCeti/Analysis/Matrix/MinkowskiDeterminant.lean`、`TauCeti/Analysis/Matrix/PosSemidef/Determinant.lean`、`TauCeti/Analysis/Calculus/Deriv/Matrix.lean`、`TauCeti/LinearAlgebra/Matrix/Compound.lean`），边缘引理不用再搬。路线图要做的是证明主线
+   - 参考材料在 `tauceti-ref/`（三个仓库的浅克隆，只读）。动笔前读完：`TauCeti/README.md`（尤其 Collaboration 一节：前沿成果和基础材料怎么分）、`TauCeti/AGENTS.md`、`TauCeti/COORDINATION.md`；`TauCetiRoadmap/README.md` 的 Writing a roadmap、Working with Mathlib、Porting existing work、Laying out the README、Prototyping、Filing a roadmap 各节，`TauCetiRoadmap/CONTRIBUTING.md`、`TauCetiRoadmap/AGENTS.md`；`TauCetiReview/rubrics/` 下的 attribution、scope、correctness。再读相邻的已有路线图：`ZerosOfLFunctions`、`LFunctions`、`QuasiRiemannHypothesis`、`AnalyticNumberTheoryPart{I,II,III}`，以及和第 1、2 层相关的（Galois 表示、局部 Langlands、自守形式、theta 对应一类，用 `ls tauceti-ref/TauCetiRoadmap/TauCetiRoadmap` 找）
+   - **a. 调研**（写 `ROADMAP-SURVEY.md`）：用普通数学语言说清主线每一层是什么数学（Row0b、RecTExists、VWin、Green、`HypsAlt … DefiniteSideCondition`、ZeroFreeAll……），证明的整体策略是什么、哪一步是新的；每一层里哪些是教科书级的基础材料、哪些是这份证明独有的新路线；哪些 Tau Ceti 已有的路线图或库文件已经覆盖了（写清是哪个文件、哪个目标），哪些 Mathlib 已有
+   - **b. 选范围**：定一份路线图的范围，理由写进 SURVEY。标准照 Tau Ceti 的规矩：最低一层能落到 Mathlib 或 Tau Ceti 已有的材料上（No gaps）；和已有路线图不重叠，要用的就写成 supplier 依赖；Build the library；范围明确，不写 optional/deferred/later；可复用。整条主线太大时，可以写成一组路线图里的第一份，其余用一节明确标成 roadmap-for-a-roadmap
+   - **c. 起草**：放在 `roadmap/<AreaName>/`，英文，格式完全照 Laying out the README：`# Roadmap: …` 标题、`**Summary.**` 开头的概述、`## Conventions`、按搭建顺序的 `## Layer k: …`、`## Scope and ownership`、`## Exact supplier contracts`（每个 supplier 一个 `### From …`）、`## References`；Alpöge 证明的逐文件对照放在明显次要的 provenance 一节。另加 `metadata.toml`（arXiv 主类）和 `Suggested.lean`（开头写标准说明，诚实用 `sorry`，只 import Mathlib；必须 import Tau Ceti 模块的接口就写在 markdown 里，不编译）。用的定义名先去 `mathlib4/` 和 `tauceti-ref/TauCeti/` 里查有没有现成的，有就用 Mathlib 的叫法。路线图写的是数学本身，不照抄原代码的结构和命名
+   - **d. 编译 `Suggested.lean`**：用 `mathlib4/` 这份 master 克隆（Lean v4.37.0-rc1，和 Tau Ceti 现在的工具链一致）：`source .run/env.sh && cd mathlib4 && lake env lean <文件的绝对路径>`，只允许出现 `declaration uses 'sorry'` 警告。**硬盘只剩约 16 GB**：不要另外拉 Mathlib 或 Tau Ceti 的缓存，不要 `lake build` TauCetiRoadmap 或 TauCeti，一次只跑一个 lean 进程
+   - **e. 自审**（写 `ROADMAP-REVIEW.md`）：按 CONTRIBUTING.md 里审路线图的四个方面（包含什么、怎么做、Tau Ceti 格式、逐条细查）各审一遍，再对照 Writing a roadmap 的清单逐条核对；每条写清查了什么、没查什么。数学判断拿不准的列进「待人工确认」
+   - **f. 给 De Song 的草稿**（写 `ROADMAP-PR.md`，三段，都是草稿，由他本人改写后发）：① 路线图 PR 的说明（含 AI 使用说明：GLM 5.4 通过 DeepSeek Harness 做了哪些事）；② 一条 Zulip 帖子，在 Tau Ceti 频道说明想把 Alpöge 证明的主线整理成路线图、原发布没有许可证、想先和作者及社区商量；③ 一封给 Levent Alpöge 的英文短信，请他同意把他的工作作为路线图的引用来源、并问许可证
+   - 完成后在 PROGRESS.md 记一行，`git commit` 到本仓库，**先不 push**，等 De Song 审过再说
+
 ## 交付
 
 - `REPORT.md`：结构图、候选表（至少 30 条）、试点结果、遇到的问题
@@ -55,7 +67,8 @@
 - `STORY.md` 不是给你的，不读不改不提交
 - `source/` 只读，任何改动都放在 `extracted/` 或别的新目录里
 - 提交身份统一用 `Beyond the AGI Bar <beyond@agi.bar>`（两个仓库的本地 git config 已设好，别改回去，也别用 --author 覆盖）。rh-mathlib-lemmas 的第一个提交已改写为 e007519，PROGRESS.md 里的 f00ddab 指的就是它
-- GitHub 上的操作只做第 5 步写的这些：自己的仓库、mathlib4 的 fork 和 PR。别人的仓库只读，不 force-push 别人的分支，不在别人的 issue/PR 里评论。审稿人在你的 PR 里提意见，可以回复、照着改
+- GitHub 上的操作只做第 5 步写的这些：自己的仓库、mathlib4 的 fork 和 PR。别人的仓库只读，不 force-push 别人的分支，不在别人的 issue/PR 里评论。审稿人在 PR 里提意见，可以照着改代码、推提交；**但不许在 GitHub 上发任何评论或回复**（Mathlib 规定 GitHub/Zulip 上的交流必须是人自己写的，不许用 LLM），回复的草稿写进 REPORT.md 交给 De Song 本人改写后发
+- Tau Ceti 的仓库（TauCeti、TauCetiRoadmap、TauCetiReview 等）只读：不开 PR、issue，不评论，不登记 intention，不 claim，不跑 `tauceti` worker
 - `lake build` 加 `-j 4` 左右，别把内存吃满（这台机器上还有别的任务在跑 Lean）
 - 功劳归 Levent Alpöge 和 Claude；抽出来的每个文件开头写明出处
 - 拿不准的数学判断，写进 REPORT.md 的「待人工确认」一节，别硬下结论
